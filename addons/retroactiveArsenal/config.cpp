@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -107,6 +107,12 @@ class CfgVehicles
         isTriggerActivated = 0;
         scope = 1;
         scopeCurator = 2;
+    };
+    class mjb_moduleAllMedic : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Set Medic Player(s)";
+        function = "mjb_arsenal_fnc_moduleAllMedic";
+        icon = "\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa";
     };
     class mjb_moduleArsenal : mjb_moduleBase {
         curatorCanAttach = 1;

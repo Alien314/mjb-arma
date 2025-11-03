@@ -65,6 +65,14 @@ private _category = "AI";
     { },
     true
 ] call CBA_fnc_addSetting;
+[
+    "mjb_fullDismount",
+    "CHECKBOX",
+    ["Full Dismount Only", "Other crew also stay in until the gunner dismounts when Disable Gunner bailout is enabled."],
+    [_title, _category],
+    true,
+    true
+] call CBA_fnc_addSetting;
 
 [
     "mjb_EMfix",
@@ -119,6 +127,17 @@ private _category = "AI";
     [_title,"Loadout Persistence"],
     [[0, 1, 2, 3], ["Disable","Closing inventory","Five minute interval", "Both"], 3],
     0,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_plateFix",
+    "CHECKBOX",
+    ["Fix for CBA disabling vanilla Heal EH", "Workaround for healing not working for non-medic %, disable next plates update."],
+    [_title, "Plates"],
+    false,
+    true,
     { },
     true
 ] call CBA_fnc_addSetting;

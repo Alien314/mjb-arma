@@ -3,7 +3,7 @@ class CfgPatches {
     ammo[] = {"mjb_338_NM_trc_gr","mjb_338_NM_trc_ylw","mjb_93x64_trc_gr","mjb_93x64_trc_ylw"};
     magazines[] = {"mjb_150Rnd_93x64_Mag_tracer","mjb_150Rnd_93x64_Mag_trc_red","mjb_150Rnd_93x64_Mag_trc_ylw", "mjb_130Rnd_338_Mag_tracer","mjb_130Rnd_338_Mag_trc_gr","mjb_130Rnd_338_Mag_trc_ylw"/*, "CUP_64Rnd_9x18_Bizon_M","CUP_64Rnd_Green_Tracer_9x18_Bizon_M","CUP_64Rnd_Red_Tracer_9x18_Bizon_M","CUP_64Rnd_White_Tracer_9x18_Bizon_M","CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M"*/};
     units[] = {"Box_Rats_Ammo"};
-    weapons[] = {};
+    weapons[] = {"CUP_NVG_GPNVG_tan_WP","CUP_NVG_GPNVG_black_WP","CUP_NVG_GPNVG_winter_WP"};
     requiredVersion = 0.1;
     author = "SuperJam, Camelith, Alien314";
     name = "Config Tweaks";
@@ -878,6 +878,26 @@ class CfgWeapons {
   VESTHEA(SlickThunderbolt_vest);
   VESTHEA(SlickTriton_vest);
   VESTHEA(SlickTV109_vest);
+
+#define NVG_WHITE_PRESET colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+	class CUP_NVG_GPNVG_black;
+	class CUP_NVG_GPNVG_winter;
+	class CUP_NVG_GPNVG_tan;
+	class CUP_NVG_GPNVG_black_WP: CUP_NVG_GPNVG_black {
+		displayName = "GPNVG (Black, WP)";
+		descriptionShort = "Night Vision Goggles";
+		NVG_WHITE_PRESET;
+	};
+	class CUP_NVG_GPNVG_winter_WP: CUP_NVG_GPNVG_winter {
+		displayName = "GPNVG (Winter, WP)";
+		descriptionShort = "Night Vision Goggles";
+		NVG_WHITE_PRESET;
+	};
+	class CUP_NVG_GPNVG_tan_WP: CUP_NVG_GPNVG_tan {
+		displayName = "GPNVG (Tan, WP)";
+		descriptionShort = "Night Vision Goggles";
+		NVG_WHITE_PRESET;
+	};
 };
 
 /*class CfgSounds {

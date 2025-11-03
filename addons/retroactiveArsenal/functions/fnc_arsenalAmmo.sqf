@@ -474,6 +474,8 @@ private _itemWeaponGL =
     "1Rnd_SmokeBlue_Grenade_shell",
     "1Rnd_SmokeGreen_Grenade_shell",
 
+	"mjb_blug",
+
     //Rusfor
     "CUP_1Rnd_HE_GP25_M",
     "CUP_IlumFlareWhite_GP25_M",
@@ -483,7 +485,8 @@ private _itemWeaponGL =
     "rhs_VOG25",
     "rhs_VG40TB",
 
-	"mjb_VOGMDP"
+	"mjb_VOGMDP",
+	"mjb_slog"
 ];
 
 private _itemWeaponSFSL =

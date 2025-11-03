@@ -145,39 +145,53 @@ if (isServer) then {
 	};
 };
 
-if (mjb_dropPlate) then {
+if (mjb_dropPlate || {mjb_plateFix}) then {
 	["CAManBase", "InitPost", {
 		params ["_unit"];
-		if (isPlayer _unit || { !local _unit}) exitWith {};
-		_unit spawn {  params ["_unit"];
-			sleep 6;
-			if !("diw_armor_plates_main_plate" in (_unit call ace_common_fnc_uniqueItems)) exitWith {};
-			[_unit, "Killed", {  params ["_unit"];
-				if (!isNull (objectParent _unit)) exitWith {};
-				_unit spawn {  params ["_unit"];
-					sleep 1;
-					private _count = 0;
-					while {[_unit, "diw_armor_plates_main_plate"] call CBA_fnc_removeItem} do {_count = _count + 1;};
-					private _deathBox = (_unit nearObjects ["WeaponHolderSimulated",2] select 0);
-					if (isNil "_deathBox") then {
-						_deathBox = createVehicle ["GroundWeaponHolder",_unit,[],0.6,"CAN_COLLIDE"];
-						private _dBoxPos = getPosATL _deathBox;
-						if !(surfaceIsWater _dBoxPos) exitWith {_deathBox setPosATL [(_dBoxPos # 0),(_dBoxPos # 1),0]};
-						_dBoxPos = getPosASL _deathBox;
-						private _height = ((getPosASL _unit) # 2);
-						_deathBox setPosASL [(_dBoxPos # 0),(_dBoxPos # 1),_height];
-						/*if (((getPosASL _deathBox) # 2) < 0) then {
+
+		if (mjb_plateFix) then {
+			_unit addEventHandler ["HandleHeal", {
+				[{
+					params ["_unit", "_healer"];
+					_unit setDamage 0;
+					[_unit, _healer, true] call diw_armor_plates_main_handleHealEh;
+				}, _this, 5] call CBA_fnc_waitAndExecute;
+				true
+			}];
+		};
+
+		if (mjb_dropPlate) then {
+			if (isPlayer _unit || { !local _unit}) exitWith {};
+			_unit spawn {  params ["_unit"];
+				sleep 6;
+				if !("diw_armor_plates_main_plate" in (_unit call ace_common_fnc_uniqueItems)) exitWith {};
+				[_unit, "Killed", {  params ["_unit"];
+					if (!isNull (objectParent _unit)) exitWith {};
+					_unit spawn {  params ["_unit"];
+						sleep 1;
+						private _count = 0;
+						while {[_unit, "diw_armor_plates_main_plate"] call CBA_fnc_removeItem} do {_count = _count + 1;};
+						private _deathBox = (_unit nearObjects ["WeaponHolderSimulated",2] select 0);
+						if (isNil "_deathBox") then {
+							_deathBox = createVehicle ["GroundWeaponHolder",_unit,[],0.6,"CAN_COLLIDE"];
+							private _dBoxPos = getPosATL _deathBox;
+							if !(surfaceIsWater _dBoxPos) exitWith {_deathBox setPosATL [(_dBoxPos # 0),(_dBoxPos # 1),0]};
+							_dBoxPos = getPosASL _deathBox;
 							private _height = ((getPosASL _unit) # 2);
-							_deathBox setPosASL [((getPosASL _deathBox) select 0), ((getPosASL _deathBox) select 1), _height];
-							if (getPosATL _deathBox # 2 < 0) then {
-								_deathBox setPosATL [((getPosATL _deathBox) select 0), ((getPosATL _deathBox) select 1), 0];};
-						};*/
+							_deathBox setPosASL [(_dBoxPos # 0),(_dBoxPos # 1),_height];
+							/*if (((getPosASL _deathBox) # 2) < 0) then {
+								private _height = ((getPosASL _unit) # 2);
+								_deathBox setPosASL [((getPosASL _deathBox) select 0), ((getPosASL _deathBox) select 1), _height];
+								if (getPosATL _deathBox # 2 < 0) then {
+									_deathBox setPosATL [((getPosATL _deathBox) select 0), ((getPosATL _deathBox) select 1), 0];};
+							};*/
+						};
+						_deathBox addItemCargoGlobal ["diw_armor_plates_main_plate",_count];
+						if (!isServer) then { [_deathBox,2] remoteExec ["setOwner",2]};
 					};
-					_deathBox addItemCargoGlobal ["diw_armor_plates_main_plate",_count];
-					if (!isServer) then { [_deathBox,2] remoteExec ["setOwner",2]};
-				};
-			}, nil] call CBA_fnc_addBISEventHandler;
-		}
+				}, nil] call CBA_fnc_addBISEventHandler;
+			};
+		};
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 };
 
@@ -191,7 +205,7 @@ if (mjb_disableGunnerBail) then {
 
 			if (isPlayer _crewman) exitWith {};
 			private _canShoot = (_vehicle getVariable ["ace_vehicle_damage_canShoot",true]);
-			if (!alive _crewman || { !( [_crewman] call ace_common_fnc_isAwake) || {_crewman isEqualTo (gunner _vehicle) && {_canShoot}}} ) exitWith {};
+			if (!alive _crewman || { !( [_crewman] call ace_common_fnc_isAwake) || {_canShoot && { mjb_fullDismount || {(_crewman isEqualTo (gunner _vehicle))} } } } ) exitWith {};
 
 			unassignVehicle _crewman;
 			if (!_canShoot) then {_crewman leaveVehicle _vehicle;};

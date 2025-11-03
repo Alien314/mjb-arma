@@ -478,11 +478,25 @@ class CfgMagazines
 	//class gm_1Rnd_40mm_heat_pg7vl_rpg7 : rhs_rpg7_PG7VL_mag {};
 
 	class rhs_VOG25;
-	class mjb_vogmdp : rhs_vog25 {
-		ammo = "mjb_g_vogmdp";
+	class mjb_VOGMDP : rhs_vog25 {
+		ammo = "mjb_g_VOGMDP";
 		displayName = "VOG-MDP";
 		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";displaynameshort = "HEDP Grenade";
 	};
+	class mjb_slog : rhs_vog25 {
+		ammo = "mjb_g_slog";
+		displayName = "SLOG";
+		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";
+		displaynameshort = "Slug";
+	};
+	class 1Rnd_HE_Grenade_shell;
+	// west ver slug
+	class mjb_blug : 1Rnd_HE_Grenade_shell {
+		ammo = "mjb_g_slog";
+		displayName = "Slug";
+		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: EGLM, M203";
+		displaynameshort = "Slug";
+	};//*/
 };
 
 class CfgMagazineWells {
@@ -502,14 +516,32 @@ class CfgMagazineWells {
 	
     class CBA_40mm_GP {
         mjb_mags[] = {
-			"mjb_vogmdp"
+			"mjb_VOGMDP", "mjb_slog"
         };
 		RHS_Magazines[] = {"rhs_VOG25","rhs_VOG25p","rhs_vg40tb","rhs_vg40sz","rhs_vg40op_white","rhs_vg40op_green","rhs_vg40op_red","rhs_GRD40_white","rhs_GRD40_green","rhs_GRD40_red","rhs_VG40MD","rhs_VG40MD_White","rhs_VG40MD_Green","rhs_VG40MD_Red","rhs_GDM40"};
     };
 	
     class VOG_40mm {
         mjb_mags[] = {
-			"mjb_vogmdp"
+			"mjb_VOGMDP", "mjb_slog"
+        };
+    };
+	
+    class CBA_40mm_EGLM {
+        mjb_mags[] = {
+			"mjb_blug"
+        };
+    };
+	
+    class CBA_40mm_M203 {
+        mjb_mags[] = {
+			"mjb_blug"
+        };
+    };
+	
+    class UGL_40x36 {
+        mjb_mags[] = {
+			"mjb_blug"
         };
     };
 	

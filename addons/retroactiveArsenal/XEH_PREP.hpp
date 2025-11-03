@@ -17,4 +17,5 @@
 ["z\mjb\addons\arsenal\functions\fnc_moduleArsenalMission.sqf", "mjb_arsenal_fnc_moduleArsenalMission"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleResync.sqf", "mjb_arsenal_fnc_moduleResync"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_modulePersist.sqf", "mjb_arsenal_fnc_modulePersist"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_moduleAllMedic.sqf", "mjb_arsenal_fnc_moduleAllMedic"] call CBA_fnc_compileFunction;
 //["z\mjb\addons\arsenal\functions\fnc_serverUnsignedData.sqf", "mjb_arsenal_fnc_serverUnsignedData"] call CBA_fnc_compileFunction;
