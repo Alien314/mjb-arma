@@ -154,8 +154,8 @@ if (mjb_dropPlate || {mjb_plateFix}) then {
 				[{
 					params ["_unit", "_healer"];
 					_unit setDamage 0;
-					[_unit, _healer, true] call diw_armor_plates_main_handleHealEh;
-				}, _this, 5] call CBA_fnc_waitAndExecute;
+					[_unit, _healer, true] call diw_armor_plates_main_fnc_handleHealEh;
+				},  _this, 5] call CBA_fnc_waitAndExecute;
 				true
 			}];
 		};
@@ -220,6 +220,11 @@ if (mjb_disableGunnerBail) then {
 		}] call CBA_fnc_addEventHandler;
 	}, nil, 3] call cba_fnc_waitAndExecute;
 };
+
+private _msnOpt = [["IgnoreUpsideDownDamage", true]];
+if (mjb_snakePass) then {_msnOpt pushBack ["SnakesCanOpenDoors", mjb_snakePass]};
+if (mjb_localThunk) then {_msnOpt pushBack ["AIThinkOnlyLocal", mjb_localThunk]};
+setMissionOptions (createHashMapFromArray _msnOpt);
 
 if (isMultiplayer) then {
 	if (!isNil "ace_dragging") then {
@@ -340,6 +345,12 @@ if (mjb_plateSteal) then {
 //systemChat ((goggles _unit) + ".");
 		};
 	};
+	private _ride = _extradata getOrDefault ["mjb_ghostRide", nil];
+	if (!isNil "_ride" && {!isNil "mjb_loadName"}) then {
+		if ((_ride select 0) isNotEqualTo mjb_loadName) exitWith {};
+		player setVariable ["mjb_ghostRide",(_ride select 1)];
+		// remove from arsenal if arsenal?
+	};
 }] call CBA_fnc_addEventHandler;
 
 ["CBA_loadoutGet", {
@@ -352,10 +363,21 @@ if (mjb_plateSteal) then {
 	if (_goggs isNotEqualTo "") then {
 		_extradata set ["mjb_goggles", _goggs];
 	};
+	private _ride = player getVariable ["mjb_ghostRide",nil];
+	if (!isNil "_ride" && {!isNil "mjb_loadName"}) then {
+		private _isString = _ride isEqualType "";
+		_extradata set ["mjb_ghostRide", [mjb_loadName,([typeOf _ride, _ride] select _isString)]];
+		// remove from player if arsenal, or do not include if arsenal
+	};
 }] call CBA_fnc_addEventHandler;
 
-mjb_persistHandle = ["mjb_modulePersist", {
-	[player] spawn mjb_arsenal_fnc_initPersistentLoadout;
+mjb_persistHandle = ["mjb_modulePersist", { params ["_name"];
+	if (hasInterface) then {
+	    [player,true,_name,true] spawn mjb_arsenal_fnc_initPersistentLoadout;
+    };
+	if !(isNil "mjb_persistentBoxes") then {
+        {[_x,_name,true] call mjb_arsenal_fnc_initPersistentBox;} forEach mjb_persistentBoxes;
+    };
 }] call CBA_fnc_addEventHandler;
 
 

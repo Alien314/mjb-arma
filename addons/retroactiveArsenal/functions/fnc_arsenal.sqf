@@ -129,7 +129,7 @@ if !(canSuspend) exitWith {_this spawn mjb_arsenal_fnc_arsenal};
 #include "_arsenalMacros.hpp"
 
 //Variables
-private _aceMedLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine"); //Store whether ace med is present
+private _aceMedLoaded = !(isNil "ace_medical_engine"); //Store whether ace med is present
 
 //private _winter = false; // true to enable winter camo
 private _enableCBRN = false;
@@ -562,40 +562,33 @@ private _itemMod =
     //============================================================
     //Muzzle Devices
     //============================================================
-    "CUP_muzzle_snds_socom762rc",
-    "CUP_muzzle_snds_G36_black",
-    "CUP_muzzle_snds_FAMAS",
-    "CUP_muzzle_TGPA",
-    "CUP_muzzle_snds_KZRZP_AK545",
-    "CUP_muzzle_snds_KZRZP_AK762",
-    "CUP_muzzle_snds_groza",
+	"CUP_muzzle_mfsup_Zendl",
+	"CUP_muzzle_mfsup_Zendl_desert",
+	"CUP_muzzle_mfsup_Zendl_woodland",
+	"CUP_acc_sffh",
+	"CUP_muzzle_mfsup_SCAR_L",
+	"CUP_muzzle_mfsup_SCAR_H",
+	"CUP_muzzle_mfsup_Flashhider_545x39_Black",
+	"CUP_muzzle_mfsup_Flashhider_762x39_Black",
+	"CUP_muzzle_mfsup_Flashhider_762x51_Black",
+	"CUP_muzzle_mfsup_Flashhider_PK_Black",
+	"CUP_muzzle_mfsup_CSA",
+	"CUP_muzzle_mfsup_CSA_desert",
+	"CUP_muzzle_mfsup_CSA_woodland",
+	"CUP_muzzle_mfsup_flashhider_Sa58",
+	"CUP_muzzle_fh_MP5",
 
-    "cup_muzzle_snds_68spc",
-
-    "rhsusf_acc_nt4_black", // New nicer 5.56/mk20 suppressors
-    "rhsusf_acc_nt4_tan",
-    "rhsusf_acc_rotex5_grey",
-    "rhs_acc_pbs1",
-    "rhsusf_acc_rotex_mp7",
     "rhsgref_acc_zendl",
     "rhs_acc_dtk",
     "rhs_acc_dtk1983",
     "rhs_acc_dtk4short",
     "rhs_acc_pgs64",
-    "rhs_acc_tgpv2",
-    "rhsgref_sdn6_suppressor",
     "rhsusf_acc_ardec_m240",
 
-    /*"Tier1_Gemtech_Halo",
+    "Tier1_Gemtech_Halo",
     "Tier1_SOCOM762_2_DE",
     "Tier1_SOCOM762_2_Black",
-    "Tier1_kac_556_qdc_cqb_black",*/
-
-	"muzzle_snds_65_ti_blk_f", // for persistent stuff
-	"muzzle_snds_338_black",
-	"muzzle_snds_93mmg",
-	"muzzle_snds_570",
-	"muzzle_snds_58_blk_f",
+    "Tier1_kac_556_qdc_cqb_black",
 
     //============================================================
     //Bipod & Foregrips
@@ -695,6 +688,50 @@ private _itemMod =
     "tier1_mk46mod0_la5_m600v_black"
 ];
 
+private _itemSuppressor = [
+	// rifle
+    "CUP_muzzle_snds_socom762rc",
+    "CUP_muzzle_snds_G36_black",
+    "CUP_muzzle_snds_FAMAS",
+    "CUP_muzzle_TGPA",
+    "CUP_muzzle_snds_KZRZP_AK545",
+    "CUP_muzzle_snds_KZRZP_AK762",
+    "CUP_muzzle_snds_groza",
+
+    "cup_muzzle_snds_68spc",
+
+    "rhsusf_acc_nt4_black", // New nicer 5.56/mk20 suppressors
+    "rhsusf_acc_nt4_tan",
+    "rhsusf_acc_rotex5_grey",
+    "rhs_acc_pbs1",
+    "rhs_acc_tgpv2",
+    "rhsgref_sdn6_suppressor",
+
+	"muzzle_snds_65_ti_blk_f", // for persistent stuff
+	"muzzle_snds_338_black",
+	"muzzle_snds_93mmg",
+	"muzzle_snds_570",
+	"muzzle_snds_58_blk_f",
+
+	// cqb
+    "CUP_muzzle_snds_mp5",
+    "CUP_muzzle_snds_sa61",
+    //"CUP_muzzle_mfsup_suppressor_mac10",
+    "CUP_muzzle_Bizon",
+    "cup_muzzle_snds_sr3m",
+
+    "rhsusf_acc_rotex_mp7",
+
+	// AR
+    "cup_muzzle_snds_l85",
+
+	//pistol
+    "muzzle_snds_l",
+    "cup_muzzle_snds_mk23",
+    "cup_acc_mk23_lam_f"
+
+];
+
 private _itemReflexSight =
 [
     //Vanilla
@@ -783,7 +820,6 @@ private _itemWeaponPistol =
 
     //Attachments
     "optic_mrd_black",
-    "cup_acc_mk23_lam_f",
     "CUP_acc_CZ_M3X",
     "cup_acc_glock17_flashlight",
     "tier1_x300u"
@@ -805,8 +841,6 @@ private _itemLeaderEquipment =
     "6Rnd_45ACP_Cylinder",
 
     //Cute attachments for leaders
-    "muzzle_snds_l",
-    "cup_muzzle_snds_mk23",
     "tier1_agency_compensator",
 
     "greenmag_ammo_50AE_ball_30Rnd", // deagle rounds
@@ -838,14 +872,17 @@ private _itemWeaponRifle =
 
     "CUP_CZ_BREN2_556_11_Tan",
 
+    "CUP_arifle_HK416_Black",
     "rhs_weap_hk416d145",
 
     "Tier1_HK416D145_MW13_CTR",
 
+	"CUP_arifle_M4A1_SOMMOD_black",
     "rhs_weap_m4a1_blockII_KAC_bk",
 
     "CUP_Famas_F1_Rail",
 
+	"CUP_arifle_M16A4_Base",
     "rhs_weap_m16a4_carryhandle",
 
     "mjb_arifle_C7Alpha",
@@ -864,6 +901,7 @@ private _itemWeaponRifle =
     "CUP_arifle_Fort222",
     "CUP_arifle_AK74",
 
+	"CUP_arifle_AK74M_top_rail",
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_zenitco01",
 
@@ -875,6 +913,10 @@ private _itemWeaponRifle =
 
     "CUP_arifle_TYPE_56_2",
     "CUP_arifle_TYPE_56_2_top_rail",
+	"CUP_arifle_AKM",
+	"CUP_arifle_AKM_top_rail",
+	"CUP_arifle_AK103_top_rail",
+	"CUP_arifle_AK103_railed",
 
     "rhs_weap_akmn",
     "rhs_weap_ak103",
@@ -886,6 +928,7 @@ private _itemWeaponRifle =
     //7.62x51mm
     //============================================================
     "CUP_arifle_DSA_SA58_OSW_VFG",
+	"CUP_arifle_Mk17_CQC",
 
     "rhs_weap_mk17_CQC",
     "rhs_weap_l1a1_wood"
@@ -901,6 +944,7 @@ private _itemWeaponCarbine =
 
     "CUP_arifle_G36CA3_grip",
 
+	"CUP_arifle_HK416_CQB_Black",
     "rhs_weap_hk416d10",
 
     "Tier1_HK416D10_CTR",
@@ -912,6 +956,7 @@ private _itemWeaponCarbine =
     "CUP_arifle_AK102",
     "CUP_arifle_AK102_railed",
 
+	"CUP_arifle_mk18_black",
     "rhs_weap_mk18_KAC",
 
     "rhs_weap_vhsk2",
@@ -921,8 +966,13 @@ private _itemWeaponCarbine =
     //============================================================
     "CUP_arifle_Fort224_Grippod",
 
+	"CUP_arifle_AKS74U",
+	"CUP_arifle_AKS74U_top_rail",
     "rhs_weap_aks74un",
 
+	"CUP_arifle_AK105",
+	"CUP_arifle_AK105_top_rail",
+	"CUP_arifle_AK105_railed",
     "rhs_weap_ak105",
     "rhs_weap_ak105_zenitco01",
 
@@ -932,6 +982,9 @@ private _itemWeaponCarbine =
     "CUP_arifle_OTS14_GROZA_762",
     "CUP_arifle_Sa58_Carbine_RIS_AFG",
 
+	"CUP_arifle_AK104",
+	"CUP_arifle_AK104_top_rail",
+	"CUP_arifle_AK104_railed",
     "rhs_weap_ak104",
     "rhs_weap_ak104_zenitco01",
     "rhs_weap_m92"
@@ -945,6 +998,7 @@ private _itemWeaponAmmo =
     //Magazines
     "CUP_30Rnd_556x45_Emag",
     "CUP_30Rnd_556x45_PMAG_QP",
+    "CUP_30Rnd_556x45_PMAG_BLACK_PULL",
     "CUP_30Rnd_556x45_XM8",
     "CUP_25Rnd_556x45_Famas",
     "CUP_30Rnd_556x45_AK",
@@ -1020,6 +1074,7 @@ private _itemWeaponTracerAmmo =
     //5.56x45mm
     //============================================================
     "CUP_30Rnd_556x45_Emag_Tracer_Yellow",
+    "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Yellow",
     "CUP_30Rnd_556x45_PMAG_QP_Tracer_Yellow",
     "CUP_30Rnd_TE1_Yellow_Tracer_556x45_XM8",
     "CUP_25Rnd_556x45_Famas_Tracer_Yellow",
@@ -1106,6 +1161,7 @@ private _itemWeaponCQB =
     "CUP_smg_vityaz_vfg_top_rail",
     "CUP_smg_bizon",
 
+	"CUP_smg_MP7",
     "rhs_weap_pp2000",
     "rhsusf_weap_MP7A2",
 
@@ -1120,13 +1176,6 @@ private _itemWeaponCQB =
     //============================================================
     //Accessories
     //============================================================
-    "CUP_muzzle_snds_mp5",
-    "CUP_muzzle_snds_sa61",
-    "CUP_muzzle_mfsup_suppressor_mac10",
-    "CUP_muzzle_Bizon",
-    "cup_muzzle_snds_sr3m",
-
-    "rhsusf_acc_rotex_mp7",
 
     //============================================================
     //Magazines
@@ -1222,8 +1271,9 @@ private _itemWeaponAR =
     //============================================================
     //LMG Accessories
     //============================================================
-    "cup_muzzle_snds_l85",
 
+	"CUP_optic_PechenegScope",
+	"CUP_optic_ElcanM145",
     "rhsusf_acc_elcan",
     "rhsusf_acc_elcan_ard"
 ];
@@ -1292,6 +1342,8 @@ private _itemWeaponSharpshooter =
     //Weapons
     //============================================================
     //7.62x51mm
+	"CUP_srifle_Mk18_blk",
+
     "CUP_arifle_HK417_20",
 
     "rhs_weap_m14ebrri",
@@ -1465,12 +1517,15 @@ private _itemWeaponGL =
 
     "CUP_CZ_BREN2_556_11_GL_Tan",
 
+	"CUP_arifle_HK416_AGL_Black",
     "rhs_weap_hk416d145_m320",
 
+	"CUP_arifle_M16A4_GL",
     "rhs_weap_m16a4_carryhandle_M203",
 
     "mjb_arifle_C7Bravo",
 
+	"CUP_arifle_mk18_m203_black",
     "rhs_weap_mk18_m320",
 
     "rhs_weap_vhsd2_bg",
@@ -1488,6 +1543,10 @@ private _itemWeaponGL =
     "CUP_arifle_AKM_GL_top_rail",
     "CUP_arifle_OTS14_GROZA_762_GL",
     "CUP_arifle_Sa58RIS2_gl",
+
+	"CUP_arifle_AK103_GL",
+	"CUP_arifle_AK103_GL_top_rail",
+	"CUCUP_arifle_AK103_GL_railed",
 
     "rhs_weap_ak103_gp25",
 
@@ -1572,13 +1631,13 @@ private _itemWeaponLAT =
 
     "rhs_acc_at4_handler",
 
-    "rhs_weap_rpg7", // reloadable
+    "rhs_weap_rpg7" // reloadable
 
-    //Launchers in Backpack
-    "CUP_launch_M136_Loaded",
-    "CUP_launch_M72A6_Loaded",
-    "CUP_M72A6_M",
-    "CUP_launch_RPG26_Loaded"
+    //Launchers in Backpack - should work with the normal class now?
+    //"CUP_launch_M136_Loaded",
+    //"CUP_launch_M72A6_Loaded",
+    //"CUP_M72A6_M",
+    //"CUP_launch_RPG26_Loaded"
 ];
 
 private _itemAmmoLAT =
@@ -1703,6 +1762,10 @@ private _itemSF =
     "rhsusf_plateframe_medic",
     "rhsusf_plateframe_teamleader",
     "rhsusf_mbav_mg",
+	"CUP_V_B_MTV_MG",
+	"CUP_V_B_Ciras_Khaki3",
+	"CUP_V_B_Ciras_Khaki2",
+	"CUP_V_B_Ciras_Khaki",
 
     //Weapons
     "CUP_arifle_AK107_railed",
@@ -1892,6 +1955,7 @@ private _itemHeloCrew =
     "CUP_V_PMC_CIRAS_Khaki_Veh",
     "CUP_V_PMC_CIRAS_Coyote_Veh",
     "CUP_V_PMC_CIRAS_OD_Veh",
+	"CUP_V_JPC_lightbelt_rngr",
     "ACRE_PRC148",
     "ACRE_PRC343",
     "SmokeShellBlue",
@@ -1963,7 +2027,7 @@ if (_aceMedLoaded) then { //Check for ace med
     [
         //Bandages
         "ACE_fieldDressing",
-        "ACE_elasticBandage",
+        //"ACE_elasticBandage",
         "ACE_packingBandage",
         "ACE_quikclot",
         //Specialized Equipments
@@ -2114,6 +2178,9 @@ private _unitRole = (player getVariable ["tmf_assignGear_role",typeOf player]);
 if (_role isNotEqualTo "") then {systemChat ("Using set role: " + _role); _unitRole = _role;
 } else { systemChat ("No role set, defaulting to: " + _unitRole); };
 private _leaderRole = ["tl","sl","B_officer_F","B_Soldier_SL_F"];
+
+if (_unitRole in ["sfsl","sfar","sfmed","sfmat","sfdmf","sniper","spotter","aircrew"]) then { _itemMod append _itemSuppressor};
+
 //Match unitrole name with the classnames in loadout.
 switch (true) do
 {
@@ -2165,7 +2232,7 @@ switch (true) do
     };
         case (_unitRole == "sfmed") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
         
         player setUnitTrait ["Medic", true];
     };

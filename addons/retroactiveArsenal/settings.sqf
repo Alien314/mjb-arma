@@ -54,6 +54,17 @@ private _title = "MJB Arma";
     true
 ] call CBA_fnc_addSetting;
 
+/*[
+    "mjb_zeusMarker",
+    "CHECKBOX",
+    ["Hide Zeus Marker", "Hides the zeus group marker for the zeus slot in the zeus templates."],
+    [_title, "Zeus Template"],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;*/
+
 private _category = "AI";
 [
     "mjb_disableGunnerBail",
@@ -69,6 +80,24 @@ private _category = "AI";
     "mjb_fullDismount",
     "CHECKBOX",
     ["Full Dismount Only", "Other crew also stay in until the gunner dismounts when Disable Gunner bailout is enabled."],
+    [_title, _category],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_localThunk",
+    "CHECKBOX",
+    ["AI Think Only Local", "Disable processing targetting data for remote AI units, knowsAbout, targets and similar commands will cease to work on remote units. For a gain in client performance because they no longer have to calculate all AI units."],
+    [_title, _category],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_snakePass",
+    "CHECKBOX",
+    ["Allow Snakes to open doors", "Revert to legacy behaviour when client side snakes would open doors when entering houses."],
     [_title, _category],
     true,
     true

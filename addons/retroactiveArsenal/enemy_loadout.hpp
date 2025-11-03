@@ -71,13 +71,20 @@ class baseMan
 	magazines[] = {};
 	items[] = 
 	{
-		LIST_2("FirstAidKit")
-		//LIST_2("ACE_fieldDressing"),
-		//LIST_2("ACE_packingBandage"),
-		//LIST_2("ACE_quikclot"),
-		//"ACE_tourniquet",
-		//"ACE_morphine",
-		//"ACE_splint"
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_2("FirstAidKit")
+			#else
+				LIST_2("ACE_fieldDressing"),
+				LIST_2("ACE_packingBandage"),
+				LIST_2("ACE_quikclot"),
+				"ACE_tourniquet",
+				"ACE_morphine",
+				"ACE_splint"
+			#endif
+		#else
+			LIST_2("FirstAidKit")
+		#endif
 	};
 	
 	// These are added directly into their respective slots

@@ -12,25 +12,13 @@ class CfgPatches {
             "ace_ballistics",
             "CUP_Creatures_People_LoadOrder",
             "CUP_Weapons_Ammunition",
-            "rhsusf_c_troops",
-            "rhs_weapons2",
-            "rhs_weapons3",
-            "rhsgref_weapons",
-            "rhsgref_weapons2",
-            "rhsgref_weapons3",
-            "rhsusf_weapons2",
-            "rhsusf_weapons3",
-            "rhs_a2port_air",
-            "rhs_a2port_armor",
-            "rhs_a2port_car",
-            "RHS_US_A2_AirImport",
-            "RHS_US_A2Port_Armor",
             "CUP_AirVehicles_LoadOrder",
             "CUP_TrackedVehicles_LoadOrder",
             "CUP_WaterVehicles_LoadOrder",
             "CUP_WheeledVehicles_LoadOrder",
 			"PMC_Vest",
-			"ace_recoil"
+			"ace_recoil",
+			"ace_laserpointer"
         };
     };
 };
@@ -195,6 +183,8 @@ class CfgWeapons {
     aiDispersionCoefX = 40.0;
     aiDispersionCoefY = 30.0;
   };
+
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
   // RHS
   class RHS_M2 : HMG_M2 { };
   class RHS_M2_offroad : RHS_M2 {
@@ -246,6 +236,8 @@ class CfgWeapons {
     aiDispersionCoefX = 40;
     aiDispersionCoefY = 30;
   };
+#else
+#endif
   
   class Rifle_Base_F;
   // 3CB
@@ -295,6 +287,21 @@ class CfgWeapons {
     displayName = "12G - 1 Shell";
     greenmag_ammotype = "greenmag_ammo_12G_basic_1Rnd";
   };
+
+  // Rhs scope adapter attachment visibility in arsenal
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
+  class rhs_acc_ekp1;
+  class rhs_acc_npz : rhs_acc_ekp1 {
+    scopeArsenal = 2;
+  };
+#else
+#endif
+
+  // yeet bino sway
+  class Binocular : Default {
+    swayCoef = 0.04; // default 0.34
+  };
+
   
   // Flashlights, special thanks G4rrus
   #define LIGHTCONF(NAME,PARENT) \
@@ -366,6 +373,7 @@ class CfgWeapons {
   class ItemCore;
   class InventoryFlashLightItem_Base_F;
   class FlashLight;
+
   class acc_flashlight : ItemCore
   {
       class ItemInfo : InventoryFlashLightItem_Base_F
@@ -424,6 +432,7 @@ class CfgWeapons {
   LIGHTCONF(CUP_acc_ANPEQ_2_Flashlight_Coyote_F,CUP_acc_ANPEQ_2_Flashlight_Coyote_L);
   LIGHTCONF(CUP_acc_ANPEQ_2_Flashlight_OD_F,CUP_acc_ANPEQ_2_Flashlight_OD_L);
   
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
   class rhs_acc_2dpZenit : acc_flashlight
   {
       class ItemInfo : InventoryFlashLightItem_Base_F
@@ -476,13 +485,42 @@ class CfgWeapons {
           };
       };
   };
-  class acc_pointer_IR;
+#else
+#endif
+
+  class acc_pointer_IR;/* : ItemCore {
+	MRT_SwitchItemNextClass = "acc_pointer_IR";
+	MRT_SwitchItemPrevClass = "acc_pointer_IR";
+  };
+
+  class ACE_acc_pointer_green_IR : acc_pointer_IR {
+	MRT_SwitchItemNextClass = "ACE_acc_pointer_green_IR";
+	MRT_SwitchItemPrevClass = "ACE_acc_pointer_green_IR";
+  };*/
+
+  /*/ oopsy added visble laser again lol
+  class ACE_DBAL_A3_Red : acc_pointer_IR {
+	MRT_SwitchItemPrevClass = "ACE_DBAL_A3_Red_II";
+  };
+  class ACE_DBAL_A3_Red_II : ACE_DBAL_A3_Red {
+	MRT_SwitchItemNextClass = "ACE_DBAL_A3_Red";
+  };
+  class ACE_DBAL_A3_Green : ACE_DBAL_A3_Red {
+	MRT_SwitchItemPrevClass = "ACE_DBAL_A3_Green_II";
+  };
+  class ACE_DBAL_A3_Green_II : ACE_DBAL_A3_Red_II {
+	MRT_SwitchItemNextClass = "ACE_DBAL_A3_Green";
+  };//*/
+
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
   LASREQ(rhsusf_acc_anpeq15,acc_pointer_IR);
   LIGHTCONF(rhsusf_acc_anpeq15_light,rhsusf_acc_anpeq15);
   LIGHTCONF(rhsusf_acc_anpeq15_wmx_light,rhsusf_acc_anpeq15_light);
   LIGHTCONF(rhsusf_acc_anpeq16a_light,rhsusf_acc_anpeq15_light);
   LIGHTCONF(rhsusf_acc_M952V,rhsusf_acc_anpeq15_light);
-  LIGHTCONF(rhsusf_acc_wmx,rhsusf_acc_M952V); 
+  LIGHTCONF(rhsusf_acc_wmx,rhsusf_acc_M952V);
+#else
+#endif
   
   
   /*/ T1
@@ -695,12 +733,15 @@ class CfgWeapons {
   HATARMOR(CUP_H_PMC_Beanie_Black,CUP_H_PMC_Beanie_Khaki);
   HATARMOR(CUP_H_C_Beanie_01,ItemCore);
 
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
   class H_HelmetB;
   HATARMOR(rhs_beanie,H_HelmetB);
   HATARMOR(rhs_fieldcap_m88,rhs_beanie);
   HATARMOR(rhs_ushanka,rhs_fieldcap_m88);
   HATARMOR(rhsgref_Booniehat_alpen,ItemCore);
   HATARMOR(rhsusf_Bowman,ItemCore);
+#else
+#endif
 
 
 // Tarkov Vests
@@ -879,7 +920,8 @@ class CfgWeapons {
   VESTHEA(SlickTriton_vest);
   VESTHEA(SlickTV109_vest);
 
-#define NVG_WHITE_PRESET colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+#define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+#define NVG_WHITE_PRESETOLD colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 	class CUP_NVG_GPNVG_black;
 	class CUP_NVG_GPNVG_winter;
 	class CUP_NVG_GPNVG_tan;
@@ -887,16 +929,19 @@ class CfgWeapons {
 		displayName = "GPNVG (Black, WP)";
 		descriptionShort = "Night Vision Goggles";
 		NVG_WHITE_PRESET;
+		NVG_WHITE_PRESETOLD;
 	};
 	class CUP_NVG_GPNVG_winter_WP: CUP_NVG_GPNVG_winter {
 		displayName = "GPNVG (Winter, WP)";
 		descriptionShort = "Night Vision Goggles";
 		NVG_WHITE_PRESET;
+		NVG_WHITE_PRESETOLD;
 	};
 	class CUP_NVG_GPNVG_tan_WP: CUP_NVG_GPNVG_tan {
 		displayName = "GPNVG (Tan, WP)";
 		descriptionShort = "Night Vision Goggles";
 		NVG_WHITE_PRESET;
+		NVG_WHITE_PRESETOLD;
 	};
 };
 

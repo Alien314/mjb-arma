@@ -1,8 +1,8 @@
 params ["_player"];
 
 //if (!canSuspend) then {_player spawn mjb_arsenal_fnc_tmfSpawnFix};
-
- private _check = false;
+if !(local _player) exitWith {};
+private _check = false;
 waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
 
 [{
@@ -14,7 +14,7 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
     player allowSprint true;
     player call diw_armor_plates_main_fnc_fillVestWithPlates;
     player call diw_armor_plates_main_fnc_updatePlateUi;
-    if !(isClass(configFile >> "CfgPatches" >> "ace_medical_engine")) then {
+    if !(diw_armor_plates_main_aceMedicalLoaded) then {
         private _maxHp = player getVariable ["diw_armor_plates_main_maxHp", diw_armor_plates_main_maxPlayerHp];
         player setVariable ["diw_armor_plates_main_hp", (_maxHp+0.01), true];
         player call diw_armor_plates_main_fnc_updateHPUi;
@@ -25,8 +25,7 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
         player call diw_armor_plates_main_fnc_addPlayerHoldActions;
         [] call mjb_arsenal_fnc_initStuff;
         [] call mjb_perks_fnc_initStuff;
-		player setVariable ["greenmag_main_MagSkillCoef", 1.4];
-		player setVariable ["greenmag_main_BeltSkillCoef", 1.4];
+		player setVariable ["greenmag_main_MagSkillCoef", 0.6];
 		if (mjb_resyncAction) then { 
 			[{  private _var = ("mjb_" + (((name player) splitString "([ ]/:){}") joinString ""));
 				["mjb_resyncPlayer",[player], _var] call CBA_fnc_globalEventJIP;

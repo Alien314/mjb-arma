@@ -1,3 +1,42 @@
+
+
+class CfgMagazines
+{
+	class Default;
+	class CA_Magazine : Default { 
+		//tracersEvery = 5; // might apply to too many things, vanilla locks down base mags with te0, could make new mags that apply to every gun of a caliber and add them to arsenal
+	};
+	class 30Rnd_556x45_Stanag : CA_Magazine {};
+
+	// MMG Tracer magazines rounds
+	class 130Rnd_338_Mag : CA_Magazine {};
+	class mjb_130Rnd_338_Mag_trc_gr: 130Rnd_338_Mag {
+		author = "Alien314";
+		ammo = "mjb_338_NM_trc_gr";
+		displayName = ".338 Norma Magnum 130Rnd Green Mixed Belt";
+		displayNameShort = "Mixed/Green";
+	};
+	class mjb_130Rnd_338_Mag_trc_ylw : mjb_130Rnd_338_Mag_trc_gr {
+		ammo = "mjb_338_NM_trc_ylw";
+		displayName = ".338 Norma Magnum 130Rnd Yellow Mixed Belt";
+		displayNameShort = "Mixed/Yellow";
+	};
+	
+	class 150Rnd_93x64_Mag : CA_Magazine {};
+	class mjb_150Rnd_93x64_Mag_trc_red : 150Rnd_93x64_Mag { 
+		author = "Alien314"; 
+		ammo = "mjb_93x64_trc_red";
+		displayName = "9.3mm 150Rnd Red Mixed Belt";
+		displayNameShort = "Mixed/Red";
+	};
+	class mjb_150Rnd_93x64_Mag_trc_ylw : mjb_150Rnd_93x64_Mag_trc_red {
+		ammo = "mjb_93x64_trc_ylw";
+		displayName = "9.3mm 150Rnd Yellow Mixed Belt";
+		displayNameShort = "Mixed/Yellow";
+	};
+
+#if __has_include("\z\greenmag\addons\main\script_component.hpp")
+
 #define RND545X39(NAME,PARENT) \
 	class ##NAME## : ##PARENT## \
 	{ \
@@ -67,41 +106,6 @@
 		greenmag_basicammo = "greenmag_ammo_12G_basic_1Rnd"; \
 		greenmag_canSpeedload = 1; \
 		greenmag_needBelt = 0; \
-	};
-
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine : Default { 
-		//tracersEvery = 5; // might apply to too many things, vanilla locks down base mags with te0, could make new mags that apply to every gun of a caliber and add them to arsenal
-	};
-	class 30Rnd_556x45_Stanag : CA_Magazine {};
-
-	// MMG Tracer magazines rounds
-	class 130Rnd_338_Mag : CA_Magazine {};
-	class mjb_130Rnd_338_Mag_trc_gr: 130Rnd_338_Mag {
-		author = "Alien314";
-		ammo = "mjb_338_NM_trc_gr";
-		displayName = ".338 Norma Magnum 130Rnd Green Mixed Belt";
-		displayNameShort = "Mixed/Green";
-	};
-	class mjb_130Rnd_338_Mag_trc_ylw : mjb_130Rnd_338_Mag_trc_gr {
-		ammo = "mjb_338_NM_trc_ylw";
-		displayName = ".338 Norma Magnum 130Rnd Yellow Mixed Belt";
-		displayNameShort = "Mixed/Yellow";
-	};
-	
-	class 150Rnd_93x64_Mag : CA_Magazine {};
-	class mjb_150Rnd_93x64_Mag_trc_red : 150Rnd_93x64_Mag { 
-		author = "Alien314"; 
-		ammo = "mjb_93x64_trc_red";
-		displayName = "9.3mm 150Rnd Red Mixed Belt";
-		displayNameShort = "Mixed/Red";
-	};
-	class mjb_150Rnd_93x64_Mag_trc_ylw : mjb_150Rnd_93x64_Mag_trc_red {
-		ammo = "mjb_93x64_trc_ylw";
-		displayName = "9.3mm 150Rnd Yellow Mixed Belt";
-		displayNameShort = "Mixed/Yellow";
 	};
 
 	// fix greenmag error
@@ -267,6 +271,7 @@ class CfgMagazines
 	{scope = 2};*/
 	
 	// RHS
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_mag_30Rnd_556x45_M855A1_Stanag: 30Rnd_556x45_Stanag {};
 	
 	RND545X39(rhs_30Rnd_545x39_AK,CA_Magazine);
@@ -304,162 +309,171 @@ class CfgMagazines
 	{
 		greenmag_basicammo = "greenmag_ammo_338_basic_1Rnd";
 	};
-	
+
 	// GREF
-    RND556X45(rhsgref_30rnd_556x45_m21,CA_Magazine);
-    RND556X45(rhsgref_30rnd_556x45_vhs2,CA_Magazine);
-	
-	
-	RND45ACP(rhsgref_30rnd_1143x23_M1911B_SMG,CA_Magazine);
-	class rhs_mag_762x25_8: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_762x25_ball_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};
-	class rhs_mag_6x8mm_mhp: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_762x25_ball_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};
-	class rhsgref_20rnd_765x17_vz61: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_765x17_ball_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};
-	RND762X51(rhsgref_5Rnd_792x57_kar98k,CA_Magazine);
-	class rhsgref_296Rnd_792x57_SmE_belt: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_beltlinked_762x51_basic";
-		greenmag_canSpeedload = 0;
-		greenmag_needBelt = 1;		
-	};
-	class rhsgref_50Rnd_792x57_SmE_drum: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_beltlinked_762x51_basic";
-		greenmag_canSpeedload = 0;
-		greenmag_needBelt = 1;		
-	};
-	class rhsgref_25Rnd_792x33_SmE_StG: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_762x39_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;
-	};
-	class rhsgref_30Rnd_792x33_SmE_StG: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_762x39_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;
-	};
-	class rhsgref_5Rnd_762x54_m38: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_762x54_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;
-	};
-	class rhsgref_8Rnd_762x63_M2B_M1rifle: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_303_ball_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;
-	};
+	#if __has_include("\rhsgref\addons\rhsgref_c_weapons\script_component.hpp")
+		RND556X45(rhsgref_30rnd_556x45_m21,CA_Magazine);
+		RND556X45(rhsgref_30rnd_556x45_vhs2,CA_Magazine);
+		
+		
+		RND45ACP(rhsgref_30rnd_1143x23_M1911B_SMG,CA_Magazine);
+		class rhs_mag_762x25_8: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_762x25_ball_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};
+		class rhs_mag_6x8mm_mhp: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_762x25_ball_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};
+		class rhsgref_20rnd_765x17_vz61: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_765x17_ball_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};
+		RND762X51(rhsgref_5Rnd_792x57_kar98k,CA_Magazine);
+		class rhsgref_296Rnd_792x57_SmE_belt: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_beltlinked_762x51_basic";
+			greenmag_canSpeedload = 0;
+			greenmag_needBelt = 1;		
+		};
+		class rhsgref_50Rnd_792x57_SmE_drum: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_beltlinked_762x51_basic";
+			greenmag_canSpeedload = 0;
+			greenmag_needBelt = 1;		
+		};
+		class rhsgref_25Rnd_792x33_SmE_StG: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_762x39_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;
+		};
+		class rhsgref_30Rnd_792x33_SmE_StG: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_762x39_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;
+		};
+		class rhsgref_5Rnd_762x54_m38: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_762x54_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;
+		};
+		class rhsgref_8Rnd_762x63_M2B_M1rifle: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_303_ball_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;
+		};
+	#else
+	#endif
 	
 	// USF
-	class rhsusf_100Rnd_556x45_soft_pouch: rhs_mag_30Rnd_556x45_M855A1_Stanag
-	{
-		greenmag_ammo = "greenmag_beltlinked_556x45_basic";
-		greenmag_basicammo = "greenmag_beltlinked_556x45_basic";
-		greenmag_canSpeedload = 0;
-		greenmag_needBelt = 1;
-	};
-	RND762X51(rhsusf_20Rnd_762x51_m118_special_Mag,CA_Magazine);
-	RND762X51(rhsusf_5Rnd_762x51_m118_special_Mag,CA_Magazine);
-	RND762X51(rhsusf_10Rnd_762x51_m118_special_Mag,CA_Magazine);
-	RND762X51(rhsusf_50Rnd_762x51,CA_Magazine);
-	class rhsusf_mag_40Rnd_46x30_AP: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};
-	class rhsusf_mag_40Rnd_46x30_FMJ: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};		
-	class rhsusf_mag_40Rnd_46x30_JHP: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};	
-	RND9X19(rhsusf_mag_17Rnd_9x19_FMJ,CA_Magazine);
-	class 10Rnd_RHS_50BMG_Box: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_127x99_basic_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;		
-	};
-	class rhsusf_5Rnd_300winmag_xm2010: CA_Magazine
-	{
-		greenmag_basicammo = "greenmag_ammo_303_ball_1Rnd";
-		greenmag_canSpeedload = 1;
-		greenmag_needBelt = 0;
-	};	
-	RND45ACP(rhsusf_mag_7x45acp_MHP,CA_Magazine);
+	#if __has_include("\rhsusf\addons\rhsusf_c_weapons\script_component.hpp")
+		class rhsusf_100Rnd_556x45_soft_pouch: rhs_mag_30Rnd_556x45_M855A1_Stanag
+		{
+			greenmag_ammo = "greenmag_beltlinked_556x45_basic";
+			greenmag_basicammo = "greenmag_beltlinked_556x45_basic";
+			greenmag_canSpeedload = 0;
+			greenmag_needBelt = 1;
+		};
+		RND762X51(rhsusf_20Rnd_762x51_m118_special_Mag,CA_Magazine);
+		RND762X51(rhsusf_5Rnd_762x51_m118_special_Mag,CA_Magazine);
+		RND762X51(rhsusf_10Rnd_762x51_m118_special_Mag,CA_Magazine);
+		RND762X51(rhsusf_50Rnd_762x51,CA_Magazine);
+		class rhsusf_mag_40Rnd_46x30_AP: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};
+		class rhsusf_mag_40Rnd_46x30_FMJ: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};		
+		class rhsusf_mag_40Rnd_46x30_JHP: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};	
+		RND9X19(rhsusf_mag_17Rnd_9x19_FMJ,CA_Magazine);
+		class 10Rnd_RHS_50BMG_Box: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_127x99_basic_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;		
+		};
+		class rhsusf_5Rnd_300winmag_xm2010: CA_Magazine
+		{
+			greenmag_basicammo = "greenmag_ammo_303_ball_1Rnd";
+			greenmag_canSpeedload = 1;
+			greenmag_needBelt = 0;
+		};	
+		RND45ACP(rhsusf_mag_7x45acp_MHP,CA_Magazine);
 
-	RND12G(rhsusf_5Rnd_00Buck,CA_Magazine);
-	
-	class rhs_mag_30Rnd_556x45_M855A1_EPM;
-	class rhs_mag_30Rnd_556x45_M855A1_PMAG;
-	class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan;
-	class rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger;
-	class rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull;
-	
-	/*/ Tier 1
-	class Tier1_30Rnd_556x45_M855A1_EMag;
-	RND762X51(Tier1_20Rnd_762x51_M118_Special_SR25_Mag,CA_Magazine);
-	RND65X39(Tier1_20Rnd_65x48_Creedmoor_SR25_Mag,Tier1_20Rnd_762x51_M118_Special_SR25_Mag); // no cal
-	RND762X39(Tier1_30Rnd_762x35_300BLK_EMag,Tier1_30Rnd_556x45_M855A1_EMag); // no cal
-	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM); // no cal
-	RND762X39(Tier1_30Rnd_762x35_300BLK_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);
-	RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag,rhs_mag_30Rnd_556x45_M855A1_Stanag);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag_Pull,rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull);	
-	RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);
-	
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M61_AP,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M62_Tracer,30Rnd_556x45_Stanag);	
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M80,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M80A1_EPR,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M82_Blank,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_100Rnd_762x51_Belt_M993_AP,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M61_AP,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M62_Tracer,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M80,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M80A1_EPR,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M82_Blank,30Rnd_556x45_Stanag);
-	BELT762X51(Tier1_250Rnd_762x51_Belt_M993_AP,30Rnd_556x45_Stanag);
-	
-	RND9X19(Tier1_15Rnd_9x19_FMJ,CA_Magazine);
-	RND9X19(Tier1_17Rnd_9x19_P320_FMJ,CA_Magazine);
-	RND9X19(Tier1_20Rnd_9x19_FMJ,CA_Magazine);
-	RND9X19(Tier1_21Rnd_9x19_P320_FMJ,CA_Magazine);
-	RND45ACP(Tier1_15Rnd_40SW_FMJ,CA_Magazine); // no cal
-	RND45ACP(Tier1_20Rnd_40SW_FMJ,CA_Magazine);*/
+		RND12G(rhsusf_5Rnd_00Buck,CA_Magazine);
+		
+		class rhs_mag_30Rnd_556x45_M855A1_EPM;
+		class rhs_mag_30Rnd_556x45_M855A1_PMAG;
+		class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan;
+		class rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger;
+		class rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull;
+		
+		/*/ Tier 1
+		class Tier1_30Rnd_556x45_M855A1_EMag;
+		RND762X51(Tier1_20Rnd_762x51_M118_Special_SR25_Mag,CA_Magazine);
+		RND65X39(Tier1_20Rnd_65x48_Creedmoor_SR25_Mag,Tier1_20Rnd_762x51_M118_Special_SR25_Mag); // no cal
+		RND762X39(Tier1_30Rnd_762x35_300BLK_EMag,Tier1_30Rnd_556x45_M855A1_EMag); // no cal
+		
+		RND762X39(Tier1_30Rnd_762x35_300BLK_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM); // no cal
+		RND762X39(Tier1_30Rnd_762x35_300BLK_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_RNBT_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_EPM,rhs_mag_30Rnd_556x45_M855A1_EPM);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_PMAG,rhs_mag_30Rnd_556x45_M855A1_PMAG);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_PMAG_Tan,rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan);
+		RND762X39(Tier1_30Rnd_762x35_300BLK_SMK_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag,rhs_mag_30Rnd_556x45_M855A1_Stanag);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag_Pull,rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull);	
+		RND762X39(Tier1_30Rnd_762x35_300BLK_Stanag_Ranger,rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger);
+		
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M61_AP,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M62_Tracer,30Rnd_556x45_Stanag);	
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M80,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M80A1_EPR,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M82_Blank,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_100Rnd_762x51_Belt_M993_AP,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M61_AP,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M62_Tracer,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M80,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M80A1_EPR,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M82_Blank,30Rnd_556x45_Stanag);
+		BELT762X51(Tier1_250Rnd_762x51_Belt_M993_AP,30Rnd_556x45_Stanag);
+		
+		RND9X19(Tier1_15Rnd_9x19_FMJ,CA_Magazine);
+		RND9X19(Tier1_17Rnd_9x19_P320_FMJ,CA_Magazine);
+		RND9X19(Tier1_20Rnd_9x19_FMJ,CA_Magazine);
+		RND9X19(Tier1_21Rnd_9x19_P320_FMJ,CA_Magazine);
+		RND45ACP(Tier1_15Rnd_40SW_FMJ,CA_Magazine); // no cal
+		RND45ACP(Tier1_20Rnd_40SW_FMJ,CA_Magazine);*/
+	#else
+	#endif
+#else
+
+#endif
 	
 	// 3CB
 	
@@ -470,13 +484,17 @@ class CfgMagazines
 	// mp5
 	// 20rnd DMR
 	// Enfield
+#else
 
-	class rhs_rpg7_PG7V_mag;
-	class rhs_rpg7_PG7VL_mag;
+#endif
+
+	//class rhs_rpg7_PG7V_mag;
+	//class rhs_rpg7_PG7VL_mag;
 	// globmob compat tweak
 	//class gm_1Rnd_40mm_heat_pg7v_rpg7 : rhs_rpg7_PG7V_mag {};
 	//class gm_1Rnd_40mm_heat_pg7vl_rpg7 : rhs_rpg7_PG7VL_mag {};
 
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_VOG25;
 	class mjb_VOGMDP : rhs_vog25 {
 		ammo = "mjb_g_VOGMDP";
@@ -489,10 +507,23 @@ class CfgMagazines
 		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";
 		displaynameshort = "Slug";
 	};
+#else
+	class CUP_1Rnd_HE_GP25_M;
+	class mjb_VOGMDP : CUP_1Rnd_HE_GP25_M {
+		displayName = "VOG-MDP";
+		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";displaynameshort = "HEDP Grenade";
+	};
+	class mjb_slog : CUP_1Rnd_HE_GP25_M {
+		ammo = "mjb_g_slog";
+		displayName = "SLOG";
+		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";
+		displaynameshort = "Slug";
+	};
+#endif
 	class 1Rnd_HE_Grenade_shell;
 	// west ver slug
 	class mjb_blug : 1Rnd_HE_Grenade_shell {
-		ammo = "mjb_g_slog";
+		ammo = "mjb_g_blug";
 		displayName = "Slug";
 		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: EGLM, M203";
 		displaynameshort = "Slug";
@@ -518,7 +549,10 @@ class CfgMagazineWells {
         mjb_mags[] = {
 			"mjb_VOGMDP", "mjb_slog"
         };
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 		RHS_Magazines[] = {"rhs_VOG25","rhs_VOG25p","rhs_vg40tb","rhs_vg40sz","rhs_vg40op_white","rhs_vg40op_green","rhs_vg40op_red","rhs_GRD40_white","rhs_GRD40_green","rhs_GRD40_red","rhs_VG40MD","rhs_VG40MD_White","rhs_VG40MD_Green","rhs_VG40MD_Red","rhs_GDM40"};
+#else
+#endif
     };
 	
     class VOG_40mm {

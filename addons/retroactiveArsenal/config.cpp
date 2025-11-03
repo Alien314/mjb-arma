@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -112,7 +112,7 @@ class CfgVehicles
         curatorCanAttach = 1;
         displayName = "Set Medic Player(s)";
         function = "mjb_arsenal_fnc_moduleAllMedic";
-        icon = "\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\actions\unloadIncapacitated_ca.paa";
     };
     class mjb_moduleArsenal : mjb_moduleBase {
         curatorCanAttach = 1;
@@ -125,6 +125,12 @@ class CfgVehicles
         displayName = "Retroactive Arsenal (Preserve Mission Arsenal)";
         function = "mjb_arsenal_fnc_moduleArsenalMission";
         icon = "\A3\ui_f\data\igui\cfg\weaponicons\aa_ca.paa";
+    };
+    class mjb_moduleMoveArsenal : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Move Arsenal Location";
+        function = "mjb_arsenal_fnc_moduleMoveArsenal";
+        icon = "\A3\ui_f\data\gui\rsc\RscDisplayArsenal\spaceGarage_ca.paa";
     };
 	class mjb_moduleEnd : ModuleEndMission_F {
         displayName = "End Scenario (No Music/MJB Persistence Save)";
@@ -139,6 +145,13 @@ class CfgVehicles
         displayName = "Activate Persistence (missionGroup/mission)";
 		function = "mjb_arsenal_fnc_modulePersist";
 		icon = "\A3\ui_f\data\gui\cfg\Hints\Adjust_ca.paa";
+        isGlobal = 0;
+	};
+	class mjb_moduleToggleGroupMarker : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Toggle Unit Marker Visibility";
+		function = "mjb_arsenal_fnc_moduleToggleGroupMarker";
+		icon = "\A3\ui_f\data\Map\Markers\NATO\b_inf.paa";
         isGlobal = 0;
 	};
 	class mjb_moduleResync : mjb_moduleBase {

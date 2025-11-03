@@ -18,5 +18,6 @@ private _storage = everyContainer _box;
     (_boxmags # 0) append (_xmags # 0); (_boxmags # 1) append (_xmags # 1);
 } forEach (_storage);
 
+if (mjb_profCrateOverride) exitWith {profileNamespace setVariable [_varName, [_boxitems, _boxweaps, _boxmags, _boxpacks]]; saveProfileNamespace;};
 missionProfileNamespace setVariable [_varName, [_boxitems, _boxweaps, _boxmags, _boxpacks]];
 saveMissionProfileNamespace;

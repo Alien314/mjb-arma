@@ -827,6 +827,21 @@ class CfgVehicles {
   };
 //*/
 
+// Make small boats turn better
+  class Boat_F;
+  class Boat_Armed_01_base_F : Boat_F {
+    rudderForceCoef = 0.2;
+  };
+  class Boat_Transport_02_base_F : Boat_F {
+    rudderForceCoef = 0.2;
+  };
+  class Rubber_duck_base_F : Boat_F {
+    rudderForceCoef = 0.25;
+  };
+  class C_Scooter_Transport_01_F : Rubber_duck_base_F {
+    rudderForceCoef = 0.3;
+  };
+
   #define PACKPLUS(PARENT,NAME,DISPLAYNAME) \
   class ##PARENT##; \
   class ##NAME## : ##PARENT## { \
@@ -846,12 +861,14 @@ class CfgVehicles {
   PACKPLUS(B_Carryall_taiga_F,mjb_carryallplus_taiga_F,"Carryall Backpack (Taiga/plus)");
   PACKPLUS(B_Carryall_wdl_F,mjb_carryallplus_wdl,"Carryall Backpack (Woodland/plus)");
 
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
   PACKPLUS(rhs_tortila_black,mjb_carryallplus_black,"SPOSN Tortila Backpack (Black/plus)");
   PACKPLUS(rhs_tortila_emr,mjb_carryallplus_emr,"SPOSN Tortila Backpack (EMR-Summer/plus)");
   PACKPLUS(rhs_tortila_grey,mjb_carryallplus_grey,"SPOSN Tortila Backpack (Grey/plus)");
   PACKPLUS(rhs_tortila_khaki,mjb_carryallplus_khaki,"SPOSN Tortila Backpack (Khaki/plus)");
   PACKPLUS(rhs_tortila_olive,mjb_carryallplus_olive,"SPOSN Tortila Backpack (Olive/plus)");
-
+#else
+#endif
   class Box_NATO_Ammo_F;
   class Box_Rats_Ammo : Box_NATO_Ammo_F {
     displayName = "Basic Ammo [RATS]";
@@ -879,6 +896,8 @@ class CfgVehicles {
     };
     // Limited AT
     class TransportMagazines {
+
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
       class _xx_rhs_rpg7_PG7VM_mag {
         count = 1;
         magazine = "rhs_rpg7_PG7VM_mag";
@@ -891,6 +910,8 @@ class CfgVehicles {
         count = 2;
         magazine = "rhs_rpg7_OG7V_mag";
       };
+#else
+#endif
       class _xx_MRAWS_HE_F {
         count = 1;
         magazine = "MRAWS_HE_F";
@@ -914,6 +935,8 @@ class CfgVehicles {
     };
     // disposables
     class TransportWeapons {
+
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
       class _xx_rhs_weap_rpg75 {
         count = 1;
         weapon = "rhs_weap_rpg75";
@@ -922,6 +945,8 @@ class CfgVehicles {
         count = 1;
         weapon = "rhs_weap_M136";
       };
+#else
+#endif
       class _xx_CUP_launch_FIM92Stinger {
         count = 1;
         weapon = "CUP_launch_FIM92Stinger";
@@ -979,6 +1004,15 @@ class CfgVehicles {
 	];*/
   };
 
+// takistan gas missing ace refuel
+#define REFUEL_INFINITE_FUEL -10
+	class House_EP1;
+	class Land_Ind_FuelStation_Feed_EP1 : House_EP1 {
+        transportFuel = 0;
+        ace_refuel_hooks[] = {{0.35, 0, -0.4}, {-0.35, 0, -0.4}};
+        ace_refuel_fuelCargo = REFUEL_INFINITE_FUEL;
+	};
+
 /*/ GM Compats compat
 class Land_CanisterFuel_F;
   class gm_jerrycan_base : Land_CanisterFuel_F {
@@ -992,7 +1026,15 @@ class Land_CanisterFuel_F;
   class gm_ge_army_shelteraceII_repair_base {
     scope = 1;
     side = 1;
-  };/*/
+  };
+  class gm_kat1_451_base {
+    scope = 1;
+    side = 1;
+  };
+  class gm_kat1_454_base {
+    scope = 1;
+    side = 1;
+  };//*/
 
   /*/ Launcher from vehicle, failed
   class RHS_MELB_base;

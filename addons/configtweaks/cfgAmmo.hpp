@@ -15,39 +15,31 @@ class CfgAmmo
 	class mjb_93x64_trc_red: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_red"; };
 	class mjb_93x64_trc_ylw: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; };
 
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_g_vog25;
 	class mjb_g_VOGMDP : rhs_g_vog25 {
 		indirectHitRange = 4;
 		submunitionAmmo = "rhs_ammo_40mmHEDP_penetrator";
 		warheadName = "HEAT";
 	};
-	class mjb_g_slog : rhs_g_vog25 {
-		ace_frag_skip = 1;
-		ace_vehicle_damage_incendiary = 0;
-		dangerRadiusBulletClose = -1;
-		dangerRadiusHit = -1;
-		effectsSmoke = "";
-		explosive = 0;
-		hit = 30;
-		explosionEffects = "NoExplosion";
-		indirectHitRange = 0;
-		submunitionAmmo = "";
-		warheadName = "AP";
-		timeToLive = 60;
+#else
+#endif
+	class B_12Gauge_Slug;
+	class mjb_g_slog : B_12Gauge_Slug {
+		airfriction = -0.0012;
+		cartridge = "";
+		model = "\A3\weapons_f\ammo\UGL_slug";
+		simulation = "shotShell";
+		typicalSpeed = 76.5;
+		timeToLive = 30;
 	};
-	class G_40mm_HE;
-	class mjb_g_blug : G_40mm_HE {
-		ace_frag_skip = 1;
-		ace_vehicle_damage_incendiary = 0;
-		dangerRadiusBulletClose = -1;
-		dangerRadiusHit = -1;
-		effectsSmoke = "";
-		explosive = 0;
-		hit = 30;
-		explosionEffects = "NoExplosion";
-		indirectHitRange = 0;
-		warheadName = "AP";
-		timeToLive = 60;
+	class mjb_g_blug : B_12Gauge_Slug {
+		airFriction = -0.001;
+		cartridge = "";
+		model = "\A3\weapons_f\ammo\UGL_slug";
+		simulation = "shotShell";
+		typicalSpeed = 185;
+		timeToLive = 30;
 	};
 
 

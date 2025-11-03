@@ -10,18 +10,49 @@
 	Be sure you use different varNames for different objects, or the contents of both will be the last one closed.
 */
 
-params [["_crate",objNull,[objNull]], ["_varName",nil,[""]]];
+params [["_crate",objNull,[objNull]], ["_varName",nil,[""]], ["_override",false,[true]]];
 
 //systemChat str _this;
+mjb_profCrateOverride = _override;
 
 if (_crate isEqualTo objNull) exitWith {false};
 
+private _prevPersist = _crate getVariable ["mjb_persistName", nil];
+if (!isNil "_prevPersist") then {
+  private _prevSave = _crate getVariable ["mjb_persistSaveHandler", nil];
+  _crate removeEventHandler ["ContainerClosed", _prevSave];
+} else {
+	private _action =
+	[
+		"crate_ammo_arsenal","RATS Ammo Arsenal","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa",
+		{
+			[] call mjb_arsenal_fnc_arsenalAmmo;
+		},
+		{},
+		{},
+		[],
+		[0,0,0],
+		5
+	] call ace_interact_menu_fnc_createAction;
+	
+    [_crate, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+};
+
 _crate setVariable ["mjb_persistName", _varName];
 
-_crate addEventHandler ["ContainerClosed", {
+_crate setVariable ["mjb_persistSaveHandler", (_crate addEventHandler ["ContainerClosed", {
     params ["_container", ""];
     [_container, (_container getVariable ["mjb_persistName",nil]) ] remoteExec ["mjb_arsenal_fnc_getPersistentBox", 2];
-}];
+  }]
+)];
+
+
+if (isNil "mjb_persistentBoxes") then {
+  mjb_persistentBoxes = [_crate];
+} else {
+  if !(_crate in mjb_persistentBoxes) then {
+    mjb_persistentBoxes = mjb_persistentBoxes + [_crate];};
+};
 
 if !(isServer) exitWith {};
 
@@ -43,6 +74,7 @@ _crate setVariable ["mjb_persistTimer",
 // _crate allowDamage false;
 
 private _loadbox = (missionProfileNamespace getVariable _varName);
+if (mjb_profCrateOverride) then {_loadbox = (profileNamespace getVariable _varName);};
 if !(isNil "_loadbox") then {
 
   clearItemCargoGlobal _crate;

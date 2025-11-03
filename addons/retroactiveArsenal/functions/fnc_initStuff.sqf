@@ -44,7 +44,7 @@ if (mjb_EMFixDiag) then {
 	}];
 };
 
-if (mjb_timerRegain > 0) then { [] spawn {
+if (!diw_armor_plates_main_aceMedicalLoaded && {mjb_timerRegain > 0}) then { [] spawn {
 	sleep 1;
 	// Credit: MajorDanvers
     diw_armor_plates_main_bleedMachine = [[player], true] call CBA_statemachine_fnc_create;
@@ -78,7 +78,7 @@ if (mjb_timerRegain > 0) then { [] spawn {
     [_bleedMachine, "recovering", "halt", { diw_armor_plates_main_toHalt }, {diw_armor_plates_main_toHalt = false}, "Downed/Killed"] call CBA_statemachine_fnc_addTransition;
 }; };
 
-if (mjb_arsenal_maxLoadoutInjectors > 0) then { [] spawn {
+if (!diw_armor_plates_main_aceMedicalLoaded && {mjb_arsenal_maxLoadoutInjectors > 0}) then { [] spawn {
 	waitUntil {!isNull player};
 	if (isNil "mjb_arsenal_injectorCount") then {mjb_arsenal_injectorCount = 0;};	
 	mjb_arsenal_injectorStash = 0;
