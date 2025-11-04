@@ -554,6 +554,7 @@ private _itemMod =
 
     //Dovetail (Ak Sights)
     "CUP_optic_pechenegscope", // 2.8x
+	"CUP_optic_PGO7V3",
 
     "rhs_acc_1p78", // 2x
     "rhs_acc_pgo7v3",
@@ -1272,7 +1273,6 @@ private _itemWeaponAR =
     //LMG Accessories
     //============================================================
 
-	"CUP_optic_PechenegScope",
 	"CUP_optic_ElcanM145",
     "rhsusf_acc_elcan",
     "rhsusf_acc_elcan_ard"
@@ -1629,9 +1629,9 @@ private _itemWeaponLAT =
     "rhs_weap_M136_hedp", // Not great for AT
     "rhs_weap_M136_hp", // High Penetration
 
-    "rhs_acc_at4_handler",
+    "rhs_weap_rpg7", // reloadable
 
-    "rhs_weap_rpg7" // reloadable
+    "rhs_acc_at4_handler"
 
     //Launchers in Backpack - should work with the normal class now?
     //"CUP_launch_M136_Loaded",
@@ -1639,6 +1639,8 @@ private _itemWeaponLAT =
     //"CUP_M72A6_M",
     //"CUP_launch_RPG26_Loaded"
 ];
+
+if !(isClass (configFile >> "CfgWeapons" >> "rhs_weap_rpg7")) then {_itemWeaponLAT pushBack "CUP_launch_RPG7V"; _itemMod pushBack "CUP_optic_PGO7V3";};
 
 private _itemAmmoLAT =
 [
@@ -1656,6 +1658,16 @@ private _itemAmmoLAT =
     "MRAWS_HE_F",
     "MRAWS_HEAT55_F"
 ];
+
+private _cupRPGs = [
+	"CUP_OG7_M",
+	//"CUP_PG7V_M",
+	"CUP_PG7VL_M",
+	"CUP_PG7VM_M"//,
+	//"CUP_PG7VR_M",
+	//"CUP_TBG7V_M",
+];
+if !(isClass (configFile >> "CfgWeapons" >> "rhs_weap_rpg7")) then {_itemAmmoLAT append _cupRPGs};
 
 private _itemWeaponMAT =
 [
