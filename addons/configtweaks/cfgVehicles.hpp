@@ -5,11 +5,11 @@ class CfgVehicles {
     // total hit points (meaning global "health") of the object keep constant
     // among various soldiers so that the hit points armor coefficients remains
     // on the same scale
-    armor = 2;
+    armor = 2; // def 2
     // divides all damage taken to total hit point, either directly or through
     // hit point passThrough coefficient. must be adjusted for each model to
     // achieve consistent total damage results
-    armorStructural = 3;
+    armorStructural = 3; // def 4
     // for consistent explosive damage after adjusting = (armorStructural / 10)
     explosionShielding = 0.3;
     // minimalHit for total damage
@@ -68,7 +68,7 @@ class CfgVehicles {
         depends = "HitFace max HitNeck";
       };
       class HitPelvis : HitHead {
-        armor = 10;
+        armor = 10; // def 6
         material = -1;
         name = "pelvis";
         passThrough = 0.8;
@@ -79,7 +79,7 @@ class CfgVehicles {
         depends = "0";
       };
       class HitAbdomen : HitPelvis {
-        armor = 10;
+        armor = 10; // def 1
         material = -1;
         name = "spine1";
         passThrough = 0.8;
@@ -99,7 +99,7 @@ class CfgVehicles {
         minimalHit = 0.01;
       };
       class HitChest : HitDiaphragm {
-        armor = 10;
+        armor = 10; // def 1
         material = -1;
         name = "spine3";
         passThrough = 0.8;
@@ -120,7 +120,7 @@ class CfgVehicles {
         depends = "HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
       };
       class HitArms : HitBody {
-        armor = 65;
+        armor = 65;  // def 3
         material = -1;
         name = "arms";
         passThrough = 0.55;
@@ -131,7 +131,7 @@ class CfgVehicles {
         depends = "0";
       };
       class HitHands : HitArms {
-        armor = 65;
+        armor = 65; // def 3
         material = -1;
         name = "hands";
         passThrough = 0.55;
@@ -142,7 +142,7 @@ class CfgVehicles {
         depends = "HitArms";
       };
       class HitLegs : HitHands {
-        armor = 65;
+        armor = 65; // def 3
         material = -1;
         name = "legs";
         passThrough = 0.40;
@@ -826,6 +826,88 @@ class CfgVehicles {
     };
   };
 //*/
+
+// BRH flatten/raise to Vanilla
+
+  //NATO
+  class SoldierWB;
+
+  class B_Soldier_base_F;
+  class B_Soldier_04_f : B_Soldier_base_F {
+    armorStructural = 4;
+  };
+  class B_Soldier_05_f : B_Soldier_base_F {
+    armorStructural = 4;
+  };
+  // IND
+  class I_Soldier_base_F;
+  class I_Soldier_03_f : I_Soldier_base_F {
+    armorStructural = 4;
+  };
+  class I_Soldier_04_f : I_Soldier_base_F {
+    armorStructural = 4;
+  };
+  // Contact
+  class I_E_Man_Base_F;
+  class I_E_Uniform_01_coveralls_F : I_E_Man_Base_F {
+    armorStructural = 4;
+  };
+
+  // nerf CSAT arms, they only bruise from 5.56 with ACE med
+  class SoldierEB;
+  class O_Soldier_base_F: SoldierEB {
+    armorStructural = 4;
+
+    class HitPoints {
+      class HitBody;
+      class HitArms : HitBody { armor = 4; };
+      class HitHands : HitBody { armor = 4; };
+    };
+  };
+
+  // CUP Pelvis is weak
+  #define CUPPELVIS(NAME,PARENT) \
+  class ##NAME## : ##PARENT## { \
+	armorStructural = 4; \
+    class HitPoints { \
+        class HitHead; \
+        class HitPelvis : HitHead { armor = 6; depends = "0"; explosionShielding = 1; material = -1; minimalHit = 0.01; name = "pelvis"; passThrough = 0.8; radius = 0.24; visual = "injury_body";}; \
+	}; \
+  }
+
+  class Civilian_F;
+
+  CUPPELVIS(CUP_Creatures_Civil_Chernarus_Base,Civilian_F);
+  CUPPELVIS(CUP_Creatures_Civil_Takistan_Base,Civilian_F);
+
+  CUPPELVIS(CUP_BAF_Soldier_DPM_Base,SoldierWB);
+  CUPPELVIS(CUP_BAF_Soldier_DDPM_Base,SoldierWB);
+  CUPPELVIS(CUP_BAF_Soldier_MTP_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_ACR_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_AFU_Man_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_CDF_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_FR_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_GER_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_HIL_Man_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_HIL_Recon_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_HIL_Reservist_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_HIL_SF_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_NAPA_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_OPFINS_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_PMC_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_PMC_Soldier_Winter_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_RACS_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_RUS_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_O_RUS_Man_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_SLA_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_TK_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_TKG_Guerrilla_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_TKI_Insurgent_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_UNO_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_USA_Soldier_ACU_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_USA_Soldier_Base,SoldierWB);
+  CUPPELVIS(CUP_Creatures_Military_USMC_Soldier_Base,SoldierWB);
+
 
 // Make small boats turn better
   class Boat_F;

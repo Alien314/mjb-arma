@@ -1374,6 +1374,7 @@ private _itemWeaponSharpshooter =
 
     //7.62x54mmR
     "ace_10rnd_762x54_tracer_mag",
+	"CUP_10Rnd_762x54_SVD_M",
 
     "rhs_10Rnd_762x54mmR_7N14",
 
@@ -1563,6 +1564,7 @@ private _itemWeaponGL =
     "CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Tan_M",
     "CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_Tan_M",
     "CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Tan_M",
+	"CUP_30Rnd_556x45_AK19_Tan_M",
     "CUP_30Rnd_680x43_Stanag_Tracer_Yellow",
 
     "greenmag_ammo_680x43_tracer_60Rnd",
@@ -1578,6 +1580,8 @@ private _itemWeaponGL =
     "1Rnd_SmokeRed_Grenade_shell",
     "1Rnd_SmokeBlue_Grenade_shell",
     "1Rnd_SmokeGreen_Grenade_shell",
+
+	"CUP_1Rnd_HEDP_M203",
 	"rhs_mag_M433_HEDP",
 
 	"mjb_blug",
@@ -2040,8 +2044,8 @@ if (_aceMedLoaded) then { //Check for ace med
         //Bandages
         "ACE_fieldDressing",
         //"ACE_elasticBandage",
-        "ACE_packingBandage",
-        "ACE_quikclot",
+        //"ACE_packingBandage",
+        //"ACE_quikclot",
         //Specialized Equipments
         "ACE_splint",
         "ACE_tourniquet",
@@ -2052,7 +2056,9 @@ if (_aceMedLoaded) then { //Check for ace med
     {_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
     // Append ACE Med Items
     _itemMedicalAdv =
-    [
+    [	"ACE_packingBandage",
+        "ACE_quikclot",
+        "ACE_elasticBandage",
         //Fluids
         "ACE_bloodIV",
         "ACE_bloodIV_250",
@@ -2064,7 +2070,7 @@ if (_aceMedLoaded) then { //Check for ace med
         "ACE_salineIV_250",
         "ACE_salineIV_500",
         //Medications
-        "ACE_adenosine",
+        //"ACE_adenosine",
         //Specialized Equipments
         "ACE_personalAidKit",
         "ACE_surgicalKit"
@@ -2184,14 +2190,14 @@ for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
 };
 for "_i" from (1) to (49) do { _tarkovuniforms pushback ("Tarkov_Uniforms_Scavs_" + str _i) };
 
-_itemEquipment append _additions;
+_itemEquipment append _additions; // add function arg
 
 private _unitRole = (player getVariable ["tmf_assignGear_role",typeOf player]);
 if (_role isNotEqualTo "") then {systemChat ("Using set role: " + _role); _unitRole = _role;
 } else { systemChat ("No role set, defaulting to: " + _unitRole); };
 private _leaderRole = ["tl","sl","B_officer_F","B_Soldier_SL_F"];
 
-if (_unitRole in ["sfsl","sfar","sfmed","sfmat","sfdmf","sniper","spotter","aircrew"]) then { _itemMod append _itemSuppressor};
+if (_unitRole in (["sfsl","sfar","sfmed","sfmat","sfdmf","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
 
 //Match unitrole name with the classnames in loadout.
 switch (true) do
@@ -2416,8 +2422,10 @@ if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
   mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
 };
 
-if (isNil "mjb_medicalButtonId") then {mjb_medicalButtonId = -1;};
-mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
+if (isNil "ace_medical_engine") then {
+	if !(isNil "mjb_medicalButtonId") then {mjb_medicalButtonId = -1;};
+	mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
+};
 
 private _action =
 [

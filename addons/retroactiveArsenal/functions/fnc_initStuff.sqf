@@ -5,6 +5,13 @@ if (mjb_plateToughness) then {
     }];
 };
 
+if (diw_armor_plates_main_showDamageMarker && {(mjb_suppressedMarker min mjb_suppressedMarkerMax) > 0}) then {
+    player addEventHandler ["Suppressed", {params ["", "_distance", "_shooter"];
+		if (_distance > ((mjb_suppressedMarker min mjb_suppressedMarkerMax) + 1)) exitWith {};
+        [player,_shooter,0] call diw_armor_plates_main_fnc_showDamageFeedbackMarker;
+    }];
+};
+
 if (mjb_EMfix) then {
 	player addEventHandler ["AnimStateChanged", {
 		params ["_unit", "_anim"]; 

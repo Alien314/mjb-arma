@@ -743,6 +743,9 @@ class CfgWeapons {
 #else
 #endif
 
+/*/plates are med to rats?
+class CBA_MiscItem;
+class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 
 // Tarkov Vests
 

@@ -7,9 +7,9 @@
 		- Added tracers to Leader and AR roles
 	Edited by Beagle on 2021-08-24
 	Edited by Alien314 on 2021-12-10
-	  Changenotes: 
+	  Changenotes:
 		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.
-        - 2022-02-02: Uncommented RHS vests for SF	
+        - 2022-02-02: Uncommented RHS vests for SF
         - Switched default rifle and TL weapons for RHS ones
         - 2022-02-11: Add MMG team (mjbLOVE for Banzerschreck)
 		- 2025-11-03: ACE med and plate regen tweaks. Removed rhs in base loadouts, remains in aresenal for now
@@ -18,11 +18,11 @@
 // CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN DESCRIPTION.ext IS UNCOMMENTED
 
 // Weaponless Baseclass
-class basetrooper 
+class basetrooper
 {
 	displayName = "Unarmed";
 	// All Randomized.
-	// Pants Beagle used - Blackhawk, Deep Recon, G99, Jeans, Tier 3, Triarius, 
+	// Pants Beagle used - Blackhawk, Deep Recon, G99, Jeans, Tier 3, Triarius,
 	uniform[] = {
 		"Tarkov_Uniforms_26",
 		"Tarkov_Uniforms_30",
@@ -117,7 +117,7 @@ class basetrooper
 	hmd[] = {
 		"CUP_NVG_GPNVG_black"
 	};
-	
+
 	//All Randomized. Add Primary Weapon and attachments.
 	//Leave Empty to remove all. {"Default"} for using original items the character start with.
 	primaryWeapon[] = {};
@@ -125,37 +125,38 @@ class basetrooper
 	bipod[] = {};
 	attachment[] = {};
 	silencer[] = {};
-	
+
 	// *WARNING* secondaryAttachments[] arrays are NOT randomized.
 	secondaryWeapon[] = {};
 	secondaryAttachments[] = {};
 	sidearmWeapon[] = {"CUP_hgun_M9A1"};
 	sidearmAttachments[] = {};
-	
+
 	// These are added to the uniform or vest first - overflow goes to backpack if there's any.
-	magazines[] = {};
+	magazines[] = {
+		LIST_2("HandGrenade"),
+		LIST_2("SmokeShell")
+	};
 	items[] = {
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 			#else
-				LIST_10("ACE_fieldDressing"),
-				LIST_10("ACE_packingBandage"),
-				LIST_5("ACE_quikclot"),
+				LIST_20("ACE_fieldDressing"),
+				//LIST_10("ACE_packingBandage"),
+				//LIST_5("ACE_quikclot"),
 				LIST_4("ACE_tourniquet"),
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
 				LIST_2("ACE_splint"),
-				LIST_2("ACE_bloodIV"),
+				LIST_3("ACE_bloodIV_500"),
 			#endif
 		#else
 		#endif
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
-		"ACE_MapTools",
-		LIST_2("HandGrenade"),
-		LIST_2("SmokeShell")
+		"ACE_MapTools"
 	};
-	
+
 	// These are added directly into their respective slots
 	linkedItems[] = {
 		"ItemWatch",
@@ -163,7 +164,7 @@ class basetrooper
 		"ItemCompass",
 		"ItemGPS"
 	};
-	
+
 	// These are put directly into the backpack.
 	backpackItems[] = {
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
@@ -175,7 +176,7 @@ class basetrooper
 			LIST_5("FirstAidKit")
 		#endif
 	};
-	
+
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
 	code = "_this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
     /* tmfSpawnFix sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
@@ -222,7 +223,7 @@ class r : basetrooper
 		LIST_2("HandGrenade"),
 		LIST_2("SmokeShell")
 	};
-	
+
 };
 
 class ar : basetrooper
@@ -236,7 +237,7 @@ class ar : basetrooper
 	};
 	bipod[] = {};
 	silencer[] = {
-		"CUP_muzzle_snds_M16"	
+		"CUP_muzzle_snds_M16"
 	};
 	magazines[] =
 	{
@@ -332,7 +333,7 @@ class mmg : ar
 	};
 	linkedItems[] += {
 		"Rangefinder"
-	};  
+	};
 };
 
 class ammg : aar
@@ -362,7 +363,7 @@ class ammg : aar
 	};
 };
 
-class sniper : basetrooper 
+class sniper : basetrooper
 {
 	displayName = "Sniper";
 	primaryWeapon[] =
@@ -374,9 +375,9 @@ class sniper : basetrooper
 	};
 	bipod[] = {};
 	silencer[] = {
-		"CUP_muzzle_mfsup_Suppressor_M107_Black"	
+		"CUP_muzzle_mfsup_Suppressor_M107_Black"
 	};
-	sidearmWeapon[] = 
+	sidearmWeapon[] =
 	{
 		"CUP_hgun_MP7"
 	};
@@ -397,17 +398,17 @@ class sniper : basetrooper
 		LIST_2("SmokeShell")
 	};
 	backpackItems[] += {
-		
+
 	};
 };
 
-class spotter : r 
+class spotter : r
 {
 	displayName = "Spotter";
 	scope[] = {
 		"CUP_optic_Elcan_SpecterDR_RMR_black"
 	};
-	bipod[] = 
+	bipod[] =
 	{
 		"CUP_bipod_Harris_1A2_L_BLK"
 	};
@@ -490,18 +491,19 @@ class cls : r
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_10("FirstAidKit"),
 				"Medikit",
-			#else				
+			#else
 				"ACE_surgicalKit",
+				LIST_1("ACE_personalAidKit"),
 				LIST_30("ACE_elasticBandage"),
-				LIST_30("ACE_packingBandage"),
-				LIST_20("ACE_fieldDressing"),
-				LIST_10("ACE_quikclot"),
-				LIST_20("ACE_epinephrine"),
-				LIST_20("ACE_morphine"),
-				LIST_16("ACE_bloodIV"),
+				LIST_30("ACE_fieldDressing"),
+				//LIST_30("ACE_packingBandage"),
+				//LIST_10("ACE_quikclot"),
+				LIST_15("ACE_epinephrine"),
+				LIST_15("ACE_morphine"),
+				LIST_12("ACE_bloodIV"),
 				LIST_10("ACE_splint"),
-				LIST_4("ACE_tourniquet"),
-				LIST_2("ACE_adenosine"),
+				LIST_6("ACE_tourniquet"),
+				//LIST_2("ACE_adenosine"),
 			#endif
 		#else
 			LIST_10("FirstAidKit"),
@@ -620,7 +622,7 @@ class ahat : hat
 	};
 };
 
-class sfsl : sl 
+class sfsl : sl
 {
 	displayName = "SF Team Leader";
 	headgear[] = {
@@ -720,18 +722,19 @@ class sfmed : cls
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_10("FirstAidKit"),
 				"Medikit",
-			#else				
+			#else
 				"ACE_surgicalKit",
+				LIST_1("ACE_personalAidKit"),
 				LIST_30("ACE_elasticBandage"),
-				LIST_30("ACE_packingBandage"),
-				LIST_20("ACE_fieldDressing"),
-				LIST_10("ACE_quikclot"),
-				LIST_20("ACE_epinephrine"),
-				LIST_20("ACE_morphine"),
-				LIST_16("ACE_bloodIV"),
+				LIST_30("ACE_fieldDressing"),
+				//LIST_30("ACE_packingBandage"),
+				//LIST_10("ACE_quikclot"),
+				LIST_15("ACE_epinephrine"),
+				LIST_15("ACE_morphine"),
+				LIST_12("ACE_bloodIV"),
 				LIST_10("ACE_splint"),
-				LIST_4("ACE_tourniquet"),
-				LIST_2("ACE_adenosine"),
+				LIST_6("ACE_tourniquet"),
+				//LIST_2("ACE_adenosine"),
 			#endif
 		#else
 			LIST_10("FirstAidKit"),
@@ -754,7 +757,7 @@ class sfmat : mat
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] = 
+	uniform[] =
 	{
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 		};
@@ -923,7 +926,7 @@ class crew : basetrooper
 	headgear[] = {
 		"H_HelmetCrew_I"
 	};
-	goggles[] = 
+	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
@@ -1006,8 +1009,8 @@ class aircrew : basetrooper
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_2("FirstAidKit"),
 			#else
-				LIST_10("ACE_fieldDressing"),
-				LIST_10("ACE_packingBandage"),
+				LIST_12("ACE_fieldDressing"),
+				//LIST_10("ACE_packingBandage"),
 				LIST_4("ACE_tourniquet"),
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
