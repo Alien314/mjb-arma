@@ -123,8 +123,10 @@ if !(canSuspend) exitWith {_this spawn mjb_arsenal_fnc_arsenal};
             [typeOf player, 1,["ACE_SelfActions","personal_arsenal"]] call ace_interact_menu_fnc_removeActionFromClass;
         };
     };
-    arsenal = "building" createVehicleLocal [0,0,0];
 //};
+// paste limit
+
+arsenal = "building" createVehicleLocal [0,0,0];
 
 #include "_arsenalMacros.hpp"
 
@@ -2424,11 +2426,6 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMGAmmo  + _itemPackHeavy + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
     };
-    default
-    {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-    };
-};
     default
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;

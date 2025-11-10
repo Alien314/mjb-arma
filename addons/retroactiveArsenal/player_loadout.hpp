@@ -208,9 +208,9 @@ class r : basetrooper
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_3("FirstAidKit"),
 			#else
-				LIST_10("ACE_fieldDressing"),
-				LIST_10("ACE_packingBandage"),
-				LIST_5("ACE_quikclot"),
+				LIST_20("ACE_fieldDressing"),
+				//LIST_10("ACE_packingBandage"),
+				//LIST_5("ACE_quikclot"),
 				LIST_4("ACE_tourniquet"),
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
@@ -473,7 +473,6 @@ class cls : r
 	};
 	magazines[] = {
 		LIST_2("ACE_M84"),
-		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -483,6 +482,8 @@ class cls : r
 		#else
 			LIST_5("diw_armor_plates_main_autoInjector"),
 		#endif
+		LIST_1("HandGrenade"),
+		LIST_1("SmokeShell"),
 		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] =
@@ -494,7 +495,8 @@ class cls : r
 			#else
 				"ACE_surgicalKit",
 				LIST_1("ACE_personalAidKit"),
-				LIST_30("ACE_elasticBandage"),
+				LIST_40("ACE_elasticBandage"),
+				LIST_20("ACE_elasticBandage"),
 				LIST_30("ACE_fieldDressing"),
 				//LIST_30("ACE_packingBandage"),
 				//LIST_10("ACE_quikclot"),
@@ -509,10 +511,9 @@ class cls : r
 			LIST_10("FirstAidKit"),
 			"Medikit",
 		#endif
-		LIST_2("SmokeShell"),
+		LIST_1("SmokeShell"),
 		LIST_2("SmokeShellBlue"),
-		LIST_1("SmokeShellPurple"),
-		LIST_4("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_2("SmokeShellPurple")
 	};
 };
 
@@ -698,7 +699,7 @@ class sfmed : cls
 		"cup_muzzle_snds_mk23",
 	};
 	magazines[] = {
-		LIST_3("CUP_20Rnd_B_AA12_Slug"),
+		LIST_5("CUP_20Rnd_B_AA12_Slug"),
 		LIST_3("greenmag_ammo_12G_basic_24Rnd"),
 		"SmokeShellBlue",
 		LIST_2("SmokeShellRed"),
@@ -725,8 +726,8 @@ class sfmed : cls
 			#else
 				"ACE_surgicalKit",
 				LIST_1("ACE_personalAidKit"),
-				LIST_30("ACE_elasticBandage"),
-				LIST_30("ACE_fieldDressing"),
+				LIST_40("ACE_elasticBandage"),
+				LIST_20("ACE_fieldDressing"),
 				//LIST_30("ACE_packingBandage"),
 				//LIST_10("ACE_quikclot"),
 				LIST_15("ACE_epinephrine"),
@@ -742,8 +743,7 @@ class sfmed : cls
 		#endif
 		LIST_2("SmokeShell"),
 		LIST_2("SmokeShellBlue"),
-		LIST_1("SmokeShellPurple"),
-		LIST_4("CUP_20Rnd_B_AA12_Slug")
+		LIST_1("SmokeShellPurple")
 	};
 };
 
