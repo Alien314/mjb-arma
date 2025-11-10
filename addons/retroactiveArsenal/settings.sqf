@@ -13,7 +13,7 @@ private _title = "MJB Arma";
 [
     "mjb_suppressedMarkerMax",
     "SLIDER",
-    ["Server Max Suppressed Distance", "Maximum distance for near misses. (0 disables)"],
+    ["Server Max Suppressed Distance", "Maximum distance in meters for near misses allowed to show marker for players. (0 disables)"],
     [_title, "Player QoL"],
     [0, 9, 4, 1],
     true
@@ -83,6 +83,17 @@ private _title = "MJB Arma";
     { },
     true
 ] call CBA_fnc_addSetting;*/
+
+[
+    "mjb_arsenal_preventAddObjectWargame",
+    "CHECKBOX",
+    ["Prevent ACE Add Object to Wargame Zeus", "Prevents ACE's auto add object setting from applying to Wargame zeese."],
+    [_title, "Zeus"],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
 
 private _category = "AI";
 [

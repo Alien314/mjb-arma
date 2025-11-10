@@ -133,6 +133,7 @@ private _aceMedLoaded = !(isNil "ace_medical_engine"); //Store whether ace med i
 
 //private _winter = false; // true to enable winter camo
 private _enableCBRN = false;
+
 private _rejoincheck = player getVariable "startpos";
 if (isNil "_rejoincheck") then {
     player setVariable ["startpos", getPosASL player, true];};
@@ -212,7 +213,7 @@ private _itemEquipment =
     "Module3mThunderbolt_vest",
     "Module3mTriton_vest",
     "Module3mTV109_vest",
-    "Slick_vest", 
+    "Slick_vest",
     "SlickMK3_vest",
     "SlickBlackRock_vest",
     "SlickTV109_vest",
@@ -2166,9 +2167,9 @@ if (_hasMarksmen) then {
     _itemSniper pushBack "optic_AMS";
 };
 
-/*/Add Existing Player Items
-waitUntil { !isNull player }; // should prevent FAKs/Medikits from adding when ACE enabled.
-//*/
+//Add Existing Player Items
+if (canSuspend) then {waitUntil { !isNull player };}; // should prevent FAKs/Medikits from adding when ACE enabled.
+
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
     {
@@ -2190,7 +2191,8 @@ for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
 };
 for "_i" from (1) to (49) do { _tarkovuniforms pushback ("Tarkov_Uniforms_Scavs_" + str _i) };
 
-_itemEquipment append _additions; // add function arg
+// add function arg, if this is the function
+if !(isNil '_additions') then {_itemEquipment append _additions};
 
 private _unitRole = (player getVariable ["tmf_assignGear_role",typeOf player]);
 if (_role isNotEqualTo "") then {systemChat ("Using set role: " + _role); _unitRole = _role;
@@ -2208,7 +2210,7 @@ switch (true) do
     };
     case (_unitRole == "aar") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms + _itemWeaponAR + ["Binocular"])] call ace_arsenal_fnc_initBox;
     };
     case (_unitRole in _leaderRole) :
     {
@@ -2217,10 +2219,14 @@ switch (true) do
     case (_unitRole == "r") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
+
+        player setVariable ["ace_medical_medicClass", 1, true];
     };
     case (_unitRole == "cls") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemMedic)] call ace_arsenal_fnc_initBox;
+
+        player setVariable ["ace_medical_medicClass", 2, true];
     };
     case (_unitRole == "mat") :
     {
@@ -2245,37 +2251,38 @@ switch (true) do
         case (_unitRole == "sfsl") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemWeaponARAmmo + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfmed") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
         player setUnitTrait ["Medic", true];
+        player setVariable ["ace_medical_medicClass", 2, true];
     };
         case (_unitRole == "sfmat") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfar") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfdmr") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
         player setUnitTrait ["Medic", true];
     };
     case (_unitRole == "ceng") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _itemUAVTermial + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["UAVHacker", true];
 
         if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
@@ -2309,6 +2316,8 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMGAmmo  + _itemPackHeavy + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
     };
+
+// Role not found/reducing difference from fnc_arsenal for easier parity
         case (_unitRole == "full") :
     {
         [arsenal, true] call ace_arsenal_fnc_initBox;
@@ -2324,10 +2333,14 @@ switch (true) do
     case (_unitRole == "B_Soldier_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
+
+        player setVariable ["ace_medical_medicClass", 1, true];
     };
     case (_unitRole == "B_medic_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemMedic)] call ace_arsenal_fnc_initBox;
+
+        player setVariable ["ace_medical_medicClass", 2, true];
     };
     case (_unitRole == "B_Soldier_LAT_F") :
     {
@@ -2352,31 +2365,32 @@ switch (true) do
         case (_unitRole == "B_recon_TL_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemWeaponARAmmo + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "B_recon_medic_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
+        player setVariable ["ace_medical_medicClass", 2, true];
     };
         case (_unitRole == "B_recon_LAT_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "B_Patrol_Soldier_MG_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["Medic", true];
     };
     case (_unitRole == "B_engineer_F") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-        
+
         player setUnitTrait ["UAVHacker", true];
 
         if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
@@ -2415,6 +2429,11 @@ switch (true) do
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
 };
+    default
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+    };
+};
 
 if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
   private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
@@ -2444,3 +2463,6 @@ private _action =
 ] call ace_interact_menu_fnc_createAction;
 
 ["CAManBase", 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+if !(isNil "tmf_safestart_instance" && {time < 5}) exitWith {};
+[player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;

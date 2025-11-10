@@ -9,7 +9,8 @@ class CfgPatches {
     name = "Retroactive Arsenal";
     requiredAddons[]=
 		{
-	   		"ace_interact_menu"
+	   		"ace_interact_menu",
+			"ace_zeus"
 		};
 	};
 };
@@ -24,6 +25,9 @@ class Extended_PostInit_EventHandlers
 
 class Extended_PreInit_EventHandlers
 {
+	class ace_zeus {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitZeus.sqf']";
+	};
 	class mjb_arsenal
 	{
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInit.sqf']";
@@ -31,6 +35,9 @@ class Extended_PreInit_EventHandlers
 };
 class Extended_PreStart_EventHandlers
 {
+	class ace_zeus {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartZeus.sqf']";
+	};
 	class mjb_arsenal
 	{
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStart.sqf']";
@@ -45,6 +52,13 @@ class CfgWorlds {
 		};
 	};
 };*/
+
+
+class Extended_DisplayLoad_EventHandlers {
+    class RscDisplayCurator {
+        mjb_arsenal = "_this call mjb_arsenal_fnc_openedZeus";
+    };
+};
 
 
 

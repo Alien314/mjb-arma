@@ -20,4 +20,6 @@
 ["z\mjb\addons\arsenal\functions\fnc_modulePersist.sqf", "mjb_arsenal_fnc_modulePersist"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleAllMedic.sqf", "mjb_arsenal_fnc_moduleAllMedic"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleToggleGroupMarker.sqf", "mjb_arsenal_fnc_moduleToggleGroupMarker"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_openedZeus.sqf", "mjb_arsenal_fnc_openedZeus"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_openedZeusServer.sqf", "mjb_arsenal_fnc_openedZeusServer"] call CBA_fnc_compileFunction;
 //["z\mjb\addons\arsenal\functions\fnc_serverUnsignedData.sqf", "mjb_arsenal_fnc_serverUnsignedData"] call CBA_fnc_compileFunction;
