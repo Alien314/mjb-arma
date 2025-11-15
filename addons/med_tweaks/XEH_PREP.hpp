@@ -1,0 +1,2 @@
+["z\mjb\addons\med_tweaks\functions\fnc_salts.sqf", "mjb_med_tweaks_fnc_salts"] call CBA_fnc_compileFunction;
+["z\mjb\addons\med_tweaks\functions\fnc_canSalt.sqf", "mjb_med_tweaks_fnc_canSalt"] call CBA_fnc_compileFunction;

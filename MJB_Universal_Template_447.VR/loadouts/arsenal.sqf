@@ -1416,19 +1416,54 @@ private _itemSniper =
     "rhsusf_10Rnd_762x51_m993_Mag",
     "rhs_5Rnd_338lapua_t5000",
 
+	"CUP_smg_MP7",
+    "rhsusf_weap_MP7A2_folded",
+    "rhsusf_acc_rotex_mp7",
+
+    "CUP_40Rnd_46x30_MP7",
+    "ACE_ATragMX",
+
+	//============================================================
+    //Accessories
+    //============================================================
+    //~1-4x 'combat sights'
+    "optic_DMS",
+    "optic_DMS_weathered_F",
+
+    "cup_optic_acog",
+    "cup_optic_acog_ta01nsn_rmr_black",
+    "rhsusf_acc_acog_rmr",
+
+    "CUP_optic_Elcan_SpecterDR_RMR_black",
+    "cup_optic_elcan_specterdr_kf_black",
+    "cup_optic_sb_11_4x20_pm",
+
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_mrds",
+    "rhsusf_acc_su230a", //zeroed for 7.62
+    "rhsusf_acc_su230a_mrds", //same but with a red dot
+	"rhsusf_acc_acog_mdo",
+
+    "Tier1_razor_gen2_16",
+    "tier1_razor_gen2_16_vanilla",
+
+    //dovetail mounted
+    "CUP_optic_PSO_1",
+    "cup_optic_pso_1_1_open",
+
+    "rhs_acc_pso1m21",
+
+    // muzzle devices
+    "rhsusf_acc_sr25s",
+    "CUP_muzzle_snds_KZRZP_SVD",
+
     "CUP_muzzle_snds_AWM",
     "CUP_optic_PSO_3_open",
     "CUP_muzzle_mfsup_Suppressor_M107_Black",
     "CUP_Mxx_camo_half",
     "muzzle_snds_B",
 
-    "rhsusf_acc_m24_silencer_black",
-
-    "rhsusf_weap_MP7A2_folded",
-    "rhsusf_acc_rotex_mp7",
-
-    "CUP_40Rnd_46x30_MP7",
-    "ACE_ATragMX"
+    "rhsusf_acc_m24_silencer_black"
 ];
 private _itemSniperAmmo = [
     "greenmag_ammo_127x99_basic_30Rnd",
@@ -1594,6 +1629,7 @@ private _itemWeaponLAT =
     //"CUP_M72A6_M",
     //"CUP_launch_RPG26_Loaded"
 ];
+
 if !(isClass (configFile >> "CfgWeapons" >> "rhs_weap_rpg7")) then {_itemWeaponLAT pushBack "CUP_launch_RPG7V"; _itemMod pushBack "CUP_optic_PGO7V3";};
 
 private _itemAmmoLAT =
@@ -2035,6 +2071,7 @@ private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
 private _hasApex = 395180 in _ownedDLCs;
 private _hasContact = 1021790 in _ownedDLCs;
 private _hasMarksmen = 332350 in _ownedDLCs;
+private _hasLoW = 571710 in _ownedDLCs;
 
 if (_hasApex) then {
     _itemEquipment append [
@@ -2072,6 +2109,7 @@ if !(_hasLoW) then {
 		"G_WirelessEarpiece_F"
     ];
 };
+
 
 if (_hasContact) then {
 
@@ -2197,26 +2235,32 @@ switch (true) do
     };
         case (_unitRole == "sfsl") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemWeaponARAmmo + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemSniper + _itemAmmoMAT + _itemWeaponARAmmo + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfmed") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
     };
         case (_unitRole == "sfmat") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemSniper + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfar") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+        player setUnitTrait ["Medic", true];
+    };
+        case (_unitRole == "sfaar") :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };

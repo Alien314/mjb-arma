@@ -830,7 +830,6 @@ class CfgVehicles {
 // BRH flatten/raise to Vanilla
 
   //NATO
-  class SoldierWB;
 
   class B_Soldier_base_F;
   class B_Soldier_04_f : B_Soldier_base_F {
@@ -865,18 +864,33 @@ class CfgVehicles {
     };
   };
 
+  class CAManBase;
+  class SoldierWB : CAManBase { class HitPoints; };
+  class Civilian;
+  class Civilian_F : Civilian { class HitPoints; };
+
   // CUP Pelvis is weak
-  #define CUPPELVIS(NAME,PARENT) \
-  class ##NAME## : ##PARENT## { \
-	armorStructural = 4; \
-    class HitPoints { \
+/*
         class HitHead; \
         class HitPelvis : HitHead { armor = 6; depends = "0"; explosionShielding = 1; material = -1; minimalHit = 0.01; name = "pelvis"; passThrough = 0.8; radius = 0.24; visual = "injury_body";}; \
 	}; \
+*/
+  #define CUPPELVIS(NAME,PARENT) \
+  class ##NAME## : ##PARENT## { \
+	armorStructural = 4; \
+    class HitPoints : HitPoints { \
+      class HitFace { passThrough = 0.8; }; \
+      class HitNeck : HitFace { passThrough = 0.8; }; \
+      class HitHead : HitNeck { passThrough = 0.8; }; \
+      class HitLegs { radius = 0.14; }; \
+      class HitPelvis { armor = 6; radius = 0.24; passThrough = 0.8; }; \
+      class HitAbdomen : HitPelvis { radius = 0.16; passThrough = 0.8; }; \
+      class HitDiaphragm : HitAbdomen { radius = 0.18; passThrough = 0.8; }; \
+      class HitChest : HitDiaphragm { radius = 0.18; passThrough = 0.8; }; \
+      class HitBody : HitChest { radius = 0; passThrough = 1; }; \
+	}; \
   }
-
-  class Civilian_F;
-
+//
   CUPPELVIS(CUP_Creatures_Civil_Chernarus_Base,Civilian_F);
   CUPPELVIS(CUP_Creatures_Civil_Takistan_Base,Civilian_F);
 
@@ -907,7 +921,7 @@ class CfgVehicles {
   CUPPELVIS(CUP_Creatures_Military_USA_Soldier_ACU_Base,SoldierWB);
   CUPPELVIS(CUP_Creatures_Military_USA_Soldier_Base,SoldierWB);
   CUPPELVIS(CUP_Creatures_Military_USMC_Soldier_Base,SoldierWB);
-
+//*/
 
 // Make small boats turn better
   class Boat_F;
@@ -923,6 +937,63 @@ class CfgVehicles {
   class C_Scooter_Transport_01_F : Rubber_duck_base_F {
     rudderForceCoef = 0.3;
   };
+
+/*
+  // Vanilla
+  class Plane_Base_F;
+
+  class Plane_CAS_02_base_F : Plane_Base_F { // yak-130
+    maxSpeed = 1060; // def 900 kph
+  };
+
+  class Plane_Fighter_03_base_F : Plane_Base_F { // L159 ALCA
+    //acceleration = 300; // def 220
+    maxSpeed = 940; // def 800 kph
+    //thrustCoef[] = {1.42,1.38,1.34,1.3,1.25,1.2,1.19,1.18,1.17,1.17,1.16,1.16,0.1,0,0,0,0};
+  };
+  
+// supersonic jets
+  class Plane_Fighter_01_Base_F : Plane_Base_F { // black wasp
+    //acceleration = 300; // def 200, not relevant to planes?
+    maxSpeed = 1900; // def 1200 kph
+  };
+  /*class B_Plane_Fighter_01_Stealth_F : Plane_Fighter_01_Base_F { // black wasp stealth
+    //acceleration = 300; // def 200
+    maxSpeed = 1900; // def 1200 kph
+    //thrustCoef[] = {1.76,1.69,1.62,1.68,1.74,1.81,1.89,1.95,1.96,1.96,1.92,1.4,0.4,0,0,0};
+  };//*/
+/*
+  class Plane_Fighter_02_Base_F : Plane_Base_F { // Shikra
+    //acceleration = 300; // def 220
+    maxSpeed = 1900; // def 1500 kph
+  };
+  /*class O_Plane_Fighter_02_Stealth_F : Plane_Fighter_02_Base_F { // Shikra stealth
+    //acceleration = 300; // def 220
+    maxSpeed = 1900; // def 1500 kph
+    //thrustCoef[] = {2.06,2.02,1.99,1.94,1.96,1.99,2.1,2.22,2.4,2.55,2.76,1.71,0.15,0,0,0};
+  };*/
+/*
+  class Plane_Fighter_04_base_F : Plane_Base_F { // gripen 2100 unladen
+    //acceleration = 300; // def 220
+    maxSpeed = 2100; // def 1000 kph
+    //thrustCoef[] = {1.6,1.58,1.57,1.68,1.76,1.81,1.86,1.91,1.94,1.95,1.52,0.9,0.1,0,0,0};
+  };
+
+  // CUP
+  class Plane;
+  class CUP_F35B_base : Plane {  // f35 1700 unladen
+    // airFrictionCoefs0[] = {0,0,0};
+    // airFrictionCoefs1[] = {0.1,0.05,0.006};
+    // airFrictionCoefs2[] = {0.001,0.0005,6e-05};
+    maxSpeed = 1700;
+    // thrustCoef[] = {1.5,1.2,1.1,1,1,1,1,0.9,0.7,0.5,0.3,0.1,0,0,0,0}; // default
+  };
+
+  class CUP_SU34_BASE : Plane {  // su34 1900
+    maxSpeed = 1900;
+    // thrustCoef[] = {}; // default
+  };
+//*/
 
   #define PACKPLUS(PARENT,NAME,DISPLAYNAME) \
   class ##PARENT##; \

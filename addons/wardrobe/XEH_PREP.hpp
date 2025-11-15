@@ -1,0 +1,1 @@
+//["z\mjb\addons\wardrobe\functions\fnc_salts.sqf", "mjb_wardrobe_fnc_salts"] call CBA_fnc_compileFunction;

@@ -237,7 +237,7 @@ class ar : basetrooper
 	};
 	bipod[] = {};
 	silencer[] = {
-		"CUP_muzzle_snds_M16"
+		"CUP_muzzle_mfsup_Flashhider_556x45_Black"
 	};
 	magazines[] =
 	{
@@ -934,28 +934,22 @@ class crew : basetrooper
 		//"rhsgref_6b23_khaki"
 		"CUP_V_PMC_CIRAS_Khaki_Veh"
 	};
-	backpack[] = {};
-	primaryWeapon[] =
-	{
-		"CUP_smg_MP7"
+	primaryWeapon[] = {
+		"CUP_arifle_HK416_CQB_Black"
 	};
 	scope[] = {
 		"CUP_optic_ZeissZPoint"
 	};
-	magazines[] = {
-		LIST_3("CUP_40Rnd_46x30_MP7"),
-		LIST_2("SmokeShellBlue"),
-		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
-			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
-				LIST_2("FirstAidKit"),
-			#else
-			#endif
-		#else
-			LIST_2("FirstAidKit"),
-		#endif
-		"greenmag_ammo_46x30_basic_60Rnd"
+	magazines[] += {
+		LIST_2("ACE_M84"),
+		"SmokeShellRed",
+		"CUP_15Rnd_9x19_M9",
+		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
-	backpackItems[] = {};
+	backpackItems[] += {
+		"Toolkit",
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd")
+	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
@@ -970,6 +964,12 @@ class helocrew : crew
 		"Tarkov_Uniforms_262",
 		"Tarkov_Uniforms_499"
 	};
+	backpack[] = {
+        "B_AssaultPack_rgr"
+    };
+	backpackItems[] = {
+		"Toolkit"
+    };
 	headgear[] = {
 		"H_PilotHelmetHeli_B"
 	};
