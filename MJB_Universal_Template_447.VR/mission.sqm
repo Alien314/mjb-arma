@@ -225,7 +225,7 @@ class ScenarioData
 	class Header
 	{
 		gameType="Coop";
-		maxPlayers=399;
+		maxPlayers=447;
 	};
 	wreckRemovalMaxTime=3600;
 };
