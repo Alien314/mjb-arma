@@ -8,7 +8,7 @@ class CfgPatches {
     requiredVersion = 0.1;
     author = "Alien314";
     name = "MJB Wardrobe";
-    requiredAddons[] = {"ace_wardrobe"};
+    requiredAddons[] = {"cba_main","ace_wardrobe","ace_compat_cup_units_wardrobe"};
     skipWhenMissingDependencies = 1;
   };
 };
@@ -66,5 +66,5 @@ class ace_wardrobe {
     UNIFORM_JACKET(WU_B_T_Soldier_F,WU_B_T_Soldier_AR_F);
 
     // CUP
-    UNIFORM_HOOD(CUP_U_I_GUE_Anorak_01,CUP_U_I_GUE_Anorak_03);
+    UNIFORM_HOOD(CUP_U_I_GUE_Anorak_03,CUP_U_I_GUE_Anorak_01);
 };

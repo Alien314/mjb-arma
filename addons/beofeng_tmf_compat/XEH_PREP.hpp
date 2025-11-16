@@ -1,0 +1,2 @@
+["z\bfn\addons\tmf_compat\functions\fnc_createPresets.sqf", "TMF_acre2_fnc_createPresets"] call CBA_fnc_compileFunction;
+["z\bfn\addons\tmf_compat\functions\fnc_edenUnitToRadios.sqf", "TMF_acre2_fnc_edenUnitToRadios"] call CBA_fnc_compileFunction;
