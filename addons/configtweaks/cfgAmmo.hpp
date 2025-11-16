@@ -42,6 +42,22 @@ class CfgAmmo
 		timeToLive = 30;
 	};
 
+    class ACE_9x19_Ball;
+	class mjb_65x25_CBJ : ACE_9x19_Ball {
+		ACE_ballisticCoefficients[] = {0.1455};
+		ACE_bulletLength = 13.005;
+		ACE_bulletMass = 2.1;
+        ACE_caliber = 4.0;
+		ACE_dragModel = 1;
+        ACE_muzzleVelocities[] = {720, 764, 855};
+		ace_vehicle_damage_incendiary = 0.0;
+		airFriction = -0.0014;
+		caliber = 3.4;
+		typicalSpeed = 855;
+		deflecting = 10;
+		deflectionSlowDown = 0.5;
+	};
+
 
 
 	// Rocket use flags

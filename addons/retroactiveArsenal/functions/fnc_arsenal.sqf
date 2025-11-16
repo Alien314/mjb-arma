@@ -1803,6 +1803,14 @@ private _itemSF =
     "CUP_20Rnd_B_AA12_Slug",
     "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
 
+    "mjb_13Rnd_65x25_Browning_HP",
+    "mjb_16Rnd_65x25_cz75",
+    "mjb_17Rnd_65x25_M17",
+    "mjb_15Rnd_65x25_M9",
+    "mjb_17Rnd_65x25_glock17",
+    "mjb_30Rnd_65x25_MP5",
+    "mjb_30Rnd_65x25_Vityaz",
+
     "rhs_weap_ak74mr",
     "rhs_weap_asval_grip",
     "rhs_20rnd_9x39mm_SP6",
