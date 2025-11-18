@@ -25,7 +25,12 @@ private _pDrop =
 		clearBackpackCargoGlobal _pCrate;
 		_pCrate allowDamage false;
 		_pCrate addItemCargoGlobal ["diw_armor_plates_main_plate", 9];
-		_pCrate addItemCargoGlobal ["FirstAidKit", 9];
+        if (isNil 'ace_medical_engine') then { _pCrate addItemCargoGlobal ["FirstAidKit", 9];
+		} else {
+			{_pCrate addItemCargoGlobal [_x,30]} forEach ['ace_fieldDressing','ace_elasticBandage'];
+			{_pCrate addItemCargoGlobal [_x,10]} forEach ['ace_suture','ACE_tourniquet','ace_splint','ace_morphine','ace_epinephrine'];
+			{_pCrate addItemCargoGlobal [_x,4]} forEach ['ace_bloodIV'];
+		};
 		if ((_target getUnitTrait 'Medic') && {(mjb_arsenal_injectorCount + mjb_arsenal_injectorStash) < mjb_arsenal_maxLoadoutInjectors}) then {
 			_pCrate addItemCargoGlobal ["diw_armor_plates_main_autoInjector", 1];
 			mjb_arsenal_injectorStash = mjb_arsenal_injectorStash + 1;

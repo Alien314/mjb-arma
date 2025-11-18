@@ -500,7 +500,7 @@ class CfgMagazines
         initSpeed = 720;\
         lastRoundsTracer=0;\
         tracersEvery=0;\
-		displayNameMFDFormat= "AP";
+		displayNameMFDFormat= "APDS";
 
 #define magSMG65X25(NAME,PARENT) \
 	class ##NAME## : ##PARENT## \
@@ -509,35 +509,35 @@ class CfgMagazines
         initSpeed = 855;\
         lastRoundsTracer=0;\
         tracersEvery=0;\
-		displayNameMFDFormat= "AP"; \
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 30<br />Used in: 9mm Parabellum barrel converted weapons.";
+		displayNameMFDFormat= "APDS"; \
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 30<br />Used in: 9mm Parabellum barrel converted weapons.";
 
 	magPistol65X25(mjb_13Rnd_65x25_Browning_HP,CUP_13Rnd_9x19_Browning_HP)
-		displayName= "9mm 13rnd Browning HP CBJ AP Sabot Mag";
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 13<br />Used in: Browning HP";
+		displayName= "9mm 13rnd Browning HP CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 13<br />Used in: Browning HP";
 	};
 	magPistol65X25(mjb_15Rnd_65x25_M9,CUP_15Rnd_9x19_M9)
-		displayName= "9mm 15rnd M9 CBJ AP Sabot Mag";
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 15<br />Used in: M9";
+		displayName= "9mm 15rnd M9 CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 15<br />Used in: M9";
 	};
 	magPistol65X25(mjb_16Rnd_65x25_cz75,CUP_16Rnd_9x19_cz75)
-		displayName= "9mm 16rnd CZ 75 CBJ AP Sabot Mag";
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 16<br />Used in: CZ 75";
+		displayName= "9mm 16rnd CZ 75 CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 16<br />Used in: CZ 75";
 	};
 	class CUP_17Rnd_9x19_M17_Black;
 	magPistol65X25(mjb_17Rnd_65x25_M17,CUP_17Rnd_9x19_M17_Black)
-		displayName= "9mm 17rnd M17 CBJ AP Sabot Mag";
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 17<br />Used in: M17";
+		displayName= "9mm 17rnd M17 CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 17<br />Used in: M17";
 	};
 	magPistol65X25(mjb_17Rnd_65x25_glock17,CUP_17Rnd_9x19_glock17)
-		displayName= "9mm 17rnd G17 CBJ AP Sabot Mag";
-		descriptionShort = "6.5x25mm AP Sabot<br />Rounds: 17<br />Used in: G17";
+		displayName= "9mm 17rnd G17 CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 17<br />Used in: G17";
 	};
 	magSMG65X25(mjb_30Rnd_65x25_Vityaz,CUP_30Rnd_9x19_Vityaz)
-		displayName= "9mm 30rnd Vityaz CBJ AP Sabot Mag";
+		displayName= "9mm 30rnd Vityaz CBJ APDS Mag";
 	};
 	magSMG65X25(mjb_30Rnd_65x25_MP5,CUP_30Rnd_9x19_MP5)
-		displayName= "9mm 30rnd MP5 CBJ AP Sabot Mag";
+		displayName= "9mm 30rnd MP5 CBJ APDS Mag";
 	};
 
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")

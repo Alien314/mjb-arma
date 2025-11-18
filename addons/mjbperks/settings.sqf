@@ -190,6 +190,43 @@ private _perkName = "Extra Conditioning";
     }
 ] call CBA_fnc_addSetting;
 
+private _perkName = "RAT Ogre";
+[
+    "mjb_ratOgreEnabled",
+    "CHECKBOX",
+    [("Enable " + _perkName), "Player gets half of the Extra Conditioning bonus and 20% more speed."],
+    [_mod, _category],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+[
+    "mjb_ratOgrePoints",
+    "SLIDER",
+    [_perkName + " cost", "How many points " + _perkName + " costs."],
+    [_mod, _category],
+    [0, 5000, 500, 0],
+    true,
+    {
+        params ["_value"];
+        mjb_ratOgrePoints = round _value;
+    },
+    true
+] call CBA_fnc_addSetting;
+[
+    "mjb_ratOgreMult",
+    "SLIDER",
+    [(_perkName + " Speed Multiplier"), "Multiplied by default player or mission set EM speed coef."],
+    [_mod, _category],
+    [1, 5, 1.20, 2],
+    true,
+    {
+        params ["_value"];
+        mjb_ratOgreMult = (parseNumber (_value toFixed 2));
+    }
+] call CBA_fnc_addSetting;
+
 private _perkName = "Doorkicker";
 [
     "mjb_flashDoorEnabled",

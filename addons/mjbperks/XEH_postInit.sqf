@@ -67,6 +67,7 @@
 	};
 }] call CBA_fnc_addEventHandler;
 //*/
+if (!hasInterface) exitWith {};
 0 spawn { sleep 5;
 	private _pointKeybinds = ((["ACE3 Common", "ace_finger_finger"] call CBA_fnc_getKeybind) select 8);
 	{	(_x + [{ call mjb_perks_fnc_jam; }, "keydown", "", false]) call CBA_fnc_addKeyHandler;

@@ -18,7 +18,7 @@ while {true} do {
 	if (_weapon isNotEqualTo "") then {_weapDir = (_vehicle weaponDirection _weapon);};
 	private _aimpoint = (_eyePos vectorAdd (_weapDir vectorMultiply mjb_heartCenter));
 	private _list = ((_aimpoint nearEntities [["CAManBase"],mjb_heartRange]) - (units player));
-	{   if (!alive _x || {!(_x in _list)}) then {
+	{   if (!alive _x || {!(_x in _list) || ((_x getVariable ['ace_medical_heartRate',80]) < 10)}) then {
 		    diwako_dui_special_track = diwako_dui_special_track - [_x];
 		    _tracking = _tracking - [_x];
 			_x setVariable ["diwako_dui_main_compass_color", nil];
@@ -29,7 +29,7 @@ while {true} do {
 	{
 		//private _active = _x getVariable ["diwako_dui_main_compass_color", nil];
 		//_active = !isNil "_active";
-		if (_x in diwako_dui_special_track) then {continue}; //if (_active || {_x in diwako_dui_special_track}) then {continue};
+		if (_x in diwako_dui_special_track || {((_x getVariable ['ace_medical_heartRate',80]) < 10)}) then {continue}; //if (_active || {_x in diwako_dui_special_track}) then {continue};
 		diwako_dui_special_track = diwako_dui_special_track + [_x];
 		_tracking = _tracking + [_x];
 		//_x setVariable ["diwako_dui_main_compass_color", _trackingColor];

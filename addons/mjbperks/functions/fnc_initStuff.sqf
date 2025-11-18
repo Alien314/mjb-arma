@@ -1,8 +1,13 @@
 if (isNil "ace_interact_menu") exitWith {};
 if (!isNil "mjb_perksInit") exitWith {};
 mjb_perksInit = true;
-if (!isDedicated && {mjb_perks}) then {
+if (isDedicated) exitWith {};
+if (mjb_perks) then {
     call mjb_perks_fnc_perkSelect;
+	if (mjb_flashDoorEnabled) exitWith {};
+	['CAManBase'] call mjb_perks_fnc_flash;
+} else {
+	['CAManBase'] call mjb_perks_fnc_flash;
 };
 
 

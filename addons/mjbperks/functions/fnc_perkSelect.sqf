@@ -208,6 +208,37 @@ if (mjb_extraHpEnabled) then {
         ["CAManBase", 1, _parent, _action, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
+if (mjb_ratOgreEnabled) then {
+    private _perkName = "ratOgre";
+    private _action =
+    [
+        _perkName,"RAT Ogre","\A3\ui_f\data\igui\cfg\actions\heal_ca.paa",
+        mjb_perks_fnc_ratOgre,
+        { params ["_target", "_player", "_actionParams"]; _actionParams params ["_perkName"];
+            mjb_ratOgreEnabled && {mjb_pP >= mjb_ratOgrePoints || {_perkName in mjb_activePerks}}
+        },
+        { },
+        [_perkName],
+        [0,0,0],
+        3,
+        [false, true, false, false, true],
+        _disableMod
+    ] call ace_interact_menu_fnc_createAction;
+    private _parent = ["CAManBase", 1, _catPath, _action, true] call ace_interact_menu_fnc_addActionToClass;
+        // Perk description
+		private _title = str (_perkName + "Desc");
+        private _action =
+        [
+            _title, "",
+            "",{ },  { true },{ },[],[0,0,0],3,[false, true, false, false, true],
+            {   params ["", "", "", "_actionData"];
+                _actionData set [1, format ["Faster and stronger than a normal rat.", ((mjb_extraHpMult - 1) * 100), "%"]];
+            }
+        ] call ace_interact_menu_fnc_createAction;
+
+        ["CAManBase", 1, _parent, _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
+
 if (mjb_plateDropEnabled) then {
     private _perkName = "plateDrop";
     private _action =
@@ -675,7 +706,7 @@ if (mjb_repairEnabled) then {
 		private _title = str (_perkName + "Desc");
         private _action =
         [
-            _title,format ["Fix fuel tank, and partial repair functional systems. (%1 sec)",mjb_repairCd],
+            _title,format ["Fix fuel tank, and minor repair everything else. (%1 sec)",mjb_repairCd],
             "",{ },  { true },{ },[],[0,0,0],3,[false, true, false, false, true]
         ] call ace_interact_menu_fnc_createAction;
 

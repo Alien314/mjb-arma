@@ -17,7 +17,7 @@ private _aDrop =
 		{
 			_index = _index + 1;
 			private _oldDamage = (_damage select _index);
-			if (_oldDamage >= 0.9) then {continue};
+			//if (_oldDamage >= 0.9) then {continue};
 			_newDamage = (_oldDamage - 0.2) max 0;
 			_vic setHitPointDamage [_x,_newDamage];
 
