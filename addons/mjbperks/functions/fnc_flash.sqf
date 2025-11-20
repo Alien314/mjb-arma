@@ -61,8 +61,8 @@ private _statement = {
     [{mjb_kickCD = true;}, [], 5] call CBA_fnc_waitAndExecute;
 };
 private _action = ["doorKick","Flash and Kick","",_statement,_condition, { }, [], [0,0,0], 3, [true, false, false, false, true]] call ace_interact_menu_fnc_createAction;
-private _bypass = (_target isEqualType "");
-private _addClass = [typeOf _target,""] select _bypass;
+if (_target isEqualType objNull) then {_target = typeOf _target;};
+private _addClass = _target;
 private _path = [_addClass, 1, ["ACE_SelfActions"], _action,_bypass] call ace_interact_menu_fnc_addActionToClass;
 
 [_addClass, 1, _path]
