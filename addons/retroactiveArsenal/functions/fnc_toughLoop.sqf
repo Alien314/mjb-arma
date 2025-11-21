@@ -10,7 +10,7 @@ private _full = true;
 private _plateCarrier = (vestContainer player);
 if (!alive player || {_plateCarrier isEqualTo objNull}) exitWith {};
 private _plates = _plateCarrier getVariable ["diw_armor_plates_main_plates", [0]];
-private _plateCnt = (count _plates - 1) max 0;
+private _plateCnt = count _plates;
 private _maxPlates = diw_armor_plates_main_numWearablePlates;
 private _plateRegenCount = (mjb_plateRegenCount - 1) min (_maxPlates - 1);
 
