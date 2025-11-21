@@ -239,7 +239,7 @@ class ar : basetrooper
 	silencer[] = {
 		"CUP_muzzle_mfsup_Flashhider_556x45_Black"
 	};
-	magazines[] =
+	magazines[] +=
 	{
 		LIST_2("ACE_M84"),
 		"SmokeShellRed",
@@ -252,13 +252,13 @@ class ar : basetrooper
 		#else
 			LIST_2("FirstAidKit"),
 		#endif
-		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
+		LIST_2("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
 	backpackItems[] = {
-		LIST_4("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
+		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_3("FirstAidKit"),
@@ -267,7 +267,7 @@ class ar : basetrooper
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
-		LIST_2("greenmag_beltlinked_556x45_basic_200")
+		LIST_4("greenmag_beltlinked_556x45_basic_200")
 	};
 };
 
@@ -733,7 +733,8 @@ class sfmed : cls
 				"ACE_surgicalKit",
 				LIST_1("ACE_personalAidKit"),
 				LIST_40("ACE_elasticBandage"),
-				LIST_20("ACE_fieldDressing"),
+				LIST_20("ACE_elasticBandage"),
+				LIST_30("ACE_fieldDressing"),
 				//LIST_30("ACE_packingBandage"),
 				//LIST_10("ACE_quikclot"),
 				LIST_15("ACE_epinephrine"),

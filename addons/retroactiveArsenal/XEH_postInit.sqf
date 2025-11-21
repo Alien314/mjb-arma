@@ -382,7 +382,38 @@ mjb_persistHandle = ["mjb_modulePersist", { params ["_name"];
 }] call CBA_fnc_addEventHandler;
 
 
-if (mjb_arsenal_maxLoadoutInjectors > 0) then {
+	["ace_arsenal_displayClosed", {
+		params ["_loadout"];
+        [0,true] spawn mjb_arsenal_fnc_toughLoop;
+		if (isNil 'ace_medical_engine' && {mjb_arsenal_maxLoadoutInjectors > 0}) then {
+			private _count = 0;
+			private _fnc_count = {
+				params ["_items", "_amounts"];
+				{
+					if (_x in diw_armor_plates_main_injectorItems) then {
+						_count = _count + (_amounts select _forEachIndex);
+					};
+				} forEach _items;
+			};
+			private _unit = player;
+			(getItemCargo uniformContainer _unit) call _fnc_count;
+			(getItemCargo vestContainer _unit) call _fnc_count;
+			(getItemCargo backpackContainer _unit) call _fnc_count;
+			mjb_arsenal_injectorCount = _count;
+
+			if ((_count + mjb_arsenal_injectorStash) > mjb_arsenal_maxLoadoutInjectors) then {
+				private _remove = (_count - mjb_arsenal_maxLoadoutInjectors);
+				for "_l" from 1 to _remove do {
+					["diw_armor_plates_main_consumeInjectorUse", [player]] call CBA_fnc_localEvent;
+					_count = _count - 1;
+					if (_count <= 0) exitWith {};
+				};
+				mjb_arsenal_injectorCount = _count max 0;
+			};
+		};
+	}] call CBA_fnc_addEventHandler;
+
+if (isNil 'ace_medical_engine' && {mjb_arsenal_maxLoadoutInjectors > 0}) then {
 	["CBA_loadoutSet", {
 		params ["_unit"];
 		if (isNil "arsenal") exitWith {};
@@ -437,34 +468,6 @@ if (mjb_arsenal_maxLoadoutInjectors > 0) then {
 			[arsenal, diw_armor_plates_main_injectorItems] call ace_arsenal_fnc_addVirtualItems;
 		};
 		[arsenal, diw_armor_plates_main_injectorItems] call ace_arsenal_fnc_removeVirtualItems;
-	}] call CBA_fnc_addEventHandler;
-
-	["ace_arsenal_displayClosed", {
-		params ["_loadout"];
-		private _count = 0;
-		private _fnc_count = {
-			params ["_items", "_amounts"];
-			{
-				if (_x in diw_armor_plates_main_injectorItems) then {
-					_count = _count + (_amounts select _forEachIndex);
-				};
-			} forEach _items;
-		};
-        private _unit = player;
-		(getItemCargo uniformContainer _unit) call _fnc_count;
-		(getItemCargo vestContainer _unit) call _fnc_count;
-		(getItemCargo backpackContainer _unit) call _fnc_count;
-		mjb_arsenal_injectorCount = _count;
-
-		if ((_count + mjb_arsenal_injectorStash) > mjb_arsenal_maxLoadoutInjectors) then {
-            private _remove = (_count - mjb_arsenal_maxLoadoutInjectors);
-			for "_l" from 1 to _remove do {
-				["diw_armor_plates_main_consumeInjectorUse", [player]] call CBA_fnc_localEvent;
-                _count = _count - 1;
-                if (_count <= 0) exitWith {};
-            };
-		    mjb_arsenal_injectorCount = _count max 0;
-		};
 	}] call CBA_fnc_addEventHandler;
 
 	["ace_arsenal_cargoChanged", {
