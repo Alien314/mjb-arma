@@ -197,8 +197,9 @@ if (mjb_dropPlate || {mjb_plateFix}) then {
 
 if (mjb_disableGunnerBail) then {
 	[{  private _eventHash = (cba_events_eventHashes getVariable ["ace_vehicle_damage_bailOut", nil]);
+        if (isNil '_eventHash') exitWith {};
 		private _eventId = [_eventHash, "#lastId"] call CBA_fnc_hashGet;
-		if (isServer && {_eventId > 0}) then {systemChat "PCA > Disable gunner bail being on may cause issues due to another mod besides ACE using the same event."};
+		if (isServer && {_eventId > 0}) then {systemChat "MJB > Disable gunner bail being on may cause issues due to another mod besides ACE using the same event."};
 		["ace_vehicle_damage_bailOut", 0] call CBA_fnc_removeEventHandler;
 		["ace_vehicle_damage_bailOut", {
 			params ["_center", "_crewman", "_vehicle"];

@@ -24,7 +24,7 @@ private _title = "MJB Arma";
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],
     [_title, "Disconnect handling"],
-    true,
+    false,
     true,
     { },
     true
@@ -34,7 +34,7 @@ private _title = "MJB Arma";
     "CHECKBOX",
     ["Enable Active Disconnect Protection", "The AI will be hidden and attached to group leader or subordinate, then become group leader to prevent locality change death. On returning they will be unhidden and detached."],
     [_title, "Disconnect handling"],
-    true,
+    false,
     true,
     { },
     true
