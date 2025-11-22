@@ -12,7 +12,9 @@
 
 params [["_crate",objNull,[objNull]], ["_varName",nil,[""]], ["_override",false,[true]]];
 
-//systemChat str _this;
+if (!canSuspend) exitWith {_this spawn mjb_arsenal_fnc_initPersistentBox};
+sleep (random 1);
+
 mjb_profCrateOverride = _override;
 
 if (_crate isEqualTo objNull) exitWith {false};
@@ -46,66 +48,47 @@ _crate setVariable ["mjb_persistSaveHandler", (_crate addEventHandler ["Containe
   }]
 )];
 
-
-if (isNil "mjb_persistentBoxes") then {
-  mjb_persistentBoxes = [_crate];
-} else {
-  if !(_crate in mjb_persistentBoxes) then {
-    mjb_persistentBoxes = mjb_persistentBoxes + [_crate];};
-};
-
 if !(isServer) exitWith {};
 
-[{!(isNil "tmf_common_ending")}, {
-	[_container, (_container getVariable ["mjb_persistName",nil]) ] remoteExec ["mjb_arsenal_fnc_getPersistentBox", 2];
-}] call cba_fnc_waitUntilAndExecute;
+private _boxesName = ('mjb_persistentBoxes' + _varName);
+private _boxes = (missionNamespace getVariable [_boxesName,[]]);
+missionNamespace setVariable [_boxesName, (_boxes + [_crate])];
 
-_crate setVariable ["mjb_persistTimer", 
-	([_crate, _varName] spawn {
-		params ["_unit","_varName"];
+_crate addEventHandler ["Deleted", {
+	params ["_crate"];
+    private _varName = _crate getVariable ["mjb_persistName", nil];
+    if (isNil '_varName') exitWith {};
+	private _boxesName = ('mjb_persistentBoxes' + _varName);
+	private _boxes = (missionNamespace getVariable [_boxesName,[]]);
+	missionNamespace setVariable [_boxesName, (_boxes - [_crate] - [objNull])];
+}];
+
+if (isNil ("mjb_persistEnd" + _varName)) then {
+    missionNamespace setVariable [("mjb_persistEnd" + _varName),true];
+	[{!(isNil "tmf_common_ending")}, { params ["_varName"];
+        private _boxesName = ('mjb_persistentBoxes' + _varName);
+        private _boxes = (missionNamespace getVariable [_boxesName,[]]);
+        if (_boxes isEqualTo []) exitWith {};
+		[(_boxes select 0), _varName] remoteExec ["mjb_arsenal_fnc_getPersistentBox", 2];
+	}, [_varName]] call cba_fnc_waitUntilAndExecute;
+};
+
+if (isNil ("mjb_persistTimer" + _varName)) then {
+  missionNamespace setVariable [("mjb_persistTimer" + _varName), (
+    [_varName] spawn {
+		params ["_varName"];
 		sleep 300;
-		while {alive _unit} do {
-			[_unit, (_unit getVariable ["mjb_persistName",nil]) ] remoteExec ["mjb_arsenal_fnc_getPersistentBox", 2];
+        private _boxesName = ('mjb_persistentBoxes' + _varName);
+        private _boxes = (missionNamespace getVariable [_boxesName,[]]);
+		while {_boxes isNotEqualTo []} do {
+			[(_boxes select 0), _varName] remoteExec ["mjb_arsenal_fnc_getPersistentBox", 2];
 			sleep 300;
+            _boxes = (missionNamespace getVariable [_boxesName,[]]);
 		};
-	})
-];
+	}
+  )];
+};
 
 // _crate allowDamage false;
 
-private _loadbox = (missionProfileNamespace getVariable _varName);
-if (mjb_profCrateOverride) then {_loadbox = (profileNamespace getVariable _varName);};
-if !(isNil "_loadbox") then {
-
-  clearItemCargoGlobal _crate;
-  clearMagazineCargoGlobal _crate;
-  clearWeaponCargoGlobal _crate;
-  clearBackpackCargoGlobal _crate;
-
-  private _kkohitems = _loadbox # 0;
-  private _kkohweaps = _loadbox # 1;
-  private _kkohmags = _loadbox # 2;
-  private _kkohpacks = _loadbox # 3;
-  private _i = 0;
-  {
-    _crate addItemCargoGlobal [_x, (_kkohitems # 1) # _i];
-    _i = _i + 1;
-  } forEach _kkohitems # 0;
-
-  _i = 0;
-  {
-    _crate addWeaponWithAttachmentsCargoGlobal [_x, 1];
-    _i = _i + 1;
-  } forEach _kkohweaps;
-
-  _i = 0;
-  {
-    _crate addItemCargoGlobal [_x, (_kkohmags # 1) # _i];
-    _i = _i + 1;
-  } forEach _kkohmags # 0;
-
-  _i = 0;
-  {
-    _crate addBackpackCargoGlobal [_x, (_kkohpacks # 1) # _i];
-  } forEach _kkohpacks # 0;
-};
+[_crate,_varName] call mjb_arsenal_fnc_loadPersistentBox;
