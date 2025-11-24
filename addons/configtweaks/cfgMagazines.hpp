@@ -611,6 +611,11 @@ class CfgMagazineWells {
 			"mjb_15Rnd_65x25_M9"
         };
     };
+    class CBA_9x19_P320 {
+        mjb_mags[] = {
+			"mjb_17Rnd_65x25_M17"
+        };
+    };
     class CBA_9x19_MP5 {
         mjb_mags[] = {
 			"mjb_30Rnd_65x25_MP5"
