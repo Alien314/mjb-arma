@@ -12,7 +12,8 @@ class CfgPatches {
 	   		"ace_interact_menu",
 			"ace_finger"
 		};
-	};
+    skipWhenMissingDependencies = 1;
+  };
 };
 
 class Extended_PostInit_EventHandlers
