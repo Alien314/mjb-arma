@@ -544,6 +544,7 @@ private _itemMod =
     "cup_optic_aimm_compm2_blk",
     "cup_optic_aimm_compm4_blk",
     "cup_optic_aimm_zddot_blk",
+    "CUP_optic_G33_HWS_BLK",
 
     "tier1_exps3_0_g33_black_up",
     "tier1_exps3_0_g33_riser_black_up",
