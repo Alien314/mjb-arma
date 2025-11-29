@@ -31,6 +31,17 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_ctab_fix",
+    "CHECKBOX",
+    ["Ctab BFT activation fix", "Activates ctab BFT in initPost when enabled in ctab's settings, currently it's only activated on setting changes."],
+    [_title, "Player QoL"],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_slotSaverAI",
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],

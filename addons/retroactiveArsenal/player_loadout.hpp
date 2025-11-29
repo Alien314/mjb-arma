@@ -161,8 +161,12 @@ class basetrooper
 	linkedItems[] = {
 		"ItemWatch",
 		"ItemMap",
-		"ItemCompass",
-		"ItemGPS"
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemMicroDAGR",
+		#else
+			"ItemGPS",
+		#endif
+		"ItemCompass"
 	};
 
 	// These are put directly into the backpack.
@@ -354,11 +358,7 @@ class ammg : aar
 		LIST_4("greenmag_beltlinked_762x51_basic_200"),
 		LIST_2("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
 	};
-	linkedItems[] = {
-		"ItemWatch",
-		"ItemMap",
-		"ItemCompass",
-		"ItemGPS",
+	linkedItems[] += {
 		"Rangefinder"
 	};
 };
