@@ -632,9 +632,6 @@ class sfsl : sl
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
-	};
 	vest[] = {
 		//"rhsusf_plateframe_teamleader"
 		"CUP_V_B_Ciras_Khaki2"
@@ -681,9 +678,6 @@ class sfmed : cls
 	};
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_medic"
@@ -764,10 +758,6 @@ class sfmat : mat
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
-	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
 		"CUP_V_B_Ciras_Khaki3"
@@ -807,9 +797,6 @@ class sfar : ar
 	};
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_machinegunner"
@@ -871,10 +858,6 @@ class sfdmr : spotter {
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
-	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
 		"CUP_V_B_Ciras_Khaki3"
@@ -903,10 +886,6 @@ class sfaar : aar {
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"

@@ -228,7 +228,7 @@ if (mjb_localThunk) then {_msnOpt pushBack ["AIThinkOnlyLocal", mjb_localThunk]}
 setMissionOptions (createHashMapFromArray _msnOpt);
 
 if (isMultiplayer) then {
-	if (!isNil "ace_dragging") then {
+	if (!isNil "ace_dragging" && {mjb_carryLocally}) then {
 		mjb_carryLocalHandle = ["mjb_carryLocal", {
 			_this spawn {
 				params["_player", "_obj"];
@@ -242,14 +242,21 @@ if (isMultiplayer) then {
 		mjb_carryHandle = ["mjb_carryHandler", { params ["_obj"];
 			private _carrier = attachedTo _obj;
 			if (isNull _carrier) exitWith {};
-			if ((owner _carrier) isEqualTo (owner _obj)) exitWith {};
-			_obj setOwner (owner _carrier);
+            private _newID = owner _carrier;
+			if (_newID isEqualTo (owner _obj)) exitWith {};
+			_obj setOwner _newID;
+            _obj setVariable ['ace_common_lockStatus',(_obj getVariable ['ace_common_lockStatus', locked _obj]),_newID];
 			["mjb_carryLocal", [_carrier, _obj], _carrier] call CBA_fnc_targetEvent;
 		}] call CBA_fnc_addEventHandler;
 
-		mjb_handoffHandle = ["ace_common_setDir", {
-			if ((_this select 0) isKindOf "CAManBase") exitWith {};
-			["mjb_carryHandler", [(_this select 0)]] call CBA_fnc_serverEvent;
+		mjb_releaseHandle = ["ace_common_unlockVehicle", { params ["_obj"];
+            _obj setVariable ['ace_common_lockStatus',nil,true];
+		}] call CBA_fnc_addEventHandler;
+
+		mjb_handoffHandle = ["ace_common_setDir", { params ['_obj'];
+            if (player getVariable ['ace_dragging_isDragging',false]) exitWith {};
+			if (_obj isKindOf "CAManBase") exitWith {};
+			["mjb_carryHandler", [_obj]] call CBA_fnc_serverEvent;
 		}] call CBA_fnc_addEventHandler;
 	};
 	if (mjb_resyncAction) then {

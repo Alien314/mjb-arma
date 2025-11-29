@@ -284,7 +284,7 @@ private _itemEquipment =
     "ACE_microDAGR",
 
     //Diwako
-    "diw_armor_plates_main_plate",
+    //"diw_armor_plates_main_plate",
 
     //Greenmag speedloader
     "greenmag_item_speedloader"
@@ -695,8 +695,9 @@ private _itemMod =
     "tier1_mk46mod0_la5_m600v_black"
 ];
 
-// All muzzle devices, except the L85 blank firing adapter
-private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'type') isEqualTo 131072}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+// All muzzle devices, except the L85 blank firing adapter, and some bipods for some reason
+private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'tBody') isEqualTo 100 && {getText (_x >> 'nameSound') isEqualTo ''}}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+
 /*private _itemSuppressor = [
 	// rifle
     "CUP_muzzle_snds_socom762rc",
@@ -1911,7 +1912,7 @@ _itemEngineer append _itemUAVTermial;
 
 private _itemTankCrew =
 [
-    "diw_armor_plates_main_plate",
+    //"diw_armor_plates_main_plate",
     "greenmag_item_speedloader",
     "CUP_V_PMC_CIRAS_Black_Veh",
     "CUP_V_PMC_CIRAS_Khaki_Veh",
@@ -1988,7 +1989,7 @@ private _airHelm = [
 
 private _itemHeloCrew =
 [
-    "diw_armor_plates_main_plate",
+    //"diw_armor_plates_main_plate",
     "greenmag_item_speedloader",
     "CUP_V_PMC_CIRAS_Black_Veh",
     "CUP_V_PMC_CIRAS_Khaki_Veh",
@@ -2221,7 +2222,7 @@ if (_role isNotEqualTo "") then {systemChat ("Using set role: " + _role); _unitR
 } else { systemChat ("No role set, defaulting to: " + _unitRole); };
 private _leaderRole = ["tl","sl","sfsl","B_officer_F","B_Soldier_SL_F","B_recon_TL_F"];
 
-if (_unitRole in (["sfsl","sfar","sfmed","sfmat","sfdmf","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
+if (_unitRole in (["sfsl","sfar","sfaar","sfmed","sfmat","sfdmr","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
 
 //Match unitrole name with the classnames in loadout.
 switch (true) do
@@ -2242,7 +2243,7 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
 
-        player setVariable ["ace_medical_medicClass", 1, true];
+        //player setVariable ["ace_medical_medicClass", 1, true];
     };
     case (_unitRole in ["cls","B_medic_F"]) :
     {
@@ -2278,7 +2279,7 @@ switch (true) do
     };
         case (_unitRole in ["sfmed","B_recon_medic_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
@@ -2291,7 +2292,7 @@ switch (true) do
     };
         case (_unitRole in ["sfar","B_Patrol_Soldier_MG_F","B_Recon_exp_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox; // + _itemWeaponMMG
 
         player setUnitTrait ["Medic", true];
     };
