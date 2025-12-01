@@ -2396,6 +2396,14 @@ if (isNil "ace_medical_engine") then {
 	mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
 };
 
+private _limitedItems = []; // Items to be limited to default loadout amount
+
+[arsenal, _limitedItems] call ace_arsenal_fnc_removeVirtualItems;
+
+if !(isNil 'missionArsenal') then {
+	[missionArsenal, _limitedItems] call ace_arsenal_fnc_removeVirtualItems;
+};
+
 private _action =
 [
     "personal_arsenal","Personal Arsenal","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa",
