@@ -34,6 +34,32 @@ class CfgMagazines
 		displayName = "9.3mm 150Rnd Yellow Mixed Belt";
 		displayNameShort = "Mixed/Yellow";
 	};
+	class mjb_150Rnd_93x64_Mag_trc_grn_full : 150Rnd_93x64_Mag {
+		displayName = "9.3mm 150Rnd Green Tracer Belt";
+		displayNameShort = "Full/Green";
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
+	class mjb_150Rnd_93x64_Mag_trc_red_full : mjb_150Rnd_93x64_Mag_trc_red {
+		displayName = "9.3mm 150Rnd Red Tracer Belt";
+		displayNameShort = "Full/Red";
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
+	class mjb_150Rnd_93x64_Mag_trc_ylw_full : mjb_150Rnd_93x64_Mag_trc_ylw {
+		displayName = "9.3mm 150Rnd Yellow Tracer Belt";
+		displayNameShort = "Full/Yellow";
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	};
+	class mjb_150Rnd_93x64_Mag_trc_rbw_full : 150Rnd_93x64_Mag {
+		author = "Alien314";
+		ammo = "mjb_93x64_trc_wht";
+		displayName = "9.3mm 150Rnd Rainbow Tracer Belt";
+		displayNameShort = "Full/Rainbow";
+		tracersEvery = 1;
+		lastRoundsTracer = 0;
+	}
 
 #if __has_include("\z\greenmag\addons\main\script_component.hpp")
 
@@ -587,7 +613,11 @@ class CfgMagazineWells {
     class CBA_93x64_LINKS {
         mjb_mags[] = {
 			"mjb_150Rnd_93x64_Mag_trc_red",
-			"mjb_150Rnd_93x64_Mag_trc_ylw"
+			"mjb_150Rnd_93x64_Mag_trc_ylw",
+			"mjb_150Rnd_93x64_Mag_trc_grn_full",
+			"mjb_150Rnd_93x64_Mag_trc_red_full",
+			"mjb_150Rnd_93x64_Mag_trc_ylw_full",
+			"mjb_150Rnd_93x64_Mag_trc_rbw_full"
         };
     };
 

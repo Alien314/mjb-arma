@@ -14,6 +14,7 @@ class CfgAmmo
 	class B_93x64_Ball: BulletBase {};
 	class mjb_93x64_trc_red: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_red"; };
 	class mjb_93x64_trc_ylw: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; };
+	class mjb_93x64_trc_wht: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_white"; };
 
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_g_vog25;
