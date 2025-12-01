@@ -10,7 +10,10 @@ class CfgFactionClasses {
 class CfgGroups {
 	class East { // East - Opfor, Empty - Civ, Independent, West - Blufor
 		/*/
-		Submit a config like the below 'mjb_customFaction' example, renaming any customX entries, and a tmf loadout named similarly to the faction or group. Using these I should be able to add custom groups for zeus use. Tools > Config Viewer, then CfgGroups for more examples.
+		Submit a config like the below 'mjb_customFaction' example, renaming any customX entries,
+		and a tmf loadout named similarly to the faction or group.
+		Using these I should be able to add custom groups for zeus use.
+		Tools > Config Viewer, then CfgGroups for more examples.
 		//*/
 		class mjb_customFaction {
 			name = "Custom Faction"; // maybe include your handle
