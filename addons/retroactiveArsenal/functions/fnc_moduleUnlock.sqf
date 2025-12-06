@@ -16,7 +16,7 @@ if (isNil "zen_dialog") exitWith {};
 
 ["Lock/Unlock", 
 	[
-		["CHECKBOX", "Empty to Unlock, Checked to Lock:", false, true],
+		["CHECKBOX", "Empty to Unlock, Check to Lock:", false, true],
 		["CHECKBOX", "Lock for Players Only:", false, true],
 		["CHECKBOX", "Lock Vehicle Inventory:", false, true]
 	], {  params ["_values", "_args"];

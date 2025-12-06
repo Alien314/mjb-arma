@@ -298,6 +298,10 @@ if (isMultiplayer) then {
 	if (mjb_slotSaverAIExt) then {
 		player setVariable ["mjb_ogGroup",(group _unit),true];
 	};
+
+	["mywife", {
+		call mjb_arsenal_fnc_mywife;
+	}, "all", []] call CBA_fnc_registerChatCommand;
 };
 
 if (isDedicated) exitWith {};
@@ -402,10 +406,10 @@ mjb_persistHandle = ["mjb_modulePersist", { params ["_name"];
     };
 }] call CBA_fnc_addEventHandler;
 
-
 	["ace_arsenal_displayClosed", {
 		params ["_loadout"];
         [0,true] spawn mjb_arsenal_fnc_toughLoop;
+		if (mjb_arsenal_enableRainbow) then {call mjb_arsenal_fnc_rainbow};
         if (isMultiplayer) then {[player,'ACE_NoVoice'] remoteExec ['setSpeaker'];};
 		if (isNil 'ace_medical_engine' && {mjb_arsenal_maxLoadoutInjectors > 0}) then {
 			private _count = 0;

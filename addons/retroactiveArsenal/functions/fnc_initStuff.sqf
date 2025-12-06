@@ -12,6 +12,21 @@ if (diw_armor_plates_main_showDamageMarker && {(mjb_suppressedMarker min mjb_sup
     }];
 };
 
+if !(isNil 'mjb_noTabJIP') then {
+    0 spawn { sleep 3;
+		private _ctabItems = ( ("getText (_x >> 'author') isEqualTo 'cTab Authors'" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["ItemcTabHCam"] + ["ItemGPS","ACE_microDAGR","ACE_DAGR"] );
+
+		{ 
+			private _did = true;
+			while {_did} do {
+				_did = ([player, _x] call CBA_fnc_removeItem);
+				sleep 0.01;
+			}; 
+			player unlinkItem _x;
+		} forEach _ctabItems;
+	};
+};
+
 if (mjb_EMfix) then {
 	player addEventHandler ["AnimStateChanged", {
 		params ["_unit", "_anim"]; 

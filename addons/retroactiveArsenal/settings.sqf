@@ -359,3 +359,12 @@ private _category = "AI";
     },
     true
 ] call CBA_fnc_addSetting;
+
+[
+    "mjb_arsenal_enableRainbow",
+    "CHECKBOX",
+    ["Enable Rainbow", "Activates rainbow tracers and infinite ammo for the HK121/MG5/Navid when closing ace arsenal with the rainbow mag loaded."],
+    [_title, "xShenanigans"],
+    false,
+    true
+] call CBA_fnc_addSetting;

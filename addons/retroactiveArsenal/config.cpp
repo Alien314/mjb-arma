@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleVcom"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -102,6 +102,9 @@ class CfgFactionClasses {
         priority = 2;
         side = 7;
     };
+    class VCOM : MJB {
+        displayName = "VCOM";
+    };
 };
 
 class CfgVehicles
@@ -146,6 +149,12 @@ class CfgVehicles
         function = "mjb_arsenal_fnc_moduleMoveArsenal";
         icon = "\A3\ui_f\data\gui\rsc\RscDisplayArsenal\spaceGarage_ca.paa";
     };
+    class mjb_moduleNoTab : mjb_moduleBase {
+        curatorCanAttach = 0;
+        displayName = "Disable BFT/Devices";
+        function = "mjb_arsenal_fnc_moduleNoTab";
+        icon = "\A3\ui_f\data\GUI\Cfg\Hints\Map_ca.paa";
+    };
 	class mjb_moduleEnd : ModuleEndMission_F {
         displayName = "End Scenario (No Music/MJB Persistence Save)";
 		function = "mjb_arsenal_fnc_moduleEnd";
@@ -177,9 +186,17 @@ class CfgVehicles
 	};
 	class mjb_moduleUnlock : mjb_moduleBase {
         curatorCanAttach = 1;
-        displayName = "Un/Lock Vehicle/Container (Vehicle)";
+        displayName = "Un/Lock Vehicle/Container";
 		function = "mjb_arsenal_fnc_moduleUnlock";
 		icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+        isGlobal = 0;
+	};
+	class mjb_moduleVcom : mjb_moduleBase {
+        category = "VCOM";
+        curatorCanAttach = 1;
+        displayName = "Change VCOM Settings (Unit/Vehicle/Ground for Global)";
+		function = "mjb_arsenal_fnc_moduleVCOM";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
         isGlobal = 0;
 	};
 };
