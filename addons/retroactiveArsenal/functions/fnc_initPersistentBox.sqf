@@ -30,7 +30,7 @@ if (!isNil "_prevPersist") then {
 		{
 			[] call mjb_arsenal_fnc_arsenalAmmo;
 		},
-		{},
+		{true},
 		{},
 		[],
 		[0,0,0],
