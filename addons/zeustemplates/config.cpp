@@ -36,11 +36,11 @@ class CfgMissions {
 		};
 		class mjb_rzt_vr2_CA : mjb_rzt_vr2 {
 			briefingName = "MJB Zeus Combined Arms 2,2";
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_402.VR";
+			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.VR";
 			overviewText = "Combined Arms Zeus template for RATS.";
 		};
 
-		#define VARC(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_402.##EXT
+		#define VARC(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.##EXT
 		#define VARD(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.##EXT
 		#define QUOTE(var1) #var1
 		#define COMMA , // does this work? Rosche, Germany
