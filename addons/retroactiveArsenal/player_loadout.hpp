@@ -162,7 +162,7 @@ class basetrooper
 		"ItemWatch",
 		"ItemMap",
 		#if __has_include("\ctab\script_component.hpp")
-			"ItemMicroDAGR",
+			"ItemAndroid",
 		#else
 			"ItemGPS",
 		#endif
@@ -182,7 +182,7 @@ class basetrooper
 	};
 
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
-	code = "_this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
+	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
     /* tmfSpawnFix sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
@@ -203,10 +203,10 @@ class r : basetrooper
 		LIST_2("ACE_M84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
-		LIST_15("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] += {
-		LIST_4("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
+		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -256,13 +256,13 @@ class ar : basetrooper
 		#else
 			LIST_2("FirstAidKit"),
 		#endif
-		LIST_2("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
+		LIST_2("greenmag_beltlinked_556x45_basic_200")
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
 	backpackItems[] = {
-		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
+		LIST_5("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_3("FirstAidKit"),
@@ -271,7 +271,7 @@ class ar : basetrooper
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
-		LIST_4("greenmag_beltlinked_556x45_basic_200")
+		LIST_3("greenmag_beltlinked_556x45_basic_200")
 	};
 };
 
@@ -304,6 +304,11 @@ class aar : r
 class mmg : ar
 {
 	displayName = "MMG Gunner";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	primaryWeapon[] =
 	{
 		"CUP_lmg_Mk48"
@@ -333,7 +338,8 @@ class mmg : ar
 		#else
 			LIST_4("FirstAidKit"),
 		#endif
-		LIST_5("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
+		LIST_4("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
+		LIST_1("greenmag_beltlinked_762x51_basic_200")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -386,19 +392,24 @@ class sniper : basetrooper
 	};
 	magazines[] = {
 		"ACE_ATragMX",
-		"greenmag_ammo_127x99_basic_60Rnd",
+		"ACE_Clacker",
+		"DemoCharge_Remote_Mag",
+		LIST_2("greenmag_ammo_127x99_basic_60Rnd"),
 		LIST_2("CUP_40Rnd_46x30_MP7"),
 		LIST_6("CUP_10Rnd_127x99_M107")
 	};
 	items[] = {
 		"greenmag_item_speedloader",
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc",
+		#endif
 		"ACE_RangeCard",
 		"ACE_MapTools",
 		"HandGrenade",
 		LIST_2("SmokeShell")
 	};
 	backpackItems[] += {
-
+		"ACE_Tripod"
 	};
 };
 
@@ -421,12 +432,17 @@ class tl : r
 {
 	displayName = "Team Leader";
 	primaryWeapon[] = {
-		"CUP_arifle_mk18_m203_black",
+		"CUP_arifle_mk18_m203_black"
 	};
 	attachment[] = {
 		"CUP_acc_llm_black"
 	};
 	bipod[] = {};
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	magazines[] = {
 		LIST_2("ACE_M84"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
@@ -525,7 +541,6 @@ class lat : r
 	};
 	backpackItems[] =
 	{
-		LIST_4("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		LIST_1("CUP_launch_M136")
 	};
@@ -534,6 +549,11 @@ class lat : r
 class mat : r
 {
 	displayName = "Antitank Trooper";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	secondaryWeapon[] = {
 		"launch_MRAWS_green_F"
 	};
@@ -570,6 +590,7 @@ class amat : r
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		LIST_4("MRAWS_HEAT_F")
 	};
 };
@@ -585,7 +606,7 @@ class hat : mat
 	};
 	backpackItems[] =
 	{
-		LIST_2("Titan_AT"),
+		LIST_3("Titan_AT"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_5("FirstAidKit"),
@@ -594,7 +615,7 @@ class hat : mat
 		#else
 			LIST_5("FirstAidKit"),
 		#endif
-		"greenmag_ammo_556x45_basic_60Rnd"
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -608,9 +629,17 @@ class ahat : hat
 	items[] += {
 		LIST_2("SmokeShell")
 	};
+};
+
+class spaa : hat
+{
+	displayName = "Specialized Antiair";
+	secondaryWeapon[] = {
+		"launch_I_Titan_F"
+	};
 	backpackItems[] =
 	{
-		LIST_3("Titan_AT"),
+		LIST_3("Titan_AA"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_5("FirstAidKit"),
@@ -623,9 +652,21 @@ class ahat : hat
 	};
 };
 
+class aspaa : spaa
+{
+	displayName = "Specialized Antiair ammo bearer";
+	secondaryWeapon[] = {};
+	items[] += {
+		LIST_2("SmokeShell")
+	};
+};
+
 class sfsl : sl
 {
 	displayName = "SF Team Leader";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
@@ -655,6 +696,7 @@ class sfsl : sl
 		LIST_7("CUP_30Rnd_556x45_Emag_Tracer_Yellow"),
 		LIST_4("ACE_CTS9"),
 		LIST_2("HandGrenade"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		"CUP_12Rnd_45ACP_mk23"
 	};
 	backpackItems[] +={
@@ -751,6 +793,9 @@ class sfmed : cls
 class sfmat : mat
 {
 	displayName = "SF Antitank trooper";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
@@ -777,9 +822,10 @@ class sfmat : mat
 		LIST_2("ACE_IR_Strobe_Item")
 	};
 	magazines[] = {
-		LIST_7("CUP_30Rnd_556x45_Emag"),
+		LIST_12("CUP_30Rnd_556x45_Emag"),
 		LIST_2("ACE_CTS9"),
 		LIST_2("SmokeShellBlue"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		"HandGrenade",
 		"CUP_12Rnd_45ACP_mk23"
 	};
@@ -851,6 +897,9 @@ class sfar : ar
 
 class sfdmr : spotter {
 	displayName = "SF Sharpshooter";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
@@ -880,6 +929,9 @@ class sfdmr : spotter {
 
 class sfaar : aar {
 	displayName = "SF Ammo Bearer";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
@@ -936,6 +988,10 @@ class ceng : basetrooper
 		"CUP_muzzle_snds_mp7"
 	};
 	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc",
+		#endif
+		"ACE_DefusalKit",
 		"ACE_Clacker"
 	};
 	magazines[] = {
@@ -960,16 +1016,37 @@ class ceng : basetrooper
 		#endif
 		"greenmag_ammo_46x30_basic_60Rnd",
 		"ACE_Wirecutter",
+		"ToolKit",
+		LIST_2("ACE_UAVBattery"),
+		"MineDetector",
 		LIST_2("APERSTripMine_Wire_Mag"),
 		LIST_2("DemoCharge_Remote_Mag"),
-		LIST_2("ClaymoreDirectionalMine_Remote_Mag"),
-		"ACE_FlareTripMine_Mag",
-		"ATMine_Range_Mag",
-		"SLAMDirectionalMine_Wire_Mag"
+		LIST_2("SLAMDirectionalMine_Wire_Mag")
 	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
+};
+
+class isr : r {
+	displayName = "Intel Surveillance Recon Specialist";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc",
+			"ItemcTabMisc",
+		#endif
+	};
+	linkedItems[] = {
+		"ItemWatch",
+		"ItemMap",
+		"ItemCompass"
+	};
+	backpackItems[] =
+	{
+		LIST_8("ACE_UAVBattery")
+	};
+
+	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix; private _sideID = ((side _this) call BIS_fnc_sideID); private _sideTerminal = (['O_UavTerminal', 'B_UavTerminal', 'I_UavTerminal', 'C_UavTerminal', '','','','','',''] select _sideID); _this linkItem _sideTerminal;";
 };
 
 class crew : basetrooper
