@@ -33,3 +33,5 @@
 ["z\mjb\addons\arsenal\functions\fnc_openedZeus.sqf", "mjb_arsenal_fnc_openedZeus"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_openedZeusServer.sqf", "mjb_arsenal_fnc_openedZeusServer"] call CBA_fnc_compileFunction;
 //["z\mjb\addons\arsenal\functions\fnc_serverUnsignedData.sqf", "mjb_arsenal_fnc_serverUnsignedData"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_wgzPathModeFix.sqf", "jac_fnc_pathDrawingMode"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_wgzControlGroupsFix.sqf", "jac_fnc_control_groups"] call CBA_fnc_compileFunction;
