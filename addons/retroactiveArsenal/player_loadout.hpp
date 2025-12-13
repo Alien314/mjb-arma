@@ -108,7 +108,7 @@ class basetrooper
 		"V_PlateCarrier2_blk"
 	};
 	backpack[] = {
-		"B_Kitbag_rgr"
+		"B_AssaultPack_rgr"
 	};
 	headgear[] = {
 		"H_HelmetSpecB_blk"
@@ -186,7 +186,7 @@ class basetrooper
     /* tmfSpawnFix sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
-
+// Basic RAT Rifle/JIP slot
 class r : basetrooper
 {
 	displayName = "Rifletrooper";
@@ -230,6 +230,7 @@ class r : basetrooper
 
 };
 
+// RATS Automatic Rifle Slot
 class ar : basetrooper
 {
 	displayName = "Machinegun";
@@ -258,9 +259,10 @@ class ar : basetrooper
 		#endif
 		LIST_2("greenmag_beltlinked_556x45_basic_200")
 	};
-	backpack[] = {
-		"B_Carryall_cbr"
-	};
+	// Commented out, we may want this back in the future
+	// backpack[] = {
+	//	"B_Carryall_cbr"
+	// };
 	backpackItems[] = {
 		LIST_5("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
@@ -275,12 +277,14 @@ class ar : basetrooper
 	};
 };
 
+// RATS Rifle Ammo Bearer
 class aar : r
 {
 	displayName = "Machinegun Ammo Bearer";
-	backpack[] = {
-		"B_Carryall_cbr"
-	};
+	// Commented out, we may want this back in the future
+	// backpack[] = {
+	// 	"B_Carryall_cbr"
+	// };
 	items[] += {
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -301,6 +305,7 @@ class aar : r
 	};
 };
 
+// RATS Medium Machine Gunner
 class mmg : ar
 {
 	displayName = "MMG Gunner";
@@ -346,6 +351,7 @@ class mmg : ar
 	};
 };
 
+// RATS Medium Machine Gunner Assistant
 class ammg : aar
 {
   displayName = "Assistant MMG";
@@ -369,6 +375,7 @@ class ammg : aar
 	};
 };
 
+// RATS Sniper
 class sniper : basetrooper
 {
 	displayName = "Sniper";
@@ -413,6 +420,7 @@ class sniper : basetrooper
 	};
 };
 
+// RATS Spotter
 class spotter : r
 {
 	displayName = "Spotter";
@@ -428,6 +436,7 @@ class spotter : r
 	};
 };
 
+// RATS Rifle Fireteam Leader
 class tl : r
 {
 	displayName = "Team Leader";
@@ -469,6 +478,7 @@ class tl : r
 	};
 };
 
+// RATS Squad Leader
 class sl : tl
 {
 	displayName = "Squad Leader";
@@ -478,6 +488,7 @@ class sl : tl
 	};
 };
 
+// RATS Medic
 class cls : r
 {
 	displayName = "Medic";
@@ -533,6 +544,7 @@ class cls : r
 	};
 };
 
+// RATS Rifle Light Anti-Tank
 class lat : r
 {
 	displayName = "Trooper (Light Anti-tank)";
@@ -546,6 +558,7 @@ class lat : r
 	};
 };
 
+// RATS Medium Anti-Tank
 class mat : r
 {
 	displayName = "Antitank Trooper";
@@ -574,6 +587,7 @@ class mat : r
 	};
 };
 
+// RATS Assistant Medium Anti-Tank
 class amat : r
 {
 	displayName = "Antitank ammo bearer";
@@ -595,6 +609,7 @@ class amat : r
 	};
 };
 
+// RATS Heavy Anti-Tank
 class hat : mat
 {
 	displayName = "Heavy Antitank Trooper";
@@ -622,6 +637,7 @@ class hat : mat
 	};
 };
 
+// RATS Assistant Anti-Tank
 class ahat : hat
 {
 	displayName = "Heavy Antitank ammo bearer";
@@ -631,6 +647,7 @@ class ahat : hat
 	};
 };
 
+// RATS Anti-Air
 class spaa : hat
 {
 	displayName = "Specialized Antiair";
@@ -652,6 +669,7 @@ class spaa : hat
 	};
 };
 
+// RATS Assistant Anti-Air
 class aspaa : spaa
 {
 	displayName = "Specialized Antiair ammo bearer";
@@ -661,6 +679,7 @@ class aspaa : spaa
 	};
 };
 
+// RATS Special Forces Team Leader/Squad Leader
 class sfsl : sl
 {
 	displayName = "SF Team Leader";
@@ -707,11 +726,13 @@ class sfsl : sl
 	};
 };
 
+// RATS Special Forces Platoon Leader
 class sfl : sfsl
 {
 	displayName = "SF Commander";
 };
 
+// RATS Special Forces Medic
 class sfmed : cls
 {
 	displayName = "SF Medic";
@@ -790,6 +811,7 @@ class sfmed : cls
 	};
 };
 
+// RATS Special Forces AT Operator
 class sfmat : mat
 {
 	displayName = "SF Antitank trooper";
@@ -835,6 +857,7 @@ class sfmat : mat
 	};
 };
 
+// RATS Special Forces Machine Gunner
 class sfar : ar
 {
 	displayName = "SF Machinegunner";
@@ -895,6 +918,7 @@ class sfar : ar
 	};
 };
 
+// RATS Special Forces Sharpshooter
 class sfdmr : spotter {
 	displayName = "SF Sharpshooter";
 	attachment[] += {
@@ -927,6 +951,7 @@ class sfdmr : spotter {
 	};
 };
 
+// RATS Special Forces Ammo Bearer
 class sfaar : aar {
 	displayName = "SF Ammo Bearer";
 	attachment[] += {
@@ -964,6 +989,7 @@ class sfaar : aar {
 	};
 };
 
+// RATS Combat Engineer
 class ceng : basetrooper
 {
 	displayName = "Combat Engineer";
@@ -1028,6 +1054,7 @@ class ceng : basetrooper
 	};
 };
 
+// RATS Intelligence, Surveillance, and Reconnaissance Operator. AKA Drone Operator
 class isr : r {
 	displayName = "Intel Surveillance Recon Specialist";
 	items[] += {
@@ -1049,6 +1076,7 @@ class isr : r {
 	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix; private _sideID = ((side _this) call BIS_fnc_sideID); private _sideTerminal = (['O_UavTerminal', 'B_UavTerminal', 'I_UavTerminal', 'C_UavTerminal', '','','','','',''] select _sideID); _this linkItem _sideTerminal;";
 };
 
+// RATS Ground Vehicle Operators
 class crew : basetrooper
 {
 	displayName = "Crew";
@@ -1089,6 +1117,7 @@ class crew : basetrooper
 	};
 };
 
+// RATS Helicopter Crew
 class helocrew : crew
 {
 	displayName = "Helo Crew";
@@ -1098,9 +1127,6 @@ class helocrew : crew
 		"Tarkov_Uniforms_262",
 		"Tarkov_Uniforms_499"
 	};
-	backpack[] = {
-        "B_AssaultPack_rgr"
-    };
 	backpackItems[] = {
 		"Toolkit"
     };
@@ -1113,6 +1139,7 @@ class helocrew : crew
 	};
 };
 
+// RATS Fixed-Wing Pilots
 class aircrew : basetrooper
 {
 	displayName = "Aircrew";
