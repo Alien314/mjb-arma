@@ -232,21 +232,18 @@ private _itemEquipment =
     //============================================================
     //Backpacks
     //============================================================
-    "B_AssaultPack_rgr",
+    
+	"CUP_B_AssaultPack_ACU",
+	"B_AssaultPack_blk",
+	"B_AssaultPack_rgr",
     "B_AssaultPack_cbr",
     "B_AssaultPack_khk",
     "B_AssaultPack_mcamo",
+	"B_AssaultPack_dgtl",
     "B_AssaultPack_tna_F",
-    "CUP_B_AssaultPack_ACU",
-    "B_FieldPack_oucamo",
-    "B_Kitbag_rgr",
-    "B_Kitbag_cbr",
-    "B_Kitbag_sgg",
-    "B_Kitbag_tan",
-    "B_Kitbag_mcamo",
-    "CUP_B_GER_Pack_Flecktarn",
-    "CUP_B_GER_Pack_Tropentarn",
-
+	"B_AssaultPack_ocamo",
+	"B_AssaultPack_sgg",
+    
     //============================================================
     //Helmets
     //============================================================
@@ -396,7 +393,15 @@ _itemEquipment append _itemWeaponMelee;
 
 private _itemPackMedium =
 [
-    "B_Carryall_cbr",
+    "B_FieldPack_oucamo",
+    "B_Kitbag_rgr",
+    "B_Kitbag_cbr",
+    "B_Kitbag_sgg",
+    "B_Kitbag_tan",
+    "B_Kitbag_mcamo",
+    "CUP_B_GER_Pack_Flecktarn",
+    "CUP_B_GER_Pack_Tropentarn",
+	"B_Carryall_cbr",
     "B_Carryall_taiga_F",
     "B_Carryall_eaf_F",
     "B_Carryall_oli",
@@ -2414,11 +2419,11 @@ switch (true) do
 {
     case (_unitRole in ["ar","B_Soldier_AR_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
     case (_unitRole in ["aar","B_Soldier_AAR_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;// + _itemWeaponAR
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;// + _itemWeaponAR
     };
     case (_unitRole in _leaderRole) :
     {
@@ -2438,15 +2443,15 @@ switch (true) do
     };
     case (_unitRole in ["mat","B_Soldier_LAT_F"]) : // for old missions, will be wrong without tmf role
     {
-        [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["amat","B_T_Soldier_AAT_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["lat","B_Soldier_LAT2_F","B_Soldier_LAT_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["sniper","B_Sharpshooter_F"]) :
     {
