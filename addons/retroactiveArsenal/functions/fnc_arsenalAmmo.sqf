@@ -95,6 +95,7 @@ if (_tracer isEqualTo "") then {_tracer = ['yellow','red'] select _blufor};
     if (isNil "mjb_arsenalAmmo") then {
         mjb_arsenalAmmo = "building" createVehicleLocal [0,0,0];
     };
+	[mjb_arsenalAmmo, false] call ace_arsenal_fnc_removeBox;
 //};
 
 #include "_arsenalMacros.hpp"
@@ -615,9 +616,9 @@ private _exWeap = (magazines player + [currentMagazine player]);
 
 _exWeap apply {	
 	private _return = _x;
-	private _ammo = getText (_x >> 'ammo');
+	private _ammo = getText (configFile >> "CfgMagazines" >> _x >> 'ammo');
 	{
-		if (_ammo isKindOf ["",configFile >> "CfgAmmo"]) exitWith {_return = ""}
+		if (_ammo isKindOf [_x,configFile >> "CfgAmmo"]) exitWith {_return = ""}
 	} forEach ["RocketBase","MissileBase","TimeBombCore"];
 	_return
 };
@@ -627,15 +628,11 @@ _itemWeaponAmmo append _exWeap;
 private _greenmagArray = "'basic' in (configName _x) && {getNumber (_x >> 'scopeArsenal') > 1 && {getNumber (_x >> 'greenmag_bullets') in [24,60,100,200]}}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
 _greenmagArray append ['greenmag_ammo_9x39_ball_60Rnd','greenmag_ammo_303_ball_60Rnd','greenmag_ammo_50AE_ball_60Rnd','greenmag_ammo_765x17_ball_60Rnd'];
 
-[mjb_arsenalAmmo, (_greenmagArray + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponMMGAmmo + _itemWeaponARAmmo + _itemLeaderEquipment + _itemSF + _itemWeaponSharpshooter + _itemWeaponGL + _itemSniper + _itemSniperAmmo /*+ _itemWeaponSFAR*/)] call ace_arsenal_fnc_initBox;
+[mjb_arsenalAmmo, (_greenmagArray + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponMMGAmmo + _itemWeaponARAmmo + _itemLeaderEquipment + _itemSF + _itemWeaponSharpshooter + _itemWeaponGL + _itemSniper + _itemSniperAmmo /*+ _itemWeaponSFAR*/)] call ace_arsenal_fnc_initBox;
 
 if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
-  
   if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
   mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
 };
-
-if (isNil "mjb_medicalButtonId") then {mjb_medicalButtonId = -1;};
-mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
 
 [mjb_arsenalAmmo, player] call ace_arsenal_fnc_openBox;
