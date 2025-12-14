@@ -248,6 +248,16 @@ class CfgWeapons {
 #else
 #endif
 
+// squeak two at4 into kitbag
+  class Launcher_Base_F;
+  class CUP_launch_M136_Loaded : Launcher_Base_F {class WeaponSlotsInfo;};
+  class CUP_launch_M136 : CUP_launch_M136_Loaded {
+	class WeaponSlotsInfo : WeaponSlotsInfo { mass = 137.4; };
+  };
+  class CUP_M136 : CUP_launch_M136 {
+	class WeaponSlotsInfo : WeaponSlotsInfo { mass = 137.4; };
+  };
+
   // yeet bino sway
   class Binocular : Default {
     swayCoef = 0.04; // default 0.34

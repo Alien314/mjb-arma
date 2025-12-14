@@ -6,6 +6,7 @@ class CfgMagazines
 	class CA_Magazine : Default { 
 		//tracersEvery = 5; // might apply to too many things, vanilla locks down base mags with te0, could make new mags that apply to every gun of a caliber and add them to arsenal
 	};
+	class CA_LauncherMagazine;
 	class 30Rnd_556x45_Stanag : CA_Magazine {};
 
 	// MMG Tracer magazines rounds
@@ -59,7 +60,7 @@ class CfgMagazines
 		displayNameShort = "Full/Rainbow";
 		tracersEvery = 1;
 		lastRoundsTracer = 0;
-	}
+	};
 
 #if __has_include("\z\greenmag\addons\main\script_component.hpp")
 
@@ -273,28 +274,6 @@ class CfgMagazines
 	RND12G(CUP_20Rnd_B_AA12_Buck_00,CA_Magazine);
 	RND12G(CUP_20Rnd_B_AA12_Slug,CA_Magazine);
 	RND12G(CUP_20Rnd_B_AA12_HE,CA_Magazine);
-	
-	/*/ Bizon class name fix, magwell at bottom
-	class CUP_64Rnd_9x19_Bizon_M : CA_Magazine
-	{scope = 0};
-	class CUP_64Rnd_Green_Tracer_9x19_Bizon_M : CA_Magazine
-	{scope = 0};
-	class CUP_64Rnd_Red_Tracer_9x19_Bizon_M : CA_Magazine
-	{scope = 0};
-	class CUP_64Rnd_White_Tracer_9x19_Bizon_M : CA_Magazine
-	{scope = 0};
-	class CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M : CA_Magazine
-	{scope = 0};
-	class CUP_64Rnd_9x18_Bizon_M : CUP_64Rnd_9x19_Bizon_M
-	{scope = 2};
-	class CUP_64Rnd_Green_Tracer_9x18_Bizon_M : CUP_64Rnd_Green_Tracer_9x19_Bizon_M
-	{scope = 2};
-	class CUP_64Rnd_Red_Tracer_9x18_Bizon_M : CUP_64Rnd_Red_Tracer_9x19_Bizon_M
-	{scope = 2};
-	class CUP_64Rnd_White_Tracer_9x18_Bizon_M : CUP_64Rnd_White_Tracer_9x19_Bizon_M
-	{scope = 2};
-	class CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M : CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M
-	{scope = 2};*/
 	
 	// RHS
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
@@ -513,6 +492,46 @@ class CfgMagazines
 #else
 
 #endif
+
+// cup mags weight fixes
+	class CUP_100Rnd_556x45_BetaCMag : CUP_30Rnd_556x45_Stanag {
+		mass = 45;
+	};
+	class CUP_200Rnd_TE4_Green_Tracer_556x45_M249 : CA_Magazine {
+		mass = 66;
+	};
+
+	class CUP_64Rnd_9x19_Bizon_M : CA_Magazine {
+		mass = 20;
+	};
+	class CUP_64Rnd_Green_Tracer_9x19_Bizon_M : CA_Magazine {
+		mass = 20;
+	};
+	class CUP_64Rnd_Red_Tracer_9x19_Bizon_M : CA_Magazine {
+		mass = 20;
+	};
+	class CUP_64Rnd_White_Tracer_9x19_Bizon_M : CA_Magazine {
+		mass = 20;
+	};
+	class CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M : CA_Magazine {
+		mass = 20;
+	};
+
+	class CUP_M136_M : CA_LauncherMagazine {
+		mass = 30; // squeak two at4 into kitbag
+	};
+	
+	/*/ Bizon class name fix, magwell at bottom
+	class CUP_64Rnd_9x18_Bizon_M : CUP_64Rnd_9x19_Bizon_M
+	{scope = 2};
+	class CUP_64Rnd_Green_Tracer_9x18_Bizon_M : CUP_64Rnd_Green_Tracer_9x19_Bizon_M
+	{scope = 2};
+	class CUP_64Rnd_Red_Tracer_9x18_Bizon_M : CUP_64Rnd_Red_Tracer_9x19_Bizon_M
+	{scope = 2};
+	class CUP_64Rnd_White_Tracer_9x18_Bizon_M : CUP_64Rnd_White_Tracer_9x19_Bizon_M
+	{scope = 2};
+	class CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M : CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M
+	{scope = 2};*/
 
 	//class rhs_rpg7_PG7V_mag;
 	//class rhs_rpg7_PG7VL_mag;
