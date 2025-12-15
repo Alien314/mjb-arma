@@ -138,6 +138,17 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_cfBaiFix",
+    "CHECKBOX",
+    ["Fix CF BAI on Zeus AI", "Runs CF BAI's init on zeus locality to make it's components affect AI they spawn (not global, so zeus can turn it off if it affects their performance)."],
+    [_title, _category],
+    true,
+    false,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_localThunk",
     "CHECKBOX",
     ["AI Think Only Local", "Disable processing targetting data for remote AI units, knowsAbout, targets and similar commands will cease to work on remote units. For a gain in client performance because they no longer have to calculate all AI units."],

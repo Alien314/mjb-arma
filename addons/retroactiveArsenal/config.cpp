@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleVcom"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleVcom","mjb_moduleSetUnitRole"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -43,6 +43,16 @@ class Extended_PreStart_EventHandlers
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStart.sqf']";
 	};
 };
+
+#if __has_include("\x\CF_BAI\addons\main\script_component.hpp")
+class Extended_Init_EventHandlers {
+    class CAManBase {
+        class mjb_CF_BAI_zeusSuppression {
+            init = "call mjb_arsenal_fnc_cf_bai_zeusInit";
+        };
+    };
+};
+#endif
 /*
 class CfgWorlds {
 	class DefaultWorld { class WaterExPars; };
@@ -182,14 +192,18 @@ class CfgVehicles
         displayName = "Re-Sync Player";
 		function = "mjb_arsenal_fnc_moduleResync";
 		icon = "\A3\ui_f\data\gui\cfg\Hints\Adjust_ca.paa";
-        isGlobal = 0;
 	};
 	class mjb_moduleUnlock : mjb_moduleBase {
         curatorCanAttach = 1;
         displayName = "Un/Lock Vehicle/Container";
 		function = "mjb_arsenal_fnc_moduleUnlock";
 		icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-        isGlobal = 0;
+	};
+	class mjb_moduleSetUnitRole : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Set Unit Role";
+		function = "mjb_arsenal_fnc_moduleSetUnitRole";
+		icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\rearm_ca.paa";
 	};
 	class mjb_moduleVcom : mjb_moduleBase {
         category = "VCOM";
@@ -197,7 +211,6 @@ class CfgVehicles
         displayName = "Change VCOM Settings (Unit/Vehicle/Ground for Global)";
 		function = "mjb_arsenal_fnc_moduleVCOM";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
-        isGlobal = 0;
 	};
 };
 
