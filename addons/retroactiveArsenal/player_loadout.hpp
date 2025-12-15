@@ -264,7 +264,6 @@ class ar : basetrooper
 	//	"B_Carryall_cbr"
 	// };
 	backpackItems[] = {
-		LIST_5("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_3("FirstAidKit"),
@@ -273,7 +272,8 @@ class ar : basetrooper
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
-		LIST_3("greenmag_beltlinked_556x45_basic_200")
+		LIST_4("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
+		//LIST_3("greenmag_beltlinked_556x45_basic_200")
 	};
 };
 
@@ -550,6 +550,9 @@ class lat : r
 	displayName = "Trooper (Light Anti-tank)";
 	secondaryWeapon[] = {
 		"CUP_launch_M136"
+	};
+	backpack[] = {
+		"B_Kitbag_rgr"
 	};
 	backpackItems[] =
 	{
@@ -1070,7 +1073,7 @@ class isr : r {
 	};
 	backpackItems[] =
 	{
-		LIST_8("ACE_UAVBattery")
+		LIST_5("ACE_UAVBattery")
 	};
 
 	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix; private _sideID = ((side _this) call BIS_fnc_sideID); private _sideTerminal = (['O_UavTerminal', 'B_UavTerminal', 'I_UavTerminal', 'C_UavTerminal', '','','','','',''] select _sideID); _this linkItem _sideTerminal;";
@@ -1127,6 +1130,9 @@ class helocrew : crew
 		"Tarkov_Uniforms_262",
 		"Tarkov_Uniforms_499"
 	};
+	//backpack[] = {
+    //    "B_AssaultPack_rgr"
+    //};
 	backpackItems[] = {
 		"Toolkit"
     };
