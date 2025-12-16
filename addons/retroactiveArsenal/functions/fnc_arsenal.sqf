@@ -1672,9 +1672,14 @@ private _itemSniperAmmo = [
 private _itemWeaponGL =
 [
     //============================================================
-    //Rifles
+    //Primary Weapons
     //============================================================
-    //5.56x45mm
+    //Grenade Launchers and Sling
+	"CUP_glaunch_Mk13",
+	"CUP_glaunch_M79",
+	"tsp_sling,"
+
+	//5.56x45mm
     "arifle_Mk20_GL_plain_F",
     "arifle_TRG21_GL_F",
 
