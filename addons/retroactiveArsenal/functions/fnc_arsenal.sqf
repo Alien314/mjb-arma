@@ -1677,7 +1677,7 @@ private _itemWeaponGL =
     //Grenade Launchers and Sling
 	"CUP_glaunch_Mk13",
 	"CUP_glaunch_M79",
-	"tsp_sling,"
+	"tsp_sling",
 
 	//5.56x45mm
     "arifle_Mk20_GL_plain_F",
