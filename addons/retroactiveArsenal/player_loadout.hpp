@@ -203,7 +203,7 @@ class r : basetrooper
 		LIST_2("ACE_M84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
-		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] += {
 		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
@@ -297,7 +297,7 @@ class aar : r
 	};
 	backpackItems[] = {
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
-		LIST_3("greenmag_beltlinked_556x45_basic_200"),
+		LIST_2("greenmag_beltlinked_556x45_basic_200"),
 		LIST_2("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
 	};
 	linkedItems[] += {
@@ -1109,11 +1109,12 @@ class crew : basetrooper
 		LIST_2("ACE_M84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
-		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_2("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] += {
 		"Toolkit",
-		LIST_3("greenmag_ammo_556x45_basic_60Rnd")
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		LIST_3("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -1134,7 +1135,9 @@ class helocrew : crew
     //    "B_AssaultPack_rgr"
     //};
 	backpackItems[] = {
-		"Toolkit"
+		"Toolkit",
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
+		LIST_3("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
     };
 	headgear[] = {
 		"H_PilotHelmetHeli_B"
