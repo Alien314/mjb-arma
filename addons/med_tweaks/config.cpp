@@ -50,23 +50,18 @@ class ace_medical_treatment {
   };
 };
 
-#define ARR_2(ARG1,ARG2) ARG1, ARG2
-#define QUOTE(var1) #var1
-#define GVAR(VAR) ace_medical_statemachine_##VAR
-#define QGVAR(VAR) QUOTE(GVAR(VAR))
-#define QQGVAR(VAR) QUOTE(QGVAR(VAR))
 class ACE_Medical_StateMachine {
 	class FatalInjury {
         class SecondChance {
-			condition = "mjb_med_tweaks_fnc_conditionSecondChance";
+			condition = "isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 0} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 0 }";
 		};
 	};
 	class CardiacArrest {
 		class DeathAI {
-			condition = QUOTE(!(_this getVariable [ARR_2(QQGVAR(AIUnconsciousness),ace_medical_statemachine_AIUnconsciousness)]) && {!isPlayer _this});
+			condition = "!(_this getVariable [""ace_medical_statemachine_AIUnconsciousness"", ace_medical_statemachine_AIUnconsciousness]) && {!isPlayer _this}";
 		};
         class Execution {
-            condition = "mjb_med_tweaks_fnc_conditionExecutionDeath";
+            condition = "(isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 2} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 2 }) && { !(_this getVariable [""ace_medical_deathBlocked"",false])}";
         };
 	};
 };
