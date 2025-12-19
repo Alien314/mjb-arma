@@ -1051,7 +1051,6 @@ class CfgVehicles {
     };
     // Limited AT
     class TransportMagazines {
-
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
       class _xx_rhs_rpg7_PG7VM_mag {
         count = 1;
@@ -1066,11 +1065,12 @@ class CfgVehicles {
         magazine = "rhs_rpg7_OG7V_mag";
       };
 #else
-#endif
-      class _xx_MRAWS_HE_F {
-        count = 1;
-        magazine = "MRAWS_HE_F";
+
+      class _xx_rhs_rpg7_PG7VL_mag {
+        count = 2;
+        magazine = "CUP_PG7VL_M";
       };
+#endif
       class _xx_MRAWS_HEAT55_F {
         count = 1;
         magazine = "MRAWS_HEAT55_F";
@@ -1089,7 +1089,6 @@ class CfgVehicles {
       };
     };
     // disposables
-    class TransportWeapons {
 
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
       class _xx_rhs_weap_rpg75 {
@@ -1101,6 +1100,11 @@ class CfgVehicles {
         weapon = "rhs_weap_M136";
       };
 #else
+    class TransportWeapons {
+      class _xx_CUP_launch_M136 {
+        count = 2;
+        weapon = "CUP_launch_M136";
+      };
 #endif
       class _xx_CUP_launch_FIM92Stinger {
         count = 1;
