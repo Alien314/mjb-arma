@@ -745,7 +745,11 @@ private _itemMod =
 ];
 
 // All muzzle devices, except the L85 blank firing adapter, and some bipods for some reason
-private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'tBody') isEqualTo 100 && {getText (_x >> 'nameSound') isEqualTo ''}}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 101}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+
+// Non-suppressor
+private _itemMuzzle = (_itemSuppressor select {getNumber (configFile >> 'CfgWeapons' >> _x >> 'ItemInfo' >> 'soundTypeIndex') isNotEqualTo 1});
+_itemMod append _itemMuzzle;
 
 /*private _itemSuppressor = [
 	// rifle
