@@ -10,7 +10,7 @@ class CfgPatches {
     requiredVersion = 0.1;
     author = "Alien314";
     name = "MJB Med tweaks";
-    requiredAddons[] = {"ace_medical_treatment"};
+    requiredAddons[] = {"ace_medical_statemachine","ace_medical_treatment"};
     skipWhenMissingDependencies = 1;
   };
 };
@@ -42,12 +42,33 @@ class Extended_PreStart_EventHandlers
 class ace_medical_treatment {
   class Medication {
     class Morphine {
-      hrIncreaseHigh[] = {-12,-35};
-      hrIncreaseLow[] = {-5,-10};
-      hrIncreaseNormal[] = {-8,-18};
+      hrIncreaseHigh[] = {-8,-20};
+      hrIncreaseLow[] = {-2,-5};
+      hrIncreaseNormal[] = {-4,-10};
       viscosityChange = -5;
     };
   };
+};
+
+#define ARR_2(ARG1,ARG2) ARG1, ARG2
+#define QUOTE(var1) #var1
+#define GVAR(VAR) ace_medical_statemachine_##VAR
+#define QGVAR(VAR) QUOTE(GVAR(VAR))
+#define QQGVAR(VAR) QUOTE(QGVAR(VAR))
+class ACE_Medical_StateMachine {
+	class FatalInjury {
+        class SecondChance {
+			condition = "mjb_med_tweaks_fnc_conditionSecondChance";
+		};
+	};
+	class CardiacArrest {
+		class DeathAI {
+			condition = QUOTE(!(_this getVariable [ARR_2(QQGVAR(AIUnconsciousness),ace_medical_statemachine_AIUnconsciousness)]) && {!isPlayer _this});
+		};
+        class Execution {
+            condition = "mjb_med_tweaks_fnc_conditionExecutionDeath";
+        };
+	};
 };
 
 // Smelling salts
