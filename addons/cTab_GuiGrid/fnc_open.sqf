@@ -48,7 +48,7 @@ params ["_interfaceType","_displayName", "_player", "_vehicle"];
 private _isDialog = [_displayName] call cTab_fnc_isDialog;
 
 private _textures = call {
-		if (!_isDialog && {mjb_ctab_noBorder}) exitWith {["",""]};
+		if (!_isDialog && {mjb_ctab_noBorderDef}) exitWith {["",""]};
 		if (_displayName in ["cTab_TAD_dsp","cTab_TAD_dlg"]) exitWith {
 			["\cTab\img\TAD_background_ca.paa","\cTab\img\TAD_background_night_ca.paa"]
 		};

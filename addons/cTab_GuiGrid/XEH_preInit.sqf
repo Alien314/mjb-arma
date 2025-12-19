@@ -1,11 +1,11 @@
 ["z\mjb\addons\ctab_gui_settings\fnc_open.sqf", "ctab_fnc_open"] call CBA_fnc_compileFunction;
 
 [
-    "mjb_ctab_noBorder",
+    "mjb_ctab_noBorderDef",
     "CHECKBOX",
     ["Hide Ctab border in GPS mode", "Hides border of cTab devices when not focused."],
     ["cTab", "GUI Settings"],
-    false,
+    true,
     false,
     { },
     true
