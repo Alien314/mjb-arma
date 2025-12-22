@@ -590,7 +590,8 @@ class CfgMagazines
 	class mjb_VOGMDP : rhs_vog25 {
 		ammo = "mjb_g_VOGMDP";
 		displayName = "VOG-MDP";
-		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";displaynameshort = "HEDP Grenade";
+		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";
+		displaynameshort = "HEDP Grenade";
 	};
 	class mjb_slog : rhs_vog25 {
 		ammo = "mjb_g_slog";
@@ -619,6 +620,10 @@ class CfgMagazines
 		descriptionshort = "Type: Solid Slug <br />Caliber: 40 mm<br />Rounds: 1<br />Used in: EGLM, M203";
 		displaynameshort = "Slug";
 	};//*/
+
+	class CUP_1Rnd_HEDP_M203 : 1Rnd_HE_Grenade_shell {
+		displaynameshort = "HEDP Grenade";
+	};
 };
 
 class CfgMagazineWells {
