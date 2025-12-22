@@ -438,6 +438,9 @@ if (_winter) then {
         "CUP_O_RUS_Patrol_bag_Winter"
     ];
     _itemEquipment append _winterCamo;
+
+	private _itemSantaH = ("getText (_x >> 'descriptionShort') isEqualTo 'Festive Santa Hat'" configClasses (configFile >> "CfgWeapons") apply {configName _x});
+	_itemEquipment append _itemSantaH;
 };
 
 private _itemPackHeavy =
