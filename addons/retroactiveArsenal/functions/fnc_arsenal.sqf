@@ -228,6 +228,14 @@ private _itemEquipment =
     "ThorcrvBlackRock_vest",
 	"ThorcrvThunderbolt_vest",
 	"ThorcrvTriton_vest",
+	"JCA_V_CarrierRigKBT_01_combat_MTP_alpine_F",
+	"JCA_V_CarrierRigKBT_01_combat_MTP_arid_F",
+	"JCA_V_CarrierRigKBT_01_combat_MTP_desert_F",
+	"JCA_V_CarrierRigKBT_01_combat_MTP_tropic_F",
+	"JCA_V_CarrierRigKBT_01_combat_MTP_woodland_F",
+	"JCA_V_CarrierRigKBT_01_combat_black_F",
+	"JCA_V_CarrierRigKBT_01_combat_olive_F",
+	"JCA_V_CarrierRigKBT_01_combat_sand_F",
 
     //============================================================
     //Backpacks
@@ -580,6 +588,12 @@ private _itemMod =
     "Tier1_Microt2_G33_Black_Up",
     "Tier1_Microt2_G33_Riser_Black_Up",
 
+	//MCC 3x
+	"MCC_EXPS3_UnityX_BLK_Up",
+	"MCC_GBRS_EXPS3_Mag_Up_FDE",
+	"MCC_MicroT2_UnityX_BLK_Up",
+	"MCC_Romeo9T_BLK_Up",
+
     //Dovetail (Ak Sights)
     "CUP_optic_pechenegscope", // 2.8x
 	"CUP_optic_PGO7V3",
@@ -619,6 +633,18 @@ private _itemMod =
     "Tier1_SOCOM762_2_DE",
     "Tier1_SOCOM762_2_Black",
     "Tier1_kac_556_qdc_cqb_black",
+
+	"MCC_CGS6_FH",
+	"MCC_JK_WarEagle",
+	"MCC_KAC_3PFDE",
+	"MCC_SUREFIRE_RBC",
+	"MCC_SF4P_556",
+	"MCC_WARCOMP_556",
+	"MCC_Warden",
+	"MCC_Warden_FDE",
+	"MCC_RotexV_D_556",
+	"MCC_RotexV_D_556_FDE",
+	"MCC_RotexV_D_556_GRY",
 
     //============================================================
     //Bipod & Foregrips
@@ -719,7 +745,11 @@ private _itemMod =
 ];
 
 // All muzzle devices, except the L85 blank firing adapter, and some bipods for some reason
-private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'tBody') isEqualTo 100 && {getText (_x >> 'nameSound') isEqualTo ''}}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+private _itemSuppressor = (("getNumber (_x >> 'scope') isEqualTo 2 && {getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 101}" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ["CUP_acc_bfa"]);
+
+// Non-suppressor
+private _itemMuzzle = (_itemSuppressor select {getNumber (configFile >> 'CfgWeapons' >> _x >> 'ItemInfo' >> 'soundTypeIndex') isNotEqualTo 1});
+_itemMod append _itemMuzzle;
 
 /*private _itemSuppressor = [
 	// rifle
@@ -795,6 +825,12 @@ private _itemReflexSight =
     "rhs_acc_ekp8_18",
     "rhsusf_acc_t1_low",
     "rhsusf_acc_t1_low_fwd",
+
+	"MCC_EXPS3_BLK",
+	"MCC_MicroT2",
+	"MCC_GBRS_T2_BLK",
+	"MCC_GBRS_EXPS3_BLK",
+	"MCC_Romeo9t_blk",
 
     "Tier1_EXPS3_0_Tano",
     "tier1_romeo4t_bcd_black",
@@ -934,6 +970,19 @@ private _itemWeaponRifle =
     "rhs_weap_vhsd2",
     "rhs_weap_vhsd2_ct15x",
 
+	"MCC_M4A1_556_URGI",
+	"MCC_MK18_URGI",
+	"MCC_RattlerLT_7_556_BLK_MPLFS",
+	"MCC_KS1_BLK_Bravo",
+	"MCC_KS1_BLK_CTR",
+	"MCC_KS3_BLK_CTR",
+	"MCC_SpearLT_145_556_FDE_MPLFS",
+	"MCC_REC7_DI_556_BRZ_CTR",
+	"MCC_M4A1_556_Troy_145_BLK_CTR",
+	"MCC_M4A1_556_NFM_145_FDE_CTR",
+	"MCC_M4A1_556_Aero_145_OD_CTR",
+	"MCC_RD604",
+
     "Tier1_SIG_MCX_115_Virtus",
 
     //============================================================
@@ -941,10 +990,12 @@ private _itemWeaponRifle =
     //============================================================
     "CUP_arifle_Fort222",
     "CUP_arifle_AK74",
-
+	
 	"CUP_arifle_AK74M_top_rail",
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_zenitco01",
+
+	"MCC_RD504",
 
     //============================================================
     //7.62x39mm
@@ -964,6 +1015,8 @@ private _itemWeaponRifle =
     "rhs_weap_ak103_zenitco01",
     "rhs_weap_pm63",
     "rhs_weap_m70ab2",
+
+	"MCC_RD704",
 
     //============================================================
     //7.62x51mm
@@ -1589,6 +1642,11 @@ private _itemSniper =
     "Tier1_Shortdot_Geissele_Docter_Black",
     "tier1_shortdot_geissele_black_vanilla",
     "Tier1_Razor_Gen3_110_Geissele_Docter",
+
+	//MCC 10x
+	"MCC_Mark5_10_BLK",
+	"MCC_Vortex_Elanor_Acro_BLK",
+	"MCC_ZCO_10_BLK_DMR",
 
     "rhsusf_acc_premier_mrds",
     "rhsusf_acc_leupoldmk4_2",
