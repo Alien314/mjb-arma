@@ -20,6 +20,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_switchUniform.sqf", "mjb_arsenal_fnc_switchUniform"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_addGarageAction.sqf", "mjb_arsenal_fnc_addGarageAction"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_cf_bai_zeusInit.sqf", "mjb_arsenal_fnc_cf_bai_zeusInit"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_3denArrayObject.sqf", "mjb_arsenal_fnc_3denArrayObject"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleEnd.sqf", "mjb_arsenal_fnc_moduleEnd"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleArsenal.sqf", "mjb_arsenal_fnc_moduleArsenal"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleArsenalMission.sqf", "mjb_arsenal_fnc_moduleArsenalMission"] call CBA_fnc_compileFunction;
