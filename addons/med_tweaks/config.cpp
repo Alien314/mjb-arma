@@ -29,12 +29,20 @@ class Extended_PreInit_EventHandlers
 	{
 		init="call compileScript ['z\mjb\addons\med_tweaks\XEH_preInit.sqf']";
 	};
+	class ace_medical_treatment
+	{
+		init="call compileScript ['z\mjb\addons\med_tweaks\XEH_preInitMedTreatment.sqf']";
+	};
 };
 class Extended_PreStart_EventHandlers
 {
 	class mjb_med_tweaks
 	{
 		init="call compileScript ['z\mjb\addons\med_tweaks\XEH_preStart.sqf']";
+	};
+	class ace_medical_treatment
+	{
+		init="call compileScript ['z\mjb\addons\med_tweaks\XEH_preStartMedTreatment.sqf']";
 	};
 };
 
