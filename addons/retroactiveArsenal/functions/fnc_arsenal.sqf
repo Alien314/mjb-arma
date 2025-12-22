@@ -590,8 +590,13 @@ private _itemMod =
 
 	//MCC 3x
 	"MCC_EXPS3_UnityX_BLK_Up",
+	"MCC_EXPS3_UnityX_FDE_Up",
+	"MCC_GBRS_EXPS3_Mag_Up_BLK",
 	"MCC_GBRS_EXPS3_Mag_Up_FDE",
 	"MCC_MicroT2_UnityX_BLK_Up",
+	"MCC_MicroT2_UnityX_FDE_Up",
+	"MCC_GBRS_T2_Mag_Up_BLK",
+	"MCC_GBRS_T2_Mag_Up_FDE",
 	"MCC_Romeo9T_BLK_Up",
 
     //Dovetail (Ak Sights)
@@ -827,9 +832,11 @@ private _itemReflexSight =
     "rhsusf_acc_t1_low_fwd",
 
 	"MCC_EXPS3_BLK",
+	"MCC_EXPS3_FDE",
 	"MCC_MicroT2",
 	"MCC_GBRS_T2_BLK",
 	"MCC_GBRS_EXPS3_BLK",
+	"MCC_GBRS_EXPS3_FDE",
 	"MCC_Romeo9t_blk",
 
     "Tier1_EXPS3_0_Tano",
