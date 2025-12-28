@@ -53,10 +53,6 @@ class CfgMissions {
 		}
 
         // islands
-		class mjb_rzt_Altis : mjb_rzt_vr2 {
-			briefingName = "MJB Zeus Template 2,1";
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Altis";
-		};
 		MISH(Altis,Altis);
 		//class mjb_rzt_Altis2 : mjb_rzt_vr2 {
 		//	directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.Altis";
@@ -75,6 +71,8 @@ class CfgMissions {
 		MISH(Tanoa,Tanoa);
 		MISH(utes,Utes);
 
+		MISH(IslaPera,IslaPera);
+
         // coastal
 		MISH(chernarus,Chernarus (Autumn));
 		MISH(chernarus_summer,Chernarus (Summer));
@@ -83,77 +81,85 @@ class CfgMissions {
 		MISH(Maksniemi,Maksniemi);
 		MISH(oski_corran,Scottish Highlands);
 		MISH(tem_vinjesvingenc,Vinjesvingen);
+		MISH(Farabad,Farabad);
+		MISH(go_map_fjord,Fjord);
 
         //landlocked
 		MISH(Bootcamp_ACR,Bukovina);
+		MISH(Desert_E,Desert);
+		MISH(Enoch,Livonia);
+		MISH(hellanmaa,Hellanmaa);
+		MISH(hellanmaaw,Hellanmaa Winter);
+		MISH(Mountains_ACR,Takistan Mountains);
+		MISH(ProvingGrounds_PMC,Proving Grounds);
+		MISH(rhspkl,Prei Khmaoch Luong);
+		MISH(ruha,Ruha);
+		MISH(Shapur_BAF,Shapur);
+		MISH(takistan,Takistan);
+		MISH(tem_anizay,Anizay);
+		MISH(tem_kujari,Kujari);
+		MISH(tem_summa,Summa);
+		MISH(tem_summawcup,Summa Winter);
+		MISH(WL_Rosche,Rosche##COMMA Germany);
+		MISH(Woodland_ACR,Bystrica);
+		MISH(zargabad,Zargabad);
+
+		//old
+		class mjb_rzt_Altis : mjb_rzt_vr2 {
+			briefingName = "MJB Zeus Template 2,1";
+			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Altis";
+		};
 		class mjb_rzt_Bootcamp_ACR : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Bootcamp_ACR";
 		};
-		MISH(Desert_E,Desert);
 		class mjb_rzt_Desert_E : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Desert_E";
 		};
-		MISH(Enoch,Livonia);
 		class mjb_rzt_Enoch : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Enoch";
 		};
-		MISH(hellanmaa,Hellanmaa);
 		class mjb_rzt_hellanmaa : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.hellanmaa";
 		};
-		MISH(hellanmaaw,Hellanmaa Winter);
 		class mjb_rzt_hellanmaaw : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.hellanmaaw";
 		};
-		MISH(Mountains_ACR,Takistan Mountains);
 		class mjb_rzt_Mountains_ACR : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Mountains_ACR";
 		};
-		MISH(ProvingGrounds_PMC,Proving Grounds);
 		class mjb_rzt_ProvingGrounds_PMC : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.ProvingGrounds_PMC";
 		};
-		MISH(rhspkl,Prei Khmaoch Luong);
 		class mjb_rzt_rhspkl : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.rhspkl";
 		};
-		MISH(ruha,Ruha);
 		class mjb_rzt_ruha : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.ruha";
 		};
-		MISH(Shapur_BAF,Shapur);
 		class mjb_rzt_Shapur_BAF : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Shapur_BAF";
 		};
-		MISH(takistan,Takistan);
 		class mjb_rzt_takistan : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.takistan";
 		};
-		MISH(tem_anizay,Anizay);
 		class mjb_rzt_tem_anizay : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_anizay";
 		};
-		MISH(tem_kujari,Kujari);
 		class mjb_rzt_tem_kujari : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_kujari";
 		};
-		MISH(tem_summa,Summa);
 		class mjb_rzt_tem_summa : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_summa";
 		};
-		MISH(tem_summawcup,Summa Winter);
 		class mjb_rzt_tem_summawcup : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_summawcup";
 		};
-		MISH(WL_Rosche,Rosche##COMMA Germany);
 		class mjb_rzt_WL_Rosche : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.WL_Rosche";
 		};
-		MISH(Woodland_ACR,Bystrica);
 		class mjb_rzt_Woodland_ACR : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Woodland_ACR";
 		};
-		MISH(zargabad,Zargabad);
 		class mjb_rzt_zargabad : mjb_rzt_Altis {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.zargabad";
 		};
