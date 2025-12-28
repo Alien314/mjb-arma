@@ -124,7 +124,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 	// fix weird permanent stabilization
 	class EventHandlers {
 		class mjb_configTweaks {
-			init="params ['_this']; _this spawn {sleep 1; if (local _this) then { _this enableDirectionStabilization [false, [0]]; }; };";
+			init="params ['_this']; _this spawn {sleep 1; _this enableDirectionStabilization [false, [0]]; };";
 		};
 	};
 	class NewTurret;
