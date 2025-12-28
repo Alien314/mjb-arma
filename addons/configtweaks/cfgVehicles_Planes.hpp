@@ -121,12 +121,12 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 		//#include "mfdFix.hpp"
 	};
 
-	// fix weird permanent stabilization
+	/*/ fix weird permanent stabilization
 	class EventHandlers {
 		class mjb_configTweaks {
 			init="params ['_this']; _this spawn {sleep 1; _this enableDirectionStabilization [false, [0]]; };";
 		};
-	};
+	};*/
 	class NewTurret;
 	class Turrets {
 		class MainTurret : NewTurret {
@@ -140,7 +140,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			//outGunnerMayFire = 0;
 			//primaryObserver = 1;
 			stabilizedInAxes = 3;
-			//unitInfoType = "RscOptics_CAS_Pilot";
+			turretInfoType = "RscOptics_CAS_01_TGP";//?
 			//usePip = 1;
 		};
 	};//*/
@@ -151,7 +151,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			hideOnUse = 1;
 			onlyforplayer = 1;
 			position = "";
-			priority = 3;
+			priority = 1;
 			radius = 15;
 			shortcut = "vehLockTurretView";
 			showWindow = 0;
@@ -164,11 +164,11 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			hideOnUse = 1;
 			onlyforplayer = 1;
 			position = "";
-			priority = 3;
+			priority = 1;
 			radius = 15;
 			shortcut = "vehLockTurretView";
 			showWindow = 0;
-			statement = "if (!isNull cursorObject && {cursorObject isKindOf 'AllVehicles'}) exitWith { systemChat ('Stabilzed on Vehicle at ' + (mapGridPosition cursorObject)); this lockCameraTo [getPosWorld cursorObject,[0]] }; if (!isNull cursorObject) exitWith { systemChat ('Stabilzed on Object at ' + (mapGridPosition cursorObject)); this lockCameraTo [getPosWorld cursorObject,[0]] }; private _loc = terrainIntersectAtASL [(AGLToASL positionCameraToWorld [0,0,0]), (AGLToASL positionCameraToWorld [0,0,10000])]; if (_loc isEqualTo [0,0,0]) exitWith { systemChat 'No target in range'; this enableDirectionStabilization [true, [0]]; }; systemChat ('Stabilzed on Position: ' + mapGridPosition _loc); this lockCameraTo [_loc,[0],true]; this spawn {sleep 0.1; _this enableDirectionStabilization [true, [0]];};";
+			statement = "if (!isNull cursorObject && {cursorObject isKindOf 'AllVehicles'}) exitWith { systemChat ('Stabilzed on Vehicle at ' + (mapGridPosition cursorObject)); this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0]] }; if (!isNull cursorObject) exitWith { systemChat ('Stabilzed on Object at ' + (mapGridPosition cursorObject)); this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0]] }; private _loc = terrainIntersectAtASL [(AGLToASL positionCameraToWorld [0,0,0]), (AGLToASL positionCameraToWorld [0,0,10000])]; if (_loc isEqualTo [0,0,0]) exitWith { systemChat 'No target in range'; this enableDirectionStabilization [true, [0]]; }; systemChat ('Stabilzed on Position: ' + mapGridPosition _loc); this lockCameraTo [_loc,[0],true]; this spawn {sleep 0.1; _this enableDirectionStabilization [true, [0]];};";
 		};
 	};
 };
