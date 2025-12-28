@@ -1,14 +1,5 @@
-["z\mjb\addons\ctab_gui_settings\fnc_open.sqf", "ctab_fnc_open"] call CBA_fnc_compileFunction;
+#include "XEH_PREP.hpp"
 
-[
-    "mjb_ctab_noBorderDef",
-    "CHECKBOX",
-    ["Hide Ctab border in GPS mode", "Hides border of cTab devices when not focused."],
-    ["cTab", "GUI Settings"],
-    true,
-    false,
-    { },
-    true
-] call CBA_fnc_addSetting;
+#include "settings.sqf"
 
 call compile preprocessFileLineNumbers "z\ctab\addons\core\XEH_preInit.sqf";

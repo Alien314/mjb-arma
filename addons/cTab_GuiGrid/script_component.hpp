@@ -1,0 +1,1 @@
+#define GVAR(var) ctab_core_##var
