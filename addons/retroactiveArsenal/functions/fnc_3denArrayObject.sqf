@@ -11,7 +11,7 @@
 [((get3denSelected "" select 0) select 0),5,7,0,false,0.5,0] call mjb_arsenal_fnc_3denArrayObject;
 
 */
-params [['_object',objNull],['_xCount',1],['_yCount',1],['_zStep',0],['_stepX',false],['_xAdd',0],['yAdd',0]];
+params [['_object',objNull],['_xCount',1],['_yCount',1],['_zStep',0],['_stepX',false],['_xAdd',0],['_yAdd',0]];
 
 //private _object = (_objects select 0); //((get3denSelected "" select 0) select 0)
 
