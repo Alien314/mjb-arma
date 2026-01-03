@@ -2640,7 +2640,7 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemLeaderEquipment + _itemUAVTermial)] call ace_arsenal_fnc_initBox;
     };
-        case (_unitRole isEqualTo "full") :
+        case (_unitRole in ["full","zeus","B_RangeMaster_F"]) :
     {
         [arsenal, true] call ace_arsenal_fnc_initBox;
     };
