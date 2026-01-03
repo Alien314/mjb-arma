@@ -64,6 +64,3 @@ class Mode_FullAuto;
 #include "CfgMagazines.hpp" // GreenMag simple compatibility, MMG Tracer boxes
 #include "CfgVehicles.hpp"  // BRH for all units/uniforms
 #include "CfgWeapons.hpp" // AIDispersion, Weapon, Greenmag items, Accessory, Helmet, and Vest tweaks
-#include "CfgGroups.hpp" // Custom Faction Group config
-#include "Extended_InitPost_EventHandlers.hpp" // Custom Faction Group loadout assignment through TMF
-#include "CfgLoadouts.hpp" // Custom Faction Group TMF loadouts

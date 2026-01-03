@@ -923,8 +923,6 @@ class CfgVehicles {
   CUPPELVIS(CUP_Creatures_Military_USMC_Soldier_Base,SoldierWB);
 //*/
 
-#include "cfgVehicles_customUnits.hpp"
-
 // Make small boats turn better
   class Boat_F;
   class Boat_Armed_01_base_F : Boat_F {
