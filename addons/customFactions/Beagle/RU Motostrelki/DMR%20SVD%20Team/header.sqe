@@ -1,0 +1,25 @@
+version=54;
+name="DMR SVD Team";
+author="Beagle";
+category="mjb_Inf";
+requiredAddons[]=
+{
+	"CUP_Creatures_Military_Russia",
+	"CUP_Weapons_SVD",
+	"CUP_Weapons_East_Attachments",
+	"greenmag_main",
+	"ace_ballistics",
+	"CUP_Weapons_Makarov",
+	"greenmag_cup",
+	"CUP_Weapons_Ammunition",
+	"A3_Weapons_F",
+	"ace_optics",
+	"ConfigTweaks",
+	"CUP_Creatures_Military_RussiaModern_Headgear",
+	"CUP_Creatures_Military_RussiaModern_Uniforms",
+	"CUP_Creatures_Military_RussiaModern_Vests",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"CUP_Weapons_AK",
+	"CUP_Weapons_Grenades"
+};

@@ -1,0 +1,2421 @@
+version=54;
+center[]={2790.9268,5,4363.4175};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Layer";
+		name="Motostrelki Faction Options";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Group";
+				side="East";
+				class Entities
+				{
+					items=14;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-11.309814,0.0014390945,2.996582};
+							angles[]={6.2759786,1.5115653,0.0021899715};
+						};
+						side="East";
+						flags=7;
+						class Attributes
+						{
+							rank="LIEUTENANT";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M_GL";
+									firemode="CUP_arifle_AK74M_GL:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+									class secondaryMuzzleMag
+									{
+										name="CUP_1Rnd_HE_GP25_M";
+										ammoLeft=1;
+									};
+								};
+								class binocular
+								{
+									name="Binocular";
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_1Rnd_HE_GP25_M";
+											count=3;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6M21_6B34C_Summer";
+							};
+						};
+						id=1;
+						type="CUP_O_RU_Soldier_SL_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0.94999999;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male01RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-11.037598,0.0014390945,-1.2397461};
+							angles[]={6.2741628,1.5115688,0.0027410665};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							rank="SERGEANT";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Rolled_Summer_1";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="SmokeShell";
+											count=1;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								class backpack
+								{
+									typeName="CUP_B_Kombat_Olive";
+									isBackpack=1;
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="Medikit";
+											count=1;
+										};
+										class Item1
+										{
+											name="FirstAidKit";
+											count=10;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34C_Summer";
+							};
+						};
+						id=2;
+						type="CUP_O_RU_Medic_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0.97000003;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male01RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item2
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-6.543457,0.0014390945,7.4414063};
+							angles[]={6.2771511,1.5115612,0.0028160613};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							rank="CORPORAL";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M_GL";
+									firemode="CUP_arifle_AK74M_GL:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+									class secondaryMuzzleMag
+									{
+										name="CUP_1Rnd_HE_GP25_M";
+										ammoLeft=1;
+									};
+								};
+								class binocular
+								{
+									name="Binocular";
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_1Rnd_HE_GP25_M";
+											count=3;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6M21_6B34C_Summer";
+							};
+						};
+						id=3;
+						type="CUP_O_RU_Soldier_TL_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=1;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male03RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item3
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-5.7978516,0.0014390945,-5.1362305};
+							angles[]={6.2753463,1.5115635,0.0033729575};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							rank="CORPORAL";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_RPK74M";
+									firemode="CUP_arifle_RPK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=60;
+									};
+								};
+								class handgun
+								{
+									name="CUP_hgun_Makarov";
+									class primaryMuzzleMag
+									{
+										name="CUP_8Rnd_9x18_Makarov_M";
+										ammoLeft=8;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Rolled_Summer_2";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=2;
+											ammoLeft=60;
+										};
+										class Item1
+										{
+											name="CUP_8Rnd_9x18_Makarov_M";
+											count=1;
+											ammoLeft=8;
+										};
+									};
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=6;
+											ammoLeft=60;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34U_Summer";
+							};
+						};
+						id=4;
+						type="CUP_O_RU_Soldier_AR_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0.94999999;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male01RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item4
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-1.8010254,0.0014395714,11.930176};
+							angles[]={6.2766047,1.5115662,0.0010167425};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_HandGrenade_RGD5";
+											count=1;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_Summer";
+							};
+						};
+						id=5;
+						type="CUP_O_RU_Soldier_EMR";
+						atlOffset=4.7683716e-07;
+					};
+					class Item5
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-0.55761719,0.0014395714,-9.0327148};
+							angles[]={6.2753463,1.5115635,0.0033729575};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class secondaryWeapon
+								{
+									name="CUP_launch_RPG26";
+									class primaryMuzzleMag
+									{
+										name="CUP_RPG26_M";
+										ammoLeft=1;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34D_Summer";
+							};
+						};
+						id=6;
+						type="CUP_O_RU_Soldier_LAT_EMR";
+						atlOffset=4.7683716e-07;
+					};
+					class Item6
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={2.9416504,0.0014390945,16.418457};
+							angles[]={6.2791166,1.5115628,6.2794971};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class secondaryWeapon
+								{
+									name="CUP_launch_RPG26";
+									class primaryMuzzleMag
+									{
+										name="CUP_RPG26_M";
+										ammoLeft=1;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34D_Summer";
+							};
+						};
+						id=7;
+						type="CUP_O_RU_Soldier_LAT_EMR";
+					};
+					class Item7
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={4.6821289,0.0014395714,-12.929688};
+							angles[]={6.2753463,1.5115635,0.0033729575};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_HandGrenade_RGD5";
+											count=1;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_Summer";
+							};
+						};
+						id=8;
+						type="CUP_O_RU_Soldier_EMR";
+						atlOffset=4.7683716e-07;
+					};
+					class Item8
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={7.684082,0.0014390945,20.907227};
+							angles[]={6.2773113,1.5115682,6.2800488};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							rank="CORPORAL";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M_GL";
+									firemode="CUP_arifle_AK74M_GL:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+									class secondaryMuzzleMag
+									{
+										name="CUP_1Rnd_HE_GP25_M";
+										ammoLeft=1;
+									};
+								};
+								class binocular
+								{
+									name="Binocular";
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_1Rnd_HE_GP25_M";
+											count=3;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6M21_6B34C_Summer";
+							};
+						};
+						id=9;
+						type="CUP_O_RU_Soldier_TL_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=1;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male03RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item9
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={9.921875,0.0014390945,-16.82666};
+							angles[]={6.2765193,1.511559,0.0039992239};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							rank="CORPORAL";
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_RPK74M";
+									firemode="CUP_arifle_RPK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=60;
+									};
+								};
+								class handgun
+								{
+									name="CUP_hgun_Makarov";
+									class primaryMuzzleMag
+									{
+										name="CUP_8Rnd_9x18_Makarov_M";
+										ammoLeft=8;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Rolled_Summer_2";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=2;
+											ammoLeft=60;
+										};
+										class Item1
+										{
+											name="CUP_8Rnd_9x18_Makarov_M";
+											count=1;
+											ammoLeft=8;
+										};
+									};
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=6;
+											ammoLeft=60;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34U_Summer";
+							};
+						};
+						id=10;
+						type="CUP_O_RU_Soldier_AR_EMR";
+						class CustomAttributes
+						{
+							class Attribute0
+							{
+								property="TMF_SpecialistMarker";
+								expression="_this setVariable ['TMF_SpecialistMarker',_value,true];";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""""]";
+									};
+								};
+							};
+							class Attribute1
+							{
+								property="TMF_assignGear_faction";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="rats";
+									};
+								};
+							};
+							class Attribute2
+							{
+								property="acre_sys_radio_edenSetup";
+								expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+									};
+								};
+							};
+							class Attribute3
+							{
+								property="pitch";
+								expression="_this setpitch _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0.94999999;
+									};
+								};
+							};
+							class Attribute4
+							{
+								property="speaker";
+								expression="_this setspeaker _value;";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="Male01RUS";
+									};
+								};
+							};
+							class Attribute5
+							{
+								property="TMF_assignGear_full";
+								expression="[_this,  _value] call TMF_assignGear_fnc_helper";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="["""",""rats"",false]";
+									};
+								};
+							};
+							class Attribute6
+							{
+								property="TMF_assignGear_role";
+								expression="false";
+								class Value
+								{
+									class data
+									{
+										singleType="STRING";
+										value="";
+									};
+								};
+							};
+							nAttributes=7;
+						};
+					};
+					class Item10
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={12.427002,0.0014390945,25.395996};
+							angles[]={6.2822556,1.5115421,6.2736187};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_HandGrenade_RGD5";
+											count=1;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_Summer";
+							};
+						};
+						id=11;
+						type="CUP_O_RU_Soldier_EMR";
+					};
+					class Item11
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={15.162109,0.0014390945,-20.723145};
+							angles[]={6.2794971,1.5115551,0.0040687597};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class secondaryWeapon
+								{
+									name="CUP_launch_RPG26";
+									class primaryMuzzleMag
+									{
+										name="CUP_RPG26_M";
+										ammoLeft=1;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34D_Summer";
+							};
+						};
+						id=12;
+						type="CUP_O_RU_Soldier_LAT_EMR";
+					};
+					class Item12
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={17.169434,0.0014390945,29.884766};
+							angles[]={0.0016622188,1.5114915,6.2659369};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class secondaryWeapon
+								{
+									name="CUP_launch_RPG26";
+									class primaryMuzzleMag
+									{
+										name="CUP_RPG26_M";
+										ammoLeft=1;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=1;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_6B34D_Summer";
+							};
+						};
+						id=13;
+						type="CUP_O_RU_Soldier_LAT_EMR";
+					};
+					class Item13
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={20.401855,0.0014390945,-24.619629};
+							angles[]={6.2794971,1.5115551,0.0040687597};
+						};
+						side="East";
+						flags=5;
+						class Attributes
+						{
+							class Inventory
+							{
+								class primaryWeapon
+								{
+									name="CUP_arifle_AK74M";
+									firemode="CUP_arifle_AK74M:FullAuto";
+									class primaryMuzzleMag
+									{
+										name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+										ammoLeft=30;
+									};
+								};
+								class uniform
+								{
+									typeName="CUP_U_O_RUS_Soldier_VKPO_Summer_2";
+									isBackpack=0;
+								};
+								class vest
+								{
+									typeName="CUP_V_O_RUS_6B45_AK_Med_Summer";
+									isBackpack=0;
+									class MagazineCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
+											count=7;
+											ammoLeft=30;
+										};
+										class Item1
+										{
+											name="CUP_HandGrenade_RGD5";
+											count=1;
+											ammoLeft=1;
+										};
+									};
+									class ItemCargo
+									{
+										items=2;
+										class Item0
+										{
+											name="FirstAidKit";
+											count=1;
+										};
+										class Item1
+										{
+											name="greenmag_ammo_545x39_basic_60Rnd";
+											count=2;
+										};
+									};
+								};
+								map="ItemMap";
+								compass="ItemCompass";
+								watch="ItemWatch";
+								gps="ItemGPS";
+								goggles="CUP_G_RUS_Ratnik_Balaclava_Green_1";
+								headgear="CUP_H_RUS_6B47_Summer";
+							};
+						};
+						id=14;
+						type="CUP_O_RU_Soldier_EMR";
+					};
+				};
+				class Attributes
+				{
+					formation="VEE";
+				};
+				id=0;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="TMF_groupMarker";
+						expression="[_this,'TMF_groupMarker',_value] call tmf_common_fnc_initGroupVar;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="["""",""Alpha 1-1"","""",0]";
+							};
+						};
+					};
+					nAttributes=1;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-25.062256,2.1879873,-13.398926};
+					angles[]={0,1.5980064,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=15;
+				type="CUP_O_Ural_Open_RU";
+			};
+		};
+		id=96;
+	};
+	class Item1
+	{
+		dataType="Comment";
+		class PositionInfo
+		{
+			position[]={-16.971924,0,-13.327637};
+		};
+		title="(RU-MO) Reccomended Transport (Fits 15)";
+		id=100;
+	};
+};
+class VehicleInVehicleLinks
+{
+	class LinkIDProvider
+	{
+		nextID=56;
+	};
+	class Links
+	{
+		items=56;
+		class Item0
+		{
+			linkID=0;
+			item0=869;
+			item1=883;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=870;
+			item1=883;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=871;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=0;
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=872;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=1;
+			};
+		};
+		class Item4
+		{
+			linkID=4;
+			item0=873;
+			item1=883;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item5
+		{
+			linkID=5;
+			item0=874;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=2;
+			};
+		};
+		class Item6
+		{
+			linkID=6;
+			item0=875;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=3;
+			};
+		};
+		class Item7
+		{
+			linkID=7;
+			item0=876;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=4;
+			};
+		};
+		class Item8
+		{
+			linkID=8;
+			item0=877;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=5;
+			};
+		};
+		class Item9
+		{
+			linkID=9;
+			item0=878;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=6;
+			};
+		};
+		class Item10
+		{
+			linkID=10;
+			item0=879;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=7;
+			};
+		};
+		class Item11
+		{
+			linkID=11;
+			item0=880;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=8;
+			};
+		};
+		class Item12
+		{
+			linkID=12;
+			item0=881;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=9;
+			};
+		};
+		class Item13
+		{
+			linkID=13;
+			item0=882;
+			item1=883;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=10;
+			};
+		};
+		class Item14
+		{
+			linkID=14;
+			item0=915;
+			item1=929;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item15
+		{
+			linkID=15;
+			item0=916;
+			item1=929;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item16
+		{
+			linkID=16;
+			item0=917;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=0;
+			};
+		};
+		class Item17
+		{
+			linkID=17;
+			item0=918;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=1;
+			};
+		};
+		class Item18
+		{
+			linkID=18;
+			item0=919;
+			item1=929;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item19
+		{
+			linkID=19;
+			item0=920;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=2;
+			};
+		};
+		class Item20
+		{
+			linkID=20;
+			item0=921;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=3;
+			};
+		};
+		class Item21
+		{
+			linkID=21;
+			item0=922;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=4;
+			};
+		};
+		class Item22
+		{
+			linkID=22;
+			item0=923;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=5;
+			};
+		};
+		class Item23
+		{
+			linkID=23;
+			item0=924;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=6;
+			};
+		};
+		class Item24
+		{
+			linkID=24;
+			item0=925;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=7;
+			};
+		};
+		class Item25
+		{
+			linkID=25;
+			item0=926;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=8;
+			};
+		};
+		class Item26
+		{
+			linkID=26;
+			item0=927;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=9;
+			};
+		};
+		class Item27
+		{
+			linkID=27;
+			item0=928;
+			item1=929;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=10;
+			};
+		};
+		class Item28
+		{
+			linkID=28;
+			item0=932;
+			item1=946;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item29
+		{
+			linkID=29;
+			item0=933;
+			item1=946;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item30
+		{
+			linkID=30;
+			item0=934;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=0;
+			};
+		};
+		class Item31
+		{
+			linkID=31;
+			item0=935;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=1;
+			};
+		};
+		class Item32
+		{
+			linkID=32;
+			item0=936;
+			item1=946;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item33
+		{
+			linkID=33;
+			item0=937;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=2;
+			};
+		};
+		class Item34
+		{
+			linkID=34;
+			item0=938;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=3;
+			};
+		};
+		class Item35
+		{
+			linkID=35;
+			item0=939;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=4;
+			};
+		};
+		class Item36
+		{
+			linkID=36;
+			item0=940;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=5;
+			};
+		};
+		class Item37
+		{
+			linkID=37;
+			item0=941;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=6;
+			};
+		};
+		class Item38
+		{
+			linkID=38;
+			item0=942;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=7;
+			};
+		};
+		class Item39
+		{
+			linkID=39;
+			item0=943;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=8;
+			};
+		};
+		class Item40
+		{
+			linkID=40;
+			item0=944;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=9;
+			};
+		};
+		class Item41
+		{
+			linkID=41;
+			item0=945;
+			item1=946;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=10;
+			};
+		};
+		class Item42
+		{
+			linkID=42;
+			item0=949;
+			item1=963;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={1};
+			};
+		};
+		class Item43
+		{
+			linkID=43;
+			item0=950;
+			item1=963;
+			class CustomData
+			{
+				role=2;
+				turretPath[]={0};
+			};
+		};
+		class Item44
+		{
+			linkID=44;
+			item0=951;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=0;
+			};
+		};
+		class Item45
+		{
+			linkID=45;
+			item0=952;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=1;
+			};
+		};
+		class Item46
+		{
+			linkID=46;
+			item0=953;
+			item1=963;
+			class CustomData
+			{
+				role=1;
+			};
+		};
+		class Item47
+		{
+			linkID=47;
+			item0=954;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=2;
+			};
+		};
+		class Item48
+		{
+			linkID=48;
+			item0=955;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=3;
+			};
+		};
+		class Item49
+		{
+			linkID=49;
+			item0=956;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=4;
+			};
+		};
+		class Item50
+		{
+			linkID=50;
+			item0=957;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=5;
+			};
+		};
+		class Item51
+		{
+			linkID=51;
+			item0=958;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=6;
+			};
+		};
+		class Item52
+		{
+			linkID=52;
+			item0=959;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=7;
+			};
+		};
+		class Item53
+		{
+			linkID=53;
+			item0=960;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=8;
+			};
+		};
+		class Item54
+		{
+			linkID=54;
+			item0=961;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=9;
+			};
+		};
+		class Item55
+		{
+			linkID=55;
+			item0=962;
+			item1=963;
+			class CustomData
+			{
+				role=3;
+				cargoIndex=10;
+			};
+		};
+	};
+};

@@ -1,0 +1,20 @@
+version=54;
+name="UAZ SPG-9";
+author="Beagle";
+category="EdSubcat_Targets";
+requiredAddons[]=
+{
+	"CUP_WheeledVehicles_UAZ",
+	"CUP_Creatures_Military_Russia",
+	"CUP_Weapons_AK",
+	"jsrs2025_compat_cup_weapons",
+	"CUP_Weapons_Ammunition",
+	"A3_Weapons_F",
+	"CUP_Creatures_Military_RussiaModern_Headgear",
+	"CUP_Creatures_Military_RussiaModern_Uniforms",
+	"CUP_Creatures_Military_RussiaModern_Vests",
+	"CUP_Weapons_Grenades",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"greenmag_main"
+};

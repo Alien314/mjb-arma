@@ -1,0 +1,24 @@
+version=54;
+name="AAF MMG Team";
+author="Beagle";
+category="EdSubcat_Avian";
+requiredAddons[]=
+{
+	"A3_Characters_F",
+	"A3_Weapons_F_Mark_Machineguns_MMG_02",
+	"ace_realisticnames",
+	"A3_Weapons_F_Mark_Acc",
+	"jsrs2025_config_c",
+	"ConfigTweaks",
+	"CUP_Weapons_Glock17",
+	"jsrs2025_compat_cup_weapons",
+	"CUP_Weapons_Ammunition",
+	"A3_Weapons_F",
+	"ace_optics",
+	"CUP_Creatures_Military_USArmy",
+	"ace_compat_cup_units",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"CUP_Weapons_G3",
+	"greenmag_main"
+};

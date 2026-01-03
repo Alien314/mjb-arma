@@ -1,0 +1,8 @@
+version=54;
+name="CustomTeam";
+author="Alien314";
+category="EdSubcat_Targets";
+requiredAddons[]=
+{
+	"mjb_CustomFactions"
+};
