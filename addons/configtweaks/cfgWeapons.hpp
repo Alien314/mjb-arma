@@ -27,8 +27,8 @@ class CfgWeapons {
     };
   };
   class M134_minigun : MGunCore {
-    aiDispersionCoefX = 4.0;
-    aiDispersionCoefY = 3.0;
+    aiDispersionCoefX = 20.0;
+    aiDispersionCoefY = 15.0;
   };
   class LMG_RCWS : MGun {
     aiDispersionCoefX = 40.0;
@@ -66,6 +66,10 @@ class CfgWeapons {
     aiDispersionCoefX = 40.0;
     aiDispersionCoefY = 30.0;
   };
+  class CUP_Vhmg_GAU19_veh : MGun {
+    aiDispersionCoefX = 40.0;
+    aiDispersionCoefY = 30.0;
+  };
   class CUP_Vhmg_PKT_veh : MGun {
     aiDispersionCoefX = 40.0;
     aiDispersionCoefY = 30.0;
@@ -80,8 +84,8 @@ class CfgWeapons {
     aiDispersionCoefY = 30.0;
   };
   class CUP_Vlmg_M134_veh : MGun {
-    aiDispersionCoefX = 4.0;
-    aiDispersionCoefY = 3.0;
+    aiDispersionCoefX = 20.0;
+    aiDispersionCoefY = 15.0;
   };
   class CUP_Vlmg_M240_veh : MGun {
     aiDispersionCoefX = 40.0;
@@ -105,8 +109,8 @@ class CfgWeapons {
     aiDispersionCoefY = 30;
   };
   class CUP_Vacannon_AK630_veh : CannonCore {
-    aiDispersionCoefX = 12;
-    aiDispersionCoefY = 9;
+    aiDispersionCoefX = 20;
+    aiDispersionCoefY = 15;
   };
   class CUP_Vacannon_M197_veh : CannonCore {
     aiDispersionCoefX = 40;
@@ -184,6 +188,15 @@ class CfgWeapons {
   };
 #else
 #endif
+
+	class CUP_Vacannon_SPG9_veh : CannonCore {
+        ace_overpressure_priority = 1;
+        ace_overpressure_angle = 60;
+        ace_overpressure_range = 10;
+        ace_overpressure_damage = 0.7;
+        ace_overpressure_backblast = 1;
+		ace_overpressure_offset = 1.25;
+	};
   
   class Rifle_Base_F;
   // 3CB
