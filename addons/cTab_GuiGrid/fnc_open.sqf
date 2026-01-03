@@ -138,11 +138,30 @@ if (isClass (configfile >> "CfgPatches" >> "ace_common")) then {
 	];
 };
 
+/*/ pos adjustment
+if (!_isDialog && {!isNil 'mjb_animate_ctab' && {mjb_animate_ctab && {!isMultiplayer}}}) then {
+	private _index = switch (_displayName) do {case 'cTab_Android_dsp': {0}; case 'cTab_microDAGR_dsp': {1}; default {2}; };
+	private _model = (['cTab\data\itemAndroid.p3d','cTab\data\itemMicroDAGR.p3d','\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d'] select _index);
+	//[+toward/-away,+left/-right,+up/-down]
+	private _pos = ([[0.015,0.03,-0.04],[-0.00,0.02,-0.03],[-0.04,0.02,-0.07]] select _index);
+	private _rot = ([[200,-50,-60],[200,-50,-70],[200,-50,10]] select _index);
+	[playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', _model, 'leftHand', _pos, _rot, {isNil "cTabIfOpen" || {'dlg' in (cTabIfOpen # 1)}}] spawn tsp_fnc_gesture_item;
+};//*/
+
 if (_isDialog) then {
 	// Check if map and / or a dialog is open and close them
 	if (visibleMap) then {openMap false};
 	while {dialog} do {
  		closeDialog 0;
+	};
+
+	if (!isNil 'mjb_animate_ctab' && {mjb_animate_ctab}) then {
+		private _index = switch (_displayName) do {case 'cTab_Android_dlg': {0}; case 'cTab_microDAGR_dlg': {1}; default {2}; };
+
+		private _model = (['cTab\data\itemAndroid.p3d','cTab\data\itemMicroDAGR.p3d','\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d'] select _index);
+		private _pos = ([[0.015,0.03,-0.04],[-0.00,0.02,-0.03],[-0.04,0.02,-0.07]] select _index);
+		private _rot = ([[200,-50,-60],[200,-50,-70],[200,-50,10]] select _index);
+		[playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', _model, 'leftHand', _pos, _rot, {isNil "cTabIfOpen" || {'dlg' in (cTabIfOpen # 1)}}] spawn tsp_fnc_gesture_item;
 	};
 	
 	// XXX: Switching to display would allow to walk even when device is open

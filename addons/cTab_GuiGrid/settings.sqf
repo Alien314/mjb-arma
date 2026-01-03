@@ -21,6 +21,19 @@
     true
 ] call CBA_fnc_addSetting;
 
+if (isClass (configFile >> 'cfgPatches' >> 'tsp_animate')) then {
+	[
+		"mjb_animate_ctab",
+		"CHECKBOX",
+		["Animate cTab", "Does cTab UAV animation when opening cTab devices."],
+		["cTab", "GUI Settings"],
+		true,
+		false,
+		{ },
+		true
+	] call CBA_fnc_addSetting;
+};
+
 /*[
     "mjb_ctab_delayAceMapHandler",
     "CHECKBOX",
