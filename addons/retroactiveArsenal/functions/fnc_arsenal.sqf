@@ -1663,6 +1663,10 @@ private _itemSniper =
     "rhsusf_acc_nxs_3515x50f1_md_sun",
 
     "ace_5rnd_127x99_api_mag",
+    "ace_10rnd_127x99_api_mag",
+
+	"5Rnd_127x108_Mag",
+	"5Rnd_127x108_APDS_Mag",
 
     "CUP_10Rnd_127x99_M107",
     "CUP_5Rnd_127x99_as50_M",

@@ -403,7 +403,7 @@ class sniper : basetrooper
 		"DemoCharge_Remote_Mag",
 		LIST_2("greenmag_ammo_127x99_basic_60Rnd"),
 		LIST_2("CUP_40Rnd_46x30_MP7"),
-		LIST_6("CUP_10Rnd_127x99_M107")
+		LIST_6("ACE_10Rnd_127x99_API_Mag")
 	};
 	items[] = {
 		"greenmag_item_speedloader",
