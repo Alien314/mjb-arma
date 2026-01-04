@@ -46,40 +46,48 @@ maxSpeed = 2100; // def 1000 kph
 // CUP
 
 // CCIP fixes
+
+#define CCIP_CIRC \
+	points[] = {{"ImpactPoint",{0,-0.102273},1},{"ImpactPoint",{0.01736,-0.100718},1},{"ImpactPoint",{0.0342,-0.0961057},1},{"ImpactPoint",{0.05,-0.0885682},1},{"ImpactPoint",{0.06428,-0.0783409},1},{"ImpactPoint",{0.0766,-0.0657409},1},{"ImpactPoint",{0.0866,-0.0511364},1},{"ImpactPoint",{0.09397,-0.0349773},1},{"ImpactPoint",{0.09848,-0.0177545},1},{"ImpactPoint",{0.1,0},1},{"ImpactPoint",{0.09848,0.0177545},1},{"ImpactPoint",{0.09397,0.0349773},1},{"ImpactPoint",{0.0866,0.0511364},1},{"ImpactPoint",{0.0766,0.0657409},1},{"ImpactPoint",{0.06428,0.0783409},1},{"ImpactPoint",{0.05,0.0885682},1},{"ImpactPoint",{0.0342,0.0961057},1},{"ImpactPoint",{0.01736,0.100718},1},{"ImpactPoint",{0,0.102273},1},{"ImpactPoint",{-0.01736,0.100718},1},{"ImpactPoint",{-0.0342,0.0961057},1},{"ImpactPoint",{-0.05,0.0885682},1},{"ImpactPoint",{-0.06428,0.0783409},1},{"ImpactPoint",{-0.0766,0.0657409},1},{"ImpactPoint",{-0.0866,0.0511364},1},{"ImpactPoint",{-0.09397,0.0349773},1},{"ImpactPoint",{-0.09848,0.0177545},1},{"ImpactPoint",{-0.1,0},1},{"ImpactPoint",{-0.09848,-0.0177545},1},{"ImpactPoint",{-0.09397,-0.0349773},1},{"ImpactPoint",{-0.0866,-0.0511364},1},{"ImpactPoint",{-0.0766,-0.0657409},1},{"ImpactPoint",{-0.06428,-0.0783409},1},{"ImpactPoint",{-0.05,-0.0885682},1},{"ImpactPoint",{-0.0342,-0.0961057},1},{"ImpactPoint",{-0.01736,-0.100718},1},{"ImpactPoint",{0,-0.102273},1},{},{"ImpactPoint",1,"Limit0109",1,{0,-0.0204545},1},{"ImpactPoint",1,"Limit0109",1,{0.014,-0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{"+ 0.02",0},1},{"ImpactPoint",1,"Limit0109",1,{0.014,0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{0,0.0204545},1},{"ImpactPoint",1,"Limit0109",1,{-0.014,0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{"- 0.02",0},1},{"ImpactPoint",1,"Limit0109",1,{-0.014,-0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{0,-0.0204545},1},{},{"Velocity",0.001,"ImpactPoint",1,"Limit0109",1,{0,0},1},{"Velocity",1,"Limit0109",1,{0,0},1}};\
+	type = "line";\
+	width = 4
+
+#define CCIP_DIST class Distance { \
+	align = "center"; \
+	down[] = {"ImpactPoint",{-0.002,0.15},1}; \
+	max = 15; \
+	pos[] = {"ImpactPoint",{-0.002,0.11},1}; \
+	right[] = {"ImpactPoint",{0.045,0.11},1}; \
+	scale = 1; \
+	source = "ImpactDistance"; \
+	sourcePrecision = 1; \
+	sourceScale = 0.001; \
+	type = "text"; \
+}
+
+#define CCIP_BONES	class ImpactPoint { \
+	pos0[] = {0.5,0.47}; \
+	pos10[] = {0.94,0.92}; \
+	source = "impactpointweaponRelative"; \
+	type = "vector"; \
+}; \
+class Limit0109 { \
+	limits[] = {0.1,0.1,0.9,0.9}; \
+	type = "limit"; \
+}
+
 class CUP_AV8B_Base : Plane {
 	class MFD {
 		class parallaxhud {
 			class bones  {
-				class ImpactPoint {
-					pos0[] = {0.5,0.47};
-					pos10[] = {0.94,0.92};
-					source = "impactpointweaponRelative";
-					type = "vector";
-				};
-				class Limit0109 {
-					limits[] = {0.1,0.1,0.9,0.9};
-					type = "limit";
-				};
+				CCIP_BONES;
 			};
 			class draw {
 				class Bomb {
 					class Circle {
-						points[] = {{"ImpactPoint",{0,-0.102273},1},{"ImpactPoint",{0.01736,-0.100718},1},{"ImpactPoint",{0.0342,-0.0961057},1},{"ImpactPoint",{0.05,-0.0885682},1},{"ImpactPoint",{0.06428,-0.0783409},1},{"ImpactPoint",{0.0766,-0.0657409},1},{"ImpactPoint",{0.0866,-0.0511364},1},{"ImpactPoint",{0.09397,-0.0349773},1},{"ImpactPoint",{0.09848,-0.0177545},1},{"ImpactPoint",{0.1,0},1},{"ImpactPoint",{0.09848,0.0177545},1},{"ImpactPoint",{0.09397,0.0349773},1},{"ImpactPoint",{0.0866,0.0511364},1},{"ImpactPoint",{0.0766,0.0657409},1},{"ImpactPoint",{0.06428,0.0783409},1},{"ImpactPoint",{0.05,0.0885682},1},{"ImpactPoint",{0.0342,0.0961057},1},{"ImpactPoint",{0.01736,0.100718},1},{"ImpactPoint",{0,0.102273},1},{"ImpactPoint",{-0.01736,0.100718},1},{"ImpactPoint",{-0.0342,0.0961057},1},{"ImpactPoint",{-0.05,0.0885682},1},{"ImpactPoint",{-0.06428,0.0783409},1},{"ImpactPoint",{-0.0766,0.0657409},1},{"ImpactPoint",{-0.0866,0.0511364},1},{"ImpactPoint",{-0.09397,0.0349773},1},{"ImpactPoint",{-0.09848,0.0177545},1},{"ImpactPoint",{-0.1,0},1},{"ImpactPoint",{-0.09848,-0.0177545},1},{"ImpactPoint",{-0.09397,-0.0349773},1},{"ImpactPoint",{-0.0866,-0.0511364},1},{"ImpactPoint",{-0.0766,-0.0657409},1},{"ImpactPoint",{-0.06428,-0.0783409},1},{"ImpactPoint",{-0.05,-0.0885682},1},{"ImpactPoint",{-0.0342,-0.0961057},1},{"ImpactPoint",{-0.01736,-0.100718},1},{"ImpactPoint",{0,-0.102273},1},{},{"ImpactPoint",1,"Limit0109",1,{0,-0.0204545},1},{"ImpactPoint",1,"Limit0109",1,{0.014,-0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{"+ 0.02",0},1},{"ImpactPoint",1,"Limit0109",1,{0.014,0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{0,0.0204545},1},{"ImpactPoint",1,"Limit0109",1,{-0.014,0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{"- 0.02",0},1},{"ImpactPoint",1,"Limit0109",1,{-0.014,-0.0143182},1},{"ImpactPoint",1,"Limit0109",1,{0,-0.0204545},1},{},{"Velocity",0.001,"ImpactPoint",1,"Limit0109",1,{0,0},1},{"Velocity",1,"Limit0109",1,{0,0},1}};
-						type = "line";
-						width = 4;
+						CCIP_CIRC;
 					};
-					class Distance {
-						align = "center";
-						down[] = {"ImpactPoint",{-0.002,0.15},1};
-						max = 15;
-						pos[] = {"ImpactPoint",{-0.002,0.11},1};
-						right[] = {"ImpactPoint",{0.045,0.11},1};
-						scale = 1;
-						source = "ImpactDistance";
-						sourcePrecision = 1;
-						sourceScale = 0.001;
-						type = "text";
-					};
+					CCIP_DIST;
 				};
 			};
 		};
@@ -87,14 +95,68 @@ class CUP_AV8B_Base : Plane {
 };
 class CUP_A10_Base : Plane_Base_F {
 	class MFD {
-		#include "mfdFix.hpp"
+		class AirplaneHUD {
+			class bones  {
+				CCIP_BONES;
+			};
+			class draw {
+				class BombCrosshairGroup {
+					condition = "bomb";
+					type = "group"
+					class BombCrosshair {
+						CCIP_CIRC;
+					};
+					CCIP_DIST;
+				};
+			};
+		};
 	};
 };
 class CUP_Su25_base : Plane {
-	#include "mfdFix_SU25_L39.hpp"
+	class MFD {
+		class AirplaneHUD {
+			class bones  {
+				CCIP_BONES;
+				class Velocity {
+					pos0[] = {0.5,0.47};
+					pos10[] = {0.94,0.92};
+					source = "velocity";
+					type = "vector";
+				};
+			};
+			class draw {
+				class Bomb {
+					class Circle {
+						CCIP_CIRC;
+					};
+					CCIP_DIST;
+				};
+			};
+		};
+	};
 };
 class CUP_L39_base : Plane {
-	#include "mfdFix_SU25_L39.hpp"
+	class MFD {
+		class AirplaneHUD {
+			class bones  {
+				CCIP_BONES;
+				class Velocity {
+					pos0[] = {0.5,0.47};
+					pos10[] = {0.94,0.92};
+					source = "velocity";
+					type = "vector";
+				};
+			};
+			class draw {
+				class Bomb {
+					class Circle {
+						CCIP_CIRC;
+					};
+					CCIP_DIST;
+				};
+			};
+		};
+	};
 };
 
 class CUP_F35B_base : Plane {  // f35 1700 unladen
@@ -107,7 +169,21 @@ class CUP_F35B_base : Plane {  // f35 1700 unladen
 */
 
 	class MFD {
-		#include "mfdFix.hpp"
+		class AirplaneHUD {
+			class bones  {
+				CCIP_BONES;
+			};
+			class draw {
+				class BombCrosshairGroup {
+					condition = "bomb";
+					type = "group"
+					class BombCrosshair {
+						CCIP_CIRC;
+					};
+					CCIP_DIST;
+				};
+			};
+		};
 	};
 };
 
@@ -126,7 +202,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 		class mjb_configTweaks {
 			init="params ['_this']; _this spawn {sleep 1; _this enableDirectionStabilization [false, [0]]; };";
 		};
-	};*/
+	};//*/
 	class NewTurret;
 	class Turrets {
 		class MainTurret : NewTurret {
