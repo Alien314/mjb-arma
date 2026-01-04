@@ -63,6 +63,20 @@ class CfgAmmo
 
 	// Rocket use flags
 	// cup rpg18, smaw hedp n, smaw spotting
+
+
+	// had too short life for autocannon, vanilla does 30, these were 6 secs
+#define AC_TIME(var)	class var : BulletBase {\
+		timeToLive = 30;\
+	}
+	AC_TIME(CUP_B_20mm_AP_Tracer_Red);
+	AC_TIME(CUP_B_20mm_APHE_Tracer_Red);
+	AC_TIME(CUP_B_20mm_API_Tracer_Red);
+	AC_TIME(CUP_B_23mm_AA);
+	AC_TIME(CUP_B_23mm_APHE_No_Tracer);
+	AC_TIME(CUP_B_25mm_APFSDS_White_Tracer);
+	AC_TIME(CUP_B_30mm_CAS_Red_Tracer);
+	AC_TIME(CUP_B_30x113mm_M789_HEDP_Red_Tracer);
 	
 	
 	
