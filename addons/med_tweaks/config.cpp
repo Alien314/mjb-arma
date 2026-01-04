@@ -61,15 +61,18 @@ class ace_medical_treatment {
 class ACE_Medical_StateMachine {
 	class FatalInjury {
         class SecondChance {
-			condition = "isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 0} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 0 }";
+			condition = "_this call mjb_med_tweaks_fnc_conditionSecondChance";
+			//condition = "isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 0} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 0 }";
 		};
 	};
 	class CardiacArrest {
 		class DeathAI {
-			condition = "!(_this getVariable [""ace_medical_statemachine_AIUnconsciousness"", ace_medical_statemachine_AIUnconsciousness]) && {!isPlayer _this}";
+			condition = "_this call mjb_med_tweaks_fnc_conditionDeathAI";
+			//condition = "!(_this getVariable [""ace_medical_statemachine_AIUnconsciousness"", ace_medical_statemachine_AIUnconsciousness]) && {!isPlayer _this}";
 		};
         class Execution {
-            condition = "(isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 2} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 2 }) && { !(_this getVariable [""ace_medical_deathBlocked"",false])}";
+			condition = "_this call mjb_med_tweaks_fnc_conditionExecutionDeath";
+            //condition = "(isPlayer _this && {(_this getVariable [""ace_medical_statemachine_fatalInjuriesPlayer"",ace_medical_statemachine_fatalInjuriesPlayer]) != 2} || { (_this getVariable [""ace_medical_statemachine_fatalInjuriesAI"",ace_medical_statemachine_fatalInjuriesAI]) != 2 }) && { !(_this getVariable [""ace_medical_deathBlocked"",false])}";
         };
 	};
 };
