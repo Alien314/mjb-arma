@@ -200,14 +200,18 @@ private _itemEquipment =
     //============================================================
     //Vests
     //============================================================
-    "V_PlateCarrier2_blk",
+    //Vanilla Vests
+	"V_PlateCarrier2_blk",
     "V_PlateCarrier2_rgr_noflag_F",
     "V_PlateCarrier1_blk",
     "V_PlateCarrier1_rgr_noflag_F",
+
+	//CUP vests
     "CUP_V_CZ_NPP2006_nk_black",
     "CUP_V_CZ_NPP2006_nk_vz95",
     "CUP_V_CZ_NPP2006_nk_des",
-
+	
+	//Tarkov Vests
     "Gjel_vest",
     "GjelBlackRock_vest",
     "GjelThunderbolt_vest",
@@ -228,6 +232,8 @@ private _itemEquipment =
     "ThorcrvBlackRock_vest",
 	"ThorcrvThunderbolt_vest",
 	"ThorcrvTriton_vest",
+	
+	//JCA Vests
 	"JCA_V_CarrierRigKBT_01_combat_MTP_alpine_F",
 	"JCA_V_CarrierRigKBT_01_combat_MTP_arid_F",
 	"JCA_V_CarrierRigKBT_01_combat_MTP_desert_F",
@@ -236,6 +242,39 @@ private _itemEquipment =
 	"JCA_V_CarrierRigKBT_01_combat_black_F",
 	"JCA_V_CarrierRigKBT_01_combat_olive_F",
 	"JCA_V_CarrierRigKBT_01_combat_sand_F",
+	"JCA_V_CarrierRigKBT_01_compact_MTP_alpine_F",
+	"JCA_V_CarrierRigKBT_01_compact_MTP_arid_F",
+	"JCA_V_CarrierRigKBT_01_compact_MTP_desert_F",
+	"JCA_V_CarrierRigKBT_01_compact_MTP_tropic_F",
+	"JCA_V_CarrierRigKBT_01_compact_MTP_woodland_F",
+	"JCA_V_CarrierRigKBT_01_compact_black_F",
+	"JCA_V_CarrierRigKBT_01_compact_olive_F",
+	"JCA_V_CarrierRigKBT_01_compact_sand_F",
+	"JCA_V_CarrierRigKBT_01_crew_MTP_alpine_F",
+	"JCA_V_CarrierRigKBT_01_crew_MTP_arid_F",
+	"JCA_V_CarrierRigKBT_01_crew_MTP_desert_F",
+	"JCA_V_CarrierRigKBT_01_crew_MTP_tropic_F",
+	"JCA_V_CarrierRigKBT_01_crew_MTP_woodland_F",
+	"JCA_V_CarrierRigKBT_01_crew_black_F",
+	"JCA_V_CarrierRigKBT_01_crew_olive_F",
+	"JCA_V_CarrierRigKBT_01_crew_sand_F",	
+	"JCA_V_CarrierRigKBT_01_light_MTP_alpine_F",
+	"JCA_V_CarrierRigKBT_01_light_MTP_arid_F",
+	"JCA_V_CarrierRigKBT_01_light_MTP_desert_F",
+	"JCA_V_CarrierRigKBT_01_light_MTP_tropic_F",
+	"JCA_V_CarrierRigKBT_01_light_MTP_woodland_F",
+	"JCA_V_CarrierRigKBT_01_light_black_F",
+	"JCA_V_CarrierRigKBT_01_light_olive_F",
+	"JCA_V_CarrierRigKBT_01_light_sand_F",
+	"JCA_V_CarrierRigKBT_01_recon_MTP_alpine_F",
+	"JCA_V_CarrierRigKBT_01_recon_MTP_arid_F",
+	"JCA_V_CarrierRigKBT_01_recon_MTP_desert_F",
+	"JCA_V_CarrierRigKBT_01_recon_MTP_tropic_F",
+	"JCA_V_CarrierRigKBT_01_recon_MTP_woodland_F",
+	"JCA_V_CarrierRigKBT_01_recon_black_F",
+	"JCA_V_CarrierRigKBT_01_recon_olive_F",
+	"JCA_V_CarrierRigKBT_01_recon_sand_F",
+	
 
     //============================================================
     //Backpacks
