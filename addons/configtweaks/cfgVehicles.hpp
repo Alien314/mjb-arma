@@ -940,6 +940,8 @@ class CfgVehicles {
 
 #include "cfgVehicles_Planes.hpp"
 
+#include "cfgVehicles_Ground.hpp"
+
   #define PACKPLUS(PARENT,NAME,DISPLAYNAME) \
   class ##PARENT##; \
   class ##NAME## : ##PARENT## { \
