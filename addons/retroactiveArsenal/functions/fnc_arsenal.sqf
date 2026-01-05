@@ -2590,7 +2590,7 @@ switch (true) do
     }; // + _itemWeaponRLAT
         case (_unitRole in ["sniper","B_Sharpshooter_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _itemLeaderEquipment + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponPistol + _itemWeaponCQB + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _itemLeaderEquipment + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["spotter","B_Spotter_F"]) :
     {
