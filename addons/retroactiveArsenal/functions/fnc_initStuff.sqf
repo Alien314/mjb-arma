@@ -32,25 +32,7 @@ if (mjb_combatLock) then {
 		params ["_unit","","_vehicle","","_isEject"];
 
 		if !(alive _unit && {_unit isEqualTo player && {((crew _vehicle) select {alive _x}) isEqualTo []}}) exitWith {};
-		[_vehicle,{
-			_this setVariable ['mjb_combatLock',true,true];
-			while {((crew _this) select {alive _x}) isEqualTo []} do {
-				private _clock = (_this getVariable ['mjb_combatLock',nil]);
-				if (isNil '_clock') exitWith {};
-				private _lock = false;
-				if (count ((_this nearEntities [["CAManBase"],20]) select {isPlayer _x}) isEqualTo 0) then {
-					_lock = true;
-				};
-				[_this, _lock] remoteExec ["lock",_this];
-				sleep 5;
-			};
-			private _clock = (_this getVariable ['mjb_combatLock',nil]);
-			if !(isNil '_clock') then {
-				[_this, false] remoteExec ["lock",_this];
-			};
-			
-			_this setVariable ['mjb_combatLock',nil,true];
-		}] remoteExec ['spawn',2];
+		[_vehicle,((side player) call BIS_fnc_sideID)] remoteExec ['mjb_arsenal_fnc_combatLock',2];
 	}, nil] call CBA_fnc_addBISEventHandler;
 };
 

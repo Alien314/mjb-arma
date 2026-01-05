@@ -18,11 +18,15 @@ if (isNil "zen_dialog") exitWith {};
 	[
 		["CHECKBOX", "Empty to Unlock, Check to Lock:", false, true],
 		["CHECKBOX", "Lock for Players Only:", false, true],
+		["CHECKBOX", "Lock for AI Only(exclusive):", false, true],
 		["CHECKBOX", "Lock Vehicle Inventory:", false, true]
 	], {  params ["_values", "_args"];
-		_values params ["_lock","_players","_cargo"];
+		_values params ["_lock","_players","_ais","_cargo"];
 		_args params ["_vehicle"];
 		_vehicle setVariable ['mjb_combatLock',nil,true];
+		if (_ais) exitWith {
+			[_vehicle,((side player) call BIS_fnc_sideID)] remoteExec ['mjb_arsenal_fnc_combatLock',2];
+		};
         if (_players && {_lock}) then {_lock = false};
 		{
 			_x params ["_unit","_type","_cargo","_turret"];
