@@ -31,6 +31,17 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_woodCutting",
+    "CHECKBOX",
+    ["Cut Tree hold action", "Allows players to remove trees and bushes, time to complete is based on size of the object."],
+    [_title, "Player QoL"],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_slotSaverAI",
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],

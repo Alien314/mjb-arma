@@ -224,7 +224,8 @@ if (mjb_combatLock) then {
 				};
 			};
 		}, nil] call CBA_fnc_addBISEventHandler;
-	}, true, [], true] call CBA_fnc_addClassEventHandler;*/
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
+	*/
 };
 
 if (mjb_disableGunnerBail) then {
@@ -341,6 +342,41 @@ if (isDedicated) exitWith {};
 [] call mjb_arsenal_fnc_initStuff;
 
 if !(hasInterface) exitWith {};
+
+if (mjb_woodCutting) then {
+    mjb_cutLoop = nil spawn { while {true} do { sleep 3;
+		private _obj = cursorObject;
+		if (!isNull _obj && {(player distance2D _obj < 4 && {_obj in (nearestTerrainObjects [player,['TREE','SMALL TREE','BUSH'],20])})}) then {
+			private _action = ([ player, "Cut tree", nil,nil,
+				"true",
+				"true",
+				{},
+				{
+					if !(isNil 'mjb_cutSignal') exitWith {};
+					"ace_gestures_cover" call ace_gestures_fnc_playSignal;
+					mjb_cutSignal = true;
+					[{playSound3d ["z\jsrs2025\addons\sounds_sfx\sounds\bullethits\wood_" + str (selectRandom [4,5,6,8]) + ".wss",player,false,player,1,1,50];},nil,0.1] call CBA_fnc_waitAndExecute;
+					[{playSound3d ["z\jsrs2025\addons\sounds_sfx\sounds\bullethits\wood_" + str (selectRandom [4,5,6,8]) + ".wss",player,false,player,1,1,50];},nil,0.6] call CBA_fnc_waitAndExecute;
+					[{mjb_cutSignal = nil;},nil,1] call CBA_fnc_waitAndExecute;
+				},
+				{
+					cursorObject setDamage [1,true,player,player];
+				},
+				{},
+				nil, ((boundingBox cursorObject) select 2), 0, true, false, false
+			] call BIS_fnc_holdActionAdd);
+			private _exit = false;
+			while {!_exit && {cursorObject isEqualTo _obj}} do {
+				sleep 0.5;
+				while {cursorObject isNotEqualTo _obj} do {
+					sleep 1;
+					if (cursorObject isNotEqualTo _obj) exitWith {_exit = true};
+				};
+			};
+			[player, _action] call BIS_fnc_holdActionRemove;
+		};
+	}; };
+};
 
 setTIParameter ["OutputRangeStart", mjb_thermalStart];
 setTIParameter ["OutputRangeWidth", mjb_thermalWidth];
