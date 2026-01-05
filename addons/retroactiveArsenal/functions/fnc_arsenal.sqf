@@ -1683,6 +1683,9 @@ private _itemSniper =
     "CUP_U_O_RUS_Ghillie",
     "CUP_U_B_BAF_DDPM_GHILLIE",
 
+	//sling for defense
+	"tsp_sling",
+
     // "optic_AMS", // marksman dlc
     "optic_LRPS",
     "CUP_optic_LeupoldMk4_25x50_LRT_pip",
