@@ -347,7 +347,7 @@ if (mjb_woodCutting) then {
     mjb_cutLoop = 0 spawn { while {true} do { sleep 3;
 		private _obj = cursorObject;
 		if (!isNull _obj && {(player distance2D _obj < 4 && {_obj in (nearestTerrainObjects [player,['TREE','SMALL TREE','BUSH'],20])})}) then {
-			private _action = ([ player, "Cut tree", nil,nil,
+			private _action = ([ player, "Cut tree", 'a3\ui_f\data\Map\LocationTypes\vegetationBroadleaf_CA.paa','a3\ui_f\data\Map\LocationTypes\vegetationPalm_CA.paa',
 				"true",
 				"true",
 				{},
