@@ -195,6 +195,38 @@ if (mjb_dropPlate || {mjb_plateFix}) then {
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 };
 
+if (mjb_combatLock) then {
+	['zen_common_lock', {
+		params ["_vehicle"];
+		_vehicle setVariable ['mjb_combatLock',nil,true];
+	}] call CBA_fnc_addEventHandler;
+	/*["CAManBase", "InitPost", {
+		params ["_unit"];
+		if !(local _unit || {!isPlayer _unit}) exitWith {};
+		[_unit, "GetOutMan", {
+			params ["_unit","_role","_vehicle","_turret","_isEject"];
+
+			if (_unit isEqualTo player) then {
+				_vehcle spawn {
+					while {((crew _this) select {alive _x}) isEqualTo []} do {
+						if ((_this getVariable ['mjb_locker',player]) isNotEqualTo player) exitWith {};
+						private _lock = false;
+						if ((locked _this) < 2) && {count ((_this nearEntities [["CAManBase"],20]) select {isPlayer _x}) isEqualTo 0}) then {
+							_lock = true;
+							_this setVariable ['mjb_locker',player,true];
+						} else {_this setVariable ['mjb_locker',nil,true];};
+						[_this, _lock] remoteExec ["lock",_this];
+						sleep 5;
+					};
+					if ((_this getVariable ['mjb_locker',player]) isEqualTo player) then {[_this, _lock] remoteExec ["lock",_this];};
+					
+					_this setVariable ['mjb_locker',nil,true];
+				};
+			};
+		}, nil] call CBA_fnc_addBISEventHandler;
+	}, true, [], true] call CBA_fnc_addClassEventHandler;*/
+};
+
 if (mjb_disableGunnerBail) then {
 	[{  private _eventHash = (cba_events_eventHashes getVariable ["ace_vehicle_damage_bailOut", nil]);
         if (isNil '_eventHash') exitWith {};

@@ -127,6 +127,17 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_combatLock",
+    "CHECKBOX",
+    ["Player Combat Lock", "Prevents AI from entering vehicles players have exited while players are away from the vehicle."],
+    [_title, _category],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_cfBaiFix",
     "CHECKBOX",
     ["Fix CF BAI on Zeus AI", "Runs CF BAI's init on zeus locality to make it's components affect AI they spawn (not global, so zeus can turn it off if it affects their performance)."],

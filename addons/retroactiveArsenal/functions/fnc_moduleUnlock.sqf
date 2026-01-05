@@ -22,6 +22,7 @@ if (isNil "zen_dialog") exitWith {};
 	], {  params ["_values", "_args"];
 		_values params ["_lock","_players","_cargo"];
 		_args params ["_vehicle"];
+		_vehicle setVariable ['mjb_combatLock',nil,true];
         if (_players && {_lock}) then {_lock = false};
 		{
 			_x params ["_unit","_type","_cargo","_turret"];
