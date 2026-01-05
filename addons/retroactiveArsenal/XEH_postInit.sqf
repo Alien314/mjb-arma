@@ -344,7 +344,7 @@ if (isDedicated) exitWith {};
 if !(hasInterface) exitWith {};
 
 if (mjb_woodCutting) then {
-    mjb_cutLoop = nil spawn { while {true} do { sleep 3;
+    mjb_cutLoop = 0 spawn { while {true} do { sleep 3;
 		private _obj = cursorObject;
 		if (!isNull _obj && {(player distance2D _obj < 4 && {_obj in (nearestTerrainObjects [player,['TREE','SMALL TREE','BUSH'],20])})}) then {
 			private _action = ([ player, "Cut tree", nil,nil,
