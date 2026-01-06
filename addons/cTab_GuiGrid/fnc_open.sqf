@@ -161,7 +161,7 @@ if (_isDialog) then {
 		private _model = (['cTab\data\itemAndroid.p3d','cTab\data\itemMicroDAGR.p3d','\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d'] select _index);
 		private _pos = ([[0.015,0.03,-0.04],[-0.00,0.02,-0.03],[-0.04,0.02,-0.07]] select _index);
 		private _rot = ([[200,-50,-60],[200,-50,-70],[200,-50,10]] select _index);
-		[playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', _model, 'leftHand', _pos, _rot, {isNil "cTabIfOpen" || {'dlg' in (cTabIfOpen # 1)}}] spawn tsp_fnc_gesture_item;
+		[playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', _model, 'leftHand', _pos, _rot, {isNil "cTabIfOpen" || {'dsp' in (cTabIfOpen # 1)}}] spawn tsp_fnc_gesture_item;
 	};
 	
 	// XXX: Switching to display would allow to walk even when device is open
