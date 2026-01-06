@@ -360,6 +360,7 @@ if (mjb_woodCutting) then {
 					[{mjb_cutSignal = nil;},nil,1] call CBA_fnc_waitAndExecute;
 				},
 				{
+					if (damage cursorObject isEqualTo 1) exitWith {cursorObject hideObjectGlobal true;};
 					cursorObject setDamage [1,true,player,player];
 				},
 				{},
