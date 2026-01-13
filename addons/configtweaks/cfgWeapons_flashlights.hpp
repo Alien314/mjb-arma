@@ -66,33 +66,9 @@
   };
   
   class InventoryFlashLightItem_Base_F;
-  class FlashLight;
 
-  class acc_flashlight : ItemCore
-  {
-      class ItemInfo : InventoryFlashLightItem_Base_F
-      {
-          class FlashLight : FlashLight
-          {
-              coneFadeCoef = 10;
-              flareMaxDistance = 300;
-              flareSize = 4;
-              innerAngle = 10;
-              intensity = 4000;
-              outerAngle = 80;
-              scale[] = {0};
-              class Attenuation
-              {
-                    constant = 32;
-                    hardLimitEnd = 105;
-                    hardLimitStart = 15;
-                    linear = 1;
-                    quadratic = 0.05;
-                    start = 0;                
-              };
-          };
-      };
-  };
+  
+  LIGHTCONF(acc_flashlight,ItemCore);
   LIGHTCONF(acc_flashlight_pistol,ItemCore);
   LIGHTCONF(acc_esd_01_flashlight,ItemCore);
   LIGHTCONF(CUP_acc_Flashlight,ItemCore);
