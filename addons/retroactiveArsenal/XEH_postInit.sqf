@@ -359,12 +359,17 @@ if (mjb_woodCutting) then {
 					[{playSound3d ["z\jsrs2025\addons\sounds_sfx\sounds\bullethits\wood_" + str (selectRandom [4,5,6,8]) + ".wss",player,false,player,1,1,50];},nil,0.6] call CBA_fnc_waitAndExecute;
 					[{mjb_cutSignal = nil;},nil,1] call CBA_fnc_waitAndExecute;
 				},
-				{
-					if (damage cursorObject isEqualTo 1) exitWith {cursorObject hideObjectGlobal true;};
-					cursorObject setDamage [1,true,player,player];
+				{	params ['','','','_args'];
+					_args params ['_tree'];
+					if (damage _tree isEqualTo 1) exitWith {
+						[_tree,true] remoteExec ['hideObjectGlobal',2];
+						private _newLog = createVehicle ['Land_WoodenLog_F', (getPos _tree),[], 5];
+					};
+					_tree setDamage [1,true,player,player];
 				},
 				{},
-				nil, ((boundingBox cursorObject) select 2), 0, true, false, false
+				[_obj],
+				((boundingBox _obj) select 2), 0, true, false, false
 			] call BIS_fnc_holdActionAdd);
 			private _exit = false;
 			while {!_exit && {cursorObject isEqualTo _obj}} do {
