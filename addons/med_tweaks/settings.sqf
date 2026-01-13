@@ -137,6 +137,7 @@ private _title = "MJB Arma Medical";
     [0, 4, ORGAN_DAMAGE_THRESHOLD_DEFAULT, 2],
     true
 ] call CBA_fnc_addSetting;
+
 [
     QEGVAR(medical,const_heartHitChance),
     "SLIDER",
