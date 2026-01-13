@@ -58,5 +58,6 @@ _cursorMarkerIndex = if (_this select 1) then {[_ctrlScreen,cTabMapCursorPos] ca
 	};
 } count cTabUserMarkerList;
 
-//true
-nil
+if (visibleMap) exitWith {nil};
+
+true

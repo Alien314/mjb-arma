@@ -35,6 +35,7 @@ _ctrlScreen = _this select 0;
 _mode = _this select 1;
 _vehicles = [];
 _playerVehicle = vehicle cTab_player;
+private _playerLeading = leader cTab_player isEqualTo cTab_player;
 private _playerVehicle_marker = [objNull, _playerVehicle] select GVAR(useArmaMarker);
 _playerGroup = group cTab_player;
 _mountedLabels = [];
@@ -115,7 +116,7 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 			_pos = if ( GVAR(bft_mode) == 1) then { getPosASL _veh } else { _x select 5 };
 			_ctrlScreen drawIcon [_x select 1,cTabColorBlue,_pos,cTabIconSize,cTabIconSize,0,_text,0,cTabTxtSize,"TahomaB","right"];
 			_ctrlScreen drawIcon [_x select 2,cTabColorBlue,_pos,cTabGroupOverlayIconSize,cTabGroupOverlayIconSize,0,"",0,cTabTxtSize,"TahomaB","right"];
-			if ( _veh == _playerVehicle ) then { _mustDrawPlayer = false; };
+			if ( _veh == _playerVehicle ) then { _mustDrawPlayer = mjb_ctab_alwaysDrawPlayer; };
 		};
 	} forEach cTabBFTgroups;
 };
@@ -184,5 +185,5 @@ if (_drawText && !(_mountedLabels isEqualTo [])) then {
 	};
 };
 
-//_mustDrawPlayer
-nil
+if (visibleMap) exitWith {nil};
+_mustDrawPlayer

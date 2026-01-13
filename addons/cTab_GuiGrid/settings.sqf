@@ -21,6 +21,15 @@
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_ctab_alwaysDrawPlayer",
+    "CHECKBOX",
+    ["Always Show Player Direction Marker", "Shows player icon with direction marker while leader of the group."],
+    ["cTab", "GUI Settings"],
+    true,
+    false
+] call CBA_fnc_addSetting;
+
 if (isClass (configFile >> 'cfgPatches' >> 'tsp_animate')) then {
 	[
 		"mjb_animate_ctab",
