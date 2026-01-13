@@ -428,6 +428,9 @@ private _itemNVG =
 ];
 _itemEquipment append _itemNVG;
 
+private _itemArmNVG = ("getText (_x >> 'author') isEqualTo 'Aegis and Hartman'" configClasses (configFile >> "CfgWeapons") apply {configName _x});
+_itemEquipment append _itemArmNVG;
+
 private _itemWeaponMelee =
 [
     "Crowbar",
@@ -1668,6 +1671,7 @@ private _itemWeaponSniper =
     "CUP_srifle_ksvk",
     "CUP_srifle_M107_Pristine",
     "CUP_srifle_M24_blk",
+	"CUP_srifle_M2010_blk",
 
     "rhs_weap_m24sws",
     "rhs_weap_m40a5",
@@ -1716,6 +1720,8 @@ private _itemSniper =
     "CUP_5Rnd_86x70_L115A1",
     "CUP_5Rnd_127x108_KSVK_M",
     "CUP_5Rnd_762x51_M24",
+	"CUP_5Rnd_762x67_M2010_M",
+	"CUP_5Rnd_TE1_Red_Tracer_762x67_M2010_M",
 
     "rhsusf_5Rnd_762x51_m118_special_Mag",
     "rhsusf_5Rnd_762x51_m993_Mag",
@@ -2598,7 +2604,7 @@ switch (true) do
     };
         case (_unitRole in ["sfsl","B_recon_TL_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
