@@ -280,7 +280,56 @@ class CfgWeapons {
   class ItemCore;
 
 #include "CfgWeapons_flashlights.hpp" // needs ItemCore
-  
+
+
+// Uniforms
+  class Uniform_Base;
+  class UniformItem;
+  class U_IG_Guerilla1_1 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerilla2_1 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerilla2_2 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerilla2_3 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerilla3_1 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerilla3_2 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class U_IG_Guerrilla_6_1 : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };//*/
+  class CUP_U_C_Tracksuit_01 : ItemCore {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
+  class WU_B_GEN_Commander_F : Uniform_Base {
+	class ItemInfo : UniformItem {
+		containerClass = "Supply40";
+	};
+  };
 
   class HeadgearItem;
   #define HATARMOR(NAME,PARENT) \

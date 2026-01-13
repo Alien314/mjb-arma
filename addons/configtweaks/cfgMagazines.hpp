@@ -274,6 +274,16 @@ class CfgMagazines
 	RND12G(CUP_20Rnd_B_AA12_Buck_00,CA_Magazine);
 	RND12G(CUP_20Rnd_B_AA12_Slug,CA_Magazine);
 	RND12G(CUP_20Rnd_B_AA12_HE,CA_Magazine);
+
+// 300 WM: ACE_762x67_Ball_Mk248_Mod_1, ACE_762x67_Ball_Mk248_Mod_0, ACE_762x67_Ball_Berger_Hybrid_OTM
+// ACE_762x54_Ball_7T2
+// ACE_762x51_Ball_Subsonic, ACE_762x51_Ball_Mk319_Mod_0, ACE_762x51_Ball_Mk316_Mod_0, ACE_762x51_Ball_M993_AP, ACE_762x51_Ball_M118LR
+// ACE_65x47_Ball_Scenar, ACE_65x39_Caseless_Tracer_Dim, ACE_65x39_Caseless_green_Tracer_Dim, ACE_65_Creedmor_Ball
+// ACE_580x42_DBP88_Ball
+// ACE_556x45_Ball_Mk318, ACE_556x45_Ball_Mk262, ACE_556x45_Ball_M995_AP
+// ACE_408_Ball
+// ACE_338_Ball_API526, ACE_338_Ball
+// ACE_127x99_Ball_AMAX, ACE_127x99_API
 	
 	// RHS
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
