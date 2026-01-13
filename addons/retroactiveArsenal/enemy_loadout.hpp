@@ -111,7 +111,7 @@ class r : baseMan
 	magazines[] = 
 	{
 		"CUP_HandGrenade_RGD5",
-		LIST_4("CUP_30Rnd_545x39_AK12_M")
+		LIST_4("CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_M")
 	};
 };
 
@@ -132,7 +132,7 @@ class g : r
 	};
 	magazines[] += 
 	{
-		LIST_5("CUP_1Rnd_HE_GP25_M"),
+		LIST_2("CUP_1Rnd_HE_GP25_M"),
 		LIST_2("CUP_1Rnd_SMOKE_GP25_M"),
 		LIST_2("CUP_IlumFlareWhite_GP25_M"),
 		LIST_2("CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_M")
