@@ -213,7 +213,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			gunAimDown = 0;
 			//gunnerUsesPilotView = 0;
 			inGunnerMayFire = 1;
-			//outGunnerMayFire = 0;
+			//outGunnerMayFire = 0; // breaks cam
 			//primaryObserver = 1;
 			stabilizedInAxes = 3;
 			turretInfoType = "RscOptics_CAS_01_TGP";//?
@@ -244,7 +244,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			radius = 15;
 			shortcut = "vehLockTurretView";
 			showWindow = 0;
-			statement = "if (!isNull cursorObject && {cursorObject isKindOf 'AllVehicles'}) exitWith { systemChat ('Stabilzed on Vehicle at ' + (mapGridPosition cursorObject)); this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0]] }; if (!isNull cursorObject) exitWith { systemChat ('Stabilzed on Object at ' + (mapGridPosition cursorObject)); this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0]] }; private _loc = terrainIntersectAtASL [(AGLToASL positionCameraToWorld [0,0,0]), (AGLToASL positionCameraToWorld [0,0,10000])]; if (_loc isEqualTo [0,0,0]) exitWith { systemChat 'No target in range'; this enableDirectionStabilization [true, [0]]; }; systemChat ('Stabilzed on Position: ' + mapGridPosition _loc); this lockCameraTo [_loc,[0],true]; this spawn {sleep 0.1; _this enableDirectionStabilization [true, [0]];};";
+			statement = "this enableDirectionStabilization [true, [0]]; this spawn { while { _this directionStabilizationEnabled [0] } do { if (cursorObject isKindOf 'AllVehicles') then { _this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0],true]; }; sleep 0.2; }; };";
 		};
 	};
 };
