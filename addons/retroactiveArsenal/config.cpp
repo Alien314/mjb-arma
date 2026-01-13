@@ -10,7 +10,8 @@ class CfgPatches {
     requiredAddons[]=
 		{
 	   		"ace_interact_menu",
-			"ace_zeus"
+			"ace_zeus",
+			"ace_rangecard"
 		};
 	};
 };
@@ -28,6 +29,9 @@ class Extended_PreInit_EventHandlers
 	class ace_zeus {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitZeus.sqf']";
 	};
+	class ace_rangecard {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitRangecard.sqf']";
+	};
 	class mjb_arsenal
 	{
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInit.sqf']";
@@ -37,6 +41,9 @@ class Extended_PreStart_EventHandlers
 {
 	class ace_zeus {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartZeus.sqf']";
+	};
+	class ace_rangecard {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartRangecard.sqf']";
 	};
 	class mjb_arsenal
 	{
