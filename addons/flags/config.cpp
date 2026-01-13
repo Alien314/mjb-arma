@@ -228,4 +228,56 @@ class CfgWeapons
 	  displayName = "C7Bravo";
 	  hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\c7a2_co.paa","CUP\Weapons\CUP_Weapons_M16\data\tigg_m203_m4_co.paa","z\mjb\addons\flags\data\colt727_furniture_co.paa","cup\weapons\cup_weapons_m16\data\tigg_m4barrel_co.paa","cup\weapons\cup_weapons_m16\data\m16a1_body_co.paa"};
   };
+
+#if __has_include("\Armbands\Facewear\Data\Colors\G_Armband_blk_CO.paa")
+	class G_Armband_NVG_blk_F;
+	class G_Armband_NVG_blk_alt_F;
+	class G_Armband_NVG_rats_F : G_Armband_NVG_blk_F {
+		displayName = "Armband [RATS]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_rats_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_armband_blk_CA.paa";
+	};
+	class G_Armband_NVG_rats_alt_F : G_Armband_NVG_blk_alt_F {
+		displayName = "Armband [RATS, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_rats_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_armband_blk_CA.paa";
+	};
+	class G_Armband_NVG_canada_F : G_Armband_NVG_blk_F {
+		displayName = "Armband [Canada]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_NVG_canada_alt_F : G_Armband_NVG_blk_alt_F {
+		displayName = "Armband [Canada, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+#endif
 };
+
+#if __has_include("\Armbands\Facewear\Data\Colors\G_Armband_blk_CO.paa")
+class CfgGlasses {
+	class G_Armband_blk_F;
+	class G_Armband_blk_alt_F;
+	class G_Armband_rats_F : G_Armband_blk_F {
+		displayName = "Armband [RATS]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_rats_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_armband_blk_CA.paa";
+	};
+	class G_Armband_rats_alt_F : G_Armband_blk_alt_F {
+		displayName = "Armband [RATS, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_rats_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_armband_blk_CA.paa";
+	};
+	class G_Armband_canada_F : G_Armband_blk_F {
+		displayName = "Armband [Canada]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+	class G_Armband_canada_alt_F : G_Armband_blk_alt_F {
+		displayName = "Armband [Canada, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_canada_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
+	};
+};
+#endif
