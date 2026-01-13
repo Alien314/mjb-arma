@@ -21,7 +21,7 @@ class CfgMissions {
 		class mjb_rzt_stratisFR2 {
 			author = "NotherDuck, MajorDanvers, Inquietude";
 			briefingName = "Stratis Firing Range v2,3";
-			directory = "z\mjb\addons\zeustemplates\missions\Stratis_Firing_Range_V2,3_96.Stratis";
+			directory = "z\mjb\addons\zeustemplates\missions\Stratis_Firing_Range_V2,4,2_101.Stratis";
 			overview = "z\mjb\addons\zeustemplates\overview.paa";
 			overviewText = "Firing Range for RATS pre-session and testing.";
 		};
@@ -77,7 +77,7 @@ class CfgMissions {
 		MISH(chernarus,Chernarus (Autumn));
 		MISH(chernarus_summer,Chernarus (Summer));
 		MISH(chernarus_winter,Chernarus (Winter));
-		MISH(chernarus_A3,Chernarus 2020);
+		MISH(cup_chernarus_A3,Chernarus 2020);
 		MISH(Maksniemi,Maksniemi);
 		MISH(oski_corran,Scottish Highlands);
 		MISH(tem_vinjesvingenc,Vinjesvingen);
@@ -103,6 +103,7 @@ class CfgMissions {
 		MISH(WL_Rosche,Rosche##COMMA Germany);
 		MISH(Woodland_ACR,Bystrica);
 		MISH(zargabad,Zargabad);
+		MISH(cup_Zargabad_a3,Zargabad 2025);
 
 		//old
 		class mjb_rzt_Altis : mjb_rzt_vr2 {
