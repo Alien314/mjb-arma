@@ -121,6 +121,8 @@ if (isServer) then {
 			if (isNil "_inited") then {
 				if (!alive _unit) exitWith {
 					_unit spawn { private _deadTime = time;
+						waitUntil {!isSwitchingWeapon _this};
+						_this setUnitLoadout (getUnitLoadout _this);
 						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
 						_this setOwner 2;};
 				};
