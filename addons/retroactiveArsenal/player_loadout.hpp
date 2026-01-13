@@ -148,6 +148,7 @@ class basetrooper
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
 				LIST_2("ACE_splint"),
+				//LIST_3("ACE_bloodIV_500"),
 			#endif
 		#else
 		#endif
