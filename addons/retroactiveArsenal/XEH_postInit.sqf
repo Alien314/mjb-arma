@@ -121,10 +121,11 @@ if (isServer) then {
 			if (isNil "_inited") then {
 				if (!alive _unit) exitWith {
 					_unit spawn { private _deadTime = time;
+						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						_this setOwner 2;
 						waitUntil {!isSwitchingWeapon _this};
 						_this setUnitLoadout (getUnitLoadout _this);
-						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						_this setOwner 2;};
+					};
 				};
 				_unit setVariable ["mjb_killedReturn", true];
 				_unit addMPEventHandler ["MPKilled", { params ["_unit"];
@@ -132,7 +133,10 @@ if (isServer) then {
 					//[{!isAwake _this},{_this setOwner 2;},_unit,15,{_this setOwner 2;}] call cba_fnc_waitUntilAndExecute;
 					_unit spawn { private _deadTime = time;
 						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						_this setOwner 2; _this setVariable ["mjb_killedReturn", nil];};
+						_this setOwner 2; _this setVariable ["mjb_killedReturn", nil];
+						waitUntil {!isSwitchingWeapon _this};
+						_this setUnitLoadout (getUnitLoadout _this);
+					};
 				}];
 			};
 			//[_unit,{waitUntil {sleep 5; !isAwake _this}; _this setOwner 2;}] remoteExec ["spawn",2];
