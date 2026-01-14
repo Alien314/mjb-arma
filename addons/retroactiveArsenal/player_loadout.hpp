@@ -152,6 +152,7 @@ class basetrooper
 			#endif
 		#else
 		#endif
+		LIST_4("ACE_CableTie"),
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
 		"ACE_MapTools"
@@ -403,21 +404,18 @@ class sniper : basetrooper
 		"DemoCharge_Remote_Mag",
 		LIST_2("greenmag_ammo_127x99_basic_60Rnd"),
 		LIST_2("CUP_40Rnd_46x30_MP7"),
-		LIST_4("ACE_10Rnd_127x99_API_Mag")
-	};
-	items[] = {
-		"greenmag_item_speedloader",
-		#if __has_include("\ctab\script_component.hpp")
-			"ItemAndroidMisc",
-		#endif
-		"ACE_RangeCard",
-		"ACE_MapTools",
+		LIST_2("ACE_10Rnd_127x99_API_Mag"),
 		"HandGrenade",
 		LIST_2("SmokeShell")
 	};
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	backpackItems[] += {
 		"ACE_Tripod",
-		LIST_3("ACE_10Rnd_127x99_API_Mag")
+		LIST_4("ACE_10Rnd_127x99_API_Mag")
 	};
 };
 
