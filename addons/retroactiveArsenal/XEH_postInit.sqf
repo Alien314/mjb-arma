@@ -116,27 +116,25 @@ if (isServer) then {
 		};
 
 		["mjb_killedToServer", {  params ["_unit"];
-			if (local _unit || {isPlayer _unit}) exitWith {};
+			if (local _unit) exitWith {};
 			private _inited = _unit getVariable ["mjb_killedReturn", nil];
 			if (isNil "_inited") then {
 				if (!alive _unit) exitWith {
 					_unit spawn { private _deadTime = time;
-						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						_this setOwner 2;
 						waitUntil {!isSwitchingWeapon _this};
-						_this setUnitLoadout (getUnitLoadout _this);
-					};
+						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
+						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						//(group _this) setGroupOwner 2;};
 				};
 				_unit setVariable ["mjb_killedReturn", true];
 				_unit addMPEventHandler ["MPKilled", { params ["_unit"];
 					if (!isServer || {local _unit}) exitWith {_unit setVariable ["mjb_killedReturn", nil];};
 					//[{!isAwake _this},{_this setOwner 2;},_unit,15,{_this setOwner 2;}] call cba_fnc_waitUntilAndExecute;
 					_unit spawn { private _deadTime = time;
-						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						_this setOwner 2; _this setVariable ["mjb_killedReturn", nil];
 						waitUntil {!isSwitchingWeapon _this};
-						_this setUnitLoadout (getUnitLoadout _this);
-					};
+						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
+						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						//(group _this) setGroupOwner 2; _this setVariable ["mjb_killedReturn", nil];};
 				}];
 			};
 			//[_unit,{waitUntil {sleep 5; !isAwake _this}; _this setOwner 2;}] remoteExec ["spawn",2];
@@ -145,7 +143,9 @@ if (isServer) then {
 		if (mjb_zeusCompKilled) then {
 			["CAManBase", "InitPost", {
 				params ["_unit"];
-				["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
+				if (isServer || {!local _unit || {isPlayer _unit}}) exitWith {};
+				_unit spawn { waitUntil {sleep (random 2); !isSwitchingWeapon _this}; _this setUnitLoadout (getUnitLoadout _this);};
+				//["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
 			}, true, [], false] call CBA_fnc_addClassEventHandler;
 		};
 	};
