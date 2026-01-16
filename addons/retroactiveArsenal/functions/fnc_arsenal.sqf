@@ -2420,6 +2420,13 @@ private _itemUAVTermial = [
 ];
 _itemEngineer append _itemUAVTermial;
 
+private _itemCrewHelm = [
+	"CUP_H_SPH4",
+	"CUP_H_SPH4_khaki",
+	"CUP_H_SPH4_grey",
+	"CUP_H_SPH4_green"
+];
+
 private _itemTankCrew =
 [
     //"diw_armor_plates_main_plate",
@@ -2460,6 +2467,7 @@ _itemTankCrew append _itemWeaponMelee;
 _itemTankCrew append _itemArmNVG;
 _itemTankCrew append _itemPackLight;
 _itemTankCrew append _itemUniforms;
+_itemTankCrew append _itemCrewHelm;
 if (_winter) then {
 	_itemTankCrew append _itemSantaH;
 	_itemTankCrew append _winterCamo;
@@ -2544,6 +2552,7 @@ _itemHeloCrew append _itemWeaponMelee;
 _itemHeloCrew append _itemArmNVG;
 _itemHeloCrew append _itemPackLight;
 _itemHeloCrew append _itemUniforms;
+_itemHeloCrew append _itemCrewHelm;
 if (_winter) then {
 	_itemHeloCrew append _itemSantaH;
 	_itemHeloCrew append _winterCamo;
