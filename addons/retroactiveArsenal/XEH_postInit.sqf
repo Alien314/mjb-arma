@@ -124,7 +124,8 @@ if (isServer) then {
 						waitUntil {!isSwitchingWeapon _this};
 						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
 						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						//(group _this) setGroupOwner 2;};
+						//(group _this) setGroupOwner 2;
+					};
 				};
 				_unit setVariable ["mjb_killedReturn", true];
 				_unit addMPEventHandler ["MPKilled", { params ["_unit"];
@@ -134,7 +135,8 @@ if (isServer) then {
 						waitUntil {!isSwitchingWeapon _this};
 						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
 						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						//(group _this) setGroupOwner 2; _this setVariable ["mjb_killedReturn", nil];};
+						//(group _this) setGroupOwner 2; _this setVariable ["mjb_killedReturn", nil];
+					};
 				}];
 			};
 			//[_unit,{waitUntil {sleep 5; !isAwake _this}; _this setOwner 2;}] remoteExec ["spawn",2];
