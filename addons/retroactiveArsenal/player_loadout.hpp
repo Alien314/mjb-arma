@@ -220,7 +220,7 @@ class r : basetrooper
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
 				LIST_2("ACE_splint"),
-				LIST_2("ACE_bloodIV"),
+				//LIST_2("ACE_bloodIV"),
 			#endif
 		#else
 			LIST_3("FirstAidKit"),
