@@ -150,54 +150,6 @@ if (isNil "_rejoincheck") then {
 private _itemEquipment =
 [
     //============================================================
-    //Non-Tarkov uniforms
-    //============================================================
-    //Female outfit models
-    "U_B_CombatUniform_mcam_W",
-    "U_B_CombatUniform_mcam_WO",
-    "U_B_CombatUniform_mcam_tshirt_W",
-    "WU_B_T_Soldier_F",
-    "WU_B_T_Soldier_AR_F",
-    "WU_B_GEN_Soldier_F",
-    "WU_B_GEN_Commander_F",
-
-    //Drip
-    "CUP_U_I_GUE_Anorak_01",
-    "CUP_U_I_GUE_Flecktarn3",
-    "rhsgref_uniform_alpenflage",
-    "rhsgref_uniform_3color_desert",
-
-    //Vanilla stuff
-    "U_B_CombatUniform_mcam",
-    "U_B_CombatUniform_mcam_tshirt",
-    "U_B_T_Soldier_F",
-    "U_B_T_Soldier_AR_F",
-
-    // Blyat
-    "CUP_U_O_CHDKZ_Lopotev",
-    "CUP_U_C_Tracksuit_01",
-    "CUP_U_C_Tracksuit_02",
-    "CUP_U_C_Tracksuit_03",
-    "CUP_U_C_Tracksuit_04",
-
-    "CUP_U_B_BDUv2_gloves_Tigerstripe",
-    "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe",
-    "CUP_U_B_BDUv2_roll_gloves_Tigerstripe",
-    "CUP_U_B_BDUv2_gloves_Urban",
-    "CUP_U_B_BDUv2_roll2_gloves_Urban",
-    "CUP_U_B_BDUv2_roll_gloves_Urban",
-    "CUP_U_CRYE_G3C_AOR2",
-    "CUP_U_CRYE_G3C_AOR1",
-    "CUP_U_CRYE_G3C_M81",
-    "CUP_U_CRYE_MCAM_NP_Full",
-    "CUP_U_CRYE_MCAM_NP_Roll",
-    "CUP_U_CRYE_RGR_Full",
-    "CUP_U_CRYE_RGR_Roll",
-    "CUP_U_B_USMC_FROG1_WMARPAT",
-    "CUP_U_B_USMC_FROG2_DMARPAT",
-    "rhs_uniform_FROG01_wd",
-
-    //============================================================
     //Vests
     //============================================================
     //Vanilla Vests
@@ -274,22 +226,6 @@ private _itemEquipment =
 	"JCA_V_CarrierRigKBT_01_recon_black_F",
 	"JCA_V_CarrierRigKBT_01_recon_olive_F",
 	"JCA_V_CarrierRigKBT_01_recon_sand_F",
-	
-
-    //============================================================
-    //Backpacks
-    //============================================================
-    
-	"CUP_B_AssaultPack_ACU",
-	"B_AssaultPack_blk",
-	"B_AssaultPack_rgr",
-    "B_AssaultPack_cbr",
-    "B_AssaultPack_khk",
-    "B_AssaultPack_mcamo",
-	"B_AssaultPack_dgtl",
-    "B_AssaultPack_tna_F",
-	"B_AssaultPack_ocamo",
-	"B_AssaultPack_sgg",
     
     //============================================================
     //Helmets
@@ -345,6 +281,57 @@ private _itemEquipment =
     "ItemAndroidMisc",
     "ItemMicroDAGRMisc"
 ];
+
+private _itemUniforms = [
+	//============================================================
+    //Non-Tarkov uniforms
+    //============================================================
+    //Female outfit models
+    "U_B_CombatUniform_mcam_W",
+    "U_B_CombatUniform_mcam_WO",
+    "U_B_CombatUniform_mcam_tshirt_W",
+    "WU_B_T_Soldier_F",
+    "WU_B_T_Soldier_AR_F",
+    "WU_B_GEN_Soldier_F",
+    "WU_B_GEN_Commander_F",
+
+    //Drip
+    "CUP_U_I_GUE_Anorak_01",
+    "CUP_U_I_GUE_Flecktarn3",
+    "rhsgref_uniform_alpenflage",
+    "rhsgref_uniform_3color_desert",
+
+    //Vanilla stuff
+    "U_B_CombatUniform_mcam",
+    "U_B_CombatUniform_mcam_tshirt",
+    "U_B_T_Soldier_F",
+    "U_B_T_Soldier_AR_F",
+
+    // Blyat
+    "CUP_U_O_CHDKZ_Lopotev",
+    "CUP_U_C_Tracksuit_01",
+    "CUP_U_C_Tracksuit_02",
+    "CUP_U_C_Tracksuit_03",
+    "CUP_U_C_Tracksuit_04",
+
+    "CUP_U_B_BDUv2_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_roll_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_gloves_Urban",
+    "CUP_U_B_BDUv2_roll2_gloves_Urban",
+    "CUP_U_B_BDUv2_roll_gloves_Urban",
+    "CUP_U_CRYE_G3C_AOR2",
+    "CUP_U_CRYE_G3C_AOR1",
+    "CUP_U_CRYE_G3C_M81",
+    "CUP_U_CRYE_MCAM_NP_Full",
+    "CUP_U_CRYE_MCAM_NP_Roll",
+    "CUP_U_CRYE_RGR_Full",
+    "CUP_U_CRYE_RGR_Roll",
+    "CUP_U_B_USMC_FROG1_WMARPAT",
+    "CUP_U_B_USMC_FROG2_DMARPAT",
+    "rhs_uniform_FROG01_wd"
+];
+_itemEquipment append _itemUniforms;
 
 private _itemHats = [
     "H_Bandanna_gry",
@@ -429,7 +416,7 @@ private _itemNVG =
 ];
 _itemEquipment append _itemNVG;
 
-private _itemArmNVG = ("getText (_x >> 'author') isEqualTo 'Aegis and Hartman'" configClasses (configFile >> "CfgWeapons") apply {configName _x});
+private _itemArmNVG = ("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}); // ['Aegis and Hartman','Anthrax and Hartman']
 _itemEquipment append _itemArmNVG;
 
 private _itemWeaponMelee =
@@ -442,6 +429,23 @@ private _itemWeaponMelee =
 ];
 _itemEquipment append _itemWeaponMelee;
 
+private _itemPackLight = [
+	//============================================================
+    //Backpacks
+    //============================================================
+    
+	"CUP_B_AssaultPack_ACU",
+	"B_AssaultPack_blk",
+	"B_AssaultPack_rgr",
+    "B_AssaultPack_cbr",
+    "B_AssaultPack_khk",
+    "B_AssaultPack_mcamo",
+	"B_AssaultPack_dgtl",
+    "B_AssaultPack_tna_F",
+	"B_AssaultPack_ocamo",
+	"B_AssaultPack_sgg"
+];
+_itemEquipment append _itemPackLight;
 
 private _itemPackMedLight =
 [
@@ -467,8 +471,10 @@ private _itemPackMedium =
 ];
 _itemPackMedium append _itemPackMedLight;
 
+private _winterCamo = [];
+private _itemSantaH = [];
 if (_winter) then {
-    private _winterCamo =
+   _winterCamo =
     [
         "CUP_I_B_PMC_Unit_29",
         "CUP_I_B_PMC_Unit_30",
@@ -482,7 +488,7 @@ if (_winter) then {
     ];
     _itemEquipment append _winterCamo;
 
-	private _itemSantaH = ("getText (_x >> 'descriptionShort') isEqualTo 'Festive Santa Hat'" configClasses (configFile >> "CfgWeapons") apply {configName _x});
+	_itemSantaH = ("getText (_x >> 'descriptionShort') isEqualTo 'Festive Santa Hat'" configClasses (configFile >> "CfgWeapons") apply {configName _x});
 	_itemEquipment append _itemSantaH;
 };
 
@@ -2426,11 +2432,6 @@ private _itemTankCrew =
     "ACRE_PRC343",
     "SmokeShellBlue",
     "H_HelmetCrew_I",
-    "U_B_CombatUniform_mcam_W",
-    "U_B_CombatUniform_mcam_WO",
-    "U_B_CombatUniform_mcam_tshirt_W",
-    "WU_B_GEN_Soldier_F",
-    "WU_B_GEN_Commander_F",
     "Rangefinder",
     "ACE_Vector",
     "ACE_IR_Strobe_Item",
@@ -2449,12 +2450,6 @@ private _itemTankCrew =
     "ItemMicroDAGRMisc",
 
     "rhsgref_6b23_khaki",
-    "B_AssaultPack_rgr",
-    "B_AssaultPack_cbr",
-    "B_AssaultPack_khk",
-    "B_AssaultPack_mcamo",
-    "B_AssaultPack_tna_F",
-    "CUP_B_AssaultPack_ACU",
     "rhsusf_oakley_goggles_blk",
     "Tier1_EXPS3_0_Black",
     "Tier1_Larue_FUG_Black"
@@ -2462,6 +2457,13 @@ private _itemTankCrew =
 _itemTankCrew append _itemHats;
 _itemTankCrew append _itemNVG;
 _itemTankCrew append _itemWeaponMelee;
+_itemTankCrew append _itemArmNVG;
+_itemTankCrew append _itemPackLight;
+_itemTankCrew append _itemUniforms;
+if (_winter) then {
+	_itemTankCrew append _itemSantaH;
+	_itemTankCrew append _winterCamo;
+};
 
 private _airHelm = [
     "H_PilotHelmetHeli_B",
@@ -2532,12 +2534,6 @@ private _itemHeloCrew =
 
     "G_Bandanna_aviator",
     "rhsusf_mbav_light",
-    "B_AssaultPack_rgr",
-    "B_AssaultPack_cbr",
-    "B_AssaultPack_khk",
-    "B_AssaultPack_mcamo",
-    "B_AssaultPack_tna_F",
-    "CUP_B_AssaultPack_ACU",
     "Tier1_EXPS3_0_Black",
     "Tier1_Larue_FUG_Black"
 ];
@@ -2545,6 +2541,13 @@ _itemHeloCrew append _itemHats;
 _itemHeloCrew append _airHelm;
 _itemHeloCrew append _itemNVG;
 _itemHeloCrew append _itemWeaponMelee;
+_itemHeloCrew append _itemArmNVG;
+_itemHeloCrew append _itemPackLight;
+_itemHeloCrew append _itemUniforms;
+if (_winter) then {
+	_itemHeloCrew append _itemSantaH;
+	_itemHeloCrew append _winterCamo;
+};
 
 private _itemAirCrew =
 [
@@ -2584,6 +2587,10 @@ _itemAirCrew append _itemHats;
 _itemAirCrew append _airHelm;
 _itemAirCrew append _itemNVG;
 _itemAirCrew append _itemWeaponMelee;
+_itemAirCrew append _itemArmNVG;
+if (_winter) then {
+	_itemAirCrew append _itemSantaH;
+};
 
 private _itemMedical = [""];
 private _itemMedicalAdv = [""];
