@@ -5,6 +5,7 @@ if (!canSuspend) exitWith {_this spawn mjb_arsenal_fnc_combatLock};
 
 _vehicle setVariable ['mjb_combatLock',true,true];
 while {((crew _vehicle) select {alive _x}) isEqualTo []} do {
+	if (isNull _vehicle) exitWith {};
 	private _clock = (_vehicle getVariable ['mjb_combatLock',nil]);
 	if (isNil '_clock') exitWith {};
 	private _lock = false;
@@ -14,6 +15,7 @@ while {((crew _vehicle) select {alive _x}) isEqualTo []} do {
 	[_vehicle, _lock] remoteExec ["lock",_vehicle];
 	sleep 5;
 };
+if (isNull _vehicle) exitWith {};
 private _clock = (_vehicle getVariable ['mjb_combatLock',nil]);
 if !(isNil '_clock') then {
 	[_vehicle, false] remoteExec ["lock",_vehicle];
