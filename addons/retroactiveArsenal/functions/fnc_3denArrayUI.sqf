@@ -2,7 +2,7 @@
 
 private _unit = (get3DENSelected '' #0#0);
 if (isNil "zen_dialog") exitWith {systemChat "Zeus Enhanced not loaded."};
-if (isNil '_unit'|| { !_unit isEqualType objNull || { isNull _unit }}) exitWith {
+if (isNil '_unit'|| { !(_unit isEqualType objNull) || { isNull _unit }}) exitWith {
     systemChat "No object selected.";
 };
 

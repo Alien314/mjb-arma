@@ -26,9 +26,10 @@ if (_object isEqualTo objNull) exitWith {systemChat "No object selected"};
 
 if (_xCount isEqualTo 0 || {_yCount isEqualTo 0}) exitWith { systemChat "Cannot array by 0."};
 
+private _layers = (all3DENEntities # 6) apply {((_x get3DENAttribute "name") select 0)};
 private _layerName = "arrayedObjects_";
 private _i = 1;
-while {(_layerName + (str _i)) in getMissionLayers} do {
+while {(_layerName + (str _i)) in _layers} do {
 	_i = _i + 1;
 };
 _layerName = (_layerName + (str _i));
