@@ -26,6 +26,13 @@ if (_object isEqualTo objNull) exitWith {systemChat "No object selected"};
 
 if (_xCount isEqualTo 0 || {_yCount isEqualTo 0}) exitWith { systemChat "Cannot array by 0."};
 
+private _layerName = "arrayedObjects_";
+private _i = 1;
+while {(_layerName + (str _i)) in getMissionLayers} do {
+	_i = _i + 1;
+};
+_layerName = (_layerName + (str _i));
+private _layerId = -1 add3DENLayer _layerName;
 
 private _pos = getPos _object;
 private _posX = (_pos # 0);
@@ -45,7 +52,8 @@ if (_yCount < 0) then {_offsetY = -_offsetY; _yCount = abs _yCount;};
 private _newEntities = [];
 for '_y' from 1 to _yCount do {
 	for '_x' from 1 to _xCount do {
-		create3DENEntity ["Object", typeOf _object, _pos, true];
+		private _newObj = create3DENEntity ["Object", typeOf _object, _pos, true];
+		_newObj set3DENLayer _layerId;
 		_pos set [0, ((_pos # 0) + _offsetX)];
 		if (_stepX) then {_pos set [2, ((_pos # 2) + _zStep)];};
 	};
