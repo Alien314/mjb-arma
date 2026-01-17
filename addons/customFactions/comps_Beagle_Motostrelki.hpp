@@ -1,18 +1,12 @@
-class mjb_BeagleMoto_base
-{
-	path = "";	// pbo path to a folder containing header.sqe/composition.sqe files
-	side = 0;											// 0 opfor, 1 blufor, 2 indfor, 3 civ, 8 Empty/Props
+// Infantry
+class mjb_BeagleMoto_Team {
+	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\Motostrelki%20Team";	// pbo path to a folder containing header.sqe/composition.sqe files
+	side = 0;		// 0 opfor, 1 blufor, 2 indfor, 3 civ, 8 Empty/Props
 	editorCategory = "mjb_BeagleMoto";					// link to CfgEditorCategories
 	editorSubcategory = "mjb_Inf";				// link to CfgEditorSubcategories
-	displayName = "";
-	icon = "";	// left side icon in groups list
-	useSideColorOnIcon = 1;								// 1 == icon is always colored in faction color
-};
-// Infantry
-class mjb_BeagleMoto_Team : mjb_BeagleMoto_base {
-	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\Motostrelki%20Team";
 	displayName = "Motostrelki Team";
-	icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";
+	icon = "\A3\ui_f\data\map\markers\nato\o_inf.paa";	// left side icon in groups list
+	useSideColorOnIcon = 1;								// 1 == icon is always colored in faction color
 };
 class mjb_BeagleMoto_MATRPG : mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\MAT%20RPG-7%20Team";
@@ -43,7 +37,7 @@ class mjb_BeagleMoto_HQSquad : mjb_BeagleMoto_Team {
 };
 
 // Turret
-class mjb_BeagleMoto_KORD : mjb_BeagleMoto_base {
+class mjb_BeagleMoto_KORD : mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\KORD%20Tripod";
 	displayName = "KORD Tripod";
 	editorSubcategory = "mjb_Tur";
@@ -51,7 +45,7 @@ class mjb_BeagleMoto_KORD : mjb_BeagleMoto_base {
 };
 
 // Motorized
-class mjb_BeagleMoto_SquadUral : mjb_BeagleMoto_base {
+class mjb_BeagleMoto_SquadUral : mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\Motostrelki%20Squad%20+%20Ural";
 	displayName = "Motostrelki Squad + Ural";
 	editorSubcategory = "mjb_Mot";
@@ -79,7 +73,7 @@ class mjb_BeagleMoto_ZSUUral : mjb_BeagleMoto_SquadUral {
 };
 
 // Mechanized
-class mjb_BeagleMoto_BMP2 : mjb_BeagleMoto_base {
+class mjb_BeagleMoto_BMP2 : mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\BMP-2";
 	displayName = "BMP-2";
 	editorSubcategory = "mjb_Mec";
@@ -117,7 +111,7 @@ class mjb_BeagleMoto_Shilka : mjb_BeagleMoto_BMP2 {
 };
 
 // Armored
-class mjb_BeagleMoto_T72: mjb_BeagleMoto_base {
+class mjb_BeagleMoto_T72: mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\T-72_1";
 	displayName = "T-72";
 	editorSubcategory = "mjb_Arm";
@@ -125,7 +119,7 @@ class mjb_BeagleMoto_T72: mjb_BeagleMoto_base {
 };
 
 // Air
-class mjb_BeagleMoto_Mi24V: mjb_BeagleMoto_base {
+class mjb_BeagleMoto_Mi24V: mjb_BeagleMoto_Team {
 	path = "z\mjb\addons\customfactions\Beagle\RU Motostrelki\Mi-24V";
 	displayName = "Mi-24V";
 	editorSubcategory = "mjb_Hel";

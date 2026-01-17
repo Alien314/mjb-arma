@@ -1,18 +1,12 @@
-class mjb_BeagleAAF_base
-{
-	path = "";	// pbo path to a folder containing header.sqe/composition.sqe files
+// Infantry
+class mjb_BeagleAAF_Team {
+	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Team";	// pbo path to a folder containing header.sqe/composition.sqe files
+	displayName = "AAF Team";
+	icon = "\A3\ui_f\data\map\markers\nato\n_inf.paa";	// left side icon in groups list
 	side = 2;											// 0 opfor, 1 blufor, 2 indfor, 3 civ, 8 Empty/Props
 	editorCategory = "mjb_BeagleAAF";					// link to CfgEditorCategories
 	editorSubcategory = "mjb_Inf";				// link to CfgEditorSubcategories
-	displayName = "";
-	icon = "";	// left side icon in groups list
-	useSideColorOnIcon = 1;								// 1 == icon is always colored in faction color
-};
-// Infantry
-class mjb_BeagleAAF_Team : mjb_BeagleAAF_base {
-	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Team";
-	displayName = "AAF Team";
-	icon = "\A3\ui_f\data\map\markers\nato\n_inf.paa";
+	useSideColorOnIcon = 1;	 // 1 == icon is always colored in faction color
 };
 class mjb_BeagleAAF_Squad : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Squad";
@@ -40,14 +34,14 @@ class mjb_BeagleAAF_DMRTeam : mjb_BeagleAAF_Team
 };
 
 // HQ
-class mjb_BeagleAAF_HQTeam : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_HQTeam : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20HQ%20Team";
 	displayName = "HQ Team";
 	icon = "\A3\ui_f\data\map\markers\nato\o_hq.paa";
 };
 
 // Turret
-class mjb_BeagleAAF_HMG : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_HMG : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Deployable%20HMG";
 	displayName = "Deployable HMG";
 	editorSubcategory = "mjb_Tur";
@@ -55,7 +49,7 @@ class mjb_BeagleAAF_HMG : mjb_BeagleAAF_base {
 };
 
 // Motorized
-class mjb_BeagleAAF_ACarAGL : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_ACarAGL : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20AGL%20Armored%20Car";
 	displayName = "AGL Armored Car";
 	editorSubcategory = "mjb_Mot";
@@ -83,7 +77,7 @@ class mjb_BeagleAAF_RepairTruck : mjb_BeagleAAF_ACarAGL {
 };
 
 // Mechanized
-class mjb_BeagleAAF_IFV : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_IFV : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Warrior%20IFV";
 	displayName = "Warrior IFV";
 	editorSubcategory = "mjb_Mec";
@@ -103,13 +97,13 @@ class mjb_BeagleAAF_HQM113 : mjb_BeagleAAF_IFV {
 	icon = "\A3\ui_f\data\map\markers\nato\o_hq.paa";
 };
 class mjb_BeagleAAF_Shilka : mjb_BeagleAAF_IFV {
-	path = "z\mjb\addons\customfactions\Beagle\AAF\Shilka";
+	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Shilka";
 	displayName = "Shilka";
 	icon = "\A3\ui_f\data\map\markers\nato\o_antiair.paa";
 };
 
 // Armored
-class mjb_BeagleAAF_LeoMBT : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_LeoMBT : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Leopard%20MBT";
 	displayName = "Leopard MBT";
 	editorSubcategory = "mjb_Arm";
@@ -117,7 +111,7 @@ class mjb_BeagleAAF_LeoMBT : mjb_BeagleAAF_base {
 };
 
 // Air
-class mjb_BeagleAAF_Mi24D : mjb_BeagleAAF_base {
+class mjb_BeagleAAF_Mi24D : mjb_BeagleAAF_Team {
 	path = "z\mjb\addons\customfactions\Beagle\AAF\AAF%20Mi-24D%20Gunship";
 	displayName = "Mi-24D Gunship";
 	editorSubcategory = "mjb_Hel";
