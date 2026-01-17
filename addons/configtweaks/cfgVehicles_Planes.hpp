@@ -1,9 +1,14 @@
 
-
 // Vanilla
+class AllVehicles;
+
+class Air : AllVehicles {
+	class EventHandlers {
+		class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_Base {};
+	};
+};
 class Plane_Base_F;
 class Plane;
-
 /*
 class Plane_CAS_02_base_F : Plane_Base_F { // yak-130
 maxSpeed = 1060; // def 900 kph

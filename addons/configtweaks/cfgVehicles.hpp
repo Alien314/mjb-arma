@@ -839,7 +839,12 @@ class CfgVehicles {
     armorStructural = 4;
   };
   // IND
-  class I_Soldier_base_F;
+  class SoldierGB;
+  class I_Soldier_base_F : SoldierGB {
+		class EventHandlers {
+			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+		};
+  };
   class I_Soldier_03_f : I_Soldier_base_F {
     armorStructural = 4;
   };
@@ -864,10 +869,16 @@ class CfgVehicles {
     };
   };
 
+  
+
   class CAManBase;
   class SoldierWB : CAManBase { class HitPoints; };
   class Civilian;
-  class Civilian_F : Civilian { class HitPoints; };
+  class Civilian_F : Civilian { class HitPoints;
+		class EventHandlers {
+			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+		};
+  };
 
   // CUP Pelvis is weak
 /*
@@ -922,6 +933,134 @@ class CfgVehicles {
   CUPPELVIS(CUP_Creatures_Military_USA_Soldier_Base,SoldierWB);
   CUPPELVIS(CUP_Creatures_Military_USMC_Soldier_Base,SoldierWB);
 //*/
+
+
+#define APPLYXEH(var,varBase) class var : varBase { \
+		class EventHandlers { \
+			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {}; \
+		}; \
+	}
+
+	APPLYXEH(B_soldier_F,B_Soldier_base_F);
+	APPLYXEH(O_soldier_F,O_Soldier_base_F);
+//model = "\Max_WS\WB_Diver.p3d";
+#if __has_include("\Max_WS\WB_Diver.p3d")
+// Max Women CBA XEH
+	class C_man_p_fugitive_F;
+	APPLYXEH(max_female_b,C_man_p_fugitive_F);
+
+	class B_diver_F;
+	class WB_diver_F : B_diver_F {
+		class EventHandlers {
+			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+		};
+	};
+	APPLYXEH(WB_diver2_F,B_diver_F);
+	class B_GEN_Commander_F;
+	APPLYXEH(WB_GEN_Commander_F,B_GEN_Commander_F);
+	class B_GEN_Soldier_F;
+	APPLYXEH(WB_GEN_Soldier_F,B_GEN_Soldier_F);
+	class B_Helipilot_F;
+	APPLYXEH(WB_Helipilot_F,B_Helipilot_F);
+	class B_officer_F;
+	APPLYXEH(WB_officer_F,B_officer_F);
+	class B_Officer_Parade_F;
+	APPLYXEH(WB_Officer_Parade_F,B_Officer_Parade_F);
+	class B_soldier_AR_F;
+	APPLYXEH(WB_soldier_AR_F,B_soldier_AR_F);
+	APPLYXEH(WB_Soldier_F,B_Soldier_F);
+	class B_T_Officer_F;
+	APPLYXEH(WB_T_officer_F,B_T_Officer_F);
+	class B_T_Soldier_AR_F;
+	APPLYXEH(WB_T_Soldier_AR_F,B_T_Soldier_AR_F);
+	class B_T_Soldier_F;
+	APPLYXEH(WB_T_Soldier_F,B_T_Soldier_F);
+
+	class I_Helipilot_F;
+	APPLYXEH(WI_Helipilot_F,I_Helipilot_F);
+	class I_officer_F;
+	APPLYXEH(WI_officer_F,I_officer_F);
+	class I_Officer_Parade_F;
+	APPLYXEH(WI_Officer_Parade_F,I_Officer_Parade_F);
+	class I_soldier_AR_F;
+	APPLYXEH(WI_soldier_AR_F,I_soldier_AR_F);
+	class I_Soldier_F;
+	APPLYXEH(WI_Soldier_F,I_Soldier_F);
+
+	class O_diver_F;
+	APPLYXEH(WO_diver_F,O_diver_F);
+	class O_Helipilot_F;
+	APPLYXEH(WO_Helipilot_F,O_Helipilot_F);
+	class O_officer_F;
+	APPLYXEH(WO_officer_F,O_officer_F);
+	class O_Officer_Parade_F;
+	APPLYXEH(WO_Officer_Parade_F,O_Officer_Parade_F);
+	class O_soldier_AR_F;
+	APPLYXEH(WO_soldier_AR_F,O_soldier_AR_F);
+	APPLYXEH(WO_Soldier_F,O_Soldier_F);
+	class O_Soldier_lite_F;
+	APPLYXEH(WO_Soldier_lite_F,O_Soldier_lite_F);
+	class O_Soldier_SL_F;
+	APPLYXEH(WO_Soldier_SL_F,O_Soldier_SL_F);
+	class O_T_Officer_F;
+	APPLYXEH(WO_T_officer_F,O_T_Officer_F);
+	class O_T_Soldier_AR_F;
+	APPLYXEH(WO_T_Soldier_AR_F,O_T_Soldier_AR_F);
+	class O_T_Soldier_F;
+	APPLYXEH(WO_T_Soldier_F,O_T_Soldier_F);
+	class O_T_Soldier_SL_F;
+	APPLYXEH(WO_T_Soldier_SL_F,O_T_Soldier_SL_F);
+/*
+WB_diver_F,B_diver_F,B_Soldier_diver_base_F
+WB_diver2_F,B_diver_F,B_Soldier_diver_base_F
+WB_GEN_Commander_F,B_GEN_Commander_F,B_GEN_Soldier_base_F
+WB_GEN_Soldier_F,B_GEN_Soldier_F,B_GEN_Soldier_base_F
+WB_Helipilot_F,B_Helipilot_F,B_Soldier_04_f
+WB_officer_F,B_officer_F,B_Soldier_base_F
+WB_Officer_Parade_F,B_Officer_Parade_F,B_officer_F
+WB_soldier_AR_F,B_soldier_AR_F,B_Soldier_02_f
+WB_Soldier_F,B_Soldier_F,B_Soldier_base_F
+WB_T_officer_F,B_T_Officer_F,B_officer_F
+WB_T_Soldier_AR_F,B_T_Soldier_AR_F,B_soldier_AR_F
+WB_T_Soldier_F,B_T_Soldier_F,B_Soldier_F
+
+WI_helipilot_F,I_Helipilot_F,I_Soldier_03_F
+WI_officer_F,I_officer_F,I_Soldier_base_F
+WI_Officer_Parade_F,I_Officer_Parade_F,I_officer_F
+WI_Soldier_AR_F,I_Soldier_AR_F,I_Soldier_02_F
+WI_soldier_F,I_soldier_F,I_Soldier_base_F
+
+WO_diver_F,O_diver_F,O_Soldier_diver_base_F
+WO_helipilot_F,O_helipilot_F,O_Soldier_02_F
+WO_officer_F,O_officer_F,O_Soldier_base_F
+WO_Officer_Parade_F,O_Officer_Parade_F,O_officer_F
+WO_Soldier_AR_F,O_Soldier_AR_F,O_Soldier_02_F
+WO_soldier_F,O_soldier_F,O_Soldier_base_F
+WO_Soldier_lite_F,O_Soldier_lite_F,O_Soldier_base_F
+WO_Soldier_SL_F,O_Soldier_SL_F,O_Soldier_base_F
+WO_T_Officer_F,O_T_Officer_F,O_officer_F
+WO_T_Soldier_AR_F,O_T_Soldier_AR_F,O_Soldier_AR_F
+WO_T_Soldier_F,O_T_Soldier_F,O_Soldier_F
+WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
+*/
+#endif
+
+#if __has_include("\tsp_breach_popper\popper_ammo.p3d")
+//model = "tsp_breach_popper\popper_ammo.p3d";
+
+	class ACE_Explosives_Place_SLAM;
+	APPLYXEH(tsp_breach_block_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_block_auto_place,tsp_breach_block_place);
+	APPLYXEH(tsp_breach_dip_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_dip_auto_place,tsp_breach_dip_place);
+	APPLYXEH(tsp_breach_linear_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_linear_auto_place,tsp_breach_linear_place);
+	APPLYXEH(tsp_breach_package_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_popper_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_popper_auto_place,tsp_breach_popper_place);
+	APPLYXEH(tsp_breach_silhouette_place,ACE_Explosives_Place_SLAM);
+	APPLYXEH(tsp_breach_stick_place,ACE_Explosives_Place_SLAM);
+#endif
 
 // Make small boats turn better
   class Boat_F;

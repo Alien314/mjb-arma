@@ -1,4 +1,9 @@
 class LandVehicle;
+class Car : LandVehicle {
+	class EventHandlers {
+		class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_Base {};
+	};
+};
 class Car_F;
 
 // ACRE intercompartment attenuation
@@ -69,6 +74,9 @@ class Tank: LandVehicle {
 			COMPARTOUT3;
 			COMPARTOUT4;
 		};
+	};
+	class EventHandlers {
+		class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_Base {};
 	};
 };
 
