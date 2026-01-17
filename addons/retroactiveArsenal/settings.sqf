@@ -42,6 +42,24 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_strobeInf",
+    "CHECKBOX",
+    ["Do not consume self attachables", "Allows players to attach items to self infinitely. One is required in inventory."],
+    [_title, "Player QoL"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_tiesInf",
+    "CHECKBOX",
+    ["Do not consume cable tie", "Allows players to use a single cable tie infinitely. One is required in inventory."],
+    [_title, "Player QoL"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_slotSaverAI",
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],

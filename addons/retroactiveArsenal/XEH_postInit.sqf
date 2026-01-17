@@ -425,6 +425,24 @@ if (mjb_plateSteal) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+["ace_attach_attached", { params ['', '_itemClassname', ''];
+	if (mjb_strobeInf && {!(_itemClassname in ([ACE_Player, 0] call ace_common_fnc_uniqueItems))}) then {
+		[ACE_Player, _itemClassname] call CBA_fnc_addItem;
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_captiveStatusChanged", { params ['', '_state', '_status','_captor'];
+	if (!_state || {_status isNotEqualTo 'SetHandcuffed' || {ACE_player isNotEqualTo _captor}}) exitWith {};
+	
+	if (mjb_tiesInf) then {
+		player spawn { sleep 1;
+			if !('ACE_CableTie' in ([ACE_Player, 0] call ace_common_fnc_uniqueItems)) then {
+				[ACE_Player, "ACE_CableTie"] call CBA_fnc_addItem;
+			};
+		};
+	};
+}] call CBA_fnc_addEventHandler;
+
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
     private _mode = _extradata getOrDefault ["mjb_dagrMode", nil];
