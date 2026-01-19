@@ -2224,6 +2224,37 @@ private _itemWeaponMMG =
 [
     "CUP_lmg_Mk48",
     "CUP_lmg_M60",
+	"CUP_lmg_M240_B",
+	"CUP_lmg_M240",
+
+    "rhs_weap_m240G",
+    "rhs_weap_m240B",
+
+    "Tier1_MK48_Mod1",
+
+    "cup_optic_hensoldtzo",
+    "cup_optic_acog2",
+
+    "rhsusf_acc_su230",
+    "rhsusf_acc_su230_mrds",
+    "rhsusf_acc_su230a",
+    "rhsusf_acc_su230a_mrds",
+
+    "Tier1_Mk48Mod1_LA5_M600V_Black_FL",
+
+    "dzn_mg_tripod_universal",
+    "dzn_mg_tripod_m122a1_m60mount",
+    "dzn_mg_tripod_m122a1_m240mount",
+    "dzn_mg_tripod_m122a1_m249mount_rhs",
+    "dzn_mg_tripod_m122a1_m240mount_rhs"
+];
+
+private _itemWeaponSFMMG =
+[
+    "CUP_lmg_Mk48",
+    "CUP_lmg_M60",
+	"CUP_lmg_M240_B",
+	"CUP_lmg_M240",
 
     "rhs_weap_m240G",
     "rhs_weap_m240B",
@@ -2723,8 +2754,9 @@ if (!_enableCBRN) then {
     ];
 };
 
+
 if (_hasMarksmen) then {
-    _itemWeaponMMG append [
+    _itemWeaponSFMMG append [
         "MMG_01_tan_F",
         "MMG_02_black_F",
         "MMG_02_sand_F"
@@ -2833,7 +2865,7 @@ switch (true) do
     };
         case (_unitRole in ["sfar","B_Patrol_Soldier_MG_F","B_Recon_exp_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox; // + _itemWeaponMMG
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox; // + _itemWeaponSFMMG
 
         player setUnitTrait ["Medic", true];
     };
