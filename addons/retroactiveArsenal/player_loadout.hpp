@@ -115,7 +115,7 @@ class basetrooper
 	};
 	goggles[] = {};
 	hmd[] = {
-		"CUP_NVG_GPNVG_black"
+		"CUP_NVG_GPNVG_green_WP"
 	};
 
 	//All Randomized. Add Primary Weapon and attachments.
