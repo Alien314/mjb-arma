@@ -570,7 +570,7 @@ class mat : r
 		#endif
 	};
 	secondaryWeapon[] = {
-		"launch_MRAWS_green_F"
+		"launch_MRAWS_green_rail_F"
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
