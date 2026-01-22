@@ -258,6 +258,8 @@ private _itemEquipment =
     "ACE_Flashlight_XL50",
     "ACE_MapTools",
     "ACE_RangeCard",
+	"ACE_RangeTable_82mm",
+	"ACE_artilleryTable",
     "ACE_IR_Strobe_Item",
 
     //BIS
