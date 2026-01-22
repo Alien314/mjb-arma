@@ -2488,6 +2488,8 @@ private _itemTankCrew =
     "ItemWatch",
     "Toolkit",
     "ACE_MapTools",
+	"ACE_RangeTable_82mm",
+	"ACE_artilleryTable",
     "ACE_microDAGR",
 
     // Ctab
@@ -2687,6 +2689,7 @@ if (_aceMedLoaded) then { //Check for ace med
     {_x pushBack "FirstAidKit";} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
     _itemMedic append ["Medikit", "diw_armor_plates_main_autoInjector"];
 };
+_itemMedicalAdv pushBack "ACRE_PRC148";
 
 private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
 private _hasApex = 395180 in _ownedDLCs;
