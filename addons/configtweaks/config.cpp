@@ -49,6 +49,32 @@ class CfgRecoils {
   };
 };
 
+// zero collapse damage
+class CfgDamageAround {
+
+	//*/
+	class CUP_OPX_DamageAroundHousePart_01 {
+		indirectHit = 0; // 3
+		radiusRatio = 0; // 0.15
+	};
+	class DamageAroundHouse {
+		indirectHit = "0";   // 11
+		radiusRatio = "0.0"; // 1.0
+	};
+	class DamageAroundHousePart {
+		indirectHit = 0; // 100
+		radiusRatio = 0; // 0.15
+	};
+	class DamageAroundPole {
+		indirectHit = "0";   // 900
+		radiusRatio = "0.0"; // 0.3
+	};//*/
+	class MJB_DamageAroundCUP {
+		indirectHit = "0";   // 9?
+		radiusRatio = "0.0"; // 0.2
+	};
+};
+
 class Mode_SemiAuto;
 class Mode_FullAuto;
 

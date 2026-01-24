@@ -1344,4 +1344,7 @@ class Land_CanisterFuel_F;
 		};
     };
   };//*/
+
+	// CUP House damage tweak
+	#include "cfgVehicles_House.hpp"
 };
