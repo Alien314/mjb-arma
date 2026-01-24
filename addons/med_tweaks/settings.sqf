@@ -74,6 +74,15 @@ private _title = "MJB Arma Medical";
     false
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_med_tweaks_unstableWakeLog",
+    "CHECKBOX",
+    ["Debug Info", "Logs player condition on wake up, also sends to server."],
+    [_title, "Unstable Wake"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 // ACE Constants variables
 [
     QEGVAR(medical,const_stableVitalsBloodThreshold),
