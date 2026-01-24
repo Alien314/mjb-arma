@@ -60,7 +60,7 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 				_values params ["_role",'_retro','_move'];
 				_args params ["_unit",'_faction'];
 				if (_move) then { _unit setVariable ["startpos", getPosASL _unit, true]; };
-				[[_unit,_role,_faction],{ params ['_unit','_role','_faction'];
+				[[_unit,_role,_faction,_retro],{ params ['_unit','_role','_faction','_retro'];
 					if (_faction isEqualTo '') then {_faction = nil};
 					private _tmfRole = _role;
 					if (_tmfRole isEqualTo '') then {_tmfRole = nil};
