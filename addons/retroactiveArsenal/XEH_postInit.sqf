@@ -425,6 +425,12 @@ if (mjb_plateSteal) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
+  private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
+  if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
+  mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
+};
+
 ["mjb_defaultVolume", 1.0, true] call ace_common_fnc_setHearingCapability;
 
 ["ace_activeCameraChanged", { params ['_player', '_isCamera'];

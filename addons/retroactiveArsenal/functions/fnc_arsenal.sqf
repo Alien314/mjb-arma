@@ -3018,12 +3018,6 @@ switch (true) do
     };
 };
 
-if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
-  private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
-  if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
-  mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
-};
-
 if (isNil "ace_medical_engine") then {
 	if !(isNil "mjb_medicalButtonId") then {mjb_medicalButtonId = -1;};
 	mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
