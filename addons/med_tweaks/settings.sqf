@@ -68,7 +68,7 @@ private _title = "MJB Arma Medical";
 [
     "mjb_med_tweaks_unstableWakeIgnoreBleed",
     "CHECKBOX",
-    ["Ignore Bleed", "Allow wake up with dangerous bleeding, will cause faster bleedout, and might immediately lose consciousness again."],
+    ["Ignore Severe Bleeding", "Allow wake up with dangerous bleeding, will cause faster bleedout, and might immediately lose consciousness again."],
     [_title, "Unstable Wake"],
     false,
     false
