@@ -425,6 +425,14 @@ if (mjb_plateSteal) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+["mjb_defaultVolume", 1.0, true] call ace_common_fnc_setHearingCapability;
+
+["ace_activeCameraChanged", { params ['_player', '_isCamera'];
+	if (_isCamera) then {
+		[{!ace_common_oldIsCamera},{ if (!isNull curatorCamera) then {ace_common_oldIsCamera = true;}; }, nil, 10] call CBA_fnc_waitUntilAndExecute;
+	};
+}] call CBA_fnc_addEventHandler;
+
 ["ace_attach_attached", { params ['', '_itemClassname', ''];
 	if (mjb_strobeInf && {!(_itemClassname in ([ACE_Player, 0] call ace_common_fnc_uniqueItems))}) then {
 		[ACE_Player, _itemClassname] call CBA_fnc_addItem;

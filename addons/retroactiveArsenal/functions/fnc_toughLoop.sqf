@@ -50,6 +50,7 @@ while {_plateCnt isNotEqualTo -1} do {
 		if (_hitCheck isNotEqualTo (player getVariable ["mjb_hitTime", 0])) exitWith {_full = false; break}; //?
 		_plates = _plateCarrier getVariable ["diw_armor_plates_main_plates", []];
         private _plateChk = _plates # _plateCnt;
+		if (isNil "_plateChk") exitWith { };
 		if (_plateChk > _toughPlate) exitWith {_skip = true};
 		_plateCnt = (count _plates - 1) max 0;
 		for '_i' from _plateCnt to (_plateRegenCount - 1) do {
