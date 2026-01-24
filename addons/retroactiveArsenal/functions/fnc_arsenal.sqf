@@ -458,7 +458,14 @@ private _itemPackMedLight =
     "B_Kitbag_tan",
     "B_Kitbag_mcamo",
     "CUP_B_GER_Pack_Flecktarn",
-    "CUP_B_GER_Pack_Tropentarn"
+    "CUP_B_GER_Pack_Tropentarn",
+	"CUP_B_Bergen_BAF",
+	"CUP_B_CivPack_WDL",
+	"CUP_B_AFU_IIID_MM14",
+	"CUP_B_USPack_Black",
+	"CUP_B_US_IIID_OEFCP",
+	"CUP_B_US_IIID_OCP",
+	"CUP_B_US_IIID_UCP"	
 ];
 
 private _itemPackMedium =
@@ -1011,6 +1018,8 @@ private _itemWeaponRifle =
     "CUP_CZ_BREN2_556_11_Tan",
 
     "CUP_arifle_HK416_Black",
+	"CUP_arifle_HK416_Desert",
+	"CUP_arifle_HK416_Wood",
     "rhs_weap_hk416d145",
 
     "Tier1_HK416D145_MW13_CTR",
@@ -1278,7 +1287,43 @@ private _itemWeaponRifle =
 	"MCC_SpearLT_115_556_BLK_SLK",
 	"MCC_SpearLT_9_556_BLK_MPLFS",
 	"MCC_SpearLT_9_556_BLK_Bravo",
-	"MCC_SpearLT_9_556_BLK_SLK"
+	"MCC_SpearLT_9_556_BLK_SLK",
+	"MCC_LMT_MARSL_8_556_FDE_CTR",
+	"MCC_LMT_MARSL_8_556_FDE_SOPMOD",
+	"MCC_LMT_MARSL_8_556_FDE_SLK",
+	"MCC_LMT_MARSL_10_556_FDE_CTR",
+	"MCC_LMT_MARSL_10_556_FDE_SOPMOD",
+	"MCC_LMT_MARSL_10_556_FDE_SLK",
+	"MCC_LMT_MARSL_14_556_FDE_CTR",
+	"MCC_LMT_MARSL_14_556_FDE_SOPMOD",
+	"MCC_LMT_MARSL_14_556_FDE_SLK",
+	"MCC_LMT_MARSL_16_556_FDE_CTR",
+	"MCC_LMT_MARSL_16_556_FDE_SOPMOD",
+	"MCC_LMT_MARSL_16_556_FDE_SLK",
+	"MCC_LMT_MARSL_8_556_BLK_CTR",
+	"MCC_LMT_MARSL_8_556_BLK_SOPMOD",
+	"MCC_LMT_MARSL_8_556_BLK_SLK",
+	"MCC_LMT_MARSL_10_556_BLK_CTR",
+	"MCC_LMT_MARSL_10_556_BLK_SOPMOD",
+	"MCC_LMT_MARSL_10_556_BLK_SLK",
+	"MCC_LMT_MARSL_14_556_BLK_CTR",
+	"MCC_LMT_MARSL_14_556_BLK_SOPMOD",
+	"MCC_LMT_MARSL_14_556_BLK_SLK",
+	"MCC_LMT_MARSL_16_556_BLK_CTR",
+	"MCC_LMT_MARSL_16_556_BLK_SOPMOD",
+	"MCC_LMT_MARSL_16_556_BLK_SLK",
+	"MCC_LMT_MARSL_8_556_DE_CTR",
+	"MCC_LMT_MARSL_8_556_DE_SOPMOD",
+	"MCC_LMT_MARSL_8_556_DE_SLK",
+	"MCC_LMT_MARSL_10_556_DE_CTR",
+	"MCC_LMT_MARSL_10_556_DE_SOPMOD",
+	"MCC_LMT_MARSL_10_556_DE_SLK",
+	"MCC_LMT_MARSL_14_556_DE_CTR",
+	"MCC_LMT_MARSL_14_556_DE_SOPMOD",
+	"MCC_LMT_MARSL_14_556_DE_SLK",
+	"MCC_LMT_MARSL_16_556_DE_CTR",
+	"MCC_LMT_MARSL_16_556_DE_SOPMOD",
+	"MCC_LMT_MARSL_16_556_DE_SLK"	
 ];
 
 private _itemWeaponCarbine =
@@ -1292,6 +1337,8 @@ private _itemWeaponCarbine =
     "CUP_arifle_G36CA3_grip",
 
 	"CUP_arifle_HK416_CQB_Black",
+	"CUP_arifle_HK416_CQB_Desert",
+	"CUP_arifle_HK416_CQB_Wood",
     "rhs_weap_hk416d10",
 
     "Tier1_HK416D10_CTR",
@@ -1384,6 +1431,8 @@ private _itemWeaponAmmo =
     //Magazines
     "CUP_20Rnd_762x51_FNFAL_M",
     "CUP_20Rnd_762x51_B_SCAR",
+	"CUP_20Rnd_762x51_B_SCAR_wdl",
+	"CUP_20Rnd_762x51_B_SCAR_bkl",
     "CUP_20Rnd_762x51_HK417",
     "CUP_20Rnd_762x51_G3",
 
@@ -1430,6 +1479,8 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		"CUP_30Rnd_556x45_Emag_Tracer_Red",
 		"CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Red",
+		"CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Red",
+		"CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Red",
 		"CUP_30Rnd_556x45_PMAG_QP_Tracer_Red",
 		"CUP_30Rnd_TE1_Red_Tracer_556x45_XM8",
 		"CUP_25Rnd_556x45_Famas_Tracer_Red",
@@ -1457,9 +1508,11 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_M",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR",
+		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_wdl",
+		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_bkl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_HK417",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3"
-
+	
 		//============================================================
 		//7.62x54mm
 		//============================================================
@@ -1555,6 +1608,8 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		"CUP_30Rnd_556x45_Emag_Tracer_Yellow",
 		"CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Yellow",
+		"CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Yellow",
+		"CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Yellow",
 		"CUP_30Rnd_556x45_PMAG_QP_Tracer_Yellow",
 		"CUP_30Rnd_TE1_Yellow_Tracer_556x45_XM8",
 		"CUP_25Rnd_556x45_Famas_Tracer_Yellow",
@@ -2017,6 +2072,12 @@ private _itemWeaponGL =
     "CUP_arifle_XM8_Carbine_GL",
 
     "CUP_arifle_HK416_AGL_Black",
+	"CUP_arifle_HK416_AGL_Desert",
+	"CUP_arifle_HK416_AGL_Wood",
+
+	"CUP_arifle_HK416_CQB_AG36",
+	"CUP_arifle_HK416_CQB_AG36_Desert",
+	"CUP_arifle_HK416_CQB_AG36_Wood",
 
     "CUP_arifle_AK101_GL",
     "CUP_arifle_AK101_GL_railed",
@@ -2024,7 +2085,6 @@ private _itemWeaponGL =
 
     "CUP_CZ_BREN2_556_11_GL_Tan",
 
-	"CUP_arifle_HK416_AGL_Black",
     "rhs_weap_hk416d145_m320",
 
 	"CUP_arifle_M16A4_GL",
@@ -2232,6 +2292,10 @@ private _itemAmmoSPAA =
 private _itemWeaponMMG =
 [
     "CUP_lmg_Mk48",
+	"CUP_lmg_Mk48_des",
+	"CUP_lmg_Mk48_od",
+	"CUP_lmg_Mk48_tan",
+	"CUP_lmg_Mk48_wdl",
     "CUP_lmg_M60",
 	"CUP_lmg_M240_B",
 	"CUP_lmg_M240",
@@ -2814,7 +2878,7 @@ switch (true) do
 {
     case (_unitRole in ["ar","B_Soldier_AR_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox; // + _itemPackMedium
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms + _itemPackMedLight)] call ace_arsenal_fnc_initBox;
     };
     case (_unitRole in ["aar","B_Soldier_AAR_F"]) :
     {
