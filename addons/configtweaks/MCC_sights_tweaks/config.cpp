@@ -24,14 +24,14 @@ class CfgWeapons {
 	
 	// Macro: Sights Down/Red Dots
 	#define MCC_DOT(var) class var : ItemCore;
-	class ItemInfo : InventoryOpticsItem_Base_F { \
-	    class OpticsModes { \
-			class Aco { \
-	        	discreteDistance[] = {100}; \
-	        	discreteDistanceInitIndex = 0; \
+		class ItemInfo : InventoryOpticsItem_Base_F { \
+	    	class OpticsModes { \
+				class Aco { \
+	        		discreteDistance[] = {100}; \
+	        		discreteDistanceInitIndex = 0; \
+				}; \
 			}; \
-		}; \
-	}
+		}
 	
 	// Macro: Sights optics Up.
 	#define MCC_UP(var,base) class base##;
