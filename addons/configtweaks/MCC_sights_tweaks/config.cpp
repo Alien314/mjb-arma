@@ -18,5 +18,66 @@ class CfgPatches {
 };
 
 class CfgWeapons {
-
+	// Base classes
+	class ItemCore;
+	class InventoryOpticsItem_Base_F;
+	
+	// Macro: Sights Down/Red Dots
+	#define MCC_DOT(var) class var : ItemCore;
+	class ItemInfo : InventoryOpticsItem_Base_F { \
+	    class OpticsModes { \
+			class Aco { \
+	        	discreteDistance[] = {100}; \
+	        	discreteDistanceInitIndex = 0; \
+			}; \
+		}; \
+	}
+	
+	// Macro: Sights optics Up.
+	#define MCC_UP(var,base) class base##;
+		class var : base { \
+			class ItemInfo : InventoryOpticsItem_Base_F { \
+	      		class OpticsModes { \
+	        		class Magnified { \
+	          			discreteDistance[] = {300}; \
+	          			discreteDistanceInitIndex = 0; \
+	      			}; \
+	    		}; \
+	  		}; \
+		}
+	
+	// 1x / red dots
+	MCC_DOT(MCC_EXPS3_BLK);
+	MCC_DOT(MCC_EXPS3_BLK_Down);
+	MCC_DOT(MCC_EXPS3_FDE);
+	MCC_DOT(MCC_EXPS3_FDE_Down);
+	MCC_DOT(MCC_GBRS_EXPS3_BLK);
+	MCC_DOT(MCC_GBRS_EXPS3_FDE);
+	MCC_DOT(MCC_GBRS_EXPS3_Mag_Down_BLK);
+	MCC_DOT(MCC_GBRS_EXPS3_Mag_Down_FDE);
+	MCC_DOT(MCC_EXPS3_UnityX_BLK_Down);
+	MCC_DOT(MCC_EXPS3_UnityX_FDE_Down);
+	MCC_DOT(MCC_Romeo9t_blk);
+	MCC_DOT(MCC_Romeo9t_BLK_Down);
+	MCC_DOT(MCC_MicroT2);
+	MCC_DOT(MCC_MicroT2_UnityX_BLK_Down);
+	MCC_DOT(MCC_MicroT2_UnityX_FDE_Down);
+	MCC_DOT(MCC_GBRS_T2_BLK);
+	MCC_DOT(MCC_GBRS_T2_Mag_Down_BLK);
+	MCC_DOT(MCC_GBRS_T2_Mag_Down_FDE);
+	
+	// 3x / optics up
+	MCC_UP(MCC_EXPS3_BLK_Up,MCC_EXPS3_BLK_Down);
+	MCC_UP(MCC_EXPS3_FDE_Up,MCC_EXPS3_FDE_Down);
+	MCC_UP(MCC_GBRS_EXPS3_Mag_Up_BLK,MCC_GBRS_EXPS3_Mag_Down_BLK);
+	MCC_UP(MCC_GBRS_EXPS3_Mag_Up_FDE,MCC_GBRS_EXPS3_Mag_Down_FDE);
+	MCC_UP(MCC_EXPS3_UnityX_BLK_Up,MCC_EXPS3_UnityX_BLK_Down);
+	MCC_UP(MCC_EXPS3_UnityX_FDE_Up,MCC_EXPS3_UnityX_FDE_Down);
+	MCC_UP(MCC_Romeo9t_BLK_Up,MCC_Romeo9t_BLK_Down);
+	MCC_UP(MCC_Romeo9T_FDE_Up,MCC_Romeo9T_FDE_Down);
+	MCC_UP(MCC_MicroT2_Up,MCC_MicroT2_Down);
+	MCC_UP(MCC_MicroT2_UnityX_BLK_Up,MCC_MicroT2_UnityX_BLK_Down);
+	MCC_UP(MCC_MicroT2_UnityX_FDE_Up,MCC_MicroT2_UnityX_FDE_Down);
+	MCC_UP(MCC_GBRS_T2_Mag_Up_BLK,MCC_GBRS_T2_Mag_Down_BLK);
+	MCC_UP(MCC_GBRS_T2_Mag_Up_FDE,MCC_EXPS3_FDE_Down);
 };
