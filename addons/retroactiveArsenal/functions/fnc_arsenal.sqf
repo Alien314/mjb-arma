@@ -418,7 +418,7 @@ private _itemNVG =
 ];
 _itemEquipment append _itemNVG;
 
-private _itemArmNVG = ("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}); // ['Aegis and Hartman','Anthrax and Hartman']
+private _itemArmNVG = (("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ['G_Armband_NVG_Cross_F','G_Armband_NVG_Cross_alt_F']); // ['Aegis and Hartman','Anthrax and Hartman']
 _itemEquipment append _itemArmNVG;
 
 private _itemWeaponMelee =
@@ -520,7 +520,7 @@ private _itemPackHeavy =
 ];
 _itemPackHeavy append _itemPackMedium;
 
-private _itemFacewear = ("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x});
+private _itemFacewear = (("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x})- ['G_Armband_Cross_F','G_Armband_Cross_alt_F']);
 /*private _itemFacewear =
 [
     //Vanilla
