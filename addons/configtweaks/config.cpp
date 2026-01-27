@@ -54,24 +54,24 @@ class CfgDamageAround {
 
 	//*/
 	class CUP_OPX_DamageAroundHousePart_01 {
-		indirectHit = 0; // 3
-		radiusRatio = 0; // 0.15
+		indirectHit = 3; // 3
+		radiusRatio = 0.15; // 0.15
 	};
 	class DamageAroundHouse {
-		indirectHit = "0";   // 11
-		radiusRatio = "0.0"; // 1.0
+		indirectHit = "7";   // 11
+		radiusRatio = "1.0"; // 1.0
 	};
 	class DamageAroundHousePart {
-		indirectHit = 0; // 100
-		radiusRatio = 0; // 0.15
+		indirectHit = 7; // 100
+		radiusRatio = 0.15; // 0.15
 	};
 	class DamageAroundPole {
-		indirectHit = "0";   // 900
-		radiusRatio = "0.0"; // 0.3
+		indirectHit = "7";   // 900
+		radiusRatio = "0.3"; // 0.3
 	};//*/
 	class MJB_DamageAroundCUP {
-		indirectHit = "0";   // 9?
-		radiusRatio = "0.0"; // 0.2
+		indirectHit = "7";   // 9?
+		radiusRatio = "0.2"; // 0.2
 	};
 };
 
