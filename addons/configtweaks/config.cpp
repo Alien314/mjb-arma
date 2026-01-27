@@ -89,7 +89,25 @@ class Mode_FullAuto;
 #include "CfgAmmo.hpp" // MMG Tracer ammo, (commented Ammo config)
 #include "CfgMagazines.hpp" // GreenMag simple compatibility, MMG Tracer boxes
 
-class CBA_Extended_EventHandlers_base; // apply to classes missing it
+class CBA_Extended_EventHandlers_base; // apply to vehicle classes missing it
 #include "CfgVehicles.hpp"  // BRH for all units/uniforms
+
+class Extended_InitPost_EventHandlers {
+	class CUP_AH6_BASE {
+		class mjb_configTweaks {
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 1821;";
+		};
+	};
+	class CUP_CH47F_base {
+		class mjb_configTweaks {
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 10001;";
+		};
+	};
+	class CUP_CH53E_Base {
+		class mjb_configTweaks {
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 10001;";
+		};
+	};
+};
 
 #include "CfgWeapons.hpp" // AIDispersion, Weapon, Greenmag items, Accessory, Helmet, and Vest tweaks
