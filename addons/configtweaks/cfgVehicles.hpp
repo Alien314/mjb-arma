@@ -1247,15 +1247,6 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
 	];*/
   };
 
-// takistan gas missing ace refuel
-#define REFUEL_INFINITE_FUEL -10
-	class House_EP1;
-	class Land_Ind_FuelStation_Feed_EP1 : House_EP1 {
-        transportFuel = 0;
-        ace_refuel_hooks[] = {{0.35, 0, -0.4}, {-0.35, 0, -0.4}};
-        ace_refuel_fuelCargo = REFUEL_INFINITE_FUEL;
-	};
-
 /*/ GM Compats compat
 class Land_CanisterFuel_F;
   class gm_jerrycan_base : Land_CanisterFuel_F {

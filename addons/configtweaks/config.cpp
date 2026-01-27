@@ -58,20 +58,20 @@ class CfgDamageAround {
 		radiusRatio = 0.15; // 0.15
 	};
 	class DamageAroundHouse {
-		indirectHit = "7";   // 11
-		radiusRatio = "1.0"; // 1.0
+		indirectHit = 7;   // 11
+		radiusRatio = 1.0; // 1.0
 	};
 	class DamageAroundHousePart {
 		indirectHit = 7; // 100
 		radiusRatio = 0.15; // 0.15
 	};
 	class DamageAroundPole {
-		indirectHit = "7";   // 900
-		radiusRatio = "0.3"; // 0.3
+		indirectHit = 7;   // 900
+		radiusRatio = 0.3; // 0.3
 	};//*/
 	class MJB_DamageAroundCUP {
-		indirectHit = "7";   // 9?
-		radiusRatio = "0.2"; // 0.2
+		indirectHit = 7;   // 9?
+		radiusRatio = 0.25; // 0.2
 	};
 };
 
@@ -95,17 +95,17 @@ class CBA_Extended_EventHandlers_base; // apply to vehicle classes missing it
 class Extended_InitPost_EventHandlers {
 	class CUP_AH6_BASE {
 		class mjb_configTweaks {
-			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 1821;";
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupLBMass;"; //1821
 		};
 	};
 	class CUP_CH47F_base {
 		class mjb_configTweaks {
-			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 10001;";
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupCHMass;"; //10001
 		};
 	};
 	class CUP_CH53E_Base {
 		class mjb_configTweaks {
-			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass 10001;";
+			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupCHMass;"; //10001
 		};
 	};
 };

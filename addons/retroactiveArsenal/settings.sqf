@@ -401,6 +401,24 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_cupLBMass",
+    "SLIDER",
+    ["CUP Littlebird Mass", "Mass of CUP Littlebird applied in PostInit."],
+    [_title, "xExperimental"],
+    [1000, 5000, 1821, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_cupCHMass",
+    "SLIDER",
+    ["CUP Chinook Mass", "Mass of CUP Chinook applied in PostInit."],
+    [_title, "xExperimental"],
+    [5000, 30000, 10001, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_arsenal_projectileEvents",
     "CHECKBOX",
     ["Enable Projectile Events", "Projectile event handling, currently only setting fuel cans on fire with tracers/incendiary ammo."],
