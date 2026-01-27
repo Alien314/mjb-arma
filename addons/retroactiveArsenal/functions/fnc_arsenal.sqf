@@ -2937,7 +2937,7 @@ switch (true) do
     };
     case (_unitRole in ["aar","B_Soldier_AAR_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;// + _itemPackMedLight + _itemPackMedium + _itemWeaponAR
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms + _itemWeaponAR + _itemPackMedLight + ["Binocular"])] call ace_arsenal_fnc_initBox;// _itemPackMedium + 
     };
     case (_unitRole in _leaderRole) :
     {
@@ -3018,8 +3018,8 @@ switch (true) do
 
         player setUnitTrait ["UAVHacker", true];
 
-        if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
-        mjb_engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", mjb_engiButtonId] call ace_arsenal_fnc_addRightPanelButton;
+        /*if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
+        mjb_engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", mjb_engiButtonId] call ace_arsenal_fnc_addRightPanelButton;*/
     };
     case (_unitRole in ["crew","B_crew_F"]) :
     {
