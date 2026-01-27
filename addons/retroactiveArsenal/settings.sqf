@@ -406,6 +406,8 @@ private _category = "AI";
     ["CUP Littlebird Mass", "Mass of CUP Littlebird applied in PostInit."],
     [_title, "xExperimental"],
     [1000, 5000, 1821, 2],
+    true,
+    { },
     true
 ] call CBA_fnc_addSetting;
 
@@ -415,6 +417,8 @@ private _category = "AI";
     ["CUP Chinook Mass", "Mass of CUP Chinook applied in PostInit."],
     [_title, "xExperimental"],
     [5000, 30000, 10001, 2],
+    true,
+    { },
     true
 ] call CBA_fnc_addSetting;
 
