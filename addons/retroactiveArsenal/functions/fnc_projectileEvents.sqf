@@ -20,9 +20,9 @@ _proj addEventHandler ["Penetrated", {
 	if (_hitObject isKindOf "Land_CanisterFuel_F") then {
 		private _incendiary = getNumber (configFile >> "CfgAmmo" >> (typeOf _proj) >> "ace_vehicle_damage_incendiary");
 		if (_incendiary isEqualTo 0 || {_incendiary < (random 1)}) exitWith {};
-		private _mult = ((_hitObject getVariable ['ace_refuel_capacity',20]) / 20);
+		private _mult = (([_hitObject] call ace_refuel_fnc_getFuel) / 20);
 		if (_mult isEqualTo 0) exitWith {};
 		[_hitObject,(10 * _mult),2,(3 * _mult)] call mjb_arsenal_fnc_objectBurn;
-		_hitObject setVariable ['ace_refuel_capacity',0];
+		[_hitObject,0] call ace_refuel_fnc_setFuel;
 	};
 }];
