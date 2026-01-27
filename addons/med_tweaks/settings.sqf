@@ -57,6 +57,25 @@ private _title = "MJB Arma Medical";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_med_tweaks_unstableWakeSoftCap",
+    "SLIDER",
+    ["Unstable Wake Uncon Soft Cap", "Time after which chance to wake up starts increasing based on time spent unconscious. +50% at double this value, +100% at triple this value."],
+    [_title,"Unstable Wake"],
+    [1, 600, 120, 0],
+    true
+] call CBA_fnc_addSetting;
+//
+[
+    "mjb_med_tweaks_unstableWakeModScale",
+    "SLIDER",
+    ["Unstable Wake Uncon Cap Modifier Scale", "Higher number adds less chance over time. At double the softCap: 1:+100%, 2:+50%, 3:+33%. At triple the softCap 2:+100%, 3:+66%."],
+    [_title,"Unstable Wake"],
+    [0.10, 10, 2, 2],
+    true
+] call CBA_fnc_addSetting;
+//*/
+
+[
     "mjb_med_tweaks_unstableWakeNeedsPulse",
     "CHECKBOX",
     ["Require Pulse for Unstable Wake", "Whether a pulse is required, CPR counts as pulse."],
@@ -72,6 +91,33 @@ private _title = "MJB Arma Medical";
     [_title, "Unstable Wake"],
     false,
     false
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_med_tweaks_unstableWakeFaint",
+    "CHECKBOX",
+    ["Faint While Unstable", "Whether a player will faint after waking in an unstable condition if the player remains unstable."],
+    [_title, "Unstable Wake"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_med_tweaks_unstableWakeMin",
+    "SLIDER",
+    ["Faint Min Wake Time", "Minimum time to be awake after a successful wake roll, while vitals are still unstable."],
+    [_title,"Unstable Wake"],
+    [1, 180, 15, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_med_tweaks_unstableWakeMax",
+    "SLIDER",
+    ["Faint Max Wake Time", "Maximum time to be awake after a successful wake roll, while vitals are still unstable."],
+    [_title,"Unstable Wake"],
+    [1, 600, 45, 0],
+    true
 ] call CBA_fnc_addSetting;
 
 [
