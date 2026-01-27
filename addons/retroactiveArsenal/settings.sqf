@@ -401,6 +401,15 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_arsenal_projectileEvents",
+    "CHECKBOX",
+    ["Enable Projectile Events", "Projectile event handling, currently only setting fuel cans on fire with tracers/incendiary ammo."],
+    [_title, "xShenanigans"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_arsenal_enableRainbow",
     "CHECKBOX",
     ["Enable Rainbow", "Activates rainbow tracers and infinite ammo for the HK121/MG5/Navid when closing ace arsenal with the rainbow mag loaded."],

@@ -416,6 +416,12 @@ if (!isNil "ace_interact_menu") then {
 	["CAManBase", 1, ["ACE_SelfActions","ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
+if (mjb_arsenal_projectileEvents) then {
+	mjb_arsenal_projectileEH = ["ace_firedPlayer", { params["", "", "", "", "", "", "_proj"];
+		_proj call mjb_arsenal_fnc_projectileEvents;
+	}] call CBA_fnc_addEventHandler;
+};
+
 if (mjb_plateSteal) then {
     ["ace_firedPlayer", { params["", "", "", "", "", "", "_projectile"];
         [_projectile] call mjb_arsenal_fnc_projHandler;
