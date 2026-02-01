@@ -237,3 +237,11 @@ class MJB_Display {
 };*/
 
 #include "Display3DEN.hpp"
+
+class CfgSounds {
+	class SSD_scream861 {
+		name = "SSD_scream861";
+		sound[] = {"\z\mjb\addons\arsenal\data\SSD_scream861.ogg",2,1,220};
+		titles[] = {};
+	};
+};

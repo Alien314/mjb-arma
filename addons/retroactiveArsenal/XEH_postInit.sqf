@@ -463,6 +463,12 @@ if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
 	};
 }] call CBA_fnc_addEventHandler;
 
+0 spawn { sleep 3;
+	if (isNil 'SSD_DeathSounds') exitWith {};
+	{ _x pushBack 'SSD_scream861';
+	} forEach [SSD_DeathSounds,SSD_RattleOther];
+};
+
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
     private _mode = _extradata getOrDefault ["mjb_dagrMode", nil];
