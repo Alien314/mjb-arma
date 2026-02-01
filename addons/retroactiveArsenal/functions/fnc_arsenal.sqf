@@ -1069,7 +1069,12 @@ private _itemWeaponRifle =
     "CUP_arifle_XM8_Railed",
 
     "CUP_arifle_ACR_blk_556",
+    "CUP_arifle_ACR_snw_556",
+    "CUP_arifle_ACR_tan_556",
+    "CUP_arifle_ACR_wdl_556",
 
+    "CUP_CZ_BREN2_556_11",
+    "CUP_CZ_BREN2_556_11_Grn",
     "CUP_CZ_BREN2_556_11_Tan",
 
     "CUP_arifle_HK416_Black",
@@ -1080,9 +1085,24 @@ private _itemWeaponRifle =
     "Tier1_HK416D145_MW13_CTR",
 
 	"CUP_arifle_M4A1_SOMMOD_black",
+    "CUP_arifle_M4A1_SOMMOD_ctrg",
+    "CUP_arifle_M4A1_SOMMOD_ctrgt",
+    "CUP_arifle_M4A1_SOMMOD_tan",
+    "CUP_arifle_M4A1_SOMMOD_hex",
+    "CUP_arifle_M4A1_SOMMOD_snow",
+    "CUP_arifle_M4A1_SOMMOD_green",
+    "CUP_arifle_M4A1_SOMMOD_Grip_black",
+    "CUP_arifle_M4A1_SOMMOD_Grip_ctrg",
+    "CUP_arifle_M4A1_SOMMOD_Grip_ctrgt",
+    "CUP_arifle_M4A1_SOMMOD_Grip_tan",
+    "CUP_arifle_M4A1_SOMMOD_Grip_hex",
+    "CUP_arifle_M4A1_SOMMOD_Grip_snow",
+    "CUP_arifle_M4A1_SOMMOD_Grip_green",
     "rhs_weap_m4a1_blockII_KAC_bk",
 
     "CUP_Famas_F1_Rail",
+    "CUP_Famas_F1_Rail_Arid",
+    "CUP_Famas_F1_Rail_Wood",
 
 	"CUP_arifle_M16A4_Base",
     "rhs_weap_m16a4_carryhandle",
@@ -1131,8 +1151,22 @@ private _itemWeaponRifle =
     //============================================================
     "CUP_arifle_DSA_SA58_OSW_VFG",
 	"CUP_arifle_Mk17_CQC",
+    "CUP_arifle_Mk17_CQC_AFG",
+    "CUP_arifle_Mk17_CQC_FG",
+    "CUP_arifle_Mk17_CQC_Black",
+    "CUP_arifle_Mk17_CQC_AFG_black",
+    "CUP_arifle_Mk17_CQC_FG_black",
+    "CUP_arifle_Mk17_CQC_woodland",
+    "CUP_arifle_Mk17_CQC_AFG_woodland",
+    "CUP_arifle_Mk17_CQC_FG_woodland",
+    
+    "CUP_arifle_G3A3_ris",
+    "CUP_arifle_G3A3_ris_vfg",
     "CUP_arifle_G3A3_modern_ris",
-
+    "CUP_arifle_G3A3_ris_black",
+    "CUP_arifle_G3A3_ris_vfg_black",
+    "CUP_arifle_G3A3_modern_ris_black",
+    
     "rhs_weap_mk17_CQC",
     "rhs_weap_l1a1_wood",
 	
@@ -1401,6 +1435,9 @@ private _itemWeaponCarbine =
     "CUP_arifle_XM8_Compact_Rail",
 
     "CUP_arifle_ACRC_blk_556",
+    "CUP_arifle_ACRC_snw_556",
+    "CUP_arifle_ACRC_tan_556",
+    "CUP_arifle_ACRC_wdl_556",
 
     "CUP_arifle_AK102",
     "CUP_arifle_AK102_railed",
@@ -1789,6 +1826,9 @@ private _itemWeaponCQB =
     //SMGs
     "CUP_arifle_SR3M_Vikhr_VFG_top_rail",
     "CUP_smg_Mac10_rail",
+    "CUP_smg_MP5A5",
+    "CUP_smg_MP5A5_Rail",
+    "CUP_smg_MP5A5_Rail_VFG",
     "CUP_smg_MP5A5_Rail_AFG",
     "CUP_smg_SA61",
     "CUP_smg_vityaz_vfg_top_rail",
@@ -2116,6 +2156,9 @@ private _itemWeaponGL =
     "arifle_TRG21_GL_F",
 
     "CUP_arifle_ACR_EGLM_blk_556",
+    "CUP_arifle_ACR_EGLM_snw_556",
+    "CUP_arifle_ACR_EGLM_tan_556",
+    "CUP_arifle_ACR_EGLM_wdl_556",
 
     "CUP_arifle_M16A4_GL",
 
@@ -2138,6 +2181,8 @@ private _itemWeaponGL =
     "CUP_arifle_AK101_GL_railed",
     "CUP_arifle_AK19_GP34_bicolor",
 
+    "CUP_CZ_BREN2_556_11_GL",
+    "CUP_CZ_BREN2_556_11_GL_Grn",
     "CUP_CZ_BREN2_556_11_GL_Tan",
 
     "rhs_weap_hk416d145_m320",
@@ -2175,10 +2220,14 @@ private _itemWeaponGL =
     //7.62x51mm
     "CUP_arifle_DSA_SA58_OSW_M203",
     "CUP_arifle_Mk17_CQC_EGLM",
-
-
+    "CUP_arifle_Mk17_CQC_EGLM_black",
+    "CUP_arifle_Mk17_CQC_EGLM_woodland",
 
     "CUP_arifle_ACR_EGLM_blk_68",
+    "CUP_arifle_ACR_EGLM_snw_68",
+    "CUP_arifle_ACR_EGLM_tan_68",
+    "CUP_arifle_ACR_EGLM_wdl_68",
+
     "CUP_arifle_AK15_GP34_bicolor",
 
     /*/ Fancy mags
