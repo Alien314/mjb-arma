@@ -401,6 +401,24 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_enableStabToggle",
+    "CHECKBOX",
+    ["Allow Co-pilot Stabilize Toggle", "Whether co-pilot stabilization can be disabled, and point/area type functionality then enabled."],
+    [_title, "xExperimental"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_canReacquire",
+    "CHECKBOX",
+    ["Co-pilot Stabilize can Re-acquire", "Whether co-pilot stabilization can re-acquire a target that has moved out of LoS, when mouse has not been moved or target is sensor targeted, and the target re-enters LoS. Otherwise stabilization will remain on the last known position."],
+    [_title, "xExperimental"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_cupLBMass",
     "SLIDER",
     ["CUP Littlebird Mass", "Mass of CUP Littlebird applied in PostInit."],
