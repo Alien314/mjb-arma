@@ -286,7 +286,7 @@ if (isMultiplayer) then {
             private _newID = owner _carrier;
 			if (_newID isEqualTo (owner _obj)) exitWith {};
 			_obj setOwner _newID;
-            _obj setVariable ['ace_common_lockStatus',(_obj getVariable ['ace_common_lockStatus', locked _obj]),_newID];
+            _obj setVariable ['ace_common_lockStatus',(_obj getVariable ['ace_common_lockStatus', locked _obj]),true];
 			["mjb_carryLocal", [_carrier, _obj], _carrier] call CBA_fnc_targetEvent;
 		}] call CBA_fnc_addEventHandler;
 
@@ -350,6 +350,16 @@ if (isDedicated) exitWith {};
 [] call mjb_arsenal_fnc_initStuff;
 
 if !(hasInterface) exitWith {};
+
+mjb_stabilizeOffsets = [[
+	["Heli_Attack_01_dynamicLoadout_base_F",[0,-1,-0.4]],
+	["Heli_Attack_01_pylons_dynamicLoadout_base_F",[0,-1,-0.4]],
+	["CUP_AH64_base",[0,-1.8,-0.6]],
+	["CUP_AH64_dynamic_base",[0,-1.8,-0.6]]
+],[0,0,0]] call CBA_fnc_hashCreate;
+
+
+
 
 if (mjb_woodCutting) then {
     mjb_cutLoop = 0 spawn { while {true} do { sleep 3;
