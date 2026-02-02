@@ -2850,14 +2850,14 @@ if (_aceMedLoaded) then { //Check for ace med
         //"ACE_adenosine",
         //Specialized Equipments
         "ACE_personalAidKit",
-        "ACE_surgicalKit"
+        "ACE_surgicalKit",
+		"ACRE_PRC148"
     ];
-  _itemMedic append _itemMedicalAdv;
+	_itemMedic append _itemMedicalAdv;
 } else { // Add base med items
     {_x pushBack "FirstAidKit";} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
     _itemMedic append ["Medikit", "diw_armor_plates_main_autoInjector"];
 };
-_itemMedicalAdv pushBack "ACRE_PRC148";
 
 private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
 private _hasApex = 395180 in _ownedDLCs;
