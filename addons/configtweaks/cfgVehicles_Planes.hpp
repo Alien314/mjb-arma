@@ -227,8 +227,9 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 	};//*/
 	class UserActions {
 		class stab_disable {
-			condition = "private _lock = this lockedCameraTo [0]; player isEqualTo (gunner this) && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}";
+			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { player isEqualTo (gunner this) && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}}";
 			displayName = "Disable Camera Stabilization";
+			displayNameDefault = "";
 			hideOnUse = 1;
 			onlyforplayer = 1;
 			position = "";
@@ -239,7 +240,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			statement = "this lockCameraTo [objNull,[0]]; this enableDirectionStabilization [false, [0]];";
 		};
 		class stab_enable {
-			condition = "private _lock = this lockedCameraTo [0]; player isEqualTo (gunner this) && {isNil '_lock' && { !(this directionStabilizationEnabled [0]) }}";
+			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { player isEqualTo (gunner this) && {isNil '_lock' && { !(this directionStabilizationEnabled [0]) }}}";
 			displayName = "Enable Camera Stabilization";
 			displayNameDefault = "";
 			hideOnUse = 1;
@@ -249,7 +250,7 @@ class CUP_SU34_BASE : Plane {  // su34 1900
 			radius = 15;
 			shortcut = "vehLockTurretView";
 			showWindow = 0;
-			statement = "this enableDirectionStabilization [true, [0]]; this spawn { while { _this directionStabilizationEnabled [0] } do { if (cursorObject isKindOf 'AllVehicles') then { _this lockCameraTo [AGLToASL (unitAimPositionVisual cursorObject),[0],true]; }; sleep 0.2; }; };";
+			statement = "[this] call mjb_arsenal_fnc_copilotStabilizeToggle";
 		};
 	};
 };
