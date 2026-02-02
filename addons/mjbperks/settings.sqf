@@ -49,6 +49,15 @@ private _mod = "MJB Arma Perks";
     }
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_allowJam",
+    "CHECKBOX",
+    ["Allow Jam", "Let other players force you to reload by pointing at you within the range defined above on the server."],
+    [_mod],
+    true,
+    false
+] call CBA_fnc_addSetting;
+
 
 private _category = "Individual Perks";
 

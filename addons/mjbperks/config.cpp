@@ -10,6 +10,7 @@ class CfgPatches {
     requiredAddons[]=
 		{
 	   		"ace_interact_menu",
+			"ace_dragging",
 			"ace_finger"
 		};
     skipWhenMissingDependencies = 1;
@@ -26,6 +27,9 @@ class Extended_PostInit_EventHandlers
 
 class Extended_PreInit_EventHandlers
 {
+	class ace_dragging {
+		init="call compileScript ['z\mjb\addons\perks\XEH_preInitDragging.sqf']";
+	};
 	class mjb_perks
 	{
 		init="call compileScript ['z\mjb\addons\perks\XEH_preInit.sqf']";
@@ -33,6 +37,9 @@ class Extended_PreInit_EventHandlers
 };
 class Extended_PreStart_EventHandlers
 {
+	class ace_dragging {
+		init="call compileScript ['z\mjb\addons\perks\XEH_preStartDragging.sqf']";
+	};
 	class mjb_perks
 	{
 		init="call compileScript ['z\mjb\addons\perks\XEH_preStart.sqf']";

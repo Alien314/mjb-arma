@@ -129,6 +129,15 @@ private _title = "MJB Arma Medical";
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_allowLoadDead",
+    "CHECKBOX",
+    ["Allow Loading Deceased", "Whether deceased units can be loaded into vehicles."],
+    [_title, "Meme"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 // ACE Constants variables
 [
     QEGVAR(medical,const_stableVitalsBloodThreshold),

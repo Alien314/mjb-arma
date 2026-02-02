@@ -1,6 +1,9 @@
 #if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 
 #else
+
+#include "script_component.hpp"
+
 class CfgPatches {
   class mjb_med_tweaks {
     ammo[] = {};
@@ -10,7 +13,7 @@ class CfgPatches {
     requiredVersion = 0.1;
     author = "Alien314";
     name = "MJB Med tweaks";
-    requiredAddons[] = {"ace_medical_statemachine","ace_medical_treatment"};
+    requiredAddons[] = {"ace_medical_statemachine","ace_medical_treatment","ace_medical_gui"};
     skipWhenMissingDependencies = 1;
   };
 };
@@ -56,6 +59,20 @@ class ace_medical_treatment {
       viscosityChange = -5;
     };
   };
+};
+
+#define QTVAR(var) QUOTE(QUOTE(var))
+class CfgVehicles {
+	class Man;
+	class CAManBase : Man {
+		class ACE_Actions {
+			class ACE_MainActions {
+				class ACE_LoadPatient {
+					   condition = QUOTE((!(_target call EFUNC(common,isAwake)) || {(_target getVariable [ARR_2(QTVAR(mjb_afktoggle),false)])}) && {isNull objectParent _target && {(_target call EFUNC(common,nearestVehiclesFreeSeat)) isNotEqualTo []}});
+				};
+			};
+		};
+	};
 };
 
 class ACE_Medical_StateMachine {

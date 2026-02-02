@@ -25,12 +25,12 @@ if (mjb_enableFlags) then {
     };
     private _flag = "z\mjb\addons\flags\data\canadaflag_ca.paa";
     private _statement = { params ["_target", "_player", "_actionParams"]; _actionParams params ["_flag"];
-        if (getForcedFlagTexture _target isEqualTo _flag) exitWith {[_target,""] remoteExec ["forceFlagTexture",0];};
-        [_target,_flag] remoteExec ["forceFlagTexture",0];
+        if (getForcedFlagTexture (vehicle _target) isEqualTo _flag) exitWith {[(vehicle _target),""] remoteExec ["forceFlagTexture",0];};
+        [(vehicle _target),_flag] remoteExec ["forceFlagTexture",0];
     };
     private _disableMod = {
         params ["_target", "_player", "_params", "_actionData"]; _params params ["_flag"];
-        if ((getForcedFlagTexture _target) isEqualTo _flag) then {
+        if ((getForcedFlagTexture (vehicle _target)) isEqualTo _flag) then {
             _actionData set [1, "Remove Canadian Flag"];
         };
     };
@@ -42,12 +42,12 @@ if (mjb_enableFlags) then {
     };
     private _flag = "z\mjb\addons\flags\data\ratsflag_ca.paa";
     private _statement = { params ["_target", "_player", "_actionParams"]; _actionParams params ["_flag"];
-        if (getForcedFlagTexture _target isEqualTo _flag) exitWith {[_target,""] remoteExec ["forceFlagTexture",0];};
-        [_target,_flag] remoteExec ["forceFlagTexture",0];
+        if (getForcedFlagTexture (vehicle _target) isEqualTo _flag) exitWith {[(vehicle _target),""] remoteExec ["forceFlagTexture",0];};
+        [(vehicle _target),_flag] remoteExec ["forceFlagTexture",0];
     };
     private _disableMod = {
         params ["_target", "_player", "_params", "_actionData"]; _params params ["_flag"];
-        if ((getForcedFlagTexture _target) isEqualTo _flag) then {
+        if ((getForcedFlagTexture (vehicle _target)) isEqualTo _flag) then {
             _actionData set [1, "Remove RATS Flag"];
         };
     };
@@ -62,12 +62,24 @@ private _condition = {
 };
 private _statement = {
 params ["_target", "_player", "_params", "_actionData"];
-if (_target getVariable ["ACE_isUnconscious", false]) exitWith {_target setVariable ["ACE_isUnconscious", false, true];};
-    _target setVariable ["ACE_isUnconscious", true, true];
+	if (_target getVariable ["mjb_afkToggle", false]) exitWith {
+		_target setVariable ["mjb_afkToggle", nil, true];
+
+// if ace ever allows interact while attached somehow
+		private _attached = attachedTo player;
+		if (isNull _attached) exitWith {};
+
+		if (_attached getVariable ['ace_dragging_isDragging',false]) exitWith {
+			[_attached, player] remoteExec ['ace_dragging_fnc_dropObject',_attached];
+		};
+
+		[_attached, player] remoteExec ['ace_dragging_fnc_dropObject_carry',_attached];
+	};
+    _target setVariable ["mjb_afkToggle", true, true];
 };
 private _disableMod = {
     params ["_target", "_player", "_params", "_actionData"];
-    if (_target getVariable ["ACE_isUnconscious", false]) then {
+    if (_target getVariable ["mjb_afkToggle", false]) then {
         _actionData set [1, "Disable AFK, disallow ace carry"];
     };
 };
