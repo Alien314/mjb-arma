@@ -9,6 +9,7 @@ if (_isPerson) then { _target = [_target]; };
 if !(_isPerson) then { _target = crew _target; };
 {
 	[_x, { params ["_target"];
+		if (isPlayer _target && {!mjb_allowJam}) exitWith {};
 		private _success = true;		
 		_success = _target reload [];
 		/*private _wep = currentWeapon _target;
