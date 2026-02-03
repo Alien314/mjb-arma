@@ -61,6 +61,8 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 				_args params ["_unit",'_faction'];
 				if (_move) then { _unit setVariable ["startpos", getPosASL _unit, true]; };
 				[[_unit,_role,_faction,_retro],{ params ['_unit','_role','_faction','_retro'];
+					private _goggs = goggles _unit;
+					private _noggs = hmd _unit;
 					if (_faction isEqualTo '') then {_faction = nil};
 					private _tmfRole = _role;
 					if (_tmfRole isEqualTo '') then {_tmfRole = nil};
@@ -70,6 +72,8 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 							execVM "loadouts\arsenal.sqf";
 						} else { [false, _role] call mjb_arsenal_fnc_arsenal };
 						0 spawn {sleep 0.1; [0,true] spawn mjb_arsenal_fnc_toughLoop;};
+						if (_goggs isNotEqualTo "") then  {_unit linkItem _goggs};
+						if (_noggs isNotEqualTo "") then  {_unit linkItem _noggs};
 					};
 				}] remoteExec ["call",_unit];
 		},{},[_unit,_faction]] call zen_dialog_fnc_create;
