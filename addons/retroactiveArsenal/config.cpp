@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleVcom","mjb_moduleSetUnitRole"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -31,6 +31,9 @@ class Extended_PreInit_EventHandlers
 	};
 	class ace_rangecard {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitRangecard.sqf']";
+	};
+	class tsp_animate_functions {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitAnimate.sqf']";
 	};
 	class mjb_arsenal
 	{
@@ -122,6 +125,9 @@ class CfgFactionClasses {
     class VCOM : MJB {
         displayName = "VCOM";
     };
+    class MJB_SEB : MJB {
+        displayName = "Seb's Briefing Table";
+    };
 };
 
 class CfgVehicles
@@ -211,6 +217,27 @@ class CfgVehicles
         displayName = "Set Unit Role";
 		function = "mjb_arsenal_fnc_moduleSetUnitRole";
 		icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\rearm_ca.paa";
+	};
+	class mjb_moduleSebTableMark : mjb_moduleBase {
+        category = "MJB_SEB";
+        curatorCanAttach = 1;
+        displayName = "Mark Briefing Table (1st)";
+		function = "mjb_arsenal_fnc_moduleSebTableMark";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
+	};
+	class mjb_moduleSebTableArea : mjb_moduleBase {
+        category = "MJB_SEB";
+        curatorCanAttach = 1;
+        displayName = "Mark Briefing xArea (2nd)";
+		function = "mjb_arsenal_fnc_moduleSebTableArea";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
+	};
+	class mjb_moduleSebTableClear : mjb_moduleBase {
+        category = "MJB_SEB";
+        curatorCanAttach = 1;
+        displayName = "xBefore Deleting Table";
+		function = "mjb_arsenal_fnc_moduleSebTableClear";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
 	};
 	class mjb_moduleVcom : mjb_moduleBase {
         category = "VCOM";

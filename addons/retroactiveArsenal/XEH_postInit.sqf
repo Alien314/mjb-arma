@@ -357,9 +357,24 @@ mjb_stabilizeOffsets = [[
 	["CUP_AH64_base",[0,-1.8,-0.6]],
 	["CUP_AH64_dynamic_base",[0,-1.8,-0.6]]
 ],[0,0,0]] call CBA_fnc_hashCreate;
+/*
+0 spawn { sleep 1;
+	["ACE3 Common", "ace_interaction_tapShoulder", "Tap Shoulder", {
+		if (tsp_cba_animate_tap) exitWith {false};
+		if !([ACE_player, objNull, []] call ace_common_canInteractWith) exitWith {false};
+		if !([ACE_player, cursorTarget] call ace_interaction_canTapShoulder) exitWith {false};
+		if (((getCameraViewDirection ACE_player) # 2) > 0) exitWith {[ACE_player, cursorTarget] spawn hfgb_fnc_patHead;};
+		private _shoulderNum = [0, 1] select (([ACE_player, cursorTarget] call BIS_fnc_relativeDirTo) < 180);
+		[ACE_player, cursorTarget, _shoulderNum] call ace_interaction_fnc_tapShoulder;
+	}, {false}, [20, [true, false, false]], false] call CBA_fnc_addKeybind;
 
-
-
+	[["TSP Animate", "Tap/Squeeze"], "tsp_animate_tap_double", "Shoulder/Leg (Double Tap)", {
+	if (((getCameraViewDirection ACE_player) # 2) > 0) exitWith {[playa, cursorTarget] spawn hfgb_fnc_patHead;};
+	if (isNil "tsp_animate_firstTap") exitWith {[] spawn {tsp_animate_firstTap = true; sleep 0.3; tsp_animate_firstTap = nil}};  //-- Double tap
+    if (tsp_cba_animate_tap) then {[playa] spawn tsp_fnc_animate_tap};
+}, {}, [0, [true, false, false]]] call CBA_fnc_addKeybind;
+};
+*/
 
 if (mjb_woodCutting) then {
     mjb_cutLoop = 0 spawn { while {true} do { sleep 3;
