@@ -596,6 +596,9 @@ class amat : r
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
 	backpackItems[] =
 	{
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
@@ -678,6 +681,63 @@ class aspaa : spaa
 	secondaryWeapon[] = {};
 	items[] += {
 		LIST_2("SmokeShell")
+	};
+};
+// RATS Mortar Gunner
+class mrt : r
+{
+	displayName = "Mortar Gunner";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
+	secondaryWeapon[] = {
+		"NDS_W_M224_mortarCarry"
+	};
+	backpack[] = {
+		"mjb_carryallplus_oli"
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
+	backpackItems[] =
+	{
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_1("NDS_M_6Rnd_60mm_HE"),
+		LIST_1("NDS_M_6Rnd_60mm_SMOKE")
+	};
+};
+
+// RATS Mortar Assistant
+class amrt : r
+{
+	displayName = "Mortar Assistant";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
+	backpackItems[] =
+	{
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_1("NDS_M_6Rnd_60mm_HE"),
+		LIST_1("NDS_M_6Rnd_60mm_ILLUM")
 	};
 };
 

@@ -2393,6 +2393,21 @@ private _itemAmmoSPAA =
     "ACE_Vector"
 ];
 
+private _itemWeaponMortar =
+[
+    "NDS_W_M224_mortarCarry"
+];
+
+private _itemMortarAmmo =
+[
+    "NDS_M_6Rnd_60mm_HE",
+    "NDS_M_6Rnd_60mm_HE_0",
+    "NDS_M_6Rnd_60mm_ILLUM",
+    "NDS_M_6Rnd_60mm_SMOKE",
+    "Rangefinder",
+    "ACE_Vector"
+];
+
 private _itemWeaponMMG =
 [
     "CUP_lmg_Mk48",
@@ -3090,7 +3105,7 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
-    case (_unitRole in ["spaa","B_Soldier_AA_F"]) :
+		case (_unitRole in ["spaa","B_Soldier_AA_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponSPAA + _itemLeaderEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoSPAA + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
@@ -3106,9 +3121,17 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMGAmmo + _itemLeaderEquipment  + _itemPackHeavy + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
     };
-    case (_unitRole in ["isr","B_Soldier_UAV_F"]) :
+		case (_unitRole in ["isr","B_Soldier_UAV_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemLeaderEquipment + _itemUAVTermial)] call ace_arsenal_fnc_initBox;
+    };
+		case (_unitRole in ["mrt","B_support_Mort_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponMortar + _itemMortarAmmo + _itemLeaderEquipment + _itemPackHeavy + ["NDS_M224_B_Ammo"] + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+    };
+		case (_unitRole in ["amrt","B_support_AMort_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemMortarAmmo + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["full","zeus","B_RangeMaster_F"]) :
     {
