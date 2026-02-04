@@ -221,21 +221,21 @@ class CfgVehicles
 	class mjb_moduleSebTableMark : mjb_moduleBase {
         category = "MJB_SEB";
         curatorCanAttach = 1;
-        displayName = "Mark Briefing Table (1st)";
+        displayName = "1Mark/Make Briefing Table";
 		function = "mjb_arsenal_fnc_moduleSebTableMark";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
 	};
 	class mjb_moduleSebTableArea : mjb_moduleBase {
         category = "MJB_SEB";
         curatorCanAttach = 1;
-        displayName = "Mark Briefing xArea (2nd)";
+        displayName = "2Mark Briefing Area (Laggy)";
 		function = "mjb_arsenal_fnc_moduleSebTableArea";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
 	};
 	class mjb_moduleSebTableClear : mjb_moduleBase {
         category = "MJB_SEB";
         curatorCanAttach = 1;
-        displayName = "xBefore Deleting Table";
+        displayName = "x(Very Laggy)Before Deleting Table";
 		function = "mjb_arsenal_fnc_moduleSebTableClear";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
 	};

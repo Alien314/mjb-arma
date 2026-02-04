@@ -11,4 +11,6 @@ private _isTable = (_isObj && {('table' in (toLower (typeOf _unit)))});
 if (isNil "sebs_briefing_table_main") exitWith {systemChat "Seb's Briefing Table Mod not loaded."};
 if (isNil "mjb_activeSebTable") exitWith {systemChat "No table marked."};
 
+deleteMarker "mjb_sebTableMarker";
+
 [mjb_activeSebTable] remoteExecCall ["sebs_briefing_table_fnc_clearTable", 0, mjb_activeSebTable]; 
