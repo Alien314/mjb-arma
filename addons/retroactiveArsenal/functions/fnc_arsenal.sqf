@@ -744,6 +744,8 @@ private _itemMod =
     "Tier1_Microt2_G33_Riser_Black_Up",
 
 	//MCC 3x
+    "MCC_EXPS3_BLK_Up",
+    "MCC_EXPS3_FDE_Down",
 	"MCC_EXPS3_UnityX_BLK_Up",
 	"MCC_EXPS3_UnityX_FDE_Up",
 	"MCC_GBRS_EXPS3_Mag_Up_BLK",
@@ -753,6 +755,7 @@ private _itemMod =
 	"MCC_GBRS_T2_Mag_Up_BLK",
 	"MCC_GBRS_T2_Mag_Up_FDE",
 	"MCC_Romeo9T_BLK_Up",
+    "MCC_Romeo9T_FDE_Up",
 
     //Dovetail (Ak Sights)
     "CUP_optic_pechenegscope", // 2.8x
