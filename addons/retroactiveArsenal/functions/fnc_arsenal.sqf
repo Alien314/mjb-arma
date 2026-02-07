@@ -2633,20 +2633,20 @@ private _itemSF =
 private _itemBreacher =
 [
     // Shock Tube detonator for breaching charges
-	tsp_breach_shock // shock tube
+	"tsp_breach_shock", // shock tube
 
 	// lock poppers
-	tsp_breach_popper_auto_mag // lock popper autofuse
+	"tsp_breach_popper_auto_mag", // lock popper autofuse
 
 	// Medium Sized Breaching Charges
-	tsp_breach_linear_mag // linear charge
-	tsp_breach_linear_auto_mag // linear charge autofuse
-	tsp_breach_block_mag // breach block
-	tsp_breach_block_auto_mag // breach block autofuse
+	"tsp_breach_linear_mag", // linear charge
+	"tsp_breach_linear_auto_mag", // linear charge autofuse
+	"tsp_breach_block_mag", // breach block
+	"tsp_breach_block_auto_mag", // breach block autofuse
 	
 	// Large Breaching Items
-	tsp_breach_package_mag // Package Charge
-	tsp_breach_silhouette_mag // Silhouette Charge
+	"tsp_breach_package_mag", // Package Charge
+	"tsp_breach_silhouette_mag" // Silhouette Charge
 ];
 
 private _itemEngineer =
