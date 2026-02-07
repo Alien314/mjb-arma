@@ -986,13 +986,20 @@ private _itemReflexSight =
     "rhsusf_acc_t1_low",
     "rhsusf_acc_t1_low_fwd",
 
+    //MCC
 	"MCC_EXPS3_BLK",
 	"MCC_EXPS3_FDE",
+    "MCC_EXPS3_UnityX_BLK",
+    "MCC_EXPS3_UnityX_FDE",
 	"MCC_MicroT2",
-	"MCC_GBRS_T2_BLK",
-	"MCC_GBRS_EXPS3_BLK",
+    "MCC_MicroT2_UnityX_BLK",
+    "MCC_MicroT2_UnityX_FDE",
+    "MCC_GBRS_T2_BLK",
+    "MCC_GBRS_T2_FDE",
+    "MCC_GBRS_EXPS3_BLK",
 	"MCC_GBRS_EXPS3_FDE",
 	"MCC_Romeo9t_blk",
+    "MCC_Romeo9t_fde",
 
     "Tier1_EXPS3_0_Tano",
     "tier1_romeo4t_bcd_black",
