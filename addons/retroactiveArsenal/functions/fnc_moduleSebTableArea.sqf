@@ -10,13 +10,18 @@ if (isNil "mjb_activeSebTable") exitWith {systemChat "No table marked."};
 
 ["Seb Table", 
 	[
-		["SLIDER", "Resolution:", [1,20,10]],
-		["SLIDER:RADIUS", "Area:", [20,1000,300,0,_pos]],
-		["SLIDER", "Map Scale(Table Relative):", [0.1,3,1]],
-		["SLIDER", "Above Table:", [0,1,0]]
+		["SLIDER", "Resolution (MPmax 15):", [1,50,10]],
+		["SLIDER:RADIUS", "Area (MPmax 300):", [20,2000,300,0,_pos]],
+		["SLIDER", "Table count (MPmax 3):", [0.1,10,1]],
+		["SLIDER", "Height Offset:", [0,1,0]]
 	], {  params ["_values", "_pos"];
 		_values params ["_res","_area","_scale","_zOff"];
 
+		if (isMultiplayer) then {
+			_res = _res min 15;
+			_area = _area min 300;
+			_scale = _scale min 3;
+		};
 		deleteMarker "mjb_sebTableMarker";
 		private _marker = createMarkerLocal ["mjb_sebTableMarker",_pos,-1,player];
 		_marker setMarkerShapeLocal "RECTANGLE";
