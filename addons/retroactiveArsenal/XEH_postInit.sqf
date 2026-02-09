@@ -351,12 +351,12 @@ if (isDedicated) exitWith {};
 
 if !(hasInterface) exitWith {};
 
-mjb_stabilizeOffsets = [[
+mjb_stabilizeOffsets = createHashMapFromArray [
 	["Heli_Attack_01_dynamicLoadout_base_F",[0,-1,-0.4]],
 	["Heli_Attack_01_pylons_dynamicLoadout_base_F",[0,-1,-0.4]],
 	["CUP_AH64_base",[0,-1.8,-0.6]],
 	["CUP_AH64_dynamic_base",[0,-1.8,-0.6]]
-],[0,0,0]] call CBA_fnc_hashCreate;
+];
 /*
 0 spawn { sleep 1;
 	["ACE3 Common", "ace_interaction_tapShoulder", "Tap Shoulder", {

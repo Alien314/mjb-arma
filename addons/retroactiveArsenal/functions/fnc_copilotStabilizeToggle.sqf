@@ -17,7 +17,7 @@ if (_damage > 0.4) exitWith {
 
 private _parents = [configFile >> "CfgVehicles" >> (typeOf _veh), true] call BIS_fnc_returnParents;
 private _base = _parents select (_parents findIf {'base' in (toLower _x)});
-mjb_weaponOffset = [mjb_stabilizeOffsets, _base] call CBA_fnc_hashGet;
+mjb_weaponOffset = mjb_stabilizeOffsets getOrDefault [_base, [0,0,0]];
 //mjb_otherTarget = false;
 mjb_stabTogglePFH = [{ params ['_args','_handle']; _args params ['_veh','_turret','_damage'];
 	if !(_veh directionStabilizationEnabled _turret) exitWith {
@@ -110,7 +110,7 @@ mjb_stabToggleOut = (_veh addEventHandler ["GetOut",{
 
 mjb_stabToggleKilled = (_veh addEventHandler ["Killed",{
 	params ["_veh", "", "", "", ""];
-	if (player in _unit) then {
+	if (player in _veh) then {
 		private _turret = _veh unitTurret player;
 		if (_veh directionStabilizationEnabled _turret) exitWith {
 			_veh enableDirectionStabilization [false, _turret];
