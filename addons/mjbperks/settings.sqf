@@ -1,5 +1,25 @@
 private _mod = "MJB Arma Perks";
 
+private _title = "MJB Arma Medical";
+
+[
+    "mjb_wakeDropDragged",
+    "CHECKBOX",
+    ["Drop Waking Dragged Unit","Whether players will drop dragged units when they wake up."],
+    [_title,"Dragging"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_wakeDropCarried",
+    "CHECKBOX",
+    ["Drop Waking Carried Unit","Whether players will drop carried units when they wake up."],
+    [_title,"Dragging"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 [
     "mjb_perks",
     "CHECKBOX",
