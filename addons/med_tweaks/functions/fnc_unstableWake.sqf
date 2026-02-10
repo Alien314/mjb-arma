@@ -37,70 +37,70 @@ while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 
 		if (!mjb_med_tweaks_unstableWakeFaint || {[_unit] call ace_medical_status_fnc_hasStableVitals}) exitWith { _unit setVariable ['mjb_unstableWake',nil]; };
 		private _faintTime = ((random mjb_med_tweaks_unstableWakeMax) + mjb_med_tweaks_unstableWakeMin);
-		if (isNil 'mjb_med_tweaks_ppUnstable') then {
-			//mjb_med_tweaks_ppUnstable ppEffectAdjust [1,1,0,[0,0,0,0],[0,0,0,0.24],[1,1,1,0],[0.6,0.5,0,0,-0.1,0.4,0.8]]; // default?
-			mjb_med_tweaks_ppUnstable = ppEffectCreate ['ColorCorrections', 1400];
-		};
-		mjb_med_tweaks_ppUnstable ppEffectAdjust 
-		[ 
-			1, 
-			1, 
-			0, 
-			[0.4, 0, 1, 0.15], 
-			[1, 1, 1, 1], 
-			[0.299, 0.587, 0.114, 0], 
-			[0.55, 1, 0, 0, 0, 0.8, 1] 
-		];
-		mjb_med_tweaks_ppUnstable ppEffectEnable true; 
-		mjb_med_tweaks_ppUnstable ppEffectCommit 0;
-		mjb_med_tweaks_ppUnstable ppEffectAdjust 
-		[ 
-			1, 
-			1, 
-			0, 
-			[0.3, 0, 1, 0.15], 
-			[1, 1, 1, 1], 
-			[0.299, 0.587, 0.114, 0], 
-			[0.55, 0.5, 0, 0, 0, 0.8, 1] 
-		];
-		mjb_med_tweaks_ppUnstable ppEffectCommit (_faintTime - 1);
-		[{
+		if (mjb_med_tweaks_unstablePPFX) then {
+			if (isNil 'mjb_med_tweaks_ppUnstable') then {
+				//mjb_med_tweaks_ppUnstable ppEffectAdjust [1,1,0,[0,0,0,0],[0,0,0,0.24],[1,1,1,0],[0.6,0.5,0,0,-0.1,0.4,0.8]]; // default?
+				mjb_med_tweaks_ppUnstable = ppEffectCreate ['ColorCorrections', 1400];
+			};
+			private _opacity = mjb_med_tweaks_unstablePPFXOpacity;
 			mjb_med_tweaks_ppUnstable ppEffectAdjust 
 			[ 
-				1, 
-				1, 
-				0, 
-				[0, 0, 0, 0.2], 
+				1, 1, 0, 
+				[0.4, 0, 1, _opacity], 
 				[1, 1, 1, 1], 
 				[0.299, 0.587, 0.114, 0], 
-				[0.55, 0, 0, 0, 0, 0.8, 1] 
+				[0.55, 1, 0, 0, 0, 0.8, 1] 
 			];
-			mjb_med_tweaks_ppUnstable ppEffectCommit 1;
-		}, nil,(_faintTime - 1)] call CBA_fnc_waitAndExecute;
+			mjb_med_tweaks_ppUnstable ppEffectEnable true; 
+			mjb_med_tweaks_ppUnstable ppEffectCommit 0;
+			mjb_med_tweaks_ppUnstable ppEffectAdjust 
+			[ 
+				1, 1, 0, 
+				[0.3, 0, 1, _opacity], 
+				[1, 1, 1, 1], 
+				[0.299, 0.587, 0.114, 0], 
+				[0.55, 0.5, 0, 0, 0, 0.8, 1] 
+			];
+			mjb_med_tweaks_ppUnstable ppEffectCommit (_faintTime - 1);
+			[{
+				mjb_med_tweaks_ppUnstable ppEffectAdjust 
+				[ 
+					1, 1, 0,
+					[0, 0, 0, (_this * 4/3)],
+					[1, 1, 1, 1],
+					[0.299, 0.587, 0.114, 0],
+					[0.55, 0, 0, 0, 0, 0.8, 1]
+				];
+				mjb_med_tweaks_ppUnstable ppEffectCommit 1;
+			}, _opacity,(_faintTime - 1)] call CBA_fnc_waitAndExecute;
+		};
+
 		[{
 			([(_this select 0)] call ace_medical_status_fnc_hasStableVitals)
 		},
 		{
 			(_this select 0) setVariable ['mjb_unstableWake',nil];
-			mjb_med_tweaks_ppUnstable ppEffectAdjust 
-			[ 
-				1, 
-				1, 
-				0, 
-				[0.4, 0, 1, 0.15], 
-				[1, 1, 1, 1], 
-				[0.299, 0.587, 0.114, 0], 
-				[1, 1, 0, 0, 0, 0.8, 1] 
-			];
-			mjb_med_tweaks_ppUnstable ppEffectCommit 5;
-		
-			[{ ppEffectDestroy mjb_med_tweaks_ppUnstable; mjb_med_tweaks_ppUnstable = nil; }, nil,5] call CBA_fnc_waitAndExecute;
+			if !(isNil 'mjb_med_tweaks_ppUnstable') then {
+				mjb_med_tweaks_ppUnstable ppEffectAdjust 
+				[ 
+					1, 1, 0, 
+					[0.4, 0, 1, mjb_med_tweaks_unstablePPFXOpacity], 
+					[1, 1, 1, 1], 
+					[0.299, 0.587, 0.114, 0], 
+					[1, 1, 0, 0, 0, 0.8, 1] 
+				];
+				mjb_med_tweaks_ppUnstable ppEffectCommit 5;
+			
+				[{ ppEffectDestroy mjb_med_tweaks_ppUnstable; mjb_med_tweaks_ppUnstable = nil; }, nil,5] call CBA_fnc_waitAndExecute;
+			};
 		}, [_unit,_knockTime], _faintTime,
 		{ params ['_unit','_knockTime'];
 			if (!alive _unit || {_knockTime isNotEqualTo (_unit getVariable ['mjb_unstableWake',0])}) exitWith { };
 			_unit setVariable ['mjb_unstableWake',nil];
 			[_unit,true] call ace_medical_fnc_setUnconscious;
-			mjb_med_tweaks_ppUnstable ppEffectEnable false;
+			if !(isNil 'mjb_med_tweaks_ppUnstable') then {
+				mjb_med_tweaks_ppUnstable ppEffectEnable false;
+			};
 		}] call CBA_fnc_waitUntilAndExecute;
 	};
 	

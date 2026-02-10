@@ -3,6 +3,24 @@
 private _title = "MJB Arma Medical";
 
 [
+    "mjb_med_tweaks_unstablePPFX",
+    "CHECKBOX",
+    ["Unstable Wake Post Process FX", "Enable creeping purple vignette on the edge of the screen into blink before passing out while awake and going to faint after unstable wake trigger."],
+    [_title,"Player"],
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_med_tweaks_unstablePPFXOpacity",
+    "SLIDER",
+    ["Unstable Post Process FX Opacity", "Opacity of the effect while unstable and going to faint."],
+    [_title,"Player"],
+    [0, 0.45, 0.15, 2],
+    false
+] call CBA_fnc_addSetting;
+
+[
     "mjb_med_tweaks_enableSalts",
     "CHECKBOX",
     ["Enable Smelling Salts", "Allow treatment with smelling salts, instantly waking a patient."],
@@ -133,7 +151,7 @@ private _title = "MJB Arma Medical";
     "mjb_allowLoadDead",
     "CHECKBOX",
     ["Allow Loading Deceased", "Whether deceased units can be loaded into vehicles."],
-    [_title, "Meme"],
+    [_title, "vMeme"],
     false,
     true
 ] call CBA_fnc_addSetting;
