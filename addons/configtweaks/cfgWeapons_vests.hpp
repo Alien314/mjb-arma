@@ -175,3 +175,109 @@
   VESTMED(SlickThunderbolt_vest);
   VESTMED(SlickTriton_vest);
   VESTMED(SlickTV109_vest);
+
+class CUP_Vest_Camo_Base;
+#define VESTLGTCUP(NAME) \
+  class ##NAME## : CUP_Vest_Camo_Base { \
+    class ItemInfo : vestItem { \
+      containerClass = "Supply140"; \
+      class HitpointsProtectionInfo { \
+          class Abdomen {armor = 20; hitpointName = "HitAbdomen"; passThrough = 0.2;}; \
+          delete Arms; \
+          class Body {hitpointName = "HitBody"; passThrough = 0.2;}; \
+          class Chest {armor = 20; hitpointName = "HitChest"; passThrough = 0.2;}; \
+          class Diaphragm {armor = 20; hitpointName = "HitDiaphragm"; passThrough = 0.2;}; \
+          delete Neck; \
+      }; \
+    }; \
+  };
+
+VESTLGTCUP(CUP_V_CPC_communications_coy);
+VESTLGTCUP(CUP_V_CPC_communicationsbelt_coy);
+VESTLGTCUP(CUP_V_CPC_Fast_coy);
+VESTLGTCUP(CUP_V_CPC_Fastbelt_coy);
+VESTLGTCUP(CUP_V_CPC_light_coy);
+VESTLGTCUP(CUP_V_CPC_lightbelt_coy);
+VESTLGTCUP(CUP_V_CPC_medical_coy);
+VESTLGTCUP(CUP_V_CPC_medicalbelt_coy);
+VESTLGTCUP(CUP_V_CPC_tl_coy);
+VESTLGTCUP(CUP_V_CPC_tlbelt_coy);
+VESTLGTCUP(CUP_V_CPC_weapons_coy);
+VESTLGTCUP(CUP_V_CPC_weaponsbelt_coy);
+
+
+  class CUP_V_CPC_communications_mc : CUP_V_CPC_communications_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_communications_rngr : CUP_V_CPC_communications_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+
+  class CUP_V_CPC_communicationsbelt_mc : CUP_V_CPC_communicationsbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_communicationsbelt_rngr : CUP_V_CPC_communicationsbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+
+  class CUP_V_CPC_lightbelt_mc : CUP_V_CPC_lightbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_lightbelt_rngr : CUP_V_CPC_lightbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+
+  class CUP_V_CPC_medical_mc : CUP_V_CPC_medical_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_medical_rngr : CUP_V_CPC_medical_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+
+  class CUP_V_CPC_medicalbelt_mc : CUP_V_CPC_medicalbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_medicalbelt_rngr : CUP_V_CPC_medicalbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+
+  class CUP_V_CPC_tl_mc : CUP_V_CPC_tl_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_tl_rngr : CUP_V_CPC_tl_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_tlbelt_mc : CUP_V_CPC_tlbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
+  class CUP_V_CPC_tlbelt_rngr : CUP_V_CPC_tlbelt_coy {
+    class ItemInfo : ItemInfo {
+      containerClass = "Supply140";
+	};
+  };
