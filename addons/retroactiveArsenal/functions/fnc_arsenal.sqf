@@ -162,6 +162,45 @@ private _itemEquipment =
     "CUP_V_CZ_NPP2006_nk_black",
     "CUP_V_CZ_NPP2006_nk_vz95",
     "CUP_V_CZ_NPP2006_nk_des",
+    
+    "CUP_V_CPC_communications_coy",
+	"CUP_V_CPC_Fast_coy",
+	"CUP_V_CPC_light_coy",
+	"CUP_V_CPC_medical_coy",
+	"CUP_V_CPC_tl_coy",
+	"CUP_V_CPC_weapons_coy",
+	"CUP_V_CPC_communicationsbelt_coy",
+	"CUP_V_CPC_Fastbelt_coy",
+	"CUP_V_CPC_lightbelt_coy",
+	"CUP_V_CPC_medicalbelt_coy",
+	"CUP_V_CPC_tlbelt_coy",
+	"CUP_V_CPC_weaponsbelt_coy",
+	"CUP_V_CPC_communications_mc",
+	"CUP_V_CPC_Fast_mc",
+	"CUP_V_CPC_light_mc",
+	"CUP_V_CPC_medical_mc",
+	"CUP_V_CPC_tl_mc",
+	"CUP_V_CPC_weapons_mc",
+	"CUP_V_CPC_communicationsbelt_mc",
+	"CUP_V_CPC_Fastbelt_mc",
+	"CUP_V_CPC_lightbelt_mc",
+	"CUP_V_CPC_medicalbelt_mc",
+	"CUP_V_CPC_tlbelt_mc",
+	"CUP_V_CPC_weaponsbelt_mc",
+	"CUP_V_CPC_communications_rngr",
+	"CUP_V_CPC_Fast_rngr",
+	"CUP_V_CPC_light_rngr",
+	"CUP_V_CPC_medical_rngr",
+	"CUP_V_CPC_tl_rngr",
+	"CUP_V_CPC_weapons_rngr",
+	"CUP_V_CPC_communicationsbelt_rngr",
+	"CUP_V_CPC_Fastbelt_rngr",
+	"CUP_V_CPC_lightbelt_rngr",
+	"CUP_V_CPC_medicalbelt_rngr",
+	"CUP_V_CPC_tlbelt_rngr",
+	"CUP_V_CPC_weaponsbelt_rngr",
+
+
 	
 	//Tarkov Vests
     "Gjel_vest",
@@ -705,6 +744,8 @@ private _itemMod =
     "Tier1_Microt2_G33_Riser_Black_Up",
 
 	//MCC 3x
+    "MCC_EXPS3_BLK_Up",
+    "MCC_EXPS3_FDE_Down",
 	"MCC_EXPS3_UnityX_BLK_Up",
 	"MCC_EXPS3_UnityX_FDE_Up",
 	"MCC_GBRS_EXPS3_Mag_Up_BLK",
@@ -714,6 +755,7 @@ private _itemMod =
 	"MCC_GBRS_T2_Mag_Up_BLK",
 	"MCC_GBRS_T2_Mag_Up_FDE",
 	"MCC_Romeo9T_BLK_Up",
+    "MCC_Romeo9T_FDE_Up",
 
     //Dovetail (Ak Sights)
     "CUP_optic_pechenegscope", // 2.8x
@@ -947,13 +989,20 @@ private _itemReflexSight =
     "rhsusf_acc_t1_low",
     "rhsusf_acc_t1_low_fwd",
 
+    //MCC
 	"MCC_EXPS3_BLK",
 	"MCC_EXPS3_FDE",
+    "MCC_EXPS3_UnityX_BLK",
+    "MCC_EXPS3_UnityX_FDE",
 	"MCC_MicroT2",
-	"MCC_GBRS_T2_BLK",
-	"MCC_GBRS_EXPS3_BLK",
+    "MCC_MicroT2_UnityX_BLK",
+    "MCC_MicroT2_UnityX_FDE",
+    "MCC_GBRS_T2_BLK",
+    "MCC_GBRS_T2_FDE",
+    "MCC_GBRS_EXPS3_BLK",
 	"MCC_GBRS_EXPS3_FDE",
 	"MCC_Romeo9t_blk",
+    "MCC_Romeo9t_fde",
 
     "Tier1_EXPS3_0_Tano",
     "tier1_romeo4t_bcd_black",
@@ -2591,6 +2640,25 @@ private _itemSF =
     "rhsusf_shemagh2_tan"
 ];
 
+private _itemBreacher =
+[
+    // Shock Tube detonator for breaching charges
+	"tsp_breach_shock", // shock tube
+
+	// lock poppers
+	"tsp_breach_popper_auto_mag", // lock popper autofuse
+
+	// Medium Sized Breaching Charges
+	"tsp_breach_linear_mag", // linear charge
+	"tsp_breach_linear_auto_mag", // linear charge autofuse
+	"tsp_breach_block_mag", // breach block
+	"tsp_breach_block_auto_mag", // breach block autofuse
+	
+	// Large Breaching Items
+	"tsp_breach_package_mag", // Package Charge
+	"tsp_breach_silhouette_mag" // Silhouette Charge
+];
+
 private _itemEngineer =
 [
     //Tools
@@ -3005,7 +3073,7 @@ switch (true) do
     };
     case (_unitRole in _leaderRole) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
     case (_unitRole in ["r","B_Soldier_F"]) :
     {
@@ -3041,7 +3109,7 @@ switch (true) do
     };
         case (_unitRole in ["sfsl","B_recon_TL_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
@@ -3078,7 +3146,7 @@ switch (true) do
     };
     case (_unitRole in ["ceng","B_engineer_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemLeaderEquipment + _itemPackHeavy + _itemUAVTermial + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemBreacher + _itemEngineer + _itemLeaderEquipment + _itemPackHeavy + _itemUAVTermial + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["UAVHacker", true];
 
