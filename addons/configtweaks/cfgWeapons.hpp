@@ -261,14 +261,39 @@ class CfgWeapons {
 #else
 #endif
 
-// squeak two at4 into kitbag
-  class Launcher_Base_F;
-  class CUP_launch_M136_Loaded : Launcher_Base_F {class WeaponSlotsInfo;};
-  class CUP_launch_M136 : CUP_launch_M136_Loaded {
-	class WeaponSlotsInfo : WeaponSlotsInfo { mass = 137.4; };
+// Fix backpack disposable inconsistent mass
+  class Launcher;
+  class Launcher_Base_F : Launcher { class WeaponSlotsInfo; };
+  // squeak two at4 into kitbag
+  class CUP_launch_M136_Loaded : Launcher_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 137.4;
+	};
   };
-  class CUP_M136 : CUP_launch_M136 {
-	class WeaponSlotsInfo : WeaponSlotsInfo { mass = 137.4; };
+  class CUP_launch_M136 : CUP_launch_M136_Loaded {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 137.4;
+	};
+  };
+  class CUP_launch_M72A6_Loaded : Launcher_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 57.3;
+	};
+  };
+  class CUP_launch_RPG18_Loaded : Launcher_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 57.3;
+	};
+  };
+  class CUP_launch_RPG26_Loaded : Launcher_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 64;
+	};
+  };
+  class CUP_launch_RShG2_Loaded : Launcher_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 88.2;
+	};
   };
 
   // yeet bino sway

@@ -527,8 +527,21 @@ class CfgMagazines
 		mass = 20;
 	};
 
+	// backpack disposable inconsistency fix
 	class CUP_M136_M : CA_LauncherMagazine {
-		mass = 30; // squeak two at4 into kitbag
+		mass = 0; // squeak two at4 into kitbag
+	};
+	class CUP_M72A6_M : CA_LauncherMagazine {
+		mass = 0;
+	};
+	class CUP_RPG18_M : CA_LauncherMagazine {
+		mass = 0;
+	};
+	class CUP_RPG26_M : CA_LauncherMagazine {
+		mass = 0;
+	};
+	class CUP_RSHG2_M : CA_LauncherMagazine {
+		mass = 0;
 	};
 	
 	/*/ Bizon class name fix, magwell at bottom
