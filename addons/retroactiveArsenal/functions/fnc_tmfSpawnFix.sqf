@@ -12,7 +12,12 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
         if(iEnemY_iFatigue_fatigue_enabled) then { player enableFatigue false; }; 
     };
     player allowSprint true;
-    player call diw_armor_plates_main_fnc_fillVestWithPlates;
+	private _plate = false;
+    // misspelled varname is correct
+	if !(diw_armor_plates_main_hasPlateInInvetory) then { _plate = true; diw_armor_plates_main_hasPlateInInvetory = true; };
+    private _canPlate = player call diw_armor_plates_main_fnc_canAddPlate;
+	if (_canPlate) then { player call diw_armor_plates_main_fnc_fillVestWithPlates; };
+	if (_plate) then { diw_armor_plates_main_hasPlateInInvetory = false; };
     player call diw_armor_plates_main_fnc_updatePlateUi;
     if !(diw_armor_plates_main_aceMedicalLoaded) then {
         private _maxHp = player getVariable ["diw_armor_plates_main_maxHp", diw_armor_plates_main_maxPlayerHp];

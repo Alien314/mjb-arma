@@ -35,7 +35,12 @@ private _plateMachine = [[player], true] call CBA_statemachine_fnc_create;
 [_plateMachine, {}, {
     diw_armor_plates_main_timeToAddPlate = bef_ttap;
 	if (time < 1290 || {mjb_jipFast}) then {
-      player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
+	  private _plate = false;
+      // misspelled varname is correct
+	  if !(diw_armor_plates_main_hasPlateInInvetory) then { _plate = true; diw_armor_plates_main_hasPlateInInvetory = true; };
+      private _canPlate = player call diw_armor_plates_main_fnc_canAddPlate;
+	  if (_canPlate) then { player call diw_armor_plates_main_fnc_fillVestWithPlates; }; // Fill plates in-case anyone forgot
+	  if (_plate) then { diw_armor_plates_main_hasPlateInInvetory = false; };
       player call diw_armor_plates_main_fnc_updatePlateUi;
 	};
 	mjb_jipFast = false;
