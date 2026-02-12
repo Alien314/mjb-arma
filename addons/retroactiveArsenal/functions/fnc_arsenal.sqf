@@ -2353,13 +2353,15 @@ private _itemWeaponLAT =
     //"rhs_weap_M136_hedp", // Not great for AT
     //"rhs_weap_M136_hp", // High Penetration
 
-    "rhs_acc_at4_handler"
+    "rhs_acc_at4_handler",
 
     //Launchers in Backpack - should work with the normal class now?
-    //"CUP_launch_M136_Loaded",
-    //"CUP_launch_M72A6_Loaded",
-    //"CUP_M72A6_M",
-    //"CUP_launch_RPG26_Loaded"
+	"CUP_RPG26_M",
+	"CUP_M72A6_M",
+	"CUP_M136_M"/*,
+    "CUP_launch_M136_Loaded",
+    "CUP_launch_M72A6_Loaded"//,
+    //"CUP_launch_RPG26_Loaded"/*/
 ];
 
 //if !(isClass (configFile >> "CfgWeapons" >> "rhs_weap_rpg7")) then {};
