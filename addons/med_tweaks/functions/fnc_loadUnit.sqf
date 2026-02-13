@@ -20,9 +20,9 @@
 params ["_medic", "_patient", ["_vehicle", objNull]];
 TRACE_3("loadUnit",_medic,_patient,_vehicle);
 
-if (_patient call EFUNC(common,isAwake) && {!(_patient getVariable ['mjb_afkToggle',false])}) exitWith {
+/*if (_patient call EFUNC(common,isAwake) && {!(_patient getVariable ['mjb_afkToggle',false])}) exitWith {
     [[LSTRING(CanNotLoad), _patient call EFUNC(common,getName)]] call EFUNC(common,displayTextStructured);
-};
+};*/
 
 if (_patient call EFUNC(common,isBeingCarried)) then {
     [_medic, _patient] call EFUNC(dragging,dropObject_carry);
