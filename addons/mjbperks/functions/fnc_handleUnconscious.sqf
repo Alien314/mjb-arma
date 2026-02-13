@@ -28,9 +28,9 @@ if (_player getVariable [QGVAR(isDragging), false]) then {
     };
 
     // Handle waking up dragged unit
-    if (mjb_wakeDropDragged && {_unit isEqualTo _draggedObject}) then {
-        [_unit, _draggedObject] call FUNC(dropObject);
-    } else {[_draggedObject, "AinjPpneMrunSnonWnonDb_still", 2] call ace_common_fnc_doAnimation;};
+    if ((mjb_wakeDropDragged || {!alive _unit}) && {_unit isEqualTo _draggedObject}) then {
+        [_player, _draggedObject] call FUNC(dropObject);
+    } else { [_draggedObject, "AinjPpneMrunSnonWnonDb_still", 2] remoteExec ['ace_common_fnc_doAnimation',_draggedObject]; };
 };
 
 if (_player getVariable [QGVAR(isCarrying), false]) then {
@@ -42,7 +42,7 @@ if (_player getVariable [QGVAR(isCarrying), false]) then {
     };
 
     // Handle waking up dragged unit
-    if (mjb_wakeDropCarried && {_unit isEqualTo _carriedObject}) then {
-        [_unit, _carriedObject] call FUNC(dropObject_carry);
-    } else { [_carriedObject, "AinjPfalMstpSnonWnonDf_carried_dead", 2] call ace_common_fnc_doAnimation;};
+    if ( (mjb_wakeDropCarried || {!alive _unit}) && {_unit isEqualTo _carriedObject}) then {
+        [_player, _carriedObject] call FUNC(dropObject_carry);
+    } else { [_carriedObject, "AinjPfalMstpSnonWnonDf_carried_dead", 2] remoteExec ['ace_common_fnc_doAnimation',_carriedObject]; };
 };

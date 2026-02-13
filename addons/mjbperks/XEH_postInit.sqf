@@ -1,6 +1,20 @@
 #include "settings.sqf"
 [] call mjb_perks_fnc_initStuff;
 
+["ace_dragging_stoppedDrag", {
+	_this spawn { params ['_unit', '_target'];
+		sleep 2;
+		if (_target in (attachedObjects _unit)) then { detach _target };
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_dragging_stoppedCarry", {
+	_this spawn { params ['_unit', '_target'];
+		sleep 2;
+		if (_target in (attachedObjects _unit)) then { detach _target };
+	};
+}] call  CBA_fnc_addEventHandler;
+
 //*
 ["CBA_loadoutSet", {
 	_this spawn {
