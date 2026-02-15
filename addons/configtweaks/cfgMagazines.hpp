@@ -652,50 +652,50 @@ class CfgMagazines
 	class mjb_1Rnd_impactSmonk : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkWhite";
 		descriptionShort = "Type: Smoke Round - Impact, White<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, White)";
-		displayNameShort = "White Impact Smoke";
+		displayName = "Smoke Impact (White)";
+		displayNameShort = "Wht Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_white_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkBlue : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkBlue";
 		descriptionShort = "Type: Smoke Round - Impact, Blue<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Blue)";
-		displayNameShort = "Blue Impact Smoke";
+		displayName = "Smoke Impact (Blue)";
+		displayNameShort = "Blu Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_blue_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkGreen : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkGreen";
 		descriptionShort = "Type: Smoke Round - Impact, Green<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Green)";
-		displayNameShort = "Green Impact Smoke";
+		displayName = "Smoke Impact (Green)";
+		displayNameShort = "Grn Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_green_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkOrange : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkOrange";
 		descriptionShort = "Type: Smoke Round - Impact, Orange<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Orange)";
-		displayNameShort = "Orange Impact Smoke";
+		displayName = "Smoke Impact (Orange)";
+		displayNameShort = "Orng Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_orange_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkPurple : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkPurple";
 		descriptionShort = "Type: Smoke Round - Impact, Purple<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Purple)";
-		displayNameShort = "Purple Impact Smoke";
+		displayName = "Smoke Impact (Purple)";
+		displayNameShort = "Prpl Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_purple_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkRed : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkRed";
 		descriptionShort = "Type: Smoke Round - Impact, Red<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Red)";
-		displayNameShort = "Red Impact Smoke";
+		displayName = "Smoke Impact (Red)";
+		displayNameShort = "Red Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_red_CA.paa";
 	};
 	class mjb_1Rnd_impactSmonkYellow : 1Rnd_Smoke_Grenade_shell {
 		ammo = "mjb_g_impactSmonkYellow";
 		descriptionShort = "Type: Smoke Round - Impact, Yellow<br />Rounds: 1<br />Used in: EGLM, 3GL";
-		displayName = "Smoke Round (Impact, Yellow)";
-		displayNameShort = "Yellow Impact Smoke";
+		displayName = "Smoke Impact (Yellow)";
+		displayNameShort = "Ylw Imp. Smoke";
 		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_yellow_CA.paa";
 	};
 };

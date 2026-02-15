@@ -49,7 +49,7 @@ class CfgAmmo
 		effectsSmoke = "mjb_SmokeShellWhiteImpactEffect";
 		explosionTime = 0;
 		//submunitionAmmo = "G_40mm_Smoke";
-		timeToLive = 45;
+		timeToLive = 60;
 		//triggerOnImpact = 1;
 	};
 #define SMONKAVAR(VAR,VAR2)  mjb_SmokeShell##VAR##VAR2
@@ -57,7 +57,7 @@ class CfgAmmo
 	class mjb_g_smonk##VAR : G_40mm_Smoke##VAR { \
 		effectsSmoke = QUOTE(SMONKAVAR(VAR,ImpactEffect)); \
 		explosionTime = 0; \
-		timeToLive = 45; \
+		timeToLive = 60; \
 	} //QUOTE(SMONKAVAR(VAR,ImpactEffect));"mjb_SmokeShellWhiteImpactEffect";
 	SMONKAMMO(Blue);
 	SMONKAMMO(Green);
