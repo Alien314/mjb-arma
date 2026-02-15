@@ -647,6 +647,57 @@ class CfgMagazines
 	class CUP_1Rnd_HEDP_M203 : 1Rnd_HE_Grenade_shell {
 		displaynameshort = "HEDP Grenade";
 	};
+
+	class 1Rnd_Smoke_Grenade_shell;
+	class mjb_1Rnd_impactSmonk : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkWhite";
+		descriptionShort = "Type: Smoke Round - Impact, White<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, White)";
+		displayNameShort = "White Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_white_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkBlue : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkBlue";
+		descriptionShort = "Type: Smoke Round - Impact, Blue<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Blue)";
+		displayNameShort = "Blue Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_blue_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkGreen : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkGreen";
+		descriptionShort = "Type: Smoke Round - Impact, Green<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Green)";
+		displayNameShort = "Green Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_green_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkOrange : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkOrange";
+		descriptionShort = "Type: Smoke Round - Impact, Orange<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Orange)";
+		displayNameShort = "Orange Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_orange_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkPurple : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkPurple";
+		descriptionShort = "Type: Smoke Round - Impact, Purple<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Purple)";
+		displayNameShort = "Purple Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_purple_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkRed : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkRed";
+		descriptionShort = "Type: Smoke Round - Impact, Red<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Red)";
+		displayNameShort = "Red Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_red_CA.paa";
+	};
+	class mjb_1Rnd_impactSmonkYellow : 1Rnd_Smoke_Grenade_shell {
+		ammo = "mjb_g_impactSmonkYellow";
+		descriptionShort = "Type: Smoke Round - Impact, Yellow<br />Rounds: 1<br />Used in: EGLM, 3GL";
+		displayName = "Smoke Round (Impact, Yellow)";
+		displayNameShort = "Yellow Impact Smoke";
+		picture = "\A3\Weapons_f\Data\UI\gear_UGL_Smokeshell_yellow_CA.paa";
+	};
 };
 
 class CfgMagazineWells {
@@ -703,10 +754,13 @@ class CfgMagazineWells {
 			"mjb_30Rnd_65x25_Vityaz"
         };
     };
-	
+
+
+	// East GLs
+		//CUP_mags[] = {"CUP_1Rnd_HE_GP25_M","CUP_IlumFlareWhite_GP25_M","CUP_IlumFlareRed_GP25_M","CUP_IlumFlareGreen_GP25_M","CUP_FlareWhite_GP25_M","CUP_FlareGreen_GP25_M","CUP_FlareRed_GP25_M","CUP_FlareYellow_GP25_M","CUP_1Rnd_SMOKE_GP25_M","CUP_1Rnd_SMOKERED_GP25_M","CUP_1Rnd_SMOKEGREEN_GP25_M","CUP_1Rnd_SMOKEYELLOW_GP25_M"};
     class CBA_40mm_GP {
         mjb_mags[] = {
-			"mjb_VOGMDP", "mjb_slog"
+			"mjb_VOGMDP","mjb_slog","mjb_1Rnd_impactSmonk","mjb_1Rnd_impactSmonkBlue","mjb_1Rnd_impactSmonkGreen","mjb_1Rnd_impactSmonkOrange","mjb_1Rnd_impactSmonkPurple","mjb_1Rnd_impactSmonkRed","mjb_1Rnd_impactSmonkYellow"
         };
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 		RHS_Magazines[] = {"rhs_VOG25","rhs_VOG25p","rhs_vg40tb","rhs_vg40sz","rhs_vg40op_white","rhs_vg40op_green","rhs_vg40op_red","rhs_GRD40_white","rhs_GRD40_green","rhs_GRD40_red","rhs_VG40MD","rhs_VG40MD_White","rhs_VG40MD_Green","rhs_VG40MD_Red","rhs_GDM40"};
@@ -716,25 +770,26 @@ class CfgMagazineWells {
 	
     class VOG_40mm {
         mjb_mags[] = {
-			"mjb_VOGMDP", "mjb_slog"
+			"mjb_VOGMDP","mjb_slog","mjb_1Rnd_impactSmonk","mjb_1Rnd_impactSmonkBlue","mjb_1Rnd_impactSmonkGreen","mjb_1Rnd_impactSmonkOrange","mjb_1Rnd_impactSmonkPurple","mjb_1Rnd_impactSmonkRed","mjb_1Rnd_impactSmonkYellow"
         };
     };
-	
+
+	// west GLs
     class CBA_40mm_EGLM {
         mjb_mags[] = {
-			"mjb_blug"
+			"mjb_blug","mjb_1Rnd_impactSmonk","mjb_1Rnd_impactSmonkBlue","mjb_1Rnd_impactSmonkGreen","mjb_1Rnd_impactSmonkOrange","mjb_1Rnd_impactSmonkPurple","mjb_1Rnd_impactSmonkRed","mjb_1Rnd_impactSmonkYellow"
         };
     };
 	
     class CBA_40mm_M203 {
         mjb_mags[] = {
-			"mjb_blug"
+			"mjb_blug","mjb_1Rnd_impactSmonk","mjb_1Rnd_impactSmonkBlue","mjb_1Rnd_impactSmonkGreen","mjb_1Rnd_impactSmonkOrange","mjb_1Rnd_impactSmonkPurple","mjb_1Rnd_impactSmonkRed","mjb_1Rnd_impactSmonkYellow"
         };
     };
 	
     class UGL_40x36 {
         mjb_mags[] = {
-			"mjb_blug"
+			"mjb_blug","mjb_1Rnd_impactSmonk","mjb_1Rnd_impactSmonkBlue","mjb_1Rnd_impactSmonkGreen","mjb_1Rnd_impactSmonkOrange","mjb_1Rnd_impactSmonkPurple","mjb_1Rnd_impactSmonkRed","mjb_1Rnd_impactSmonkYellow"
         };
     };
 	

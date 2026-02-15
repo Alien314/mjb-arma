@@ -43,6 +43,62 @@ class CfgAmmo
 		timeToLive = 30;
 	};
 
+// impact smonk
+	class G_40mm_Smoke;
+	class mjb_g_smonkWhite : G_40mm_Smoke {
+		effectsSmoke = "mjb_SmokeShellWhiteImpactEffect";
+		explosionTime = 0;
+		//submunitionAmmo = "G_40mm_Smoke";
+		timeToLive = 45;
+		//triggerOnImpact = 1;
+	};
+#define SMONKAVAR(VAR,VAR2)  mjb_SmokeShell##VAR##VAR2
+#define SMONKAMMO(VAR) class G_40mm_Smoke##VAR; \
+	class mjb_g_smonk##VAR : G_40mm_Smoke##VAR { \
+		effectsSmoke = QUOTE(SMONKAVAR(VAR,ImpactEffect)); \
+		explosionTime = 0; \
+		timeToLive = 45; \
+	} //QUOTE(SMONKAVAR(VAR,ImpactEffect));"mjb_SmokeShellWhiteImpactEffect";
+	SMONKAMMO(Blue);
+	SMONKAMMO(Green);
+	SMONKAMMO(Orange);
+	SMONKAMMO(Purple);
+	SMONKAMMO(Red);
+	SMONKAMMO(Yellow);
+
+	// impact
+	class mjb_g_impactSmonkWhite : G_40mm_Smoke {
+		deflecting = 5;
+		explosive = 1;
+		explosionTime = 0;
+		simulation = "shotDeploy";
+#if __has_include("z\jsrs2025\addons\sounds_sfx\sounds\FlyBys\40mm_1.wss")
+		soundfly[] = {"z\jsrs2025\addons\sounds_sfx\sounds\FlyBys\40mm_1.wss",1,1,50};
+#else
+#endif
+		submunitionAmmo = "mjb_g_smonkWhite";
+		timeToLive = 20;
+		triggerOnImpact = 1;
+	};
+	class mjb_g_impactSmonkBlue : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkBlue";
+	};
+	class mjb_g_impactSmonkGreen : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkGreen";
+	};
+	class mjb_g_impactSmonkOrange : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkOrange";
+	};
+	class mjb_g_impactSmonkPurple : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkPurple";
+	};
+	class mjb_g_impactSmonkRed : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkRed";
+	};
+	class mjb_g_impactSmonkYellow : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkYellow";
+	};
+
     class ACE_9x19_Ball;
 	class mjb_65x25_CBJ : ACE_9x19_Ball {
 		ACE_ballisticCoefficients[] = {0.1455};

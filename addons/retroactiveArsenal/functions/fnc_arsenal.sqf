@@ -2301,6 +2301,14 @@ private _itemWeaponGL =
     "1Rnd_SmokeBlue_Grenade_shell",
     "1Rnd_SmokeGreen_Grenade_shell",
 
+	"mjb_1Rnd_impactSmonk",
+	"mjb_1Rnd_impactSmonkBlue",
+	"mjb_1Rnd_impactSmonkGreen",
+	//"mjb_1Rnd_impactSmonkOrange",
+	//"mjb_1Rnd_impactSmonkPurple",
+	"mjb_1Rnd_impactSmonkRed",
+	//"mjb_1Rnd_impactSmonkYellow",
+
 	"CUP_1Rnd_HEDP_M203",
 	"rhs_mag_M433_HEDP",
 
@@ -2310,6 +2318,7 @@ private _itemWeaponGL =
     "CUP_1Rnd_HE_GP25_M",
     "CUP_IlumFlareWhite_GP25_M",
     "CUP_1Rnd_SMOKE_GP25_M",
+    "CUP_1Rnd_SmokeBlue_GP25_M",
     "CUP_1Rnd_SmokeRed_GP25_M",
     "CUP_1Rnd_SmokeGreen_GP25_M",
     "rhs_VOG25",

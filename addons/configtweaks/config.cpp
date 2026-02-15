@@ -23,6 +23,7 @@ class CfgPatches {
     };
 };
 
+#define QUOTE(VAR) #VAR
 // AI Turrets Dispersion Config Tweaks (Built on nkenny's @LAMBS_Turrets)
 
 class CfgBrains {
@@ -86,6 +87,8 @@ class Mode_FullAuto;
   };
 };*/
 
+#include "CfgCloudlets.hpp" // 
+
 #include "CfgAmmo.hpp" // MMG Tracer ammo, (commented Ammo config)
 #include "CfgMagazines.hpp" // GreenMag simple compatibility, MMG Tracer boxes
 
@@ -103,7 +106,7 @@ class Extended_InitPost_EventHandlers {
 			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupCHMass;"; //10001
 		};
 	};
-	class CUP_CH53E_Base {
+	class CUP_CH47E_base {
 		class mjb_configTweaks {
 			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupCHMass;"; //10001
 		};
