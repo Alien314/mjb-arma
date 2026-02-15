@@ -260,6 +260,9 @@ class ar : basetrooper
 		#endif
 		LIST_2("greenmag_beltlinked_556x45_basic_200")
 	};
+	backpack[] = {
+		"B_Kitbag_rgr"
+	};
 	// Commented out, we may want this back in the future
 	// backpack[] = {
 	//	"B_Carryall_cbr"
@@ -282,6 +285,9 @@ class ar : basetrooper
 class aar : r
 {
 	displayName = "Machinegun Ammo Bearer";
+	backpack[] = {
+		"B_Kitbag_rgr"
+	};
 	// Commented out, we may want this back in the future
 	// backpack[] = {
 	// 	"B_Carryall_cbr"
