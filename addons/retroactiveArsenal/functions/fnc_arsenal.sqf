@@ -344,9 +344,14 @@ private _itemUniforms = [
 
     //Vanilla stuff
     "U_B_CombatUniform_mcam",
-    "U_B_CombatUniform_mcam_tshirt",
     "U_B_T_Soldier_F",
+    "U_B_CombatUniform_mcam_wdl_f",
+    "U_B_CombatUniform_mcam_tshirt",
     "U_B_T_Soldier_AR_F",
+    "U_B_CombatUniform_tshirt_mcam_wdL_f",
+    "U_B_CombatUniform_mcam_vest",
+    "U_B_T_Soldier_SL_F",
+    "U_B_CombatUniform_vest_mcam_wdl_f",
 
     // CUP Blyat
     "CUP_U_O_CHDKZ_Lopotev",
