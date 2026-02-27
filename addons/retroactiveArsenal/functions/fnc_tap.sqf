@@ -1,6 +1,6 @@
 params ["_unit", ["_target", objNull], ["_side", -1], ["_mode", if ((getCameraViewDirection (_this#0))#2 < -0.35) then {"leg"} else {"shoulder"}]];
 
-    _targets = [_unit, eyePos _unit, [0,15,30,45,60,-15,-30,-45,-60], 3, getCameraViewDirection _unit] call tsp_fnc_obstruction select {alive (_x#0) && _x#0 isKindOf "CAManBase"};
+    _targets = [_unit, eyePos _unit, getCameraViewDirection _unit, 3, 120] call tsp_fnc_obstruction select {alive (_x#0) && _x#0 isKindOf "CAManBase"};
     if (_target isEqualTo objNull && count _targets > 0) then {_target = _targets#0#0};
     if (_target isEqualTo objNull || "leg" in gestureState _unit || "shoulder" in gestureState _unit) exitWith {};
 	if (_mode isEqualTo "head" || {((getCameraViewDirection (_this#0))#2 > -0.05 || {( (floor ((getPosWorld ACE_player) # 2)) - (floor ((getPosWorld cursorObject) # 2))) > 0.9}) && {((positionCameraToWorld [0,0,0]) distance (_target modelToWorld selectionPosition [_target, "head", 12, true, "FirstPoint"])) < 3}}) exitWith {[ACE_player, _target] spawn hfgb_fnc_patHead;};
