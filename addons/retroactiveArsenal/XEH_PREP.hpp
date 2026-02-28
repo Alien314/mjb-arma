@@ -38,6 +38,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_moduleSetUnitRole.sqf", "mjb_arsenal_fnc_moduleSetUnitRole"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleVcom.sqf", "mjb_arsenal_fnc_moduleVcom"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleNoTab.sqf", "mjb_arsenal_fnc_moduleNoTab"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_moduleLightsOutEMP.sqf", "mjb_arsenal_fnc_moduleLightsOutEMP"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleSebTableMark.sqf", "mjb_arsenal_fnc_moduleSebTableMark"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleSebTableArea.sqf", "mjb_arsenal_fnc_moduleSebTableArea"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleSebTableClear.sqf", "mjb_arsenal_fnc_moduleSebTableClear"] call CBA_fnc_compileFunction;
