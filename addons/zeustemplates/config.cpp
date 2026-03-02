@@ -20,7 +20,7 @@ class CfgMissions {
         // Firing Range
 		class mjb_rzt_stratisFR2 {
 			author = "NotherDuck, MajorDanvers, Inquietude";
-			briefingName = "Stratis Firing Range v2,3";
+			briefingName = "RATS Stratis Firing Range v2,3";
 			directory = "z\mjb\addons\zeustemplates\missions\Stratis_Firing_Range_V2,4,2_101.Stratis";
 			overview = "z\mjb\addons\zeustemplates\overview.paa";
 			overviewText = "Firing Range for RATS pre-session and testing.";
@@ -29,13 +29,13 @@ class CfgMissions {
       class MJB_ZeusTemplates {
 		class mjb_rzt_vr2 {
 			author = "NotherDuck, MajorDanvers";
-			briefingName = "MJB Zeus Template 2,2";
+			briefingName = "RATS Zeus Template Virtual Reality v2,2";
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.VR";
 			overview = "z\mjb\addons\zeustemplates\overview.paa";
 			overviewText = "Zeus template for RATS.";
 		};
 		class mjb_rzt_vr2_CA : mjb_rzt_vr2 {
-			briefingName = "MJB Zeus Combined Arms 2,2";
+			briefingName = "RATS Zeus Combined Arms Virtual Reality v2,2";
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.VR";
 			overviewText = "Combined Arms Zeus template for RATS.";
 		};
@@ -44,11 +44,16 @@ class CfgMissions {
 		#define VARD(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.##EXT
 		#define QUOTE(var1) #var1
 		#define COMMA , // does this work? Rosche, Germany
+		#define COMMAVAR(var1,var2) var1##COMMA var2
+		#define VARA(NAME) RATS Zeus Template NAME v2##COMMA##2
+		#define VARB(NAME) RATS Zeus Combined Arms NAME v2##COMMA##2
 		#define MISH(EXT,NAME) \
 		class mjb_rzt_##EXT##2 : mjb_rzt_vr2 { \
+			briefingName = QUOTE(VARA(NAME)); \
 			directory = QUOTE(VARD(EXT)); \
 		}; \
 		class mjb_rzt_##EXT##2_CA : mjb_rzt_vr2_CA { \
+			briefingName = QUOTE(VARB(NAME)); \
 			directory = QUOTE(VARC(EXT)); \
 		}
 
@@ -100,7 +105,7 @@ class CfgMissions {
 		MISH(tem_kujari,Kujari);
 		MISH(tem_summa,Summa);
 		MISH(tem_summawcup,Summa Winter);
-		MISH(WL_Rosche,Rosche##COMMA Germany);
+		MISH(WL_Rosche,COMMAVAR(Rosche,Germany));
 		MISH(Woodland_ACR,Bystrica);
 		MISH(zargabad,Zargabad);
 		MISH(cup_Zargabad_a3,Zargabad 2025);
