@@ -105,6 +105,14 @@ class CfgMissions {
 		MISH(zargabad,Zargabad);
 		MISH(cup_Zargabad_a3,Zargabad 2025);
 
+		MISH(DYA,Diyala Iraq);
+		MISH(fallujah,Fallujah 2.0);
+		MISH(pja310,G.O.S. Al Rayak);
+		MISH(pja308,G.O.S. Gunkizli);
+		MISH(pja319,G.O.S. N'Djenahoud);
+		MISH(kunduz_valley,Kunduz River);
+		MISH(brf_sumava,Sumava);
+
 		//old
 		class mjb_rzt_Altis : mjb_rzt_vr2 {
 			briefingName = "MJB Zeus Template 2,1";
