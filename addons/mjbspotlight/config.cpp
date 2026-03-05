@@ -25,7 +25,10 @@ class CfgFunctions
 {
 	class mjb_spotlight
 	{
-		class joinServer {};
+		class server {
+			file = "z\mjb\addons\spotlight\functions";
+			class joinServer {};
+		};
 	};
 };
 
