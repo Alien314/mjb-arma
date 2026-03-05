@@ -25,13 +25,7 @@ class CfgFunctions
 {
 	class mjb_spotlight
 	{
-		class server
-		{
-			class joinServer
-			{
-				file="\z\mjb\addons\spotlight\functions\fn_joinServer.sqf";
-			};
-		};
+		class joinServer {};
 	};
 };
 
@@ -40,7 +34,7 @@ class CfgMainMenuSpotlight
 	class JoinMJB
 	{
 		text="RATS Server";
-		picture="\z\mjb\addons\spotlight\media\rats_insignia.paa"; // if possible, could call it from flags addon folder
+		picture="\z\mjb\addons\flags\data\rats_insignia.paa";
 		action="['115.42.46.194', 2306] call (uiNamespace getVariable 'mjb_spotlight_fnc_joinServer')";
 		actionText="Connect to the RATS Server";
 		condition="true";
