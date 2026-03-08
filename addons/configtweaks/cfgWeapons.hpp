@@ -426,7 +426,8 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 #include "CfgWeapons_vests.hpp" // needs ItemCore
 
 
-#define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+// ACE added now
+/*#define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 #define NVG_WHITE_PRESETOLD colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 	class CUP_NVG_GPNVG_black;
 	class CUP_NVG_GPNVG_winter;
@@ -449,4 +450,5 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 		NVG_WHITE_PRESET;
 		NVG_WHITE_PRESETOLD;
 	};
+*/
 };
