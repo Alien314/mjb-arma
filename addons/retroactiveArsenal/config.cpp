@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -128,6 +128,7 @@ class CfgFactionClasses {
     class MJB_SEB : MJB {
         displayName = "Seb's Briefing Table";
     };
+	class TEAMWORK;
 };
 
 class CfgVehicles
@@ -184,6 +185,13 @@ class CfgVehicles
         function = "mjb_arsenal_fnc_moduleLightsOutEMP";
         icon = "\A3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa";
 		portrait = "\A3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa";
+    };
+    class mjb_moduleAdminMenu : mjb_moduleBase {
+		category = "Teamwork";
+        curatorCanAttach = 1;
+        displayName = "Admin Menu";
+        function = "mjb_arsenal_fnc_moduleAdminMenu";
+        icon = "\a3\Modules_F_Curator\Data\iconDiary_ca.paa";
     };
 	class mjb_moduleEnd : ModuleEndMission_F {
         displayName = "End Scenario (No Music/MJB Persistence Save)";
