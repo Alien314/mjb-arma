@@ -116,12 +116,16 @@ class CfgSoundCurves {
 	CURVE(jsrs_2025_vehicle_apcs_volumecurve);
 	CURVE(jsrs_2025_vehicle_cars_volumecurve);
 	CURVE(jsrs_2025_vehicle_drones_volumecurve);
-	CURVE(jsrs_2025_vehicle_helicopters_volumecurve);
+	//CURVE(jsrs_2025_vehicle_helicopters_volumecurve);
 	CURVE(jsrs_2025_vehicle_mraps_volumecurve);
 	CURVE(jsrs_2025_vehicle_planes_volumecurve);
 	CURVE(jsrs_2025_vehicle_tanks_volumecurve);
 	CURVE(jsrs_2025_vehicle_trucks_volumecurve);
 	//*/
+
+	class jsrs_2025_vehicle_helicopters_volumecurve { 
+		points[] = {{0,1},{0.05,0.85},{0.1,0.75},{0.2,0.67},{0.3,0.62},{0.4,0.55},{0.5,0.47},{0.6,0.37},{0.7,0.25},{0.8,0.15},{0.9,0.01},{1,0}}; 
+	}
 };
 
 class CfgVehicles {
