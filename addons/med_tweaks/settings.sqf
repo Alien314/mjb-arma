@@ -101,7 +101,17 @@ private _title = "MJB Arma Medical";
     false,
     true
 ] call CBA_fnc_addSetting;
-
+/*/
+[
+    "mjb_med_tweaks_unstableWakeBleedCap",
+    "SLIDER",
+    ["Maximum Bleeding Wakeable", "Without heart rate bleedout speed is reduced, this setting can avoid waking the player and causing them to bleed out faster. At 0.5 bleed player is knocked out immediately."],
+    [_title,"Unstable Wake"],
+    [0.10, 0.5, 0.3, 2],
+    true
+] call CBA_fnc_addSetting;
+//*/
+/*/
 [
     "mjb_med_tweaks_unstableWakeIgnoreBleed",
     "CHECKBOX",
@@ -110,6 +120,7 @@ private _title = "MJB Arma Medical";
     false,
     false
 ] call CBA_fnc_addSetting;
+//*/
 
 [
     "mjb_med_tweaks_unstableWakeFaint",
