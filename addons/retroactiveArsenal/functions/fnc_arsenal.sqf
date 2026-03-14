@@ -281,6 +281,47 @@ private _itemEquipment =
 
     "CUP_H_RUS_K6_3_black",
     "CUP_H_RUS_K6_3_Goggles_black",
+    "CUP_H_OpsCore_Black_NoHS",
+    "CUP_H_OpsCore_Covered_Fleck_NoHS",
+    "CUP_H_OpsCore_Covered_Tropen_NoHS",
+    "CUP_H_OpsCore_Green_NoHS",
+    "CUP_H_OpsCore_Grey_NoHS",
+    "CUP_H_OpsCore_Covered_MTP_NoHS",
+    "CUP_H_OpsCore_Covered_MCAM_NoHS",
+    "CUP_H_OpsCore_Covered_MM14_NoHS",
+    "CUP_H_OpsCore_Spray_NoHS",
+    "CUP_H_OpsCore_Tan_NoHS",
+    "CUP_H_OpsCore_Covered_Tigerstripe_NoHS",
+    "CUP_H_OpsCore_Covered_UCP_NoHS",
+    "CUP_H_OpsCore_Black",
+    "CUP_H_OpsCore_Covered_Fleck",
+    "CUP_H_OpsCore_Covered_Tropen",
+    "CUP_H_OpsCore_Green",
+    "CUP_H_OpsCore_Grey",
+    "CUP_H_OpsCore_Covered_MTP",
+    "CUP_H_OpsCore_Covered_MCAM_US",
+    "CUP_H_OpsCore_Covered_MCAM",
+    "CUP_H_OpsCore_Covered_MM14",
+    "CUP_H_OpsCore_Spray_US",
+    "CUP_H_OpsCore_Spray",
+    "CUP_H_OpsCore_Tan",
+    "CUP_H_OpsCore_Covered_Tigerstripe",
+    "CUP_H_OpsCore_Covered_UCP",
+    "CUP_H_OpsCore_Covered_AAF_SF",
+    "CUP_H_OpsCore_Black_SF",
+    "CUP_H_OpsCore_Covered_Fleck_SF",
+    "CUP_H_OpsCore_Covered_Tropen_SF",
+    "CUP_H_OpsCore_Green_SF",
+    "CUP_H_OpsCore_Grey_SF",
+    "CUP_H_OpsCore_Covered_MTP_SF",
+    "CUP_H_OpsCore_Covered_MCAM_US_SF",
+    "CUP_H_OpsCore_Covered_MCAM_SF",
+    "CUP_H_OpsCore_Covered_MM14_SF",
+    "CUP_H_OpsCore_Spray_US_SF",
+    "CUP_H_OpsCore_Spray_SF",
+    "CUP_H_OpsCore_Tan_SF",
+    "CUP_H_OpsCore_Covered_Tigerstripe_SF",
+    "CUP_H_OpsCore_Covered_UCP_SF",
 
     //============================================================
     //ACRE radio
@@ -489,27 +530,66 @@ private _itemHats = [
     "CUP_H_RUS_Bandana_HS",
     "CUP_H_FR_BandanaWdl",
 
+    // booniehats
     "H_Booniehat_tna_F",
     "H_Booniehat_tan",
     "H_Booniehat_taiga",
     "H_Booniehat_oli",
     "H_Booniehat_wdl",
+    "H_Booniehat_mgrn",
+    "H_Booniehat_khk",
+    "H_Booniehat_khk_hs",
+    "H_Booniehat_mcamo",
+    "H_Booniehat_eaf",
+
+    //CUP Boonies
     "CUP_H_FR_BoonieWDL",
+    "CUP_H_USA_Boonie_wdl",
+    "CUP_H_CZ_Booniehat_fold_des",
+    "CUP_H_CZ_Booniehat_vz95_des",
+    "CUP_H_Ger_Boonie_Flecktarn",
+    "CUP_H_Ger_Boonie_desert",
+    "CUP_H_Ger_Boonie2_Flecktarn",
+    "CUP_H_Ger_Boonie2_desert",
+    "CUP_H_FR_Boonie_DES",
+    "CUP_H_USMC_BOONIE_PRR_DES",
+    "CUP_H_USMC_BOONIE_2_DES",
+    "CUP_H_USMC_BOONIE_WDL",
+    "CUP_H_FR_BoonieMARPAT",
+    "CUP_H_USMC_BOONIE_PRR_WDL",
+    "CUP_H_Booniehat_CCE",
+    "CUP_H_Booniehat_mm14",
+    "CUP_H_USArmy_Boonie_OCP",
+    "CUP_H_USArmy_Boonie_OEFCP",
+    "CUP_H_Booniehat_TTS",
+    "CUP_H_USArmy_Boonie_UCP",
+    "CUP_H_SLA_Boonie",
+    "CUP_H_SLA_Boonie_DES",
+    "CUP_H_SLA_Boonie_URB",
+    
+    // RHS Boonies
     "rhsgref_Booniehat_alpen",
 
+    // Shemags
+    "H_Shemag_olive",
+    "H_ShemagOpen_tan",
+    "H_ShemagOpen_khk",
+
+    // Hats
     "H_Cap_blk",
     "H_Cap_oli",
     "H_Cap_tan",
     "H_Cap_headphones",
     "CUP_H_FR_Cap_Headset_Green",
     "CUP_H_PMC_Cap_Burberry",
-    CUP_HAT(Burberry),
-    CUP_HAT(Grey),
-    CUP_HAT(tan),
+    "CUP_H_CZ_Hat02",
+    "CUP_H_CZ_Hat03",
+    "CUP_HAT(Burberry)",
+    "CUP_HAT(Grey)",
+    "CUP_HAT(tan)",
     "rhsgref_bcap_specter",
     "rhsusf_bowman_cap",
     "mjb_H_Cap_Voin",
-
     "CUP_H_PMC_PRR_Headset",
 
     // blyat
@@ -780,6 +860,7 @@ private _itemMod =
     //Vanilla
     "optic_arco_blk_F",
     "optic_hamr",
+    "optic_Arco",
     "optic_mrco",
 
     //CUP Magnified Sights
@@ -1023,6 +1104,8 @@ private _itemReflexSight =
     "optic_yorris",
     "optic_aco",
     "optic_holosight_blk_f",
+    "optic_Holosight",
+    "optic_Holosight_smg",
 
     //CUP Reflex Sights
     "cup_optic_ac11704_black",
@@ -3058,18 +3141,28 @@ if (_hasApex) then {
     ];
 
     _itemMod append [
-        "optic_ERCO_blk_F"
+        "optic_Arco_blk_F",
+        "optic_Arco_ghex_F",
+        "optic_Hamr_khk_F",
+        "optic_ERCO_blk_F",
+        "optic_ERCO_khk_F",
+        "optic_ERCO_snd_F"
     ];
 };
 
 if (_hasContact) then {
     _itemUniforms append [
-    "U_I_E_Uniform_01_officer_F",
-    "U_I_E_Uniform_01_F",
-    "U_I_E_Uniform_01_shortsleeve_F",
-    "U_I_E_Uniform_01_tanktop_F",
-    "U_I_L_Uniform_01_deserter_F",
-    "U_I_L_Uniform_01_camo_F"
+        "U_I_E_Uniform_01_officer_F",
+        "U_I_E_Uniform_01_F",
+        "U_I_E_Uniform_01_shortsleeve_F",
+        "U_I_E_Uniform_01_tanktop_F",
+        "U_I_L_Uniform_01_deserter_F",
+        "U_I_L_Uniform_01_camo_F"
+    ];
+
+    _itemMod append [
+        "optic_Arco_arid_F",
+        "optic_Arco_lush_F"        
     ];
 };
 
@@ -3094,7 +3187,6 @@ if !(_hasLoW) then {
 };
 
 if (_hasContact) then {
-
     _itemLeaderEquipment append [
         "H_Beret_EAF_01_F"
     ];
@@ -3108,12 +3200,14 @@ if (_hasContact) then {
         "H_HelmetHBK_ear_F"
     ];
 };
+
 if !(_hasContact) then {
     _itemFacewear = _itemFacewear - [
         "G_Blindfold_01_black_F",
         "G_Blindfold_01_white_F"
 	];
 };
+
 if (!_enableCBRN) then {
     _itemFacewear = _itemFacewear - [
 		"G_AirPurifyingRespirator_01_F",
