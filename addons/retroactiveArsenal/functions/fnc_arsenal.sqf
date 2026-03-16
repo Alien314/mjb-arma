@@ -3148,9 +3148,7 @@ if (_hasApex) then {
         "optic_ERCO_khk_F",
         "optic_ERCO_snd_F"
     ];
-};
-
-if !(_hasApex) then {
+} else {
     _itemFacewear = _itemFacewear - [
         "G_Balaclava_TI_blk_F",
         "G_Balaclava_TI_G_blk_F",
