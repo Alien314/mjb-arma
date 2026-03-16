@@ -584,9 +584,9 @@ private _itemHats = [
     "CUP_H_PMC_Cap_Burberry",
     "CUP_H_CZ_Hat02",
     "CUP_H_CZ_Hat03",
-    "CUP_HAT(Burberry)",
-    "CUP_HAT(Grey)",
-    "CUP_HAT(tan)",
+    CUP_HAT(Burberry),
+    CUP_HAT(Grey),
+    CUP_HAT(tan),
     "rhsgref_bcap_specter",
     "rhsusf_bowman_cap",
     "mjb_H_Cap_Voin",
@@ -3150,22 +3150,6 @@ if (_hasApex) then {
     ];
 };
 
-if (_hasContact) then {
-    _itemUniforms append [
-        "U_I_E_Uniform_01_officer_F",
-        "U_I_E_Uniform_01_F",
-        "U_I_E_Uniform_01_shortsleeve_F",
-        "U_I_E_Uniform_01_tanktop_F",
-        "U_I_L_Uniform_01_deserter_F",
-        "U_I_L_Uniform_01_camo_F"
-    ];
-
-    _itemMod append [
-        "optic_Arco_arid_F",
-        "optic_Arco_lush_F"        
-    ];
-};
-
 if !(_hasApex) then {
     _itemFacewear = _itemFacewear - [
         "G_Balaclava_TI_blk_F",
@@ -3187,6 +3171,20 @@ if !(_hasLoW) then {
 };
 
 if (_hasContact) then {
+    _itemUniforms append [
+        "U_I_E_Uniform_01_officer_F",
+        "U_I_E_Uniform_01_F",
+        "U_I_E_Uniform_01_shortsleeve_F",
+        "U_I_E_Uniform_01_tanktop_F",
+        "U_I_L_Uniform_01_deserter_F",
+        "U_I_L_Uniform_01_camo_F"
+    ];
+
+    _itemMod append [
+        "optic_Arco_arid_F",
+        "optic_Arco_lush_F"        
+    ];
+
     _itemLeaderEquipment append [
         "H_Beret_EAF_01_F"
     ];
@@ -3199,9 +3197,7 @@ if (_hasContact) then {
         "H_HelmetHBK_chops_F",
         "H_HelmetHBK_ear_F"
     ];
-};
-
-if !(_hasContact) then {
+} else {
     _itemFacewear = _itemFacewear - [
         "G_Blindfold_01_black_F",
         "G_Blindfold_01_white_F"
