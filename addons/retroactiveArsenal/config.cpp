@@ -32,9 +32,9 @@ class Extended_PreInit_EventHandlers
 	class ace_rangecard {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitRangecard.sqf']";
 	};
-	class tsp_animate_functions {
+	/*class tsp_animate_functions {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitAnimate.sqf']";
-	};
+	};*/
 	class mjb_arsenal
 	{
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInit.sqf']";

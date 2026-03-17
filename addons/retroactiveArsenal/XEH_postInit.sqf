@@ -280,7 +280,8 @@ if (isMultiplayer) then {
 			};
 		}] call CBA_fnc_addEventHandler;
 
-		mjb_carryHandle = ["mjb_carryHandler", { params ["_obj"];
+		mjb_carryHandle = ["mjb_carryHandler", { _this spawn { params ["_obj"];
+			sleep 1;
 			private _carrier = attachedTo _obj;
 			if (isNull _carrier) exitWith {};
             private _newID = owner _carrier;
@@ -288,6 +289,7 @@ if (isMultiplayer) then {
 			_obj setOwner _newID;
             _obj setVariable ['ace_common_lockStatus',(_obj getVariable ['ace_common_lockStatus', locked _obj]),true];
 			["mjb_carryLocal", [_carrier, _obj], _carrier] call CBA_fnc_targetEvent;
+			};
 		}] call CBA_fnc_addEventHandler;
 
 		mjb_releaseHandle = ["ace_common_unlockVehicle", { params ["_obj"];
@@ -416,6 +418,7 @@ if (mjb_woodCutting) then {
 		};
 	}; };
 };
+
 
 setTIParameter ["OutputRangeStart", mjb_thermalStart];
 setTIParameter ["OutputRangeWidth", mjb_thermalWidth];

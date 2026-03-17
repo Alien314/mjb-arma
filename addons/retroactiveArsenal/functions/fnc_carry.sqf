@@ -1,5 +1,7 @@
 params ["_unit", ["_duration", tsp_cba_animate_carry]];
 
+if (true) exitWith {}; // disable
+
 _targets = (_unit nearEntities [["CAManBase"], 3]) select {animationState _x == "ainjpfalmstpsnonwrfldnon_carried_up"};
 [[[_unit, _targets#0],_duration],{ params ['_units','_duration'];
 	{	if !(local _x) then {continue};

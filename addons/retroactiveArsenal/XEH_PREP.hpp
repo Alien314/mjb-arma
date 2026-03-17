@@ -48,5 +48,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_openedZeusServer.sqf", "mjb_arsenal_fnc_openedZeusServer"] call CBA_fnc_compileFunction;
 //["z\mjb\addons\arsenal\functions\fnc_serverUnsignedData.sqf", "mjb_arsenal_fnc_serverUnsignedData"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_tap.sqf", "tsp_fnc_animate_tap"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_sling.sqf", "tsp_fnc_animate_sling"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_carry.sqf", "tsp_fnc_animate_carry"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_wgzPathModeFix.sqf", "jac_fnc_pathDrawingMode"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_wgzControlGroupsFix.sqf", "jac_fnc_control_groups"] call CBA_fnc_compileFunction;
