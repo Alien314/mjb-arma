@@ -60,6 +60,44 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_tacReload",
+    "CHECKBOX",
+    ["Allow Tactical Reload", "Player controlled units can double tap their reload to skip part of the reload, dropping their old magazine."],
+    [_title, "Tactical Reload"],
+    true,
+    false,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_tacDropEmptyMagazines",
+    "CHECKBOX",
+    ["Drop Empty Magazines", "Whether tactical reload drops empty magazines in a groundWeaponHolder."],
+    [_title, "Tactical Reload"],
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_tacForbiddenMags",
+    "EDITBOX",
+    ["Magazine Class Blacklist", "Magazine classes that cannot tactical reload. (Belts and single ammo count 'mags' are excepted by default)"],
+    [_title, "Tactical Reload"],
+    "3Rnd_HE_Grenade_shell,CUP_6Rnd_HE_GP25_M,CUP_6Rnd_HE_M203,CUP_6Rnd_HE_M203_heli",
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_tacForbiddenMuzzles",
+    "EDITBOX",
+    ["Muzzle Class Blacklist", "Magazine classes that cannot tactical reload. (Belts and single ammo count 'mags' are excepted by default)"],
+    [_title, "Tactical Reload"],
+    "GL_3GL_F,CUP_glaunch_6G30",
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_slotSaverAI",
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],
