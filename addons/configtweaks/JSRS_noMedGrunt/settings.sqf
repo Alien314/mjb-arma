@@ -7,5 +7,5 @@
     ["Disable JSRS Empty Magazine Sounds", "Prevents noise when magazine emptied."],
     ["JSRS", "Settings"],
     false,
-    true
+    false
 ] call CBA_fnc_addSetting;
