@@ -80,6 +80,15 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_tacSimGlobal",
+    "CHECKBOX",
+    ["Global Falling Magazines", "Whether tactical reload drops simulated magazines globally, allowing other players to see them as they fall."],
+    [_title, "Tactical Reload"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_tacForbiddenMags",
     "EDITBOX",
     ["Magazine Class Blacklist", "Magazine classes that cannot tactical reload. (Belts and single ammo count 'mags' are excepted by default)"],

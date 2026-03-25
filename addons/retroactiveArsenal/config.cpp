@@ -287,3 +287,55 @@ class CfgSounds {
 		titles[] = {};
 	};
 };
+
+// Tac Reload disable loose ammo 'magazines'
+class CfgMagazines {
+	class CA_Magazine;
+	class 2Rnd_12Gauge_Pellets : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class 1Rnd_HE_Grenade_shell;
+	class 3Rnd_HE_Grenade_shell : 1Rnd_HE_Grenade_shell {
+		mjb_disableTacReload = 1;
+	};
+
+	class UGL_FlareGreen_F;
+	class 3Rnd_UGL_FlareGreen_F : UGL_FlareGreen_F {
+		mjb_disableTacReload = 1;
+	};
+
+	class 11Rnd_45ACP_Mag;
+	class 6Rnd_45ACP_Cylinder : 11Rnd_45ACP_Mag {
+		mjb_disableTacReload = 1;
+	};
+
+	// CUP
+	class CUP_10x_303_M : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_1Rnd_12Gauge_Pellets_No00_Buck : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_1Rnd_12Gauge_Slug : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_6Rnd_45ACP_M : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_5Rnd_762x51_M24 : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_5Rnd_762x54_Mosin_M : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+
+	class CUP_8Rnd_357SW_M : CA_Magazine {
+		mjb_disableTacReload = 1;
+	};
+};
