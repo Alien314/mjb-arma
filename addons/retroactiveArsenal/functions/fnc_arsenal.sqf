@@ -3030,7 +3030,10 @@ private _itemTankCrew =
     "ItemCompass",
     "ItemWatch",
     "Toolkit",
+	"ACE_CableTie",
+    "ACE_Flashlight_XL50",
     "ACE_MapTools",
+    "ACE_RangeCard",
 	"ACE_RangeTable_82mm",
 	"ACE_artilleryTable",
     "ACE_microDAGR",
@@ -3116,7 +3119,10 @@ private _itemHeloCrew =
     "ItemCompass",
     "ItemWatch",
     "Toolkit",
+	"ACE_CableTie",
+    "ACE_Flashlight_XL50",
     "ACE_MapTools",
+    "ACE_RangeCard",
     "ACE_microDAGR",
 
     // Ctab
@@ -3162,7 +3168,10 @@ private _itemAirCrew =
     "ItemGPS",
     "ItemCompass",
     "ItemWatch",
+	"ACE_CableTie",
+    "ACE_Flashlight_XL50",
     "ACE_MapTools",
+    "ACE_RangeCard",
     "ACE_microDAGR",
 
     // Ctab
