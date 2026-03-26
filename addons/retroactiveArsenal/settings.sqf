@@ -1,6 +1,18 @@
 private _title = "MJB Arma";
 
 [
+    "mjb_duiCustomTag",
+    "EDITBOX",
+    ["Pronouns/DUI Custom tag", "Sets custom text shown below your name and group in the DUI name tag."],
+    [_title, "Player QoL"],
+    "",
+    false,
+	{	params ['_value'];
+		if (!isNull player) then { player setVariable ['diwako_dui_nametags_customInfo', _value, true]; };
+	}
+] call CBA_fnc_addSetting;
+
+[
     "mjb_suppressedMarker",
     "SLIDER",
     ["Suppressed Marker Distance", "Shows the damage indicator for misses closer than the number in meters. (0 disables)"],
