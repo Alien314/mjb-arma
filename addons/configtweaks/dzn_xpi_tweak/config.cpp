@@ -19,9 +19,31 @@ class CfgPatches {
   };
 };
 
-/*/ disable vis laser in extended pointer modes menu
+#define Q(var) #var
+
+// --- XPI Types
+#define XPI_T_VISIBLE VisibleModes
+#define XPI_T_IR IRModes
+
+
+// --- XPI Modes
+#define XPI_M_IR_LASER IRLaser
+#define XPI_M_IR_ILLUM IRIlluminator
+#define XPI_M_IR_ILLUM_W IRIlluminator_Wide
+#define XPI_M_IR_LASER_x_IR_ILLUM IRLaser_x_IRIlluminator
+#define XPI_M_IR_LASER_x_IR_ILLUM_W IRLaser_x_IRIlluminator_Wide
+#define XPI_M_IR_LIGHT IRFlashlight
+#define XPI_M_IR_LIGHT_WIDE IRFlashlight_Wide
+#define XPI_M_VISIBLE_LASER VisibleLaser
+#define XPI_M_LIGHT Flashlight
+#define XPI_M_LIGHT_W Flashlight_Wide
+#define XPI_M_VISIBLE_LASER_x_LIGTH VisibleLaser_x_Flashlight
+#define XPI_M_VISIBLE_LASER_x_LIGTH_WIDE VisibleLaser_x_Flashlight_Wide
+#define XPI_M_IR_ILLUM_POINTER IRIlluminatorPointer
+
 class CfgDznXPI {
-	//class VisibleModes {
+// disable vis laser in extended pointer modes menu
+	/*/class VisibleModes {
 		delete VisibleLaser;
 		delete VisibleLaser_x_Flashlight;
 		delete VisibleLaser_x_Flashlight_Wide;
@@ -31,8 +53,9 @@ class CfgDznXPI {
 		class Flashlight {
 			order = 1;
 		};
-	};//
+	};/*/
 	class Bundles {
+/*/ disable vis laser in extended pointer modes menu
 		class dzn_XPI_DBAL_Pointer {
 			dzn_XPI_acc_DBAL_A3_V = 0;
 		};
@@ -76,9 +99,126 @@ class CfgDznXPI {
 		DISABLE_VIS(LLM3_black,LLM_black);
 		DISABLE_VIS(LLM3_OD,LLM_OD);
 		DISABLE_VIS(MLPLS,MLPLS_Laser);
+//*/
+
+		// MCC MRT_switchItemHintText = "IR Combo-Far";
+		#define MCC_LASER(var) class var { \
+			var##IRC = 1; \
+			var##IRCF = 1; \
+			var##IRL = 1; \
+			var##IRT = 1; \
+			var##VISL = 1; \
+		}
+
+		// Laser
+		MCC_LASER(MCC_AK_LA30_);
+		MCC_LASER(MCC_AR_LA30_);
+		MCC_LASER(MCC_AR18_LA30_);
+		MCC_LASER(MCC_L3Squad_AK_Top_);
+		MCC_LASER(MCC_L3Squad_AR_Top_);
+		MCC_LASER(MCC_L3Squad_AR18_Top_);
+		MCC_LASER(MCC_L3Squad_);
+		MCC_LASER(MCC_LA30_);
+		MCC_LASER(MCC_NGAL_AK_Top_);
+		MCC_LASER(MCC_NGAL_AR_Top_);
+		MCC_LASER(MCC_NGAL_AR18_Top_);
+		MCC_LASER(MCC_NGAL_);
+		MCC_LASER(MCC_OGL_AK_Top_BLK_);
+		MCC_LASER(MCC_OGL_AK_Top_FDE_);
+		MCC_LASER(MCC_OGL_AR_Top_BLK_);
+		MCC_LASER(MCC_OGL_AR_Top_FDE_);
+		MCC_LASER(MCC_OGL_AR18_Top_BLK_);
+		MCC_LASER(MCC_OGL_AR18_Top_FDE_);
+		MCC_LASER(MCC_OGL_BLK_);
+		MCC_LASER(MCC_OGL_FDE_);
+		MCC_LASER(MCC_PEQ15_AK_Top_BLK_);
+		MCC_LASER(MCC_PEQ15_AK_Top_FDE_);
+		MCC_LASER(MCC_PEQ15_AR_Top_BLK_);
+		MCC_LASER(MCC_PEQ15_AR_Top_FDE_);
+		MCC_LASER(MCC_PEQ15_AR18_Top_BLK_);
+		MCC_LASER(MCC_PEQ15_AR18_Top_FDE_);
+		MCC_LASER(MCC_PEQ15_BLK_);
+		MCC_LASER(MCC_PEQ15_FDE_);
+
+		// Flashlight
+		class MCC_M600V_BLK {
+			MCC_M600V_BLK = 1;
+			MCC_M600V_IR_BLK = 1;
+		};
+		class MCC_M600V_FDE {
+			MCC_M600V_FDE = 1;
+			MCC_M600V_IR_FDE = 1;
+		};
+		class MCC_M300C_BLK {
+			MCC_M300C_BLK = 1;
+			MCC_M300C_IR_BLK = 1;
+		};
+		class MCC_M300C_FDE {
+			MCC_M300C_FDE = 1;
+			MCC_M300C_IR_FDE = 1;
+		};
+		class MCC_WMLX_BLK {
+			MCC_WMLX_BLK = 1;
+			MCC_WMLX_IR_BLK = 1;
+		};
+		class MCC_WMLX_FDE {
+			MCC_WMLX_FDE = 1;
+			MCC_WMLX_IR_FDE = 1;
+		};
+
+		#define MCC_COMBO(var) class var { \
+			var##IRC = 1; \
+			var##IRCF = 1; \
+			var##IRL = 1; \
+			var##IRT = 1; \
+			var##VISC = 1; \
+			var##VISL = 1; \
+			var##WL = 1; \
+		}
+		MCC_COMBO(MCC_AK_NGAL_M600V_BLK_);
+		MCC_COMBO(MCC_AK_NGAL_M600V_FDE_);
+		MCC_COMBO(MCC_AK_OGL_WMLX_BLK_);
+		MCC_COMBO(MCC_AK_OGL_WMLX_FDE_);
+		MCC_COMBO(MCC_AK_PEQ15_M300C_BLK_);
+		MCC_COMBO(MCC_AK_PEQ15_M300C_FDE_);
+		MCC_COMBO(MCC_AR_LA30_M600V_BLK_);
+		MCC_COMBO(MCC_AR_LA30_M600V_FDE_);
+		MCC_COMBO(MCC_AR_LA30_M600V_Tail_BLK_);
+		MCC_COMBO(MCC_AR_LA30_M600V_Tail_FDE_);
+		MCC_COMBO(MCC_AR_NGAL_M600V_BLK_);
+		MCC_COMBO(MCC_AR_NGAL_M600V_FDE_);
+		MCC_COMBO(MCC_AR_NGAL_M600V_Tail_BLK_);
+		MCC_COMBO(MCC_AR_NGAL_M600V_Tail_FDE_);
+		MCC_COMBO(MCC_AR_OGL_WMLX_BLK_);
+		MCC_COMBO(MCC_AR_OGL_WMLX_FDE_);
+		MCC_COMBO(MCC_AR_PEQ15_M300C_BLK_);
+		MCC_COMBO(MCC_AR_PEQ15_M300C_FDE_);
+		MCC_COMBO(MCC_AR_PEQ15_M300C_Tail_BLK_);
+		MCC_COMBO(MCC_AR_PEQ15_M300C_Tail_FDE_);
+		MCC_COMBO(MCC_AR18_LA30_M600V_BLK_);
+		MCC_COMBO(MCC_AR18_LA30_M600V_FDE_);
+		MCC_COMBO(MCC_AR18_LA30_M600V_Tail_BLK_);
+		MCC_COMBO(MCC_AR18_LA30_M600V_Tail_FDE_);
+		MCC_COMBO(MCC_AR18_NGAL_M600V_BLK_);
+		MCC_COMBO(MCC_AR18_NGAL_M600V_FDE_);
+		MCC_COMBO(MCC_AR18_NGAL_M600V_Tail_BLK_);
+		MCC_COMBO(MCC_AR18_NGAL_M600V_Tail_FDE_);
+		MCC_COMBO(MCC_AR18_OGL_WMLX_BLK_);
+		MCC_COMBO(MCC_AR18_OGL_WMLX_FDE_);
+		MCC_COMBO(MCC_AR18_PEQ15_M300C_BLK_);
+		MCC_COMBO(MCC_AR18_PEQ15_M300C_FDE_);
+		MCC_COMBO(MCC_AR18_PEQ15_M300C_Tail_BLK_);
+		MCC_COMBO(MCC_AR18_PEQ15_M300C_Tail_FDE_);
+		MCC_COMBO(MCC_PEQ16_AK_TOP_);
+		MCC_COMBO(MCC_PEQ16_AR_TOP_);
+		MCC_COMBO(MCC_PEQ16_AR18_TOP_);
+		MCC_COMBO(MCC_PEQ16_);
+		MCC_COMBO(MCC_VarioRay_AK_TOP_);
+		MCC_COMBO(MCC_VarioRay_AR_TOP_);
+		MCC_COMBO(MCC_VarioRay_AR18_TOP_);
+		MCC_COMBO(MCC_VarioRay_);
 	};
 };
-//*/
 
 #define RIFLE_LASER_VISIBLE_GREEN	\
 	class Pointer                   \
@@ -245,4 +385,263 @@ class CfgWeapons {
 	LASER_GREEN(CUP_acc_LLM_od_V,CUP_acc_LLM_V);
 	LASER_GREEN(CUP_acc_LLM_od_VxLW,CUP_acc_LLM_od);
 	LASER_GREEN(CUP_acc_LLM_od_VxL,CUP_acc_LLM_od);
+
+	// MCC
+//#if __has_include
+	#define VARTWO(var,var2) var##var2
+	#define MCC_LASER(var,var2) class var##var2##IRL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER) \
+		}; \
+	}; \
+	class var##var2##IRC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W) \
+		}; \
+	}; \
+	class var##var2##IRCF : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM) \
+		}; \
+	}; \
+	class var##var2##IRT : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_ILLUM) \
+		}; \
+	}; \
+	class var##var2##VISC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH) \
+		}; \
+	}; \
+	class var##var2##VISL : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER) \
+		}; \
+	};
+
+	// Laser
+		MCC_LASER(MCC_AK_LA30,_);
+		MCC_LASER(MCC_AR_LA30,_);
+		MCC_LASER(MCC_AR18_LA30,_);
+		MCC_LASER(MCC_L3Squad_AK_Top,_);
+		MCC_LASER(MCC_L3Squad_AR_Top,_);
+		MCC_LASER(MCC_L3Squad_AR18_Top,_);
+		MCC_LASER(MCC_L3Squad,_);
+		MCC_LASER(MCC_LA30,_);
+		MCC_LASER(MCC_NGAL_AK_Top,_);
+		MCC_LASER(MCC_NGAL_AR_Top,_);
+		MCC_LASER(MCC_NGAL_AR18_Top,_);
+		MCC_LASER(MCC_NGAL,_);
+		MCC_LASER(MCC_OGL_AK_Top,_BLK_);
+		MCC_LASER(MCC_OGL_AK_Top,_FDE_);
+		MCC_LASER(MCC_OGL_AR_Top,_BLK_);
+		MCC_LASER(MCC_OGL_AR_Top,_FDE_);
+		MCC_LASER(MCC_OGL_AR18_Top,_BLK_);
+		MCC_LASER(MCC_OGL_AR18_Top,_FDE_);
+		MCC_LASER(MCC_OGL,_BLK_);
+		MCC_LASER(MCC_OGL,_FDE_);
+		MCC_LASER(MCC_PEQ15_AK_Top,_BLK_);
+		MCC_LASER(MCC_PEQ15_AK_Top,_FDE_);
+		MCC_LASER(MCC_PEQ15_AR_Top,_BLK_);
+		MCC_LASER(MCC_PEQ15_AR_Top,_FDE_);
+		MCC_LASER(MCC_PEQ15_AR18_Top,_BLK_);
+		MCC_LASER(MCC_PEQ15_AR18_Top,_FDE_);
+		MCC_LASER(MCC_PEQ15,_BLK_);
+		MCC_LASER(MCC_PEQ15,_FDE_);
+
+	// flashlights
+	class MCC_M600V_BLK : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_M600V_BLK";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_M600V_IR_BLK : MCC_M600V_BLK {
+		class dzn_XPI {
+			bundle = "MCC_M600V_BLK";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+	class MCC_M600V_FDE : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_M600V_FDE";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_M600V_IR_FDE : MCC_M600V_FDE {
+		class dzn_XPI {
+			bundle = "MCC_M600V_FDE";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+
+	class MCC_M300C_BLK : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_M300C_BLK";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_M300C_IR_BLK : MCC_M300C_BLK {
+		class dzn_XPI {
+			bundle = "MCC_M300C_BLK";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+	class MCC_M300C_FDE : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_M300C_FDE";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_M300C_IR_FDE : MCC_M300C_FDE {
+		class dzn_XPI {
+			bundle = "MCC_M300C_FDE";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+
+	class MCC_WMLX_BLK : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_WMLX_BLK";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_WMLX_IR_BLK : MCC_WMLX_BLK {
+		class dzn_XPI {
+			bundle = "MCC_WMLX_BLK";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+	class MCC_WMLX_FDE : ItemCore {
+		class dzn_XPI {
+			bundle = "MCC_WMLX_FDE";
+			type=Q(XPI_T_VISIBLE);
+			mode = Q(XPI_M_LIGHT);
+		};
+	};
+	class MCC_WMLX_IR_FDE : MCC_WMLX_FDE {
+		class dzn_XPI {
+			bundle = "MCC_WMLX_FDE";
+			type=Q(XPI_T_IR);
+			mode = Q(XPI_M_IR_LIGHT);
+		};
+	};
+
+// combos don't have a wide/spotlight for IR light only
+	#define MCC_COMBO(var,var2) class var##var2##IRL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER) \
+		}; \
+	}; \
+	class var##var2##IRC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W) \
+		}; \
+	}; \
+	class var##var2##IRCF : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM) \
+		}; \
+	}; \
+	class var##var2##IRT : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_ILLUM) \
+		}; \
+	}; \
+	class var##var2##VISC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH) \
+		}; \
+	}; \
+	class var##var2##VISL : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER) \
+		}; \
+	}; \
+	class var##var2##WL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_LIGHT) \
+		}; \
+	};
+
+	MCC_COMBO(MCC_AK_NGAL_M600V,_BLK_);
+	MCC_COMBO(MCC_AK_NGAL_M600V,_FDE_);
+	MCC_COMBO(MCC_AK_OGL_WMLX,_BLK_);
+	MCC_COMBO(MCC_AK_OGL_WMLX,_FDE_);
+	MCC_COMBO(MCC_AK_PEQ15_M300C,_BLK_);
+	MCC_COMBO(MCC_AK_PEQ15_M300C,_FDE_);
+	MCC_COMBO(MCC_AR_LA30_M600V,_BLK_);
+	MCC_COMBO(MCC_AR_LA30_M600V,_FDE_);
+	MCC_COMBO(MCC_AR_LA30_M600V_Tail,_BLK_);
+	MCC_COMBO(MCC_AR_LA30_M600V_Tail,_FDE_);
+	MCC_COMBO(MCC_AR_NGAL_M600V,_BLK_);
+	MCC_COMBO(MCC_AR_NGAL_M600V,_FDE_);
+	MCC_COMBO(MCC_AR_NGAL_M600V_Tail,_BLK_);
+	MCC_COMBO(MCC_AR_NGAL_M600V_Tail,_FDE_);
+	MCC_COMBO(MCC_AR_OGL_WMLX,_BLK_);
+	MCC_COMBO(MCC_AR_OGL_WMLX,_FDE_);
+	MCC_COMBO(MCC_AR_PEQ15_M300C,_BLK_);
+	MCC_COMBO(MCC_AR_PEQ15_M300C,_FDE_);
+	MCC_COMBO(MCC_AR_PEQ15_M300C_Tail,_BLK_);
+	MCC_COMBO(MCC_AR_PEQ15_M300C_Tail,_FDE_);
+	MCC_COMBO(MCC_AR18_LA30_M600V,_BLK_);
+	MCC_COMBO(MCC_AR18_LA30_M600V,_FDE_);
+	MCC_COMBO(MCC_AR18_LA30_M600V_Tail,_BLK_);
+	MCC_COMBO(MCC_AR18_LA30_M600V_Tail,_FDE_);
+	MCC_COMBO(MCC_AR18_NGAL_M600V,_BLK_);
+	MCC_COMBO(MCC_AR18_NGAL_M600V,_FDE_);
+	MCC_COMBO(MCC_AR18_NGAL_M600V_Tail,_BLK_);
+	MCC_COMBO(MCC_AR18_NGAL_M600V_Tail,_FDE_);
+	MCC_COMBO(MCC_AR18_OGL_WMLX,_BLK_);
+	MCC_COMBO(MCC_AR18_OGL_WMLX,_FDE_);
+	MCC_COMBO(MCC_AR18_PEQ15_M300C,_BLK_);
+	MCC_COMBO(MCC_AR18_PEQ15_M300C,_FDE_);
+	MCC_COMBO(MCC_AR18_PEQ15_M300C_Tail,_BLK_);
+	MCC_COMBO(MCC_AR18_PEQ15_M300C_Tail,_FDE_);
+
+	MCC_COMBO(MCC_PEQ16_AK_TOP,_);
+	MCC_COMBO(MCC_PEQ16_AR_TOP,_);
+	MCC_COMBO(MCC_PEQ16_AR18_TOP,_);
+	MCC_COMBO(MCC_PEQ16,_);
+	MCC_COMBO(MCC_VarioRay_AK_TOP,_);
+	MCC_COMBO(MCC_VarioRay_AR_TOP,_);
+	MCC_COMBO(MCC_VarioRay_AR18_TOP,_);
+	MCC_COMBO(MCC_VarioRay,_);
 };
