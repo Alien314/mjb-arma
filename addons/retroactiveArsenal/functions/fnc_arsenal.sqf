@@ -3021,7 +3021,7 @@ private _itemTankCrew =
     "H_HelmetCrew_O",
     "H_HelmetCrew_O_ghex_F",
     "H_HelmetCrew_B",
-    "H_Tank_black_F"
+    "H_Tank_black_F",
     "Rangefinder",
     "ACE_Vector",
     "ACE_IR_Strobe_Item",
