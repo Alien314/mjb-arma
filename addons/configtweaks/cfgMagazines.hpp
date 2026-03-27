@@ -196,6 +196,11 @@ class CfgMagazines
 		greenmag_canSpeedload = 1;
 		greenmag_needBelt = 0;		
 	};
+	class CUP_50Rnd_UK59_762x54R_Tracer: CA_Magazine
+	{
+		greenmag_ammo = "greenmag_beltlinked_762x54_tracer";
+		greenmag_basicammo = "greenmag_beltlinked_762x54_basic";
+	};
 	
 	RND9X19(CUP_10Rnd_9x19_Compact,CA_Magazine);
 	RND9X19(CUP_15Rnd_9x19_M9,CA_Magazine);
