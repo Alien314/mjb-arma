@@ -1,32 +1,34 @@
 params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
-// skip unload when weapon empty?
 
-if (!mjb_tacReload) exitWith {};
+if (!(mjb_tacReload && {_unit isEqualTo (call CBA_fnc_currentUnit)}) || {toLower _weapon in ['throw','put']}) exitWith {};
 private _class = if (isNil '_oldMagazine') then {(_newMagazine select 0)} else {(_oldMagazine select 0)};
 if (mjb_tacForbiddenMags isEqualType '') then { mjb_tacForbiddenMags = (mjb_tacForbiddenMags splitString ',')};
 if (mjb_tacForbiddenMuzzles isEqualType '') then {mjb_tacForbiddenMuzzles = (mjb_tacForbiddenMuzzles splitString ',')};
-if ((_unit isNotEqualTo (call CBA_fnc_currentUnit)) || {
-	_muzzle in (mjb_tacForbiddenMuzzles) || { 
+if ( _muzzle in (mjb_tacForbiddenMuzzles) || { 
 	_class in (mjb_tacForbiddenMags) || {
 	(mjb_tacLoadHash getOrDefaultCall [(_class + '_notMagazine'), {
 		_class call mjb_arsenal_fnc_notMagazine
-	}, true]) } } } 
+	}, true]) } } 
 ) exitWith { };
-private _curTime = cba_missionTime;
-_unit setVariable ['mjb_tacReloadTime',_curTime];
-_unit setVariable [('mjb_tacReloadTime' + _class),_curTime];
+
+// Load empty, revolvers are still excepted from this
+if (isNil '_oldMagazine') exitWith {
+	_unit switchGesture [gestureState _unit, 0.4];
+};
+	private _curTime = cba_missionTime;
+	_unit setVariable ['mjb_tacReloadTime',_curTime];
 // delay 0.15 and leave action until a tenth of reload time
 private _aID = (_unit addAction ['Quick Reload', {
 	params ['_unit','','_aID','_args'];
-	_args params ['_oldMagazine','_muzzle'];
-	if (currentMuzzle _unit isNotEqualTo _muzzle) exitWith { };
+	_args params ['_oldMagazine','_rTime'];
+	if ((_unit getVariable ['mjb_tacReloadTime',0]) isNotEqualTo _rTime) exitWith { _unit setVariable ['mjb_tacReloadTime',nil]; _unit removeAction _aID; };
 	// wait until gesture is at 0.15 progress then drop magazine
 	[{
 		((_this select 0) getUnitMovesInfo 5) > 0.15
 	},
 	{
-		params ['_unit','_oldMagazine','_muzzle'];
-		if (currentMuzzle _unit isNotEqualTo _muzzle) exitWith { };
+		params ['_unit','_oldMagazine','_rTime'];
+		if ((_unit getVariable ['mjb_tacReloadTime',0]) isNotEqualTo _rTime) exitWith { };
 		if (!isNil '_oldMagazine') then {
 			_oldMagazine params ['_class','_ammo'];
 			if (!mjb_tacDropEmptyMagazines && {_ammo isEqualTo 0}) exitWith { };
@@ -70,26 +72,29 @@ private _aID = (_unit addAction ['Quick Reload', {
 			}];
 		};
 		_unit switchGesture [gestureState _unit, 0.45];
-		private _evID = (_unit addEventHandler ["Reloaded", {
+		private _evID = ([player,"Reloaded", {
 			params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 			if (!isNil '_oldMagazine') then {
 				_oldMagazine params ['_class','_ammo'];
-				private _then = (_unit getVariable ['mjb_tacReloadTime',cba_missionTime]);
-				private _thenMag = (_unit getVariable [('mjb_tacReloadTime' + _class),0]);
-				if (_then isNotEqualTo _thenMag) exitWith {_unit setVariable [('mjb_tacReloadTime' + _class),nil]; _unit removeEventHandler [_thisEvent,_thisEventHandler]; };
-				[_unit,_class,_ammo] call CBA_fnc_removeMagazine;
-				
-				_unit setVariable [('mjb_tacReloadTime' + _class),nil];
-			} else {_unit setVariable [('mjb_tacReloadTime' + (_newMagazine select 0)),nil];};
+				if ((_unit getVariable ['mjb_tacReloadTime',0]) isNotEqualTo _thisArgs) exitWith {
+					_unit removeEventHandler ["Reloaded",_thisID];
+				};
+				([_unit,_class,_ammo] call CBA_fnc_removeMagazine);
+			};
 			_unit setVariable ['mjb_tacReloadTime',nil];
-			_unit removeEventHandler [_thisEvent,_thisEventHandler];
-		}]);
-		[{
+			_unit removeEventHandler ["Reloaded",_thisID];
+		}, _rTime] call CBA_fnc_addBISEventHandler);
+		// waitUntilAndExecute prevents removing the next reload's reloaded handler?
+		[{	private _chk = (_this select 0) getVariable ['mjb_tacReloadTime',nil];
+			isNil '_chk'
+		},{ },
+		[_unit,_evID],((_unit getUnitMovesInfo 7) * (1.05 - (0.45 - (_unit getUnitMovesInfo 5)))),
+		{
 			params ['_unit','_evID'];
 			_unit removeEventHandler ['Reloaded', _evID];
-		},[_unit,_evID],((_unit getUnitMovesInfo 7) * (1.01 - (0.45 - (_unit getUnitMovesInfo 5))))] call CBA_fnc_waitAndExecute;
-	}, [_unit,_oldMagazine,_muzzle],((_unit getUnitMovesInfo 7) * (1.01 - (_unit getUnitMovesInfo 5))),{ }] call CBA_fnc_waitUntilAndExecute;
+		}] call CBA_fnc_waitUntilAndExecute;
+	}, [_unit,_oldMagazine,_rTime],((_unit getUnitMovesInfo 7) * (1.01 - (_unit getUnitMovesInfo 5))),{ }] call CBA_fnc_waitUntilAndExecute;
 	_unit removeAction _aID;
-},[_oldMagazine,_muzzle],-1,false,true,'reloadMagazine']);
+},[_oldMagazine,_curTime],-1,false,true,'reloadMagazine']);
 // remove action after a part of gesture time elapsed
 [{params ['_unit','_aID']; _unit removeAction _aID;},[_unit,_aID],(((_unit getUnitMovesInfo 7) * 0.15) max 0.6)] call CBA_fnc_waitAndExecute;
