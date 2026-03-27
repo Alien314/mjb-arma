@@ -113,4 +113,23 @@ class Extended_InitPost_EventHandlers {
 	};
 };
 
+class CfgUnitInsignia {
+	class Spetsnaz223rdDetachment {
+		scope = 1;
+	};
+
+	class CUP_insignia_ua_kraken {
+		scope = 1;
+	};
+	class CUP_insignia_ua_krakenlowvis {
+		scope = 1;
+	};
+	class CUP_insignia_3rd_ab {
+		scope = 1;
+	};
+	class CUP_insignia_3rd_ablowvis {
+		scope = 1;
+	};
+};
+
 #include "CfgWeapons.hpp" // AIDispersion, Weapon, Greenmag items, Accessory, Helmet, and Vest tweaks
