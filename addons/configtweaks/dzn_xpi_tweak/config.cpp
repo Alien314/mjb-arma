@@ -393,42 +393,42 @@ class CfgWeapons {
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER) \
+			mode = Q(XPI_M_IR_LASER); \
 		}; \
 	}; \
 	class var##var2##IRC : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W) \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W); \
 		}; \
 	}; \
 	class var##var2##IRCF : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM) \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM); \
 		}; \
 	}; \
 	class var##var2##IRT : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_ILLUM) \
+			mode = Q(XPI_M_IR_ILLUM); \
 		}; \
 	}; \
 	class var##var2##VISC : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
-			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH) \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
 		}; \
 	}; \
 	class var##var2##VISL : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
-			mode = Q(XPI_M_VISIBLE_LASER) \
+			mode = Q(XPI_M_VISIBLE_LASER); \
 		}; \
 	};
 
@@ -555,49 +555,49 @@ class CfgWeapons {
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER) \
+			mode = Q(XPI_M_IR_LASER); \
 		}; \
 	}; \
 	class var##var2##IRC : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W) \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W); \
 		}; \
 	}; \
 	class var##var2##IRCF : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM) \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM); \
 		}; \
 	}; \
 	class var##var2##IRT : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_IR); \
-			mode = Q(XPI_M_IR_ILLUM) \
+			mode = Q(XPI_M_IR_ILLUM); \
 		}; \
 	}; \
 	class var##var2##VISC : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
-			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH) \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
 		}; \
 	}; \
 	class var##var2##VISL : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
-			mode = Q(XPI_M_VISIBLE_LASER) \
+			mode = Q(XPI_M_VISIBLE_LASER); \
 		}; \
 	}; \
 	class var##var2##WL : ItemCore { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
-			mode = Q(XPI_M_LIGHT) \
+			mode = Q(XPI_M_LIGHT); \
 		}; \
 	};
 
