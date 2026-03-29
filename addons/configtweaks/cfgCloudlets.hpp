@@ -16,6 +16,14 @@ class CfgCloudlets {
 		MoveVelocityVar[] = {0.8,0.4,0.8};
 		size[] = {0.46,14,14.2,14.4,14.6,14.8,15,15.1,15.2,15.3,15.4,15.5,15.6,15.7,15.8,15.9,16,16.1,16.2,16.3,16.4};
 		sizeVar = 0.5;
+
+		destroyAfterCrossing = true;
+
+		// override particle settings?
+		smokeGenMinDist = 1600;
+		smokeGenMaxDist = 6000;
+		smokeSizeCoef = 4.0;
+		smokeIntervalCoef = 1.25;
 	};
 	class mjb_impactSmokeShell2 : SmokeShellWhite2 {
 		interval = 0.1;
@@ -26,6 +34,22 @@ class CfgCloudlets {
 		MoveVelocityVar[] = {0.8,0.4,0.8};
 		size[] = {0.46,14,14.2,14.4,14.6,14.8,15,15.1,15.2,15.3,15.4,15.5,15.6,15.7,15.8,15.9,16,16.1,16.2,16.3,16.4};
 		sizeVar = 0.5;
+
+		destroyAfterCrossing = true;
+
+		// override particle settings?
+		smokeGenMinDist = 1600;
+		smokeGenMaxDist = 6000;
+		smokeSizeCoef = 4.0;
+		smokeIntervalCoef = 1.25;
+	};
+};
+
+class CfgVideoOptions {
+	class Particles {
+		class Normal {
+			numFullSizeParticles = 40;
+		};
 	};
 };
 
