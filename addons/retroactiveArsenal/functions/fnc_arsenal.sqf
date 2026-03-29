@@ -3415,6 +3415,10 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
+        case (_unitRole in ["wpntl","B_T_Soldier_AAT_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemLeaderEquipment + _itemWeaponGL + _itemWeaponMMGAmmo + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+    };
         case (_unitRole in ["amat","B_T_Soldier_AAT_F"]) :
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
