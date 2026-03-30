@@ -421,7 +421,7 @@ class sniper : basetrooper
 	};
 	backpackItems[] += {
 		"ACE_Tripod",
-		LIST_4("ACE_10Rnd_127x99_API_Mag")
+		LIST_3("ACE_10Rnd_127x99_API_Mag")
 	};
 };
 
@@ -617,6 +617,28 @@ class amat : r
 		#endif
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		LIST_4("MRAWS_HEAT_F")
+	};
+};
+
+// RATS Weapons Team Leader
+class wpntl : tl {
+	displayName = "Weapons Team Leader";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_21("1Rnd_HE_Grenade_shell"),
+		LIST_2("1Rnd_Smoke_Grenade_shell"),
+		LIST_4("CUP_30Rnd_556x45_Emag_Tracer_Yellow"),
+		LIST_3("MRAWS_HEAT_F")
 	};
 };
 
