@@ -2763,6 +2763,7 @@ private _itemWeaponMMG =
 
     "cup_optic_hensoldtzo",
     "cup_optic_acog2",
+	"CUP_optic_ACOG_TA648_308_Black",
 
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_mrds",
