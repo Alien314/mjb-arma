@@ -11,7 +11,7 @@ if ( _muzzle in (mjb_tacForbiddenMuzzles) || {
 	}, true]) } } 
 ) exitWith { };
 
-// Load empty, revolvers are still excepted from this
+// Load empty, revolvers and belts are still excepted from this
 if (isNil '_oldMagazine') exitWith {
 	_unit switchGesture [gestureState _unit, 0.4];
 };
