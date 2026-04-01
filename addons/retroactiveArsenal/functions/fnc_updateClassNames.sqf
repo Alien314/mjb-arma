@@ -1,56 +1,55 @@
 #include "\z\ace\addons\rangecard\script_component.hpp"
+//#include "..\script_component.hpp"
 /*
  * Authors: Ruthberg
- * Updates the ammo and weapon class names
+ * Updates the ammo and weapon class names.
  *
  * Arguments:
- * unit <OBJECT>
+ * 0: Target <OBJECT>
+ * 1: Unit <OBJECT>
  *
  * Return Value:
- * Update successful? <BOOL>
+ * None
  *
  * Example:
- * unit call ace_rangecard_fnc_updateClassNames
+ * [player, player] call ace_rangecard_fnc_updateClassNames
  *
  * Public: No
  */
 
-private _unit = _this;
+params ["_target", "_unit"];
+
+private _weaponClass = primaryWeapon _target;
+
+if (_weaponClass isEqualTo "") exitWith {};
 
 private _ammoClass = "";
 private _magazineClass = "";
 private _muzzleClass = "";
-private _weaponClass = primaryWeapon _unit;
-
-if (_weaponClass == "") exitWith { (GVAR(ammoClass) != "" && GVAR(magazineClass) != "" && GVAR(muzzleClass) != "" && GVAR(weaponClass) != "") };
+private _cfgMagazines = configFile >> "CfgMagazines";
 
 {
-    private _ammo = getText (configFile >> "CfgMagazines" >> _x >> "ammo");
-    private _ammoConfig = (configFile >> "CfgAmmo" >> _ammo);
-    private _parentClasses = [_ammoConfig, true] call BIS_fnc_returnParents;
-    if ("BulletBase" in _parentClasses) exitWith {
-        _ammoClass = _ammo;
+    _ammoClass = getText (_cfgMagazines >> _x >> "ammo");
+
+    if (_ammoClass isKindOf "BulletBase") exitWith {
         _magazineClass = _x;
         _muzzleClass = ((primaryWeaponItems _unit) select 0);
     };
-} forEach (primaryWeaponMagazine _unit);
+} forEach (primaryWeaponMagazine _target);
 
-if (_ammoClass == "") exitWith { (GVAR(ammoClass) != "" && GVAR(magazineClass) != "" && GVAR(muzzleClass) != "" && GVAR(weaponClass) != "") };
+if (_magazineClass isEqualTo "") exitWith {};
 
-if (_unit == ACE_player) then {
-    GVAR(zeroRange)     = [_unit] call EFUNC(scopes,getCurrentZeroRange);
-    GVAR(boreHeight)    = [_unit, 0] call EFUNC(scopes,getBoreHeight);
-    GVAR(ammoClass)     = _ammoClass;
-    GVAR(magazineClass) = _magazineClass;
-    GVAR(muzzleClass) = _muzzleClass;
-    GVAR(weaponClass)   = _weaponClass;
+private _return = [
+    _target call EFUNC(scopes,getCurrentZeroRange),
+    [_target, 0] call EFUNC(scopes,getBoreHeight),
+    _ammoClass,
+    _magazineClass,
+    _weaponClass,
+	_muzzleClass
+];
+
+if (_target == _unit) then {
+    GVAR(rangeCardInfo) = _return;
 } else {
-    GVAR(zeroRangeCopy)     = [_unit] call EFUNC(scopes,getCurrentZeroRange);
-    GVAR(boreHeightCopy)    = [_unit, 0] call EFUNC(scopes,getBoreHeight);
-    GVAR(ammoClassCopy)     = _ammoClass;
-    GVAR(magazineClassCopy) = _magazineClass;
-    GVAR(muzzleClassCopy) = _muzzleClass;
-    GVAR(weaponClassCopy)   = _weaponClass;
+    GVAR(rangeCardCopyInfo) = _return;
 };
-
-true
