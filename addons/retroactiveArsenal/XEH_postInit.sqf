@@ -1,6 +1,13 @@
 #include "settings.sqf"
 if (isServer) then {
 	if (isMultiplayer) then {
+		mjb_animateDisconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
+			private _objs = attachedObjects _unit;
+			{
+				private _string = str _x;
+				if ('map_gps' in _string || {'tsp_holder' in _string}) then {deleteVehicle _x};
+			} forEach _objs;
+		}]);
 		if (mjb_slotSaverAI) then {
 			mjb_disconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
 				if (isCopilotEnabled vehicle _unit) then {_unit action ["UnlockVehicleControl", vehicle _unit];};
