@@ -2366,6 +2366,8 @@ private _itemSniper =
 
 	//sling for defense
 	"tsp_sling",
+	"tsp_sling_1point",
+	"tsp_sling_lanyard",
 
     // "optic_AMS", // marksman dlc
     "optic_LRPS",
@@ -2471,10 +2473,12 @@ private _itemWeaponGL =
     //============================================================
     //Primary Weapons
     //============================================================
-    //Grenade Launchers and Sling
+    //Grenade Launchers and Slings
 	"CUP_glaunch_Mk13",
 	"CUP_glaunch_M79",
 	"tsp_sling",
+	"tsp_sling_1point",
+	"tsp_sling_lanyard",
 
 	//5.56x45mm
     "arifle_Mk20_GL_plain_F",
