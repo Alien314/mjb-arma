@@ -987,6 +987,9 @@ private _itemMod =
     //Bipod & Foregrips
     //============================================================
     "CUP_bipod_Harris_1A2_L_BLK",
+    "CUP_bipod_VLTOR_Modpod_black",
+    "CUP_bipod_VLTOR_Modpod_od",
+    "CUP_bipod_VLTOR_Modpod",
     "cup_bipod_sa58",
 
     "rhsusf_acc_grip2",
@@ -3281,7 +3284,8 @@ if (_hasApex) then {
         "optic_Hamr_khk_F",
         "optic_ERCO_blk_F",
         "optic_ERCO_khk_F",
-        "optic_ERCO_snd_F"
+        "optic_ERCO_snd_F",
+        "bipod_01_F_khk"
     ];
 } else {
     _itemFacewear = _itemFacewear - [
@@ -3352,6 +3356,17 @@ if (_hasMarksmen) then {
         "MMG_01_tan_F",
         "MMG_02_black_F",
         "MMG_02_sand_F"
+    ];
+
+    _itemMod append [
+        "bipod_03_F_blk",
+        "bipod_02_F_blk",
+        "bipod_01_F_blk",
+        "bipod_02_F_hex",
+        "bipod_01_F_mtp",
+        "bipod_03_F_oli",
+        "bipod_01_F_snd",
+        "bipod_02_F_tan"
     ];
 
     _itemSniper pushBack "optic_AMS";
