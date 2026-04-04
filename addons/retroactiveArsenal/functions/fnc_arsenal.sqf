@@ -2270,7 +2270,7 @@ private _itemWeaponAR =
     //LMG Accessories
     //============================================================
 
-	"CUP_optic_ElcanM145",
+	//"CUP_optic_ElcanM145",
     "rhsusf_acc_elcan",
     "rhsusf_acc_elcan_ard"
 ];
