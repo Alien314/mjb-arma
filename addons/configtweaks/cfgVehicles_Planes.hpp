@@ -107,7 +107,7 @@ class CUP_A10_Base : Plane_Base_F {
 			class draw {
 				class BombCrosshairGroup {
 					condition = "bomb";
-					type = "group"
+					type = "group";
 					class BombCrosshair {
 						CCIP_CIRC;
 					};
@@ -181,7 +181,7 @@ class CUP_F35B_base : Plane {  // f35 1700 unladen
 			class draw {
 				class BombCrosshairGroup {
 					condition = "bomb";
-					type = "group"
+					type = "group";
 					class BombCrosshair {
 						CCIP_CIRC;
 					};

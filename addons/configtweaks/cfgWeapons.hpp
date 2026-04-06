@@ -298,7 +298,12 @@ class CfgWeapons {
 
   // yeet bino sway
   class Binocular : Default {
-    swayCoef = 0.04; // default 0.34
+    swayCoef = 0.02; // default 0.34
+  };
+
+  // Add 556 to Grot
+  class arifle_MSBS65_base_F : Rifle_Base_F {
+    magazineWell[] += {"STANAG_556x45","CBA_556x45_STANAG","CBA_556x45_STANAG_L"};
   };
 
   
