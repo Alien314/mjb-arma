@@ -43,6 +43,17 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_loadoutRadios",
+    "CHECKBOX",
+    ["Add Radios on Load Loadout", "Adds the radios previously set radios when loading a loadout."],
+    [_title, "Player QoL"],
+    true,
+    false,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_woodCutting",
     "CHECKBOX",
     ["Cut Tree hold action", "Allows players to remove trees and bushes, time to complete is based on size of the object."],

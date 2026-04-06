@@ -349,6 +349,44 @@ if (isMultiplayer) then {
 		player setVariable ["mjb_ogGroup",(group _unit),true];
 	};
 
+	if (mjb_loadoutRadios) then {
+		["CBA_preLoadoutSet", {
+			if (!hasInterface) exitWith {};
+			params ['_unit'];
+			if !(local _unit && {isPlayer _unit}) exitWith {};
+			private _radioSetup = ([] call acre_api_fnc_getCurrentRadioList) apply {[
+			  [_x] call acre_api_fnc_getBaseRadio,
+			  [_x] call acre_api_fnc_getRadioChannel
+			]};
+			["CBA_loadoutSet",{
+			  params ['_unit'];
+			  private _radios = ((items _unit apply {if ('acre' in toLower _x) then { _x } else {false}}) - [false]);
+			  private _radiosToAdd = ((_thisArgs apply {_x select 0}) apply {
+				private _ret = _radios find _x;
+				if (_ret > -1) then { _radios deleteAt _ret; false } else {_x}
+			  }) - [false];
+			  private _ret = true;
+			  {
+				"_ret = [_unit,_x,true] call cba_fnc_addItem;
+				if !(_ret) then {
+					systemChat ('Did not have space to add ' + str (_thisArgs select _forEachIndex));
+				}";
+				_ret = [_unit,_x,true] call cba_fnc_addItem;
+				if !(_ret) exitWith {
+					private _missed = +_thisArgs;
+					_missed deleteRange [0,_forEachIndex];
+					systemChat "Did not have space to add all previously set radios.";
+					systemChat str _missed;
+				};
+			  } forEach _radiosToAdd;
+			  _thisArgs call acre_api_fnc_setupRadios;
+			  [_thisType, _thisId] call CBA_fnc_removeEventHandler
+			},_radioSetup] call CBA_fnc_addEventHandlerArgs;
+		}] call CBA_fnc_addEventHandler;
+//systemChat ("TEST: " +  str [_thisType, _thisId]); // Needs Args
+//[_thisType, _thisId] call CBA_fnc_removeEventHandler // Needs Args
+	};
+
 	["mywife", {
 		call mjb_arsenal_fnc_mywife;
 	}, "all", []] call CBA_fnc_registerChatCommand;
