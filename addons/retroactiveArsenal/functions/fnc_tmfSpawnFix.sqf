@@ -46,5 +46,9 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
 			player addEventhandler ["Take", {[player] call tsp_fnc_animate_sling}];
 			player addEventhandler ["Put", {[player] call tsp_fnc_animate_sling}];
 		};
+
+		if (tsp_cba_breach) then {
+			player addEventHandler ["FiredMan", {params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo"]; [_unit, _ammo] spawn tsp_fnc_breach_gun}];
+		};
     };
 }] remoteExec ["call", _player];
