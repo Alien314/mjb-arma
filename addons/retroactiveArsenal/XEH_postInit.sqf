@@ -1,7 +1,12 @@
 #include "settings.sqf"
 if (isServer) then {
 	if (isMultiplayer) then {
-		mjb_animateDisconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
+		mjb_disconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
+			// allow medical as if player
+			_unit setVariable ['ace_medical_statemachine_AIUnconsciousness', true, true];
+			_unit setVariable ['ace_medical_statemachine_fatalInjuriesAI', 1, true];
+
+			// remove animate attached objects
 			private _objs = attachedObjects _unit;
 			{
 				private _string = str _x;
