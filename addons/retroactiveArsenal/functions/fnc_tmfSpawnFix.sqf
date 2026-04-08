@@ -39,5 +39,12 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
 		if !(isNil "mjb_persistenceActive") then {
 			[player, mjb_deleteOnDeath, mjb_pLoadName, mjb_profOverride] call mjb_arsenal_fnc_initPersistentLoadout;
 		};
+
+		if (tsp_cba_animate_sling) then {
+			{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings;
+			player addEventHandler ["Respawn", {{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings}];
+			player addEventhandler ["Take", {[player] call tsp_fnc_animate_sling}];
+			player addEventhandler ["Put", {[player] call tsp_fnc_animate_sling}];
+		};
     };
 }] remoteExec ["call", _player];
