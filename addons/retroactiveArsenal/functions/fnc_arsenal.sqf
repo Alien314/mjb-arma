@@ -3498,20 +3498,28 @@ switch (true) do
 
         player setUnitTrait ["UAVHacker", true];
 
+		player setVariable ["ACE_isEngineer",2,true];
+
         /*if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
         mjb_engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", mjb_engiButtonId] call ace_arsenal_fnc_addRightPanelButton;*/
     };
     case (_unitRole in ["crew","B_crew_F"]) :
     {
         [arsenal, (_ItemTankCrew + ( _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo) + _itemFacewear + _itemWeaponCQB + _itemMod + _itemWeaponPistol + _itemReflexSight + _itemLeaderEquipment + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["helocrew","B_helipilot_F"]) :
     {
         [arsenal, (_ItemHeloCrew + ( _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo) + _itemFacewear + _itemWeaponCQB + _itemMod + _itemWeaponPistol + _itemReflexSight + _itemLeaderEquipment + _tarkovuniforms + _itemMedicalAdv)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["aircrew","B_Pilot_F","B_Fighter_Pilot_F"]) :
     {
         [arsenal, (_ItemAirCrew + _itemFacewear + _itemWeaponPistol + _itemMod + _itemLeaderEquipment + _itemMedicalAdv)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["hat","B_Soldier_AT_F"]) :
     {
