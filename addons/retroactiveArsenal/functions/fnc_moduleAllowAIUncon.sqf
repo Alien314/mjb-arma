@@ -1,0 +1,29 @@
+params ["_logic"];
+
+if !(local _logic) exitWith {};
+
+private _unit = attachedTo _logic;
+deleteVehicle _logic;
+
+private _isObj = _unit isEqualType objNull;
+private _isPerson = (_isObj && {(_unit isKindOf "CAManBase")});
+if (isNull _unit || { !_isObj }) exitWith {
+    //[objNull, "No unit or vehicle selected."] call BIS_fnc_showCuratorFeedbackMessage;
+};
+
+if (!_isPerson) exitWith {};
+
+_unit setVariable ['ace_medical_statemachine_AIUnconsciousness', true, true];
+
+if (isNil "zen_dialog") exitWith { _unit setVariable ['ace_medical_statemachine_fatalInjuriesAI', 0, true]; };
+
+["Allow AI Uncon", 
+	[
+		["LIST", "[ACE] Injuries can be Fatal:", [[0,1,2], ["Always","In Cardiac Arrest","Prevent Execution"]]]
+	], {  params ["_values", "_args"];
+		_values params ["_fatal"];
+		_args params ["_unit"];
+		
+		_unit setVariable ['ace_medical_statemachine_fatalInjuriesAI', _fatal, true];
+		
+},{},[_unit]] call zen_dialog_fnc_create;

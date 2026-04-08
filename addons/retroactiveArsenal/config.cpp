@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -128,6 +128,9 @@ class CfgFactionClasses {
     class MJB_SEB : MJB {
         displayName = "Seb's Briefing Table";
     };
+    class MJB_Breach : MJB {
+        displayName = "TSP Breach";
+    };
 	class TEAMWORK;
 };
 
@@ -221,6 +224,18 @@ class CfgVehicles
 		function = "mjb_arsenal_fnc_moduleResync";
 		icon = "\A3\ui_f\data\gui\cfg\Hints\Adjust_ca.paa";
 	};
+	class mjb_moduleAllowAIUncon : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Allow AI Unconscious";
+		function = "mjb_arsenal_fnc_moduleAllowAIUncon";
+		icon = "\A3\ui_f\data\igui\cfg\Revive\OverlayIconsGroup\u100_ca.paa";
+	};
+	class mjb_moduleToggleTI : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Toggle Thermal Vision allowed";
+		function = "mjb_arsenal_fnc_moduleToggleTI";
+		icon = "\A3\3den\Data\Displays\Display3DEN\ToolBar\vision_ti_ca.paa";
+	};
 	class mjb_moduleUnlock : mjb_moduleBase {
         curatorCanAttach = 1;
         displayName = "Un/Lock Vehicle/Container";
@@ -233,6 +248,13 @@ class CfgVehicles
 		function = "mjb_arsenal_fnc_moduleSetUnitRole";
 		icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\rearm_ca.paa";
 	};
+    class mjb_moduleLockDoors : mjb_moduleBase {
+		category = "MJB_Breach";
+        curatorCanAttach = 0;
+        displayName = "Lock Doors in Area";
+        function = "mjb_arsenal_fnc_moduleLockDoors";
+        icon = "\A3\3den\Data\Attributes\DoorStates\textureUnchecked_door_ca.paa";
+    };
 	class mjb_moduleSebTableMark : mjb_moduleBase {
         category = "MJB_SEB";
         curatorCanAttach = 1;
