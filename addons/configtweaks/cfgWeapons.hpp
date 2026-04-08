@@ -221,6 +221,18 @@ class CfgWeapons {
 	};
   };
 
+  // Fix Galil recoil
+  class CUP_arifle_GALIL_BASE : Rifle_Base_F {
+    recoil = "CUP_L86_recoil";
+  };
+  class CUP_arifle_Galil_black : CUP_arifle_GALIL_BASE {
+	descriptionShort = "Assault rifle<br/>Caliber: 7.62x51mm NATO";
+    recoil = "recoil_ebr";
+  };
+  class CUP_arifle_Galil_SAR_black : CUP_arifle_GALIL_BASE {
+    recoil = "CUP_M4A1_recoil";
+  };
+
   class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {
 	magazineWell[] = {"CBA_9x19_P320"};
