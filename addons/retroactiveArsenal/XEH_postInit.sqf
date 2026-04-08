@@ -5,10 +5,12 @@ if (isServer) then {
 			private _objs = attachedObjects _unit;
 			{
 				private _string = str _x;
-				if ('map_gps' in _string || {'tsp_holder' in _string}) then {deleteVehicle _x};
+				private _obj = _x;
+				{ if (_x  in _string) exitWith {deleteVehicle _obj}; } forEach ['mag_gps','tsp_holder','map_unfolded','mag_compass','itemandroid','tablet_02_f','itemmicrodagr'];
 			} forEach _objs;
+			true
 		}]);
-		if (mjb_slotSaverAI) then {
+		/*if (mjb_slotSaverAI) then {
 			mjb_disconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
 				if (isCopilotEnabled vehicle _unit) then {_unit action ["UnlockVehicleControl", vehicle _unit];};
 				private _savedId = _unit getVariable ["mjb_steamIDrop",true];
@@ -97,7 +99,7 @@ if (isServer) then {
 				}];
 				true
 			}]);
-		};
+		};*/
 
 		if (mjb_resyncAction) then {
 			["mjb_resync", {
