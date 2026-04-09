@@ -1489,16 +1489,6 @@ private _itemWeaponRifle =
     "rhs_weap_ak74m_zenitco01",
 
 	//============================================================
-    //6.5x39mm
-    //============================================================
-    "arifle_MX_F",
-	"arifle_MX_Black_F",
-	"arifle_MXC_F",
-	"arifle_MXC_Black_F",
-	"arifle_MXM_F",
-	"arifle_MXM_Black_F",
-
-	//============================================================
     //7.62x39mm
     //============================================================
     "rhs_weap_savz58v",
@@ -2019,13 +2009,6 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M",
 
 		//============================================================
-		//6.5x39mm
-		//============================================================
-        "30Rnd_65x39_caseless_black_mag_Tracer",
-        "30Rnd_65x39_caseless_khaki_mag_Tracer",
-        "30Rnd_65x39_caseless_mag_Tracer",
-
-		//============================================================
 		//7.62x39mm
 		//============================================================
 		"CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_bakelite_M",
@@ -2104,13 +2087,6 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_100Rnd_TE4_Red_Tracer_556x45_M249",
 		//Loose belts
 		GREENMAG_BELT(556x45),
-
-		//============================================================
-		//6.5x39mm
-		//============================================================
-		"100Rnd_65x39_caseless_khaki_mag_tracer",
-		"100Rnd_65x39_caseless_mag_Tracer",
-		"100Rnd_65x39_caseless_black_mag_tracer",	
 
 		//============================================================
 		//7.62x51mm
@@ -2395,12 +2371,6 @@ private _itemWeaponAR =
     "CUP_arifle_RPK74_45",
 
     "rhs_weap_rpk74m",
-
-    //============================================================
-    //6.5x39mm
-    //============================================================
-	"arifle_MX_SW_F",
-	"arifle_MX_SW_Black_F",
 
     //============================================================
     //7.62x39mm
@@ -2700,10 +2670,6 @@ private _itemWeaponGL =
     "CUP_arifle_AK12_GP34_bicolor",
 
     "rhs_weap_ak74m_gp25",
-
-    //6.5x39
-    "arifle_MX_GL_F",
-	"arifle_MX_GL_Black_F",
 
     //7.62x39mm
     "CUP_arifle_AKM_GL",
