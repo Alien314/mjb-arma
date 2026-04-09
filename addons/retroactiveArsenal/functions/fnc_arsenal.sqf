@@ -2106,6 +2106,13 @@ if (_tracer isEqualTo 'red') then {
 		GREENMAG_BELT(556x45),
 
 		//============================================================
+		//6.5x39mm
+		//============================================================
+		"100Rnd_65x39_caseless_khaki_mag_tracer",
+		"100Rnd_65x39_caseless_mag_Tracer",
+		"100Rnd_65x39_caseless_black_mag_tracer",	
+
+		//============================================================
 		//7.62x51mm
 		//============================================================
 		//Boxes
@@ -2237,13 +2244,6 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
 		//Loose belts
 		GREENMAG_BELT(556x45),
-
-		//============================================================
-		//6.5x39mm
-		//============================================================
-        "100Rnd_65x39_caseless_black_mag",
-        "100Rnd_65x39_caseless_khaki_mag",
-        "100Rnd_65x39_caseless_mag",
 
 		//============================================================
 		//7.62x51mm
@@ -2921,7 +2921,13 @@ private _itemMortarAmmo =
 
 private _itemWeaponMMG =
 [
-    "CUP_lmg_Mk48",
+	//old AR MMGs (commented out of AR)
+	"CUP_lmg_M60E4",
+    "CUP_lmg_MG3_rail",
+    "CUP_lmg_Pecheneg_B50_vfg",
+    "CUP_lmg_Pecheneg_top_rail_B50_vfg",
+
+	"CUP_lmg_Mk48",
 	"CUP_lmg_Mk48_des",
 	"CUP_lmg_Mk48_od",
 	"CUP_lmg_Mk48_tan",
