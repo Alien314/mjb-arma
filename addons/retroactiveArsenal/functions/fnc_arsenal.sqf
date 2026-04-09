@@ -2021,9 +2021,9 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		//6.5x39mm
 		//============================================================
-        "100Rnd_65x39_caseless_black_mag_tracer",
-        "100Rnd_65x39_caseless_khaki_mag_tracer",
-        "100Rnd_65x39_caseless_mag_Tracer",
+        "30Rnd_65x39_caseless_black_mag_Tracer",
+        "30Rnd_65x39_caseless_khaki_mag_Tracer",
+        "30Rnd_65x39_caseless_mag_Tracer",
 
 		//============================================================
 		//7.62x39mm
