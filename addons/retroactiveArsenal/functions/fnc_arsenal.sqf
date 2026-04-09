@@ -301,6 +301,43 @@ private _itemEquipment =
     //Helmets
     //============================================================
 
+    "CUP_H_HIL_HelmetACH_CCE",
+    "CUP_H_AFU_HelmetACH_MM_14",
+    "CUP_H_USArmy_HelmetACH_OCP",
+    "CUP_H_USArmy_HelmetACH_OEFCP",
+    "CUP_H_HIL_HelmetACH_TTS",
+    "CUP_H_USArmy_HelmetACH_UCP",
+    "CUP_H_HIL_HelmetACH_ESS_CCE",
+    "CUP_H_AFU_HelmetACH_ESS_MM_14",
+    "CUP_H_USArmy_HelmetACH_ESS_OCP",
+    "CUP_H_USArmy_HelmetACH_ESS_OEFCP",
+    "CUP_H_HIL_HelmetACH_ESS_TTS",
+    "CUP_H_USArmy_HelmetACH_ESS_UCP",
+    "CUP_H_HIL_HelmetACH_GCovered_CCE",
+    "CUP_H_AFU_HelmetACH_GCOVERED_MM_14",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_OCP",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_OEFCP",
+    "CUP_H_HIL_HelmetACH_GCovered_TTS",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_UCP",
+    "CUP_H_HIL_HelmetACH_Headset_CCE",
+    "CUP_H_AFU_HelmetACH_Headset_MM_14",	
+    "CUP_H_USArmy_HelmetACH_Headset_OCP",
+    "CUP_H_USArmy_HelmetACH_Headset_OEFCP",
+    "CUP_H_HIL_HelmetACH_Headset_TTS",
+    "CUP_H_USArmy_HelmetACH_Headset_UCP",
+    "CUP_H_HIL_HelmetACH_ESS_Headset_CCE",
+    "CUP_H_AFU_HelmetACH_ESS_Headset_MM_14",
+    "CUP_H_USArmy_HelmetACH_ESS_Headset_OCP",
+    "CUP_H_USArmy_HelmetACH_ESS_Headset_OEFCP",
+    "CUP_H_HIL_HelmetACH_ESS_Headset_TTS",
+    "CUP_H_USArmy_HelmetACH_ESS_Headset_UCP",
+    "CUP_H_HIL_HelmetACH_GCovered_Headset_CCE",
+    "CUP_H_AFU_HelmetACH_GCOVERED_Headset_MM_14",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OEFCP",
+    "CUP_H_HIL_HelmetACH_GCovered_Headset_TTS",
+    "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_UCP",
+
     "H_HelmetB_Enh_tna_F",
     "H_HelmetSpecB",
     "H_HelmetSpecB_blk",
@@ -312,9 +349,34 @@ private _itemEquipment =
 
     "mjb_H_HelmetSpecB_winter",
 
-    "CUP_H_LWHv2_MARPAT",
-    "CUP_H_LWHv2_MARPAT_cov_fr",
-    "CUP_H_LWHv2_MARPAT_NVG_gog2_cov2",
+	"CUP_H_LWHv2_brown_comms",
+	"CUP_H_LWHv2_desert_comms",
+	"CUP_H_LWHv2_ERDL_lowland_comms",
+	"CUP_H_LWHv2_MARPAT_des_comms",
+	"CUP_H_LWHv2_MARPAT_comms",
+	"CUP_H_LWHv2_OD_comms",
+	"CUP_H_LWHv2_Tpat_comms",
+	"CUP_H_LWHv2_tigerstripe_comms",
+	"CUP_H_LWHv2_brown",
+	"CUP_H_LWHv2_desert",
+	"CUP_H_LWHv2_ERDL_lowland",
+	"CUP_H_LWHv2_MARPAT_des",
+	"CUP_H_LWHv2_MARPAT",
+	"CUP_H_LWHv2_OD",
+	"CUP_H_LWHv2_Tpat",
+	"CUP_H_LWHv2_tigerstripe",
+	"CUP_H_LWHv2_MARPAT_des_comms_cov_fr",
+	"CUP_H_LWHv2_MARPAT_comms_cov_fr",
+	"CUP_H_LWHv2_brown_ess_comms",
+	"CUP_H_LWHv2_desert_ess_comms",
+	"CUP_H_LWHv2_ERDL_lowland_ess_comms",
+	"CUP_H_LWHv2_MARPAT_des_NVG_gog_cov2",
+	"CUP_H_LWHv2_MARPAT_NVG_gog_cov2",
+	"CUP_H_LWHv2_OD_ess_comms",
+	"CUP_H_LWHv2_Tpat_ess_comms",
+	"CUP_H_LWHv2_tigerstripe_ess_comms",
+	"CUP_H_LWHv2_MARPAT_des_NVG_gog2_cov2",
+	"CUP_H_LWHv2_MARPAT_NVG_gog2_cov2",
     
     "CUP_H_RUS_K6_3_black",
     "CUP_H_RUS_K6_3_Goggles_black",
@@ -635,6 +697,7 @@ private _itemHats = [
     "CUP_H_C_Ushanka_04",
     "CUP_H_C_Ushanka_03",
 
+    // beanies
     "H_Watchcap_blk",
     "H_Watchcap_khk",
     "H_Watchcap_cbr",
@@ -1320,10 +1383,29 @@ private _itemLeaderEquipment =
     "greenmag_ammo_50AE_ball_30Rnd", // deagle rounds
 
     //Hats
-    "H_Beret_blk",
-    "CUP_H_Beret_HIL",
-    "CUP_H_SLA_BeretRed",
-    "CUP_H_ChDKZ_Beret",
+    "CUP_H_BAF_PARA_PRROVER_BERET",
+	"CUP_H_BAF_PARA_PRRUNDER_BERET",
+	"CUP_H_RACS_Beret_Blue",
+	"H_Beret_blk",
+	"CUP_H_Ger_Beret_ARM_Blk",
+	"CUP_H_Ger_Beret_TankCommander_Blk",
+	"CUP_H_C_Beret_04",
+	"CUP_H_C_Beret_01",
+	"H_Beret_gen_F",
+	"CUP_H_Ger_Beret_ARM_Grn",
+	"CUP_H_Ger_Beret_INF_Grn",
+	"CUP_H_Ger_Beret_TankCommander_Grn",
+	"CUP_H_Beret_HIL",
+	"CUP_H_C_Beret_02",
+	"CUP_H_C_Beret_03",
+	"CUP_H_Ger_Beret_KSK_Red",
+	"CUP_H_SLA_Beret",
+	"H_Beret_EAF_01_F",
+	"H_Beret_02",
+	"H_Beret_Colonel",
+	"CUP_H_CZ_Hat01",
+	"CUP_H_BAF_PARA_BERET",
+	"CUP_H_SLA_BeretRed",
 
     // demo
     "DemoCharge_Remote_Mag",
@@ -1337,6 +1419,11 @@ private _itemWeaponRifle =
     //============================================================
     "arifle_Mk20_plain_F",
     "arifle_TRG21_F",
+
+    "CUP_arifle_AUG_A1",
+
+    "CUP_arifle_M16A1",
+	"CUP_arifle_M16A1E1",
 
     "CUP_arifle_G36KA3_grip",
 
@@ -1400,6 +1487,16 @@ private _itemWeaponRifle =
 	"CUP_arifle_AK74M_top_rail",
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_zenitco01",
+
+	//============================================================
+    //6.5x39mm
+    //============================================================
+    "arifle_MX_F",
+	"arifle_MX_Black_F",
+	"arifle_MXC_F",
+	"arifle_MXC_Black_F",
+	"arifle_MXM_F",
+	"arifle_MXM_Black_F",
 
 	//============================================================
     //7.62x39mm
@@ -1468,6 +1565,8 @@ private _itemWeaponRifle =
     "CUP_arifle_G3A3_ris_vfg_black",
     "CUP_arifle_G3A3_modern_ris_black",
     
+    "CUP_srifle_M14",
+
     "rhs_weap_mk17_CQC",
     "rhs_weap_l1a1_wood",
 	
@@ -1815,6 +1914,7 @@ private _itemWeaponAmmo =
     "CUP_25Rnd_556x45_Famas",
     "CUP_30Rnd_556x45_AK",
     "CUP_20Rnd_556x45_Stanag",
+    "CUP_30Rnd_556x45_AUG",
 
     //Loose ammo
     "greenmag_ammo_556x45_basic_60Rnd",
@@ -1831,12 +1931,18 @@ private _itemWeaponAmmo =
     "greenmag_ammo_545x39_basic_60Rnd",
 
     //============================================================
+    //5.8x42mm
+    //============================================================
+
+
+    //============================================================
     //7.62x39mm
     //============================================================
     //Magazines
     "CUP_30Rnd_762x39_AK47_bakelite_M",
     "CUP_30Rnd_762x39_AK47_M",
     "CUP_30Rnd_Sa58_M",
+	"CUP_30Rnd_762x39_AK103_bakelite_M",
 
     "rhs_30Rnd_762x39mm_Savz58",
 
@@ -1853,6 +1959,7 @@ private _itemWeaponAmmo =
 	"CUP_20Rnd_762x51_B_SCAR_bkl",
     "CUP_20Rnd_762x51_HK417",
     "CUP_20Rnd_762x51_G3",
+    "CUP_20Rnd_762x51_DMR",
 
     //Loose ammo
     "greenmag_ammo_762x51_basic_60Rnd",
@@ -1890,8 +1997,6 @@ private ['_itemWeaponTracerAmmo','_itemWeaponHighCapAmmo','_itemWeaponARAmmo'];
 if (_tracer isEqualTo 'red') then {
 	_itemWeaponTracerAmmo =
 	[
-		"CUP_64Rnd_Red_Tracer_9x19_Bizon_M",
-
 		//============================================================
 		//5.56x45mm
 		//============================================================
@@ -1905,6 +2010,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Red_Tracer_556x45_AK",
 		"CUP_30Rnd_556x45_Tracer_Red_AK19_M",
 		"CUP_20Rnd_556x45_Stanag_Tracer_Red",
+        "CUP_30Rnd_TE1_Red_Tracer_556x45_AUG",
 
 		//============================================================
 		//5.45x39mm
@@ -1913,12 +2019,20 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M",
 
 		//============================================================
+		//6.5x39mm
+		//============================================================
+        "100Rnd_65x39_caseless_black_mag_tracer",
+        "100Rnd_65x39_caseless_khaki_mag_tracer",
+        "100Rnd_65x39_caseless_mag_Tracer",
+
+		//============================================================
 		//7.62x39mm
 		//============================================================
 		"CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_bakelite_M",
 		"CUP_30Rnd_Sa58_M_TracerR",
 		"CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_M",
-
+        "CUP_30Rnd_TE1_Red_Tracer_762x39_AK103_bakelite_M",
+	    
 		"rhs_30Rnd_762x39mm_Savz58_tracer",
 
 		//============================================================
@@ -1929,7 +2043,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_wdl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_bkl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_HK417",
-		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3"
+		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3",
+        "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR",
 	
 		//============================================================
 		//7.62x54mm
@@ -1938,6 +2053,10 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		//Misc Calibers (SMGs, Shotguns, Etc.)
 		//============================================================
+        "CUP_64Rnd_Red_Tracer_9x19_Bizon_M",
+        "CUP_50Rnd_570x28_Red_Tracer_P90_M",
+	    "CUP_40Rnd_46x30_MP7_Red_Tracer",
+        "CUP_30Rnd_45ACP_Red_Tracer_M3A1_BLK_M"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -1948,7 +2067,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_60Rnd_556x45_SureFire",
 		"CUP_60Rnd_556x45_SureFire_Tracer_Red",
 		"CUP_50Rnd_556x45_Red_Tracer_Galil_Mag",
-
+        
 		//============================================================
 		//5.45x39mm
 		//============================================================
@@ -2020,8 +2139,6 @@ if (_tracer isEqualTo 'red') then {
 // yellow trace
 	_itemWeaponTracerAmmo =
 	[
-		"CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M",
-
 		//============================================================
 		//5.56x45mm
 		//============================================================
@@ -2035,6 +2152,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Yellow_Tracer_556x45_AK",
 		"CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Tan_M",
 		"CUP_20Rnd_556x45_Stanag_Tracer_Yellow",
+        "CUP_20Rnd_556x45_Stanag_Tracer_Green",
+        "CUP_30Rnd_TE1_Yellow_Tracer_556x45_AUG",
 
 		//============================================================
 		//5.45x39mm
@@ -2048,7 +2167,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_bakelite_M",
 		"CUP_30Rnd_Sa58_M_TracerY",
 		"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_M",
-
+        "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK103_M",
 		"rhs_30Rnd_762x39mm_Savz58_tracer",
 
 		//============================================================
@@ -2057,7 +2176,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417",
-		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3"
+		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3",
+        "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",
 
 		//============================================================
 		//7.62x54mm
@@ -2066,6 +2186,10 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		//Misc Calibers (SMGs, Shotguns, Etc.)
 		//============================================================
+        "CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M",
+        "CUP_50Rnd_570x28_Yellow_Tracer_P90_M",
+        "CUP_40Rnd_46x30_MP7_Yellow_Tracer",
+        "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -2115,6 +2239,13 @@ if (_tracer isEqualTo 'red') then {
 		GREENMAG_BELT(556x45),
 
 		//============================================================
+		//6.5x39mm
+		//============================================================
+        "100Rnd_65x39_caseless_black_mag",
+        "100Rnd_65x39_caseless_khaki_mag",
+        "100Rnd_65x39_caseless_mag",
+
+		//============================================================
 		//7.62x51mm
 		//============================================================
 		//Boxes
@@ -2161,6 +2292,20 @@ private _itemWeaponCQB =
     "CUP_smg_vityaz_vfg_top_rail",
     "CUP_smg_bizon",
     "CUP_smg_MP7",
+    "CUP_smg_MP7_desert",
+	"CUP_smg_MP7_woodland",
+    "SMG_03C_black",
+	"SMG_03C_camo",
+	"SMG_03C_hex",
+	"SMG_03C_khaki",
+	"SMG_03C_TR_black",
+	"SMG_03C_TR_camo",
+	"SMG_03C_TR_hex",
+	"SMG_03C_TR_khaki",
+    "CUP_smg_M3A1_blk",
+	"CUP_smg_M3A1_grn",
+	"CUP_smg_M3A1",
+	"CUP_smg_M3A1_snd",
 
     "rhs_weap_pp2000",
     "rhsusf_weap_MP7A2",
@@ -2189,6 +2334,8 @@ private _itemWeaponCQB =
     "CUP_30Rnd_9x19_MP5",
     "CUP_30Rnd_9x19_Vityaz",
     "CUP_64Rnd_9x19_Bizon_M",
+    "50Rnd_570x28_SMG_03",
+    "CUP_30Rnd_45ACP_M3A1_BLK_M",
 
     "rhs_mag_9x19mm_7n21_20",
     "rhs_mag_9x19mm_7n21_44",
@@ -2200,6 +2347,9 @@ private _itemWeaponCQB =
     "CUP_12Rnd_B_Saiga12_Slug",
     "CUP_8Rnd_12Gauge_Pellets_No00_Buck",
     "CUP_8Rnd_12Gauge_Slug",
+    "ACE_6Rnd_12Gauge_Pellets_No0_Buck",
+	"6Rnd_12Gauge_Slug",
+	"6Rnd_12Gauge_Pellets",
 
     "rhsusf_8Rnd_00Buck",
     "rhsusf_5Rnd_00Buck",
@@ -2247,6 +2397,12 @@ private _itemWeaponAR =
     "rhs_weap_rpk74m",
 
     //============================================================
+    //6.5x39mm
+    //============================================================
+	"arifle_MX_SW_F",
+	"arifle_MX_SW_Black_F",
+
+    //============================================================
     //7.62x39mm
     //============================================================
     "CUP_arifle_RPK74",
@@ -2257,17 +2413,17 @@ private _itemWeaponAR =
     //============================================================
     //7.62x51mm
     //============================================================
-    "CUP_lmg_M60E4",
-    "CUP_lmg_MG3_rail",
+    //"CUP_lmg_M60E4",
+    //"CUP_lmg_MG3_rail",
 
     //============================================================
     //7.62x54mm
     //============================================================
-    "CUP_lmg_Pecheneg_B50_vfg",
-    "CUP_lmg_Pecheneg_top_rail_B50_vfg",
+    //"CUP_lmg_Pecheneg_B50_vfg",
+    //"CUP_lmg_Pecheneg_top_rail_B50_vfg",
 
-    "rhs_weap_pkm",
-    "rhs_weap_pkp",
+    //"rhs_weap_pkm",
+    //"rhs_weap_pkp",
 
     //============================================================
     //LMG Accessories
@@ -2304,7 +2460,7 @@ private _itemWeaponSharpshooter =
     //============================================================
     //7.62x51mm
 	"CUP_srifle_Mk18_blk",
-
+    "CUP_srifle_M14_DMR",
     "CUP_arifle_HK417_20",
 
     "rhs_weap_m14ebrri",
@@ -2332,6 +2488,7 @@ private _itemWeaponSharpshooter =
     //7.62x51mm
     "ace_20rnd_762x51_m118lr_mag",
     "ace_20rnd_762x51_mag_tracer",
+    "CUP_20Rnd_762x51_DMR",
 
     "rhsusf_20Rnd_762x51_SR25_m993_Mag",
 
@@ -2487,6 +2644,8 @@ private _itemWeaponGL =
     "arifle_Mk20_GL_plain_F",
     "arifle_TRG21_GL_F",
 
+    "CUP_arifle_M16A1E1GL",
+
     "CUP_arifle_ACR_EGLM_blk_556",
     "CUP_arifle_ACR_EGLM_snw_556",
     "CUP_arifle_ACR_EGLM_tan_556",
@@ -2517,6 +2676,11 @@ private _itemWeaponGL =
     "CUP_CZ_BREN2_556_11_GL_Grn",
     "CUP_CZ_BREN2_556_11_GL_Tan",
 
+    "arifle_MSBS65_GL_black_F",
+	"arifle_MSBS65_GL_F",
+	"arifle_MSBS65_GL_camo_F",
+	"arifle_MSBS65_GL_sand_F",
+
     "rhs_weap_hk416d145_m320",
 
 	"CUP_arifle_M16A4_GL",
@@ -2536,6 +2700,10 @@ private _itemWeaponGL =
     "CUP_arifle_AK12_GP34_bicolor",
 
     "rhs_weap_ak74m_gp25",
+
+    //6.5x39
+    "arifle_MX_GL_F",
+	"arifle_MX_GL_Black_F",
 
     //7.62x39mm
     "CUP_arifle_AKM_GL",
@@ -3259,7 +3427,6 @@ private _hasLoW = 571710 in _ownedDLCs;
 
 if (_hasApex) then {
     _itemEquipment append [
-        // Apex
         "U_B_CTRG_Soldier_Arid_F",
         "U_B_CTRG_Soldier_2_Arid_F",
         "U_B_CTRG_Soldier_F",
@@ -3276,6 +3443,50 @@ if (_hasApex) then {
         "H_HelmetB_TI_tna_F",
         "H_HelmetB_TI_arid_F",
         "U_I_C_Soldier_Camo_F"
+    ];
+
+    _itemWeaponRifle append [
+        "arifle_CTAR_blk_F",
+	    "arifle_CTAR_ghex_F",
+	    "arifle_CTAR_hex_F",
+        "arifle_MX_khk_F",
+	    "arifle_MXC_khk_F",
+	    "arifle_MXM_khk_F"
+    ];
+
+    _itemWeaponAmmo append [
+        //magazine
+        "30Rnd_580x42_Mag_F",
+        "30Rnd_580x42_Mag_Tracer_F",
+       	"100Rnd_580x42_hex_Mag_F",
+        "100Rnd_580x42_ghex_Mag_Tracer_F",
+        "100Rnd_580x42_hex_Mag_Tracer_F",
+        "100Rnd_580x42_Mag_Tracer_F",
+
+        // loose ammo
+        "greenmag_ammo_580x42_basic_60Rnd"
+    ]
+
+    _itemWeaponARAmmo append [
+        "100Rnd_580x42_Mag_F",
+        "100Rnd_580x42_ghex_Mag_F",
+
+        // loose ammo
+        "greenmag_ammo_580x42_basic_60Rnd"	
+    ];
+
+    _itemWeaponGL append [
+        "arifle_MX_GL_khk_F",
+     	"arifle_CTAR_GL_blk_F",
+        "arifle_CTAR_GL_ghex_F",
+        "arifle_CTAR_GL_hex_F"
+    ];
+
+    _itemWeaponAR append [
+        "arifle_MX_SW_khk_F",
+        "arifle_CTARS_blk_F",
+        "arifle_CTARS_ghex_F",
+        "arifle_CTARS_hex_F"
     ];
 
     _itemMod append [
@@ -3317,6 +3528,33 @@ if (_hasContact) then {
         "U_I_L_Uniform_01_camo_F"
     ];
 
+    _itemWeaponRifle append [
+        "srifle_DMR_06_hunter_F",
+        
+        "arifle_MSBS65_black_F",
+        "arifle_MSBS65_F",
+        "arifle_MSBS65_camo_F",
+        "arifle_MSBS65_sand_F",
+        "arifle_MSBS65_Mark_black_F",
+        "arifle_MSBS65_Mark_F",
+        "arifle_MSBS65_Mark_camo_F",
+        "arifle_MSBS65_Mark_sand_F"
+    ];
+
+    _itemMod append [
+    	"optic_ico_01_f",
+        "optic_ico_01_black_f",
+        "optic_ico_01_camo_f",
+        "optic_ico_01_sand_f"
+    ];
+
+    _itemWeaponCQB append [
+        "arifle_MSBS65_UBS_black_F",
+        "arifle_MSBS65_UBS_F",
+        "arifle_MSBS65_UBS_camo_F",
+        "arifle_MSBS65_UBS_sand_F"
+    ];
+
     _itemMod append [
         "optic_Arco_arid_F",
         "optic_Arco_lush_F"        
@@ -3336,6 +3574,10 @@ if (_hasContact) then {
     ];
 } else {
     _itemFacewear = _itemFacewear - [
+        "G_AirPurifyingRespirator_02_black_F",
+        "G_AirPurifyingRespirator_02_olive_F",
+        "G_AirPurifyingRespirator_02_sand_F",
+        "G_AirPurifyingRespirator_01_F",
         "G_Blindfold_01_black_F",
         "G_Blindfold_01_white_F"
 	];
@@ -3356,6 +3598,11 @@ if (_hasMarksmen) then {
         "MMG_01_tan_F",
         "MMG_02_black_F",
         "MMG_02_sand_F"
+    ];
+
+    _itemWeaponRifle append [
+        "srifle_DMR_06_olive_F",
+	    "srifle_DMR_06_camo_F"
     ];
 
     _itemMod append [
