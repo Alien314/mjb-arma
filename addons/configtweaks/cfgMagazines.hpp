@@ -13,7 +13,7 @@ class CfgMagazines
 	class 130Rnd_338_Mag : CA_Magazine {};
 	class mjb_130Rnd_338_Mag_trc_gr: 130Rnd_338_Mag {
 		author = "Alien314";
-		ammo = "mjb_338_NM_trc_gr";
+		ammo = "mjb_338_NM_trc_grn";
 		displayName = ".338 Norma Magnum 130Rnd Green Mixed Belt";
 		displayNameShort = "Mixed/Green";
 	};
@@ -21,6 +21,32 @@ class CfgMagazines
 		ammo = "mjb_338_NM_trc_ylw";
 		displayName = ".338 Norma Magnum 130Rnd Yellow Mixed Belt";
 		displayNameShort = "Mixed/Yellow";
+	};
+
+	class 30Rnd_580x42_Mag_Tracer_F;
+	class mjb_30Rnd_580x42_Mag_Tracer_Red : 30Rnd_580x42_Mag_Tracer_F {
+		author = "Alien314";
+		ammo = "mjb_580x42_Ball_trc_red";
+		displayName = "5.8 mm 30Rnd Tracer (Red) Mag";
+	};
+
+	class 100Rnd_580x42_Mag_Tracer_F;
+	class mjb_100_Rnd_580x42_Mag_Tracer_Red : 100Rnd_580x42_Mag_Tracer_F {
+		author = "Alien314";
+		ammo = "mjb_580x42_Ball_trc_red";
+		displayName = "5.8 mm 100Rnd Tracer (Red) Mag";
+	};
+	class 100Rnd_580x42_hex_Mag_Tracer_F;
+	class mjb_100_Rnd_580x42_hex_Mag_Tracer_Red : 100Rnd_580x42_hex_Mag_Tracer_F {
+		author = "Alien314";
+		ammo = "mjb_580x42_Ball_trc_red";
+		displayName = "5.8 mm 100Rnd Tracer (Red) Hex Mag";
+	};
+	class 100Rnd_580x42_ghex_Mag_Tracer_F;
+	class mjb_100_Rnd_580x42_ghex_Mag_Tracer_Red : 100Rnd_580x42_ghex_Mag_Tracer_F {
+		author = "Alien314";
+		ammo = "mjb_580x42_Ball_trc_red";
+		displayName = "5.8 mm 100Rnd Tracer (Red) Green Hex Mag";
 	};
 	
 	class 150Rnd_93x64_Mag : CA_Magazine {};
@@ -712,6 +738,19 @@ class CfgMagazineWells {
 			"mjb_130Rnd_338_Mag_trc_ylw"
         };
     };
+
+	class CBA_580x42_TYPE95 {
+        mjb_mags[] = {
+			"mjb_30Rnd_580x42_Mag_Tracer_Red"
+		};
+	};
+	class CBA_580x42_TYPE95_XL {
+		mjb_mags[] = {
+			"mjb_100Rnd_580x42_Mag_Tracer_Red",
+			"mjb_100Rnd_580x42_hex_Mag_Tracer_Red",
+			"mjb_100Rnd_580x42_ghex_Mag_Tracer_Red"
+		};
+	};
 	
     class CBA_93x64_LINKS {
         mjb_mags[] = {
