@@ -8,8 +8,11 @@ class CfgAmmo
 
 	// MMG Tracer ammo
 	class B_338_NM_Ball: BulletBase {};
-	class mjb_338_NM_trc_gr: B_338_NM_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_green"; };
+	class mjb_338_NM_trc_grn: B_338_NM_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_green"; };
 	class mjb_338_NM_trc_ylw: B_338_NM_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_yellow"; };
+
+	class B_580x42_Ball_F;
+	class mjb_580x42_Ball_trc_red: B_580x42_Ball_F { model = "\A3\Weapons_f\Data\bullettracer\tracer_red"; };
 	
 	class B_93x64_Ball: BulletBase {};
 	class mjb_93x64_trc_red: B_93x64_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_red"; };
@@ -134,7 +137,144 @@ class CfgAmmo
 	AC_TIME(CUP_B_30mm_CAS_Red_Tracer);
 	AC_TIME(CUP_B_30x113mm_M789_HEDP_Red_Tracer);
 	
+	class RocketBase;
 	
+	class R_MRAAWS_HEAT_F : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		//airLock = 1;
+		cost = 70;
+	};
+	class R_MRAAWS_HEAT55_F : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		//airLock = 1;
+		cost = 50;
+	};
+	class R_MRAAWS_HE_F : R_MRAAWS_HEAT_F {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		//airLock = 1;
+		allowAgainstInfantry = 1;
+		cost = 50;
+	};
+	
+	class R_PG32V_F : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 70;
+	};
+	class R_PG7_F : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 30;
+	};
+	class R_TBG32V_F : R_PG32V_F {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		airLock = 1;
+		allowAgainstInfantry = 1;
+		cost = 50;
+	};
+
+	class M_NLAW_AT_F;
+	class ACE_NLAW : M_NLAW_AT_F {
+		cost = 50;
+		//submunitionAmmo = "ACE_NLAW_Penetrator";
+	};
+	class ammo_Penetrator_NLAW;
+	class ACE_NLAW_Penetrator : ammo_Penetrator_NLAW {
+		//hit = 525;
+		//warheadName = "AP";
+	};
+
+	// CUP
+	class CUP_R_APILAS_AT : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_M136_AT : RocketBase {
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_M72A6_AT : RocketBase {
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_MEEWS_HEDP : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_MEEWS_HEAT : CUP_R_MEEWS_HEDP {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 70;
+	};
+	class CUP_R_OG7_AT : RocketBase {
+		airLock = 1;
+		indirectHit = 30;
+		cost = 25;
+	};
+	class CUP_R_PG26_AT : RocketBase {
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_PG7V_AT : RocketBase {
+		airLock = 1;
+		cost = 30;
+	};
+	class CUP_R_PG7VL_AT : RocketBase {
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_PG7VM_AT : RocketBase {
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_PG7VR_AT : RocketBase {
+		cost = 100;
+	};
+	class CUP_R_PZF3IT_AT : RocketBase {
+		cost = 100;
+	};
+	class CUP_R_PZFBB_HE : CUP_R_PZF3IT_AT {
+		airLock = 1;
+		allowAgainstInfantry = 1;
+		cost = 40;
+	};
+	class CUP_R_RPG18_AT : RocketBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 30;
+	};
+	class CUP_R_RSHG2_HE : RocketBase {
+		indirecthit = 30;
+		airLock = 1;
+		cost = 25;
+	};
+	class CUP_R_SMAW_HEDP : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_SMAW_HEDP_N : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
+		airLock = 1;
+		cost = 50;
+	};
+	class CUP_R_SMAW_HEAA : CUP_R_SMAW_HEDP {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 100;
+	};
+	class CUP_R_SMAW_HEAA_N : CUP_R_SMAW_HEDP_N {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 100;
+	};
+	class CUP_R_TBG7V_AT : RocketBase {
+		aiAmmoUsageFlags = "64 + 128";
+		airLock = 1;
+		cost = 50;
+	};
 	
 	
 	// Ammo Balance, spreadsheet with changes: https://docs.google.com/spreadsheets/d/1hBv11wZy6fM9IIj6Qh0-j3qezPhqOBt0XZLNUT1HfvQ/edit#gid=0
