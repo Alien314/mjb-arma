@@ -13,7 +13,7 @@ if (isServer) then {
 				private _obj = _x;
 				{ if (_x  in _string) exitWith {deleteVehicle _obj}; } forEach ['mag_gps','tsp_holder','map_unfolded','mag_compass','itemandroid','tablet_02_f','itemmicrodagr'];
 			} forEach _objs;
-			true
+			//true
 		}]);
 		/*if (mjb_slotSaverAI) then {
 			mjb_disconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
