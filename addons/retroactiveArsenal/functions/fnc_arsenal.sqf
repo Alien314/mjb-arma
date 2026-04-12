@@ -613,6 +613,8 @@ private _itemUniforms = [
     "CUP_U_I_GUE_Flecktarn",
     "CUP_U_I_GUE_Flecktarn4",
     "CUP_U_I_GUE_Woodland1",
+    "CUP_U_I_RACS_Urban_1",
+    "CUP_U_I_RACS_Urban_2",
     "rhs_uniform_FROG01_wd"
 ];
 _itemEquipment append _itemUniforms;
@@ -1054,6 +1056,7 @@ private _itemMod =
     "CUP_bipod_VLTOR_Modpod_od",
     "CUP_bipod_VLTOR_Modpod",
     "cup_bipod_sa58",
+    "CUP_bipod_FNFAL",
 
     "rhsusf_acc_grip2",
     "rhsusf_acc_kac_grip",
@@ -1437,6 +1440,16 @@ private _itemWeaponRifle =
     "CUP_CZ_BREN2_556_11",
     "CUP_CZ_BREN2_556_11_Grn",
     "CUP_CZ_BREN2_556_11_Tan",
+
+    "CUP_arifle_CZ805_A1",
+    "CUP_arifle_CZ805_A1_blk",
+    "CUP_arifle_CZ805_A1_coyote",
+    "CUP_arifle_CZ805_A2",
+    "CUP_arifle_CZ805_A2_blk",
+    "CUP_arifle_CZ805_A2_coyote",
+    "CUP_CZ_BREN2_762_14",
+    "CUP_CZ_BREN2_762_14_Grn",
+    "CUP_CZ_BREN2_762_14_Tan",
 
     "CUP_arifle_HK416_Black",
 	"CUP_arifle_HK416_Desert",
@@ -1840,6 +1853,14 @@ private _itemWeaponCarbine =
 	"CUP_arifle_HK416_CQB_Wood",
     "rhs_weap_hk416d10",
 
+    "CUP_CZ_BREN2_762_8",
+    "CUP_CZ_BREN2_762_8_Grn",
+    "CUP_CZ_BREN2_762_8_Tan",
+
+    "CUP_CZ_BREN2_762_8",
+    "CUP_CZ_BREN2_762_8_Grn",
+    "CUP_CZ_BREN2_762_8_Tan",
+
     "Tier1_HK416D10_CTR",
 
     "CUP_arifle_XM8_Compact_Rail",
@@ -1949,6 +1970,7 @@ private _itemWeaponAmmo =
 	"CUP_20Rnd_762x51_B_SCAR_bkl",
     "CUP_20Rnd_762x51_HK417",
     "CUP_20Rnd_762x51_G3",
+    "CUP_25Rnd_762x51_Galil_Mag",
     "CUP_20Rnd_762x51_DMR",
 
     //Loose ammo
@@ -2094,6 +2116,7 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
 		"CUP_120Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
+        "CUP_25Rnd_762x51_Red_Tracers_Galil_Mag",
 		//Loose belts
 		GREENMAG_BELT(762x51),
 
@@ -2159,6 +2182,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417",
+        "CUP_25Rnd_762x51_Green_Tracers_Galil_Mag",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",
 
@@ -2283,6 +2307,8 @@ private _itemWeaponCQB =
 	"CUP_smg_M3A1",
 	"CUP_smg_M3A1_snd",
 
+    "CUP_smg_EVO",
+
     "rhs_weap_pp2000",
     "rhsusf_weap_MP7A2",
 
@@ -2355,6 +2381,17 @@ private _itemWeaponAR =
     "CUP_arifle_Galil_556_black",
     "CUP_lmg_UK59",
 
+    "CUP_arifle_XM8_SAW_FG_Rail",
+    "CUP_arifle_XM8_SAW_FG_Rail_Green",
+    "CUP_arifle_XM8_SAW_FG_Rail_OD",
+    "CUP_arifle_XM8_SAW_FG_Rail_Tan",
+
+    "CUP_arifle_MG36",
+
+    "CUP_arifle_HK_M27",
+    "CUP_arifle_HK_M27_VFG",
+
+
     "rhs_weap_m249_pip_ris",
     "rhs_weap_m249_pip_L_para",
     "rhs_weap_m249_light_S",
@@ -2383,6 +2420,9 @@ private _itemWeaponAR =
     //============================================================
     //7.62x51mm
     //============================================================
+
+	"CUP_arifle_Galil_black",
+
     //"CUP_lmg_M60E4",
     //"CUP_lmg_MG3_rail",
 
@@ -2620,6 +2660,13 @@ private _itemWeaponGL =
     "CUP_arifle_ACR_EGLM_snw_556",
     "CUP_arifle_ACR_EGLM_tan_556",
     "CUP_arifle_ACR_EGLM_wdl_556",
+
+    "CUP_arifle_CZ805_GL",
+    "CUP_arifle_CZ805_GL_blk",
+    "CUP_arifle_CZ805_GL_coyote",
+    "CUP_CZ_BREN2_762_14_GL",
+    "CUP_CZ_BREN2_762_14_GL_Grn",
+    "CUP_CZ_BREN2_762_14_GL_Tan",
 
     "CUP_arifle_M16A4_GL",
 
@@ -3818,6 +3865,9 @@ private _action =
 ] call ace_interact_menu_fnc_createAction;
 
 ["CAManBase", 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+if !(isNil "tmf_safestart_instance" && {time < 5}) exitWith {};
+[player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;
 
 if !(isNil "tmf_safestart_instance" && {time < 5}) exitWith {};
 [player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;
