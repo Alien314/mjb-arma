@@ -638,6 +638,9 @@ class CfgMagazines
 	magSMG65X25(mjb_30Rnd_65x25_MP5,CUP_30Rnd_9x19_MP5)
 		displayName= "9mm 30rnd MP5 CBJ APDS Mag";
 	};
+	magSMG65X25(mjb_30Rnd_65x25_EVO,CUP_30Rnd_9x19_EVO)
+		displayName= "9mm 30rnd CBJ APDS Mag";
+	};
 
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_VOG25;
@@ -791,6 +794,11 @@ class CfgMagazineWells {
     class CBA_9x19_MP5 {
         mjb_mags[] = {
 			"mjb_30Rnd_65x25_MP5"
+        };
+    };
+    class CBA_9x19_ScorpionEvo3 {
+        mjb_mags[] = {
+			"mjb_30Rnd_65x25_EVO"
         };
     };
     class CBA_9x19_Vityaz {
