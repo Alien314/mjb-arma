@@ -308,6 +308,30 @@ class CfgWeapons {
 	};
   };
 
+
+  // M72A10
+  class mjb_launch_M72A10_Loaded : CUP_launch_M72A6_Loaded {
+	displayName = "M72A10 (FFE)";
+	magazines[] = {"mjb_M72A10_M"};
+	baseWeapon = "mjb_launch_M72A10";
+	ace_overpressure_angle = 30;
+	ace_overpressure_damage = 0.6;
+	ace_overpressure_range = 2;
+  };
+  class mjb_launch_M72A10 : mjb_launch_M72A10_Loaded {
+	baseWeapon = "mjb_launch_M72A10";
+	displayName = "M72A10 (FFE)";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	scope = 2;
+	scopeArsenal = 2;
+  };
+  class mjb_launch_M72A10_Used : mjb_launch_M72A10_Loaded {
+	displayName = "M72A10 (Used)";
+	baseWeapon = "mjb_launch_M72A10_used";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
+  };
+
   // yeet bino sway
   class Binocular : Default {
     swayCoef = 0.02; // default 0.34
@@ -468,4 +492,8 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 		NVG_WHITE_PRESETOLD;
 	};
 */
+};
+
+class CBA_DisposableLaunchers {
+	mjb_launch_M72A10_Loaded[] = {"mjb_launch_M72A10","mjb_launch_M72A10_Used"};
 };

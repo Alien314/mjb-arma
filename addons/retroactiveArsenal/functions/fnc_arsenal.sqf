@@ -2848,6 +2848,8 @@ private _itemWeaponLAT =
     "CUP_launch_M72A6",
     "CUP_launch_RPG26",
 
+    "mjb_launch_M72A10",
+
     //"CUP_launch_MAAWS",
     //"cup_optic_maaws_scope",
 
@@ -2861,10 +2863,12 @@ private _itemWeaponLAT =
     //Launchers in Backpack - should work with the normal class now?
 	"CUP_RPG26_M",
 	"CUP_M72A6_M",
-	"CUP_M136_M"/*,
+	"CUP_M136_M",/*
     "CUP_launch_M136_Loaded",
     "CUP_launch_M72A6_Loaded"//,
     //"CUP_launch_RPG26_Loaded"/*/
+
+    "mjb_M72A10_M"
 ];
 
 //if !(isClass (configFile >> "CfgWeapons" >> "rhs_weap_rpg7")) then {};

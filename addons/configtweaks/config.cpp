@@ -1,9 +1,9 @@
 class CfgPatches {
   class ConfigTweaks {
     ammo[] = {"mjb_338_NM_trc_gr","mjb_338_NM_trc_ylw","mjb_93x64_trc_gr","mjb_93x64_trc_ylw","mjb_580x42_Ball_trc_red","mjb_65x25_CBJ"};
-    magazines[] = {"mjb_150Rnd_93x64_Mag_tracer","mjb_150Rnd_93x64_Mag_trc_red","mjb_150Rnd_93x64_Mag_trc_ylw", "mjb_130Rnd_338_Mag_tracer","mjb_130Rnd_338_Mag_trc_gr","mjb_130Rnd_338_Mag_trc_ylw","mjb_13Rnd_65x25_Browning_HP","mjb_15Rnd_65x25_M9","mjb_16Rnd_65x25_cz75","mjb_17Rnd_65x25_M17","mjb_17Rnd_65x25_glock17","mjb_30Rnd_65x25_Vityaz","mjb_30Rnd_65x25_MP5","mjb_150Rnd_93x64_Mag_trc_rbw_full","mjb_30Rnd_580x42_Mag_Tracer_Red","mjb_100Rnd_580x42_Mag_Tracer_Red","mjb_100Rnd_580x42_hex_Mag_Tracer_Red","mjb_100Rnd_580x42_ghex_Mag_Tracer_Red"/*, "CUP_64Rnd_9x18_Bizon_M","CUP_64Rnd_Green_Tracer_9x18_Bizon_M","CUP_64Rnd_Red_Tracer_9x18_Bizon_M","CUP_64Rnd_White_Tracer_9x18_Bizon_M","CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M"*/};
+    magazines[] = {"mjb_150Rnd_93x64_Mag_tracer","mjb_150Rnd_93x64_Mag_trc_red","mjb_150Rnd_93x64_Mag_trc_ylw", "mjb_130Rnd_338_Mag_tracer","mjb_130Rnd_338_Mag_trc_gr","mjb_130Rnd_338_Mag_trc_ylw","mjb_13Rnd_65x25_Browning_HP","mjb_15Rnd_65x25_M9","mjb_16Rnd_65x25_cz75","mjb_17Rnd_65x25_M17","mjb_17Rnd_65x25_glock17","mjb_30Rnd_65x25_Vityaz","mjb_30Rnd_65x25_MP5","mjb_150Rnd_93x64_Mag_trc_rbw_full","mjb_30Rnd_580x42_Mag_Tracer_Red","mjb_100Rnd_580x42_Mag_Tracer_Red","mjb_100Rnd_580x42_hex_Mag_Tracer_Red","mjb_100Rnd_580x42_ghex_Mag_Tracer_Red","mjb_M72A10_M"/*, "CUP_64Rnd_9x18_Bizon_M","CUP_64Rnd_Green_Tracer_9x18_Bizon_M","CUP_64Rnd_Red_Tracer_9x18_Bizon_M","CUP_64Rnd_White_Tracer_9x18_Bizon_M","CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M"*/};
     units[] = {"Box_Rats_Ammo","mjb_O_customSoldier","mjb_O_customSoldier_mg"}; //
-    weapons[] = {"CUP_NVG_GPNVG_tan_WP","CUP_NVG_GPNVG_black_WP","CUP_NVG_GPNVG_winter_WP"};
+    weapons[] = {"mjb_launch_M72A10_Loaded","mjb_launch_M72A10","mjb_launch_M72A10_Used"};
     requiredVersion = 0.1;
     author = "SuperJam, Camelith, Alien314";
     name = "Config Tweaks";

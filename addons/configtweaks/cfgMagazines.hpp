@@ -574,6 +574,14 @@ class CfgMagazines
 	class CUP_RSHG2_M : CA_LauncherMagazine {
 		mass = 0;
 	};
+
+	// M72A10
+	class mjb_M72A10_M : CUP_M72A6_M {
+		ammo = "mjb_R_M72A10_MP";
+		descriptionshort = "Range: 0 - 200 m<br/>Type: Anti-Structure/Frag<br/>Used in: M72A10";
+		displayname = "M72A10 (Anti-Structure/Frag) Rocket";
+		displaynameshort = "HEDP";
+	};
 	
 	/*/ Bizon class name fix, magwell at bottom
 	class CUP_64Rnd_9x18_Bizon_M : CUP_64Rnd_9x19_Bizon_M
