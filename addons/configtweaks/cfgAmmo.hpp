@@ -46,6 +46,12 @@ class CfgAmmo
 		timeToLive = 30;
 	};
 
+	// fix missing penetrator
+	class G_40mm_HE;
+	class G_40mm_HEDP : G_40mm_HE {
+		submunitionAmmo = "ammo_Penetrator_grenade_40mm";
+	};
+
 // impact smonk
 	class G_40mm_Smoke;
 	class mjb_g_smonkWhite : G_40mm_Smoke {
@@ -141,17 +147,17 @@ class CfgAmmo
 	
 	class R_MRAAWS_HEAT_F : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
-		//airLock = 1;
+		airLock = 1;
 		cost = 70;
 	};
 	class R_MRAAWS_HEAT55_F : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
-		//airLock = 1;
+		airLock = 1;
 		cost = 50;
 	};
 	class R_MRAAWS_HE_F : R_MRAAWS_HEAT_F {
 		aiAmmoUsageFlags = "64 + 128 + 256";
-		//airLock = 1;
+		airLock = 1;
 		allowAgainstInfantry = 1;
 		cost = 50;
 	};
@@ -246,7 +252,8 @@ class CfgAmmo
 		cost = 30;
 	};
 	class CUP_R_RSHG2_HE : RocketBase {
-		indirecthit = 30;
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		indirecthit = 15;
 		airLock = 1;
 		cost = 25;
 	};
@@ -274,6 +281,22 @@ class CfgAmmo
 		aiAmmoUsageFlags = "64 + 128";
 		airLock = 1;
 		cost = 50;
+	};
+
+
+	class mjb_R_M72A10_MP : CUP_R_M72A6_AT {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
+		cost = 30;
+		CraterEffects = "GrenadeCrater";
+		//explosionEffects = "GrenadeExplosion";
+		explosive = 1;
+		fuseDistance = 15;
+		hit = 140;
+		indirectHit = 30;
+		indirectHitRange = 4;
+		submunitionAmmo = "ammo_Penetrator_grenade_40mm";
+		warheadName = "HEDP";
 	};
 	
 	
