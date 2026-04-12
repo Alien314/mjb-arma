@@ -3907,6 +3907,3 @@ private _action =
 
 if !(isNil "tmf_safestart_instance" && {time < 5}) exitWith {};
 [player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;
-
-if !(isNil "tmf_safestart_instance" && {time < 5}) exitWith {};
-[player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;
