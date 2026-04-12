@@ -11,6 +11,7 @@ class CfgPatches {
 		{
 			"TMF_zeus"
 		};
+		skipWhenMissingDependencies = 1;
 	};
 };
 
