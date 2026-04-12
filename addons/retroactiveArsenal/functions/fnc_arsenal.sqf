@@ -85,7 +85,7 @@
 
     ex.: [true, nil, true, ["ACRE_BF888S","tier1_exps3_0_g33_black_up"]] call mjb_arsenal_fnc_arsenal;
 */
-params [["_JIP",false,[false]],["_role","",[""]],["_removeOld",true,[false]],["_additions", [], [[]]],["_winter",true,[false]],["_tracer","",[""]]];
+params [["_JIP",false,[false]],["_role","",[""]],["_removeOld",true,[false]],["_additions", [], [[]]],["_winter",true,[false]],["_tracer","",[""]],['_enableCBRN',true,[false]]];
 
 private _sideID = ((side player) call BIS_fnc_sideID);
 private _blufor = _sideID isEqualTo 1;
@@ -137,7 +137,7 @@ arsenal = "building" createVehicleLocal [0,0,0];
 private _aceMedLoaded = !(isNil "ace_medical_engine"); //Store whether ace med is present
 
 //private _winter = false; // true to enable winter camo
-private _enableCBRN = false;
+//private _enableCBRN = false;
 
 // !!paste limit!!
 
@@ -247,14 +247,6 @@ private _itemEquipment =
     "JCA_V_CarrierRigKBT_01_CQB_black_F",
     "JCA_V_CarrierRigKBT_01_CQB_olive_F",
     "JCA_V_CarrierRigKBT_01_CQB_sand_F",
-    "JCA_V_CarrierRigKBT_01_heavy_MTP_alpine_F",
-    "JCA_V_CarrierRigKBT_01_heavy_MTP_arid_F",
-    "JCA_V_CarrierRigKBT_01_heavy_MTP_desert_F",
-    "JCA_V_CarrierRigKBT_01_heavy_MTP_tropic_F",
-    "JCA_V_CarrierRigKBT_01_heavy_MTP_woodland_F",
-    "JCA_V_CarrierRigKBT_01_heavy_black_F",
-    "JCA_V_CarrierRigKBT_01_heavy_olive_F",
-    "JCA_V_CarrierRigKBT_01_heavy_sand_F",
 	"JCA_V_CarrierRigKBT_01_compact_MTP_alpine_F",
 	"JCA_V_CarrierRigKBT_01_compact_MTP_arid_F",
 	"JCA_V_CarrierRigKBT_01_compact_MTP_desert_F",
@@ -270,15 +262,7 @@ private _itemEquipment =
 	"JCA_V_CarrierRigKBT_01_crew_MTP_woodland_F",
 	"JCA_V_CarrierRigKBT_01_crew_black_F",
 	"JCA_V_CarrierRigKBT_01_crew_olive_F",
-	"JCA_V_CarrierRigKBT_01_crew_sand_F",	
-	"JCA_V_CarrierRigKBT_01_light_MTP_alpine_F",
-	"JCA_V_CarrierRigKBT_01_light_MTP_arid_F",
-	"JCA_V_CarrierRigKBT_01_light_MTP_desert_F",
-	"JCA_V_CarrierRigKBT_01_light_MTP_tropic_F",
-	"JCA_V_CarrierRigKBT_01_light_MTP_woodland_F",
-	"JCA_V_CarrierRigKBT_01_light_black_F",
-	"JCA_V_CarrierRigKBT_01_light_olive_F",
-	"JCA_V_CarrierRigKBT_01_light_sand_F",
+	"JCA_V_CarrierRigKBT_01_crew_sand_F",
 	"JCA_V_CarrierRigKBT_01_recon_MTP_alpine_F",
 	"JCA_V_CarrierRigKBT_01_recon_MTP_arid_F",
 	"JCA_V_CarrierRigKBT_01_recon_MTP_desert_F",
@@ -1520,6 +1504,40 @@ private _itemWeaponRifle =
     "CUP_arifle_Sa58RIS2",
     "CUP_arifle_Sa58RIS2_camo",
     "CUP_arifle_Sa58RIS2_woodland",
+
+    "rhs_weap_akmn",
+    "rhs_weap_ak103",
+    "rhs_weap_ak103_zenitco01",
+    "rhs_weap_pm63",
+    "rhs_weap_m70ab2",
+
+    //============================================================
+    //7.62x51mm
+    //============================================================
+	"CUP_arifle_Mk17_CQC",
+    "CUP_arifle_Mk17_CQC_AFG",
+    "CUP_arifle_Mk17_CQC_FG",
+    "CUP_arifle_Mk17_CQC_Black",
+    "CUP_arifle_Mk17_CQC_AFG_black",
+    "CUP_arifle_Mk17_CQC_FG_black",
+    "CUP_arifle_Mk17_CQC_woodland",
+    "CUP_arifle_Mk17_CQC_AFG_woodland",
+    "CUP_arifle_Mk17_CQC_FG_woodland",
+
+	"CUP_arifle_Galil_black",
+    
+    "CUP_arifle_G3A3_ris",
+    "CUP_arifle_G3A3_ris_vfg",
+    "CUP_arifle_G3A3_modern_ris",
+    "CUP_arifle_G3A3_ris_black",
+    "CUP_arifle_G3A3_ris_vfg_black",
+    "CUP_arifle_G3A3_modern_ris_black",
+    
+    "CUP_srifle_M14",
+
+    "rhs_weap_mk17_CQC",
+    "rhs_weap_l1a1_wood",
+    "CUP_arifle_DSA_SA58_OSW_VFG",
     "CUP_arifle_FNFAL5060",
     "CUP_arifle_FNFAL5060_desert",
     "CUP_arifle_FNFAL5060_sand",
@@ -1540,38 +1558,6 @@ private _itemWeaponRifle =
     "CUP_arifle_FNFAL5061_wooden_railed",
     "CUP_arifle_FNFAL_OSW",
     "CUP_arifle_FNFAL_OSW_railed",
-
-    "rhs_weap_akmn",
-    "rhs_weap_ak103",
-    "rhs_weap_ak103_zenitco01",
-    "rhs_weap_pm63",
-    "rhs_weap_m70ab2",
-
-    //============================================================
-    //7.62x51mm
-    //============================================================
-    "CUP_arifle_DSA_SA58_OSW_VFG",
-	"CUP_arifle_Mk17_CQC",
-    "CUP_arifle_Mk17_CQC_AFG",
-    "CUP_arifle_Mk17_CQC_FG",
-    "CUP_arifle_Mk17_CQC_Black",
-    "CUP_arifle_Mk17_CQC_AFG_black",
-    "CUP_arifle_Mk17_CQC_FG_black",
-    "CUP_arifle_Mk17_CQC_woodland",
-    "CUP_arifle_Mk17_CQC_AFG_woodland",
-    "CUP_arifle_Mk17_CQC_FG_woodland",
-    
-    "CUP_arifle_G3A3_ris",
-    "CUP_arifle_G3A3_ris_vfg",
-    "CUP_arifle_G3A3_modern_ris",
-    "CUP_arifle_G3A3_ris_black",
-    "CUP_arifle_G3A3_ris_vfg_black",
-    "CUP_arifle_G3A3_modern_ris_black",
-    
-    "CUP_srifle_M14",
-
-    "rhs_weap_mk17_CQC",
-    "rhs_weap_l1a1_wood",
 	
 	//============================================================
 	// MCC 5.56, 5.45, 7.62x39
@@ -1944,6 +1930,11 @@ private _itemWeaponAmmo =
     //============================================================
     //5.8x42mm
     //============================================================
+    //Magazines
+	"30Rnd_580x42_Mag_F",
+
+	// loose ammo
+	"greenmag_ammo_580x42_basic_60Rnd",
 
 
     //============================================================
@@ -2024,6 +2015,9 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_556x45_Stanag_Tracer_Red",
         "CUP_30Rnd_TE1_Red_Tracer_556x45_AUG",
 
+		// 5.8x42mm
+        "mjb_30Rnd_580x42_Mag_Tracer_Red",
+
 		//============================================================
 		//5.45x39mm
 		//============================================================
@@ -2048,6 +2042,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_wdl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_bkl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_HK417",
+        "CUP_25Rnd_762x51_Red_Tracers_Galil_Mag",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR",
 	
@@ -2061,7 +2056,8 @@ if (_tracer isEqualTo 'red') then {
         "CUP_64Rnd_Red_Tracer_9x19_Bizon_M",
         "CUP_50Rnd_570x28_Red_Tracer_P90_M",
 	    "CUP_40Rnd_46x30_MP7_Red_Tracer",
-        "CUP_30Rnd_45ACP_Red_Tracer_M3A1_BLK_M"
+        "CUP_30Rnd_45ACP_Red_Tracer_M3A1_BLK_M",
+		"30Rnd_9x21_Mag_SMG_02_Tracer_Red"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -2092,7 +2088,9 @@ if (_tracer isEqualTo 'red') then {
 		//7.62x51mm
 		//============================================================
 		"CUP_30Rnd_762x51_FNFAL_M",
-		"CUP_30Rnd_TE1_Red_Tracer_762x51_FNFAL_M"
+		"CUP_30Rnd_TE1_Red_Tracer_762x51_FNFAL_M",
+		"CUP_50Rnd_762x51_B_SCAR",
+		"CUP_50Rnd_TE1_Red_Tracer_762x51_SCAR"
 
 		//============================================================
 		//7.62x54mm
@@ -2111,12 +2109,25 @@ if (_tracer isEqualTo 'red') then {
 		GREENMAG_BELT(556x45),
 
 		//============================================================
+		//5.8x42mm
+		//============================================================
+		// Magazines
+        "100Rnd_580x42_Mag_F",
+        "100Rnd_580x42_ghex_Mag_F",
+       	"100Rnd_580x42_hex_Mag_F",
+        "mjb_100_Rnd_580x42_Mag_Tracer_Red",
+        "mjb_100_Rnd_580x42_hex_Mag_Tracer_Red",
+        "mjb_100_Rnd_580x42_ghex_Mag_Tracer_Red",
+
+		//Loose ammo
+        "greenmag_ammo_580x42_basic_60Rnd",
+
+		//============================================================
 		//7.62x51mm
 		//============================================================
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
 		"CUP_120Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
-        "CUP_25Rnd_762x51_Red_Tracers_Galil_Mag",
 		//Loose belts
 		GREENMAG_BELT(762x51),
 
@@ -2161,6 +2172,9 @@ if (_tracer isEqualTo 'red') then {
         "CUP_20Rnd_556x45_Stanag_Tracer_Green",
         "CUP_30Rnd_TE1_Yellow_Tracer_556x45_AUG",
 
+		// 5.8x42mm
+        "30Rnd_580x42_Mag_Tracer_F",
+
 		//============================================================
 		//5.45x39mm
 		//============================================================
@@ -2196,7 +2210,8 @@ if (_tracer isEqualTo 'red') then {
         "CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M",
         "CUP_50Rnd_570x28_Yellow_Tracer_P90_M",
         "CUP_40Rnd_46x30_MP7_Yellow_Tracer",
-        "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M"
+        "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M",
+		"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow"
 	];
 
 	_itemWeaponHighCapAmmo =
@@ -2227,7 +2242,9 @@ if (_tracer isEqualTo 'red') then {
 		//7.62x51mm
 		//============================================================
 		"CUP_30Rnd_762x51_FNFAL_M",
-		"CUP_30Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M"
+		"CUP_30Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M",
+		"CUP_50Rnd_762x51_B_SCAR",
+		"CUP_50Rnd_TE1_Yellow_Tracer_762x51_SCAR"
 
 		//============================================================
 		//7.62x54mm
@@ -2244,6 +2261,20 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
 		//Loose belts
 		GREENMAG_BELT(556x45),
+
+		//============================================================
+		//5.8x42mm
+		//============================================================
+		// Magazines
+        "100Rnd_580x42_Mag_F",
+        "100Rnd_580x42_ghex_Mag_F",
+       	"100Rnd_580x42_hex_Mag_F",
+        "100Rnd_580x42_ghex_Mag_Tracer_F",
+        "100Rnd_580x42_hex_Mag_Tracer_F",
+        "100Rnd_580x42_Mag_Tracer_F",
+
+		//Loose ammo
+        "greenmag_ammo_580x42_basic_60Rnd",
 
 		//============================================================
 		//7.62x51mm
@@ -2338,6 +2369,7 @@ private _itemWeaponCQB =
     "CUP_64Rnd_9x19_Bizon_M",
     "50Rnd_570x28_SMG_03",
     "CUP_30Rnd_45ACP_M3A1_BLK_M",
+	"CUP_30Rnd_9x19_EVO",
 
     "rhs_mag_9x19mm_7n21_20",
     "rhs_mag_9x19mm_7n21_44",
@@ -2420,8 +2452,6 @@ private _itemWeaponAR =
     //============================================================
     //7.62x51mm
     //============================================================
-
-	"CUP_arifle_Galil_black",
 
     //"CUP_lmg_M60E4",
     //"CUP_lmg_MG3_rail",
@@ -3086,6 +3116,7 @@ private _itemSF =
     "mjb_17Rnd_65x25_glock17",
     "mjb_30Rnd_65x25_MP5",
     "mjb_30Rnd_65x25_Vityaz",
+	"mjb_30Rnd_65x25_EVO",
 
     "rhs_weap_ak74mr",
     "rhs_weap_asval_grip",
@@ -3445,7 +3476,7 @@ private _hasMarksmen = 332350 in _ownedDLCs;
 private _hasLoW = 571710 in _ownedDLCs;
 
 if (_hasApex) then {
-    _itemEquipment append [
+    {_x append [
         "U_B_CTRG_Soldier_Arid_F",
         "U_B_CTRG_Soldier_2_Arid_F",
         "U_B_CTRG_Soldier_F",
@@ -3462,7 +3493,7 @@ if (_hasApex) then {
         "H_HelmetB_TI_tna_F",
         "H_HelmetB_TI_arid_F",
         "U_I_C_Soldier_Camo_F"
-    ];
+    ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
         "arifle_CTAR_blk_F",
@@ -3471,27 +3502,6 @@ if (_hasApex) then {
         "arifle_MX_khk_F",
 	    "arifle_MXC_khk_F",
 	    "arifle_MXM_khk_F"
-    ];
-
-    _itemWeaponAmmo append [
-        //magazine
-        "30Rnd_580x42_Mag_F",
-        "30Rnd_580x42_Mag_Tracer_F",
-       	"100Rnd_580x42_hex_Mag_F",
-        "100Rnd_580x42_ghex_Mag_Tracer_F",
-        "100Rnd_580x42_hex_Mag_Tracer_F",
-        "100Rnd_580x42_Mag_Tracer_F",
-
-        // loose ammo
-        "greenmag_ammo_580x42_basic_60Rnd"
-    ]
-
-    _itemWeaponARAmmo append [
-        "100Rnd_580x42_Mag_F",
-        "100Rnd_580x42_ghex_Mag_F",
-
-        // loose ammo
-        "greenmag_ammo_580x42_basic_60Rnd"	
     ];
 
     _itemWeaponGL append [
@@ -3538,14 +3548,30 @@ if !(_hasLoW) then {
 };
 
 if (_hasContact) then {
-    _itemUniforms append [
+    {_x append [
         "U_I_E_Uniform_01_officer_F",
         "U_I_E_Uniform_01_F",
         "U_I_E_Uniform_01_shortsleeve_F",
         "U_I_E_Uniform_01_tanktop_F",
         "U_I_L_Uniform_01_deserter_F",
-        "U_I_L_Uniform_01_camo_F"
-    ];
+        "U_I_L_Uniform_01_camo_F",
+		"JCA_V_CarrierRigKBT_01_heavy_MTP_alpine_F",
+		"JCA_V_CarrierRigKBT_01_heavy_MTP_arid_F",
+		"JCA_V_CarrierRigKBT_01_heavy_MTP_desert_F",
+		"JCA_V_CarrierRigKBT_01_heavy_MTP_tropic_F",
+		"JCA_V_CarrierRigKBT_01_heavy_MTP_woodland_F",
+		"JCA_V_CarrierRigKBT_01_heavy_black_F",
+		"JCA_V_CarrierRigKBT_01_heavy_olive_F",
+		"JCA_V_CarrierRigKBT_01_heavy_sand_F",
+		"JCA_V_CarrierRigKBT_01_light_MTP_alpine_F",
+		"JCA_V_CarrierRigKBT_01_light_MTP_arid_F",
+		"JCA_V_CarrierRigKBT_01_light_MTP_desert_F",
+		"JCA_V_CarrierRigKBT_01_light_MTP_tropic_F",
+		"JCA_V_CarrierRigKBT_01_light_MTP_woodland_F",
+		"JCA_V_CarrierRigKBT_01_light_black_F",
+		"JCA_V_CarrierRigKBT_01_light_olive_F",
+		"JCA_V_CarrierRigKBT_01_light_sand_F"
+    ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
         "srifle_DMR_06_hunter_F",
