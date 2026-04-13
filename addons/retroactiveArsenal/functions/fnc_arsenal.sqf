@@ -1439,10 +1439,7 @@ private _itemWeaponRifle =
     "CUP_arifle_CZ805_A2",
     "CUP_arifle_CZ805_A2_blk",
     "CUP_arifle_CZ805_A2_coyote",
-    "CUP_CZ_BREN2_762_14",
-    "CUP_CZ_BREN2_762_14_Grn",
-    "CUP_CZ_BREN2_762_14_Tan",
-
+    
     "CUP_arifle_HK416_Black",
 	"CUP_arifle_HK416_Desert",
 	"CUP_arifle_HK416_Wood",
@@ -1531,8 +1528,6 @@ private _itemWeaponRifle =
     "CUP_arifle_Mk17_CQC_woodland",
     "CUP_arifle_Mk17_CQC_AFG_woodland",
     "CUP_arifle_Mk17_CQC_FG_woodland",
-
-	"CUP_arifle_Galil_black",
     
     "CUP_arifle_G3A3_ris",
     "CUP_arifle_G3A3_ris_vfg",
@@ -1847,14 +1842,6 @@ private _itemWeaponCarbine =
 	"CUP_arifle_HK416_CQB_Wood",
     "rhs_weap_hk416d10",
 
-    "CUP_CZ_BREN2_762_8",
-    "CUP_CZ_BREN2_762_8_Grn",
-    "CUP_CZ_BREN2_762_8_Tan",
-
-    "CUP_CZ_BREN2_762_8",
-    "CUP_CZ_BREN2_762_8_Grn",
-    "CUP_CZ_BREN2_762_8_Tan",
-
     "Tier1_HK416D10_CTR",
 
     "CUP_arifle_XM8_Compact_Rail",
@@ -1969,7 +1956,6 @@ private _itemWeaponAmmo =
 	"CUP_20Rnd_762x51_B_SCAR_bkl",
     "CUP_20Rnd_762x51_HK417",
     "CUP_20Rnd_762x51_G3",
-    "CUP_25Rnd_762x51_Galil_Mag",
     "CUP_20Rnd_762x51_DMR",
 
     //Loose ammo
@@ -2050,7 +2036,6 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_wdl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_bkl",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_HK417",
-        "CUP_25Rnd_762x51_Red_Tracers_Galil_Mag",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR",
 	
@@ -2105,6 +2090,12 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 	];
 
+    _itemWeaponSharpshooter = [
+        //7.62x51mm
+        "CUP_20Rnd_TE1_Red_Tracer_762x51_M110",
+        "ace_10rnd_762x54_tracer_mag"
+    ];
+
 	_itemWeaponARAmmo =
 	[
 		//============================================================
@@ -2113,6 +2104,13 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_200Rnd_TE4_Red_Tracer_556x45_M249",
 		"CUP_100Rnd_TE4_Red_Tracer_556x45_M249",
+
+        //Magazines
+        "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag",
+        "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo",
+        "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex",
+        "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl",
+
 		//Loose belts
 		GREENMAG_BELT(556x45),
 
@@ -2204,7 +2202,6 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417",
-        "CUP_25Rnd_762x51_Green_Tracers_Galil_Mag",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",
 
@@ -2259,6 +2256,11 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 	];
 
+    _itemWeaponSharpshooter = [
+        //7.62x51mm
+        "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110"
+    ];
+
 	_itemWeaponARAmmo =
 	[
 		//============================================================
@@ -2267,7 +2269,14 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249",
 		"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
-		//Loose belts
+		
+        //Magazines
+        "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag",
+        "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_camo",
+        "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex",
+        "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl",
+
+        //Loose belts
 		GREENMAG_BELT(556x45),
 
 		//============================================================
@@ -2415,11 +2424,11 @@ private _itemWeaponAR =
     //============================================================
     //5.56x45mm
     //============================================================
-    "CUP_lmg_L110A1",
-    "CUP_lmg_minimi_railed",
+
+    //5.56 mag fed
     "CUP_arifle_L86A2",
+
     "CUP_arifle_Galil_556_black",
-    "CUP_lmg_UK59",
 
     "CUP_arifle_XM8_SAW_FG_Rail",
     "CUP_arifle_XM8_SAW_FG_Rail_Green",
@@ -2431,13 +2440,23 @@ private _itemWeaponAR =
     "CUP_arifle_HK_M27",
     "CUP_arifle_HK_M27_VFG",
 
+    "rhs_weap_m27iar",
+    "rhs_weap_m27iar_grip",
+
+    //5.56 belt fed
+    "CUP_lmg_L110A1",
+    "CUP_lmg_minimi_railed",
+    "CUP_lmg_m249_SQuantoon",
+    "CUP_lmg_m249_pip1",
+    "CUP_lmg_m249_pip3",
+    "CUP_lmg_m249_pip4",
+    "CUP_lmg_m249_pip2",
+    "CUP_lmg_m249_para",
 
     "rhs_weap_m249_pip_ris",
     "rhs_weap_m249_pip_L_para",
     "rhs_weap_m249_light_S",
     "rhs_weap_m249_pip_S_para",
-    "rhs_weap_m27iar",
-    "rhs_weap_m27iar_grip",
 
     "Tier1_MK46_Mod0",
     "Tier1_MK46_Mod1_Savit",
@@ -2460,7 +2479,7 @@ private _itemWeaponAR =
     //============================================================
     //7.62x51mm
     //============================================================
-
+    "CUP_lmg_UK59",
     //"CUP_lmg_M60E4",
     //"CUP_lmg_MG3_rail",
 
@@ -2507,9 +2526,29 @@ private _itemWeaponSharpshooter =
     //Weapons
     //============================================================
     //7.62x51mm
+    "srifle_DMR_01_F",
+
+    "CUP_srifle_L129A1",
+    "CUP_srifle_L129A1_ctrg",
+    "CUP_srifle_L129A1_ctrgt",
+    "CUP_srifle_L129A1_d",
+    "CUP_srifle_L129A1_w",
+    "CUP_srifle_L129A1_HG",
+    "CUP_srifle_L129A1_HG_ctrg",
+    "CUP_srifle_L129A1_HG_ctrgt",
+    "CUP_srifle_L129A1_HG_d",
+    "CUP_srifle_L129A1_HG_w",
+    "CUP_srifle_M110_black",
+    "CUP_srifle_M110",
+    "CUP_srifle_M110_woodland",
+    "CUP_srifle_m110_kac_black",
+    "CUP_srifle_m110_kac",
+
 	"CUP_srifle_Mk18_blk",
     "CUP_srifle_M14_DMR",
     "CUP_arifle_HK417_20",
+    "CUP_arifle_HK417_20_Desert",
+    "CUP_arifle_HK417_20_Wood",
 
     "rhs_weap_m14ebrri",
     "rhs_weap_sr25",
@@ -2537,11 +2576,13 @@ private _itemWeaponSharpshooter =
     "ace_20rnd_762x51_m118lr_mag",
     "ace_20rnd_762x51_mag_tracer",
     "CUP_20Rnd_762x51_DMR",
+    "CUP_20Rnd_762x51_B_M110",
+    "CUP_20Rnd_762x51_L129_M",
 
     "rhsusf_20Rnd_762x51_SR25_m993_Mag",
 
     //7.62x54mmR
-    "ace_10rnd_762x54_tracer_mag",
+    "10Rnd_762x54_Mag",
 	"CUP_10Rnd_762x54_SVD_M",
 
     "rhs_10Rnd_762x54mmR_7N14"
@@ -2691,7 +2732,8 @@ private _itemWeaponGL =
 	//5.56x45mm
     "arifle_Mk20_GL_plain_F",
     "arifle_TRG21_GL_F",
-
+    
+    "CUP_arifle_L85A2_G",
     "CUP_arifle_M16A1E1GL",
 
     "CUP_arifle_ACR_EGLM_blk_556",
@@ -2702,10 +2744,7 @@ private _itemWeaponGL =
     "CUP_arifle_CZ805_GL",
     "CUP_arifle_CZ805_GL_blk",
     "CUP_arifle_CZ805_GL_coyote",
-    "CUP_CZ_BREN2_762_14_GL",
-    "CUP_CZ_BREN2_762_14_GL_Grn",
-    "CUP_CZ_BREN2_762_14_GL_Tan",
-
+    
     "CUP_arifle_M16A4_GL",
 
     "CUP_arifle_mk18_m203_black",
@@ -3511,20 +3550,15 @@ if (_hasApex) then {
         "arifle_CTAR_blk_F",
 	    "arifle_CTAR_ghex_F",
 	    "arifle_CTAR_hex_F",
-        "arifle_MX_khk_F",
-	    "arifle_MXC_khk_F",
-	    "arifle_MXM_khk_F"
     ];
 
     _itemWeaponGL append [
-        "arifle_MX_GL_khk_F",
      	"arifle_CTAR_GL_blk_F",
         "arifle_CTAR_GL_ghex_F",
         "arifle_CTAR_GL_hex_F"
     ];
 
     _itemWeaponAR append [
-        "arifle_MX_SW_khk_F",
         "arifle_CTARS_blk_F",
         "arifle_CTARS_ghex_F",
         "arifle_CTARS_hex_F"
