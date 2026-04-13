@@ -11,7 +11,12 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
         if(iEnemY_iFatigue_fatigue_enabled) then { player enableFatigue false; }; 
     };
     player allowSprint true;
-    player call diw_armor_plates_main_fnc_fillVestWithPlates;
+	private _plate = false;
+    // misspelled varname is correct
+	if !(diw_armor_plates_main_hasPlateInInvetory) then { _plate = true; diw_armor_plates_main_hasPlateInInvetory = true; };
+    private _canPlate = player call diw_armor_plates_main_fnc_canAddPlate;
+	if (_canPlate) then { player call diw_armor_plates_main_fnc_fillVestWithPlates; };
+	if (_plate) then { diw_armor_plates_main_hasPlateInInvetory = false; };
     player call diw_armor_plates_main_fnc_updatePlateUi;
     if !(diw_armor_plates_main_aceMedicalLoaded) then {
         private _maxHp = player getVariable ["diw_armor_plates_main_maxHp", diw_armor_plates_main_maxPlayerHp];
@@ -32,6 +37,17 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
 		};
 		if !(isNil "mjb_persistenceActive") then {
 			[player, mjb_deleteOnDeath, mjb_pLoadName, mjb_profOverride] call mjb_arsenal_fnc_initPersistentLoadout;
+		};
+
+		if (tsp_cba_animate_sling) then {
+			{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings;
+			player addEventHandler ["Respawn", {{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings}];
+			player addEventhandler ["Take", {[player] call tsp_fnc_animate_sling}];
+			player addEventhandler ["Put", {[player] call tsp_fnc_animate_sling}];
+		};
+
+		if (tsp_cba_breach) then {
+			player addEventHandler ["FiredMan", {params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo"]; [_unit, _ammo] spawn tsp_fnc_breach_gun}];
 		};
     };
 }] remoteExec ["call", _player];

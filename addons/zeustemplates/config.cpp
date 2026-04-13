@@ -39,14 +39,23 @@ class CfgMissions {
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.VR";
 			overviewText = "Combined Arms Zeus template for RATS.";
 		};
+		class mjb_rzt_vr1 {
+			author = "NotherDuck, MajorDanvers, MomentaryTemporary";
+			briefingName = "RATS Zeus Template Virtual Reality v2,4";
+			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,4_600.VR";
+			overview = "z\mjb\addons\zeustemplates\overview.paa";
+			overviewText = "Zeus template for RATS.";
+		};
 
 		#define VARC(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.##EXT
 		#define VARD(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.##EXT
+		#define VARE(EXT) z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,4_600.##EXT
 		#define QUOTE(var1) #var1
 		#define COMMA , // does this work? Rosche, Germany
 		#define COMMAVAR(var1,var2) var1##COMMA var2
 		#define VARA(NAME) RATS Zeus Template NAME v2##COMMA##2
 		#define VARB(NAME) RATS Zeus Combined Arms NAME v2##COMMA##2
+		#define VARF(NAME) RATS Zeus Template NAME v2##COMMA##4
 		#define MISH(EXT,NAME) \
 		class mjb_rzt_##EXT##2 : mjb_rzt_vr2 { \
 			briefingName = QUOTE(VARA(NAME)); \
@@ -55,7 +64,11 @@ class CfgMissions {
 		class mjb_rzt_##EXT##2_CA : mjb_rzt_vr2_CA { \
 			briefingName = QUOTE(VARB(NAME)); \
 			directory = QUOTE(VARC(EXT)); \
-		}
+		} \
+		class mjb_rzt_##EXT##1 : mjb_rzt_vr1 { \
+			briefingName = QUOTE(VARF(NAME)); \
+			directory = QUOTE(VARE(EXT)); \
+		};
 
         // islands
 		MISH(Altis,Altis);
@@ -65,8 +78,8 @@ class CfgMissions {
 		//class mjb_rzt_Altis2_CA : mjb_rzt_vr2_CA {
 		//	directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_402.Altis";
 		//};
-		MISH(atolls_gdc,Atolls GDC);
 		MISH(intro,Rahmadi);
+		MISH(IslaPera,Isla Pera);
 		MISH(Malden,Malden);
 		MISH(Porto,Porto);
 		MISH(pulau,Pulau);
@@ -74,49 +87,58 @@ class CfgMissions {
 		MISH(saralite,Southern Sahrani);
 		MISH(Stratis,Stratis);
 		MISH(Tanoa,Tanoa);
+		MISH(Tembelan,Tembelan Island);
 		MISH(utes,Utes);
 
-		MISH(IslaPera,IslaPera);
+		MISH(sara_dbe1,United Sahrani);
+
+		MISH(atolls_gdc,Atolls GDC); // yote
 
         // coastal
+		MISH(pja310,G.O.S. Al Rayak);
 		MISH(chernarus,Chernarus (Autumn));
-		MISH(chernarus_summer,Chernarus (Summer));
-		MISH(chernarus_winter,Chernarus (Winter));
-		MISH(cup_chernarus_A3,Chernarus 2020);
+		MISH(Farabad,Farabad);
+		MISH(go_map_fjord,Fjord);
 		MISH(Maksniemi,Maksniemi);
 		MISH(oski_corran,Scottish Highlands);
 		MISH(tem_vinjesvingenc,Vinjesvingen);
-		MISH(Farabad,Farabad);
-		MISH(go_map_fjord,Fjord);
+
+		MISH(chernarus_summer,Chernarus (Summer));
+		MISH(chernarus_winter,Chernarus (Winter));
+
+		MISH(cup_chernarus_A3,Chernarus 2020);
 
         //landlocked
+		MISH(tem_anizay,Anizay);
 		MISH(Bootcamp_ACR,Bukovina);
+		MISH(Woodland_ACR,Bystrica);
 		MISH(Desert_E,Desert);
-		MISH(Enoch,Livonia);
+		MISH(DYA,Diyala Iraq);
+		MISH(fallujah,Fallujah 2.0);
+		MISH(pja308,G.O.S. Gunkizli);
 		MISH(hellanmaa,Hellanmaa);
-		MISH(hellanmaaw,Hellanmaa Winter);
-		MISH(Mountains_ACR,Takistan Mountains);
+		MISH(tem_kujari,Kujari);
+		MISH(kunduz_valley,Kunduz River);
+		MISH(Enoch,Livonia);
+		MISH(VTF_Lybor,Lybor);
+		MISH(swu_public_novogorsk_map,Novogorsk);
 		MISH(ProvingGrounds_PMC,Proving Grounds);
 		MISH(rhspkl,Prei Khmaoch Luong);
+		MISH(WL_Rosche,COMMAVAR(Rosche,Germany));
 		MISH(ruha,Ruha);
 		MISH(Shapur_BAF,Shapur);
 		MISH(takistan,Takistan);
-		MISH(tem_anizay,Anizay);
-		MISH(tem_kujari,Kujari);
+		MISH(Mountains_ACR,Takistan Mountains);
+		MISH(brf_sumava,Sumava);
 		MISH(tem_summa,Summa);
-		MISH(tem_summawcup,Summa Winter);
-		MISH(WL_Rosche,COMMAVAR(Rosche,Germany));
-		MISH(Woodland_ACR,Bystrica);
 		MISH(zargabad,Zargabad);
+
+		MISH(hellanmaaw,Hellanmaa Winter);
+		MISH(VTF_Lybor_Winter,Lybor (Winter));
+		MISH(tem_summawcup,Summa Winter);
 		MISH(cup_Zargabad_a3,Zargabad 2025);
 
-		MISH(DYA,Diyala Iraq);
-		MISH(fallujah,Fallujah 2.0);
-		MISH(pja310,G.O.S. Al Rayak);
-		MISH(pja308,G.O.S. Gunkizli);
-		MISH(pja319,G.O.S. N'Djenahoud);
-		MISH(kunduz_valley,Kunduz River);
-		MISH(brf_sumava,Sumava);
+		MISH(pja319,G.O.S. N'Djenahoud); //' not in yet
 
 		//old
 		class mjb_rzt_Altis : mjb_rzt_vr2 {

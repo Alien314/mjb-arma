@@ -108,14 +108,14 @@ class basetrooper
 		"V_PlateCarrier2_blk"
 	};
 	backpack[] = {
-		"B_Kitbag_rgr"
+		"B_AssaultPack_rgr"
 	};
 	headgear[] = {
 		"H_HelmetSpecB_blk"
 	};
 	goggles[] = {};
 	hmd[] = {
-		"CUP_NVG_GPNVG_black"
+		"CUP_NVG_GPNVG_green_WP"
 	};
 
 	//All Randomized. Add Primary Weapon and attachments.
@@ -148,10 +148,11 @@ class basetrooper
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
 				LIST_2("ACE_splint"),
-				LIST_3("ACE_bloodIV_500"),
+				//LIST_3("ACE_bloodIV_500"),
 			#endif
 		#else
 		#endif
+		LIST_4("ACE_CableTie"),
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
 		"ACE_MapTools"
@@ -161,8 +162,12 @@ class basetrooper
 	linkedItems[] = {
 		"ItemWatch",
 		"ItemMap",
-		"ItemCompass",
-		"ItemGPS"
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroid",
+		#else
+			"ItemGPS",
+		#endif
+		"ItemCompass"
 	};
 
 	// These are put directly into the backpack.
@@ -178,11 +183,11 @@ class basetrooper
 	};
 
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
-	code = "_this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
+	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
     /* tmfSpawnFix sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
-
+// Basic RAT Rifle/JIP slot
 class r : basetrooper
 {
 	displayName = "Rifletrooper";
@@ -196,13 +201,13 @@ class r : basetrooper
 		"CUP_acc_ANPEQ_15_Flashlight_Black_L"
 	};
 	magazines[] += {
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
-		LIST_15("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] += {
-		LIST_4("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
+		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -215,7 +220,7 @@ class r : basetrooper
 				LIST_2("ACE_epinephrine"),
 				LIST_2("ACE_morphine"),
 				LIST_2("ACE_splint"),
-				LIST_2("ACE_bloodIV"),
+				//LIST_2("ACE_bloodIV"),
 			#endif
 		#else
 			LIST_3("FirstAidKit"),
@@ -226,6 +231,7 @@ class r : basetrooper
 
 };
 
+// RATS Automatic Rifle Slot
 class ar : basetrooper
 {
 	displayName = "Machinegun";
@@ -241,7 +247,7 @@ class ar : basetrooper
 	};
 	magazines[] +=
 	{
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
@@ -252,13 +258,16 @@ class ar : basetrooper
 		#else
 			LIST_2("FirstAidKit"),
 		#endif
-		LIST_2("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
+		LIST_2("greenmag_beltlinked_556x45_basic_200")
 	};
 	backpack[] = {
-		"B_Carryall_cbr"
+		"B_Kitbag_rgr"
 	};
+	// Commented out, we may want this back in the future
+	// backpack[] = {
+	//	"B_Carryall_cbr"
+	// };
 	backpackItems[] = {
-		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_3("FirstAidKit"),
@@ -267,16 +276,22 @@ class ar : basetrooper
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
-		LIST_4("greenmag_beltlinked_556x45_basic_200")
+		LIST_4("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
+		//LIST_3("greenmag_beltlinked_556x45_basic_200")
 	};
 };
 
+// RATS Rifle Ammo Bearer
 class aar : r
 {
 	displayName = "Machinegun Ammo Bearer";
 	backpack[] = {
-		"B_Carryall_cbr"
+		"B_Kitbag_rgr"
 	};
+	// Commented out, we may want this back in the future
+	// backpack[] = {
+	// 	"B_Carryall_cbr"
+	// };
 	items[] += {
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -289,7 +304,7 @@ class aar : r
 	};
 	backpackItems[] = {
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
-		LIST_3("greenmag_beltlinked_556x45_basic_200"),
+		LIST_2("greenmag_beltlinked_556x45_basic_200"),
 		LIST_2("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249")
 	};
 	linkedItems[] += {
@@ -297,9 +312,15 @@ class aar : r
 	};
 };
 
+// RATS Medium Machine Gunner
 class mmg : ar
 {
 	displayName = "MMG Gunner";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	primaryWeapon[] =
 	{
 		"CUP_lmg_Mk48"
@@ -312,7 +333,7 @@ class mmg : ar
 	};
 	magazines[] =
 	{
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		"SmokeShellRed",
 		LIST_3("greenmag_beltlinked_762x51_basic_200"),
 		"CUP_15Rnd_9x19_M9"
@@ -329,13 +350,15 @@ class mmg : ar
 		#else
 			LIST_4("FirstAidKit"),
 		#endif
-		LIST_5("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
+		LIST_4("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
+		LIST_1("greenmag_beltlinked_762x51_basic_200")
 	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
 };
 
+// RATS Medium Machine Gunner Assistant
 class ammg : aar
 {
   displayName = "Assistant MMG";
@@ -354,15 +377,12 @@ class ammg : aar
 		LIST_4("greenmag_beltlinked_762x51_basic_200"),
 		LIST_2("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
 	};
-	linkedItems[] = {
-		"ItemWatch",
-		"ItemMap",
-		"ItemCompass",
-		"ItemGPS",
+	linkedItems[] += {
 		"Rangefinder"
 	};
 };
 
+// RATS Sniper
 class sniper : basetrooper
 {
 	displayName = "Sniper";
@@ -386,22 +406,26 @@ class sniper : basetrooper
 	};
 	magazines[] = {
 		"ACE_ATragMX",
-		"greenmag_ammo_127x99_basic_60Rnd",
+		"ACE_Clacker",
+		"DemoCharge_Remote_Mag",
+		LIST_2("greenmag_ammo_127x99_basic_60Rnd"),
 		LIST_2("CUP_40Rnd_46x30_MP7"),
-		LIST_6("CUP_10Rnd_127x99_M107")
-	};
-	items[] = {
-		"greenmag_item_speedloader",
-		"ACE_RangeCard",
-		"ACE_MapTools",
+		LIST_2("ACE_10Rnd_127x99_API_Mag"),
 		"HandGrenade",
 		LIST_2("SmokeShell")
 	};
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	backpackItems[] += {
-
+		"ACE_Tripod",
+		LIST_3("ACE_10Rnd_127x99_API_Mag")
 	};
 };
 
+// RATS Spotter
 class spotter : r
 {
 	displayName = "Spotter";
@@ -417,18 +441,24 @@ class spotter : r
 	};
 };
 
+// RATS Rifle Fireteam Leader
 class tl : r
 {
 	displayName = "Team Leader";
 	primaryWeapon[] = {
-		"CUP_arifle_mk18_m203_black",
+		"CUP_arifle_mk18_m203_black"
 	};
 	attachment[] = {
 		"CUP_acc_llm_black"
 	};
 	bipod[] = {};
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	magazines[] = {
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
 		"SmokeShellRed",
 		"SmokeShellBlue",
@@ -453,6 +483,7 @@ class tl : r
 	};
 };
 
+// RATS Squad Leader
 class sl : tl
 {
 	displayName = "Squad Leader";
@@ -462,6 +493,7 @@ class sl : tl
 	};
 };
 
+// RATS Medic
 class cls : r
 {
 	displayName = "Medic";
@@ -472,7 +504,7 @@ class cls : r
 		"B_Carryall_oucamo"
 	};
 	magazines[] = {
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		"CUP_15Rnd_9x19_M9",
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -517,25 +549,34 @@ class cls : r
 	};
 };
 
+// RATS Rifle Light Anti-Tank
 class lat : r
 {
 	displayName = "Trooper (Light Anti-tank)";
 	secondaryWeapon[] = {
 		"CUP_launch_M136"
 	};
+	backpack[] = {
+		"B_Kitbag_rgr"
+	};
 	backpackItems[] =
 	{
-		LIST_4("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		LIST_1("CUP_launch_M136")
 	};
 };
 
+// RATS Medium Anti-Tank
 class mat : r
 {
 	displayName = "Antitank Trooper";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
 	secondaryWeapon[] = {
-		"launch_MRAWS_green_F"
+		"launch_MRAWS_green_rail_F"
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
@@ -554,12 +595,16 @@ class mat : r
 	};
 };
 
+// RATS Assistant Medium Anti-Tank
 class amat : r
 {
 	displayName = "Antitank ammo bearer";
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
 	backpackItems[] =
 	{
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
@@ -570,10 +615,34 @@ class amat : r
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		LIST_4("MRAWS_HEAT_F")
 	};
 };
 
+// RATS Weapons Team Leader
+class wpntl : tl {
+	displayName = "Weapons Team Leader";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_21("1Rnd_HE_Grenade_shell"),
+		LIST_2("1Rnd_Smoke_Grenade_shell"),
+		LIST_4("CUP_30Rnd_556x45_Emag_Tracer_Yellow"),
+		LIST_3("MRAWS_HEAT_F")
+	};
+};
+
+// RATS Heavy Anti-Tank
 class hat : mat
 {
 	displayName = "Heavy Antitank Trooper";
@@ -582,31 +651,6 @@ class hat : mat
 	};
 	backpack[] = {
 		"B_Bergen_mcamo_F"
-	};
-	backpackItems[] =
-	{
-		LIST_2("Titan_AT"),
-		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
-			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
-				LIST_5("FirstAidKit"),
-			#else
-			#endif
-		#else
-			LIST_5("FirstAidKit"),
-		#endif
-		"greenmag_ammo_556x45_basic_60Rnd"
-	};
-	linkedItems[] += {
-		"Rangefinder"
-	};
-};
-
-class ahat : hat
-{
-	displayName = "Heavy Antitank ammo bearer";
-	secondaryWeapon[] = {};
-	items[] += {
-		LIST_2("SmokeShell")
 	};
 	backpackItems[] =
 	{
@@ -621,19 +665,122 @@ class ahat : hat
 		#endif
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
 };
 
+// RATS Assistant Anti-Tank
+class ahat : hat
+{
+	displayName = "Heavy Antitank ammo bearer";
+	secondaryWeapon[] = {};
+	items[] += {
+		LIST_2("SmokeShell")
+	};
+};
+
+// RATS Anti-Air
+class spaa : hat
+{
+	displayName = "Specialized Antiair";
+	secondaryWeapon[] = {
+		"launch_I_Titan_F"
+	};
+	backpackItems[] =
+	{
+		LIST_3("Titan_AA"),
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_5("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_5("FirstAidKit"),
+		#endif
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+	};
+};
+
+// RATS Assistant Anti-Air
+class aspaa : spaa
+{
+	displayName = "Specialized Antiair ammo bearer";
+	secondaryWeapon[] = {};
+	items[] += {
+		LIST_2("SmokeShell")
+	};
+};
+// RATS Mortar Gunner
+class mrt : r
+{
+	displayName = "Mortar Gunner";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc"
+		#endif
+	};
+	secondaryWeapon[] = {
+		"NDS_W_M224_mortarCarry"
+	};
+	backpack[] = {
+		"mjb_carryallplus_oli"
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
+	backpackItems[] =
+	{
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_1("NDS_M_6Rnd_60mm_HE"),
+		LIST_1("NDS_M_6Rnd_60mm_SMOKE")
+	};
+};
+
+// RATS Mortar Assistant
+class amrt : r
+{
+	displayName = "Mortar Assistant";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
+	backpackItems[] =
+	{
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_1("NDS_M_6Rnd_60mm_HE"),
+		LIST_1("NDS_M_6Rnd_60mm_ILLUM")
+	};
+};
+
+// RATS Special Forces Team Leader/Squad Leader
 class sfsl : sl
 {
 	displayName = "SF Team Leader";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_teamleader"
@@ -656,8 +803,9 @@ class sfsl : sl
 	};
 	magazines[] = {
 		LIST_7("CUP_30Rnd_556x45_Emag_Tracer_Yellow"),
-		LIST_4("ACE_CTS9"),
+		LIST_4("tsp_flashbang_cts"),
 		LIST_2("HandGrenade"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		"CUP_12Rnd_45ACP_mk23"
 	};
 	backpackItems[] +={
@@ -668,11 +816,13 @@ class sfsl : sl
 	};
 };
 
+// RATS Special Forces Platoon Leader
 class sfl : sfsl
 {
 	displayName = "SF Commander";
 };
 
+// RATS Special Forces Medic
 class sfmed : cls
 {
 	displayName = "SF Medic";
@@ -681,9 +831,6 @@ class sfmed : cls
 	};
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_medic"
@@ -709,7 +856,7 @@ class sfmed : cls
 		LIST_3("greenmag_ammo_12G_basic_24Rnd"),
 		"SmokeShellBlue",
 		LIST_2("SmokeShellRed"),
-		LIST_2("ACE_CTS9"),
+		LIST_2("tsp_flashbang_cts"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
 				LIST_5("diw_armor_plates_main_autoInjector"),
@@ -754,19 +901,19 @@ class sfmed : cls
 	};
 };
 
+// RATS Special Forces AT Operator
 class sfmat : mat
 {
 	displayName = "SF Antitank trooper";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
@@ -787,9 +934,10 @@ class sfmat : mat
 		LIST_2("ACE_IR_Strobe_Item")
 	};
 	magazines[] = {
-		LIST_7("CUP_30Rnd_556x45_Emag"),
-		LIST_2("ACE_CTS9"),
+		LIST_12("CUP_30Rnd_556x45_Emag"),
+		LIST_2("tsp_flashbang_cts"),
 		LIST_2("SmokeShellBlue"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		"HandGrenade",
 		"CUP_12Rnd_45ACP_mk23"
 	};
@@ -799,6 +947,7 @@ class sfmat : mat
 	};
 };
 
+// RATS Special Forces Machine Gunner
 class sfar : ar
 {
 	displayName = "SF Machinegunner";
@@ -807,9 +956,6 @@ class sfar : ar
 	};
 	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] = {
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_machinegunner"
@@ -840,7 +986,7 @@ class sfar : ar
 	};
 	magazines[] = {
 		LIST_2("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
-		LIST_2("ACE_CTS9"),
+		LIST_2("tsp_flashbang_cts"),
 		LIST_2("SmokeShellBlue"),
 		"HandGrenade",
 		"CUP_12Rnd_45ACP_mk23"
@@ -862,18 +1008,18 @@ class sfar : ar
 	};
 };
 
+// RATS Special Forces Sharpshooter
 class sfdmr : spotter {
 	displayName = "SF Sharpshooter";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
@@ -895,18 +1041,18 @@ class sfdmr : spotter {
 	};
 };
 
+// RATS Special Forces Ammo Bearer
 class sfaar : aar {
 	displayName = "SF Ammo Bearer";
+	attachment[] += {
+		"CUP_muzzle_snds_SCAR_L"
+	};
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
-	};
-	uniform[] =
-	{
-		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
@@ -933,6 +1079,7 @@ class sfaar : aar {
 	};
 };
 
+// RATS Combat Engineer
 class ceng : basetrooper
 {
 	displayName = "Combat Engineer";
@@ -957,6 +1104,10 @@ class ceng : basetrooper
 		"CUP_muzzle_snds_mp7"
 	};
 	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc",
+		#endif
+		"ACE_DefusalKit",
 		"ACE_Clacker"
 	};
 	magazines[] = {
@@ -981,18 +1132,41 @@ class ceng : basetrooper
 		#endif
 		"greenmag_ammo_46x30_basic_60Rnd",
 		"ACE_Wirecutter",
+		"ToolKit",
+		LIST_2("ACE_UAVBattery"),
+		"MineDetector",
 		LIST_2("APERSTripMine_Wire_Mag"),
 		LIST_2("DemoCharge_Remote_Mag"),
-		LIST_2("ClaymoreDirectionalMine_Remote_Mag"),
-		"ACE_FlareTripMine_Mag",
-		"ATMine_Range_Mag",
-		"SLAMDirectionalMine_Wire_Mag"
+		LIST_2("SLAMDirectionalMine_Wire_Mag")
 	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
 };
 
+// RATS Intelligence, Surveillance, and Reconnaissance Operator. AKA Drone Operator
+class isr : r {
+	displayName = "Intel Surveillance Recon Specialist";
+	items[] += {
+		#if __has_include("\ctab\script_component.hpp")
+			"ItemAndroidMisc",
+			"ItemcTabMisc",
+		#endif
+	};
+	linkedItems[] = {
+		"ItemWatch",
+		"ItemMap",
+		"ItemCompass"
+	};
+	backpackItems[] =
+	{
+		LIST_5("ACE_UAVBattery")
+	};
+
+	code = "if !(local _this) exitWith {}; _this spawn mjb_arsenal_fnc_tmfSpawnFix; private _sideID = ((side _this) call BIS_fnc_sideID); private _sideTerminal = (['O_UavTerminal', 'B_UavTerminal', 'I_UavTerminal', 'C_UavTerminal', '','','','','',''] select _sideID); _this linkItem _sideTerminal;";
+};
+
+// RATS Ground Vehicle Operators
 class crew : basetrooper
 {
 	displayName = "Crew";
@@ -1019,20 +1193,22 @@ class crew : basetrooper
 		"CUP_optic_ZeissZPoint"
 	};
 	magazines[] += {
-		LIST_2("ACE_M84"),
+		LIST_2("tsp_flashbang_m84"),
 		"SmokeShellRed",
 		"CUP_15Rnd_9x19_M9",
-		LIST_12("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+		LIST_2("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] += {
 		"Toolkit",
-		LIST_3("greenmag_ammo_556x45_basic_60Rnd")
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		LIST_3("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
 };
 
+// RATS Helicopter Crew
 class helocrew : crew
 {
 	displayName = "Helo Crew";
@@ -1042,11 +1218,13 @@ class helocrew : crew
 		"Tarkov_Uniforms_262",
 		"Tarkov_Uniforms_499"
 	};
-	backpack[] = {
-        "B_AssaultPack_rgr"
-    };
+	//backpack[] = {
+    //    "B_AssaultPack_rgr"
+    //};
 	backpackItems[] = {
-		"Toolkit"
+		"Toolkit",
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
+		LIST_3("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
     };
 	headgear[] = {
 		"H_PilotHelmetHeli_B"
@@ -1057,6 +1235,7 @@ class helocrew : crew
 	};
 };
 
+// RATS Fixed-Wing Pilots
 class aircrew : basetrooper
 {
 	displayName = "Aircrew";
