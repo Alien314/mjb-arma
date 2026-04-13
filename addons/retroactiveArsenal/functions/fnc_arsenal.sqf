@@ -2123,9 +2123,9 @@ if (_tracer isEqualTo 'red') then {
         "100Rnd_580x42_Mag_F",
         "100Rnd_580x42_ghex_Mag_F",
        	"100Rnd_580x42_hex_Mag_F",
-        "mjb_100_Rnd_580x42_Mag_Tracer_Red",
-        "mjb_100_Rnd_580x42_hex_Mag_Tracer_Red",
-        "mjb_100_Rnd_580x42_ghex_Mag_Tracer_Red",
+        "mjb_100Rnd_580x42_Mag_Tracer_Red",
+        "mjb_100Rnd_580x42_hex_Mag_Tracer_Red",
+        "mjb_100Rnd_580x42_ghex_Mag_Tracer_Red",
 
 		//Loose ammo
         "greenmag_ammo_580x42_basic_60Rnd",
@@ -3642,6 +3642,12 @@ if (_hasContact) then {
 
 if (!_enableCBRN) then {
     _itemFacewear = _itemFacewear - [
+		"JCA_G_AirPurifyingRespirator_03_black_clear_F",
+		"JCA_G_AirPurifyingRespirator_03_black_tinted_F",
+		"JCA_G_AirPurifyingRespirator_03_olive_clear_F",
+		"JCA_G_AirPurifyingRespirator_03_olive_tinted_F",
+		"JCA_G_AirPurifyingRespirator_03_sand_clear_F",
+		"JCA_G_AirPurifyingRespirator_03_sand_tinted_F",
 		"G_AirPurifyingRespirator_01_F",
 		"G_AirPurifyingRespirator_02_black_F",
 		"G_AirPurifyingRespirator_02_olive_F",

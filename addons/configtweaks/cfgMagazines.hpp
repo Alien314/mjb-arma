@@ -31,19 +31,19 @@ class CfgMagazines
 	};
 
 	class 100Rnd_580x42_Mag_Tracer_F;
-	class mjb_100_Rnd_580x42_Mag_Tracer_Red : 100Rnd_580x42_Mag_Tracer_F {
+	class mjb_100Rnd_580x42_Mag_Tracer_Red : 100Rnd_580x42_Mag_Tracer_F {
 		author = "Alien314";
 		ammo = "mjb_580x42_Ball_trc_red";
 		displayName = "5.8 mm 100Rnd Tracer (Red) Mag";
 	};
 	class 100Rnd_580x42_hex_Mag_Tracer_F;
-	class mjb_100_Rnd_580x42_hex_Mag_Tracer_Red : 100Rnd_580x42_hex_Mag_Tracer_F {
+	class mjb_100Rnd_580x42_hex_Mag_Tracer_Red : 100Rnd_580x42_hex_Mag_Tracer_F {
 		author = "Alien314";
 		ammo = "mjb_580x42_Ball_trc_red";
 		displayName = "5.8 mm 100Rnd Tracer (Red) Hex Mag";
 	};
 	class 100Rnd_580x42_ghex_Mag_Tracer_F;
-	class mjb_100_Rnd_580x42_ghex_Mag_Tracer_Red : 100Rnd_580x42_ghex_Mag_Tracer_F {
+	class mjb_100Rnd_580x42_ghex_Mag_Tracer_Red : 100Rnd_580x42_ghex_Mag_Tracer_F {
 		author = "Alien314";
 		ammo = "mjb_580x42_Ball_trc_red";
 		displayName = "5.8 mm 100Rnd Tracer (Red) Green Hex Mag";
