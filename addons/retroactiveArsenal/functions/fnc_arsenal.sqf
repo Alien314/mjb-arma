@@ -2092,8 +2092,7 @@ if (_tracer isEqualTo 'red') then {
 
     _itemWeaponSharpshooter = [
         //7.62x51mm
-        "CUP_20Rnd_TE1_Red_Tracer_762x51_M110",
-        "ace_10rnd_762x54_tracer_mag"
+        "CUP_20Rnd_TE1_Red_Tracer_762x51_M110"
     ];
 
 	_itemWeaponARAmmo =
@@ -2258,7 +2257,8 @@ if (_tracer isEqualTo 'red') then {
 
     _itemWeaponSharpshooter = [
         //7.62x51mm
-        "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110"
+        "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110",
+		"ace_10rnd_762x54_tracer_mag"
     ];
 
 	_itemWeaponARAmmo =
