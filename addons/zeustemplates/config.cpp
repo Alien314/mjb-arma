@@ -139,66 +139,6 @@ class CfgMissions {
 		MISH(cup_Zargabad_a3,Zargabad 2025);
 
 		MISH(pja319,G.O.S. N'Djenahoud); //' not in yet
-
-		//old
-		class mjb_rzt_Altis : mjb_rzt_vr2 {
-			briefingName = "MJB Zeus Template 2,1";
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Altis";
-		};
-		class mjb_rzt_Bootcamp_ACR : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Bootcamp_ACR";
-		};
-		class mjb_rzt_Desert_E : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Desert_E";
-		};
-		class mjb_rzt_Enoch : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Enoch";
-		};
-		class mjb_rzt_hellanmaa : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.hellanmaa";
-		};
-		class mjb_rzt_hellanmaaw : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.hellanmaaw";
-		};
-		class mjb_rzt_Mountains_ACR : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Mountains_ACR";
-		};
-		class mjb_rzt_ProvingGrounds_PMC : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.ProvingGrounds_PMC";
-		};
-		class mjb_rzt_rhspkl : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.rhspkl";
-		};
-		class mjb_rzt_ruha : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.ruha";
-		};
-		class mjb_rzt_Shapur_BAF : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Shapur_BAF";
-		};
-		class mjb_rzt_takistan : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.takistan";
-		};
-		class mjb_rzt_tem_anizay : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_anizay";
-		};
-		class mjb_rzt_tem_kujari : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_kujari";
-		};
-		class mjb_rzt_tem_summa : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_summa";
-		};
-		class mjb_rzt_tem_summawcup : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.tem_summawcup";
-		};
-		class mjb_rzt_WL_Rosche : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.WL_Rosche";
-		};
-		class mjb_rzt_Woodland_ACR : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.Woodland_ACR";
-		};
-		class mjb_rzt_zargabad : mjb_rzt_Altis {
-			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,1_387.zargabad";
-		};
 	  };
 	};
 
