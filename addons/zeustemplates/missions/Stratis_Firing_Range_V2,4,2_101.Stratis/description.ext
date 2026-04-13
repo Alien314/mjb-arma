@@ -3,6 +3,13 @@ enableDebugConsole = 1; // Allows the logged in admin to use the debug console f
 enableTargetDebug = 1;
 respawnButton = 1;
 
+Class Header
+{
+	gameType = "Coop";
+	minPlayers =  1;
+	maxPlayers = 101;
+};
+
 class CfgDebriefing
 {
 	class Success
