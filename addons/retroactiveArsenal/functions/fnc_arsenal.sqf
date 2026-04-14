@@ -1989,7 +1989,7 @@ private _itemWeaponAmmo =
 	"ACE_Chemlight_IR"
 ];
 
-private ['_itemWeaponTracerAmmo','_itemWeaponHighCapAmmo','_itemWeaponARAmmo'];
+private ['_itemWeaponTracerAmmo','_itemWeaponHighCapAmmo','_itemWeaponARAmmo','_itemWeaponSharpshooterAmmo'];
 //Red Tracer
 if (_tracer isEqualTo 'red') then {
 	_itemWeaponTracerAmmo =
@@ -2075,7 +2075,7 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
 		"CUP_45Rnd_Sa58_M",
 		"CUP_45Rnd_Sa58_M_TracerR",
-		"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
+		"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", // Only Green
 
 		//============================================================
 		//7.62x51mm
@@ -2090,7 +2090,7 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 	];
 
-    _itemWeaponSharpshooter = [
+    _itemWeaponSharpshooterAmmo = [
         //7.62x51mm
         "CUP_20Rnd_TE1_Red_Tracer_762x51_M110"
     ];
@@ -2141,7 +2141,7 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M",
-        "CUP_50Rnd_UK59_762x54R_Tracer",
+        "CUP_50Rnd_UK59_762x54R_Tracer", // Only Green
 
 		//Loose belts
 		GREENMAG_BELT(762x54),
@@ -2255,7 +2255,7 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 	];
 
-    _itemWeaponSharpshooter = [
+    _itemWeaponSharpshooterAmmo = [
         //7.62x51mm
         "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110",
 		"ace_10rnd_762x54_tracer_mag"
@@ -2307,6 +2307,7 @@ if (_tracer isEqualTo 'red') then {
 		//============================================================
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M",
+		"CUP_50Rnd_UK59_762x54R_Tracer",
 
 		//Loose belts
 		GREENMAG_BELT(762x54),
@@ -2587,6 +2588,7 @@ private _itemWeaponSharpshooter =
 
     "rhs_10Rnd_762x54mmR_7N14"
 ];
+_itemWeaponSharpshooter append _itemWeaponSharpshooterAmmo;
 
 private _itemWeaponSniper =
 [
@@ -3549,7 +3551,7 @@ if (_hasApex) then {
     _itemWeaponRifle append [
         "arifle_CTAR_blk_F",
 	    "arifle_CTAR_ghex_F",
-	    "arifle_CTAR_hex_F",
+	    "arifle_CTAR_hex_F"
     ];
 
     _itemWeaponGL append [
