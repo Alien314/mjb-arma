@@ -329,6 +329,7 @@ class CfgWeapons {
 	displayName = "M72A10 (Used)";
 	baseWeapon = "mjb_launch_M72A10_used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
+	mass = 17.3;
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
   };
 
