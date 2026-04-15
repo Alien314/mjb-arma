@@ -23,14 +23,20 @@ class CfgMagazines
 		displayNameShort = "Mixed/Yellow";
 	};
 
+
+	class 30Rnd_580x42_Mag_F;
+	class 100Rnd_580x42_Mag_F : 30Rnd_580x42_Mag_F {
+		mass = 45;
+	};
 	class 30Rnd_580x42_Mag_Tracer_F;
 	class mjb_30Rnd_580x42_Mag_Tracer_Red : 30Rnd_580x42_Mag_Tracer_F {
 		author = "Alien314";
 		ammo = "mjb_580x42_Ball_trc_red";
 		displayName = "5.8 mm 30Rnd Tracer (Red) Mag";
 	};
-
-	class 100Rnd_580x42_Mag_Tracer_F;
+	class 100Rnd_580x42_Mag_Tracer_F : 30Rnd_580x42_Mag_Tracer_F {
+		mass = 45;
+	};
 	class mjb_100Rnd_580x42_Mag_Tracer_Red : 100Rnd_580x42_Mag_Tracer_F {
 		author = "Alien314";
 		ammo = "mjb_580x42_Ball_trc_red";
