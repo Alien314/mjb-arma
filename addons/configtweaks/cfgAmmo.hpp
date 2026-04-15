@@ -150,7 +150,7 @@ class CfgAmmo
 		airLock = 1;
 		cost = 70;
 	};
-	class R_MRAAWS_HEAT55_F : RocketBase {
+	class R_MRAAWS_HEAT55_F : R_MRAAWS_HEAT_F {
 		aiAmmoUsageFlags = "128 + 256 + 512";
 		airLock = 1;
 		cost = 50;
