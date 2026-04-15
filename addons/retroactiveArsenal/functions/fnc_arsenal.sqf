@@ -2411,6 +2411,7 @@ private _itemWeaponCQB =
     //Loose ammo
     //============================================================
     "greenmag_ammo_46x30_basic_60Rnd",
+    "greenmag_ammo_570x28_basic_60Rnd",
     "greenmag_ammo_765x17_basic_60Rnd",
     "greenmag_ammo_9x39_ball_60Rnd",
     "greenmag_ammo_45ACP_basic_60Rnd",
