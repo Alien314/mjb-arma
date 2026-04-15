@@ -527,3 +527,12 @@ private _category = "AI";
     false,
     true
 ] call CBA_fnc_addSetting;
+
+[
+    "mjb_memeBeacon",
+    "CHECKBOX",
+    ["Enable meme beacon", "Puts beagle in a trash can."],
+    ["ZEUS WARGAME MOD", "CHEATS"],
+    false,
+    true
+] call CBA_fnc_addSetting;

@@ -11,8 +11,10 @@ if (isServer) then {
 			{
 				private _string = str _x;
 				private _obj = _x;
-				{ if (_x  in _string) exitWith {deleteVehicle _obj}; } forEach ['mag_gps','tsp_holder','map_unfolded','mag_compass','itemandroid','tablet_02_f','itemmicrodagr'];
+				{ if (_x  in _string) exitWith {deleteVehicle _obj; }; } forEach ['mag_gps','tsp_holder','map_unfolded','mag_compass','itemandroid','tablet_02_f','itemmicrodagr','prc343','prc148','prc152','sem52','bf888s','h189'];
 			} forEach _objs;
+			[_unit,['']] remoteExec ['switchGesture',_unit];
+			[_unit,['']] remoteExec ['switchMove',_unit];
 			if !( ["respawn"] call BIS_fnc_getCfgData in [0,1,"NONE","BIRD"] ) exitWith {};
 			true
 		}]);
@@ -398,6 +400,30 @@ if (isMultiplayer) then {
 	["mywife", {
 		call mjb_arsenal_fnc_mywife;
 	}, "all", []] call CBA_fnc_registerChatCommand;
+
+	if (mjb_memeBeacon && {name player in ['Beagle','Beaglerush']}) then {
+		mjb_memeLoop = 0 spawn {
+			while {true} do { sleep 30;
+				if !(mjb_memeBeacon) exitWith {deleteVehicle mjb_beagleBin};
+				if ((isNil 'mjb_beagleBin' || {isNull mjb_beagleBin}) && { !(player isKindOf 'CAManBase') || {count allPlayers < 10} }) then {continue;};//
+				missionNamespace setVariable ['mjb_beagleBin',missionNamespace getVariable ['mjb_beagleBin',objNull]];
+				if (isNull mjb_beagleBin || {attachedTo mjb_beagleBin isNotEqualTo player || {player distance2D mjb_beagleBin > 2}}) then {
+					private _bin =  createVehicleLocal ['Land_GarbageBin_01_F',[0,0,0]];
+					_bin attachTo [player,[0,-1,1]];
+					private _dir = player getRelDir _bin;
+					_bin attachTo [player,[-0.05,-0.12,-0.42],'Head',true];
+					_bin setDir _dir;
+					mjb_beagleBin = _bin;
+					player addEventHandler ["GetInMan",{ [mjb_beagleBin,true] remoteExec ['hideObjectGlobal',2]; }];
+					player addEventHandler ["GetOutMan",{ [mjb_beagleBin,false] remoteExec ['hideObjectGlobal',2]; }];
+				};
+				private _players = allPlayers select {_x isKindOf 'CAManBase'};
+				{	mjb_beagleBin disableCollisionWith vehicle _x;
+					[mjb_beagleBin,vehicle _x] remoteExec ['disableCollisionWith',_x];
+				} forEach _players;
+			};
+		};
+	};
 };
 
 if (isDedicated) exitWith {};
