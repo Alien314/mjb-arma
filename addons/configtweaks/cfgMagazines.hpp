@@ -34,7 +34,7 @@ class CfgMagazines
 		ammo = "mjb_580x42_Ball_trc_red";
 		displayName = "5.8 mm 30Rnd Tracer (Red) Mag";
 	};
-	class 100Rnd_580x42_Mag_Tracer_F : 30Rnd_580x42_Mag_Tracer_F {
+	class 100Rnd_580x42_Mag_Tracer_F : 100Rnd_580x42_Mag_F {
 		mass = 45;
 	};
 	class mjb_100Rnd_580x42_Mag_Tracer_Red : 100Rnd_580x42_Mag_Tracer_F {
