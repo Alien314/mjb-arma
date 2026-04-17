@@ -432,6 +432,8 @@ if (isDedicated) exitWith {};
 
 if !(hasInterface) exitWith {};
 
+missionNamespace setVariable ['cba_disposable_disableMagazineReplacement', mjb_cba_justLetsYouHaveInfiniteRockets];
+
 mjb_stabilizeOffsets = createHashMapFromArray [
 	["Heli_Attack_01_dynamicLoadout_base_F",[0,-1,-0.4]],
 	["Heli_Attack_01_pylons_dynamicLoadout_base_F",[0,-1,-0.4]],

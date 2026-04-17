@@ -511,6 +511,17 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_cba_justLetsYouHaveInfiniteRockets",
+    "CHECKBOX",
+    ["Prevent CBA Launcher Maxing", "Bug with loadouts where launcher 'magazines' are replaced with loaded tubes in backpacks, disregarding weight."],
+    [_title, "xExperimental"],
+    true,
+    true,
+	{},
+	true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_arsenal_projectileEvents",
     "CHECKBOX",
     ["Enable Projectile Events", "Projectile event handling, currently only setting fuel cans on fire with tracers/incendiary ammo."],
