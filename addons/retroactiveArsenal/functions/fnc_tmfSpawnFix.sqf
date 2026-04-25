@@ -26,7 +26,11 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
     };
     call babe_em_fnc_init;
 	if (player isEqualTo tmf_localrespawnedunit) then {
-		[false] call mjb_arsenal_fnc_arsenal;
+		if (missionNamespace getVariable ['mjb_arsenal_active',false]) then {
+			[false] call mjb_arsenal_fnc_arsenal;
+		} else {
+			if (!isNil 'arsenal') then { 0 = execVM 'loadouts\arsenal.sqf'; };
+		};
         player call diw_armor_plates_main_fnc_addPlayerHoldActions;
         [] call mjb_arsenal_fnc_initStuff;
         [] call mjb_perks_fnc_initStuff;

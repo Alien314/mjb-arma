@@ -135,6 +135,7 @@ arsenal = "building" createVehicleLocal [0,0,0];
 
 //Variables
 private _aceMedLoaded = !(isNil "ace_medical_engine"); //Store whether ace med is present
+missionNamespace setVariable ['mjb_arsenal_active',true];
 
 //private _winter = false; // true to enable winter camo
 //private _enableCBRN = false;
