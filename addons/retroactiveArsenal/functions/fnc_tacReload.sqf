@@ -46,11 +46,16 @@ private _aID = (_unit addAction ['Quick Reload', {
 				_closeObj  disableCollisionWith _deathBox;
 			};
 			private _pos = _unit selectionPosition "lefthand";
-			_pos set [2,((_pos select 2) - 0.2)];
+			_pos set [0,((_pos select 0) - 0.2)];
+			_pos set [1,((_pos select 1) + 0.2)];
+			_pos set [2,((_pos select 2) - 0.0)];
 			_pos = (_unit modelToWorldVisualWorld (_pos));
 			private _posT = ((ASLToATL _pos) select 2);
 			if (_posT < 0) then {_pos set [2,((_pos select 2) - (_posT - 0.05))]};
 			_deathBox setPosASL _pos;
+			private _wepDir = (_unit weaponDirection currentWeapon _unit);
+			_deathBox setVectorDir _wepDir;
+			_deathBox setVelocityModelSpace [-1 * ((_wepDir # 2) + 0.5 max 0),(2 + (_wepDir # 2)),1 + (_wepDir # 2)];
 			[_deathBox,_class,_ammo] spawn { params ['_deathBox','_class','_ammo'];
 				sleep 0.2;
 				while { velocity _deathBox params ['_i','_y','_z']; (_i min _y min _z) < -0.1 || {(_i max _y max _z) > 0.1} } do {
