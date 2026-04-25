@@ -15,8 +15,9 @@ if ( _muzzle in (mjb_tacForbiddenMuzzles) || {
 if (isNil '_oldMagazine') exitWith {
 	_unit switchGesture [gestureState _unit, 0.4];
 };
-	private _curTime = cba_missionTime;
-	_unit setVariable ['mjb_tacReloadTime',_curTime];
+
+private _curTime = cba_missionTime;
+_unit setVariable ['mjb_tacReloadTime',_curTime];
 // delay 0.15 and leave action until a tenth of reload time
 private _aID = (_unit addAction ['Quick Reload', {
 	params ['_unit','','_aID','_args'];
@@ -37,6 +38,12 @@ private _aID = (_unit addAction ['Quick Reload', {
 				_deathBox = createVehicle ["WeaponHolderSimulated_scripted",[0,0,0],[],2,"CAN_COLLIDE"];
 			} else {
 				_deathBox = createVehicleLocal ["WeaponHolderSimulated_scripted",[0,0,0],[],2,"CAN_COLLIDE"];
+			};
+			private _closeObj = cursorObject;
+			private _closeObjClass = typeOf cursorObject;
+			if (_obj in (nearestTerrainObjects [player,['TREE','SMALL TREE','BUSH','WALL'],10]) || {
+				( (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'armor')) * (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'mapSize')) ) < 2000 } ) then {
+				_closeObj  disableCollisionWith _deathBox;
 			};
 			private _pos = _unit selectionPosition "lefthand";
 			_pos set [2,((_pos select 2) - 0.2)];
