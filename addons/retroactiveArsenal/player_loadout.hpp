@@ -152,7 +152,7 @@ class basetrooper
 			#endif
 		#else
 		#endif
-		LIST_4("ACE_CableTie"),
+		"ACE_CableTie",
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
 		"ACE_MapTools"
@@ -797,8 +797,8 @@ class sfsl : sl
 		"cup_muzzle_snds_mk23",
 	};
 	items[] += {
-		LIST_3("ACE_CableTie"),
-		LIST_2("ACE_IR_Strobe_Item"),
+		"ACE_CableTie",
+		"ACE_IR_Strobe_Item",
 		"Laserbatteries"
 	};
 	magazines[] = {
@@ -930,8 +930,8 @@ class sfmat : mat
 		"cup_muzzle_snds_mk23",
 	};
 	items[] += {
-		LIST_3("ACE_CableTie"),
-		LIST_2("ACE_IR_Strobe_Item")
+		"ACE_CableTie",
+		"ACE_IR_Strobe_Item"
 	};
 	magazines[] = {
 		LIST_12("CUP_30Rnd_556x45_Emag"),
@@ -1036,8 +1036,8 @@ class sfdmr : spotter {
 		"cup_muzzle_snds_mk23",
 	};
 	items[] += {
-		LIST_3("ACE_CableTie"),
-		LIST_2("ACE_IR_Strobe_Item")
+		"ACE_CableTie",
+		"ACE_IR_Strobe_Item"
 	};
 };
 
@@ -1069,8 +1069,8 @@ class sfaar : aar {
 		"cup_muzzle_snds_mk23",
 	};
 	items[] += {
-		LIST_3("ACE_CableTie"),
-		LIST_2("ACE_IR_Strobe_Item")
+		"ACE_CableTie",
+		"ACE_IR_Strobe_Item"
 	};
 	backpackItems[] =
 	{
