@@ -36,15 +36,15 @@ class CfgVehicles {
 			class HitBody : HitBody {
 				armor = 6;
 				explosionShielding = 1.5;
-				minimalHit = 0.01;
+				minimalHit = 0.1;
 				passThrough = 1;
 				radius = 0.25;
 			};
 			class HitEngine : HitEngine {
-				armor = 0.5;
+				armor = 0.94;
 				explosionShielding = 0.2;
 				minimalHit = 0.2;
-				radius = 0.45;
+				radius = 0.35;
 			};
 			class HitFuel {
 				armor = 0.5;
