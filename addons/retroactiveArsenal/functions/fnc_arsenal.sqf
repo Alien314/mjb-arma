@@ -2875,10 +2875,10 @@ private _itemWeaponGL =
 	"mjb_1Rnd_impactSmonk",
 	"mjb_1Rnd_impactSmonkBlue",
 	"mjb_1Rnd_impactSmonkGreen",
-	//"mjb_1Rnd_impactSmonkOrange",
-	//"mjb_1Rnd_impactSmonkPurple",
+	"mjb_1Rnd_impactSmonkOrange",
+	"mjb_1Rnd_impactSmonkPurple",
 	"mjb_1Rnd_impactSmonkRed",
-	//"mjb_1Rnd_impactSmonkYellow",
+	"mjb_1Rnd_impactSmonkYellow",
 
 	"CUP_1Rnd_HEDP_M203",
 	"rhs_mag_M433_HEDP",
