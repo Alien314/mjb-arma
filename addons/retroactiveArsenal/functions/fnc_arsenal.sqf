@@ -481,6 +481,14 @@ private _itemUniforms = [
     "CUP_U_C_Tracksuit_03",
     "CUP_U_C_Tracksuit_04",
 
+    // JCA NBCD Suits
+    "JCA_U_NBCD_Suit_01_black_F",
+    "JCA_U_NBCD_Suit_01_hood_black_F",
+    "JCA_U_NBCD_Suit_01_olive_F",
+    "JCA_U_NBCD_Suit_01_hood_olive_F",
+    "JCA_U_NBCD_Suit_01_sand_F",
+    "JCA_U_NBCD_Suit_01_hood_sand_F",
+
 	// Various CUP Uniforms
 	"CUP_U_B_USMC_MCCUU_des_pads_gloves",
     "CUP_U_B_USMC_MCCUU_des_pads",
@@ -1445,6 +1453,16 @@ private _itemWeaponRifle =
 	"CUP_arifle_HK416_Desert",
 	"CUP_arifle_HK416_Wood",
     "rhs_weap_hk416d145",
+
+    "CUP_arifle_Mk17_STD_FG",
+    "CUP_arifle_Mk17_STD_FG_black",
+    "CUP_arifle_Mk17_STD_FG_woodland",
+    "CUP_arifle_Mk17_STD_AFG",
+    "CUP_arifle_Mk17_STD_AFG_black",
+    "CUP_arifle_Mk17_STD_AFG_woodland",
+    "CUP_arifle_Mk17_STD_SFG",
+    "CUP_arifle_Mk17_STD_SFG_black",
+    "CUP_arifle_Mk17_STD_SFG_woodland",
 
     "Tier1_HK416D145_MW13_CTR",
 
@@ -2532,7 +2550,10 @@ private _itemWeaponSharpshooter =
     //============================================================
     //7.62x51mm
     "srifle_DMR_01_F",
-
+    
+    "CUP_arifle_Mk20",
+    "CUP_arifle_Mk20_black",
+    "CUP_arifle_Mk20_woodland",
     "CUP_srifle_L129A1",
     "CUP_srifle_L129A1_ctrg",
     "CUP_srifle_L129A1_ctrgt",
@@ -2818,6 +2839,9 @@ private _itemWeaponGL =
     "CUP_arifle_Mk17_CQC_EGLM",
     "CUP_arifle_Mk17_CQC_EGLM_black",
     "CUP_arifle_Mk17_CQC_EGLM_woodland",
+    "CUP_arifle_Mk17_STD_EGLM",
+    "CUP_arifle_Mk17_STD_EGLM_black",
+    "CUP_arifle_Mk17_STD_EGLM_woodland",
 
     "CUP_arifle_ACR_EGLM_blk_68",
     "CUP_arifle_ACR_EGLM_snw_68",
@@ -3816,14 +3840,14 @@ switch (true) do
     };
         case (_unitRole in ["sfmed","B_recon_medic_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponRLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
     };
         case (_unitRole in ["sfmat","B_recon_LAT_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponRLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFMAT + _itemAmmoMAT + _itemPackMedium + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFMAT + _itemAmmoMAT + _itemPackMedium + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
