@@ -2108,6 +2108,7 @@ if (_tracer isEqualTo 'red') then {
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex",
+        "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_ar15",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl",
 
 		//Loose belts
@@ -2275,6 +2276,7 @@ if (_tracer isEqualTo 'red') then {
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_camo",
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex",
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl",
+        "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15",
 
         //Loose belts
 		GREENMAG_BELT(556x45),
@@ -2453,7 +2455,7 @@ private _itemWeaponAR =
     "CUP_lmg_m249_pip3",
     "CUP_lmg_m249_pip4",
     "CUP_lmg_m249_pip2",
-    "CUP_lmg_m249_para",
+    
 
     "rhs_weap_m249_pip_ris",
     "rhs_weap_m249_pip_L_para",
