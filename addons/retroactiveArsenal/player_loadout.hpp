@@ -153,6 +153,7 @@ class basetrooper
 		#else
 		#endif
 		"ACE_CableTie",
+		"ACE_IR_Strobe_Item",
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
 		"ACE_MapTools"
