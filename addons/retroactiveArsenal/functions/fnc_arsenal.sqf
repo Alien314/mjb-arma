@@ -2926,6 +2926,7 @@ private _itemWeaponLAT =
     "CUP_launch_RPG26",
 
     "mjb_launch_M72A10",
+	"CUP_launch_RShG2",
 
     //"CUP_launch_MAAWS",
     //"cup_optic_maaws_scope",
