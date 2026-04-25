@@ -9,6 +9,11 @@ class CfgMagazines
 	class CA_LauncherMagazine;
 	class 30Rnd_556x45_Stanag : CA_Magazine {};
 
+   // greenmag fix
+	class 30Rnd_556x45_Stanag_Sand : 30Rnd_556x45_Stanag {
+
+	};
+
 	// MMG Tracer magazines rounds
 	class 130Rnd_338_Mag : CA_Magazine {};
 	class mjb_130Rnd_338_Mag_trc_gr: 130Rnd_338_Mag {
