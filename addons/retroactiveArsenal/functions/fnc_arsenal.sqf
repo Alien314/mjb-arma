@@ -2425,7 +2425,11 @@ private _itemWeaponCQB =
 
     //Shotguns
     "CUP_sgun_M1014_vfg",
+	"CUP_sgun_M1014_solidstock",
+	"CUP_sgun_M1014_Entry",
+	"CUP_sgun_M1014_Entry_vfg",
     "CUP_sgun_Saiga12K",
+	"CUP_sgun_Saiga12K_top_rail",
     "CUP_sgun_SPAS12",
 
     "rhs_weap_M590_8RD",
