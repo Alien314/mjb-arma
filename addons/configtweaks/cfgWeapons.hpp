@@ -9,6 +9,7 @@ class CfgWeapons {
   class Rifle : RifleCore {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};
   class GrenadeLauncher : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};
   class Put : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};*/
+
     
   class MGunCore;
   class MGun : MGunCore {
@@ -199,6 +200,17 @@ class CfgWeapons {
 	};
   
   class Rifle_Base_F;
+
+  // CTAR/QBZ+GL rifle modes fix
+  class arifle_CTAR_base_F : Rifle_Base_F {
+	class FullAuto;
+	class Single;
+  };
+  class arifle_CTAR_GL_base_F : arifle_CTAR_base_F {
+	class FullAuto : FullAuto {};
+	class Single : Single {};
+  };
+
   // 3CB
   /* class UK3CB_PKT : rhs_weap_pkt {
     aiDispersionCoefX = 40.0;
