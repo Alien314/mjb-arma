@@ -3706,6 +3706,17 @@ if (_hasContact) then {
 };
 
 if (!_enableCBRN) then {
+
+	{_x = _x - [
+		// JCA NBCD Suits
+		"JCA_U_NBCD_Suit_01_black_F",
+		"JCA_U_NBCD_Suit_01_hood_black_F",
+		"JCA_U_NBCD_Suit_01_olive_F",
+		"JCA_U_NBCD_Suit_01_hood_olive_F",
+		"JCA_U_NBCD_Suit_01_sand_F",
+		"JCA_U_NBCD_Suit_01_hood_sand_F"
+	]} forEach [_itemUniforms,_itemTankCrew,_itemHeloCrew];
+
     _itemFacewear = _itemFacewear - [
 		"JCA_G_AirPurifyingRespirator_03_black_clear_F",
 		"JCA_G_AirPurifyingRespirator_03_black_tinted_F",
