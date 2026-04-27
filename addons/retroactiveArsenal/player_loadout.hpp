@@ -203,7 +203,7 @@ class r : basetrooper
 	};
 	magazines[] += {
 		LIST_2("tsp_flashbang_m84"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		"CUP_15Rnd_9x19_M9",
 		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
@@ -247,7 +247,7 @@ class riflerespawn : r
 	};
 	magazines[] += {
 		LIST_2("tsp_flashbang_m84"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		"CUP_15Rnd_9x19_M9",
 		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
@@ -325,7 +325,7 @@ class ar : basetrooper
 	magazines[] +=
 	{
 		LIST_2("tsp_flashbang_m84"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		"CUP_15Rnd_9x19_M9",
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -411,7 +411,7 @@ class mmg : ar
 	magazines[] =
 	{
 		LIST_2("tsp_flashbang_m84"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		LIST_3("greenmag_beltlinked_762x51_basic_200"),
 		"CUP_15Rnd_9x19_M9"
 	};
@@ -537,7 +537,7 @@ class tl : r
 	magazines[] = {
 		LIST_2("tsp_flashbang_m84"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		"SmokeShellBlue",
 		"CUP_15Rnd_9x19_M9",
 		LIST_10("CUP_30Rnd_556x45_Emag_Tracer_Yellow")
@@ -621,8 +621,8 @@ class cls : r
 			"Medikit",
 		#endif
 		LIST_1("SmokeShell"),
-		LIST_2("SmokeShellBlue"),
-		LIST_2("SmokeShellPurple")
+		LIST_2("mjb_SmokeShellLightBlue"),
+		LIST_2("mjb_SmokeShellPink")
 	};
 };
 
@@ -931,8 +931,8 @@ class sfmed : cls
 	magazines[] = {
 		LIST_5("CUP_20Rnd_B_AA12_Slug"),
 		LIST_3("greenmag_ammo_12G_basic_24Rnd"),
-		"SmokeShellBlue",
-		LIST_2("SmokeShellRed"),
+		"mjb_SmokeShellLightBlue",
+		LIST_2("mjb_SmokeShellPink"),
 		LIST_2("tsp_flashbang_cts"),
 		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
 			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
@@ -973,8 +973,8 @@ class sfmed : cls
 			"Medikit",
 		#endif
 		LIST_2("SmokeShell"),
-		LIST_2("SmokeShellBlue"),
-		LIST_1("SmokeShellPurple")
+		LIST_2("mjb_SmokeShellLightBlue"),
+		LIST_1("mjb_SmokeShellPink")
 	};
 };
 
@@ -1271,7 +1271,7 @@ class crew : basetrooper
 	};
 	magazines[] += {
 		LIST_2("tsp_flashbang_m84"),
-		"SmokeShellRed",
+		"mjb_SmokeShellLightBlue",
 		"CUP_15Rnd_9x19_M9",
 		LIST_2("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};

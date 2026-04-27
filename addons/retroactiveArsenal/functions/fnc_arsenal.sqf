@@ -2040,6 +2040,8 @@ private _itemWeaponAmmo =
     "SmokeShellRed",
     "SmokeShellPurple",
     "SmokeShellBlue",
+    "mjb_SmokeShellLightBlue",
+    "mjb_SmokeShellPink",
 
     //Make eyeballs hurt
     "tsp_flashbang_m84",
@@ -2916,6 +2918,12 @@ private _itemWeaponGL =
     "1Rnd_SmokeRed_Grenade_shell",
     "1Rnd_SmokeBlue_Grenade_shell",
     "1Rnd_SmokeGreen_Grenade_shell",
+    "1Rnd_SmokeOrange_Grenade_shell",
+    "1Rnd_SmokePurple_Grenade_shell",
+    "1Rnd_SmokeYellow_Grenade_shell",
+
+	"mjb_1Rnd_SmonkLightBlue",
+	"mjb_1Rnd_SmonkPink",
 
 	"mjb_1Rnd_impactSmonk",
 	"mjb_1Rnd_impactSmonkBlue",
@@ -2924,6 +2932,8 @@ private _itemWeaponGL =
 	"mjb_1Rnd_impactSmonkPurple",
 	"mjb_1Rnd_impactSmonkRed",
 	"mjb_1Rnd_impactSmonkYellow",
+	"mjb_1Rnd_impactSmonkLightBlue",
+	"mjb_1Rnd_impactSmonkPink",
 
 	"CUP_1Rnd_HEDP_M203",
 	"rhs_mag_M433_HEDP",
@@ -4011,7 +4021,7 @@ switch (true) do
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
-    };  
+    };
         case (_unitRole in ["full","zeus","B_RangeMaster_F"]) :
     {
         [arsenal, true] call ace_arsenal_fnc_initBox;
