@@ -10,6 +10,8 @@ class CfgWeapons {
   class GrenadeLauncher : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};
   class Put : Default {opticsZoomInit = 0.66; opticsZoomMax = 1.5; opticsZoomMin = 0.33;};*/
 
+  class GrenadeLauncher;
+
     
   class MGunCore;
   class MGun : MGunCore {
@@ -348,6 +350,19 @@ class CfgWeapons {
   // yeet bino sway
   class Binocular : Default {
     swayCoef = 0.02; // default 0.34
+  };
+
+  class Throw : GrenadeLauncher {
+	class ThrowMuzzle;
+    muzzles[] += {"mjb_SmokeShellLightBlueMuzzle","mjb_SmokeShellPinkMuzzle"};
+	class mjb_SmokeShellLightBlueMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellLightBlue"};
+	};
+	class mjb_SmokeShellPinkMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellPink"};
+	};
   };
 
   // Add 556 to Grot

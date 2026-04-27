@@ -4,6 +4,9 @@ class CfgCloudlets {
 		interval = 0.06;
 	};
 	class SmokeShellWhite2;
+	class SmokeShellWhite2UW;
+	class SmokeShellWhiteUW;
+	class SmokeShellWhiteWater;
 	class SmokeShellWhiteSmall : Default {
 		interval = 0.06;
 	};
@@ -42,6 +45,27 @@ class CfgCloudlets {
 		smokeGenMaxDist = 6000;
 		smokeSizeCoef = 4.0;
 		smokeIntervalCoef = 1.25;
+	};
+
+
+	class SmokeShellLightBlueUW : SmokeShellWhiteUW {
+		color[] = {{0.4000,0.7764,0.9568,1}};
+	};
+	class SmokeShellLightBlue2UW : SmokeShellLightBlueUW {
+		postEffects = "SmokeShellLightBlueWater";
+	};
+	class SmokeShellLightBlueWater : SmokeShellWhiteWater {
+		colorCoef[] = {0.4000,0.7764,0.9568,1};
+	};
+
+	class SmokeShellPinkUW : SmokeShellWhiteUW {
+		color[] = {{0.9568,0.6733,0.8305,1}};
+	};
+	class SmokeShellPink2UW : SmokeShellPinkUW {
+		postEffects = "SmokeShellPinkWater";
+	};
+	class SmokeShellPinkWater : SmokeShellWhiteWater {
+		colorCoef[] = {0.9568,0.6733,0.8305,1};
 	};
 };
 
@@ -122,3 +146,67 @@ SMONKEFF(Orange);
 SMONKEFF(Purple);
 SMONKEFF(Red);
 SMONKEFF(Yellow);
+SMONKEFF(LightBlue);
+SMONKEFF(Pink);
+
+class mjb_SmokeShellLightBlueEffect {
+	class SmokeShell {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellWhite";
+	};
+	class SmokeShell2 {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellWhite2";
+	};
+	class SmokeShell2UW {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellLightBlue2UW";
+	};
+	class SmokeShellUW {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellLightBlueUW";
+	};
+};
+
+class mjb_SmokeShellPinkEffect {
+	class SmokeShell {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellWhite";
+	};
+	class SmokeShell2 {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellWhite2";
+	};
+	class SmokeShell2UW {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellPink2UW";
+	};
+	class SmokeShellUW {
+		intensity = 1;
+		interval = 1;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellPinkUW";
+	};
+};
