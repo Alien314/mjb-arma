@@ -233,7 +233,7 @@ class r : basetrooper
 };
 
 // RATS Rifle Respawn
-class rifleRespawn : r
+class riflerespawn : r
 {
 	displayName = "Rifle RAT";
 	primaryWeapon[] = {
@@ -276,7 +276,7 @@ class rifleRespawn : r
 };
 
 // RATS SF Respawn
-class sfRespawn : r {
+class sfrespawn : r {
 	displayName = "SF Rifle RAT";
 	attachment[] += {
 		"CUP_muzzle_snds_SCAR_L"
