@@ -74,6 +74,36 @@ class CfgAmmo
 	SMONKAMMO(Purple);
 	SMONKAMMO(Red);
 	SMONKAMMO(Yellow);
+	class mjb_g_smonkLightBlue : mjb_g_smonkWhite {
+		effectsSmoke = "mjb_SmokeShellLightBlueImpactEffect";
+		smokeColor[] = {0.4000,0.7764,0.9568,1};
+	};
+	class mjb_g_smonkPink : mjb_g_smonkWhite {
+		effectsSmoke = "mjb_SmokeShellPinkImpactEffect";
+		smokeColor[] = {0.9568,0.6733,0.8305,1};
+	};
+
+	class mjb_g_smokeLightBlue : G_40mm_Smoke {
+		effectsSmoke = "mjb_SmokeShellLightBlueEffect";
+		smokeColor[] = {0.4000,0.7764,0.9568,1};
+	};
+	class mjb_g_smokePink : G_40mm_Smoke {
+		effectsSmoke = "mjb_SmokeShellPinkEffect";
+		smokeColor[] = {0.9568,0.6733,0.8305,1};
+	};
+
+	class SmokeShell;
+	class mjb_SmokeShellLightBlue : SmokeShell {
+		effectsSmoke = "mjb_SmokeShellLightBlueEffect";
+		model = "\A3\Weapons_f\ammo\smokegrenade_blue_throw";
+		smokeColor[] = {0.4000,0.7764,0.9568,1};
+	};
+	class mjb_SmokeShellPink : SmokeShell {
+		effectsSmoke = "mjb_SmokeShellPinkEffect";
+		model = "\A3\Weapons_f\ammo\smokegrenade_red_throw";
+		smokeColor[] = {0.9568,0.6733,0.8305,1};
+	};
+
 
 	// impact
 	class mjb_g_impactSmonkWhite : G_40mm_Smoke {
@@ -106,6 +136,12 @@ class CfgAmmo
 	};
 	class mjb_g_impactSmonkYellow : mjb_g_impactSmonkWhite {
 		submunitionAmmo = "mjb_g_smonkYellow";
+	};
+	class mjb_g_impactSmonkLightBlue : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkLightBlue";
+	};
+	class mjb_g_impactSmonkPink : mjb_g_impactSmonkWhite {
+		submunitionAmmo = "mjb_g_smonkPink";
 	};
 
     class ACE_9x19_Ball;
@@ -283,6 +319,11 @@ class CfgAmmo
 		cost = 50;
 	};
 
+	class CUP_P_M72A6_AT;
+	class mjb_P_M72A10_MP : CUP_P_M72A6_AT {
+		hit = 280;
+		caliber = 10;
+	};
 
 	class mjb_R_M72A10_MP : CUP_R_M72A6_AT {
 		aiAmmoUsageFlags = "64 + 128 + 256";
@@ -293,9 +334,9 @@ class CfgAmmo
 		explosive = 1;
 		fuseDistance = 15;
 		hit = 140;
-		indirectHit = 30;
+		indirectHit = 15;
 		indirectHitRange = 4;
-		submunitionAmmo = "ammo_Penetrator_grenade_40mm";
+		submunitionAmmo = "mjb_P_M72A10_MP";
 		warheadName = "HEDP";
 	};
 	
