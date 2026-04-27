@@ -4002,10 +4002,22 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemMortarAmmo + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
+          case (_unitRole in ["rifleRespawn","B_Soldier_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+    };
+        case (_unitRole in ["sfRespawn","B_Soldier_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+        player setUnitTrait ["Medic", true];
+    };  
         case (_unitRole in ["full","zeus","B_RangeMaster_F"]) :
     {
         [arsenal, true] call ace_arsenal_fnc_initBox;
     };
+    
+    
     default
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
