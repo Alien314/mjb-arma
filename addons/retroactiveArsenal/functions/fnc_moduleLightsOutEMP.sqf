@@ -3,7 +3,6 @@ if (is3DEN) exitWith {};
 
 params [["_mode", "", [""]],["_input", [], [[]]]];
 _input params [["_logic", objNull, [objNull,""]], ["_isActivated", true, [true,[]]], ["_isCuratorPlaced", false, [true]]];
-systemChat str _this;
 
 if (_isCuratorPlaced) then {
 
@@ -15,7 +14,7 @@ if (_isCuratorPlaced) then {
 		[
 			["SLIDER:RADIUS", "Area:", [10,4000,1000,0,_logic]],
 			["CHECKBOX", "Turn off Terrain object Lights", true, true],
-			["CHECKBOX", "Turn off Entity Lights", true, true]
+			["CHECKBOX", "Turn off Entity Lights", false, true]
 		], {  params ["_values", "_logic"];
 			_values params ["_area","_terrain","_entity"];
 			mjb_moduleLightsActive = nil;
@@ -93,44 +92,48 @@ if (_isCuratorPlaced) then {
 
     private _trigger = ((synchronizedObjects _logic select {_x isKindOf "EmptyDetector"}) select 0);
 
-    private _area = _logic getVariable ['mjb_area',1000];
-    private _terrain = _logic getVariable ['mjb_terrain',true];
-    private _entity = _logic getVariable ['mjb_entity',true];
+    private _area = ([_logic] + (_logic getVariable ['objectArea',[1000,1000]]));
+    private _terrain = _logic getVariable ['mjb_loEMP_terrain',true];
+    private _entity = _logic getVariable ['mjb_loEMP_entity',false];
 
 	if (_isActivated) then {
-		[[_logic,_area,_terrain,_entity], { params ['_logic','_radius','_tera','_ent'];
+		[[_logic,_area,_terrain,_entity], { params ['_logic','_area','_tera','_ent'];
 
 			private _objects = [];
+			private _radius =  ((_area select 1) max (_area select 2)) * 1.42;
 			if (_ent) then {
 				_objects append (8 allObjects 1 select {_x distance2d _logic < _radius});
 			};
 
-			if (!_tera) exitWith {{_x switchLight "OFF";} forEach _objects;};
+			if (!_tera) exitWith {{_x switchLight "OFF";} forEach ( _objects inAreaArray _area );};
 			for "_i" from 0 to 1 do
 			{
 				private _found = nearestTerrainObjects [_logic,              [           ["BUILDING","HOUSE","CHURCH","CHAPEL","FUELSTATION","HOSPITAL","RUIN","BUNKER"],              ["CROSS","FORTRESS","FOUNTAIN","VIEW-TOWER","LIGHTHOUSE","QUAY","HIDE","BUSSTOP","ROAD","FOREST","TRANSMITTER","STACK","TOURISM","WATERTOWER","TRACK","MAIN ROAD","POWER LINES","RAILWAY","POWERSOLAR","POWERWAVE","POWERWIND"]] select _i,_radius,false,true]; _objects append _found;
+				sleep 0.04;
 			};
 			_objects append (8 allObjects 0 select {_x distance2d _logic < _radius});
 
-			{_x switchLight "OFF";} forEach _objects;
+			{_x switchLight "OFF";} forEach ( _objects inAreaArray _area );
 
-		}] remoteExec ["call", 0, _logic];
+		}] remoteExec ["spawn", 0, _logic];
 	} else {
-		[[_logic,_area,_terrain,_entity], { params ['_logic','_radius','_tera','_ent'];
+		[[_logic,_area,_terrain,_entity], { params ['_logic','_area','_tera','_ent'];
 			private _objects = [];
+			private _radius =  ((_area select 1) max (_area select 2)) * 1.42;
 			if (_ent) then {
 				_objects append (8 allObjects 1 select {_x distance2d _logic < _radius});
 			};
 
-			if (!_tera) exitWith {{_x switchLight "ON";} forEach _objects;};
+			if (!_tera) exitWith {{_x switchLight "ON";} forEach ( _objects inAreaArray _area );};
 			for "_i" from 0 to 1 do
 			{
 				private _found = nearestTerrainObjects [_logic,              [           ["BUILDING","HOUSE","CHURCH","CHAPEL","FUELSTATION","HOSPITAL","RUIN","BUNKER"],              ["CROSS","FORTRESS","FOUNTAIN","VIEW-TOWER","LIGHTHOUSE","QUAY","HIDE","BUSSTOP","ROAD","FOREST","TRANSMITTER","STACK","TOURISM","WATERTOWER","TRACK","MAIN ROAD","POWER LINES","RAILWAY","POWERSOLAR","POWERWAVE","POWERWIND"]] select _i,_radius,false,true]; _objects append _found;
+				sleep 0.04;
 			};
 			_objects append (8 allObjects 0 select {_x distance2d _logic < _radius});
 
-			{_x switchLight "ON";} forEach _objects;
+			{_x switchLight "ON";} forEach ( _objects inAreaArray _area );
 
-		}] remoteExec ["call", 0, _logic];
+		}] remoteExec ["spawn", 0, _logic];
 	};
 };

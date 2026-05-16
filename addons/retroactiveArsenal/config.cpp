@@ -149,7 +149,33 @@ class CfgFactionClasses {
 
 class CfgVehicles
 {
-    class Module_F;
+	class Logic;
+    class Module_F : Logic {
+		class ArgumentsBaseUnits {
+			class Units {
+				class values {
+					class Objects;
+					class ObjectsAndGroups;
+					class Trigger;
+				};
+			};
+		};
+		class AttributesBase
+		{
+			class Default;
+			class Edit;
+			class Combo;
+			class Checkbox;
+			class CheckboxNumber;
+			class ModuleDescription;
+			class Units;
+		};
+
+		class ModuleDescription
+		{
+			class AnyBrain;
+		};
+	};
 	class ModuleEndMission_F;
 	//class ModuleEndMission_F : Module_F {
 		//function = "mjb_arsenal_fnc_moduleEnd";
@@ -204,6 +230,41 @@ class CfgVehicles
         function = "mjb_arsenal_fnc_moduleLightsOutEMP";
         icon = "\A3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa";
 		portrait = "\A3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa";
+
+		canSetArea = 1;
+		canSetAreaShape = 1;
+		canSetAreaHeight = 0;
+		class AttributeValues
+		{
+			size3[] = {1000,1000,-1};
+			isRectangle = 0;
+		};
+
+		class Attributes : AttributesBase {
+
+			class mjb_loEMP_terrain : Checkbox {
+				property = "mjb_loEMP_terrain";
+				displayName = "Terrain objects";
+				tooltip = "Whether this module affects static objects like buildings and light fixtures.";
+				typeName = "BOOL";
+				defaultValue = "true";
+			};
+
+			class mjb_loEMP_entity : Checkbox {
+				property = "mjb_loEMP_entity";
+				displayName = "Entity objects";
+				tooltip = "Whether this module affects non-static objects like vehicles.";
+				typeName = "BOOL";
+				defaultValue = "false";
+			};
+
+			class ModuleDescription : ModuleDescription {};
+		};
+		class ModuleDescription : ModuleDescription
+		{
+			description = "Turns off lights in an area. Activates at mission start when no trigger sync'd. Can only be sync'd to one trigger to activate, and undo the effect when the trigger is deactivated (consequently also turns on things that were off...).";
+			sync[] = {  };
+		};
     };
     class mjb_moduleAdminMenu : mjb_moduleBase {
 		category = "Teamwork";
@@ -248,6 +309,30 @@ class CfgVehicles
         displayName = "Allow AI Unconscious";
 		function = "mjb_arsenal_fnc_moduleAllowAIUncon";
 		icon = "\A3\ui_f\data\igui\cfg\Revive\OverlayIconsGroup\u100_ca.paa";
+
+		class Attributes : AttributesBase {
+
+			class mjb_AIUncon_fatal : Combo {
+				property = "mjb_AIUncon_fatal";
+				displayName = "ACE Fatal Injuries";
+				tooltip = "When fatal damage is allowed. Instant death is prevented when not 'Always', unit can only die to bleeding when 'Never'.";
+				typeName = "NUMBER";
+				defaultValue = "('ace_medical_statemachine_fatalInjuriesAI' call CBA_settings_fnc_get)";
+				class Values
+				{
+					class always	{ name = "Always";	value = 0; };
+					class inCardiacArrest	{ name = "In Cardiac Arrest"; value = 1; };
+					class never	{ name = "Never"; value = 2; };
+				};
+			};
+
+			class ModuleDescription : ModuleDescription {};
+		};
+		class ModuleDescription : ModuleDescription
+		{
+			description = "Allows specifically sync'd AI units to go into the ACE unconscious state and cardiac arrest.<br />Intended to be used on important AI units such as hostages and capturable HVTs.";
+			sync[] = {  };
+		};
 	};
 	class mjb_moduleToggleTI : mjb_moduleBase {
         curatorCanAttach = 1;
@@ -276,6 +361,43 @@ class CfgVehicles
         displayName = "Lock Doors in Area";
         function = "mjb_arsenal_fnc_moduleLockDoors";
         icon = "\A3\3den\Data\Attributes\DoorStates\textureUnchecked_door_ca.paa";
+
+		canSetArea = 1;
+		canSetAreaShape = 1;
+		canSetAreaHeight = 1;
+		class AttributeValues
+		{
+			size3[] = {300,300,-1};
+			isRectangle = 0;
+		};
+
+		class Attributes : AttributesBase {
+
+			class mjb_lockDoors_chanceHouse : Edit {
+				property = "mjb_lockDoors_chanceHouse";
+				displayName = "House Lock Chance";
+				tooltip = "Chance for buildings to have locked doors.";
+				validate = "number";
+				typeName = "NUMBER";
+				defaultValue = "1";
+			};
+
+			class mjb_lockDoors_chanceDoor : Edit {
+				property = "mjb_lockDoors_chanceDoor";
+				displayName = "Door Lock Chance";
+				tooltip = "Chance for each door to be locked when a building is selected to be locked.";
+				validate = "number";
+				typeName = "NUMBER";
+				defaultValue = "0.2";
+			};
+
+			class ModuleDescription : ModuleDescription {};
+		};
+		class ModuleDescription : ModuleDescription
+		{
+			description = "Locks doors randomly within an area, and/or doors of sync'd buildings. Activates at mission start when no trigger sync'd. Can be sync'd to any number of triggers to activate, but cannot be deactivated.";
+			sync[] = { };
+		};
     };
 	class mjb_moduleSebTableMark : mjb_moduleBase {
         category = "MJB_SEB";

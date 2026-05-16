@@ -38,7 +38,7 @@ if (_isCuratorPlaced) then {
 	if !(local _logic && {_isActivated}) exitWith {};
     private _objects = (synchronizedObjects _logic);
 
-    private _fatal = _logic getVariable ['mjb_fatal',0];
+    private _fatal = _logic getVariable ['mjb_fatal',(_logic getVariable ['mjb_AIUncon_fatal',0])];
 
 	{   private _unit = _x;
 		if !(_unit isKindOf "CAManBase") then {continue};
