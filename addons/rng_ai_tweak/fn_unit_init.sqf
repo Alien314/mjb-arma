@@ -19,14 +19,11 @@ _man setvariable ["RNG_active",true];
 
 _man addEventHandler ["FiredNear", {
 	params ["_unit", "_firer", "_distance", "_weapon"];
-	if !(local _unit && {(_unit getvariable ["RNG_cooldown",(time -1)]) > time}) exitWith {};
+	if !(local _unit && {  !(isPlayer _unit) && { (_unit getvariable ["RNG_cooldown",(time -1)]) > time } }) exitWith {};
 	if (_unit getvariable ["RNG_disabled",false]) exitWith {};
-	if (_unit isEqualTo _firer || {_weapon isEqualTo 'Throw'}) exitWith {};
 	if ((vehicle _unit) isNotEqualTo _unit) exitWith {_unit setvariable ["RNG_cooldown",(time + 10)];};
+	if (_unit isEqualTo _firer || {_weapon isEqualTo 'Throw'}) exitWith {};
 	if ((side _firer) isEqualTo (side _unit) && {(random 1) > RNG_allyReactChance}) exitWith { if (RNG_allyCD) then {_unit setvariable ['RNG_cooldown',(time + 2)];}; };
-	if (currentWeapon _unit isEqualTo binocular _unit) then {
-		_unit selectWeapon primaryWeapon _unit;
-	};
 	[_unit,_firer] call RNG_fnc_react;
 }];
 
@@ -39,12 +36,10 @@ if (!(isClass(configFile >> "CfgPatches" >> "ace_medical_engine"))) then {
 };
 
 
-_man addEventHandler ["Suppressed", {
+_man addEventHandler ["Suppressed", { // only triggers where local and from hostile fire
 	params ["_unit", "", "_shooter"];
-	if (currentWeapon _unit isEqualTo binocular _unit) then {
-		_unit selectWeapon primaryWeapon _unit;
-	};
-	if (_unit getvariable ["RNG_disabled",false]) exitWith {};
+	if (_unit getvariable ["RNG_disabled",false] || {isPlayer _unit}) exitWith {};
+	if ((vehicle _unit) isNotEqualTo _unit) exitWith {_unit setvariable ["RNG_cooldown",(time + 10)];};
 	[_unit,_shooter] call RNG_fnc_react;
 }];
 
@@ -53,27 +48,27 @@ if (!(_group getvariable ["RNG_group_active",false])) then {
 
 	_group addEventHandler ["EnemyDetected", {
 		params ["_group", "_newTarget"];
-		{ if !(local _x && {(_unit getvariable ["RNG_cooldown",(time -1)]) > time}) then {continue};
-		  if (_x isKindOf "Logic") then {continue};
-		  if (_x getvariable ["RNG_disabled",false]) then {continue};
-		  if (vehicle _x isNotEqualTo _x) exitWith {_x setvariable ["RNG_cooldown",(time + 10)];};
-		if (currentWeapon _x isEqualTo binocular _x) then {
-			_x selectWeapon primaryWeapon _x;
-		};
-		  [_x,_newTarget] call RNG_fnc_react;
-		} foreach units _group;
+		if (RNG_playergroup && {isPlayer leader _group}) exitWith {};
+		{ 
+		  if (!(local _x) || {isPlayer _x || {(_x getvariable ["RNG_disabled",false]) || {_x isKindOf "Logic"}}}) then {continue};
+		  if !( (_x getvariable ["RNG_cooldown",(time -1)]) > time ) then {continue};
+		  if (vehicle _x isNotEqualTo _x) exitWith { _x setvariable ["RNG_cooldown",(time + 10)]; };
+		  [_x,_newTarget] spawn { sleep (random RNG_groupReactDelayMax); _this call RNG_fnc_react; };
+		} foreach units _group; //([(units _group),[],{random 1},"ASCEND"] call BIS_fnc_sortBy)
 	}];
 
 	if (RNG_dontKnowsAbout) then {
 		_group addEventHandler ["KnowsAboutChanged", {
 			params ["_group", "_targetUnit", "_newKnowsAbout", "_oldKnowsAbout"];
 			if !(RNG_dontKnowsAbout) exitWith {};
+			if (RNG_playergroup && {isPlayer leader _group}) exitWith {};
 			private _reveal = RNG_dontKnowsCap;
 			if !( _newKnowsAbout > _reveal ) exitWith {};
 			private _list = [];
 			private _vis = [];
 			private _targetPos = AGLToASL (unitAimPositionVisual _targetUnit);
 			{	private _eye = eyepos _x;
+				if (isPlayer _x) then {continue};
 				_list pushBack [_eye, _targetPos, _unit, _targetUnit]; 
 				_vis pushBack (([_unit, "VIEW", _targetUnit] checkVisibility [_eye,_targetPos]) > RNG_minVisTarget);
 			} forEach (units _group);

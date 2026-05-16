@@ -30,7 +30,15 @@
 	"SLIDER",
 	["Minimum Visibility to Target","Visiblility threshold for knowsAbout limiting and engaging the target. Lower numbers more likely to target through smoke."],
 	["RNG","MJB Tweaks"],
-	[0,1,0.05,2],
+	[0,1,0.01,2],
+	true
+] call CBA_fnc_addSetting;
+
+[	"RNG_groupReactDelayMax",
+	"SLIDER",
+	["Max Group React Delay","Randomizes react delay when a group's EnemyDetected handler is triggered preventing all units simultaneously engaging."],
+	["RNG","MJB Tweaks"],
+	[0,10,2.2,2],
 	true
 ] call CBA_fnc_addSetting;
 
