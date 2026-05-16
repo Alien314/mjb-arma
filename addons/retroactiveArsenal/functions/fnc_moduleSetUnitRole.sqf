@@ -54,11 +54,12 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 		["Set Unit Role", 
 			[
 				["LIST", "New Role:", [(_roles select 0), (_roles select 1)]],
-				["CHECKBOX", "Use Retroactive Arsenal?", true, true],
+				["CHECKBOX", "Use Retroactive Arsenal?", (missionNamespace getVariable ['mjb_setArsenal', true]), true],
 				["CHECKBOX", "Move their arsenal here?", false, true]
 			], {  params ["_values", "_args"];
 				_values params ["_role",'_retro','_move'];
 				_args params ["_unit",'_faction'];
+				missionNamespace setVariable ['mjb_setArsenal',_retro];
 				if (_move) then { _unit setVariable ["startpos", getPosASL _unit, true]; };
 				[[_unit,_role,_faction,_retro],{ params ['_unit','_role','_faction','_retro'];
 					private _goggs = goggles _unit;
@@ -75,9 +76,11 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 					if (_tmfRole isEqualTo '') then {_tmfRole = nil};
 					[_unit,_faction,_tmfRole] call TMF_assignGear_fnc_assignGear;
 					if (hasInterface && {isPlayer _unit}) then {
-						if (!_retro && {fileExists "loadouts\arsenal.sqf"}) then {
-							execVM "loadouts\arsenal.sqf";
-						} else { [false, _role] call mjb_arsenal_fnc_arsenal };
+						if (!_retro) then {
+							if (fileExists "loadouts\arsenal.sqf") then {
+								if !(isNil 'arsenal') then { execVM "loadouts\arsenal.sqf"; };
+							};
+						} else { [false, _role] call mjb_arsenal_fnc_arsenal; };
 						[_unit,_radioSetup,_goggs,_noggs] spawn { sleep 0.5;
 							params ['_unit','_radioSetup','_goggs','_noggs'];
 							[0,true] spawn mjb_arsenal_fnc_toughLoop;
