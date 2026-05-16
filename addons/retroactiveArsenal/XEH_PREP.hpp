@@ -59,3 +59,5 @@
 ["z\mjb\addons\arsenal\functions\fnc_carry.sqf", "tsp_fnc_animate_carry"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_wgzPathModeFix.sqf", "jac_fnc_pathDrawingMode"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_wgzControlGroupsFix.sqf", "jac_fnc_control_groups"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_SFX_R_PlaySounds.sqf", "SFX_R_PlaySounds"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_playSound2.sqf", "SSD_fnc_playSound2"] call CBA_fnc_compileFunction;

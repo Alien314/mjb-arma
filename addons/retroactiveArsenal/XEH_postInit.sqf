@@ -6,6 +6,9 @@ if (isServer) then {
 			_unit setVariable ['ace_medical_statemachine_AIUnconsciousness', true, true];
 			_unit setVariable ['ace_medical_statemachine_fatalInjuriesAI', 1, true];
 
+			// ocap turns this off
+			//[{if !(alive _unit) exitWith {}; _this setVariable ['ocap_exclude', nil]; }, _unit, 20] call cba_fnc_waitAndExecute;
+
 			// remove animate attached objects
 			private _objs = attachedObjects _unit;
 			{
@@ -167,6 +170,8 @@ if (isServer) then {
 				//["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
 			}, true, [], false] call CBA_fnc_addClassEventHandler;
 		};
+		0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };
+		
 	};
 };
 

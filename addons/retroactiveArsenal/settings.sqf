@@ -83,6 +83,17 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_acreVoiceScale",
+    "SLIDER",
+    ["ACRE Voice Curve Scale", "Possibly increases audible distance of voices in ACRE."],
+    [_title, "Player QoL"],
+    [0, 5, 1, 2],
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_tacReload",
     "CHECKBOX",
     ["Allow Tactical Reload", "Player controlled units can double tap their reload to skip part of the reload, dropping their old magazine."],
@@ -546,4 +557,39 @@ private _category = "AI";
     ["ZEUS WARGAME MOD", "CHEATS"],
     false,
     true
+] call CBA_fnc_addSetting;
+
+
+[
+    "ssd_scremVolume",
+    "CHECKBOX",
+    ["Reduced Death/Hit Screams Volume", "Reduces volume of screams including hit noises and randomly possible Wilhelm and a Beagle noise on death."],
+    ["SSD Death Screams","MJB Tweak"],
+    false,
+    false
+] call CBA_fnc_addSetting;
+[
+    "ssd_scremDisable",
+    "CHECKBOX",
+    ["Disable SSD Screams", "Disables screams including hit noises and randomly possible Wilhelm and a Beagle noise on death."],
+    ["SSD Death Screams","MJB Tweak"],
+    false,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    "sfx_r_scremVolume",
+    "SLIDER",
+    ["Death Sounds Volume", "Volume coef of sounds devised by WebKnight that play on death. (Generally pretty quiet already.)"],
+    ["Project SFX: Remastered","1) Death sounds - MJB Tweak"],
+    [0, 2.5, 1, 2],
+    false
+] call CBA_fnc_addSetting;
+[
+    "sfx_r_scremDisable",
+    "CHECKBOX",
+    ["Disable Death Sounds", "Disables death sounds."],
+    ["Project SFX: Remastered","1) Death sounds - MJB Tweak"],
+    false,
+    false
 ] call CBA_fnc_addSetting;
