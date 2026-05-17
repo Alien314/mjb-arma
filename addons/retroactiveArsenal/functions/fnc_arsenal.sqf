@@ -819,7 +819,7 @@ private _itemUniforms = [
     "CUP_U_B_BDUv2_roll2_dirty_Urban",
     "CUP_U_B_BDUv2_roll2_gloves_Urban",
     "CUP_U_B_BDUv2_roll2_gloves_dirty_Urban",
-    "CUP_U_B_BDUv2_roll_Urban"<
+    "CUP_U_B_BDUv2_roll_Urban",
     "CUP_U_B_BDUv2_roll_dirty_Urban",
     "CUP_U_B_BDUv2_roll_gloves_Urban",
     "CUP_U_B_BDUv2_roll_gloves_dirty_Urban",
