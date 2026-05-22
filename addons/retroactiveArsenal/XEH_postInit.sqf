@@ -143,8 +143,8 @@ if (isServer) then {
 					_unit spawn { private _deadTime = time;
 						//waitUntil {!isSwitchingWeapon _this};
 						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
-						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						//(group _this) setGroupOwner 2;
+						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						_this setOwner 2;
 					};
 				};
 				_unit setVariable ["mjb_killedReturn", true];
@@ -154,24 +154,24 @@ if (isServer) then {
 					_unit spawn { private _deadTime = time;
 						//waitUntil {!isSwitchingWeapon _this};
 						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
-						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
-						//(group _this) setGroupOwner 2; _this setVariable ["mjb_killedReturn", nil];
+						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						_this setOwner 2; _this setVariable ["mjb_killedReturn", nil];
 					};
 				}];
 			};
 			//[_unit,{waitUntil {sleep 5; !isAwake _this}; _this setOwner 2;}] remoteExec ["spawn",2];
 		}] call CBA_fnc_addEventHandler;
 
-		/*if (mjb_zeusCompKilled) then {
+		if (mjb_zeusCompKilled) then {
 			["CAManBase", "InitPost", {
 				params ["_unit"];
 				if (isServer || {!local _unit || {isPlayer _unit}}) exitWith {};
-				_unit spawn { waitUntil {sleep (random 2); !isSwitchingWeapon _this}; _this setUnitLoadout (getUnitLoadout _this);};
-				//["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
+				//_unit spawn { waitUntil {sleep (random 2); !isSwitchingWeapon _this}; _this setUnitLoadout (getUnitLoadout _this);};
+				["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
 			}, true, [], false] call CBA_fnc_addClassEventHandler;
-		};*/
-		//0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };
-		
+		};
+
+		//0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };		
 	};
 };
 
