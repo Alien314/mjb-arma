@@ -15,6 +15,14 @@ class CfgPatches {
 	};
 };
 
+class CfgSettings {
+	class CBA {
+		class Versioning {
+			delete aceax;
+		};
+	};
+};
+
 class XtdGearInfos {
 	class CfgWeapons {
 		class CUP_U_B_GER_Crye {
