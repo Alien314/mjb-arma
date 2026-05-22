@@ -212,6 +212,17 @@ private _title = "MJB Arma";
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_lootFix",
+    "CHECKBOX",
+    ["Loot Fix", "Check simulation on killed unit inventory opened, and re-enable if disabled for the client opening."],
+    [_title, "Death Handling"],
+    true,
+    true,
+    { },
+    true
+] call CBA_fnc_addSetting;
+
 /*[
     "mjb_zeusMarker",
     "CHECKBOX",

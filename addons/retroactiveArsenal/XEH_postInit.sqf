@@ -141,8 +141,8 @@ if (isServer) then {
 			if (isNil "_inited") then {
 				if (!alive _unit) exitWith {
 					_unit spawn { private _deadTime = time;
-						waitUntil {!isSwitchingWeapon _this};
-						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
+						//waitUntil {!isSwitchingWeapon _this};
+						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
 						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
 						//(group _this) setGroupOwner 2;
 					};
@@ -152,8 +152,8 @@ if (isServer) then {
 					if (!isServer || {local _unit}) exitWith {_unit setVariable ["mjb_killedReturn", nil];};
 					//[{!isAwake _this},{_this setOwner 2;},_unit,15,{_this setOwner 2;}] call cba_fnc_waitUntilAndExecute;
 					_unit spawn { private _deadTime = time;
-						waitUntil {!isSwitchingWeapon _this};
-						[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
+						//waitUntil {!isSwitchingWeapon _this};
+						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
 						//waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
 						//(group _this) setGroupOwner 2; _this setVariable ["mjb_killedReturn", nil];
 					};
@@ -162,14 +162,14 @@ if (isServer) then {
 			//[_unit,{waitUntil {sleep 5; !isAwake _this}; _this setOwner 2;}] remoteExec ["spawn",2];
 		}] call CBA_fnc_addEventHandler;
 
-		if (mjb_zeusCompKilled) then {
+		/*if (mjb_zeusCompKilled) then {
 			["CAManBase", "InitPost", {
 				params ["_unit"];
 				if (isServer || {!local _unit || {isPlayer _unit}}) exitWith {};
 				_unit spawn { waitUntil {sleep (random 2); !isSwitchingWeapon _this}; _this setUnitLoadout (getUnitLoadout _this);};
 				//["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
 			}, true, [], false] call CBA_fnc_addClassEventHandler;
-		};
+		};*/
 		//0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };
 		
 	};
@@ -400,6 +400,24 @@ if (isMultiplayer) then {
 		}] call CBA_fnc_addEventHandler;
 //systemChat ("TEST: " +  str [_thisType, _thisId]); // Needs Args
 //[_thisType, _thisId] call CBA_fnc_removeEventHandler // Needs Args
+	};
+
+	if (mjb_lootFix) then {
+		["CAManBase", "InitPost", {
+			params ["_unit"];
+			if (!local _unit) exitWith {};
+			_unit spawn { sleep 5;
+				_this addEventHandler ["InventoryOpened", {
+					params ["_unit", "_primaryContainer", "_secondaryContainer"];
+					if ( !(alive _primaryContainer) && { !(isNull _primaryContainer) && { !(local _primaryContainer) && { typeOf _secondaryContainer in ['WeaponHolderSimulated','GroundWeaponHolder'] } } }) then {
+						[_this,{ params ['_unit', '_primaryContainer', '_secondaryContainer'];
+							private _client = owner _unit;
+							{_x setOwner _client} forEach [_primaryContainer,_secondaryContainer];
+						}] remoteExec ['Call',2];
+					};
+				}];
+			};
+		}, true, [], true] call CBA_fnc_addClassEventHandler;
 	};
 
 	["mywife", {
