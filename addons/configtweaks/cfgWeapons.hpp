@@ -821,6 +821,43 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 		NVG_WHITE_PRESETOLD;
 	};
 */
+
+	class NVGogglesB_blk_F;
+	class NVGogglesB_grn_F;
+	class NVGogglesB_gry_F;
+
+	class mjb_NVGogglesB_blk : NVGogglesB_blk_F {
+		displayName = "ENVG-II (Black, No TI)";
+		visionMode[] = {"Normal","NVG"};
+	};
+
+	class mjb_NVGogglesB_grn : NVGogglesB_grn_F {
+		displayName = "ENVG-II (Green, No TI)";
+		visionMode[] = {"Normal","NVG"};
+	};
+
+	class mjb_NVGogglesB_gry : NVGogglesB_gry_F {
+		displayName = "ENVG-II (Grey, No TI)";
+		visionMode[] = {"Normal","NVG"};
+	};
+
+	class mjb_NVGogglesB_blk_WP : NVGogglesB_blk_F {
+		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		displayName = "ENVG-II (Black, No TI, WP)";
+		visionMode[] = {"Normal","NVG"};
+	};
+
+	class mjb_NVGogglesB_grn_WP : NVGogglesB_grn_F {
+		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		displayName = "ENVG-II (Green, No TI, WP)";
+		visionMode[] = {"Normal","NVG"};
+	};
+
+	class mjb_NVGogglesB_gry_WP : NVGogglesB_gry_F {
+		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		displayName = "ENVG-II (Grey, No TI, WP)";
+		visionMode[] = {"Normal","NVG"};
+	};
 };
 
 class CBA_DisposableLaunchers {
