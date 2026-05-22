@@ -51,6 +51,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_moduleToggleGroupMarker.sqf", "mjb_arsenal_fnc_moduleToggleGroupMarker"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_openedZeus.sqf", "mjb_arsenal_fnc_openedZeus"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_openedZeusServer.sqf", "mjb_arsenal_fnc_openedZeusServer"] call CBA_fnc_compileFunction;
+//["z\mjb\addons\arsenal\functions\fnc_ACRE_CustomVolumeControl.sqf", "ACRE_CustomVolumeControl"] call CBA_fnc_compileFunction;
 //["z\mjb\addons\arsenal\functions\fnc_serverUnsignedData.sqf", "mjb_arsenal_fnc_serverUnsignedData"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_tap.sqf", "tsp_fnc_animate_tap"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_sling.sqf", "tsp_fnc_animate_sling"] call CBA_fnc_compileFunction;

@@ -170,7 +170,7 @@ if (isServer) then {
 				//["mjb_killedToServer", [_unit]] call CBA_fnc_serverEvent;
 			}, true, [], false] call CBA_fnc_addClassEventHandler;
 		};
-		0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };
+		//0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };
 		
 	};
 };

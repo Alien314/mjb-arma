@@ -82,16 +82,34 @@ private _title = "MJB Arma";
     true
 ] call CBA_fnc_addSetting;
 
+/*
 [
     "mjb_acreVoiceScale",
     "SLIDER",
     ["ACRE Voice Curve Scale", "Possibly increases audible distance of voices in ACRE."],
     [_title, "Player QoL"],
     [0, 5, 1, 2],
-    true,
-    { },
+    false
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_acreCustomCurveMax",
+    "SLIDER",
+    ["ACRE Custom Voice Curve Max", "Highest volume of acre voice on shout."],
+    [_title, "Player QoL"],
+    [1, 2.2, 1.3, 2],
     true
 ] call CBA_fnc_addSetting;
+
+[
+    "mjb_acreCustomCurveMin",
+    "SLIDER",
+    ["ACRE Custom Voice Curve Min", "Lowest volume of acre voice at whisper."],
+    [_title, "Player QoL"],
+    [0.1, 0.7, 0.1, 2],
+    true
+] call CBA_fnc_addSetting;
+*/
 
 [
     "mjb_tacReload",
