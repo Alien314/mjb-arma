@@ -1309,6 +1309,26 @@ class Helicopter_Base_H : Helicopter_Base_F {
 	];*/
   };
 
+  class Land_FlatTV_01_F;
+  class mjb_spectator_TV : Land_FlatTV_01_F {
+    displayName = "RATS Spectator TV";
+	hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\ratsFlag_ca.paa"};
+    class ACE_Actions {
+      class ACE_MainActions {
+		condition = "true";
+        displayName = "Interactions";
+        distance = 10;
+        selection = "";
+        class mjb_spectate {
+          condition = "alive _target";
+          displayName = "Spectate";
+          showDisabled = 1;
+          statement = "[] call mjb_arsenal_fnc_spectate";
+        };
+	  };
+	};
+  };
+
 /*/ GM Compats compat
 class Land_CanisterFuel_F;
   class gm_jerrycan_base : Land_CanisterFuel_F {

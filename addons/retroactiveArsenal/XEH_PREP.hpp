@@ -29,6 +29,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_copilotStabilizeToggle.sqf", "mjb_arsenal_fnc_copilotStabilizeToggle"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_tacReload.sqf", "mjb_arsenal_fnc_tacReload"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_notMagazine.sqf", "mjb_arsenal_fnc_notMagazine"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_spectate.sqf", "mjb_arsenal_fnc_spectate"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleEnd.sqf", "mjb_arsenal_fnc_moduleEnd"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleArsenal.sqf", "mjb_arsenal_fnc_moduleArsenal"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleArsenalMission.sqf", "mjb_arsenal_fnc_moduleArsenalMission"] call CBA_fnc_compileFunction;
