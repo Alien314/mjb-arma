@@ -3178,6 +3178,8 @@ private _itemWeaponMMG =
 
     "Tier1_MK48_Mod1",
 
+    // High magnification scopes go byebye for now.
+	/*
     //scopes
     "cup_optic_hensoldtzo",
     "cup_optic_acog2",
@@ -3188,6 +3190,7 @@ private _itemWeaponMMG =
     "rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230a",
     "rhsusf_acc_su230a_mrds",
+	*/
 
     //tripods
     "dzn_mg_tripod_universal",
