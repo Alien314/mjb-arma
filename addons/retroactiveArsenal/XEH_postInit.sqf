@@ -420,6 +420,8 @@ if (isMultiplayer) then {
 		}, true, [], true] call CBA_fnc_addClassEventHandler;
 	};
 
+	mjb_amphibious = createHashMap;
+
 	["mywife", {
 		call mjb_arsenal_fnc_mywife;
 	}, "all", []] call CBA_fnc_registerChatCommand;

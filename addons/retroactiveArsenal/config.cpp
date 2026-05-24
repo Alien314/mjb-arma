@@ -12,7 +12,8 @@ class CfgPatches {
 	   		"ace_interact_menu",
 			"ace_zeus",
 			"ace_rangecard",
-			"ace_vehicle_damage"
+			"ace_vehicle_damage",
+			"acre_sys_core"
 		};
 	};
 };
@@ -40,6 +41,9 @@ class Extended_PreInit_EventHandlers
 	class ace_vehicle_damage {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitAVD.sqf']";
 	};
+	class acre_sys_core {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitAcreSysCore.sqf']";
+	};
 	/*class tsp_animate_functions {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preInitAnimate.sqf']";
 	};*/
@@ -62,6 +66,9 @@ class Extended_PreStart_EventHandlers
 	};
 	class ace_vehicle_damage {
 		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartAVD.sqf']";
+	};
+	class acre_sys_core {
+		init="call compileScript ['z\mjb\addons\arsenal\XEH_preStartAcreSysCore.sqf']";
 	};
 	class mjb_arsenal
 	{
