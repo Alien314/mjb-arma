@@ -237,7 +237,7 @@ if (mjb_combatLock) then {
 			params ["_unit","_role","_vehicle","_turret","_isEject"];
 
 			if (_unit isEqualTo player) then {
-				_vehcle spawn {
+				_vehicle spawn {
 					while {((crew _this) select {alive _x}) isEqualTo []} do {
 						if ((_this getVariable ['mjb_locker',player]) isNotEqualTo player) exitWith {};
 						private _lock = false;
@@ -573,6 +573,125 @@ if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
   private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
   if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
   mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
+};
+/*
+_this addEventHandler ["HandleDamage", { 
+    params ["_vehicle", "_selection", "_newDamage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "", "_context"];
+    if (!local _vehicle) exitWith {};
+    if (!alive _vehicle) exitWith {_vehicle removeEventHandler [_thisEvent, _thisEventHandler];};
+
+    if ( _projectile isEqualTo "" && {_source isNotEqualTo _vehicle} ) exitWith { _newDamage };
+
+	"if ( ((getPosATL _vehicle) # 2) < 5 || { (count (crew _vehicle select {isPlayer _x}) == 0) }) exitWith { _newDamage }";
+    
+	if (isNil 'mjb_airDamageCache') then { mjb_airDamageCache = createHashMap; };
+	private _vicH = (typeOf _vehicle + _hitPoint);
+	private _critical = mjb_airDamageCache getOrDefault [_vicH, getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'hitpoints' >> _hitPoint >> 'passThrough'),true];
+
+	if (_critical <= 0.1) exitWith {_newDamage};
+
+	private _currentDamage = if (_selection isNotEqualTo "") then {
+		_vehicle getHitIndex _hitIndex
+	} else {
+		damage _vehicle
+	};
+
+	private _airDamage = _vehicle getVariable [('mjb_airDamage' + str diag_frameNo),[]];
+	if (_airDamage isEqualTo []) then {
+		[{ params ['_vehicle','_damageFrame'];
+			private _hitArray = _vehicle getVariable [('mjb_airDamage' + str _damageFrame),[]];
+			if (!alive _vehicle || { _hitArray isEqualTo [] }) exitWith { _vehicle setVariable [('mjb_airDamage' + str _damageFrame),nil]; };
+
+"systemChat str _hitArray";
+
+			private _damage = 0;
+			private _hitpoint = 0;
+			{ _x params ['_hp','_dmg','_crit'];
+				if (_hp < 0) then {continue};
+				if (_dmg * _crit > _damage) then {
+					_hitPoint = _hp;
+					_damage = _dmg + (_vehicle getHitIndex _hp);
+				};
+			} forEach _hitArray;
+
+			_vehicle setHitIndex [_hitpoint, _damage, true, objNull, objNull, true];
+		}, [_vehicle,diag_frameNo]] call CBA_fnc_execNextFrame;
+	};
+	_airDamage pushBack [_hitIndex, (_newDamage - _currentDamage), _critical];
+
+	_vehicle setVariable [('mjb_airDamage' + str diag_frameNo),_airDamage];
+
+	if (_hitPoint isEqualTo "" && {_hitIndex < 0}) then {
+		_currentDamage = _currentDamage min 0.89;
+		if (_currentDamage isEqualTo 0.89) then { _vehicle setHitPointDamage ["hithull", _currentDamage]; };
+	};
+
+    _currentDamage
+}];
+*/
+if (mjb_airVehicleDamage) then {
+	["Air", "Init", {
+		[{
+			params ["_vehicle"];
+			private _eh = _vehicle getVariable ['mjb_air_handleDamage',nil];
+			if !(isNil '_eh') exitWith {};
+
+			_vehicle setVariable ['mjb_air_handleDamage', _vehicle addEventHandler ["HandleDamage", {
+				params ["_vehicle", "_selection", "_newDamage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "", "_context"];
+				if (!local _vehicle) exitWith {};
+
+				if (!alive _vehicle) exitWith {_vehicle removeEventHandler [_thisEvent, _thisEventHandler];};
+
+				if ( _projectile isEqualTo "" && {_instigator in [objNull,_vehicle,driver _vehicle]} ) exitWith {  };
+
+				if ( (count (crew _vehicle select {isPlayer _x}) == 0) ) exitWith {  }; //((getPosATL _vehicle) # 2) < 5
+				
+				if (isNil 'mjb_airDamageCache') then { mjb_airDamageCache = createHashMap; };
+				private _vicH = (typeOf _vehicle + _hitPoint);
+				private _critical = mjb_airDamageCache getOrDefault [_vicH, getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'hitpoints' >> _hitPoint >> 'passThrough'),true];
+
+				if (_critical <= 0.1) exitWith {  };
+
+				private _currentDamage = if (_selection isNotEqualTo "") then {
+					_vehicle getHitIndex _hitIndex
+				} else {
+					damage _vehicle
+				};
+
+				private _airDamage = _vehicle getVariable [('mjb_airDamage' + str diag_frameNo),[]];
+				if (_airDamage isEqualTo []) then {
+					[{ params ['_vehicle','_damageFrame','_instigator'];
+						private _hitArray = _vehicle getVariable [('mjb_airDamage' + str _damageFrame),[]];
+						if (!alive _vehicle || { _hitArray isEqualTo [] }) exitWith { _vehicle setVariable [('mjb_airDamage' + str _damageFrame),nil]; };
+
+"systemChat str _hitArray";
+
+						private _damage = 0;
+						private _hitpoint = 0;
+						{ _x params ['_hp','_dmg','_crit'];
+							if (_hp < 0) then {continue};
+							if (_dmg * _crit > _damage) then {
+								_hitPoint = _hp;
+								_damage = _dmg + (_vehicle getHitIndex _hp);
+							};
+						} forEach _hitArray;
+
+						_vehicle setHitIndex [_hitpoint, _damage, true, _instigator, _instigator, true];
+					}, [_vehicle,diag_frameNo,_instigator]] call CBA_fnc_execNextFrame;
+				};
+				_airDamage pushBack [_hitIndex, (_newDamage - _currentDamage), _critical];
+
+				_vehicle setVariable [('mjb_airDamage' + str diag_frameNo),_airDamage];
+
+				if (_hitPoint isEqualTo "" && {_hitIndex < 0}) then {
+					_currentDamage = _currentDamage min 0.89;
+					if (_currentDamage isEqualTo 0.89) then { _vehicle setHitPointDamage ["hithull", _currentDamage]; };
+				};
+
+				_currentDamage
+			}]];
+		}, _this] call CBA_fnc_execNextFrame;
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
 };
 
 ["mjb_defaultVolume", 1.0, true] call ace_common_fnc_setHearingCapability;

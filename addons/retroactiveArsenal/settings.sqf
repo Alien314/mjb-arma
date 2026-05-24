@@ -82,6 +82,33 @@ private _title = "MJB Arma";
     true
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_cookoffPrevention",
+    "CHECKBOX",
+    ["Cookoff Grace", "Allows player ground vehicles to ignore one cookoff, damage will still be done to the vehicle."],
+    [_title, "Player QoL"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+[
+    "mjb_cookoffPreventionCD",
+    "SLIDER",
+    ["Cookoff Grace Cooldown", "Time in seconds before vehicle regains cookoff protection. (0 makes it one and done, vehicle will not regain protection)"],
+    [_title, "Player QoL"],
+    [0, 9000, 0, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_airVehicleDamage",
+    "CHECKBOX",
+    ["Air Damage", "Prevents detonation of player air vehicles at altitude, allowing more likely auto-rotation situation."],
+    [_title, "Player QoL"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+
 /*
 [
     "mjb_acreVoiceScale",
