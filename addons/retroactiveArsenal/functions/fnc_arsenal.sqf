@@ -969,6 +969,13 @@ private _itemNVG =
     "ACE_NVGoggles_WP",
     "ACE_NVGoggles_OPFOR_WP",
 
+	"mjb_NVGogglesB_blk",
+	"mjb_NVGogglesB_blk_WP",
+	"mjb_NVGogglesB_grn",
+	"mjb_NVGogglesB_grn_WP",
+	"mjb_NVGogglesB_gry",
+	"mjb_NVGogglesB_gry_WP",
+
     "CUP_NVG_GPNVG_black",
     "CUP_NVG_GPNVG_winter",
     "CUP_NVG_GPNVG_tan",
@@ -1636,6 +1643,9 @@ private _itemLeaderEquipment =
     "CUP_6Rnd_45ACP_M",
     "CUP_7Rnd_50AE_Deagle",
     "6Rnd_45ACP_Cylinder",
+
+    "SmokeShellOrange",
+    "SmokeShellYellow",
 
     //Cute attachments for leaders
     "tier1_agency_compensator",
