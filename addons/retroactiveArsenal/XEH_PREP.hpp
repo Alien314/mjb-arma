@@ -1,5 +1,6 @@
 ["z\mjb\addons\arsenal\functions\fnc_arsenal.sqf", "mjb_arsenal_fnc_arsenal"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_arsenalAmmo.sqf", "mjb_arsenal_fnc_arsenalAmmo"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_arsenalSupp.sqf", "mjb_arsenal_fnc_arsenalSupp"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_initPersistentBox.sqf", "mjb_arsenal_fnc_initPersistentBox"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_getPersistentBox.sqf", "mjb_arsenal_fnc_getPersistentBox"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_loadPersistentBox.sqf", "mjb_arsenal_fnc_loadPersistentBox"] call CBA_fnc_compileFunction;

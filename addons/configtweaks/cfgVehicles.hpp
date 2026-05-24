@@ -1309,6 +1309,33 @@ class Helicopter_Base_H : Helicopter_Base_F {
 	];*/
   };
 
+  class Box_Rats_Suppressors : Box_NATO_Ammo_F {
+    displayName = "Suppressors Arsenal Box [RATS]";
+    class ACE_Actions {
+      class ACE_MainActions {
+        condition = "true";
+        displayName = "Interactions";
+        distance = 2;
+        selection = "";
+        class ACE_OpenBox {
+          condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
+          displayName = "Open";
+          showDisabled = 0;
+          statement = "_player action [""Gear"", _target]";
+        };
+        class mjb_ArsenalAmmo {
+          condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
+          displayName = "RATS Suppressor Arsenal";
+          showDisabled = 0;
+          statement = "[] call mjb_arsenal_fnc_arsenalSupp";
+        };
+      };
+    };
+    class TransportMagazines {};
+	class TransportItems {};
+	class TransportWeapons {};
+  };
+
   class Land_FlatTV_01_F;
   class mjb_spectator_TV : Land_FlatTV_01_F {
     displayName = "RATS Spectator TV";

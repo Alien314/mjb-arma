@@ -630,9 +630,4 @@ _greenmagArray append ['greenmag_ammo_9x39_ball_60Rnd','greenmag_ammo_303_ball_6
 
 [mjb_arsenalAmmo, (_greenmagArray + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponMMGAmmo + _itemWeaponARAmmo + _itemLeaderEquipment + _itemSF + _itemWeaponSharpshooter + _itemWeaponGL + _itemSniper + _itemSniperAmmo /*+ _itemWeaponSFAR*/)] call ace_arsenal_fnc_initBox;
 
-if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
-  if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
-  mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
-};
-
 [mjb_arsenalAmmo, player] call ace_arsenal_fnc_openBox;
