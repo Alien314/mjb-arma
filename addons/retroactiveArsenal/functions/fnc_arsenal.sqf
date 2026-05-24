@@ -3170,11 +3170,6 @@ private _itemWeaponGL =
     "CUP_arifle_Mk17_STD_EGLM_black",
     "CUP_arifle_Mk17_STD_EGLM_woodland",
 
-    "CUP_arifle_ACR_EGLM_blk_68",
-    "CUP_arifle_ACR_EGLM_snw_68",
-    "CUP_arifle_ACR_EGLM_tan_68",
-    "CUP_arifle_ACR_EGLM_wdl_68",
-
     "CUP_arifle_AK15_GP34_bicolor",
 
     /*/ Fancy mags
