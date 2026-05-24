@@ -1177,7 +1177,7 @@ class Helicopter_Base_H : Helicopter_Base_F {
       class ACE_MainActions {
         condition = "true";
         displayName = "Interactions";
-        distance = 2;
+        distance = 4;
         selection = "";
         class ACE_OpenBox {
           condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
@@ -1309,13 +1309,14 @@ class Helicopter_Base_H : Helicopter_Base_F {
 	];*/
   };
 
-  class Box_Rats_Suppressors : Box_NATO_Ammo_F {
+  class Box_NATO_Support_F;
+  class Box_Rats_Suppressors : Box_NATO_Support_F {
     displayName = "Suppressors Arsenal Box [RATS]";
     class ACE_Actions {
       class ACE_MainActions {
         condition = "true";
         displayName = "Interactions";
-        distance = 2;
+        distance = 4;
         selection = "";
         class ACE_OpenBox {
           condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
@@ -1323,7 +1324,7 @@ class Helicopter_Base_H : Helicopter_Base_F {
           showDisabled = 0;
           statement = "_player action [""Gear"", _target]";
         };
-        class mjb_ArsenalAmmo {
+        class mjb_ArsenalSupp {
           condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
           displayName = "RATS Suppressor Arsenal";
           showDisabled = 0;
