@@ -417,6 +417,59 @@ class CfgWeapons {
 	magazineWell[] = {"CBA_9x19_P320"};
   };
 
+  // switch
+  class CUP_hgun_Glock17 : Pistol_Base_F {};
+  class CUP_hgun_Glock18 : CUP_hgun_Glock17 {
+	descriptionShort = "Selective fire pistol<br/>Caliber: 9x19mm";
+	displayName = "G18";
+	modes[] = {"Single","Auto"};
+	class Auto : Mode_FullAuto {
+		ACE_barrelLength = 114.046;
+		ACE_barrelTwist = 248.92;
+		dispersion = 0.00435;
+		initSpeed = -0.9595;
+		jsrs_soundeffect = "JSRS2_Distance_Effects_Glock";
+		maxRange = 50;
+		maxRangeProbab = 0.1;
+		midRange = 25;
+		midRangeProbab = 0.6;
+		minRange = 5;
+		minRangeProbab = 0.3;
+		reloadtime = 0.05;
+		sounds[] = {"StandardSound","SilencedSound"};
+		class BaseSoundModeType {
+			closure1[] = {"A3\sounds_f\weapons\closure\closure_handgun_3",1.03514,1,10};
+			closure2[] = {"A3\sounds_f\weapons\closure\closure_handgun_3",1.03514,1.1,10};
+			soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			weaponSoundEffect = "DefaultRifle";
+		};
+		class SilencedSound : BaseSoundModeType {
+			begin1[] = {"A3\sounds_f\weapons\silenced\silent-07",0.562341,1,200};
+			begin2[] = {"A3\sounds_f\weapons\silenced\silent-08",0.562341,1,200};
+			soundBegin[] = {"begin1",0.5,"begin2",0.5};
+			soundSetShot[] = {"jsrs_2025_glock_shot_silenced_soundset","jsrs_2025_tailsystem_9mm_pistol_silenced_sonic_soundset"};
+		}
+		class StandardSound : BaseSoundModeType {
+			begin1[] = {"CUP\Weapons\CUP_Weapons_Glock17\data\sfx\Glock17_s1.wss",1,1,800};
+			begin2[] = {"CUP\Weapons\CUP_Weapons_Glock17\data\sfx\Glock17_s2.wss",1,1,800};
+			begin3[] = {"CUP\Weapons\CUP_Weapons_Glock17\data\sfx\Glock17_s3.wss",1,1,800};
+			begin4[] = {"CUP\Weapons\CUP_Weapons_Glock17\data\sfx\Glock17_s4.wss",1,1,800};
+			soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};
+			soundSetShot[] = {"jsrs_2025_glock_shot_soundset","jsrs_2025_tailsystem_9mm_pistol_sonic_soundset"};
+		}
+	};
+  };
+  class CUP_hgun_Glock18_blk : CUP_hgun_Glock18 {
+	displayName = "G18 (Black)";
+	hiddenSelections[] = {"Camo"};
+	hiddenSelectionsTextures[] = {"\CUP\Weapons\CUP_Weapons_glock17\data\glock17_blk_co.paa"};
+  };
+  class CUP_hgun_Glock18_tan : CUP_hgun_Glock18 {
+	displayName = "G18 (Tan)";
+	hiddenSelections[] = {"Camo"};
+	hiddenSelectionsTextures[] = {"\CUP\Weapons\CUP_Weapons_glock17\data\glock17_tan_co.paa"};
+  };
+
   class greenmag_ammo_127x54_basic_60Rnd;
   class greenmag_ammo_93x64_basic_60Rnd : greenmag_ammo_127x54_basic_60Rnd {
     displayName = "9.3x64mm - 60 Rnd";
@@ -842,19 +895,19 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 	};
 
 	class mjb_NVGogglesB_blk_WP : NVGogglesB_blk_F {
-		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		ace_nightvision_colorPreset[] = {0,{0,0,0,0},{1.1,0.8,1.9,0.9},{1,1,6,0}};
 		displayName = "ENVG-II (Black, No TI, WP)";
 		visionMode[] = {"Normal","NVG"};
 	};
 
 	class mjb_NVGogglesB_grn_WP : NVGogglesB_grn_F {
-		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		ace_nightvision_colorPreset[] = {0,{0,0,0,0},{1.1,0.8,1.9,0.9},{1,1,6,0}};
 		displayName = "ENVG-II (Green, No TI, WP)";
 		visionMode[] = {"Normal","NVG"};
 	};
 
 	class mjb_NVGogglesB_gry_WP : NVGogglesB_gry_F {
-		ace_nightvision_colorPreset[] = {0,[0,0,0,0],[1.1,0.8,1.9,0.9],[1,1,6,0]};
+		ace_nightvision_colorPreset[] = {0,{0,0,0,0},{1.1,0.8,1.9,0.9},{1,1,6,0}};
 		displayName = "ENVG-II (Grey, No TI, WP)";
 		visionMode[] = {"Normal","NVG"};
 	};
