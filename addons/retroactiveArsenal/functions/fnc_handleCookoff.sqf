@@ -40,8 +40,8 @@ if (_chanceOfFire == 0 || {_chanceOfFire < random 1}) exitWith {
 
     false // return
 };
-
-if (mjb_cookoffPrevention && { (_vehicle getVariable ['mjb_cookoffPrevention',false]) && {(count (crew _vehicle select {isPlayer _x}) > 0) } }) exitWith {
+private _hasPlayers = (count (crew _vehicle select {isPlayer _x}) > 0);
+if (mjb_cookoffPrevention && { !(_vehicle getVariable ['mjb_cookoffPrevention',false]) && { _hasPlayers } }) exitWith {
 	if (_vehicle getVariable ['mjb_cookoffPreventionStart', true]) then {
 		_vehicle setVariable ['mjb_cookoffPreventionStart', false];
 		[{
@@ -76,9 +76,9 @@ if (_canRing) then {
     _canRing = getNumber (_configOf >> QGVAR(canHaveFireRing)) == 1;
 };
 
-if (_canJet) then {
+if (_canJet && {!_hasPlayers} ) then {
     _canJet = getNumber (_configOf >> QEGVAR(cookoff,canHaveFireJet)) == 1;
-};
+} else { _canJet = false;};
 
 private _delaySmoke = _chanceOfFire < random 1;
 private _detonateAfterCookoff = (_fireDetonateChance / 4) > random 1;
