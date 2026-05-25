@@ -7,14 +7,14 @@ if (isNil 'mjb_reSpecPlayer') then {
 	[player,player] call tmf_spectator_fnc_init;
 	[mjb_reSpecPlayer, false] remoteExec ['enableSimulationGlobal',2];
 	systemChat 'Spectating from TV, Esc > Configure > ACE Headbug Fix to exit.';
-    ['ace_common_headbugFixUsed', {
+	if !(isNil 'mjb_reSpecExitEH') exitWith {};
+    mjb_reSpecExitEH = ( ['ace_common_headbugFixUsed', {
 		if (!isNil 'mjb_reSpecPlayer') then {
 			0 spawn {
 				findDisplay 49 closeDisplay 2;
 				sleep 0.1;
 				while {dialog} do {closeDialog 0;};
 				private _spectator = player;
-				[player, true] remoteExec ['enableSimulationGlobal',2];
 				selectPlayer mjb_reSpecPlayer;
 				mjb_reSpecPlayer = nil;
 				deleteVehicle _spectator;
@@ -26,8 +26,9 @@ if (isNil 'mjb_reSpecPlayer') then {
 					} forEach [1,2,3,4,5];
 				};
 				missionNamespace setVariable ["BIS_fnc_feedback_allowDeathScreen",mjb_reSpecEnabled];
+				[player, true] remoteExec ['enableSimulationGlobal',2];
 				[false] call acre_api_fnc_setSpectator;
 			};
 		};
-	}] call CBA_fnc_addEventHandler;
+	}] call CBA_fnc_addEventHandler);
 };
