@@ -410,9 +410,6 @@ class mmg : ar
 	{
 		"CUP_lmg_Mk48"
 	};
-	scope[] = {
-		"CUP_optic_HensoldtZO_low_RDS" //?
-	};
 	silencer[] = {
 		"ACE_muzzle_mzls_B"
 	};
