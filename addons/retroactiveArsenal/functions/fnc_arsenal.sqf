@@ -1639,6 +1639,7 @@ private _itemWeaponPistol =
     "CUP_hgun_Colt1911",
     "CUP_hgun_Glock17_blk",
     "CUP_hgun_TT",
+    "hgun_Rook40_F",
 
     "rhs_weap_pya",
     "Tier1_P320",
@@ -1653,6 +1654,7 @@ private _itemWeaponPistol =
     "CUP_7Rnd_45ACP_1911",
     "CUP_17Rnd_9x19_glock17",
     "CUP_8Rnd_762x25_TT",
+    "16Rnd_9x21_Mag",
 
     "rhs_mag_9x19_17",
 
