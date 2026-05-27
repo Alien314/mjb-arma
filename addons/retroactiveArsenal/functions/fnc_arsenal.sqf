@@ -3475,8 +3475,8 @@ private _itemWeaponSFMMG =
 
     "Tier1_MK48_Mod1",
 
-    "cup_optic_hensoldtzo",
-    "cup_optic_acog2",
+    //"cup_optic_hensoldtzo",
+    //"cup_optic_acog2",
 
     "rhsusf_acc_su230",
     "rhsusf_acc_su230_mrds",
