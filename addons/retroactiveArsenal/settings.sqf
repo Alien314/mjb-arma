@@ -109,9 +109,18 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_acreProxyVolume",
+    "SLIDER",
+    ["ACRE Proximity Volume", "Increases volume of allied proximity voice with distance. (1 disables, 2 is 3 times volume at 150m)"],
+    [_title, "Player QoL"],
+    [1, 2, 1, 2],
+    false
+] call CBA_fnc_addSetting;
+
+[
     "mjb_acreShift",
     "SLIDER",
-    ["ACRE Proxy Volume Shift", "Increases volume of allied proximity voice with distance by shifting the speaker location closer. (1 disables, 2 in theory sounds as loud as it would be at half the distance, but in between has more change the closer to max you get, 2.05 is one third distance at max)"],
+    ["ACRE Proxy Volume Shift (Doesn't Work?)", "Increases volume of allied proximity voice with distance by shifting the speaker location closer. (1 disables, 2 in theory sounds as loud as it would be at half the distance, but in between has more change the closer to max you get, 2.05 is one third distance at max)"],
     [_title, "Player QoL"],
     [1, 2.05, 1, 2],
     false
