@@ -307,13 +307,14 @@ class CfgWeapons {
 		};
 	};
   };
+  /* // inherits from L7A2 no muzzle device I guess
   class CUP_lmg_FNMAG : Rifle_Long_Base_F {
     class WeaponSlotsInfo : WeaponSlotsInfo {
 		class MuzzleSlot : asdg_MuzzleSlot_762 {
 			delete compatibleItems;
 		};
 	};
-  };
+  };*/
   class CUP_lmg_M240 : Rifle_Long_Base_F {
     class WeaponSlotsInfo : WeaponSlotsInfo {
 		class MuzzleSlot : asdg_MuzzleSlot_762 {
