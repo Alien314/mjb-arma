@@ -143,18 +143,20 @@ if (isServer) then {
 					_unit spawn { private _deadTime = time;
 						//waitUntil {!isSwitchingWeapon _this};
 						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
-						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						waitUntil {sleep 5; (isNull _this) || { !isAwake _this || {(time - _deadTime) > 15}}};
+						if (isNull _this) exitWith {};
 						_this setOwner 2;
 					};
 				};
 				_unit setVariable ["mjb_killedReturn", true];
 				_unit addMPEventHandler ["MPKilled", { params ["_unit"];
-					if (!isServer || {local _unit}) exitWith {_unit setVariable ["mjb_killedReturn", nil];};
+					if (!isServer || {local _unit}) exitWith { _unit setVariable ["mjb_killedReturn", nil]; };
 					//[{!isAwake _this},{_this setOwner 2;},_unit,15,{_this setOwner 2;}] call cba_fnc_waitUntilAndExecute;
 					_unit spawn { private _deadTime = time;
 						//waitUntil {!isSwitchingWeapon _this};
 						//[_this,{_this setUnitLoadout (getUnitLoadout _this)}] remoteExec ["spawn",_this];
-						waitUntil {sleep 5; !isAwake _this || {(time - _deadTime) > 15}};
+						waitUntil {sleep 5; (isNull _this) || {!isAwake _this || {(time - _deadTime) > 15}}};
+						if (isNull _this) exitWith {};
 						_this setOwner 2; _this setVariable ["mjb_killedReturn", nil];
 					};
 				}];
@@ -635,12 +637,13 @@ if (mjb_airVehicleDamage) then {
 	["Air", "Init", {
 		[{
 			params ["_vehicle"];
+			if (!mjb_airVehicleDamage) exitWith {  };
 			private _eh = _vehicle getVariable ['mjb_air_handleDamage',nil];
-			if !(isNil '_eh') exitWith {};
+			if !(isNil '_eh') exitWith {  };
 
 			_vehicle setVariable ['mjb_air_handleDamage', _vehicle addEventHandler ["HandleDamage", {
 				params ["_vehicle", "_selection", "_newDamage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "", "_context"];
-				if (!local _vehicle) exitWith {};
+				if (!local _vehicle) exitWith {  };
 
 				if (!alive _vehicle) exitWith {_vehicle removeEventHandler [_thisEvent, _thisEventHandler];};
 
@@ -664,7 +667,9 @@ if (mjb_airVehicleDamage) then {
 				if (_airDamage isEqualTo []) then {
 					[{ params ['_vehicle','_damageFrame','_instigator'];
 						private _hitArray = _vehicle getVariable [('mjb_airDamage' + str _damageFrame),[]];
-						if (!alive _vehicle || { _hitArray isEqualTo [] }) exitWith { _vehicle setVariable [('mjb_airDamage' + str _damageFrame),nil]; };
+						if (!alive _vehicle || { _hitArray isEqualTo [] }) exitWith {
+							_vehicle setVariable [('mjb_airDamage' + str _damageFrame),nil];
+						};
 
 "systemChat str _hitArray";
 
@@ -685,7 +690,7 @@ if (mjb_airVehicleDamage) then {
 
 				_vehicle setVariable [('mjb_airDamage' + str diag_frameNo),_airDamage];
 
-				if (_hitPoint isEqualTo "" && {_hitIndex < 0}) then {
+				if (_hitPoint isEqualTo "" && { _hitIndex < 0 }) then {
 					_currentDamage = _currentDamage min 0.89;
 					if (_currentDamage isEqualTo 0.89) then { _vehicle setHitPointDamage ["hithull", _currentDamage]; };
 				};
