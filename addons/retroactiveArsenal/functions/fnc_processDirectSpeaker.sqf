@@ -86,7 +86,7 @@ if (_isIntercomAttenuate) then {
     _underwater = false;
 };
 
-if (mjb_acreShift isNotEqualTo 0 && {side player isEqualTo side _unit}) then {
+if (mjb_acreShift isNotEqualTo 1 && {side player isEqualTo side _unit}) then {
 	private _pPos = (AGLToASL (player modelToWorldVisual (player selectionPosition "head")));
 	private _dist = _emitterPos distance _pPos;
 	_emitterPos = (vectorLinearConversion [1, 0, (1-(_dist/(150*(21 - ((10 * mjb_acreShift) - 1))))),  _emitterPos, _pPos]);
