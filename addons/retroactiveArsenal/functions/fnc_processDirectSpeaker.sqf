@@ -88,7 +88,7 @@ if (_isIntercomAttenuate) then {
 	if (mjb_acreProxyVolume isNotEqualTo 1 && {side player isEqualTo side _unit}) then {
 		private _pPos = (AGLToASL (player modelToWorldVisual (player selectionPosition "head")));
 		private _dist = _emitterPos distance _pPos;
-		_directVolume = _directVolume * ((_dist/150)^2 * mjb_acreProxyVolume);
+		_directVolume = _directVolume * ((_dist/150)^2 * (mjb_acreProxyVolume - 1) + 1);
 	};
 
 	if (mjb_acreShift isNotEqualTo 1 && {side player isEqualTo side _unit}) then {
