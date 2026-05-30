@@ -211,6 +211,24 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_tacGestureFix",
+    "CHECKBOX",
+    ["Fix Gestures Eating Mags", "Saves magazines when reload gestures are interrupted instead of voiding them."],
+    [_title, "Tactical Reload"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_tacDropMag",
+    "CHECKBOX",
+    ["Drop Unvoided Mags", "Drops magazines on the ground when reload gestures are interrupted, otherwise attempts to add them to the player after a second."],
+    [_title, "Tactical Reload"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_slotSaverAI",
     "CHECKBOX",
     ["Enable AI control on disconnect", "When a player disconnects AI will be enabled to prevent death. They may still die due to a vanilla locality issue with the AI."],
