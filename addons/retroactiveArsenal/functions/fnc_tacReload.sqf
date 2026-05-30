@@ -1,6 +1,7 @@
 params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 
 if (!(mjb_tacReload && {_unit isEqualTo (call CBA_fnc_currentUnit)}) || {toLower _weapon in ['throw','put']}) exitWith {};
+if  (isNil '_newMagazine') exitWith {};
 private _class = if (isNil '_oldMagazine') then {(_newMagazine select 0)} else {(_oldMagazine select 0)};
 if (mjb_tacForbiddenMags isEqualType '') then { mjb_tacForbiddenMags = (mjb_tacForbiddenMags splitString ',')};
 if (mjb_tacForbiddenMuzzles isEqualType '') then {mjb_tacForbiddenMuzzles = (mjb_tacForbiddenMuzzles splitString ',')};
@@ -55,7 +56,7 @@ private _aID = (_unit addAction ['Quick Reload', {
 			_deathBox setPosASL _pos;
 			private _wepDir = (_unit weaponDirection currentWeapon _unit);
 			_deathBox setVectorDir _wepDir;
-			_deathBox setVelocityModelSpace [-1 * ((_wepDir # 2) + 0.5 max 0),(2 + (_wepDir # 2)),1 + (_wepDir # 2)];
+			_deathBox setVelocityModelSpace [(-1 * ((_wepDir # 2) + 0.5 max 0)), (2 + (_wepDir # 2)), (1 + (_wepDir # 2))];
 			[_deathBox,_class,_ammo] spawn { params ['_deathBox','_class','_ammo'];
 				sleep 0.2;
 				while { velocity _deathBox params ['_i','_y','_z']; (_i min _y min _z) < -0.1 || {(_i max _y max _z) > 0.1} } do {
