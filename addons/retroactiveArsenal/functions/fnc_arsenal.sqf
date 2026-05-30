@@ -472,7 +472,10 @@ private _itemEquipment =
     "ItemMicroDAGR",
 	"ItemAndroid",
     "ItemAndroidMisc",
-    "ItemMicroDAGRMisc"
+    "ItemMicroDAGRMisc",
+
+	// Sling
+	"tsp_sling"
 ];
 
 private _itemUniforms = [
@@ -2970,7 +2973,6 @@ private _itemSniper =
     "CUP_U_B_BAF_DDPM_GHILLIE",
 
 	//sling for defense
-	"tsp_sling",
 	"tsp_sling_1point",
 	"tsp_sling_3point",
 	"tsp_sling_lanyard",
@@ -3082,7 +3084,6 @@ private _itemWeaponGL =
     //Grenade Launchers and Slings
 	"CUP_glaunch_Mk13",
 	"CUP_glaunch_M79",
-	"tsp_sling",
 	"tsp_sling_1point",
 	"tsp_sling_3point",
 	"tsp_sling_lanyard",
