@@ -1589,6 +1589,8 @@ private _itemWeaponPistol =
     "CUP_hgun_Browning_HP",
     "CUP_hgun_CZ75",
     "CUP_hgun_M17_Black",
+    "CUP_hgun_M17_Coyote",
+    "CUP_hgun_M17_Green",
     "CUP_hgun_Makarov",
     "CUP_hgun_Mk23",
     "CUP_hgun_M9A1",
@@ -1603,6 +1605,9 @@ private _itemWeaponPistol =
     "CUP_13Rnd_9x19_Browning_HP",
     "CUP_16Rnd_9x19_cz75",
     "CUP_17Rnd_9x19_M17_Black",
+    "CUP_21Rnd_9x19_M17_Green",
+    "CUP_21Rnd_9x19_M17_Coyote",
+    "CUP_21Rnd_9x19_M17_Black",
     "CUP_8Rnd_9x18_Makarov_M",
     "CUP_12Rnd_45ACP_mk23",
     "CUP_15Rnd_9x19_M9",
@@ -3091,7 +3096,7 @@ private _itemWeaponGL =
     "arifle_Mk20_GL_plain_F",
     "arifle_TRG21_GL_F",
     
-    "CUP_arifle_L85A2_G",
+    "CUP_arifle_L85A2_GL",
     "CUP_arifle_M16A1E1GL",
 
     "CUP_arifle_ACR_EGLM_blk_556",
@@ -3323,6 +3328,10 @@ private _itemAmmoLAT =
 
 private _itemWeaponMAT =
 [
+    // CUP MAAWS for NV capability
+    "CUP_launch_MAAWS",
+    "CUP_optic_MAAWS_Scope",
+    
     "launch_MRAWS_sand_rail_F",
 	"launch_MRAWS_green_rail_F",
 	"launch_MRAWS_olive_rail_F"
@@ -3337,7 +3346,10 @@ private _itemWeaponSFMAT =
 
 private _itemAmmoMAT =
 [
-	"MRAWS_HEAT_F",
+    "CUP_MAAWS_HEDP_M",
+    "CUP_MAAWS_HEAT_M",
+
+    "MRAWS_HEAT_F",
     "MRAWS_HEAT55_F",
     "MRAWS_HE_F"
 ];
