@@ -156,6 +156,7 @@ class basetrooper
 		"ACE_IR_Strobe_Item",
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
+		"tsp_sling",
 		"ACE_MapTools"
 	};
 
