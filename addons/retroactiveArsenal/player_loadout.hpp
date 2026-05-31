@@ -156,6 +156,7 @@ class basetrooper
 		"ACE_IR_Strobe_Item",
 		"greenmag_item_speedloader",
 		"ACE_RangeCard",
+		"tsp_sling",
 		"ACE_MapTools"
 	};
 
@@ -409,9 +410,6 @@ class mmg : ar
 	primaryWeapon[] =
 	{
 		"CUP_lmg_Mk48"
-	};
-	scope[] = {
-		"CUP_optic_HensoldtZO_low_RDS" //?
 	};
 	silencer[] = {
 		"ACE_muzzle_mzls_B"
