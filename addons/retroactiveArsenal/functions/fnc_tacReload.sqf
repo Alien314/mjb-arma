@@ -1,6 +1,6 @@
 params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 
-if (_unit isNotEqualTo (call CBA_fnc_currentUnit)) exitWith {};
+if (_unit isNotEqualTo (call CBA_fnc_currentUnit) || {_weapon isEqualTo "Throw"}) exitWith {};
 
 if (mjb_tacGestureFix) then {
 	private _gesture = gestureState _unit;
