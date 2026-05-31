@@ -784,7 +784,8 @@ mjb_persistHandle = ["mjb_modulePersist", { params ["_name"];
 
 	["ace_arsenal_displayClosed", {
 		params ["_loadout"];
-        [0,true] spawn mjb_arsenal_fnc_toughLoop;
+		if (missionNamespace getVariable ['diw_armor_plates_main_plateToughness',false]) then { [0,true] spawn diw_armor_plates_main_fnc_toughLoop; };
+		if (mjb_plateToughness) then { [0,true] spawn mjb_arsenal_fnc_toughLoop; };
 		if (mjb_arsenal_enableRainbow) then {call mjb_arsenal_fnc_rainbow};
         if (isMultiplayer) then {[player,'ACE_NoVoice'] remoteExec ['setSpeaker'];};
 		if (isNil 'ace_medical_engine' && {mjb_arsenal_maxLoadoutInjectors > 0}) then {

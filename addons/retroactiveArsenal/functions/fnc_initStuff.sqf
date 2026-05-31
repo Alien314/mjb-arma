@@ -11,7 +11,7 @@ player addEventHandler ["Respawn", {
 	_unit setVariable ['diwako_dui_nametags_customInfo', mjb_duiCustomTag, true];
 }];
 
-if (diw_armor_plates_main_showDamageMarker && {(mjb_suppressedMarker min mjb_suppressedMarkerMax) > 0}) then {
+if (isNil 'diw_armor_plates_main_showSuppressedMarker' && { diw_armor_plates_main_showDamageMarker && {(mjb_suppressedMarker min mjb_suppressedMarkerMax) > 0}}) then {
     player addEventHandler ["Suppressed", {params ["", "_distance", "_shooter"];
 		if (_distance > ((mjb_suppressedMarker min mjb_suppressedMarkerMax) + 1)) exitWith {};
         [player,_shooter,0] call diw_armor_plates_main_fnc_showDamageFeedbackMarker;

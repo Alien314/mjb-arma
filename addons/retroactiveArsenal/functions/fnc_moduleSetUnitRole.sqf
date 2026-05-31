@@ -83,7 +83,8 @@ private _defName = ((_factions select 1) select ((_factions select 0) find _def)
 						} else { [false, _role] call mjb_arsenal_fnc_arsenal; };
 						[_unit,_radioSetup,_goggs,_noggs] spawn { sleep 0.5;
 							params ['_unit','_radioSetup','_goggs','_noggs'];
-							[0,true] spawn mjb_arsenal_fnc_toughLoop;
+							if (missionNamespace getVariable ['diw_armor_plates_main_plateToughness',false]) then { [0,true] spawn diw_armor_plates_main_fnc_toughLoop; };
+							if (mjb_plateToughness) then { [0,true] spawn mjb_arsenal_fnc_toughLoop; };
 							if (_goggs isNotEqualTo "") then  {_unit linkItem _goggs};
 							if (_noggs isNotEqualTo "") then  {_unit linkItem _noggs};
 							private _radios = ((items _unit apply {if ('acre' in toLower _x) then { _x } else {false}}) - [false]);
