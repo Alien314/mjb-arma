@@ -20,14 +20,14 @@ class CfgMissions {
         // Firing Range
 		class mjb_rzt_stratisFR2 {
 			author = "NotherDuck, MajorDanvers, Inquietude";
-			briefingName = "RATS Stratis Firing Range v2,3";
+			briefingName = "RATS Stratis Firing Range v2,4,2";
 			directory = "z\mjb\addons\zeustemplates\missions\Stratis_Firing_Range_V2,4,2_101.Stratis";
 			overview = "z\mjb\addons\zeustemplates\overview.paa";
 			overviewText = "Firing Range for RATS pre-session and testing.";
 		};
 
       class MJB_ZeusTemplates {
-		class mjb_rzt_vr2 {
+		/*class mjb_rzt_vr2 {
 			author = "NotherDuck, MajorDanvers";
 			briefingName = "RATS Zeus Template Virtual Reality v2,2";
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_Template_V2,2_447.VR";
@@ -38,7 +38,7 @@ class CfgMissions {
 			briefingName = "RATS Zeus Combined Arms Virtual Reality v2,2";
 			directory = "z\mjb\addons\zeustemplates\missions\MJB_Zeus_CombinedArms_V2,2_402.VR";
 			overviewText = "Combined Arms Zeus template for RATS.";
-		};
+		};*/
 		class mjb_rzt_vr1 {
 			author = "NotherDuck, MajorDanvers, MomentaryTemporary";
 			briefingName = "RATS Zeus Template Virtual Reality v2,4";
@@ -57,6 +57,11 @@ class CfgMissions {
 		#define VARB(NAME) RATS Zeus Combined Arms NAME v2##COMMA##2
 		#define VARF(NAME) RATS Zeus Template NAME v2##COMMA##4
 		#define MISH(EXT,NAME) \
+		class mjb_rzt_##EXT##1 : mjb_rzt_vr1 { \
+			briefingName = QUOTE(VARF(NAME)); \
+			directory = QUOTE(VARE(EXT)); \
+		};
+		/*
 		class mjb_rzt_##EXT##2 : mjb_rzt_vr2 { \
 			briefingName = QUOTE(VARA(NAME)); \
 			directory = QUOTE(VARD(EXT)); \
@@ -65,10 +70,7 @@ class CfgMissions {
 			briefingName = QUOTE(VARB(NAME)); \
 			directory = QUOTE(VARC(EXT)); \
 		} \
-		class mjb_rzt_##EXT##1 : mjb_rzt_vr1 { \
-			briefingName = QUOTE(VARF(NAME)); \
-			directory = QUOTE(VARE(EXT)); \
-		};
+		*/
 
         // islands
 		MISH(Altis,Altis);
