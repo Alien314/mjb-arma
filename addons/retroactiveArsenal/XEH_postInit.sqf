@@ -647,9 +647,9 @@ if (mjb_airVehicleDamage) then {
 
 				if (!alive _vehicle) exitWith {_vehicle removeEventHandler [_thisEvent, _thisEventHandler];};
 
-				if ( _projectile isEqualTo "" && {_instigator in [objNull,_vehicle,driver _vehicle]} ) exitWith {  };
+				if ( !hasInterface || { !(player in _vehicle) } ) exitWith {  }; //((getPosATL _vehicle) # 2) < 5
 
-				if ( (count (crew _vehicle select {isPlayer _x}) == 0) ) exitWith {  }; //((getPosATL _vehicle) # 2) < 5
+				if ( _projectile isEqualTo "" && {_instigator in [objNull,_vehicle,driver _vehicle]} ) exitWith {  };
 				
 				if (isNil 'mjb_airDamageCache') then { mjb_airDamageCache = createHashMap; };
 				private _vicH = (typeOf _vehicle + _hitPoint);
