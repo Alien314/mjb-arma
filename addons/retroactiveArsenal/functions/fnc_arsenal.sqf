@@ -201,6 +201,36 @@ private _itemEquipment =
 	"CUP_V_CPC_tlbelt_rngr",
 	"CUP_V_CPC_weaponsbelt_rngr",
 
+    // PLA Vests
+    "PLA_Arid_V_CPC_communicationsbelt",
+    "PLA_Arid_V_CPC_Fastbelt",
+    "PLA_Arid_V_CPC_lightbelt",
+    "PLA_Arid_V_CPC_medicalbelt",
+    "PLA_Arid_V_CPC_tlbelt",
+    "PLA_Arid_V_CPC_weaponsbelt",
+    "PLA_Arid_V_CPC_communications",
+    "PLA_Arid_V_CPC_Fast",
+    "PLA_Arid_V_CPC_light",
+    "PLA_Arid_V_CPC_medical",
+    "PLA_Arid_V_CPC_tl",
+    "PLA_Arid_V_CPC_weapons",
+    "PLA_V_CPC_communicationsbelt",
+    "PLA_V_CPC_Fastbelt",
+    "PLA_V_CPC_lightbelt",
+    "PLA_V_CPC_medicalbelt",
+    "PLA_V_CPC_tlbelt",
+    "PLA_V_CPC_weaponsbelt",
+    "PLA_V_CPC_communications",
+    "PLA_V_CPC_Fast",
+    "PLA_V_CPC_light",
+    "PLA_V_CPC_medical",
+    "PLA_V_CPC_tl",
+    "PLA_V_CPC_weapons",
+    "PLA_V_CarrierRigKBT_01_light_Navy_F",
+    "PLA_V_CarrierRigKBT_01_heavy_Navy_F",
+    "PLA_Vest_Rifleman_Arid",
+    "PLA_Vest_Rifleman_Wood",
+
 	//Tarkov Vests
     "Gjel_vest",
     "GjelBlackRock_vest",
@@ -480,6 +510,30 @@ private _itemEquipment =
     "CUP_H_OpsCore_Covered_Tigerstripe_SF",
     "CUP_H_OpsCore_Covered_UCP_SF",
 
+    // PLA Helmets
+    "PLA_HelmetCCH_cover_Arid_NoHS_F",
+    "PLA_HelmetCCH_cover_Arid_F",
+    "PLA_HelmetCCH_Cover_Wood_NoHS_F",
+    "PLA_HelmetCCH_Cover_Wood_F",
+    "PLA_H_Arid_Helmet01",
+    "PLA_H_Arid_Helmet02",
+    "PLA_H_Helmet01_Navy",
+    "PLA_H_Helmet02_Navy",
+    "PLA_H_Helmet01",
+    "PLA_H_Helmet02",
+    "PLA_Opscore_blk",
+    "PLA_Arid_Opscore_No_Headset",
+    "PLA_Opscore_No_Headset_Navy",
+    "PLA_Opscore_No_Headset",
+    "PLA_Arid_Opscore",
+    "PLA_Opscore_Navy",
+    "PLA_Opscore",
+    "PLA_Opscore_HS_blk",
+    "PLA_Opscore_HS_oli",
+    "PLA_Opscore_HS_snd",
+    "PLA_Opscore_oli",
+    "PLA_Opscore_snd",
+
     //============================================================
     //ACRE radio
     //============================================================
@@ -566,6 +620,14 @@ private _itemUniforms = [
     "JCA_U_NBCD_Suit_01_hood_olive_F",
     "JCA_U_NBCD_Suit_01_sand_F",
     "JCA_U_NBCD_Suit_01_hood_sand_F",
+
+    // PLA Uniforms
+    "PLA_Combat_Uniform_Arid",
+    "PLA_Combat_Uniform_Rolled_Arid",
+    "PLA_Combat_Uniform_Navy",
+    "PLA_Combat_Uniform_Rolled_Navy",
+    "PLA_Combat_Uniform",
+    "PLA_Combat_Uniform_Rolled",
 
 	// Various CUP Uniforms
 	"CUP_U_B_USMC_MCCUU_des_pads_gloves",
@@ -929,6 +991,12 @@ private _itemHats = [
     "H_Booniehat_mcamo",
     "H_Booniehat_eaf",
 
+    //PLA Boonies
+    "PLA_Boonie_Arid",
+    "PLA_Boonie_Arid_hs",
+    "PLA_Boonie_Wood",
+    "PLA_Boonie_Wood_hs",
+
     //CUP Boonies
     "CUP_H_FR_BoonieWDL",
     "CUP_H_USA_Boonie_wdl",
@@ -978,6 +1046,11 @@ private _itemHats = [
     "rhsusf_bowman_cap",
     "mjb_H_Cap_Voin",
     "CUP_H_PMC_PRR_Headset",
+
+    // PLA Hats
+    "PLA_Arid_Patrol_cap",
+    "PLA_Patrol_cap_Navy",
+    "PLA_Patrol_cap",
 
     // blyat
     "rhs_ushanka",
@@ -1057,6 +1130,7 @@ private _itemWeaponMelee =
 ];
 _itemEquipment append _itemWeaponMelee;
 
+// Assault Packs are 16 lbs
 private _itemPackLight = [
 	//============================================================
     //Backpacks
@@ -1071,10 +1145,17 @@ private _itemPackLight = [
 	"B_AssaultPack_dgtl",
     "B_AssaultPack_tna_F",
 	"B_AssaultPack_ocamo",
-	"B_AssaultPack_sgg"
+	"B_AssaultPack_sgg",
+
+    //PLA Small Bags
+    "PLA_Arid_Backpack_Compact",
+    "PLA_Backpack_Compact_Navy",
+    "PLA_Backpack_Compact"
 ];
 _itemEquipment append _itemPackLight;
 
+
+// Kitbags are 28 lbs
 private _itemPackMedLight =
 [
     "B_FieldPack_oucamo",
@@ -1646,6 +1727,8 @@ private _itemWeaponPistol =
     "CUP_hgun_TT",
     "hgun_Rook40_F",
 
+    "Flex_CUP_PLA_HGun_QSZ92",
+
     "rhs_weap_pya",
     "Tier1_P320",
 
@@ -1663,6 +1746,8 @@ private _itemWeaponPistol =
     "CUP_17Rnd_9x19_glock17",
     "CUP_8Rnd_762x25_TT",
     "16Rnd_9x21_Mag",
+    
+    "mjb_20rnd_58x21_mag",
 
     "rhs_mag_9x19_17",
 
@@ -1850,6 +1935,13 @@ private _itemWeaponRifle =
 
     "CUP_arifle_AK101",
     "CUP_arifle_AK101_railed",
+
+    // PLA Rifles
+    "Flex_CUP_PLA_ARifle_QBZ95_blk",
+    "Flex_CUP_PLA_ARifle_QBZ95_GL_blk",
+    "Flex_CUP_PLA_ARifle_QBZ95_RIS_blk",
+    "Flex_CUP_PLA_ARifle_QBZ95_RIS_FG_blk",
+    "Flex_CUP_PLA_ARifle_QBZ95_RIS_GL_blk",
 
     "rhs_weap_vhsd2",
     "rhs_weap_vhsd2_ct15x",
@@ -2900,6 +2992,12 @@ private _itemWeaponAR =
     "CUP_arifle_RPK74_45",
 
     "rhs_weap_rpk74m",
+
+    //============================================================
+    //5.8x42mm
+    //============================================================
+    "Flex_CUP_PLA_ARifle_QJB95_blk",
+    "Flex_CUP_PLA_ARifle_QJB95_RIS_blk",
 
     //============================================================
     //7.62x39mm
