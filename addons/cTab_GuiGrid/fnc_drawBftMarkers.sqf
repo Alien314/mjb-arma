@@ -19,8 +19,7 @@
 	Parameters:
 		0: OBJECT  - Map control to draw BFT icons on
 		1: INTEGER - Mode, 0 = draw normal, 1 = draw for TAD, 2 = draw for MicroDAGR
- 		2: ARRAY   - (Optional) Pre-computed visible bounds [minX,maxX,minY,maxY] from cTab_fnc_ctrlMapVisibleBounds
-
+		2: ARRAY   - (Optional) Pre-computed visible bounds [minX,maxX,minY,maxY] from cTab_fnc_ctrlMapVisibleBounds 	
  	Returns:
 		BOOLEAN - TRUE if the caller should draw the player icon, FALSE otherwise
  	
@@ -84,9 +83,9 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 						if (_x select 1 isNotEqualTo "") then {
 							_ctrlScreen drawIcon [_x select 1,cTabColorBlue,_pos,cTabIconSize,cTabIconSize,0,_text,0,cTabTxtSize,"TahomaB","right"];
 						};
-						if ( _veh isEqualTo _playerVehicle ) then { _mustDrawPlayer = false; };
+						if ( _veh isEqualTo _playerVehicle ) then { _mustDrawPlayer = mjb_ctab_alwaysDrawPlayer; };
 					};
-					if (group _veh isEqualTo _playerGroup) then {
+					if (group _veh isNotEqualTo _playerGroup) then {
 						// player is not in the same group as this vehicle
 						_ctrlScreen drawIcon ["\A3\ui_f\data\map\Markers\System\dummy_ca.paa",cTabColorBlue,_pos,cTabIconSize,cTabIconSize,0,_text,0,cTabTxtSize,"TahomaB","right"];
 					};
@@ -125,13 +124,13 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 			_text = if (_drawText) then {_x select 3} else {""};
 			_pos = if ( GVAR(bft_mode) == 1) then { getPosASL _veh } else { _x select 5 };
 			if !((_pos select 0) >= _visMinX && (_pos select 0) <= _visMaxX && (_pos select 1) >= _visMinY && (_pos select 1) <= _visMaxY) exitWith {};
-			if (_x select 1 != "") then {
+			if ((_x select 1) isNotEqualTo "") then {
 				_ctrlScreen drawIcon [_x select 1,cTabColorBlue,_pos,cTabIconSize,cTabIconSize,0,_text,0,cTabTxtSize,"TahomaB","right"];
 			};
-			if (_x select 2 != "") then {
+			if ((_x select 2) isNotEqualTo "") then {
 				_ctrlScreen drawIcon [_x select 2,cTabColorBlue,_pos,cTabGroupOverlayIconSize,cTabGroupOverlayIconSize,0,"",0,cTabTxtSize,"TahomaB","right"];
 			};
-			if ( _veh == _playerVehicle ) then { _mustDrawPlayer = mjb_ctab_alwaysDrawPlayer; };
+			if ( _veh isEqualTo _playerVehicle ) then { _mustDrawPlayer = mjb_ctab_alwaysDrawPlayer; };
 		};
 	} forEach cTabBFTgroups;
 };
@@ -139,16 +138,18 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 // ------------------ MEMBERS ------------------
 {
 	_veh = vehicle (_x select 0);
+    private _isPlayer = _veh isEqualTo cTab_player;
+    if (_isPlayer && {!visibleMap}) then {continue};
 	
 	call {
 		// make sure the unit object is valid and in the same team
-		if (isNull (_x select 0) || {group cTab_player != group (_x select 0)}) exitWith {};
+		if (isNull (_x select 0) || {group cTab_player isNotEqualTo group (_x select 0)}) exitWith {};
 		
 		// get the fire-team color
 		private _teamIndex = ["MAIN","RED","GREEN","BLUE","YELLOW",""] find (assignedTeam (_x select 0));
 		_teamColor = cTabColorTeam select (if (_teamIndex >= 0) then {_teamIndex} else {0});
 		
-		if (_mode != 2 && {_veh == _playerVehicle || {_veh in _vehicles}}) exitWith {
+		if (_mode != 2 && {(_veh isEqualTo _playerVehicle && {!_isPlayer}) || {_veh in _vehicles}}) exitWith {
 			if (_drawText) then {
 				// we want to draw text on anything but MicroDAGR and the unit sits in a vehicle that has already been drawn
 				_mountedIndex = _mountedLabels find _veh;
@@ -163,7 +164,7 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 		_pos = getPosASL _veh;
 		_dir = direction _veh;
 		if !((_pos select 0) >= _visMinX && (_pos select 0) <= _visMaxX && (_pos select 1) >= _visMinY && (_pos select 1) <= _visMaxY) exitWith {};
-		if (_veh != (_x select 0)) exitWith {
+		if (_veh isNotEqualTo (_x select 0)) exitWith {
 			// the unit _does_ sit in a vehicle
 			_mountedIndex = _mountedLabels find _veh;
 			if (_mountedIndex != -1 && _drawText) then {
@@ -173,12 +174,15 @@ if (GVAR(microDagrGroupBFT) || {_mode != 2}) then {
 				if  (_drawText) then {
 					_mountedLabels pushBack (_x select 4);
 				};
-				if (_veh != _playerVehicle) then {
+				if (_veh isNotEqualTo _playerVehicle) then {
 					_ctrlScreen drawIcon ["\A3\ui_f\data\map\VehicleIcons\iconmanvirtual_ca.paa",cTabColorBlue,_pos,cTabIconSize,cTabIconSize,_dir,"",0,cTabTxtSize,"TahomaB","right"];
 				};
 			};
 		};
-		if (_x select 1 != "") then {
+		if (_isPlayer) then {
+			_teamColor = mjb_ctab_playerColor;
+		};
+		if ((_x select 1) isNotEqualTo "") then {
 			_ctrlScreen drawIcon [_x select 1,_teamColor,_pos,cTabIconManSize,cTabIconManSize,_dir,"",0,cTabTxtSize,"TahomaB","right"];
 		};
 		if (_drawText) then {

@@ -30,6 +30,15 @@
     false
 ] call CBA_fnc_addSetting;
 
+[
+    "mjb_ctab_playerColor",
+    "COLOR",
+    "PLayer Color on Map",
+    ["cTab", "GUI Settings"],
+    [0.75, 0.0, 0.75, 1],
+    false
+] call CBA_fnc_addSetting;
+
 if (isClass (configFile >> 'cfgPatches' >> 'tsp_animate')) then {
 	[
 		"mjb_animate_ctab",
