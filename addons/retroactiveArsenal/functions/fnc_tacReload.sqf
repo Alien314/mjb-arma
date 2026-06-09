@@ -1,4 +1,4 @@
-params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine",["_class",'']];
 
 if (_unit isNotEqualTo (call CBA_fnc_currentUnit) || {_weapon isEqualTo "Throw"}) exitWith {};
 
@@ -23,16 +23,44 @@ if (mjb_tacGestureFix) then {
 	}, [_gesture,_newMagazine]] call CBA_fnc_addBISEventHandler;
 };
 
+if (isNil '_newMagazine') exitWith {};
+scopeName "main";
+if (isNil '_oldMagazine') then { _class = (_newMagazine select 0); } else {
+	_class = (_oldMagazine select 0);
+	if ((_oldMagazine select 1) isEqualTo 0) exitWith {};
+	private _shells = (mjb_tacLoadHash getOrDefaultCall [(_class + '_shells'), {
+		_class call mjb_arsenal_fnc_isShells
+	}, true]);
+	if (_shells isNotEqualTo false && {(mjb_tacLoadHash getOrDefaultCall [( (_newMagazine select 0) + '_shells'), {
+		(_newMagazine select 0) call mjb_arsenal_fnc_isShells
+	}, true]) isEqualTo _shells}) then {
+		private _toLoad = abs ((_newMagazine select 1) - (_oldMagazine select 1));
+		private _gesture = gestureState _unit;
+		if (_toLoad isEqualTo 0) then {_unit switchGesture [_gesture, 0.95]; breakOut "main"};
+		private _max = (mjb_tacLoadHash getOrDefaultCall [( (_newMagazine select 0) + '_shellMax'), {
+			getNumber (configFile >> 'CfgMagazines' >> (_newMagazine select 0) >> 'count')
+		}, true]);
+		private _loadTime = 0.15 + ((0.69/_max) * _toLoad);
+		[{
+			((_this select 0) getUnitMovesInfo 5) > (_this select 1)
+		},
+		{
+			(_this select 0) switchGesture [gestureState (_this select 0), 0.95];
+		}, [_unit,_loadTime],((_unit getUnitMovesInfo 7) * (1.01)),{ }] call CBA_fnc_waitUntilAndExecute;
+
+		// exit tacreload
+		breakOut "main"
+	};
+};
+
 if (!(mjb_tacReload) || {toLower _weapon in ['throw','put']}) exitWith {};
-if  (isNil '_newMagazine') exitWith {};
-private _class = if (isNil '_oldMagazine') then {(_newMagazine select 0)} else {(_oldMagazine select 0)};
 if (mjb_tacForbiddenMags isEqualType '') then { mjb_tacForbiddenMags = (mjb_tacForbiddenMags splitString ',')};
 if (mjb_tacForbiddenMuzzles isEqualType '') then {mjb_tacForbiddenMuzzles = (mjb_tacForbiddenMuzzles splitString ',')};
 if ( _muzzle in (mjb_tacForbiddenMuzzles) || { 
 	_class in (mjb_tacForbiddenMags) || {
 	(mjb_tacLoadHash getOrDefaultCall [(_class + '_notMagazine'), {
 		_class call mjb_arsenal_fnc_notMagazine
-	}, true]) } } 
+	}, true]) } }
 ) exitWith { };
 
 // Load empty, revolvers and belts are still excepted from this
