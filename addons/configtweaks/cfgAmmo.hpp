@@ -6,6 +6,10 @@ class CfgAmmo
 	class B_556x45_Ball: BulletBase	{};
 	class B_762x51_Ball: BulletBase	{};
 
+	class B_570x28_Ball : BulletBase {
+		caliber = 1;
+	};
+
 	// MMG Tracer ammo
 	class B_338_NM_Ball: BulletBase {};
 	class mjb_338_NM_trc_grn: B_338_NM_Ball { model = "\A3\Weapons_f\Data\bullettracer\tracer_green"; };
