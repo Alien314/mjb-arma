@@ -822,6 +822,18 @@ class CfgMagazineWells {
 			"mjb_100Rnd_580x42_ghex_Mag_Tracer_Red"
 		};
 	};
+	class CTAR_580x42 {
+        mjb_mags[] = {
+			"mjb_30Rnd_580x42_Mag_Tracer_Red"
+		};
+	};
+	class CTAR_580x42_Large {
+		mjb_mags[] = {
+			"mjb_100Rnd_580x42_Mag_Tracer_Red",
+			"mjb_100Rnd_580x42_hex_Mag_Tracer_Red",
+			"mjb_100Rnd_580x42_ghex_Mag_Tracer_Red"
+		};
+	};
 	
     class CBA_93x64_LINKS {
         mjb_mags[] = {
