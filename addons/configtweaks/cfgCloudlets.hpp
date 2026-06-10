@@ -179,6 +179,15 @@ class mjb_SmokeShellLightBlueEffect {
 		type = "SmokeShellLightBlueUW";
 	};
 };
+class SmokeShellLightBlueWater {
+	class SmokeShellLightBlueWater {
+		intensity = 1;
+		interval = 0.05;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellLightBlueWater";
+	};
+};
 
 class mjb_SmokeShellPinkEffect {
 	class SmokeShell {
@@ -208,5 +217,14 @@ class mjb_SmokeShellPinkEffect {
 		position[] = {0,0,0};
 		simulation = "particles";
 		type = "SmokeShellPinkUW";
+	};
+};
+class SmokeShellPinkWater {
+	class SmokeShellPinkWater {
+		intensity = 1;
+		interval = 0.05;
+		position[] = {0,0,0};
+		simulation = "particles";
+		type = "SmokeShellPinkWater";
 	};
 };
