@@ -226,8 +226,6 @@ private _itemEquipment =
     "PLA_V_CPC_medical",
     "PLA_V_CPC_tl",
     "PLA_V_CPC_weapons",
-    "PLA_V_CarrierRigKBT_01_light_Navy_F",
-    "PLA_V_CarrierRigKBT_01_heavy_Navy_F",
     "PLA_Vest_Rifleman_Arid",
     "PLA_Vest_Rifleman_Wood",
 
@@ -1760,6 +1758,7 @@ private _itemWeaponPistol =
     "greenmag_ammo_45ACP_basic_30Rnd",
     "greenmag_ammo_9x18_basic_30Rnd",
     "greenmag_ammo_762x25_ball_30Rnd",
+	"greenmag_ammo_570x28_basic_30Rnd",
 
     //Attachments
     "optic_mrd_black",
@@ -1938,10 +1937,8 @@ private _itemWeaponRifle =
 
     // PLA Rifles
     "Flex_CUP_PLA_ARifle_QBZ95_blk",
-    "Flex_CUP_PLA_ARifle_QBZ95_GL_blk",
     "Flex_CUP_PLA_ARifle_QBZ95_RIS_blk",
     "Flex_CUP_PLA_ARifle_QBZ95_RIS_FG_blk",
-    "Flex_CUP_PLA_ARifle_QBZ95_RIS_GL_blk",
 
     "rhs_weap_vhsd2",
     "rhs_weap_vhsd2_ct15x",
@@ -2395,6 +2392,7 @@ private _itemWeaponAmmo =
 
     //Loose ammo
     "greenmag_ammo_556x45_basic_60Rnd",
+	"greenmag_ammo_556x45_basic_30Rnd",
 
     //============================================================
     //5.45x39mm
@@ -2406,6 +2404,7 @@ private _itemWeaponAmmo =
 
     //Loose ammo
     "greenmag_ammo_545x39_basic_60Rnd",
+    "greenmag_ammo_545x39_basic_30Rnd",
 
     //============================================================
     //5.8x42mm
@@ -2415,6 +2414,7 @@ private _itemWeaponAmmo =
 
 	// loose ammo
 	"greenmag_ammo_580x42_basic_60Rnd",
+	"greenmag_ammo_580x42_basic_30Rnd",
 
 
     //============================================================
@@ -2430,6 +2430,7 @@ private _itemWeaponAmmo =
 
     //Loose ammo
     "greenmag_ammo_762x39_basic_60Rnd",
+    "greenmag_ammo_762x39_basic_30Rnd",
 
     //============================================================
     //7.62x51mm
@@ -2445,6 +2446,7 @@ private _itemWeaponAmmo =
 
     //Loose ammo
     "greenmag_ammo_762x51_basic_60Rnd",
+    "greenmag_ammo_762x51_basic_30Rnd",
 
     //============================================================
     //7.62x54mm
@@ -2452,6 +2454,7 @@ private _itemWeaponAmmo =
     //Magazines
     //Loose ammo
     "greenmag_ammo_762x54_basic_60Rnd",
+    "greenmag_ammo_762x54_basic_30Rnd",
 
     //============================================================
     //Grenades
@@ -2620,6 +2623,7 @@ if (_tracer isEqualTo 'red') then {
 
 		//Loose ammo
         "greenmag_ammo_580x42_basic_60Rnd",
+        "greenmag_ammo_580x42_basic_30Rnd",
 
 		//============================================================
 		//7.62x51mm
@@ -2793,6 +2797,7 @@ if (_tracer isEqualTo 'red') then {
 
 		//Loose ammo
         "greenmag_ammo_580x42_basic_60Rnd",
+        "greenmag_ammo_580x42_basic_30Rnd",
 
 		//============================================================
 		//7.62x51mm
@@ -2934,9 +2939,13 @@ private _itemWeaponCQB =
     //Loose ammo
     //============================================================
     "greenmag_ammo_46x30_basic_60Rnd",
+    "greenmag_ammo_46x30_basic_30Rnd",
     "greenmag_ammo_570x28_basic_60Rnd",
+    "greenmag_ammo_570x28_basic_30Rnd",
     "greenmag_ammo_765x17_basic_60Rnd",
+    "greenmag_ammo_765x17_basic_30Rnd",
     "greenmag_ammo_9x39_ball_60Rnd",
+    "greenmag_ammo_9x39_ball_30Rnd",
     "greenmag_ammo_45ACP_basic_60Rnd",
     "greenmag_ammo_9x18_basic_60Rnd",
     "greenmag_ammo_9x19_basic_60Rnd",
@@ -3249,6 +3258,8 @@ private _itemSniperAmmo = [
     "greenmag_ammo_338_basic_30Rnd",
     "greenmag_ammo_338_basic_60Rnd",
     "greenmag_ammo_46x30_basic_60Rnd",
+    "greenmag_ammo_46x30_basic_30Rnd",
+    "greenmag_ammo_93x64_basic_30Rnd",
     "greenmag_ammo_93x64_basic_60Rnd"
 ];
 
@@ -3337,6 +3348,10 @@ private _itemWeaponGL =
 
     "rhs_weap_ak74m_gp25",
 
+	//5.8x42mm
+    "Flex_CUP_PLA_ARifle_QBZ95_GL_blk",
+    "Flex_CUP_PLA_ARifle_QBZ95_RIS_GL_blk",
+
     //7.62x39mm
     "CUP_arifle_OTS14_GROZA_762_GL",
     "CUP_arifle_Sa58RIS2_gl",
@@ -3371,10 +3386,11 @@ private _itemWeaponGL =
     "CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_Tan_M",
     "CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Tan_M",*///only green
 	"CUP_30Rnd_556x45_AK19_Tan_M",
-    "CUP_30Rnd_680x43_Stanag_Tracer_Red",
-    "CUP_30Rnd_680x43_Stanag_Tracer_Yellow",
+    //"CUP_30Rnd_680x43_Stanag_Tracer_Red",
+    //"CUP_30Rnd_680x43_Stanag_Tracer_Yellow",
 
-    "greenmag_ammo_680x43_tracer_60Rnd",
+    //"greenmag_ammo_680x43_tracer_60Rnd",
+    //"greenmag_ammo_680x43_tracer_30Rnd",
 
     //============================================================
     //Grenade Rounds
@@ -4188,7 +4204,10 @@ if (_hasContact) then {
 		"JCA_V_CarrierRigKBT_01_light_MTP_woodland_F",
 		"JCA_V_CarrierRigKBT_01_light_black_F",
 		"JCA_V_CarrierRigKBT_01_light_olive_F",
-		"JCA_V_CarrierRigKBT_01_light_sand_F"
+		"JCA_V_CarrierRigKBT_01_light_sand_F",
+
+		"PLA_V_CarrierRigKBT_01_light_Navy_F",
+		"PLA_V_CarrierRigKBT_01_heavy_Navy_F"
     ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
