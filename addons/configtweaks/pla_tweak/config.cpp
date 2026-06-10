@@ -9,7 +9,8 @@ class CfgPatches {
 		name = "PLA tweak";
 		requiredAddons[]=
 		{
-			"Flex_CUP_PLA_Weapons_Pistols_QSZ92"
+			"Flex_CUP_PLA_Weapons_Pistols_QSZ92",
+			"dynamicLoadout_LK" //weapons[] = {"missiles_TY90_AA_LK","missiles_AKD9_AG_LK","missiles_TL2_AG_LK","missiles_AKD10_AG_LK","Rocket_57mm_HE_LK","Rocket_90mm_HE_LK","Rocket_130mm_HE_LK","LK_weapon_PL10Launcher","LK_weapon_PL15Launcher","LK_weapon_YJ91Launcher","LK_weapon_YJ9ELauncher","LK_weapon_LS6_100KG","LK_weapon_LS6_250KG","LK_weapon_LS6_500KG","fakeweapon_fueltank_lk"};
 		};
 		skipWhenMissingDependencies = 1;
 	};
@@ -35,6 +36,11 @@ class CfgMagazines {
 		greenmag_basicammo = "greenmag_ammo_57x28mm_basic_1Rnd";
 		greenmag_ammo = "greenmag_ammo_57x28mm_basic_1Rnd";
 		initSpeed = 479;
+	};
+
+	class LK_TL2X4_AG;
+	class LK_TL2X1_AG : LK_TL2X4_AG {
+
 	};
 };
 class CfgMagazineWells {
