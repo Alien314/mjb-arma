@@ -3931,6 +3931,7 @@ private _itemTankCrew =
     "Tier1_EXPS3_0_Black",
     "Tier1_Larue_FUG_Black"
 ];
+_itemTankCrew append _itemEquipment;
 _itemTankCrew append _itemHats;
 _itemTankCrew append _itemNVG;
 _itemTankCrew append _itemWeaponMelee;
