@@ -1379,6 +1379,8 @@ private _itemMod =
     "JCA_optic_MROS_sand_magnifier",
 
 	//MCC 3x
+    "MCC_MicroT2_Spuhr_BLK_Down",
+
     "MCC_EXPS3_BLK_Up",
     "MCC_EXPS3_FDE_Down",
 	"MCC_EXPS3_UnityX_BLK_Up",
@@ -1677,7 +1679,13 @@ private _itemReflexSight =
     "rhsusf_acc_t1_low_fwd",
 
     //MCC
-	"MCC_EXPS3_BLK",
+	"MCC_MicroT2_Spuhr_BLK",
+    "MCC_Aimpoint_Pro_S_FC",
+    "MCC_Aimpoint_Pro_S",
+    "MCC_Aimpoint_Pro_T_FC",
+    "MCC_Aimpoint_Pro_T",
+
+    "MCC_EXPS3_BLK",
 	"MCC_EXPS3_FDE",
     "MCC_EXPS3_UnityX_BLK",
     "MCC_EXPS3_UnityX_FDE",
@@ -1690,7 +1698,8 @@ private _itemReflexSight =
 	"MCC_GBRS_EXPS3_FDE",
 	"MCC_Romeo9t_blk",
     "MCC_Romeo9t_fde",
-
+    
+    //Tier1
     "Tier1_EXPS3_0_Tano",
     "tier1_romeo4t_bcd_black",
     "tier1_romeo4t_bcd_riser_black",
@@ -2047,7 +2056,20 @@ private _itemWeaponRifle =
 	//============================================================
 	// MCC 5.56, 5.45, 7.62x39
 	//============================================================
-	"MCC_KS1_FDE_CTR",
+	"MCC_M4A1_556_USGI_145_CTR",
+    "MCC_M4A1_556_USGI_145_Bravo",
+    "MCC_M4A1_556_USGI_145_Bravo",
+    "MCC_M4A1_556_RAS_145_CTR",
+    "MCC_M4A1_556_RAS_145_Bravo",
+    "MCC_M4A1_556_RAS_145_M4SS",
+    "MCC_MK18_556_RAS_103_CTR",
+    "MCC_MK18_556_RAS_103_Bravo",
+    "MCC_MK18_556_RAS_103_M4SS",
+    "MCC_MK18_FS_556_RAS_103_CTR",
+    "MCC_MK18_FS_556_RAS_103_Bravo",
+    "MCC_MK18_FS_556_RAS_103_M4SS",
+    
+    "MCC_KS1_FDE_CTR",
 	"MCC_KS1_FDE_Bravo",
 	"MCC_KS1_FDE_SLK",
 	"MCC_KS1_BLK_CTR",
