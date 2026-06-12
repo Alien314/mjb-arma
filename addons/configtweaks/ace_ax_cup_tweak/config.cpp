@@ -31,6 +31,9 @@ class XtdGearInfos {
 		class CUP_U_B_GER_Crye2 {
 			camo = "TRPTRN";
 		};
+		// remove cringe
+		delete CUP_H_OpsCore_Covered_MCAM_US;
+		delete CUP_H_OpsCore_Spray_US;
 	};
 };
 
@@ -46,6 +49,13 @@ class XtdGearModels {
 		class cup_crye {
 			class camo {
 				values[] += {"TRPTRN"};
+			};
+		};
+		class cup_opscore_fast {
+			class camo {
+				values[] = {"AAF","BLK","FLCK","TRPTRN","GRN","GRY","MTP","MC","MM14","SPRAY","TAN","TSW","UCP"};
+				delete MC_US;
+				delete SPRAY_US;
 			};
 		};
 	};
