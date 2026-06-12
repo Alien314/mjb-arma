@@ -37,7 +37,7 @@ while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 
 		if (!mjb_med_tweaks_unstableWakeFaint || {[_unit] call ace_medical_status_fnc_hasStableVitals}) exitWith { _unit setVariable ['mjb_unstableWake',nil]; };
 		private _faintTime = ((random mjb_med_tweaks_unstableWakeMax) + mjb_med_tweaks_unstableWakeMin);
-		if (mjb_med_tweaks_unstablePPFX) then {
+		if (mjb_med_tweaks_unstablePPFX && { _unit isEqualTo player }) then {
 			if (isNil 'mjb_med_tweaks_ppUnstable') then {
 				//mjb_med_tweaks_ppUnstable ppEffectAdjust [1,1,0,[0,0,0,0],[0,0,0,0.24],[1,1,1,0],[0.6,0.5,0,0,-0.1,0.4,0.8]]; // default?
 				mjb_med_tweaks_ppUnstable = ppEffectCreate ['ColorCorrections', 1400];
@@ -73,6 +73,13 @@ while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 				];
 				mjb_med_tweaks_ppUnstable ppEffectCommit 1;
 			}, _opacity,(_faintTime - 1)] call CBA_fnc_waitAndExecute;
+			private _ppKilled = _unit getVariable ['mjb_ppKilled',nil];
+			if !(isNil '_ppKilled') exitWith {};
+			_unit setVariable ['mjb_ppKilled',(_unit addEventHandler ['Killed',{ params ['_unit'];
+				[{ if (isNil 'mjb_med_tweaks_ppUnstable') exitWith {}; ppEffectDestroy mjb_med_tweaks_ppUnstable; mjb_med_tweaks_ppUnstable = nil; }, nil,1] call CBA_fnc_waitAndExecute;
+				_unit setVariable ['mjb_ppKilled',nil];
+				_unit removeEventHandler [_thisEvent,_thisEventHandler];
+			}])];
 		};
 
 		[{

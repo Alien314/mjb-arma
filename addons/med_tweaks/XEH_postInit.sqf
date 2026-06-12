@@ -3,7 +3,7 @@
 if !(hasInterface) exitWith {};
 
 ['ace_unconscious',{ params ['_unit','_active'];
-	if !(_active && {local _unit}) exitWith { };
+	if !(_active && { local _unit && { isPlayer _unit }}) exitWith { };
 
 	private _att = attachedObjects _unit;
 	if ((count _att) isNotEqualTo 0) then {
