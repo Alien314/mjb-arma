@@ -163,6 +163,21 @@ class CfgFactionClasses {
 
 class CfgVehicles
 {
+	class Man;
+	class CAManBase : Man {
+		class ACE_SelfActions {
+			class ACE_Equipment {
+				class AFI_CutterAction { // credit: Raimo
+					displayName = "Remove clutter";
+					condition = "isNull objectParent player";
+					exceptions[] = {};
+					statement = "ace_player playActionNow 'medic'; [mjb_clutterTime, [], {_obj = createVehicle [(['Land_ClutterCutter_medium_F','Land_ClutterCutter_large_F'] select mjb_clutterArea), ace_player, [], 0, 'CAN_COLLIDE'];}, {ace_player playActionNow 'medicstop';}, 'Removing clutter...'] call ace_common_fnc_progressBar";
+					icon = "\z\mjb\addons\arsenal\data\cutterIcon.paa";
+				};
+			};
+		};
+	};
+
 	class Logic;
     class Module_F : Logic {
 		class ArgumentsBaseUnits {

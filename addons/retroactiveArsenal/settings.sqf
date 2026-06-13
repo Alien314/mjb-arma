@@ -65,6 +65,24 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_clutterTime",
+    "SLIDER",
+    ["Remove Clutter Time", "Time in seconds it takes to clear an area of grass and similarly small map objects around the player."],
+    [_title, "Player QoL"],
+    [0, 300, 4, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_clutterArea",
+    "CHECKBOX",
+    ["Larger Clutter removal area", "Doubles the radius of the area cleared, ~5m radius instead of ~2.5m."],
+    [_title, "Player QoL"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_strobeInf",
     "CHECKBOX",
     ["Do not consume self attachables", "Allows players to attach items to self infinitely. One is required in inventory."],
