@@ -8,7 +8,7 @@ class CfgPatches {
     author = "Momo";
     name = "MCC sights tweaks";
 	requiredAddons[]=
-        {
+        {	//"disable",
             "MCC_RD",//weapons[] = {"MCC_MicroT2","MCC_MicroT2_Down","MCC_MicroT2_Up","MCC_EXPS3_BLK","MCC_EXPS3_BLK_Down","MCC_EXPS3_BLK_Up","MCC_EXPS3_FDE","MCC_EXPS3_FDE_Down","MCC_EXPS3_FDE_Up","MCC_Romeo9t_blk","MCC_Romeo9t_fde","MCC_Romeo9t_BLK_Down","MCC_Romeo9T_BLK_Up","MCC_Romeo9T_FDE_Down","MCC_Romeo9T_FDE_Up"};
             "MCC_LPVO",//weapons[] = {"MCC_Vortex_Elanor_Acro_BLK","MCC_Vortex_Elanor_Acro_FDE","MCC_Vortex_Elanor_Acro_TAN","MCC_Mark5_10_BLK","MCC_Mark5_10_FDE","MCC_Trijicon_VCOG_18","MCC_ZCO_10_BLK_DMR"};
             "MCC_ERD"//weapons[] = {"MCC_GBRS_T2_FDE","MCC_GBRS_T2_Mag_Down_FDE","MCC_GBRS_T2_Mag_Up_FDE","MCC_GBRS_T2_Mag_Up_BLK","MCC_GBRS_EXPS3_FDE","MCC_GBRS_EXPS3_Mag_Down_FDE","MCC_GBRS_EXPS3_Mag_Up_FDE","MCC_GBRS_EXPS3_Mag_Up_BLK","MCC_MicroT2_UnityX_BLK","MCC_MicroT2_UnityX_FDE","MCC_MicroT2_UnityX_BLK_Down","MCC_MicroT2_UnityX_BLK_Up","MCC_MicroT2_UnityX_FDE_Down","MCC_MicroT2_UnityX_FDE_Up","MCC_EXPS3_UnityX_BLK","MCC_EXPS3_UnityX_BLK_Down","MCC_EXPS3_UnityX_BLK_Up","MCC_EXPS3_UnityX_FDE","MCC_EXPS3_UnityX_FDE_Down","MCC_EXPS3_UnityX_FDE_Up"};
@@ -70,8 +70,10 @@ class CfgWeapons {
 	//MCC_DWN(MCC_GBRS_T2_FDE,MCC_GBRS_T2_BLK);
 	//MCC_DWN(MCC_MicroT2_UnityX_BLK,MCC_MicroT2_UnityX_FDE);
 	//MCC_DWN(MCC_GBRS_EXPS3_FDE,MCC_GBRS_EXPS3_BLK);
+	MCC_DOT(MCC_Aimpoint_Pro_S);
+	MCC_DOT(MCC_MicroT2_Spuhr_BLK);
 
-	// 1x / optics down
+	// 1x / optics down (base,var)
 	MCC_DWN(MCC_EXPS3_BLK,MCC_EXPS3_BLK_Down);
 	MCC_DWN(MCC_EXPS3_FDE,MCC_EXPS3_FDE_Down);
 	MCC_DWN(MCC_GBRS_EXPS3_FDE,MCC_GBRS_EXPS3_Mag_Down_FDE);
@@ -89,6 +91,7 @@ class CfgWeapons {
 	class MCC_EXPS3_UnityX_BLK_Down;
 	class MCC_EXPS3_UnityX_FDE_Down;
 	class MCC_GBRS_T2_Mag_Down_BLK;
+	MCC_DWN(MCC_MicroT2_Spuhr_BLK,MCC_MicroT2_Spuhr_BLK_Down);
 	
 	// 3x / optics up
 	MCC_UP(MCC_EXPS3_BLK_Up,MCC_EXPS3_BLK_Down);
@@ -104,4 +107,5 @@ class CfgWeapons {
 	MCC_UP(MCC_MicroT2_UnityX_FDE_Up,MCC_MicroT2_UnityX_FDE_Down);
 	MCC_UP(MCC_GBRS_T2_Mag_Up_BLK,MCC_GBRS_T2_Mag_Down_BLK);
 	MCC_UP(MCC_GBRS_T2_Mag_Up_FDE,MCC_GBRS_T2_Mag_Down_FDE);
+	MCC_UP(MCC_MicroT2_Spuhr_BLK_Up,MCC_MicroT2_Spuhr_BLK_Down);
 };
