@@ -1232,7 +1232,7 @@ private _itemPackHeavy =
 ];
 _itemPackHeavy append _itemPackMedium;
 
-private _itemFacewear = (("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x})- ['G_Armband_Cross_F','G_Armband_Cross_alt_F']);
+private _itemFacewear = (("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x})- ['G_Armband_Cross_F','G_Armband_Cross_alt_F'] + ["PLA_NV_Goggles_F", "PLA_NV_Glasses_F"]);
 /*private _itemFacewear =
 [
     //Vanilla
@@ -4338,7 +4338,16 @@ if (_hasMarksmen) then {
         "bipod_02_F_tan"
     ];
 
-    _itemSniper pushBack "optic_AMS";
+    _itemSniper append [
+		"optic_AMS",
+		"U_B_FullGhillie_lsh",
+		"U_B_FullGhillie_sard",
+		"U_B_T_FullGhillie_tna_F",
+		"U_B_FullGhillie_ard",
+		"U_I_FullGhillie_ard",
+		"U_I_FullGhillie_lsh",
+		"U_I_FullGhillie_sard"
+	];
 };
 
 //Add Existing Player Items
