@@ -54,6 +54,16 @@ class JSRS_BaseFunction;
 class CfgFunctions {
 	class JSRS {
 		class sys {
+			class onFired: JSRS_BaseFunction
+			{
+				//file = "z\jsrs2025\addons\functions\functions";
+				
+#if __has_include("\z\mjb\addons\configtweaks\cfgMagazines.hpp")
+				file = "z\mjb\addons\configtweaks\JSRS_noMedGrunt\fn_onFired.sqf";
+#else
+				file = "z\mjb\addons\noGrunt\fn_onFired.sqf";
+#endif
+			};
 			class onFiredMagazineEmpty: JSRS_BaseFunction {
 				//file = "z\jsrs2025\addons\functions\functions";
 				
