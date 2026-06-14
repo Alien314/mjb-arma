@@ -120,9 +120,9 @@ private _title = "MJB Arma";
 [
     "mjb_airVehicleDamage",
     "CHECKBOX",
-    ["Air Damage", "Prevents detonation of player air vehicles at altitude, allowing more likely auto-rotation situation."],
+    ["Air Damage", "Prevents detonation of player air vehicles at altitude, allowing more likely auto-rotation situation. (Incompatible with Vehicle Plates)"],
     [_title, "Player QoL"],
-    true,
+    false,
     true
 ] call CBA_fnc_addSetting;
 
