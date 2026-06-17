@@ -11,6 +11,40 @@ private _title = "MJB Arma";
 		if (!isNull player) then { player setVariable ['diwako_dui_nametags_customInfo', _value, true]; };
 	}
 ] call CBA_fnc_addSetting;
+[
+    "mjb_duiCustomTagClr",
+    "COLOR",
+    ["Pronouns/DUI Custom tag Color", "Sets color of custom text shown below your name and group in the DUI name tag."],
+    [_title, "Player QoL"],
+    [0, 0, 0],
+    false,
+	{
+		if (isNull player || {_this isEqualTo [0,0,0]}) exitWith {};
+		if (_this isEqualTo [0,0,0]) exitWith { player setVariable ["dui_customInfoHexColor",nil,true]; };
+		player setVariable ["dui_customInfoHexColor", _this call BIS_fnc_colorRGBtoHTML, true];
+	}
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_duiJoinPorpl",
+    "CHECKBOX",
+    ["Purple Team", "Sets custom DUI color to purple."],
+    [_title, "Player QoL"],
+    false,
+    false,
+	{	params ['_value'];
+		if (!isNull player) then {
+			if (_value) then {
+				private _colour = [0.5, 0, 1];
+				player setVariable ["dui_customRGBColor", _colour, true];
+				player setVariable ["dui_customHexColor", _colour call BIS_fnc_colorRGBtoHTML, true];
+			} else {
+				player setVariable ["dui_customRGBColor", nil, true];
+				player setVariable ["dui_customHexColor", nil, true];
+			};
+		};
+	}
+] call CBA_fnc_addSetting;
 
 [
     "mjb_suppressedMarker",
