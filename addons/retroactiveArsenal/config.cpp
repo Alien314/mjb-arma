@@ -171,7 +171,7 @@ class CfgVehicles
 					displayName = "Remove clutter";
 					condition = "isNull objectParent player";
 					exceptions[] = {};
-					statement = "ace_player playActionNow 'medic'; [mjb_clutterTime, [], {_obj = createVehicle [(['Land_ClutterCutter_medium_F','Land_ClutterCutter_large_F'] select mjb_clutterArea), ace_player, [], 0, 'CAN_COLLIDE'];}, {ace_player playActionNow 'medicstop';}, 'Removing clutter...'] call ace_common_fnc_progressBar";
+					statement = "ace_player call mjb_arsenal_fnc_clutterCut";
 					icon = "\z\mjb\addons\arsenal\data\cutterIcon.paa";
 				};
 			};
