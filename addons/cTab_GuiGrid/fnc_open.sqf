@@ -47,6 +47,8 @@ params ["_interfaceType","_displayName", "_player", "_vehicle"];
 
 private _isDialog = [_displayName] call cTab_fnc_isDialog;
 
+if (_isDialog && {_player getVariable ["ace_captives_isHandcuffed", false]}) exitWith {cTabIfOpenStart = false};
+
 private _textures = call {
 		if (!_isDialog && {mjb_ctab_noBorderDef}) exitWith {["",""]};
 		if (_displayName in ["cTab_TAD_dsp","cTab_TAD_dlg"]) exitWith {
