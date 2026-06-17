@@ -715,7 +715,19 @@ if (mjb_airVehicleDamage) then {
 	};
 }] call CBA_fnc_addEventHandler;
 
-["ace_captiveStatusChanged", { params ['', '_state', '_status','_captor'];
+["ace_captiveStatusChanged", { params ['_unit', '_state', '_status','_captor'];
+	if (local _unit && {_unit isEqualTo player}) then {
+		if (_state) then {
+			if (AVS_IS_RollingAvailable) then {
+				mjb_wasRoll = AVS_IS_RollingAvailable;
+				AVS_IS_RollingAvailable = false;
+				_unit addEventHandler ["Killed",{if (!isNil 'mjb_wasRoll') then {mjb_wasRoll = nil; AVS_IS_RollingAvailable = true};}];
+			};
+		} else {
+			if (!isNil 'mjb_wasRoll') then {mjb_wasRoll = nil; AVS_IS_RollingAvailable = true};
+		};
+	};
+
 	if (!_state || {_status isNotEqualTo 'SetHandcuffed' || {ACE_player isNotEqualTo _captor}}) exitWith {};
 	
 	if (mjb_tiesInf) then {
