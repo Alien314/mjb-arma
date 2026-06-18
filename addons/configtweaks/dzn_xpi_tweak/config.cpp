@@ -430,29 +430,78 @@ class CfgWeapons {
 			type=Q(XPI_T_VISIBLE); \
 			mode = Q(XPI_M_VISIBLE_LASER); \
 		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_RED; \
+		}; \
+	};
+	//Green
+	#define MCC_LASERGRN(var,var2) class var##var2##IRL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER); \
+		}; \
+	}; \
+	class var##var2##IRC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W); \
+		}; \
+	}; \
+	class var##var2##IRCF : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##IRT : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##VISC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
+		}; \
+	}; \
+	class var##var2##VISL : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER); \
+		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_GREEN; \
+		}; \
 	};
 
 	// Laser
-		MCC_LASER(MCC_AK_LA30,_);
-		MCC_LASER(MCC_AR_LA30,_);
-		MCC_LASER(MCC_AR18_LA30,_);
+		MCC_LASERGRN(MCC_AK_LA30,_);
+		MCC_LASERGRN(MCC_AR_LA30,_);
+		MCC_LASERGRN(MCC_AR18_LA30,_);
+		MCC_LASERGRN(MCC_LA30,_);
 		MCC_LASER(MCC_L3Squad_AK_Top,_);
 		MCC_LASER(MCC_L3Squad_AR_Top,_);
 		MCC_LASER(MCC_L3Squad_AR18_Top,_);
 		MCC_LASER(MCC_L3Squad,_);
-		MCC_LASER(MCC_LA30,_);
 		MCC_LASER(MCC_NGAL_AK_Top,_);
 		MCC_LASER(MCC_NGAL_AR_Top,_);
 		MCC_LASER(MCC_NGAL_AR18_Top,_);
 		MCC_LASER(MCC_NGAL,_);
-		MCC_LASER(MCC_OGL_AK_Top,_BLK_);
-		MCC_LASER(MCC_OGL_AK_Top,_FDE_);
-		MCC_LASER(MCC_OGL_AR_Top,_BLK_);
-		MCC_LASER(MCC_OGL_AR_Top,_FDE_);
-		MCC_LASER(MCC_OGL_AR18_Top,_BLK_);
-		MCC_LASER(MCC_OGL_AR18_Top,_FDE_);
-		MCC_LASER(MCC_OGL,_BLK_);
-		MCC_LASER(MCC_OGL,_FDE_);
+		MCC_LASERGRN(MCC_OGL_AK_Top,_BLK_);
+		MCC_LASERGRN(MCC_OGL_AK_Top,_FDE_);
+		MCC_LASERGRN(MCC_OGL_AR_Top,_BLK_);
+		MCC_LASERGRN(MCC_OGL_AR_Top,_FDE_);
+		MCC_LASERGRN(MCC_OGL_AR18_Top,_BLK_);
+		MCC_LASERGRN(MCC_OGL_AR18_Top,_FDE_);
+		MCC_LASERGRN(MCC_OGL,_BLK_);
+		MCC_LASERGRN(MCC_OGL,_FDE_);
 		MCC_LASER(MCC_PEQ15_AK_Top,_BLK_);
 		MCC_LASER(MCC_PEQ15_AK_Top,_FDE_);
 		MCC_LASER(MCC_PEQ15_AR_Top,_BLK_);
@@ -585,12 +634,75 @@ class CfgWeapons {
 			type=Q(XPI_T_VISIBLE); \
 			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
 		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_RED; \
+		}; \
 	}; \
 	class var##var2##VISL : var##var2##IRL { \
 		class dzn_XPI { \
 			bundle = Q(VARTWO(var,var2)); \
 			type=Q(XPI_T_VISIBLE); \
 			mode = Q(XPI_M_VISIBLE_LASER); \
+		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_RED; \
+		}; \
+	}; \
+	class var##var2##WL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_LIGHT); \
+		}; \
+	};
+
+	// GREEN
+	#define MCC_COMBOGRN(var,var2) class var##var2##IRL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER); \
+		}; \
+	}; \
+	class var##var2##IRC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W); \
+		}; \
+	}; \
+	class var##var2##IRCF : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##IRT : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##VISC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
+		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_GREEN; \
+		}; \
+	}; \
+	class var##var2##VISL : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER); \
+		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_GREEN; \
 		}; \
 	}; \
 	class var##var2##WL : ItemCore { \
@@ -603,8 +715,8 @@ class CfgWeapons {
 
 	MCC_COMBO(MCC_AK_NGAL_M600V,_BLK_);
 	MCC_COMBO(MCC_AK_NGAL_M600V,_FDE_);
-	MCC_COMBO(MCC_AK_OGL_WMLX,_BLK_);
-	MCC_COMBO(MCC_AK_OGL_WMLX,_FDE_);
+	MCC_COMBOGRN(MCC_AK_OGL_WMLX,_BLK_);
+	MCC_COMBOGRN(MCC_AK_OGL_WMLX,_FDE_);
 	MCC_COMBO(MCC_AK_PEQ15_M300C,_BLK_);
 	MCC_COMBO(MCC_AK_PEQ15_M300C,_FDE_);
 	MCC_COMBO(MCC_AR_LA30_M600V,_BLK_);
@@ -615,22 +727,22 @@ class CfgWeapons {
 	MCC_COMBO(MCC_AR_NGAL_M600V,_FDE_);
 	MCC_COMBO(MCC_AR_NGAL_M600V_Tail,_BLK_);
 	MCC_COMBO(MCC_AR_NGAL_M600V_Tail,_FDE_);
-	MCC_COMBO(MCC_AR_OGL_WMLX,_BLK_);
-	MCC_COMBO(MCC_AR_OGL_WMLX,_FDE_);
+	MCC_COMBOGRN(MCC_AR_OGL_WMLX,_BLK_);
+	MCC_COMBOGRN(MCC_AR_OGL_WMLX,_FDE_);
 	MCC_COMBO(MCC_AR_PEQ15_M300C,_BLK_);
 	MCC_COMBO(MCC_AR_PEQ15_M300C,_FDE_);
 	MCC_COMBO(MCC_AR_PEQ15_M300C_Tail,_BLK_);
 	MCC_COMBO(MCC_AR_PEQ15_M300C_Tail,_FDE_);
-	MCC_COMBO(MCC_AR18_LA30_M600V,_BLK_);
-	MCC_COMBO(MCC_AR18_LA30_M600V,_FDE_);
-	MCC_COMBO(MCC_AR18_LA30_M600V_Tail,_BLK_);
-	MCC_COMBO(MCC_AR18_LA30_M600V_Tail,_FDE_);
+	MCC_COMBOGRN(MCC_AR18_LA30_M600V,_BLK_);
+	MCC_COMBOGRN(MCC_AR18_LA30_M600V,_FDE_);
+	MCC_COMBOGRN(MCC_AR18_LA30_M600V_Tail,_BLK_);
+	MCC_COMBOGRN(MCC_AR18_LA30_M600V_Tail,_FDE_);
 	MCC_COMBO(MCC_AR18_NGAL_M600V,_BLK_);
 	MCC_COMBO(MCC_AR18_NGAL_M600V,_FDE_);
 	MCC_COMBO(MCC_AR18_NGAL_M600V_Tail,_BLK_);
 	MCC_COMBO(MCC_AR18_NGAL_M600V_Tail,_FDE_);
-	MCC_COMBO(MCC_AR18_OGL_WMLX,_BLK_);
-	MCC_COMBO(MCC_AR18_OGL_WMLX,_FDE_);
+	MCC_COMBOGRN(MCC_AR18_OGL_WMLX,_BLK_);
+	MCC_COMBOGRN(MCC_AR18_OGL_WMLX,_FDE_);
 	MCC_COMBO(MCC_AR18_PEQ15_M300C,_BLK_);
 	MCC_COMBO(MCC_AR18_PEQ15_M300C,_FDE_);
 	MCC_COMBO(MCC_AR18_PEQ15_M300C_Tail,_BLK_);
@@ -640,8 +752,8 @@ class CfgWeapons {
 	MCC_COMBO(MCC_PEQ16_AR_TOP,_);
 	MCC_COMBO(MCC_PEQ16_AR18_TOP,_);
 	MCC_COMBO(MCC_PEQ16,_);
-	MCC_COMBO(MCC_VarioRay_AK_TOP,_);
-	MCC_COMBO(MCC_VarioRay_AR_TOP,_);
-	MCC_COMBO(MCC_VarioRay_AR18_TOP,_);
-	MCC_COMBO(MCC_VarioRay,_);
+	MCC_COMBOGRN(MCC_VarioRay_AK_TOP,_);
+	MCC_COMBOGRN(MCC_VarioRay_AR_TOP,_);
+	MCC_COMBOGRN(MCC_VarioRay_AR18_TOP,_);
+	MCC_COMBOGRN(MCC_VarioRay,_);
 };
