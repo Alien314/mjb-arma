@@ -33,8 +33,8 @@ class CfgMagazines {
 		descriptionShort = "Caliber: 5.8x21 mm<br />Rounds: 20<br />Used in: QSZ-92";
 		count = 20;
 		ammo = "B_570x28_Ball";
-		greenmag_basicammo = "greenmag_ammo_57x28mm_basic_1Rnd";
-		greenmag_ammo = "greenmag_ammo_57x28mm_basic_1Rnd";
+		greenmag_basicammo = "greenmag_ammo_570x28_basic_1Rnd";
+		greenmag_ammo = "greenmag_ammo_570x28_basic_1Rnd";
 		initSpeed = 479;
 	};
 
