@@ -1378,7 +1378,7 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
 		MACRO_ADDITEM(ACE_bloodIV,10);
 		MACRO_ADDITEM(ACE_bloodIV_500,10);
 		MACRO_ADDITEM(ACE_personalAidKit,4);
-		MACRO_ADDITEM(ACE_suture,15);
+		//MACRO_ADDITEM(ACE_suture,15);
     };
 	class TransportMagazines {};
     class TransportWeapons {};
