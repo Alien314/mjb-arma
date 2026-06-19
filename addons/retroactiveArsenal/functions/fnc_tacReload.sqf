@@ -4,7 +4,7 @@ if (_unit isNotEqualTo (call CBA_fnc_currentUnit) || {_weapon isEqualTo "Throw"}
 
 if (mjb_tacGestureFix) then {
 	private _gesture = gestureState _unit;
-    if (_gesture isEqualTo "<none>") exitWith {};
+    if (_gesture isEqualTo "" || {"non" in _gesture}) exitWith {};
 	/*private _gestureEH = _unit addEventHandler ['GestureChanged',{ params ["_unit", "_gesture"];
 		_unit removeEventHandler [_thisEvent,_thisEventHandler];
 	}];*/
