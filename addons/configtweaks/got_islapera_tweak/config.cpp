@@ -21,6 +21,7 @@ class CfgWorlds {
 		class Names {
 			class LagunaClara {
 				name = "Laguna Awawawawawawa";
+				position[] = {5965,4634};
 			};
 		};
 	};
