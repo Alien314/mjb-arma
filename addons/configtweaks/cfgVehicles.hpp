@@ -935,6 +935,26 @@ class CfgVehicles {
 //*/
 
 
+
+	class B_Helipilot_F;
+	class B_UAV_AI : B_Helipilot_F {
+		scope = 2;
+	};
+
+	class O_Helipilot_F;
+	class O_UAV_AI : O_Helipilot_F {
+		scope = 2;
+	};
+	// Ind inherits Opfor
+
+	// new class for name scheme and category, base is C_UAV_AI_F
+	class C_UAV_AI : O_UAV_AI {
+		_generalMacro = "C_UAV_AI";
+		faction = "CIV_F";
+		side = 3;
+	};
+
+
 #define APPLYXEH(var,varBase) class var : varBase { \
 		class EventHandlers { \
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {}; \
@@ -960,7 +980,6 @@ class CfgVehicles {
 	APPLYXEH(WB_GEN_Commander_F,B_GEN_Commander_F);
 	class B_GEN_Soldier_F;
 	APPLYXEH(WB_GEN_Soldier_F,B_GEN_Soldier_F);
-	class B_Helipilot_F;
 	APPLYXEH(WB_Helipilot_F,B_Helipilot_F);
 	class B_officer_F;
 	APPLYXEH(WB_officer_F,B_officer_F);
@@ -989,7 +1008,6 @@ class CfgVehicles {
 
 	class O_diver_F;
 	APPLYXEH(WO_diver_F,O_diver_F);
-	class O_Helipilot_F;
 	APPLYXEH(WO_Helipilot_F,O_Helipilot_F);
 	class O_officer_F;
 	APPLYXEH(WO_officer_F,O_officer_F);
@@ -1077,69 +1095,9 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
     rudderForceCoef = 0.3;
   };
 
-class Helicopter;
-class Helicopter_Base_F : Helicopter {
-	class UserActions {
-		class stab_disable {
-			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1)  && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}}";
-			displayName = "Disable Camera Stabilization";
-			displayNameDefault = "";
-			hideOnUse = 1;
-			onlyforplayer = 1;
-			position = "";
-			priority = 1;
-			radius = 15;
-			shortcut = "vehLockTurretView";
-			showWindow = 0;
-			statement = "this lockCameraTo [objNull,[0]]; this enableDirectionStabilization [false, [0]];";
-		};
-		class stab_enable {
-			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1) && {isNil '_lock' && { !(this directionStabilizationEnabled [0]) }}}";
-			displayName = "Enable Camera Stabilization";
-			displayNameDefault = "";
-			hideOnUse = 1;
-			onlyforplayer = 1;
-			position = "";
-			priority = 1;
-			radius = 15;
-			shortcut = "vehLockTurretView";
-			showWindow = 0;
-			statement = "[this] call mjb_arsenal_fnc_copilotStabilizeToggle";
-		};
-	};
-};
-class Helicopter_Base_H : Helicopter_Base_F {
-	class UserActions {
-		class stab_disable {
-			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1)  && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}}";
-			displayName = "Disable Camera Stabilization";
-			displayNameDefault = "";
-			hideOnUse = 1;
-			onlyforplayer = 1;
-			position = "";
-			priority = 1;
-			radius = 15;
-			shortcut = "vehLockTurretView";
-			showWindow = 0;
-			statement = "this lockCameraTo [objNull,[0]]; this enableDirectionStabilization [false, [0]];";
-		};
-		class stab_enable {
-			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1) && {isNil '_lock' && { !(this directionStabilizationEnabled [0]) }}}";
-			displayName = "Enable Camera Stabilization";
-			displayNameDefault = "";
-			hideOnUse = 1;
-			onlyforplayer = 1;
-			position = "";
-			priority = 1;
-			radius = 15;
-			shortcut = "vehLockTurretView";
-			showWindow = 0;
-			statement = "[this] call mjb_arsenal_fnc_copilotStabilizeToggle";
-		};
-	};
-};
-
 #include "cfgVehicles_Planes.hpp"
+
+#include "cfgVehicles_Helis.hpp" // And VTOLs
 
 #include "cfgVehicles_Ground.hpp"
 
