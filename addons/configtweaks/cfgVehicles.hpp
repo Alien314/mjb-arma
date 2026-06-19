@@ -1128,6 +1128,28 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
   PACKPLUS(rhs_tortila_olive,mjb_carryallplus_olive,"SPOSN Tortila Backpack (Olive/plus)");
 #else
 #endif
+
+
+#define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
+    weapon = #WEAPON; \
+    count = COUNT; \
+}
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+    name = #ITEM; \
+    count = COUNT; \
+}
+
+#define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
+    magazine = #MAGAZINE; \
+    count = COUNT; \
+}
+
+#define MACRO_ADDBACKPACK(BACKPACK,COUNT) class _xx_##BACKPACK { \
+    backpack = #BACKPACK; \
+    count = COUNT; \
+}
+
   class Box_NATO_Ammo_F;
   class Box_Rats_Ammo : Box_NATO_Ammo_F {
     displayName = "Basic Ammo [RATS]";
@@ -1215,56 +1237,7 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
         weapon = "CUP_launch_FIM92Stinger";
       };
     };
-	/*private _itemWeaponLAT =
-	[
-		"CUP_launch_M136", // Better than RHS HEAT
-		"CUP_launch_M72A6",
-		"CUP_launch_RPG26",
-
-		"rhs_weap_rpg75", // Not much better than m72s in the configs
-		"rhs_weap_M136", // HEAT
-		"rhs_weap_M136_hedp", // Not great for AT
-		"rhs_weap_M136_hp", // High Penetration
-
-		"rhs_acc_at4_handler",
-
-		//Launchers in Backpack
-		"CUP_launch_M136_Loaded",
-		"CUP_launch_M72A6_Loaded",
-		"CUP_M72A6_M",
-		"CUP_launch_RPG26_Loaded"
-	];
-
-	private _itemWeaponManpad = {
-		"CUP_launch_FIM92Stinger"
-	};
-	private _itemAmmoLAT =
-	[
-		//RPG Rockets (Uncomment desired rockets)
-
-		 "rhs_rpg7_OG7V_mag",
-		// "rhs_rpg7_PG7V_mag",
-		 "rhs_rpg7_PG7VL_mag", // High pen
-		 "rhs_rpg7_PG7VM_mag", //
-		// "rhs_rpg7_PG7VR_mag", // Very High Pen Tandem
-		// "rhs_rpg7_PG7VS_mag", // Between VM and VL, ~AT4 HEAT
-		// "rhs_rpg7_TBG7V_mag",
-		// "rhs_rpg7_type69_airburst_mag"
-
-		"MRAWS_HE_F",
-		"MRAWS_HEAT55_F"
-	];
-
-	private _itemAmmoMAT =
-	[
-		"MRAWS_HEAT_F",
-		"MRAWS_HEAT55_F",
-		"MRAWS_HE_F"
-	];
-	private _itemAmmoHAT =
-	[
-		"Titan_AT"
-	];*/
+    class TransportBackpacks {};
   };
 
   class Box_NATO_Support_F;
@@ -1293,6 +1266,123 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
     class TransportMagazines {};
 	class TransportItems {};
 	class TransportWeapons {};
+    class TransportBackpacks {};
+  };
+
+  
+  class B_supplyCrate_F;
+  class Box_supplyRats_Ammo : B_supplyCrate_F {
+    displayName = "Supply Box [RATS Ammo]";
+    class ACE_Actions {
+      class ACE_MainActions {
+        condition = "true";
+        displayName = "Interactions";
+        distance = 4;
+        selection = "";
+        class ACE_OpenBox {
+          condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
+          displayName = "Open";
+          showDisabled = 0;
+          statement = "_player action [""Gear"", _target]";
+        };
+        class mjb_ArsenalAmmo {
+          condition = "alive _target && {!lockedInventory _target} && {getNumber (configOf _target >> 'disableInventory') == 0}";
+          displayName = "RATS Ammo Arsenal";
+          showDisabled = 0;
+          statement = "[] call mjb_arsenal_fnc_arsenalAmmo";
+        };
+      };
+    };
+    class TransportItems {
+    };
+    // Limited AT
+    class TransportMagazines {
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
+      class _xx_rhs_rpg7_PG7VM_mag {
+        count = 1;
+        magazine = "rhs_rpg7_PG7VM_mag";
+      };
+      class _xx_rhs_rpg7_PG7VL_mag {
+        count = 1;
+        magazine = "rhs_rpg7_PG7VL_mag";
+      };
+      class _xx_rhs_rpg7_OG7V_mag {
+        count = 2;
+        magazine = "rhs_rpg7_OG7V_mag";
+      };
+#else
+
+      class _xx_rhs_rpg7_PG7VL_mag {
+        count = 2;
+        magazine = "CUP_PG7VL_M";
+      };
+#endif
+      class _xx_MRAWS_HEAT55_F {
+        count = 1;
+        magazine = "MRAWS_HEAT55_F";
+      };
+      class _xx_MRAWS_HEAT_F {
+        count = 1;
+        magazine = "MRAWS_HEAT_F";
+      };
+      class _xx_Titan_AT {
+        count = 1;
+        magazine = "Titan_AT";
+      };
+      class _xx_DemoCharge_Remote_Mag {
+        count = 2;
+        magazine = "DemoCharge_Remote_Mag";
+      };
+    };
+    // disposables
+
+#if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
+      class _xx_rhs_weap_rpg75 {
+        count = 1;
+        weapon = "rhs_weap_rpg75";
+      };
+      class _xx_rhs_weap_M136 {
+        count = 1;
+        weapon = "rhs_weap_M136";
+      };
+#else
+    class TransportWeapons {
+      class _xx_CUP_launch_M136 {
+        count = 2;
+        weapon = "CUP_launch_M136";
+      };
+#endif
+      class _xx_CUP_launch_FIM92Stinger {
+        count = 1;
+        weapon = "CUP_launch_FIM92Stinger";
+      };
+    };
+    class TransportBackpacks {};
+  };
+
+  class Box_supplyMedical : B_supplyCrate_F {
+    displayName = "Supply Box [RATS Medical]";
+	editorPreview = "\z\mjb\addons\flags\data\supplyMedprev.jpg";
+	hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\SupplydropMed_CO.paa"};
+    class TransportItems {
+		MACRO_ADDITEM(ACE_fieldDressing,50);
+		MACRO_ADDITEM(ACE_elasticBandage,50);
+		MACRO_ADDITEM(ACE_tourniquet,15);
+		MACRO_ADDITEM(ACE_splint,15);
+		MACRO_ADDITEM(ACE_morphine,15);
+		MACRO_ADDITEM(ACE_epinephrine,15);
+		MACRO_ADDITEM(ACE_plasmaIV,5);
+		MACRO_ADDITEM(ACE_plasmaIV_500,5);
+		MACRO_ADDITEM(ACE_salineIV,5);
+		MACRO_ADDITEM(ACE_salineIV_500,5);
+		MACRO_ADDITEM(ACE_bloodIV,10);
+		MACRO_ADDITEM(ACE_bloodIV_500,10);
+		MACRO_ADDITEM(ACE_personalAidKit,4);
+		MACRO_ADDITEM(ACE_suture,15);
+    };
+	class TransportMagazines {};
+    class TransportWeapons {};
+    class TransportBackpacks {};
   };
 
   class Land_FlatTV_01_F;
