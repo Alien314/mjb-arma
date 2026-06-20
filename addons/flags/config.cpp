@@ -1,7 +1,7 @@
 class CfgPatches {
   class mjb_flags {
-    units[] = {"mjb_Flag_RATS_F","Flag_CA_F"/*,"mjb_I_BTR80_RATS","mjb_I_BTR80A_RATS"*/};
-    weapons[] = {"mjb_arifle_C7Alpha","mjb_arifle_C7Bravo","mjb_H_Cap_Voin","mjb_H_HelmetSpecB_winter"};
+    units[] = {"mjb_Flag_RATS_F","Flag_CA_F","mjb_Soldier_W_F"/*,"mjb_I_BTR80_RATS","mjb_I_BTR80A_RATS"*/};
+    weapons[] = {"mjb_arifle_C7Alpha","mjb_arifle_C7Bravo","mjb_H_Cap_Voin","mjb_H_HelmetSpecB_winter","U_B_CombatUniform_mcamW"};
     requiredVersion = 0.1;
     author = "Alien314, Flamebunny, MajorDanvers";
     name = "Flags";
@@ -84,7 +84,23 @@ class CfgVehicles {
 			init = "(_this select 0) setFlagTexture ""\z\mjb\addons\flags\data\canadaFlag_ca.paa""";
 		};
 	};
-    	
+
+#define MAG_2(a) a, a
+#define MAG_3(a) a, a, a
+#define MAG_10(a) a, a, a, a, a, a, a, a, a, a
+	// Uniform Soldiers
+	class B_Soldier_F;
+	class mjb_Soldier_W_F : B_Soldier_F {
+		displayName = "Rifleman Winter";
+		hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\clothing1W_co.paa"};
+		linkedItems[] = { "V_PlateCarrier2_blk", "mjb_H_HelmetSpecB_winter", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "CUP_NVG_PVS15_winter" };
+		magazines[] = { MAG_10(30Rnd_65x39_caseless_black_mag), MAG_3(16Rnd_9x21_Mag), "SmokeShell", "mjb_SmokeShellLightBlue", "Chemlight_green", "Chemlight_green", MAG_2(HandGrenade) };
+		respawnMagazines[] = { MAG_10(30Rnd_65x39_caseless_black_mag), MAG_3(16Rnd_9x21_Mag), "SmokeShell", "mjb_SmokeShellLightBlue", "Chemlight_green", "Chemlight_green", MAG_2(HandGrenade) };
+		weapons[] = { "arifle_MX_Black_ACO_Pointer_F", "hgun_P07_blk_F", "Throw", "Put" };
+		respawnWeapons[] = { "arifle_MX_Black_ACO_Pointer_F", "hgun_P07_blk_F", "Throw", "Put" };
+		uniformClass = "U_B_CombatUniform_mcamW";
+	};
+
 	class CUP_BTR80_Common_Base;
 	class CUP_BTR80_Base : CUP_BTR80_Common_Base
 	{
@@ -189,6 +205,16 @@ class CfgWorlds
 
 class CfgWeapons
 {
+	class UniformItem;
+	class Uniform_Base;
+	class U_B_CombatUniform_mcam : Uniform_Base { class ItemInfo; };
+	class U_B_CombatUniform_mcamW : U_B_CombatUniform_mcam {
+		displayName = "Combat Fatigues (MTP-Winter)";
+		hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\suitpack_soldier_blufor_w_co.paa"};
+		class ItemInfo : ItemInfo {
+			uniformClass = "mjb_Soldier_W_F";
+		};
+	};
     class H_Cap_red;
     class mjb_H_Cap_Voin : H_Cap_red
     {

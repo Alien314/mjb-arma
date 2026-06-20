@@ -1197,6 +1197,8 @@ private _itemSantaH = [];
 if (_winter) then {
    _winterCamo =
     [
+		"U_B_CombatUniform_mcamW",
+		"U_B_CombatUniform_mcamW_W",
         "CUP_I_B_PMC_Unit_29",
         "CUP_I_B_PMC_Unit_30",
         "CUP_I_B_PMC_Unit_33",
