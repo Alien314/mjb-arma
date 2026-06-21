@@ -282,23 +282,10 @@ class CfgAmmo
 	class CUP_R_PZF3IT_AT : RocketBase {
 		cost = 100;
 	};
-	class CUP_R_PZFBB_HE : CUP_R_PZF3IT_AT {
-		airLock = 1;
-		allowAgainstInfantry = 1;
-		cost = 40;
-	};
 	class CUP_R_RPG18_AT : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
 		airLock = 1;
 		cost = 30;
-	};
-	class CUP_R_RSHG2_HE : RocketBase {
-		aiAmmoUsageFlags = "64 + 128 + 256";
-		allowAgainstInfantry = 1;
-		indirecthit = 15;
-		indirecthitrange = 6;
-		airLock = 1;
-		cost = 25;
 	};
 	class CUP_R_SMAW_HEDP : RocketBase {
 		aiAmmoUsageFlags = "64 + 128 + 256 + 512";
@@ -335,8 +322,23 @@ class CfgAmmo
 		hit = 280;
 		caliber = 10;
 	};
-
 	class mjb_R_M72A10_MP : CUP_R_M72A6_AT {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
+		cost = 30;
+		//CraterEffects = "GrenadeCrater";
+		//explosionEffects = "GrenadeExplosion";
+		explosive = 1;
+		fuseDistance = 15;
+		hit = 140;
+		indirectHit = 15;
+		indirectHitRange = 3.25;
+		submunitionAmmo = "mjb_P_M72A10_MP";
+		warheadName = "HEDP";
+	};
+
+	// BB rockets
+	class mjb_R_M72A10_HE : CUP_R_M72A6_AT {
 		aiAmmoUsageFlags = "64 + 128 + 256";
 		allowAgainstInfantry = 1;
 		cost = 30;
@@ -345,10 +347,103 @@ class CfgAmmo
 		explosive = 1;
 		fuseDistance = 15;
 		hit = 140;
-		indirectHit = 15;
-		indirectHitRange = 4;
-		submunitionAmmo = "mjb_P_M72A10_MP";
-		warheadName = "HEDP";
+		indirectHit = 17;
+		indirectHitRange = 5;
+		submunitionAmmo = "mjb_R_M72A10_HEdel";
+		submunitionInitialOffset[] = {0,0,0.5};
+		submunitionInitSpeed = 1;
+		warheadName = "HE";
+	};
+	class mjb_R_M72A10_HEdel : CUP_R_M72A6_AT {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
+		cost = 30;
+		CraterEffects = "GrenadeCrater";
+		explosive = 1;
+		indirectHit = 25;
+		indirectHitRange = 5;
+		fuseDistance = 0;
+		submunitionAmmo = "";
+		submunitionDirectionType = "";
+		submunitionInitialOffset[] = {0,0,0};
+		timeToLive = 0.01;
+		triggerOnImpact = 0;
+	};
+
+	class CUP_R_PZFBB_HE : CUP_R_PZF3IT_AT {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		airLock = 1;
+		allowAgainstInfantry = 1;
+		cost = 40;
+		indirectHit = 20;
+		submunitionAmmo = "CUP_R_PZFBB_HEdel";
+		submunitionDirectionType = "SubmunitionModelDirection";
+		submunitionInitialOffset[] = {0,0,0.5};
+		submunitionInitSpeed = 1;
+		triggerOnImpact = 1;
+	};
+	class CUP_R_PZFBB_HEdel : CUP_R_PZF3IT_AT {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		airLock = 1;
+		allowAgainstInfantry = 1;
+		cost = 40;
+		CraterEffects = "ArtyShellCrater";
+		ExplosionEffects = "MortarExplosion";
+		explosive = 1;
+		fuseDistance = 0;
+		hit = 200;
+		indirectHit = 30;
+		indirectHitRange = 6;
+		model = "\CUP\Weapons\CUP_Weapons_Ammunition\Panzerfaust\CUP_PzF_bb_fly.p3d";
+		proxyShape = "\CUP\Weapons\CUP_Weapons_Ammunition\Panzerfaust\CUP_PzF_bb.p3d";
+		submunitionAmmo = "";
+		submunitionDirectionType = "";
+		submunitionInitialOffset[] = {0,0,0};
+		timeToLive = 0.01;
+		triggerOnImpact = 0;
+		warheadName = "HE";
+	};
+
+	class CUP_R_RSHG2_HE : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
+		indirecthit = 15;
+		indirecthitrange = 6;
+		airLock = 1;
+		cost = 25;
+		submunitionAmmo = "CUP_R_RSHG2_HEdel";
+		submunitionInitialOffset[] = {0,0,0.5};
+		submunitionInitSpeed = 1;
+	};
+	class CUP_R_RSHG2_HEdel : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
+		cost = 25;
+		dlc = "CommunityUpgradeProject";
+		effectsMissileInit = "";
+		explosionEffects = "GrenadeExplosion";
+		fuseDistance = 0;
+		hit = 125;
+		indirecthit = 15;
+		indirecthitrange = 6;
+		initTime = 0.1;
+		irLock = 0;
+		laserLock = 0;
+		maneuvrability = 0;
+		manualControl = 0;
+		maxSpeed = 94;
+		model = "CUP\Weapons\CUP_Weapons_Ammunition\RPG26_RShG2\CUP_rshg2_Rocket.p3d";
+		sideAirFriction = 0;
+		simulationStep = 0.02;
+		soundHit[] = {"A3\Sounds_F\arsenal\explosives\grenades\Explosion_HE_grenade_04.wss",3.16228,1,4500};
+		SoundSetExplosion[] = {"RocketsLight_Exp_SoundSet","RocketsLight_Tail_SoundSet","Explosion_Debris_SoundSet"};
+		thrust = 0.01;
+		thrustTime = 0.01;
+		timeToLive = 0.01;
+		typicalspeed = 85;
+		visibleFire = 24;
+		warheadName = "HE";
+		whistleDist = 32;
 	};
 	
 	

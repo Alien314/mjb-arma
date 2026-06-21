@@ -521,9 +521,22 @@ class CfgWeapons {
 	};
   };
   class CUP_launch_M72A6_Loaded : Launcher_Base_F {
+	displayName = "M72A5";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 57.3;
 	};
+  };
+  class CUP_launch_M72A6_Used : CUP_launch_M72A6_Loaded {
+    displayName = "M72A5 (Used)";
+  };
+  class CUP_launch_M72A6_Special_Loaded : CUP_launch_M72A6_Loaded {
+    displayName = "M72A5 (Special)";
+  };
+  class CUP_launch_M72A6_Special : CUP_launch_M72A6_Special_Loaded {
+    displayName = "M72A5 (Special)";
+  };
+  class CUP_launch_M72A6_Special_Used : CUP_launch_M72A6_Special_Loaded {
+    displayName = "M72A5 (Special)(Used)";
   };
   class CUP_launch_RPG18_Loaded : Launcher_Base_F {
 	class WeaponSlotsInfo : WeaponSlotsInfo {
@@ -536,31 +549,57 @@ class CfgWeapons {
 	};
   };
   class CUP_launch_RShG2_Loaded : Launcher_Base_F {
+	displayName = "RShG-2 (Thermobaric)";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 88.2;
 	};
   };
 
-
-  // M72A10
+  // M72A8
   class mjb_launch_M72A10_Loaded : CUP_launch_M72A6_Loaded {
-	displayName = "M72A10 (FFE)";
+	displayName = "M72A8 (HEDP)";
 	magazines[] = {"mjb_M72A10_M"};
 	baseWeapon = "mjb_launch_M72A10";
+    hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a8_co.paa"};
 	ace_overpressure_angle = 30;
 	ace_overpressure_damage = 0.6;
 	ace_overpressure_range = 2;
   };
   class mjb_launch_M72A10 : mjb_launch_M72A10_Loaded {
 	baseWeapon = "mjb_launch_M72A10";
-	displayName = "M72A10 (FFE)";
+	displayName = "M72A8 (HEDP)";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
 	scope = 2;
 	scopeArsenal = 2;
   };
   class mjb_launch_M72A10_Used : mjb_launch_M72A10_Loaded {
-	displayName = "M72A10 (Used)";
+	displayName = "M72A8 (Used)";
 	baseWeapon = "mjb_launch_M72A10_used";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	mass = 17.3;
+	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
+  };
+
+  // M72A10
+  class mjb_launch_M72A10_HE_Loaded : CUP_launch_M72A6_Loaded {
+	displayName = "M72A10 (HE)";
+	magazines[] = {"mjb_M72A10_HE_M"};
+	baseWeapon = "mjb_launch_M72A10_HE";
+    hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a10_co.paa"};
+	ace_overpressure_angle = 30;
+	ace_overpressure_damage = 0.6;
+	ace_overpressure_range = 2;
+  };
+  class mjb_launch_M72A10_HE : mjb_launch_M72A10_HE_Loaded {
+	baseWeapon = "mjb_launch_M72A10_HE";
+	displayName = "M72A10 (HE)";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	scope = 2;
+	scopeArsenal = 2;
+  };
+  class mjb_launch_M72A10_HE_Used : mjb_launch_M72A10_HE_Loaded {
+	displayName = "M72A10 (Used)";
+	baseWeapon = "mjb_launch_M72A10_HE_Used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
 	mass = 17.3;
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
@@ -916,4 +955,5 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 
 class CBA_DisposableLaunchers {
 	mjb_launch_M72A10_Loaded[] = {"mjb_launch_M72A10","mjb_launch_M72A10_Used"};
+	mjb_launch_M72A10_HE_Loaded[] = {"mjb_launch_M72A10_HE","mjb_launch_M72A10_HE_Used"};
 };

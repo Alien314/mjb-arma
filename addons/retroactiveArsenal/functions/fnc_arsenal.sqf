@@ -3489,7 +3489,9 @@ private _itemWeaponLAT =
     "CUP_launch_M72A6",
     "CUP_launch_RPG26",
 
-    "mjb_launch_M72A10",
+    "mjb_launch_M72A10", // A8 HEDP, left class name for backwards compat
+
+    "mjb_launch_M72A10_HE",
 	"CUP_launch_RShG2",
 
     //"CUP_launch_MAAWS",

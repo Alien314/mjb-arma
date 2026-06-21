@@ -574,6 +574,8 @@ class CfgMagazines
 		mass = 0; // squeak two at4 into kitbag
 	};
 	class CUP_M72A6_M : CA_LauncherMagazine {
+		descriptionshort = "Range: 0 - 200 m<br/>Type: Anti-Tank<br/>Used in: M72A5";
+		displayname = "M72A5 (Anti-Tank) Rocket";
 		mass = 0;
 	};
 	class CUP_RPG18_M : CA_LauncherMagazine {
@@ -586,12 +588,21 @@ class CfgMagazines
 		mass = 0;
 	};
 
-	// M72A10
+	// M72A8
 	class mjb_M72A10_M : CUP_M72A6_M {
 		ammo = "mjb_R_M72A10_MP";
-		descriptionshort = "Range: 0 - 200 m<br/>Type: Anti-Structure/Frag<br/>Used in: M72A10";
-		displayname = "M72A10 (Anti-Structure/Frag) Rocket";
+		descriptionshort = "Range: 0 - 200 m<br/>Type: Dual Purpose<br/>Used in: M72A8";
+		displayname = "M72A8 (HEDP) Rocket";
 		displaynameshort = "HEDP";
+		initSpeed = 120;
+	};
+	// M72A10
+	class mjb_M72A10_HE_M : CUP_M72A6_M {
+		ammo = "mjb_R_M72A10_HE";
+		descriptionshort = "Range: 0 - 200 m<br/>Type: Anti-Structure/Frag<br/>Used in: M72A10";
+		displayname = "M72A10 (HE) Rocket";
+		displaynameshort = "HE";
+		initSpeed = 120;
 	};
 	
 	/*/ Bizon class name fix, magwell at bottom
