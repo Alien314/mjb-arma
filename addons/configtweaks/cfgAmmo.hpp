@@ -53,6 +53,9 @@ class CfgAmmo
 	// fix missing penetrator
 	class G_40mm_HE;
 	class G_40mm_HEDP : G_40mm_HE {
+		//submunitionAmmo = "ammo_Penetrator_grenade_40mm";
+	};
+	class mjb_G_40mm_HEDP : G_40mm_HEDP {
 		submunitionAmmo = "ammo_Penetrator_grenade_40mm";
 	};
 

@@ -689,8 +689,10 @@ class CfgMagazines
 #else
 	class CUP_1Rnd_HE_GP25_M;
 	class mjb_VOGMDP : CUP_1Rnd_HE_GP25_M {
+		ammo = "mjb_G_40mm_HEDP";
 		displayName = "VOG-MDP";
-		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";displaynameshort = "HEDP Grenade";
+		descriptionshort = "Type: HEDP Grenade Round<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP25";
+		displaynameshort = "HEDP Grenade";
 	};
 	class mjb_slog : CUP_1Rnd_HE_GP25_M {
 		ammo = "mjb_g_slog";
@@ -709,6 +711,7 @@ class CfgMagazines
 	};//*/
 
 	class CUP_1Rnd_HEDP_M203 : 1Rnd_HE_Grenade_shell {
+		ammo = "mjb_G_40mm_HEDP";
 		displaynameshort = "HEDP Grenade";
 	};
 
