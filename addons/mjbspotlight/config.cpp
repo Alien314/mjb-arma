@@ -32,6 +32,14 @@ class CfgFunctions
 	};
 };
 
+class Extended_PreInit_EventHandlers
+{
+	/*class mjb_spotlight
+	{
+		init="call compileScript ['z\mjb\addons\spotlight\settings.sqf']";
+	};*/
+};
+
 class CfgMainMenuSpotlight
 {
 	class JoinMJB
@@ -39,6 +47,7 @@ class CfgMainMenuSpotlight
 		text="RATS Server";
 		picture="\z\mjb\addons\flags\data\rats_insignia.paa";
 		action="['38.147.105.134', 2302] call (uiNamespace getVariable 'mjb_spotlight_fnc_joinServer')";
+		//action="[(profileNamespace getVariable [mjb_ratsServerIP,'38.147.105.134']), 2302] call (uiNamespace getVariable 'mjb_spotlight_fnc_joinServer')";
 		actionText="Connect to the RATS Server";
 		condition="true";
 	};
