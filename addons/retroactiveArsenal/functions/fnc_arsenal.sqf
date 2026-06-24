@@ -3704,8 +3704,6 @@ private _itemWeaponMMGAmmo =
     "mjb_150Rnd_93x64_Mag_trc_ylw",
     GREENMAG_BELT(338),
     GREENMAG_BELT(93x64),
-    "Rangefinder",
-    "ACE_Vector",
     "ace_tripod",
     "ace_csw_m220CarryTripod", // can deploy bipod on these
     "ace_csw_spg9CarryTripod"
