@@ -97,6 +97,13 @@ class CBA_Extended_EventHandlers_base; // apply to vehicle classes missing it
 #include "CfgVehicles.hpp"  // BRH for all units/uniforms
 
 class Extended_InitPost_EventHandlers {
+	class ModuleCurator_F {
+		// failsafe assign zeus
+		class mjb_configTweaks {
+			init = "params ['_logic']; if !(isServer) exitWith { }; _logic spawn { sleep 1; params ['_logic'];  private _owner = _logic getVariable ['owner','']; if ('#admin' in _owner) exitWith {}; if (_owner isNotEqualTo '') exitWith { if !(isNil _owner) exitWith {(missionNamespace getVariable [_owner,objNull]) assignCurator _logic;}; private _uidPlayer = _owner call BIS_fnc_getUnitByUID; if !(isNull _uidPlayer) then { _uidPlayer assignCurator _logic; }; }; private _objs = (synchronizedObjects _logic select {isPlayer _x}); if (count _objs > 0) then {(_objs # 0) assignCurator _logic}; };";
+		};
+	};
+
 	class CUP_AH6_BASE {
 		class mjb_configTweaks {
 			init = "params ['_unit']; if !(local _unit) exitWith {}; _unit setMass mjb_cupLBMass;"; //1821
