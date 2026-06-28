@@ -9,8 +9,8 @@ player setVariable ['diwako_dui_nametags_customInfo', mjb_duiCustomTag, true];
 if (mjb_duiCustomTagClr isNotEqualTo [0,0,0]) then {
 	player setVariable ["dui_customInfoHexColor", mjb_duiCustomTagClr call BIS_fnc_colorRGBtoHTML, true]; 
 };
-if (mjb_joinPorpl) then {
-	private _colour = [0.6, 0, 1];
+if (mjb_duiJoinPorpl) then {
+	private _colour = [0.51, 0.2, 1];
 	player setVariable ["dui_customRGBColor", _colour, true];
 	player setVariable ["dui_customHexColor", _colour call BIS_fnc_colorRGBtoHTML, true];
 };
@@ -20,8 +20,8 @@ player addEventHandler ["Respawn", {
 	if (mjb_duiCustomTagClr isNotEqualTo [0,0,0]) then {
 		player setVariable ["dui_customInfoHexColor", mjb_duiCustomTagClr call BIS_fnc_colorRGBtoHTML, true]; 
 	};
-	if (mjb_joinPorpl) then {
-		private _colour = [0.6, 0, 1];
+	if (mjb_duiJoinPorpl) then {
+		private _colour = [0.51, 0.2, 1];
 		player setVariable ["dui_customRGBColor", _colour, true];
 		player setVariable ["dui_customHexColor", _colour call BIS_fnc_colorRGBtoHTML, true];
 	};

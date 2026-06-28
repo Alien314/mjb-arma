@@ -35,7 +35,7 @@ private _title = "MJB Arma";
 	{	params ['_value'];
 		if (!isNull player) then {
 			if (_value) then {
-				private _colour = [0.5, 0, 1];
+				private _colour = [0.51, 0.2, 1];
 				player setVariable ["dui_customRGBColor", _colour, true];
 				player setVariable ["dui_customHexColor", _colour call BIS_fnc_colorRGBtoHTML, true];
 			} else {
