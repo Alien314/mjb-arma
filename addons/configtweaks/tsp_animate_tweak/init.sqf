@@ -53,7 +53,7 @@ addUserActionEventHandler ["ShowMap", "Activate", {[] spawn {sleep 0.01; if (tsp
     if ("ItemGPS" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\a3\Weapons_F\Ammo\mag_gps.p3d", "leftHand", [-0.02,0.03,0], [-70,-60,0], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};
     if ("ACE_microDAGR" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\z\ace\addons\microdagr\data\MicroDAGR.p3d", "leftHand", [0.01,0.035,0], [-80,-50,0], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};        
     [playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\A3\Structures_F\Items\Documents\Map_unfolded_F.p3d", "leftHand", [-0.01,0.01,-0.01], [50,170,-90], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item;
-    [playa, 1, "tsp_animate\snd\map_open.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect; waitUntil {!visibleMap}; [playa, 1, "tsp_animate\snd\map_close.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect;
+    [playa, 1, "tsp_animate\snd\map_open.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect; waitUntil {!visibleMap}; [playa, 1, "tsp_animate\snd\map_close.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect; private _curWep = currentWeapon player; if (_curWep isNotEqualTo "" && {_curWep isEqualTo binocular player}) then { sleep 0.5; if (!visibleMap && {("tsp_animate_map" in gestureState playa)}) then { [playa] call tsp_fnc_gesture_stop; }; };
 }}}];
 
 ["if (tsp_cba_animate_door && ['door', _this#4] call BIS_fnc_inString || ['gate', _this#4] call BIS_fnc_inString) then {[playa] spawn tsp_fnc_animate_door};"] spawn tsp_fnc_scroll;
