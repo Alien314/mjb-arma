@@ -2414,6 +2414,8 @@ private _itemWeaponAmmo =
     "CUP_20Rnd_556x45_Stanag",
     "CUP_30Rnd_556x45_AUG",
 
+    "ace_30rnd_556x45_stanag_tracer_dim",
+
     //Loose ammo
     "greenmag_ammo_556x45_basic_60Rnd",
 	"greenmag_ammo_556x45_basic_30Rnd",
@@ -2467,6 +2469,8 @@ private _itemWeaponAmmo =
     "CUP_20Rnd_762x51_HK417",
     "CUP_20Rnd_762x51_G3",
     "CUP_20Rnd_762x51_DMR",
+
+    "ace_20rnd_762x51_mag_tracer_dim",
 
     //Loose ammo
     "greenmag_ammo_762x51_basic_60Rnd",
