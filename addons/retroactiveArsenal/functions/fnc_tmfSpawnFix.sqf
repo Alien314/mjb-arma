@@ -44,14 +44,13 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
 			[player, mjb_deleteOnDeath, mjb_pLoadName, mjb_profOverride] call mjb_arsenal_fnc_initPersistentLoadout;
 		};
 		[player,acre_sys_radio_defaultRadio,true] call cba_fnc_addItem;
-		if (tsp_cba_animate_sling) then {
-			{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings;
-			player addEventHandler ["Respawn", {{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings}];
-			player addEventhandler ["Take", {[player] call tsp_fnc_animate_sling}];
-			player addEventhandler ["Put", {[player] call tsp_fnc_animate_sling}];
+
+		if (!isNil 'tsp_cba_animate_sling') then {
+			playa = player;
+			[] spawn compileScript ['\z\mjb\addons\configtweaks\tsp_animate_tweak\init.sqf'];
 		};
 
-		if (tsp_cba_breach) then {
+		if (!isNil 'tsp_cba_breach' && {tsp_cba_breach}) then {
 			player addEventHandler ["FiredMan", {params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo"]; [_unit, _ammo] spawn tsp_fnc_breach_gun}];
 		};
     };

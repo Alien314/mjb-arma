@@ -1,0 +1,102 @@
+if !(isNil "ZUI_fnc_init") then {waitUntil {speed player > 0}};  //-- Random Infant Skirmish compat
+
+tsp_animate_combat = false; 
+tsp_animate_walk = false;
+
+player addEventHandler ["AnimStateChanged", {params ["_unit", "_anim"]; if ("mtac" in _anim) then {tsp_animate_walk = false; tsp_animate_combat = true}}];
+player addEventHandler ["AnimStateChanged", {params ["_unit", "_anim"]; if ("mrun" in _anim) then {tsp_animate_walk = false; tsp_animate_combat = false}}];
+player addEventHandler ["AnimStateChanged", {params ["_unit", "_anim"]; if ("mwlk" in _anim) then {tsp_animate_walk = true}}];
+player addEventHandler ["AnimStateChanged", {params ["_unit", "_anim"]; [_unit, _anim] call tsp_fnc_animate_walk}];
+
+player addEventHandler ["InventoryOpened", {tsp_animate_attach = [currentWeapon player, primaryWeaponItems player, secondaryWeaponItems player, handgunItems player]}];
+player addEventhandler ["Take", {if (tsp_cba_animate_attachment) then {[_this#0, _this#2, "mount"] call tsp_fnc_animate_attachment}}];
+player addEventhandler ["Put",  {if (tsp_cba_animate_attachment) then {[_this#0, _this#2, "dismount"] call tsp_fnc_animate_attachment}}];
+
+player addEventHandler ["InventoryOpened", {[playa, 0.5, "tsp_animate\snd\inventory_open.ogg", tsp_cba_animate_sound_inv] call tsp_fnc_animate_effect}];
+player addEventHandler ["InventoryClosed", {[playa, 0.5, "tsp_animate\snd\inventory_close.ogg", tsp_cba_animate_sound_inv] call tsp_fnc_animate_effect}];
+player addEventHandler ["Take", {if (!isNull (findDisplay 602)) then {[playa, 0.5, "tsp_animate\snd\take.ogg", tsp_cba_animate_sound_put] call tsp_fnc_animate_effect}}];
+player addEventHandler ["Put", {if (!isNull (findDisplay 602)) then {[playa, 0.5, "tsp_animate\snd\put.ogg", tsp_cba_animate_sound_put] call tsp_fnc_animate_effect}}];
+
+player addEventHandler ["GestureChanged", {params ["_unit", "_gesture"]; if ("reload" in _gesture) then {_unit setVariable ["tsp_gestureReturn", ""]}}];  //-- Reload clears return gesture memory
+
+player addEventHandler ["AnimStateChanged", {
+    params ["_unit", "_anim"];
+    if (tsp_cba_animate_ladder && _anim == "LadderCivilStatic" && currentWeapon _unit == handgunWeapon _unit && handgunWeapon _unit != "") then {[_unit, "LadderPistolstatic"] remoteExec ["switchMove"]};
+    if (tsp_cba_animate_ladder && _anim in ["ladderpistoltopoff", "ladderpistoldownoff"]) then {[_unit, "AmovPercMstpSlowWpstDnon_AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove"]};
+}];
+
+if (isNil 'tsp_missionHandlerInit') then {
+tsp_missionHandlerInit = true;
+
+addUserActionEventHandler ["TactToggle", "Activate", {tsp_animate_combat = !tsp_animate_combat; [playa] call tsp_fnc_animate_tactical}];  //-- Detect if doing tactical pace
+addUserActionEventHandler ["WalkRunToggle", "Activate", {tsp_animate_walk = !tsp_animate_walk; [playa] call tsp_fnc_animate_tactical}];    //-- Detect if doing slow walk
+
+
+if (tsp_cba_animate_commands) then {(group player) call tsp_fnc_animate_commands; addMissionEventHandler ["GroupCreated", {_this call tsp_fnc_animate_commands}]};
+
+["if (tsp_cba_animate_uav && 'Open UAV' in (_this#4)) then {[playa,0.5,'A3\Missions_F_Oldman\Data\sound\beep.ogg',tsp_cba_animate_sound_uav] call tsp_fnc_animate_effect; [playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', '\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d', 'leftHand', [-0.04,0.02,-0.07], [200,-50,10], {isNull findDisplay 160 && getConnectedUAVUnit playa isEqualTo objNull}] spawn tsp_fnc_gesture_item};"] spawn tsp_fnc_scroll;
+addMissionEventHandler ["PlayerViewChanged", {if (_this#5 isNotEqualTo objNull && tsp_cba_animate_uav) then {[playa, 'tsp_animate_map_in', 'tsp_animate_map_loop', '\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d', 'leftHand', [-0.04,0.02,-0.07], [200,-50,10], {isNull findDisplay 160 && getConnectedUAVUnit playa isEqualTo objNull}] spawn tsp_fnc_gesture_item}}];
+
+addUserActionEventHandler ["NightVision", "Activate", {if (tsp_cba_animate_nvg) then {[playa] spawn tsp_fnc_animate_nvg; [playa] call tsp_fnc_animate_effect}}];
+addUserActionEventHandler ["Compass", "Activate", {[] spawn {sleep 0.01; if (tsp_cba_animate_compass && visibleCompass) then {
+    [playa, "", "tsp_animate_compass_loop", getText(configFile>>'CfgWeapons'>>playa getSlotItemName 609>>'model'), "leftHand", [0.06,0.02,0.01], [70,90,0], {!visibleCompass}] spawn tsp_fnc_gesture_item;
+    [playa] call tsp_fnc_animate_effect; 
+}}}];
+addUserActionEventHandler ["Watch", "Activate", {[] spawn {sleep 0.01; if (tsp_cba_animate_watch && call tsp_fnc_watch) then {
+    [playa, "", "tsp_animate_watch_loop", "", "leftHand", [0,0,999], [0,0,0], {!(call tsp_fnc_watch)}] spawn tsp_fnc_gesture_item;
+    [playa] call tsp_fnc_animate_effect; 
+}}}];
+addUserActionEventHandler ["ShowMap", "Activate", {[] spawn {sleep 0.01; if (tsp_cba_animate_map && visibleMap && isNull findDisplay 312) then {
+    [playa] call tsp_fnc_animate_effect;
+    if ("tsp_trijatta" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\tsp_tracker\trijatta.p3d", "leftHand", [-0.06,0,-0.06], [80,-35,0], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};
+    if ("tsp_fbcb2" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\A3\Props_F_Exp_A\Military\Equipment\Tablet_02_F.p3d", "leftHand", [-0.07,0.01,-0.05], [200,-50,10], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};
+    if ("ItemGPS" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\a3\Weapons_F\Ammo\mag_gps.p3d", "leftHand", [-0.02,0.03,0], [-70,-60,0], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};
+    if ("ACE_microDAGR" in assignedItems playa) exitWith {[playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\z\ace\addons\microdagr\data\MicroDAGR.p3d", "leftHand", [0.01,0.035,0], [-80,-50,0], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item};        
+    [playa, "tsp_animate_map_in", "tsp_animate_map_loop", "\A3\Structures_F\Items\Documents\Map_unfolded_F.p3d", "leftHand", [-0.01,0.01,-0.01], [50,170,-90], {sleep 0.2;!visibleMap}] spawn tsp_fnc_gesture_item;
+    [playa, 1, "tsp_animate\snd\map_open.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect; waitUntil {!visibleMap}; [playa, 1, "tsp_animate\snd\map_close.ogg", tsp_cba_animate_sound_map] call tsp_fnc_animate_effect;
+}}}];
+
+["if (tsp_cba_animate_door && ['door', _this#4] call BIS_fnc_inString || ['gate', _this#4] call BIS_fnc_inString) then {[playa] spawn tsp_fnc_animate_door};"] spawn tsp_fnc_scroll;
+
+
+if (tsp_cba_animate_sling_arsenal) then {[missionNamespace, "arsenalOpened", {[playa, false, true, false, false, true] call tsp_fnc_animate_sling}] call BIS_fnc_addScriptedEventHandler};
+if (tsp_cba_animate_sling_arsenal) then {["ace_arsenal_displayOpened", {[playa, false, true, false, false, true] call tsp_fnc_animate_sling}] call CBA_fnc_addEventHandler};
+if (tsp_cba_animate_sling_default != "" && isServer) then {
+    addMissionEventHandler ["EntityCreated", {params ["_unit"]; if (_unit isKindOf "CAManBase" && count ([_unit] call tsp_fnc_animate_sling_get) == 0) then {_unit addItem tsp_cba_animate_sling_default}}];
+    [] spawn {waitUntil {time > 3}; {if (count ([_x] call tsp_fnc_animate_sling_get) == 0) then {_x addItem tsp_cba_animate_sling_default}} forEach allUnits}; 
+};
+
+
+addMissionEventHandler ["Draw3D", {  //-- Need that next frame accuracy for ts
+    if (count tsp_future > 0) exitWith {{_x params ["_time", "_params", "_code"]; if (time > _time) then {_params call _code; tsp_future = tsp_future select {_x#2 isNotEqualTo _code}}} forEach tsp_future};
+    [tsp_old, currentWeapon playa] params ["_old", "_new"]; tsp_old = _new;
+	if !(currentWeapon playa != _old && _new != "") exitWith {};  //-- Exit if not switching
+    if !(tsp_cba_animate_sling && stance playa in ["CROUCH","STAND"] && vehicle playa == playa) exitWith {};  //-- Enabled, stance, not in vehicle
+    if !(isNil 'ace_arsenal_center' && isNil 'bis_fnc_arsenal_center') exitWith {};  //-- No drawing in arsenal
+    if (count ([playa] call tsp_fnc_animate_sling_get) == 0) exitWith {};  //-- Exit if you dont have a free sling
+    if (_new == secondaryWeapon playa && _old == primaryWeapon playa && _old != "") exitWith {[playa, true, false, false, true] call tsp_fnc_animate_sling};  //-- Rifle > launcher
+    if (_new == handgunWeapon playa && _old == primaryWeapon playa && _old != "") exitWith {[playa, true, false, true] call tsp_fnc_animate_sling};          //-- Rifle > pistol
+}];
+
+
+while {tsp_cba_animate_poll > 0} do {[playa, ""] call tsp_fnc_animate_tactical; sleep tsp_cba_animate_poll};
+
+};
+
+if (tsp_cba_animate_sling) then {{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings};
+if (tsp_cba_animate_sling) then {player addEventHandler ["Respawn", {{[player, _x] call tsp_fnc_animate_sling_actions} forEach tsp_slings}]};
+if (tsp_cba_animate_sling) then {player addEventhandler ["Take", {[player] call tsp_fnc_animate_sling}]};
+if (tsp_cba_animate_sling) then {player addEventhandler ["Put", {[player] call tsp_fnc_animate_sling}]};
+
+tsp_old = currentWeapon playa; tsp_future = [];
+
+/*player addEventHandler ["Killed", {
+    {
+        (player getVariable [_x+"weapon", []]) params ["_holder", "_rifle"];
+        _drop = createVehicle ["WeaponHolderSimulated", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_drop addWeaponWithAttachmentsCargoGlobal [_rifle, 1];
+        _drop attachTo [_holder, [-0.1,-1,0.1]]; deleteVehicle _holder;
+    } forEach ([player, false] call tsp_fnc_animate_sling_get);
+}];*/
+
+player addEventHandler ["AnimStateChanged", {params ["_unit", "_anim"]; [_unit] call tsp_fnc_animate_tactical}];
