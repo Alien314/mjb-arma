@@ -236,6 +236,15 @@ private _title = "MJB Arma";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_tacDropCollisionFix",
+    "CHECKBOX",
+    ["Collision Fix", "Prevent collision with easily collapsed objects like trees and walls."],
+    [_title, "Tactical Reload"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_tacSimGlobal",
     "CHECKBOX",
     ["Global Falling Magazines", "Whether tactical reload drops simulated magazines globally, allowing other players to see them as they fall."],

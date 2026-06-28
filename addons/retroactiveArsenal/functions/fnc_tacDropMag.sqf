@@ -10,10 +10,11 @@ if (mjb_tacSimGlobal) then {
 };
 private _closeObj = cursorObject;
 private _closeObjClass = typeOf cursorObject;
-if (_obj in (nearestTerrainObjects [_unit,['TREE','SMALL TREE','BUSH','WALL'],10]) || {
-	( (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'armor')) * (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'mapSize')) ) < 2000 } ) then {
-	_closeObj  disableCollisionWith _deathBox;
-};
+if (mjb_tacDropCollisionFix && {_obj in (nearestTerrainObjects [_unit,['TREE','SMALL TREE','BUSH','WALL'],10]) || {
+	( (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'armor')) * (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'mapSize')) ) < 2000 } }) then {
+	_closeObj disableCollisionWith _deathBox;
+	[_closeObj, _deathBox] remoteExecCall ["disableCollisionWith", _closeObj];
+} else {_closeObj = objNull};
 private _pos = _unit selectionPosition "lefthand";
 _pos set [0,((_pos select 0) - 0.2)];
 _pos set [1,((_pos select 1) + 0.2)];
@@ -25,7 +26,7 @@ _deathBox setPosASL _pos;
 private _wepDir = (_unit weaponDirection currentWeapon _unit);
 _deathBox setVectorDir _wepDir;
 _deathBox setVelocityModelSpace [(-1 * ((_wepDir # 2) + 0.5 max 0)), (2 + (_wepDir # 2)), (1 + (_wepDir # 2))];
-[_deathBox,_class,_ammo] spawn { params ['_deathBox','_class','_ammo'];
+[_deathBox,_class,_ammo,_closeObj] spawn { params ['_deathBox','_class','_ammo','_closeObj'];
 	sleep 0.2;
 	while { velocity _deathBox params ['_i','_y','_z']; (_i min _y min _z) < -0.1 || {(_i max _y max _z) > 0.1} } do {
 		sleep 0.2;
@@ -36,6 +37,9 @@ _deathBox setVelocityModelSpace [(-1 * ((_wepDir # 2) + 0.5 max 0)), (2 + (_wepD
 	if (count _holder isEqualTo 0) then {
 		_holder = createVehicle ["GroundWeaponHolder",(ASLToAGL _pos),[],0,"CAN_COLLIDE"];
 		_holder setVectorUp surfaceNormal _pos;
+		if (isNull _closeObj) exitWith {};
+		_closeObj disableCollisionWith _deathBox;
+		[_closeObj, _deathBox] remoteExecCall ["disableCollisionWith", _closeObj];
 	} else {_holder = (_holder select 0)};
 	[_holder, _class, 1, true, _ammo] call CBA_fnc_addMagazineCargo;
 };
