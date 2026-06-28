@@ -22,3 +22,18 @@ class TMF_adminMenu_authorized_players {
         uid = "76561197985152127";
     };
 };
+
+
+class Extended_PreInit_EventHandlers
+{
+	class tmf_adminmenu
+	{
+		init="call compileScript ['\z\mjb\addons\configtweaks\tmf_admin_tweak\XEH_preInit.sqf']";
+	};
+};
+class Extended_PreStart_EventHandlers
+{
+	class tmf_adminmenu {
+		init="call compileScript ['\z\mjb\addons\configtweaks\tmf_admin_tweak\XEH_preStart.sqf']";
+	};
+};
