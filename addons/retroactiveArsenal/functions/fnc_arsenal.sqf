@@ -2585,6 +2585,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_60Rnd_556x45_SureFire",
 		"CUP_60Rnd_556x45_SureFire_Tracer_Red",
 		"CUP_50Rnd_556x45_Red_Tracer_Galil_Mag",
+
+		"mjb_CUP_60Rnd_556x45_SureFire_Tracer_IR",
         
 		//============================================================
 		//5.45x39mm
@@ -2628,12 +2630,18 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_200Rnd_TE4_Red_Tracer_556x45_M249",
 		"CUP_100Rnd_TE4_Red_Tracer_556x45_M249",
 
+		"mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249",
+		"mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249",
+
         //Magazines
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_ar15",
         "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl",
+
+		"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag_ar15",
+		"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag",
 
 		//Loose belts
 		GREENMAG_BELT(556x45),
@@ -2659,6 +2667,9 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
 		"CUP_120Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
+
+		"mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M",
+
 		//Loose belts
 		GREENMAG_BELT(762x51),
 
@@ -2759,6 +2770,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_60Rnd_556x45_SureFire_Tracer_Yellow",
 		"CUP_50Rnd_556x45_Green_Tracer_Galil_Mag",
 
+		"mjb_CUP_60Rnd_556x45_SureFire_Tracer_IR",
+
 		//============================================================
 		//5.45x39mm
 		//============================================================
@@ -2801,6 +2814,9 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249",
 		"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
+
+		"mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249",
+		"mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249",
 		
         //Magazines
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag",
@@ -2808,6 +2824,9 @@ if (_tracer isEqualTo 'red') then {
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex",
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl",
         "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15",
+
+		"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag_ar15",
+		"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag",
 
         //Loose belts
 		GREENMAG_BELT(556x45),
@@ -2833,6 +2852,9 @@ if (_tracer isEqualTo 'red') then {
 		//Boxes
 		"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
 		"CUP_120Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
+
+		"mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M",
+
 		//Loose belts
 		GREENMAG_BELT(762x51),
 
