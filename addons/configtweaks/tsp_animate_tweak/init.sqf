@@ -1,3 +1,7 @@
+if !(hasInterface) exitWith {
+	addMissionEventHandler ["GroupCreated", {_this call tsp_fnc_animate_commands}];
+};
+
 if !(isNil "ZUI_fnc_init") then {waitUntil {speed player > 0}};  //-- Random Infant Skirmish compat
 
 tsp_animate_combat = false; 
@@ -79,7 +83,7 @@ addMissionEventHandler ["Draw3D", {  //-- Need that next frame accuracy for ts
 }];
 
 
-while {tsp_cba_animate_poll > 0} do {[playa, ""] call tsp_fnc_animate_tactical; sleep tsp_cba_animate_poll};
+0 spawn { while {tsp_cba_animate_poll > 0} do {[playa, ""] call tsp_fnc_animate_tactical; sleep tsp_cba_animate_poll}; };
 
 };
 

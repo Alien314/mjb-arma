@@ -15,4 +15,4 @@ class CfgPatches {
   };
 };
 
-class Extended_PostInit_EventHandlers {class tsp_animate_init {init = "['CBA_settingsInitialized', {[] spawn compileScript ['\z\mjb\addons\configtweaks\tsp_animate_tweak\init.sqf']}] call CBA_fnc_addEventHandler;";};};  
+class Extended_PostInit_EventHandlers { class tsp_animate_init { init = "['CBA_settingsInitialized', { [] spawn compileScript ['\z\mjb\addons\configtweaks\tsp_animate_tweak\init.sqf']; }] call CBA_fnc_addEventHandler;"; }; };  
