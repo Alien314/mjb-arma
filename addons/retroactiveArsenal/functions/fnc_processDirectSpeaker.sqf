@@ -85,20 +85,23 @@ if (_isIntercomAttenuate) then {
     _directVolume = [_unit] call EFUNC(sys_intercom,getVolumeIntercomUnit);
     _underwater = false;
 } else {
-	if (mjb_acreProxyVolume isNotEqualTo 1 && {side player isEqualTo side _unit}) then {
-		private _pPos = (AGLToASL (player modelToWorldVisual (player selectionPosition "head")));
+	private _curUnit = [] call CBA_fnc_currentUnit;
+	if (_curUnit isNotEqualTo player && {(_curUnit distance2D _emitterPos) > (player distance2D _emitterPos) } ) then { _curUnit = player; };
+	if (mjb_acreProxyVolume isNotEqualTo 1 && {side _curUnit isEqualTo side _unit}) then {
+		private _pPos = (AGLToASL (_curUnit modelToWorldVisual (_curUnit selectionPosition "head")));
 		private _dist = _emitterPos distance _pPos;
 		_directVolume = _directVolume * ((_dist/150)^2 * (mjb_acreProxyVolume - 1) + 1);
 	};
-
-	if (mjb_acreShift isNotEqualTo 1 && {side player isEqualTo side _unit}) then {
-		private _pPos = (AGLToASL (player modelToWorldVisual (player selectionPosition "head")));
+/*
+	if (mjb_acreShift isNotEqualTo 1 && {side _curUnit isEqualTo side _unit}) then {
+		private _pPos = (AGLToASL (_curUnit modelToWorldVisual (_curUnit selectionPosition "head")));
 		private _dist = _emitterPos distance _pPos;
 		_emitterPos = (vectorLinearConversion [1, 0, (1-(_dist/(150*(21 - ((10 * mjb_acreShift) - 1))))),  _emitterPos, _pPos]);
 		
 		//_emitterPos = (vectorLinearConversion [1, 0.5, (1- (_dist/(150/1.42) * (1/(21 - ((10 * mjb_acreShift) - 1))))^2), _emitterPos, _pPos]);
 		//(1-((getPosASLVisual player distance getPosASLVisual dork)/(150*(21 - ((10 * mjb_acreShift) - 1)))))
 	};
+*/
 };
 
 if (GVAR(isDeaf) || {_unit getVariable [QGVAR(isDisabled), false]} || {_underwater}) then {
