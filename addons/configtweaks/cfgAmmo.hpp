@@ -50,6 +50,32 @@ class CfgAmmo
 		timeToLive = 30;
 	};
 
+    class ACE_9x19_Ball;
+	class mjb_65x25_CBJ : ACE_9x19_Ball {
+		ACE_ballisticCoefficients[] = {0.1455};
+		ACE_bulletLength = 13.005;
+		ACE_bulletMass = 2.1;
+        ACE_caliber = 4.0;
+		ACE_dragModel = 1;
+        ACE_muzzleVelocities[] = {720, 764, 855};
+		ace_vehicle_damage_incendiary = 0.0;
+		airFriction = -0.0014;
+		caliber = 3.4;
+		typicalSpeed = 855;
+		deflecting = 10;
+		deflectionSlowDown = 0.5;
+	};
+
+	// IR Tracer	nvgOnly = 1;
+	class B_556x45_Ball_Tracer_Red;
+	class ACE_B_556x45_Ball_Tracer_Dim : B_556x45_Ball_Tracer_Red {
+		tracerScale = 0.35;
+	};
+	class B_762x51_Tracer_Yellow;
+	class ACE_B_762x51_Tracer_Dim : B_762x51_Tracer_Yellow {
+		tracerScale = 0.42;
+	};
+
 	// fix missing penetrator
 	class G_40mm_HE;
 	class G_40mm_HEDP : G_40mm_HE {
@@ -149,22 +175,6 @@ class CfgAmmo
 	};
 	class mjb_g_impactSmonkPink : mjb_g_impactSmonkWhite {
 		submunitionAmmo = "mjb_g_smonkPink";
-	};
-
-    class ACE_9x19_Ball;
-	class mjb_65x25_CBJ : ACE_9x19_Ball {
-		ACE_ballisticCoefficients[] = {0.1455};
-		ACE_bulletLength = 13.005;
-		ACE_bulletMass = 2.1;
-        ACE_caliber = 4.0;
-		ACE_dragModel = 1;
-        ACE_muzzleVelocities[] = {720, 764, 855};
-		ace_vehicle_damage_incendiary = 0.0;
-		airFriction = -0.0014;
-		caliber = 3.4;
-		typicalSpeed = 855;
-		deflecting = 10;
-		deflectionSlowDown = 0.5;
 	};
 
 
