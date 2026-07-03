@@ -14,6 +14,11 @@ class CfgMagazines
 
 	};
 
+	class 200Rnd_556x45_Box_F : CA_Magazine {
+		mass = 66;
+		reloadAction = "GestureReloadLIM";
+	};
+
 	// MMG Tracer magazines rounds
 	class 130Rnd_338_Mag : CA_Magazine {};
 	class mjb_130Rnd_338_Mag_trc_gr: 130Rnd_338_Mag {
@@ -672,6 +677,75 @@ class CfgMagazines
 		displayName= "9mm 30rnd CBJ APDS Mag";
 	};
 
+	// IR Tracer, ammo = "ACE_B_762x51_Tracer_Dim"; ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+	class CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249;
+	class mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249 : CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249 {
+		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+		displayName = "5.56mm 200Rnd M249 (IR-DIM TE4) Box";
+		displayNameShort = "IR Tracer";
+	};
+	class CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249;
+	class mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249 : CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249 {
+		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+		displayName = "5.56mm 100Rnd M249 (IR-DIM TE4) Pouch";
+		displayNameShort = "IR Tracer";
+	};
+
+	class CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag;
+	class mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag : CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag {
+		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+		displayName = "5.56mm 100Rnd G36 (IR-DIM) Beta-C Mag";
+		displayNameShort = "IR Tracer";
+	};
+	class CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15;
+	class mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag_ar15 : CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15 {
+		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+		displayName = "5.56mm 100Rnd Beta-C (IR-DIM) Mag";
+		displayNameShort = "IR Tracer";
+	};
+
+	class CUP_60Rnd_556x45_SureFire_Tracer_Yellow;
+	class mjb_CUP_60Rnd_556x45_SureFire_Tracer_IR : CUP_60Rnd_556x45_SureFire_Tracer_Yellow {
+		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
+		displayName = "5.56mm 60Rnd Surefire (IR-DIM) Mag";
+		displayNameShort = "IR Tracer";
+	};
+
+	// 7.62
+	class CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M;
+	class mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M : CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M {
+		ammo = "ACE_B_762x51_Tracer_Dim";
+		displayName = "7.62mm 100Rnd M240 (IR-DIM TE4) Box";
+		displayNameShort = "IR Tracer";
+	};
+
+
+	// Vehicle Magazines
+	class VehicleMagazine;
+	class CUP_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M : VehicleMagazine {
+		displayName = "M789 12-Pak Red";
+	};
+	class CUP_1200Rnd_TE1_Green_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M {displayName = "M789 12-Pak Green";};
+	class CUP_1200Rnd_TE1_Yellow_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M {displayName = "M789 12-Pak Yellow";};
+	class CUP_1200Rnd_TE1_White_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M {displayName = "M789 12-Pak White";};
+	class mjb_300Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M {
+		displayName = "M789 Combo-Pak Red";
+		count = 300;
+	};
+	class mjb_300Rnd_TE1_Green_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Green_Tracer_30x113mm_M789_HEDP_M {
+		displayName = "M789 Combo-Pak Green";
+		count = 300;
+	};
+	class mjb_300Rnd_TE1_Yellow_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_Yellow_Tracer_30x113mm_M789_HEDP_M {
+		displayName = "M789 Combo-Pak Yellow";
+		count = 300;
+	};
+	class mjb_300Rnd_TE1_White_Tracer_30x113mm_M789_HEDP_M : CUP_1200Rnd_TE1_White_Tracer_30x113mm_M789_HEDP_M {
+		displayName = "M789 Combo-Pak White";
+		count = 300;
+	};
+	
+
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
 	class rhs_VOG25;
 	class mjb_VOGMDP : rhs_vog25 {
@@ -823,6 +897,28 @@ class CfgMagazineWells {
 			"mjb_130Rnd_338_Mag_trc_ylw"
         };
     };
+    
+	class CBA_556x45_G36 {
+        mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag"
+		};
+	};
+	class CBA_556x45_MINIMI {
+        mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249",
+			"mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249"
+		};
+	};
+	class CBA_556x45_STANAG_L {
+        mjb_mags[] = {
+			"mjb_CUP_60Rnd_556x45_SureFire_Tracer_IR"
+		};
+	};
+	class CBA_556x45_STANAG_2D {
+        mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag_ar15"
+		};
+	};
 
 	class CBA_580x42_TYPE95 {
         mjb_mags[] = {
@@ -846,6 +942,12 @@ class CfgMagazineWells {
 			"mjb_100Rnd_580x42_Mag_Tracer_Red",
 			"mjb_100Rnd_580x42_hex_Mag_Tracer_Red",
 			"mjb_100Rnd_580x42_ghex_Mag_Tracer_Red"
+		};
+	};
+
+	class CBA_762x51_LINKS {
+		mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M"
 		};
 	};
 	
