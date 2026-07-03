@@ -19,6 +19,7 @@ class Helicopter : Air {
 	maxFordingDepth = 1;
 };
 class Helicopter_Base_F : Helicopter {
+	class Turrets;
 	class UserActions {
 		class stab_disable {
 			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1)  && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}}";
@@ -49,6 +50,9 @@ class Helicopter_Base_F : Helicopter {
 	};
 };
 class Helicopter_Base_H : Helicopter_Base_F {
+	class Turrets : Turrets {
+		class MainTurret;
+	};
 	class UserActions {
 		class stab_disable {
 			condition = "private _lock = this lockedCameraTo [0]; mjb_enableStabToggle && { (getNumber (([this, (this unitTurret player)] call BIS_fnc_turretConfig) >> 'isCopilot') isEqualTo 1)  && {!isNil '_lock' || { this directionStabilizationEnabled [0] }}}";
@@ -75,6 +79,14 @@ class Helicopter_Base_H : Helicopter_Base_F {
 			shortcut = "vehLockTurretView";
 			showWindow = 0;
 			statement = "[this] call mjb_arsenal_fnc_copilotStabilizeToggle";
+		};
+	};
+};
+
+class CUP_AH64_base : Helicopter_Base_H {
+	class Turrets : Turrets {
+		class MainTurret : MainTurret {
+			magazines[] = {"mjb_300Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M","Laserbatteries"};
 		};
 	};
 };
