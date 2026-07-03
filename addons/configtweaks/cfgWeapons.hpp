@@ -134,6 +134,7 @@ class CfgWeapons {
   class CUP_Vacannon_M230_veh : CannonCore {
     aiDispersionCoefX = 40;
     aiDispersionCoefY = 30;
+	magazines[] += {"mjb_300Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M","mjb_300Rnd_TE1_Green_Tracer_30x113mm_M789_HEDP_M","mjb_300Rnd_TE1_Yellow_Tracer_30x113mm_M789_HEDP_M","mjb_300Rnd_TE1_White_Tracer_30x113mm_M789_HEDP_M"};
   };
   class CUP_Vacannon_M242_veh : CannonCore {
     aiDispersionCoefX = 40;
@@ -881,6 +882,32 @@ class CfgWeapons {
 #else
 #endif
 
+class H_PilotHelmetFighter_B;
+class H_PilotHelmetFighter_I;
+class H_PilotHelmetFighter_O;
+class mjb_H_PilotHelmetFighter_B_WP : H_PilotHelmetFighter_B {
+	displayName = "Pilot Helmet [NATO, WP]";
+	subItems[] = {"mjb_Integrated_NVG_WP"};
+};
+class mjb_H_PilotHelmetFighter_I_WP : H_PilotHelmetFighter_I {
+	displayName = "Pilot Helmet [AAF, WP]";
+	subItems[] = {"mjb_Integrated_NVG_WP"};
+};
+class mjb_H_PilotHelmetFighter_O_WP : H_PilotHelmetFighter_O {
+	displayName = "Pilot Helmet [CSAT, WP]";
+	subItems[] = {"mjb_Integrated_NVG_WP"};
+};
+
+class H_HelmetO_ViperSP_hex_F;
+class H_HelmetO_ViperSP_ghex_F;
+class mjb_H_HelmetO_ViperSP_hex_WP : H_HelmetO_ViperSP_hex_F {
+	displayName = "Special Purpose Helmet (Hex, WP)";
+	subItems[] = {"mjb_Integrated_NVG_TI_1_WP"};
+};
+class mjb_H_HelmetO_ViperSP_ghex_WP : H_HelmetO_ViperSP_ghex_F {
+	displayName = "Special Purpose Helmet (Green Hex, WP)";
+	subItems[] = {"mjb_Integrated_NVG_TI_1_WP"};
+};
 
 /*/plates are med to rats?
 class CBA_MiscItem;
@@ -889,9 +916,27 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 #include "CfgWeapons_vests.hpp" // needs ItemCore
 
 
-// ACE added now
-/*#define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+#define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 #define NVG_WHITE_PRESETOLD colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+
+class Integrated_NVG_F;
+class mjb_Integrated_NVG_WP : Integrated_NVG_F {
+	displayName = "NV Goggles (Gen3, Integrated WP)";
+	NVG_WHITE_PRESET;
+	NVG_WHITE_PRESETOLD;
+};
+class Integrated_NVG_TI_0_F;
+class mjb_Integrated_NVG_TI_0_WP : Integrated_NVG_TI_0_F {
+	NVG_WHITE_PRESET;
+	NVG_WHITE_PRESETOLD;
+};
+class Integrated_NVG_TI_1_F;
+class mjb_Integrated_NVG_TI_1_WP : Integrated_NVG_TI_1_F {
+	NVG_WHITE_PRESET;
+	NVG_WHITE_PRESETOLD;
+};
+
+/*/ ACE added now
 	class CUP_NVG_GPNVG_black;
 	class CUP_NVG_GPNVG_winter;
 	class CUP_NVG_GPNVG_tan;
