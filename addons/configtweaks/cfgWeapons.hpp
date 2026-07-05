@@ -243,9 +243,23 @@ class CfgWeapons {
   // Meme MOA
   class CUP_smg_SA61 : Rifle_Base_F {
 	class FullAuto : Mode_FullAuto {
-		dispersion = 0.02007;
+		dispersion = 0.002;
 	};
 	class Single : Mode_SemiAuto {
+		dispersion = 0.002;
+	};
+	class WeaponSlotsInfo;
+  };
+  class CUP_smg_SA61_RIS : CUP_smg_SA61 {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 32;
+	};
+  };
+  class CUP_smg_BallisticShield_Sa61 : CUP_smg_SA61_RIS {
+	class FullAuto : FullAuto {
+		dispersion = 0.02007;
+	};
+	class Single : Single {
 		dispersion = 0.02007;
 	};
   };
@@ -417,6 +431,18 @@ class CfgWeapons {
   class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {
 	magazineWell[] = {"CBA_9x19_P320"};
+  };
+  class CUP_hgun_CZ75 : Pistol_Base_F {
+	magazineWell[] = {"CBA_9x19_CZ75_Full"};
+  };
+
+  class CUP_hgun_SA61 : Pistol_Base_F {
+	class FullAuto : Mode_FullAuto {
+		dispersion = 0.004916;
+	};
+	class Single : Mode_SemiAuto {
+		dispersion = 0.004916;
+	};
   };
 
   // switch
