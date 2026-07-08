@@ -663,6 +663,11 @@ class CfgMagazines
 		displayName= "9mm 17rnd M17 CBJ APDS Mag";
 		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 17<br />Used in: M17";
 	};
+	class CUP_21Rnd_9x19_M17_Black;
+	magPistol65X25(mjb_21Rnd_65x25_M17,CUP_21Rnd_9x19_M17_Black)
+		displayName= "9mm 21rnd M17 CBJ APDS Mag";
+		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 21<br />Used in: M17";
+	};
 	magPistol65X25(mjb_17Rnd_65x25_glock17,CUP_17Rnd_9x19_glock17)
 		displayName= "9mm 17rnd G17 CBJ APDS Mag";
 		descriptionShort = "6.5x25mm Armor Piercing Discarding Sabot<br />Rounds: 17<br />Used in: G17";
