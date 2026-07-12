@@ -20,14 +20,23 @@ class Extended_PostInit_EventHandlers
 {
 	class mjb_bettinv_tweak
 	{
+#if __has_include("\z\mjb\addons\configtweaks\cfgMagazines.hpp")
 		init="call compileScript ['\z\mjb\addons\configtweaks\bettinv_tweak\XEH_postInit.sqf']";
+#else
+		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_postInit.sqf']";
+#endif
 	};
 };
 class Extended_PreInit_EventHandlers
 {
 	class mjb_bettinv_tweak
 	{
+				
+#if __has_include("\z\mjb\addons\configtweaks\cfgMagazines.hpp")
 		init="call compileScript ['\z\mjb\addons\configtweaks\bettinv_tweak\XEH_preInitServer.sqf']";
+#else
+		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_preInitServer.sqf']";
+#endif
 	};
 	/*class bettinv_main
 	{
