@@ -1,7 +1,7 @@
 params ["_unit"];
 
-if (!mjb_cfBaiFix) exitWith {};
-
+if (!mjb_cfBaiFix || {isServer}) exitWith {};
+/*
 if (isServer && {!(local _unit)}) exitWith {
 	_unit addEventHandler ["Local", {
 		params ["_unit", "_isLocal"];
@@ -13,6 +13,7 @@ if (isServer && {!(local _unit)}) exitWith {
 		[_unit] spawn cf_bai_suppression_fnc_updateSuppression;
 	}];
 };
+*/
 
 if (!(local _unit) || {isPlayer _unit}) exitWith {};
 
