@@ -33,9 +33,9 @@ class Extended_PreInit_EventHandlers
 	{
 #if __has_include("\z\mjb\addons\configtweaks\cfgMagazines.hpp")
 		init="call compileScript ['\z\mjb\addons\configtweaks\bettinv_tweak\XEH_preInit.sqf']";
-#endif
-		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_preInit.sqf']";
 #else
+		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_preInit.sqf']";
+#endif
 	};
 };
 class Extended_PreStart_EventHandlers
@@ -43,8 +43,8 @@ class Extended_PreStart_EventHandlers
 #if __has_include("\z\mjb\addons\configtweaks\cfgMagazines.hpp")
 	class bettinv_main {
 		init="call compileScript ['\z\mjb\addons\configtweaks\bettinv_tweak\XEH_preStart.sqf']";
-#endif
-		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_preStart.sqf']";
 #else
+		init="call compileScript ['\z\mjb\addons\bettinv_tweak\XEH_preStart.sqf']";
+#endif
 	};
 };
