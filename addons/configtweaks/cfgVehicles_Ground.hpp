@@ -6,6 +6,8 @@ class Car : LandVehicle {
 };
 class Car_F;
 
+delete MainTurret; // useless turret def
+
 // ACRE intercompartment attenuation
 #define ATT_INT 0.6  // attenutation to other compartments
 #define ATT_OUT 0.3  // attenutation to own compartment while turned out
@@ -80,7 +82,9 @@ class Tank: LandVehicle {
 	};
 };
 
-class Tank_F;
+class Tank_F : Tank {
+	class Hitpoints;
+};
 class APC_Tracked_02_base_F;
 
 // CUP
@@ -185,10 +189,13 @@ class CUP_T55_Base : Tank_F {
 	driverForceOptics = 0;
 };
 
-/*/ mis-positioned in center of tank?
+// mis-positioned in center of tank?
 class CUP_T72_Base : Tank_F {
-	driverForceOptics = 0;
-};*/
+	//driverForceOptics = 0;
+	class Hitpoints : Hitpoints {
+		class HitEngine {armor = 0.6; armorComponent = "hit_engine"; explosionShielding = 0.2; material = -1; minimalHit = 0.2; name = "hit_engine_point"; passThrough = 0.2; radius = 0.3; visual = "-";};
+	};
+};
 
 /* pretty limited but clippy into roof, little vis forward
 class CUP_T90_Base : Tank_F {
