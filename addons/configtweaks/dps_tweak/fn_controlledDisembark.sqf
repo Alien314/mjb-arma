@@ -34,7 +34,7 @@ private _driver = driver _vehicle;
 private _isPlayerLed = [_group] call DPS_fnc_isPlayerLedGroup;
 
 // Check if turretless (transport/soft-skin) — driver dismounts too
-private _isTurretless = count ((_vehicle call BIS_fnc_vehicleCrewTurrets) - [-1]) == 0;
+private _isTurretless = count (((typeOf _vehicle) call BIS_fnc_vehicleCrewTurrets) - [[-1]]) == 0;
 
 // Set driver as group leader so vehicle continues to waypoint (AI groups only)
 if (!_isPlayerLed && !isNull _driver && alive _driver && {group _driver == _group}) then {
