@@ -298,6 +298,16 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
 		picture = "\Armbands\Facewear\Data\UI\icon_Armband_red_ca.paa";
 	};
+	class G_Armband_NVG_glxy_F : G_Armband_NVG_blk_F {
+		displayName = "Armband [Galaxy]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_glxy_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
+	};
+	class G_Armband_NVG_glxy_alt_F : G_Armband_NVG_blk_alt_F {
+		displayName = "Armband [Galaxy, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_glxy_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
+	};
 #endif
 };
 
@@ -344,6 +354,16 @@ class CfgGlasses {
 		displayName = "Armband [Trans, alt]";
 		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_trans_CO.paa"};
 		picture = "\Armbands\Facewear\Data\UI\icon_Armband_pnk_ca.paa";
+	};
+	class G_Armband_glxy_F : G_Armband_blk_F {
+		displayName = "Armband [Galaxy]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_glxy_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
+	};
+	class G_Armband_glxy_alt_F : G_Armband_blk_alt_F {
+		displayName = "Armband [Galaxy, alt]";
+		hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\G_Armband_glxy_CO.paa"};
+		picture = "\Armbands\Facewear\Data\UI\icon_Armband_yel_ca.paa";
 	};
 };
 #endif
