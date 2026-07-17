@@ -719,10 +719,10 @@ class CfgWeapons {
 	MCC_COMBOGRN(MCC_AK_OGL_WMLX,_FDE_);
 	MCC_COMBO(MCC_AK_PEQ15_M300C,_BLK_);
 	MCC_COMBO(MCC_AK_PEQ15_M300C,_FDE_);
-	MCC_COMBO(MCC_AR_LA30_M600V,_BLK_);
-	MCC_COMBO(MCC_AR_LA30_M600V,_FDE_);
-	MCC_COMBO(MCC_AR_LA30_M600V_Tail,_BLK_);
-	MCC_COMBO(MCC_AR_LA30_M600V_Tail,_FDE_);
+	//MCC_COMBO(MCC_AR_LA30_M600V,_BLK_);
+	//MCC_COMBO(MCC_AR_LA30_M600V,_FDE_);
+	//MCC_COMBO(MCC_AR_LA30_M600V_Tail,_BLK_);
+	//MCC_COMBO(MCC_AR_LA30_M600V_Tail,_FDE_);
 	MCC_COMBO(MCC_AR_NGAL_M600V,_BLK_);
 	MCC_COMBO(MCC_AR_NGAL_M600V,_FDE_);
 	MCC_COMBO(MCC_AR_NGAL_M600V_Tail,_BLK_);
@@ -756,4 +756,63 @@ class CfgWeapons {
 	MCC_COMBOGRN(MCC_VarioRay_AR_TOP,_);
 	MCC_COMBOGRN(MCC_VarioRay_AR18_TOP,_);
 	MCC_COMBOGRN(MCC_VarioRay,_);
+
+
+#define MCC_COMBOARLA(var,var2) class var##var2##IRL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER); \
+		}; \
+	}; \
+	class var##var2##IRC : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM_W); \
+		}; \
+	}; \
+	class var##var2##IRCF : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_LASER_x_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##IRT : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_IR); \
+			mode = Q(XPI_M_IR_ILLUM); \
+		}; \
+	}; \
+	class var##var2##VISC : MCC_AR_NGAL_M600V_BLK_VISC { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
+		}; \
+	}; \
+	class var##var2##VISL : var##var2##IRL { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_VISIBLE_LASER); \
+		}; \
+		class ItemInfo : InventoryFlashLightItem_Base_F { \
+			RIFLE_LASER_VISIBLE_RED; \
+		}; \
+	}; \
+	class var##var2##WL : ItemCore { \
+		class dzn_XPI { \
+			bundle = Q(VARTWO(var,var2)); \
+			type=Q(XPI_T_VISIBLE); \
+			mode = Q(XPI_M_LIGHT); \
+		}; \
+	};
+
+	MCC_COMBOARLA(MCC_AR_LA30_M600V,_BLK_);
+	MCC_COMBOARLA(MCC_AR_LA30_M600V,_FDE_);
+	MCC_COMBOARLA(MCC_AR_LA30_M600V_Tail,_BLK_);
+	MCC_COMBOARLA(MCC_AR_LA30_M600V_Tail,_FDE_);
 };
