@@ -308,7 +308,6 @@ private _itemEquipment =
     "JCA_V_CarrierRigKBT_01_tactical_black_F",
     "JCA_V_CarrierRigKBT_01_tactical_olive_F",
     "JCA_V_CarrierRigKBT_01_tactical_sand_F",
-
     
     //============================================================
     //Helmets
@@ -1381,8 +1380,6 @@ private _itemMod =
     "JCA_optic_MROS_sand_magnifier",
 
 	//MCC 3x
-    "MCC_MicroT2_Spuhr_BLK_Down",
-
     "MCC_EXPS3_BLK_Up",
     "MCC_EXPS3_FDE_Down",
 	"MCC_EXPS3_UnityX_BLK_Up",
@@ -1395,6 +1392,29 @@ private _itemMod =
 	"MCC_GBRS_T2_Mag_Up_FDE",
 	"MCC_Romeo9T_BLK_Up",
     "MCC_Romeo9T_FDE_Up",
+
+    "MCC_LCO_PRO_F2_UnityX_blk_Down",
+    "MCC_LCO_PRO_F2_UnityX_FDE_Down",
+    "MCC_Romeo8t_BLK_Down",
+    "MCC_Romeo8T_FDE_Down",
+    "MCC_AMG_UH1_BLK_Down",
+    "MCC_AMG_UH1_FDE_Down",
+    "MCC_EXPS3HD_BLK_Down",
+    "MCC_EXPS3HD_UnityX_BLK_Down",
+    "MCC_EXPS3HD_UnityX_FDE_Down",
+    "MCC_CompM5_Down",
+    "MCC_CompM5_UnityX_BLK_Down",
+    "MCC_CompM5_UnityX_FDE_Down",
+    "MCC_CompM5B_BLK_Down",
+    "MCC_CompM5B_FDE_Down",
+    "MCC_MicroT2_Down",
+    "MCC_MicroT2_Spuhr_BLK_Down",
+    "MCC_MicroT2_Spuhr_FDE_Down",
+    "MCC_MicroT2_UnityX_BLK_Down",
+    "MCC_MicroT2_UnityX_DFDE_Down",
+    "MCC_MicroT2_UnityX_FDE_Down",
+    "MCC_GBRS_T2_Mag_Down_BLK",
+    "MCC_GBRS_T2_Mag_Down_FDE",
 
     //Dovetail (Ak Sights)
     "CUP_optic_pechenegscope", // 2.8x
@@ -1680,26 +1700,49 @@ private _itemReflexSight =
     "rhsusf_acc_t1_low",
     "rhsusf_acc_t1_low_fwd",
 
-    //MCC
-	"MCC_MicroT2_Spuhr_BLK",
+    //MCC 1x
+    "MCC_EXPS3_BLK",
+	"MCC_EXPS3_FDE",
+    "MCC_EXPS3_UnityX_BLK",
+    "MCC_EXPS3_UnityX_FDE",
+    "MCC_GBRS_EXPS3_BLK",
+	"MCC_GBRS_EXPS3_FDE",
+    "MCC_EXPS3HD_BLK",
+    "MCC_EXPS3HD_UnityX_BLK",
+    "MCC_EXPS3HD_UnityX_FDE",
+
+	"MCC_Romeo9t_blk",
+    "MCC_Romeo9t_fde",
+    "MCC_Romeo8t_blk",
+    "MCC_Romeo8t_fde",    
+
+    "MCC_LCO_PRO_F2_blk",
+    "MCC_LCO_PRO_F2_FDE",
+    "MCC_LCO_PRO_F2_UnityX_blk",
+    "MCC_LCO_PRO_F2_UnityX_fde",
+
+    "MCC_AMG_UH1_blk",
+    "MCC_AMG_UH1_FDE",
+
+    "MCC_CompM5",
+    "MCC_CompM5_UnityX_FDE",
+    "MCC_CompM5_UnityX_BLK",
+    "MCC_CompM5B_BLK",
+    "MCC_CompM5B_FDE",
+
     "MCC_Aimpoint_Pro_S_FC",
     "MCC_Aimpoint_Pro_S",
     "MCC_Aimpoint_Pro_T_FC",
     "MCC_Aimpoint_Pro_T",
 
-    "MCC_EXPS3_BLK",
-	"MCC_EXPS3_FDE",
-    "MCC_EXPS3_UnityX_BLK",
-    "MCC_EXPS3_UnityX_FDE",
+	"MCC_MicroT2_Spuhr_BLK",
+    "MCC_MicroT2_Spuhr_FDE",
 	"MCC_MicroT2",
+    "MCC_MicroT2_UnityX_DFDE",    
     "MCC_MicroT2_UnityX_BLK",
     "MCC_MicroT2_UnityX_FDE",
     "MCC_GBRS_T2_BLK",
     "MCC_GBRS_T2_FDE",
-    "MCC_GBRS_EXPS3_BLK",
-	"MCC_GBRS_EXPS3_FDE",
-	"MCC_Romeo9t_blk",
-    "MCC_Romeo9t_fde",
     
     //Tier1
     "Tier1_EXPS3_0_Tano",
@@ -2330,7 +2373,56 @@ private _itemWeaponRifle =
 	"MCC_LMT_MARSL_14_556_DE_SLK",
 	"MCC_LMT_MARSL_16_556_DE_CTR",
 	"MCC_LMT_MARSL_16_556_DE_SOPMOD",
-	"MCC_LMT_MARSL_16_556_DE_SLK"	
+	"MCC_LMT_MARSL_16_556_DE_SLK",
+
+    //newest MCC guns 07.19.2026
+    "MCC_G95_KSK_556",
+    "MCC_G95A1_556",
+    "MCC_G95KA1_556",
+    "MCC_HK416A8_556_11_BLK_Bravo",
+    "MCC_HK416A8_556_11_BLK_CTR",
+    "MCC_HK416A8_556_11_BLK_HK",
+    "MCC_HK416A8_556_11_FDE_Bravo",
+    "MCC_HK416A8_556_11_FDE_CTR",
+    "MCC_HK416A8_556_11_FDE_HK",
+    "MCC_HK416A8_556_14_BLK_Bravo",
+    "MCC_HK416A8_556_14_BLK_CTR",
+    "MCC_HK416A8_556_14_BLK_HK",
+    "MCC_HK416A8_556_14_FDE_Bravo",
+    "MCC_HK416A8_556_14_FDE_CTR",
+    "MCC_HK416A8_556_14_FDE_HK",
+    "MCC_HK416A8_556_16_BLK_Bravo",
+    "MCC_HK416A8_556_16_BLK_CTR",
+    "MCC_HK416A8_556_16_BLK_HK",
+    "MCC_HK416A8_556_16_FDE_Bravo",
+    "MCC_HK416A8_556_16_FDE_CTR",
+    "MCC_HK416A8_556_16_FDE_HK",
+    "MCC_L403A1",
+    "MCC_SpearLT_L143A2_556",
+    "MCC_SOLGW_556_115_BLK_Bravo",
+    "MCC_SOLGW_556_115_BLK_CTR",
+    "MCC_SOLGW_556_115_BLK_TR",
+    "MCC_SOLGW_556_115_CAMO_Bravo",    
+    "MCC_SOLGW_556_115_CAMO_CTR",
+    "MCC_SOLGW_556_115_CAMO_TR",
+    "MCC_SOLGW_556_115_FDE_Bravo",
+    "MCC_SOLGW_556_115_FDE_CTR",
+    "MCC_SOLGW_556_115_FDE_TR",
+    "MCC_SOLGW_556_115_SIL_Bravo",
+    "MCC_SOLGW_556_115_SIL_CTR",
+    "MCC_SOLGW_556_115_SIL_TR",
+    "MCC_SOLGW_556_145_BLK_Bravo",
+    "MCC_SOLGW_556_145_BLK_CTR",
+    "MCC_SOLGW_556_145_BLK_TR",
+    "MCC_SOLGW_556_145_CAMO_Bravo",
+    "MCC_SOLGW_556_145_CAMO_CTR",
+    "MCC_SOLGW_556_145_CAMO_TR",
+    "MCC_SOLGW_556_145_FDE_Bravo",
+    "MCC_SOLGW_556_145_FDE_CTR",
+    "MCC_SOLGW_556_145_FDE_TR",
+    "MCC_SOLGW_556_145_SIL_Bravo",
+    "MCC_SOLGW_556_145_SIL_CTR",
+    "MCC_SOLGW_556_145_SIL_TR"
 ];
 
 private _itemWeaponCarbine =
