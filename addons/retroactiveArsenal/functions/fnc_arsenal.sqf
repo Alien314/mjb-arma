@@ -4503,7 +4503,7 @@ if (!isNil '_role' && {_role isNotEqualTo ""}) then {systemChat ("Using set role
 } else { systemChat ("No role set, defaulting to: " + _unitRole); };
 private _leaderRole = ["tl","sl","B_officer_F","B_Soldier_SL_F"];
 
-if (_unitRole in (["sfsl","sfar","sfaar","sfmed","sfmat","sfdmr","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
+if (_unitRole in (["sfsl","sfar","sfaar","sfmed","sfmat","sfdmr","sfrespawn","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
 
 private _grp = group player;
 //Match unitrole name with the classnames in loadout.
