@@ -3836,6 +3836,9 @@ private _itemWeaponMMGAmmo =
 
 private _itemSF =
 [
+	//SF Helmet
+	"H_HelmetB_camo",
+
     //BIS and Mods
     "O_NVGoggles_grn_F",
     "DemoCharge_Remote_Mag",
