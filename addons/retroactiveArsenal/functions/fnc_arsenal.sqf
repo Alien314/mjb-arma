@@ -1838,6 +1838,8 @@ private _itemLeaderEquipment =
 
     "SmokeShellOrange",
     "SmokeShellYellow",
+	"mjb_SmokeShellBurstOrange",
+	"mjb_SmokeShellBurstYellow",
 
     //Cute attachments for leaders
     "tier1_agency_compensator",
@@ -2375,6 +2377,7 @@ private _itemWeaponRifle =
 	"MCC_LMT_MARSL_16_556_DE_SOPMOD",
 	"MCC_LMT_MARSL_16_556_DE_SLK",
 
+    "MCC_LMT_MARSL_R20_RAHE",
     //newest MCC guns 07.19.2026
     "MCC_G95_KSK_556",
     "MCC_G95A1_556",
@@ -2590,6 +2593,13 @@ private _itemWeaponAmmo =
     "SmokeShellBlue",
     "mjb_SmokeShellLightBlue",
     "mjb_SmokeShellPink",
+	"mjb_SmokeShellBurst",
+	"mjb_SmokeShellBurstBlue",
+	"mjb_SmokeShellBurstGreen",
+	"mjb_SmokeShellBurstRed",
+	"mjb_SmokeShellBurstPurple",
+	"mjb_SmokeShellBurstLightBlue",
+	"mjb_SmokeShellBurstPink",
 
     //Make eyeballs hurt
     "tsp_flashbang_m84",
