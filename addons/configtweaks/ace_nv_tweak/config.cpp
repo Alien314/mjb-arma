@@ -41,14 +41,14 @@ class CfgWeapons {
 	class NVGoggles;
 	class Integrated_NVG_F : NVGoggles {
 		ace_nightvision_border = "";
-		ace_nightvision_generation = 4;
+		ace_nightvision_generation = -1;
 	};
 	class Integrated_NVG_TI_0_F : NVGoggles {
 		ace_nightvision_border = "";
-		ace_nightvision_generation = 4;
+		ace_nightvision_generation = -1;
 	};
 	class Integrated_NVG_TI_1_F : NVGoggles {
 		ace_nightvision_border = "";
-		ace_nightvision_generation = 4;
+		ace_nightvision_generation = -1;
 	};
 };
