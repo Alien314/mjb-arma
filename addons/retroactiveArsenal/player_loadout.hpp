@@ -285,8 +285,7 @@ class sfrespawn : r {
 	headgear[] = {
 		"H_HelmetB_camo"
 	};
-	goggles[] =
-	{
+	goggles[] =	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
 	magazines[] = {
@@ -998,6 +997,9 @@ class sfmat : mat
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
+    secondaryWeapon[] = {
+		"launch_MRAWS_green_F"
+    };
 	vest[] = {
 		//"rhsusf_plateframe_rifleman"
 		"CUP_V_B_Ciras_Khaki3"
