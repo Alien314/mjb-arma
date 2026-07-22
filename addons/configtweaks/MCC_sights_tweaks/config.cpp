@@ -23,40 +23,40 @@ class CfgWeapons {
 	class InventoryOpticsItem_Base_F;
 	
 	// Macro: Sights Red Dots
-	#define MCC_DOT(var) class var : ItemCore { \
+	#define MCC_DOT(var) class var /*: ItemCore { \
 		class ItemInfo : InventoryOpticsItem_Base_F { \
 	    	class OpticsModes { \
 				class Aco { \
-	        		discreteDistance[] = {100}; \
-	        		discreteDistanceInitIndex = 0; \
+	        		discreteDistance[] = {25,50,100,200}; \
+	        		discreteDistanceInitIndex = 2; \
 				}; \
 			}; \
 		}; \
-	};
+	}*/
 	
 	// Macro: Sights optics Down. (base,var reversed)
-	#define MCC_DWN(base,var) class var : base { \
-			class ItemInfo : InventoryOpticsItem_Base_F { \
-	      		class OpticsModes { \
-					class Aco { \
-						discreteDistance[] = {100}; \
-						discreteDistanceInitIndex = 0; \
-					}; \
-	    		}; \
-	  		}; \
-		}
+	#define MCC_DWN(base,var) class var /*: base { \
+		class ItemInfo : InventoryOpticsItem_Base_F { \
+			class OpticsModes { \
+				class Aco { \
+					discreteDistance[] = {25,50,100,200}; \
+					discreteDistanceInitIndex = 2; \
+				}; \
+			}; \
+		}; \
+	}*/
 	
 	// Macro: Sights optics Up.
 	#define MCC_UP(var,base) class var : base { \
-			class ItemInfo : InventoryOpticsItem_Base_F { \
-	      		class OpticsModes { \
-	        		class Magnified { \
-	          			discreteDistance[] = {300}; \
-	          			discreteDistanceInitIndex = 0; \
-	      			}; \
-	    		}; \
-	  		}; \
-		}
+		class ItemInfo : InventoryOpticsItem_Base_F { \
+			class OpticsModes { \
+				class Magnified { \
+					discreteDistance[] = {300}; \
+					discreteDistanceInitIndex = 0; \
+				}; \
+			}; \
+		}; \
+	}
 	
 	// 1x / red dots
 	MCC_DOT(MCC_EXPS3_BLK);
@@ -72,6 +72,17 @@ class CfgWeapons {
 	//MCC_DWN(MCC_GBRS_EXPS3_FDE,MCC_GBRS_EXPS3_BLK);
 	MCC_DOT(MCC_Aimpoint_Pro_S);
 	MCC_DOT(MCC_MicroT2_Spuhr_BLK);
+
+	MCC_DOT(MCC_AMG_UH1_blk);
+	MCC_DOT(MCC_AMG_UH1_FDE);
+	MCC_DOT(MCC_CompM5);
+	MCC_DOT(MCC_CompM5_UnityX_BLK);
+	MCC_DOT(MCC_CompM5B_BLK);
+	MCC_DOT(MCC_CompM5B_FDE);
+	MCC_DOT(MCC_EXPS3HD_BLK);
+	MCC_DOT(MCC_LCO_PRO_F2_blk);
+
+	
 
 	// 1x / optics down (base,var)
 	MCC_DWN(MCC_EXPS3_BLK,MCC_EXPS3_BLK_Down);
@@ -92,6 +103,28 @@ class CfgWeapons {
 	class MCC_EXPS3_UnityX_FDE_Down;
 	class MCC_GBRS_T2_Mag_Down_BLK;
 	MCC_DWN(MCC_MicroT2_Spuhr_BLK,MCC_MicroT2_Spuhr_BLK_Down);
+
+	MCC_DWN(MCC_AMG_UH1_blk,MCC_AMG_UH1_BLK_Down);
+	MCC_DWN(MCC_AMG_UH1_FDE,MCC_AMG_UH1_FDE_Down);
+	MCC_DWN(MCC_CompM5,MCC_CompM5_Down);
+	MCC_DWN(MCC_CompM5,MCC_CompM5_UnityX_BLK_Down);
+	MCC_DWN(MCC_CompM5_UnityX_BLK,MCC_CompM5_UnityX_FDE);
+	MCC_DWN(MCC_CompM5,MCC_CompM5_UnityX_FDE_Down);
+	MCC_DWN(MCC_CompM5B_BLK,MCC_CompM5B_BLK_Down);
+	MCC_DWN(MCC_CompM5B_FDE,MCC_CompM5B_FDE_Down);
+	MCC_DWN(MCC_EXPS3HD_BLK,MCC_EXPS3HD_UnityX_BLK);
+	MCC_DWN(MCC_EXPS3HD_BLK,MCC_EXPS3HD_BLK_Down);
+	MCC_DWN(MCC_EXPS3HD_BLK,MCC_EXPS3HD_UnityX_FDE);
+	MCC_DWN(MCC_EXPS3HD_BLK_Down,MCC_EXPS3HD_UnityX_BLK_Down);
+	MCC_DWN(MCC_EXPS3HD_BLK_Down,MCC_EXPS3HD_UnityX_FDE_Down);
+	MCC_DWN(MCC_LCO_PRO_F2_blk,MCC_LCO_PRO_F2_FDE);
+	MCC_DWN(MCC_LCO_PRO_F2_blk,MCC_LCO_PRO_F2_UnityX_blk);
+	MCC_DWN(MCC_LCO_PRO_F2_UnityX_blk,MCC_LCO_PRO_F2_UnityX_fde);
+	MCC_DWN(MCC_LCO_PRO_F2_blk,MCC_LCO_PRO_F2_UnityX_blk_Down);
+	MCC_DWN(MCC_LCO_PRO_F2_FDE,MCC_LCO_PRO_F2_UnityX_FDE_Down);
+	MCC_DWN(MCC_MicroT2_UnityX_BLK,MCC_MicroT2_UnityX_DFDE);
+	MCC_DWN(MCC_MicroT2,MCC_MicroT2_UnityX_DFDE_Down);
+
 	
 	// 3x / optics up
 	MCC_UP(MCC_EXPS3_BLK_Up,MCC_EXPS3_BLK_Down);
@@ -108,4 +141,17 @@ class CfgWeapons {
 	MCC_UP(MCC_GBRS_T2_Mag_Up_BLK,MCC_GBRS_T2_Mag_Down_BLK);
 	MCC_UP(MCC_GBRS_T2_Mag_Up_FDE,MCC_GBRS_T2_Mag_Down_FDE);
 	MCC_UP(MCC_MicroT2_Spuhr_BLK_Up,MCC_MicroT2_Spuhr_BLK_Down);
+
+	MCC_UP(MCC_AMG_UH1_BLK_Up,MCC_AMG_UH1_BLK_Down);
+	MCC_UP(MCC_AMG_UH1_FDE_Up,MCC_AMG_UH1_FDE_Down);
+	MCC_UP(MCC_CompM5_Up,MCC_CompM5_Down);
+	MCC_UP(MCC_CompM5_UnityX_BLK_Up,MCC_CompM5_UnityX_BLK_Down);
+	MCC_UP(MCC_CompM5_UnityX_FDE_Up,MCC_CompM5_UnityX_FDE_Down);
+	MCC_UP(MCC_CompM5B_BLK_Up,MCC_CompM5B_BLK_Down);
+	MCC_UP(MCC_CompM5B_FDE_Up,MCC_CompM5B_FDE_Down);
+	MCC_UP(MCC_EXPS3HD_UnityX_BLK_Up,MCC_EXPS3HD_UnityX_BLK_Down);
+	MCC_UP(MCC_EXPS3HD_UnityX_FDE_Up,MCC_EXPS3HD_UnityX_FDE_Down);
+	MCC_UP(MCC_LCO_PRO_F2_UnityX_blk_Up,MCC_LCO_PRO_F2_UnityX_blk_Down);
+	MCC_UP(MCC_LCO_PRO_F2_UnityX_FDE_Up,MCC_LCO_PRO_F2_UnityX_FDE_Down);
+	MCC_UP(MCC_MicroT2_UnityX_DFDE_Up,MCC_MicroT2_UnityX_DFDE_Down);
 };
