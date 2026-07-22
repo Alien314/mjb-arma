@@ -1395,8 +1395,6 @@ private _itemMod =
 
     "MCC_LCO_PRO_F2_UnityX_blk_Down",
     "MCC_LCO_PRO_F2_UnityX_FDE_Down",
-    "MCC_Romeo8t_BLK_Down",
-    "MCC_Romeo8T_FDE_Down",
     "MCC_AMG_UH1_BLK_Down",
     "MCC_AMG_UH1_FDE_Down",
     "MCC_EXPS3HD_BLK_Down",
