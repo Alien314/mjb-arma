@@ -875,6 +875,12 @@ class CfgMagazines
 	};
 
 	class SmokeShell;
+	class SmokeShellBlue;
+	class SmokeShellRed;
+	class SmokeShellGreen;
+	class SmokeShellYellow;
+	class SmokeShellOrange;
+	class SmokeShellPurple;
 
 	class mjb_SmokeShellLightBlue : SmokeShell {
 		ammo = "mjb_SmokeShellLightBlue";
@@ -892,6 +898,62 @@ class CfgMagazines
 		displayNameShort = "Pink Smoke";
 		model = "\A3\Weapons_f\ammo\smokegrenade_red";
 		picture = "\A3\Weapons_f\data\ui\gear_smokegrenade_red_ca.paa";
+	};
+
+	class mjb_SmokeShellBurst : SmokeShell {
+		ammo = "mjb_SmokeShellBurst";
+		descriptionShort = "Type: Bursting Smoke Grenade - White<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (White)";
+		displayNameShort = "Wht Brst Smoke";
+	};
+
+	class mjb_SmokeShellBurstBlue : SmokeShellBlue {
+		ammo = "mjb_SmokeShellBurstBlue";
+		descriptionShort = "Type: Bursting Smoke Grenade - Blue<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Blue)";
+		displayNameShort = "Blue Brst Smoke";
+	};
+	class mjb_SmokeShellBurstRed : SmokeShellRed {
+		ammo = "mjb_SmokeShellBurstRed";
+		descriptionShort = "Type: Bursting Smoke Grenade - Red<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Red)";
+		displayNameShort = "Red Brst Smoke";
+	};
+	class mjb_SmokeShellBurstGreen : SmokeShellGreen {
+		ammo = "mjb_SmokeShellBurstGreen";
+		descriptionShort = "Type: Bursting Smoke Grenade - Green<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Green)";
+		displayNameShort = "Grn Brst Smoke";
+	};
+	class mjb_SmokeShellBurstOrange : SmokeShellOrange {
+		ammo = "mjb_SmokeShellBurstOrange";
+		descriptionShort = "Type: Bursting Smoke Grenade - Orange<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Orange)";
+		displayNameShort = "Orng Brst Smoke";
+	};
+	class mjb_SmokeShellBurstPurple : SmokeShellPurple {
+		ammo = "mjb_SmokeShellBurstPurple";
+		descriptionShort = "Type: Bursting Smoke Grenade - Purple<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Purple)";
+		displayNameShort = "Prpl Brst Smoke";
+	};
+	class mjb_SmokeShellBurstYellow : SmokeShellYellow {
+		ammo = "mjb_SmokeShellBurstYellow";
+		descriptionShort = "Type: Bursting Smoke Grenade - Yellow<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Yellow)";
+		displayNameShort = "Ylw Brst Smoke";
+	};
+	class mjb_SmokeShellBurstLightBlue : mjb_SmokeShellLightBlue {
+		ammo = "mjb_SmokeShellBurstLightBlue";
+		descriptionShort = "Type: Bursting Smoke Grenade - Light Blue<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Light Blue)";
+		displayNameShort = "L.Blu Brst Smoke";
+	};
+	class mjb_SmokeShellBurstPink : mjb_SmokeShellPink {
+		ammo = "mjb_SmokeShellBurstPink";
+		descriptionShort = "Type: Bursting Smoke Grenade - Pink<br />Rounds: 1<br />Used in: Hand";
+		displayName = "M106 Smoke Grenade (Pink)";
+		displayNameShort = "Pnk Brst Smoke";
 	};
 };
 

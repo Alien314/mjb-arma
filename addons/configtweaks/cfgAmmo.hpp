@@ -137,6 +137,32 @@ class CfgAmmo
 		smokeColor[] = {0.9568,0.6733,0.8305,1};
 	};
 
+	class mjb_SmokeShellBurst : SmokeShell {
+		effectsSmoke = "mjb_SmokeShellWhiteImpactEffect";
+		timeToLive = 30;
+	};
+#define SMONKBURST(VAR) class SmokeShell##VAR; \
+	class mjb_SmokeShellBurst##VAR : SmokeShell##VAR { \
+		effectsSmoke = QUOTE(SMONKAVAR(VAR,ImpactEffect)); \
+		timeToLive = 30; \
+	}
+	SMONKBURST(Blue);
+	SMONKBURST(Green);
+	SMONKBURST(Orange);
+	SMONKBURST(Purple);
+	SMONKBURST(Red);
+	SMONKBURST(Yellow);
+	class mjb_SmokeShellBurstLightBlue : SmokeShell {
+		effectsSmoke = "mjb_SmokeShellLightBlueImpactEffect";
+		smokeColor[] = {0.4000,0.7764,0.9568,1};
+		model = "\A3\Weapons_f\ammo\smokegrenade_blue_throw";
+	};
+	class mjb_SmokeShellBurstPink : SmokeShell {
+		effectsSmoke = "mjb_SmokeShellPinkImpactEffect";
+		smokeColor[] = {0.9568,0.6733,0.8305,1};
+		model = "\A3\Weapons_f\ammo\smokegrenade_red_throw";
+	};
+
 
 	// impact
 	class mjb_g_impactSmonkWhite : G_40mm_Smoke {

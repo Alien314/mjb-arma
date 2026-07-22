@@ -645,7 +645,7 @@ class CfgWeapons {
 
   class Throw : GrenadeLauncher {
 	class ThrowMuzzle;
-    muzzles[] += {"mjb_SmokeShellLightBlueMuzzle","mjb_SmokeShellPinkMuzzle"};
+    muzzles[] += {"mjb_SmokeShellLightBlueMuzzle","mjb_SmokeShellPinkMuzzle","mjb_SmokeShellBurstMuzzle","mjb_SmokeShellBurstBlueMuzzle","mjb_SmokeShellBurstGreenMuzzle","mjb_SmokeShellBurstRedMuzzle","mjb_SmokeShellBurstOrangeMuzzle","mjb_SmokeShellBurstPurpleMuzzle","mjb_SmokeShellBurstYellowMuzzle","mjb_SmokeShellBurstLightBlueMuzzle","mjb_SmokeShellBurstPinkMuzzle"};
 	class mjb_SmokeShellLightBlueMuzzle : ThrowMuzzle {
 		displayName = "Smoke Grenade";
 		magazines[] = {"mjb_SmokeShellLightBlue"};
@@ -653,6 +653,42 @@ class CfgWeapons {
 	class mjb_SmokeShellPinkMuzzle : ThrowMuzzle {
 		displayName = "Smoke Grenade";
 		magazines[] = {"mjb_SmokeShellPink"};
+	};
+	class mjb_SmokeShellBurstMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurst"};
+	};
+	class mjb_SmokeShellBurstBlueMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstBlue"};
+	};
+	class mjb_SmokeShellBurstGreenMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstGreen"};
+	};
+	class mjb_SmokeShellBurstRedMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstRed"};
+	};
+	class mjb_SmokeShellBurstOrangeMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstOrange"};
+	};
+	class mjb_SmokeShellBurstPurpleMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstPurple"};
+	};
+	class mjb_SmokeShellBurstYellowMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstYellow"};
+	};
+	class mjb_SmokeShellBurstLightBlueMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstLightBlue"};
+	};
+	class mjb_SmokeShellBurstPinkMuzzle : ThrowMuzzle {
+		displayName = "Smoke Grenade";
+		magazines[] = {"mjb_SmokeShellBurstPink"};
 	};
   };
 
