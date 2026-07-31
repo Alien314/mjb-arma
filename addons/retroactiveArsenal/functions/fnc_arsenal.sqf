@@ -3947,6 +3947,13 @@ private _itemSF =
     "rhsusf_shemagh2_tan"
 ];
 
+private _itemBreacherRoleEquipment
+[
+    // demo
+    "DemoCharge_Remote_Mag",
+    "ACE_Clacker"
+];
+
 private _itemBreacher =
 [
     // Shock Tube detonator for breaching charges
@@ -4521,7 +4528,7 @@ if (!isNil '_role' && {_role isNotEqualTo ""}) then {systemChat ("Using set role
 } else { systemChat ("No role set, defaulting to: " + _unitRole); };
 private _leaderRole = ["tl","sl","B_officer_F","B_Soldier_SL_F"];
 
-if (_unitRole in (["sfsl","sfar","sfaar","sfmed","sfmat","sfdmr","sfrespawn","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
+if (_unitRole in (["sfsl","sfar","sfaar","sfmed","sfbreacher","sfmat","sfdmr","sfrespawn","sniper","spotter","aircrew"] )) then { _itemMod append _itemSuppressor}; //append _leaderRole
 
 private _grp = group player;
 //Match unitrole name with the classnames in loadout.
@@ -4553,12 +4560,12 @@ switch (true) do
     };
     case (_unitRole in ["mat","B_Soldier_LAT_F"]) : // for old missions, will be wrong without tmf role
     {
-		if (count units _grp > 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
+		if (count units _grp >= 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["amat","B_T_Soldier_AAT_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["wpntl","B_T_Soldier_TL_F"]) :
@@ -4645,32 +4652,32 @@ switch (true) do
     };
     case (_unitRole in ["hat","B_Soldier_AT_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponHAT + _itemLeaderEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["ahat","B_Soldier_AAT_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
 		case (_unitRole in ["spaa","B_Soldier_AA_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponSPAA + _itemLeaderEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoSPAA + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["aspaa","B_Soldier_AAA_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoSPAA + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["mmg","B_HeavyGunner_F"]) :
     {
-		if (count units _grp > 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
+		if (count units _grp >= 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAR + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
     };
         case (_unitRole in ["ammg","B_Soldier_A_F"]) :
     {
-		if (count units _grp > 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
+		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMGAmmo + _itemLeaderEquipment  + _itemPackHeavy + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
     };
 		case (_unitRole in ["isr","B_Soldier_UAV_F"]) :
@@ -4692,6 +4699,16 @@ switch (true) do
         case (_unitRole in ["sfrespawn","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+        player setUnitTrait ["Medic", true];
+    };
+        case (_unitRole in ["breacher","B_Soldier_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemReflexSight + _itemBreacher + _itemBreacherRoleEquipment + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemPackMedLight)] call ace_arsenal_fnc_initBox;
+    };
+        case (_unitRole in ["sfbreacher","B_Soldier_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemBreacherRoleEquipment + _itemSpecial + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
         player setUnitTrait ["Medic", true];
     };
