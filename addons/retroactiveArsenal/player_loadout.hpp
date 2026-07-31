@@ -316,6 +316,100 @@ class sfrespawn : r {
 	};
 };
 
+// RATS Breacher
+class breacher : r
+{
+	displayName = "Breacher";
+	primaryWeapon[] = {
+		"CUP_arifle_HK416_Black"
+	};
+	scope[] = {
+		"optic_hamr"
+	};
+	attachment[] = {
+		"CUP_acc_ANPEQ_15_Flashlight_Black_L"
+	};
+	magazines[] += {
+		LIST_2("tsp_flashbang_m84"),
+		"mjb_SmokeShellLightBlue",
+		"CUP_15Rnd_9x19_M9",
+		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
+	};
+	backpack[] = {
+		"B_Kitbag_rgr"
+	};
+	backpackItems[] += {
+		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+				"ACE_Clacker",
+				LIST2("DemoCharge_Remote_Mag"),
+				LIST2("tsp_breach_package_mag"),
+				LIST_20("ACE_fieldDressing"),
+				//LIST_10("ACE_packingBandage"),
+				//LIST_5("ACE_quikclot"),
+				LIST_4("ACE_tourniquet"),
+				LIST_2("ACE_epinephrine"),
+				LIST_2("ACE_morphine"),
+				LIST_2("ACE_splint"),
+				//LIST_2("ACE_bloodIV"),
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_2("HandGrenade"),
+		LIST_2("SmokeShell")
+	};
+};
+
+// RATS SF Breacher
+class sfbreacher : r {
+	displayName = "SF Breacher";
+	silencer[] = {
+		"CUP_muzzle_snds_SCAR_L"
+	};
+	headgear[] = {
+		"H_HelmetB_camo"
+	};
+	goggles[] =	{
+		"CUP_G_ESS_BLK_Facewrap_Black"
+	};
+	magazines[] = {
+		LIST_12("CUP_30Rnd_556x45_Emag"),
+		LIST_2("tsp_flashbang_cts"),
+		LIST_2("SmokeShellBlue"),
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+		"HandGrenade",
+		"CUP_12Rnd_45ACP_mk23"
+	};
+	vest[] = {
+		//"rhsusf_plateframe_rifleman"
+		"CUP_V_B_Ciras_Khaki3"
+	};
+	backpack[] = {
+		"G2_Gunslinger"
+	};
+	backpackItems[] += {
+		"ACE_Clacker",
+		LIST2("DemoCharge_Remote_Mag"),
+		LIST2("tsp_breach_package_mag"),
+	};
+	sidearmWeapon[] = {
+		"CUP_hgun_Mk23"
+	};
+	sidearmAttachments[] = {
+		"cup_acc_mk23_lam_f",
+		"cup_muzzle_snds_mk23",
+	};
+	items[] += {
+		"ACE_CableTie",
+		"ACE_IR_Strobe_Item"
+	};
+};
+
 // RATS Automatic Rifle Slot
 class ar : basetrooper
 {
