@@ -4495,6 +4495,7 @@ if (_hasMarksmen) then {
 
 //Add Existing Player Items
 if (canSuspend) then {waitUntil { !isNull player };}; // should prevent FAKs/Medikits from adding when ACE enabled.
+[player, "Rangefinder"] call CBA_fnc_removeItem;
 
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
