@@ -412,6 +412,14 @@ class CfgWeapons {
   };
   */
 
+  class CUP_saw_base : Rifle_Long_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		class CowsSlot : CUP_PicatinnyTopShortMount {
+			delete compatibleItems;
+		};
+	};
+  };
+
   // .45 50m Zeroing
   class SMG_01_Base : Rifle_Short_Base_F {
 	discreteDistance[] = {50,100,200};
@@ -550,6 +558,7 @@ class CfgWeapons {
   class CUP_launch_M72A6_Loaded : Launcher_Base_F {
 	displayName = "M72A5";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
+		//class CowsSlot : CUP_PicatinnyTopShortMount {}; // puts your eye in the tube
 		mass = 57.3;
 	};
   };
@@ -819,6 +828,20 @@ class CfgWeapons {
 
   
   class ItemCore;
+
+  class InventoryOpticsItem_Base_F;
+  /*/ hamr is sad :'(
+  class optic_Hamr : ItemCore {
+    class ItemInfo : InventoryOpticsItem_Base_F {
+		class OpticsModes {
+			class Hamr2Scope {
+				//useModelOptics = 1;
+				//opticsFlare = 0;
+				//opticsPPEffects[] = {}; //"OpticsRadialBlur1","OpticsBlur1"
+			};
+		};
+	};
+  };*/
 
   // FH speed fix
   class InventoryMuzzleItem_Base_F;
