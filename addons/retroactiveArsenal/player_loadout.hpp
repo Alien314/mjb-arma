@@ -338,35 +338,19 @@ class breacher : r
 	backpack[] = {
 		"B_Kitbag_rgr"
 	};
-	backpackItems[] += {
+	backpackItems[] = {
 		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
-		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
-			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
-				LIST_3("FirstAidKit"),
-			#else
-				"ACE_Clacker",
-				LIST2("DemoCharge_Remote_Mag"),
-				LIST2("tsp_breach_package_mag"),
-				LIST_20("ACE_fieldDressing"),
-				//LIST_10("ACE_packingBandage"),
-				//LIST_5("ACE_quikclot"),
-				LIST_4("ACE_tourniquet"),
-				LIST_2("ACE_epinephrine"),
-				LIST_2("ACE_morphine"),
-				LIST_2("ACE_splint"),
-				//LIST_2("ACE_bloodIV"),
-			#endif
-		#else
-			LIST_3("FirstAidKit"),
-		#endif
+		"ACE_Clacker",
+		LIST_2("DemoCharge_Remote_Mag"),
+		LIST_2("tsp_breach_package_mag"),
 		LIST_2("HandGrenade"),
 		LIST_2("SmokeShell")
 	};
 };
 
 // RATS SF Breacher
-class sfbreacher : r {
+class sfbreacher : breacher {
 	displayName = "SF Breacher";
 	silencer[] = {
 		"CUP_muzzle_snds_SCAR_L"
@@ -391,11 +375,6 @@ class sfbreacher : r {
 	};
 	backpack[] = {
 		"G2_Gunslinger"
-	};
-	backpackItems[] += {
-		"ACE_Clacker",
-		LIST2("DemoCharge_Remote_Mag"),
-		LIST2("tsp_breach_package_mag"),
 	};
 	sidearmWeapon[] = {
 		"CUP_hgun_Mk23"
