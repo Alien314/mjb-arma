@@ -45,6 +45,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_moduleSetUnitRole.sqf", "mjb_arsenal_fnc_moduleSetUnitRole"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleVcom.sqf", "mjb_arsenal_fnc_moduleVcom"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleNoTab.sqf", "mjb_arsenal_fnc_moduleNoTab"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_moduleNoMagnified.sqf", "mjb_arsenal_fnc_moduleNoMagnified"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleLightsOutEMP.sqf", "mjb_arsenal_fnc_moduleLightsOutEMP"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleAdminMenu.sqf", "mjb_arsenal_fnc_moduleAdminMenu"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_moduleAllowAIUncon.sqf", "mjb_arsenal_fnc_moduleAllowAIUncon"] call CBA_fnc_compileFunction;

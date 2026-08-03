@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors","mjb_moduleNoMagnified"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -249,6 +249,12 @@ class CfgVehicles
         displayName = "Disable BFT/Devices";
         function = "mjb_arsenal_fnc_moduleNoTab";
         icon = "\A3\ui_f\data\GUI\Cfg\Hints\Map_ca.paa";
+    };
+    class mjb_moduleNoMagnified : mjb_moduleBase {
+        curatorCanAttach = 0;
+        displayName = "Remove Magnified Optics";
+        function = "mjb_arsenal_fnc_moduleNoMagnified";
+        icon = "\A3\ui_f\data\igui\cfg\actions\obsolete\ui_action_manualfire_ca.paa";
     };
     class mjb_moduleLightsOutEMP : mjb_moduleBase {
         curatorCanAttach = 0;
