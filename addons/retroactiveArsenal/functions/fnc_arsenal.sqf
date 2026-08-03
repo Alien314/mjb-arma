@@ -3947,7 +3947,7 @@ private _itemSF =
     "rhsusf_shemagh2_tan"
 ];
 
-private _itemBreacherRoleEquipment
+private _itemBreacherRoleEquipment =
 [
     // demo
     "DemoCharge_Remote_Mag",
