@@ -8,7 +8,7 @@ class CfgPatches {
     author = "Alien314";
     name = "Dzn XPI Tweaks";
 	requiredAddons[]=
-        {
+        {	//"disable",
             "dzn_xpi",
 			"dzn_XPI_A3",
 			"dzn_XPI_CUP",
@@ -238,6 +238,30 @@ class CfgDznXPI {
 		beamColor[]={1,0,0};        \
 		dotColor[]={383,0,0};       \
 		IRdotSize=0.05;             \
+	}
+
+#define RIFLE_LASER_VISIBLE_GREEN_MCC	\
+	class Pointer                   \
+	{                               \
+		beamMaxLength=20;           \
+		beamThickness=0.035;        \
+		beamColor[]={0,1,0};        \
+		dotColor[]={0,383,0};       \
+		IRdotSize=0.05;             \
+		irLaserEnd="laserdir";          \
+		irLaserPos="laserpos";          \
+	}
+
+#define RIFLE_LASER_VISIBLE_RED_MCC	\
+	class Pointer                   \
+	{                               \
+		beamMaxLength=20;           \
+		beamThickness=0.035;        \
+		beamColor[]={1,0,0};        \
+		dotColor[]={383,0,0};       \
+		IRdotSize=0.05;             \
+		irLaserEnd="laserdir";          \
+		irLaserPos="laserpos";          \
 	}
 
 /*#define RIFLE_LASER_IR(POS,DIR)   \
@@ -635,7 +659,7 @@ class CfgWeapons {
 			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
 		}; \
 		class ItemInfo : InventoryFlashLightItem_Base_F { \
-			RIFLE_LASER_VISIBLE_RED; \
+			RIFLE_LASER_VISIBLE_RED_MCC; \
 		}; \
 	}; \
 	class var##var2##VISL : var##var2##IRL { \
@@ -692,7 +716,7 @@ class CfgWeapons {
 			mode = Q(XPI_M_VISIBLE_LASER_x_LIGTH); \
 		}; \
 		class ItemInfo : InventoryFlashLightItem_Base_F { \
-			RIFLE_LASER_VISIBLE_GREEN; \
+			RIFLE_LASER_VISIBLE_GREEN_MCC; \
 		}; \
 	}; \
 	class var##var2##VISL : var##var2##IRL { \
@@ -800,7 +824,7 @@ class CfgWeapons {
 			mode = Q(XPI_M_VISIBLE_LASER); \
 		}; \
 		class ItemInfo : InventoryFlashLightItem_Base_F { \
-			RIFLE_LASER_VISIBLE_RED; \
+			RIFLE_LASER_VISIBLE_RED_MCC; \
 		}; \
 	}; \
 	class var##var2##WL : ItemCore { \
