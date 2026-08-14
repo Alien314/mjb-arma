@@ -8,8 +8,8 @@ if (mjb_tacGestureFix) then {
 	/*private _gestureEH = _unit addEventHandler ['GestureChanged',{ params ["_unit", "_gesture"];
 		_unit removeEventHandler [_thisEvent,_thisEventHandler];
 	}];*/
-	[_unit, 'GestureDone', { params ["_unit", "_gesture"]; _thisArgs params ['_reload','_magazine'];
-		if (_reload isNotEqualTo _gesture) then {
+	[_unit, 'GestureDone', { params ["_unit", "_gesture"]; _thisArgs params ['_reload','_magazine','_weapon'];
+		if (_reload isNotEqualTo _gesture && {_weapon isEqualTo currentWeapon _unit}) then {
 			if (mjb_tacDropMag) then {
 				[_unit,_magazine] call mjb_arsenal_fnc_tacDropMag;
 			} else {
@@ -20,7 +20,7 @@ if (mjb_tacGestureFix) then {
 		};
 		//_unit removeEventHandler ['GestureChanged',_gestureEH];
 		_unit removeEventHandler [_thisEvent,_thisEventHandler];
-	}, [_gesture,_newMagazine]] call CBA_fnc_addBISEventHandler;
+	}, [_gesture,_newMagazine,_weapon]] call CBA_fnc_addBISEventHandler;
 };
 
 if (isNil '_newMagazine') exitWith {};
