@@ -5,6 +5,7 @@ if (isServer) then {
 			// allow medical as if player
 			_unit setVariable ['ace_medical_statemachine_AIUnconsciousness', true, true];
 			_unit setVariable ['ace_medical_statemachine_fatalInjuriesAI', 1, true];
+			[_unit,"ACE_NoVoice"] remoteExec ["setSpeaker"];
 
 			// ocap turns this off
 			//[{if !(alive _unit) exitWith {}; _this setVariable ['ocap_exclude', nil]; }, _unit, 20] call cba_fnc_waitAndExecute;
@@ -174,6 +175,12 @@ if (isServer) then {
 		};
 
 		//0 spawn { sleep 1; [mjb_acreVoiceScale] call acre_api_fnc_setCurveModelScale; };		
+	};
+    if (mjb_scriptDebug) then {
+		addMissionEventHandler ["ScriptSpawned", {
+			(_this select 0) params ['_file','','','_parent','_parentLine'];
+			diag_log (format ["MJB Arma: %1 spawned from %2 on line %3.",(_file),(_parent),_parentLine]);
+		}];
 	};
 };
 
@@ -524,6 +531,7 @@ if (mjb_woodCutting) then {
 			};
 			[player, _action] call BIS_fnc_holdActionRemove;
 		};
+		if !(player checkAIFeature "TARGET") then { player enableAI "TARGET"; [format ["MJB A player had TARGET disabled: %1, re-enabling.", name player]] remoteExec ['diag_log',([0,-2] select isDedicated)];};
 	}; };
 };
 

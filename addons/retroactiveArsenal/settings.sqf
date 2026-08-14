@@ -642,6 +642,15 @@ private _category = "AI";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_scriptDebug",
+    "CHECKBOX",
+    ["Log Spawned Scripts", "Logs all scripts spawned on server, last entry before a crash may be an issue, but could cause log file to be very large."],
+    [_title, "xExperimental"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_enableStabToggle",
     "CHECKBOX",
     ["Allow Co-pilot Stabilize Toggle", "Whether co-pilot stabilization can be disabled, and point/area type functionality then enabled."],
