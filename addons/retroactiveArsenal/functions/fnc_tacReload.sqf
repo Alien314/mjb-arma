@@ -9,7 +9,7 @@ if (mjb_tacGestureFix) then {
 		_unit removeEventHandler [_thisEvent,_thisEventHandler];
 	}];*/
 	[_unit, 'GestureDone', { params ["_unit", "_gesture"]; _thisArgs params ['_reload','_magazine','_weapon'];
-		if (_reload isNotEqualTo _gesture && {_weapon isEqualTo currentWeapon _unit}) then {
+		if (_reload isNotEqualTo _gesture && {!("sling" in _gesture)}) then {
 			if (mjb_tacDropMag) then {
 				[_unit,_magazine] call mjb_arsenal_fnc_tacDropMag;
 			} else {
