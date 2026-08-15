@@ -111,7 +111,7 @@ class CfgVehicles {
 			};
 			class EngineHighOut : EngineHighOut {
 				frequency = "(rpm factor[0.5, 1.0])";
-				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_high_ext",1,1,300};
+				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_high_ext",1,1,400};
 				volume = "camPos*(rpm factor[0.2, 1.0])";
 			};
 			class EngineLowIn : EngineLowIn {
@@ -121,7 +121,7 @@ class CfgVehicles {
 			};
 			class EngineLowOut : EngineLowOut {
 				frequency = "1.0 min (rpm + 0.5)";
-				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_low_ext",0.707946,1,225};
+				sound[] = {"A3\Sounds_F\air\UAV_02\UAV_02_low_ext",0.707946,1,250};
 				volume = "camPos*(rpm factor[0.95, 0])*(rpm factor[0, 0.95])";
 			};
 		};
