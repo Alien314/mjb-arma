@@ -1114,7 +1114,7 @@ private _itemNVG =
 ];
 _itemEquipment append _itemNVG;
 
-private _itemArmNVG = (("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}) - ['G_Armband_NVG_Cross_F','G_Armband_NVG_Cross_alt_F']); // ['Aegis and Hartman','Anthrax and Hartman']
+private _itemArmNVG = ("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}); // ['Aegis and Hartman','Anthrax and Hartman']
 _itemEquipment append _itemArmNVG;
 
 private _itemWeaponMelee =
