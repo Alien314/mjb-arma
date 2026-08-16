@@ -4714,7 +4714,7 @@ if (_hasMarksmen) then {
         "MMG_02_sand_F"
     ];
 
-    itemSFWeaponDMR append [
+    _itemSFWeaponDMR append [
         //9.3 and .338 Marksman DLC Rifles
         //9.3
         "srifle_DMR_05_blk_F",
