@@ -577,8 +577,8 @@ private _itemEquipment =
     "ItemAndroidMisc",
     "ItemMicroDAGRMisc",
 
-	// 
-	"tsp_"
+	// Sling
+	"tsp_sling"
 ];
 
 private _itemUniforms = [
@@ -3882,12 +3882,12 @@ private _itemSF =
 
     //BIS and Mods
     "O_NVGoggles_grn_F",
+    "DemoCharge_Remote_Mag",
     "tsp_flashbang_cts",
     "ACE_CableTie",
     "ACE_IR_Strobe_Item",
-    //"DemoCharge_Remote_Mag", breachers and SF leaders get access instead
-    //"ACE_Clacker",
-    //"ACE_DeadManSwitch",
+    "ACE_Clacker",
+    "ACE_DeadManSwitch",
     "ACE_wirecutter",
 
     //Vests + Backpack
@@ -4169,10 +4169,6 @@ private _itemBreacherRoleEquipment =
     "DemoCharge_Remote_Mag",
     "ACE_Clacker"
     
-    //slings
-	"tsp_sling_1point",
-	"tsp_sling_3point",
-	"tsp_sling_lanyard",
 ];
 
 private _itemBreacher =
