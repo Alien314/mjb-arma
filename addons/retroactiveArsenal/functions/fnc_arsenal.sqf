@@ -1241,7 +1241,7 @@ private _itemPackHeavy =
 ];
 _itemPackHeavy append _itemPackMedium;
 
-private _itemFacewear = (("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x})- ['G_Armband_Cross_F','G_Armband_Cross_alt_F'] + ["PLA_NV_Goggles_F", "PLA_NV_Glasses_F"]);
+private _itemFacewear = (("getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x}) + ["PLA_NV_Goggles_F", "PLA_NV_Glasses_F"]);
 /*private _itemFacewear =
 [
     //Vanilla
@@ -4033,7 +4033,7 @@ private _itemSFWeaponRifle =
     "MCC_SpearLT_16_762x39_ANO_MPLFS",
     "MCC_SpearLT_16_762x39_ANO_SLK",
     "MCC_SpearLT_9_762x39_ANO_Bravo",
-    "MCC_SpearLT_9_762x39_ANO_MPLFS"
+    "MCC_SpearLT_9_762x39_ANO_MPLFS",
     "MCC_SpearLT_9_762x39_ANO_SLK",
     "MCC_SpearLT_115_762x39_BLK_Bravo",
     "MCC_SpearLT_115_762x39_BLK_MPLFS",
@@ -4636,7 +4636,7 @@ if (_hasContact) then {
         //6.5 Promet Mags for GROTS, Contact DLC
         "30Rnd_65x39_caseless_msbs_mag",
         "30Rnd_65x39_caseless_msbs_mag_Tracer"
-    ]
+    ];
 
     _itemMod append [
     	"optic_ico_01_f",
@@ -4782,7 +4782,7 @@ if (_hasMarksmen) then {
 
 //Add Existing Player Items
 if (canSuspend) then {waitUntil { !isNull player };}; // should prevent FAKs/Medikits from adding when ACE enabled.
-[player, "Rangefinder"] call CBA_fnc_removeWeapon;
+//[player, "Rangefinder"] call CBA_fnc_removeWeapon;
 
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
