@@ -4168,6 +4168,7 @@ private _itemBreacherRoleEquipment =
     // demo
     "DemoCharge_Remote_Mag",
     "ACE_Clacker",
+	"ACE_wirecutter",
 
     //slings
 	"tsp_sling_1point",
