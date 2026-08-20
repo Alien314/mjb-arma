@@ -5,6 +5,13 @@ respawnButton = 1;
 
 disabledAI = 0;
 
+class Header
+{
+	gameType = "Coop";
+	minPlayers =  1;
+	maxPlayers = 696;
+};
+
 class CfgDebriefing
 {
 	class Success
