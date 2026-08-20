@@ -420,6 +420,11 @@ class CfgWeapons {
 	};
   };
 
+
+  class CUP_lmg_MG3 : Rifle_Long_Base_F {
+	magazines[] += {"mjb_CUP_120Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M"};
+  };
+
   // .45 50m Zeroing
   class SMG_01_Base : Rifle_Short_Base_F {
 	discreteDistance[] = {50,100,200};

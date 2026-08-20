@@ -574,6 +574,15 @@ class CfgMagazines
 		mass = 20;
 	};
 
+	class mjb_cup_64Rnd_46x30_Bizon_M : CUP_64Rnd_9x19_Bizon_M {
+		ammo = "CUP_B_46x30_Ball";
+		greenmag_ammo = "greenmag_ammo_46x30_ball_1Rnd";
+		greenmag_basicammo = "greenmag_ammo_46x30_basic_1Rnd";
+		initSpeed = 725;
+		descriptionShort = "Caliber:4.6x30mm <br/>Rounds: 64 <br/>Used in: Bizon PP-19";
+		displayname = "4.6mm 64Rnd Bizon Magazine";
+	};
+
 	// backpack disposable inconsistency fix
 	class CUP_M136_M : CA_LauncherMagazine {
 		mass = 0; // squeak two at4 into kitbag
@@ -683,18 +692,25 @@ class CfgMagazines
 	};
 
 	// IR Tracer, ammo = "ACE_B_762x51_Tracer_Dim"; ammo = "ACE_B_556x45_Ball_Tracer_Dim";
-	class CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249;
-	class mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249 : CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249 {
-		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
-		displayName = "5.56mm 200Rnd M249 (IR-DIM TE4) Box";
-		displayNameShort = "IR Tracer";
+	class mjb_150Rnd_93x64_Mag_trc_IR : 150Rnd_93x64_Mag {
+		ammo = "mjb_B_93x64_Ball_Tracer_Dim";
+		displayName = "9.3mm 150Rnd IR Mixed Belt";
+		displayNameShort = "Mixed/IR";
 	};
-	class CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249;
-	class mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249 : CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249 {
-		ammo = "ACE_B_556x45_Ball_Tracer_Dim";
-		displayName = "5.56mm 100Rnd M249 (IR-DIM TE4) Pouch";
-		displayNameShort = "IR Tracer";
+	class mjb_130Rnd_338_Mag_trc_IR : 130Rnd_338_Mag {
+		ammo = "mjb_338_NM_trc_IR";
+		displayName = ".338 Norma Magnum 130Rnd IR Mixed Belt";
+		displayNameShort = "Mixed/IR";
 	};
+
+#define IRMAG(CLASS,BASE,AMMO,NAME) class BASE; \
+	class CLASS : BASE { \
+		ammo = QUOTE(AMMO); \
+		displayName = QUOTE(NAME); \
+		displayNameShort = "IR Tracer"; \
+	}
+	IRMAG(mjb_CUP_200Rnd_TE4_IR_Tracer_556x45_M249,CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249,ACE_B_556x45_Ball_Tracer_Dim,5.56mm 200Rnd M249 (IR-DIM TE4) Box);
+	IRMAG(mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249,CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249,ACE_B_556x45_Ball_Tracer_Dim,5.56mm 100Rnd M249 (IR-DIM TE4) Pouch);
 
 	class CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag;
 	class mjb_CUP_100Rnd_TE1_IR_Tracer_556x45_BetaCMag : CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag {
@@ -723,6 +739,10 @@ class CfgMagazines
 		displayName = "7.62mm 100Rnd M240 (IR-DIM TE4) Box";
 		displayNameShort = "IR Tracer";
 	};
+	IRMAG(mjb_CUP_120Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M,CUP_120Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M,ACE_B_762x51_Tracer_Dim,7.62mm 120Rnd MG-3 (IR-DIM TE4) Box);
+
+   
+	IRMAG(mjb_CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_IR_M,CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M,mjb_CUP_B_762x54_Ball_Yellow_Tracer,7.62mm 100Rnd PKM (IR-DIM TE4) Box);
 
 
 	// Vehicle Magazines
@@ -961,7 +981,7 @@ class CfgMagazineWells {
     class CBA_338NM_LINKS {
         mjb_mags[] = {
 			"mjb_130Rnd_338_Mag_trc_gr",
-			"mjb_130Rnd_338_Mag_trc_ylw"
+			"mjb_130Rnd_338_Mag_trc_ylw","mjb_130Rnd_338_Mag_trc_IR"
         };
     };
     
@@ -1017,10 +1037,21 @@ class CfgMagazineWells {
 			"mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M"
 		};
 	};
+
+	class CBA_762x54R_LINKS {
+		mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_IR_M"
+		};
+	};
+	class PK_762x54R {
+		mjb_mags[] = {
+			"mjb_CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_IR_M"
+		};
+	};
 	
     class CBA_93x64_LINKS {
         mjb_mags[] = {
-			"mjb_150Rnd_93x64_Mag_trc_red",
+			"mjb_150Rnd_93x64_Mag_trc_IR","mjb_150Rnd_93x64_Mag_trc_red",
 			"mjb_150Rnd_93x64_Mag_trc_ylw",
 			"mjb_150Rnd_93x64_Mag_trc_grn_full",
 			"mjb_150Rnd_93x64_Mag_trc_red_full",
@@ -1108,10 +1139,10 @@ class CfgMagazineWells {
         };
     };
 	
-	/*class CBA_9x18_PP19 
+	class CBA_9x19_PP19 
 	{
-		ADDON[] = {
-			"CUP_64Rnd_9x18_Bizon_M","CUP_64Rnd_Green_Tracer_9x18_Bizon_M","CUP_64Rnd_Red_Tracer_9x18_Bizon_M","CUP_64Rnd_White_Tracer_9x18_Bizon_M","CUP_64Rnd_Yellow_Tracer_9x18_Bizon_M"
+		mjb_mags[] = {
+			"mjb_cup_64Rnd_46x30_Bizon_M"
 		};
-	};*/
+	};
 };

@@ -67,6 +67,20 @@ class CfgAmmo
 	};
 
 	// IR Tracer	nvgOnly = 1;
+	class mjb_B_93x64_Ball_Tracer_Dim : B_93x64_Ball {
+		nvgOnly = 1;
+		tracerScale = 0.5;
+	};
+	class mjb_338_NM_trc_IR : B_338_NM_Ball {
+		nvgOnly = 1;
+		tracerScale = 0.5;
+	};
+	#define IRAMMO(CLASS,BASE,SCALE) class BASE; \
+    class CLASS : BASE { \
+		nvgOnly = 1; \
+		tracerScale = SCALE; \
+	}
+
 	class B_556x45_Ball_Tracer_Red;
 	class ACE_B_556x45_Ball_Tracer_Dim : B_556x45_Ball_Tracer_Red {
 		tracerScale = 0.35;
@@ -75,6 +89,7 @@ class CfgAmmo
 	class ACE_B_762x51_Tracer_Dim : B_762x51_Tracer_Yellow {
 		tracerScale = 0.42;
 	};
+	IRAMMO(mjb_CUP_B_762x54_Ball_Yellow_Tracer,CUP_B_762x54_Ball_Yellow_Tracer,0.42);
 
 	// fix missing penetrator
 	class G_40mm_HE;
