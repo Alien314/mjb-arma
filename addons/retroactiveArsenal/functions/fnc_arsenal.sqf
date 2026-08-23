@@ -2109,7 +2109,25 @@ private _itemWeaponRifle =
 	//============================================================
 	// MCC 5.56, 5.45, 7.62x39
 	//============================================================
-	"MCC_M4A1_556_USGI_145_CTR",
+	
+    "MCC_LMT_MARSL_R20S_RAHE",
+    "MCC_M4A1_556_BII_145_CTR",
+    "MCC_M4A1_556_BII_145_Bravo",
+    "MCC_M4A1_556_BII_145_SLK",
+    "MCC_M4A1_556_FSP_145_CTR",
+    "MCC_M4A1_556_FSP_145_Bravo",
+    "MCC_M4A1_556_FSP_145_SLK",
+    "MCC_M4A1_556_USGI_145_CTR",
+    "MCC_M4A1_556_USGI_145_Bravo",
+    "MCC_M4A1_556_USGI_145_M4SS",
+    "MCC_M4A1_556_RAS_145_CTR",
+    "MCC_M4A1_556_RAS_145_Bravo",
+    "MCC_M4A1_556_RAS_145_M4SS",
+    "MCC_MK18_556_BII_103_CTR",
+    "MCC_MK18_556_BII_103_Bravo",
+    "MCC_MK18_556_BII_103_SLK",
+    
+    "MCC_M4A1_556_USGI_145_CTR",
     "MCC_M4A1_556_USGI_145_Bravo",
     "MCC_M4A1_556_USGI_145_Bravo",
     "MCC_M4A1_556_RAS_145_CTR",
