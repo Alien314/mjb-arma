@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors","mjb_moduleNoMagnified"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors","mjb_moduleNoMagnified","mjb_moduleAddJTAC"};//mjb_modulePersist
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -386,6 +386,12 @@ class CfgVehicles
         displayName = "Set Unit Role";
 		function = "mjb_arsenal_fnc_moduleSetUnitRole";
 		icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\rearm_ca.paa";
+	};
+	class mjb_moduleAddJTAC : mjb_moduleBase {
+        curatorCanAttach = 1;
+        displayName = "Add JTAC";
+		function = "mjb_arsenal_fnc_moduleAddJTAC";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Designator_CA.paa";
 	};
     class mjb_moduleLockDoors : mjb_moduleBase {
 		category = "MJB_Breach";
