@@ -56,7 +56,7 @@ if (_unsling) then {
 		if (vehicle _unit isEqualTo _unit && stance _unit isNotEqualTo "CROUCH") then {[_unit, "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon"] remoteExec ["switchMove"]};
 		if (vehicle _unit isEqualTo _unit && !_holster) then {_unit switchMove (if (stance _unit isEqualTo "CROUCH") then {"amovpknlmstpslowwrfldnon_amovpknlmstpsraswrfldnon"} else {"amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon"})};
 		if (_sling) then {[_unit, "tsp_animate_sling_swap"] remoteExec ["playActionNow"]};  //-- Dont overwrite if we slung a rifle beforehand
-		_unit setVariable [_unslingClass+"weapon", []]; [_unit, primaryWeapon _unit] remoteExec ["selectWeapon"];
+		_unit setVariable [_unslingClass+"weapon", [],true]; [_unit, primaryWeapon _unit] remoteExec ["selectWeapon"];
 	}]
 };
 tsp_future pushBack [time + _time + 0.2, [_unit], {  //-- Walking speed changes with amount of slung weapons

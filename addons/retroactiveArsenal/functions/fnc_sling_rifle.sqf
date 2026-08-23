@@ -1,5 +1,5 @@
 params ["_unit", "_slingClass", "_unarmed", ["_rifle", (getUnitLoadout (_this#0))#0]];  //-- Get rifle before we throw it
-_unit setVariable [_slingClass+"holder", [_unit, _rifle, true, true, "tsp_holder", !_unarmed, isNil "tsp_server_animate" || vehicle _unit isNotEqualTo _unit] call tsp_fnc_throw];
+_unit setVariable [_slingClass+"holder", ([_unit, _rifle, true, true, "tsp_holder", !_unarmed, isNil "tsp_server_animate" || vehicle _unit isNotEqualTo _unit] call tsp_fnc_throw), true];
 (_unit getVariable _slingClass+"holder") setDamage 1;
 (call compile (missionNameSpace getVariable ("tsp_cba_animate_"+_slingClass))) params ["_bone", "_position", "_rotation", "_animation"];
 private _old = false;
@@ -12,7 +12,7 @@ if (_old) then {
 };
 //(_unit getVariable _slingClass+"holder") attachTo [_unit, call compile (missionNameSpace getVariable ("tsp_cba_animate_"+_slingClass))#0, "Spine3", true]; 
 //[_unit getVariable _slingClass+"holder", call compile (missionNameSpace getVariable ("tsp_cba_animate_"+_slingClass))#1] call BIS_fnc_setObjectRotation;
-_unit setVariable [_slingClass+"weapon", [_unit getVariable _slingClass+"holder", _rifle]];  //-- This var stores [_holder, _rifle]
+_unit setVariable [_slingClass+"weapon", [_unit getVariable _slingClass+"holder", _rifle],true];  //-- This var stores [_holder, _rifle]
 if (_unarmed && vehicle _unit isEqualTo _unit) then {_unit switchMove (animationState _unit regexReplace ["wrfl", "wnon"] regexReplace ["sras", "snon"] regexReplace ["slow", "snon"] regexReplace ["mtac", "mwlk"])};
 
 
@@ -33,7 +33,7 @@ if (isNil '_killedHandle') then {
 						} else {_deathBox = (_deathBox select 0)};
 						_deathBox addWeaponWithAttachmentsCargoGlobal [_slung, 1];
 					};
-					_unit setVariable [(_slingClass + "weapon"),nil];
+					_unit setVariable [(_slingClass + "weapon"),nil,true];
 				};
 			};
 			_unit setVariable [("tsp_slingKilledHandler"),nil];
