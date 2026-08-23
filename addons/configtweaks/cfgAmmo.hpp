@@ -499,6 +499,30 @@ class CfgAmmo
 		warheadName = "HE";
 		whistleDist = 32;
 	};
+
+
+	// Missiles
+	class MissileBase;
+	class M_Vorona_HE;
+	class M_Vorona_HEAT;
+
+	class ace_metis_HE : M_Vorona_HE {
+		airLock = 1;
+		cost = 50;
+	};
+	class ace_metis_HEAT : M_Vorona_HEAT {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 400;
+	};
+
+
+	// CUP
+	class CUP_M_9K115_2_AT13_Saxhorn_2_AT : MissileBase {
+		aiAmmoUsageFlags = "128 + 256 + 512";
+		airLock = 1;
+		cost = 400;
+	};
 	
 	
 	// Ammo Balance, spreadsheet with changes: https://docs.google.com/spreadsheets/d/1hBv11wZy6fM9IIj6Qh0-j3qezPhqOBt0XZLNUT1HfvQ/edit#gid=0
