@@ -342,6 +342,7 @@ class breacher : r
 		LIST_6("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
 		"ACE_Clacker",
+		"ACE_wirecutter",
 		LIST_2("DemoCharge_Remote_Mag"),
 		LIST_2("tsp_breach_package_mag"),
 		LIST_2("HandGrenade"),
