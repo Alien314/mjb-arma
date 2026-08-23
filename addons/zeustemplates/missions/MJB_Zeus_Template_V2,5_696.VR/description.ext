@@ -12,7 +12,7 @@ class Header
 {
 	gameType = "Coop";
 	minPlayers =  1;
-	maxPlayers = 600;
+	maxPlayers = 696;
 };
 
 class CfgDebriefing

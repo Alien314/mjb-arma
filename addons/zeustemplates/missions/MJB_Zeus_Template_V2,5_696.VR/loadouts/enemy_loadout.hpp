@@ -112,6 +112,8 @@ class r : baseMan
 	{
 		"CUP_HandGrenade_RGD5",
 		LIST_4("CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_M")
+// Tracers are preferred for enemies in PVE to mitigate difficulty with spotting enemies
+// and especially make return fire easier when enemies fire through bushes.
 	};
 };
 

@@ -9,7 +9,7 @@ private _briefing = "ADMIN BRIEFING<br/><br/>";
 */
 
 // Insert custom text
-_briefing = _briefing + 
+private _text = 
 "
 Mission ends at admin's discretion.
 
@@ -22,5 +22,8 @@ Chat commands:
 rats is also a preset. :)<br/>
 Don't forget fortify tools!
 ";
+_briefing = _briefing + _text;
 
 player createDiaryRecord ["diary", ["Admin",_briefing]];
+
+tmf_briefing_admin = tmf_briefing_admin + _text;
