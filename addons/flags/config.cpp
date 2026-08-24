@@ -101,6 +101,47 @@ class CfgVehicles {
 		uniformClass = "U_B_CombatUniform_mcamW";
 	};
 
+
+	class CUP_CRYE_MCAM_NP2_Full;
+	class mjb_CUP_B_US_SpecOps_W : CUP_CRYE_MCAM_NP2_Full {
+		displayName = "Rifleman Winter";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
+		backpack = "CUP_B_US_IIID_UCP";
+		linkedItems[] = {"CUP_V_CPC_Fastbelt_mc","mjb_H_OpsCore_Covered_MM14_SF_winter","CUP_G_WatchGPSCombo","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio","CUP_NVG_PVS15_winter"};
+		respawnLinkedItems[] = {"CUP_V_CPC_Fastbelt_mc","mjb_H_OpsCore_Covered_MM14_SF_winter","CUP_G_WatchGPSCombo","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio","CUP_NVG_PVS15_winter"};
+		magazines[] = {"CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed","SmokeShellGreen","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"};
+		respawnMagazines[] = {"CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed","SmokeShellGreen","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"};
+		weapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
+		respawnWeapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
+		uniformClass = "mjb_U_CRYE_MCAM_NP_FULL_winter";
+	};
+
+	// backpacks
+	class B_AssaultPack_blk;      
+    class mjb_B_AssaultPack_OCP_winter : B_AssaultPack_blk
+    {
+        displayName = "Assault Pack OCP (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_assaultpack_OCP_Winter.paa"};
+    };
+     
+    class mjb_B_AssaultPack_OEFCP_winter : B_AssaultPack_blk
+    {
+        displayName = "Assault Pack OEFCP (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_assaultpack_oefcp_winter.paa"};
+    };
+      
+    class mjb_B_AssaultPack_OEFCP_winterdark : B_AssaultPack_blk
+    {
+        displayName = "Assault Pack OEFCP (Winter/Dark)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_assaultpack_oefcp_winterDark.paa"};
+    };
+  
+    class mjb_B_AssaultPack_UCP_winter : B_AssaultPack_blk
+    {
+        displayName = "Assault Pack UCP (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_assaultpack_ucp_Winter.paa"};
+    };
+
 	class CUP_BTR80_Common_Base;
 	class CUP_BTR80_Base : CUP_BTR80_Common_Base
 	{
@@ -254,6 +295,70 @@ class CfgWeapons
 	  displayName = "C7Bravo";
 	  hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\c7a2_co.paa","CUP\Weapons\CUP_Weapons_M16\data\tigg_m203_m4_co.paa","z\mjb\addons\flags\data\colt727_furniture_co.paa","cup\weapons\cup_weapons_m16\data\tigg_m4barrel_co.paa","cup\weapons\cup_weapons_m16\data\m16a1_body_co.paa"};
   };
+
+    class CUP_H_OpsCore_Covered_MM14_NoHS;
+    class CUP_H_OpsCore_Covered_MM14;    
+    class CUP_H_OpsCore_Covered_MM14_SF;        
+    class mjb_H_OpsCore_Covered_MM14_NoHS_winter : CUP_H_OpsCore_Covered_MM14_NoHS
+    {
+        displayName = "Ops Core Fast (MM-14/Covered/No Headset) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_mm14snow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+      class mjb_H_OpsCore_Covered_MM14_winter : CUP_H_OpsCore_Covered_MM14
+    {
+        displayName = "Ops Core Fast (MM-14/Covered) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_mm14snow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+      class mjb_H_OpsCore_Covered_MM14_SF_winter : CUP_H_OpsCore_Covered_MM14_SF
+    {
+        displayName = "Ops Core Fast (MM-14/Covered/No Headset) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_mm14snow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+    class CUP_H_OpsCore_Covered_Tropen_NoHS;
+    class CUP_H_OpsCore_Covered_Tropen;
+    class CUP_H_OpsCore_Covered_Tropen_SF;        
+    class mjb_H_OpsCore_Covered_Tropen_NoHS_winter : CUP_H_OpsCore_Covered_Tropen_NoHS
+    {
+        displayName = "Ops Core Fast (BW Tropen/Covered/No Headset) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_tropentarnsnow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+      class mjb_H_OpsCore_Covered_Tropen_winter : CUP_H_OpsCore_Covered_Tropen
+    {
+        displayName = "Ops Core Fast (BW Tropen/Covered) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_tropentarnsnow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+      class mjb_H_OpsCore_Covered_Tropen_SF_winter : CUP_H_OpsCore_Covered_Tropen_SF
+    {
+        displayName = "Ops Core Fast (BW Tropen/Covered/No Headset) (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_ops_core_covered_tropentarnsnow_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_part_1_tan_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_Extra\opscore\data\CUP_ops_core_parts_2_co.paa",""};
+    };
+
+	class CUP_U_B_US_BDU;
+    class CUP_U_CRYE_MCAM_NP_FULL : CUP_U_B_US_BDU { class ItemInfo; };
+    class CUP_U_CRYE_MCAM_NP_Roll : CUP_U_B_US_BDU { class ItemInfo; };
+    class mjb_U_CRYE_MCAM_NP_FULL_winter : CUP_U_CRYE_MCAM_NP_FULL
+    {//uniformClass = "CUP_CRYE_MCAM_NP_Full";hiddenSelectionsMaterials[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USarmy\data\delta\crye_g3_mcam_v2.rvmat"};hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USarmy\data\delta\crye_mcam_patchless_co.paa"};
+        displayName = "Crye MCAM v2 Patchless Full (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
+		class ItemInfo : ItemInfo {
+			uniformClass = "mjb_CUP_B_US_SpecOps_W";
+		};
+    };
+
+      class mjb_U_CRYE_MCAM_NP_Roll_winter : CUP_U_CRYE_MCAM_NP_Roll
+    {//uniformClass = "CUP_CRYE_MCAM_NP_Roll";hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USarmy\data\delta\crye_mcam_patchless_co.paa"};
+        displayName = "Crye MCAM v2 Patchless Roll (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
+		class ItemInfo : ItemInfo {
+			uniformClass = "mjb_CUP_B_US_SpecOps_W";
+		};
+    };
+
 
 #if __has_include("\Armbands\Facewear\Data\Colors\G_Armband_blk_CO.paa")
 	class G_Armband_NVG_blk_F;
