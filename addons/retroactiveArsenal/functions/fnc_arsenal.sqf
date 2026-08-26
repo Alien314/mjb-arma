@@ -433,6 +433,13 @@ private _itemEquipment =
     "CUP_H_CZ_Helmet10",
     "CUP_H_CZ_Helmet09",
 
+    "mjb_H_OpsCore_Covered_Tropen_winter",
+    "mjb_H_OpsCore_Covered_Tropen_NoHS_winter",
+    "mjb_H_OpsCore_Covered_Tropen_SF_winter",
+    "mjb_H_OpsCore_Covered_MM14_winter",
+    "mjb_H_OpsCore_Covered_MM14_NoHS_winter",
+    "mjb_H_OpsCore_Covered_MM14_SF_winter",
+
     "H_HelmetB_Enh_tna_F",
     "H_HelmetSpecB",
     "H_HelmetSpecB_blk",
@@ -970,6 +977,10 @@ private _itemUniforms = [
     "CUP_U_O_RUS_Soldier_Masking_Suit_6Sh119_Winter_4",
     "CUP_U_O_RUS_Soldier_Masking_Suit_6Sh119_Winter_1",
     "rhs_uniform_FROG01_wd"
+    
+    "mjb_U_CRYE_MCAM_NP_FULL_winter",
+    "mjb_U_CRYE_MCAM_NP_Roll_winter",
+
 ];
 _itemEquipment append _itemUniforms;
 
@@ -1151,6 +1162,10 @@ private _itemPackLight = [
     "B_AssaultPack_tna_F",
 	"B_AssaultPack_ocamo",
 	"B_AssaultPack_sgg",
+    "mjb_B_AssaultPack_OCP_winter",
+    "mjb_B_AssaultPack_OEFCP_winter",
+    "mjb_B_AssaultPack_OEFCP_winterdark",
+    "mjb_B_AssaultPack_UCP_winter",
 
     //PLA Small Bags
     "PLA_Arid_Backpack_Compact",
@@ -1683,6 +1698,7 @@ private _itemReflexSight =
     "optic_holosight_blk_f",
     "optic_Holosight",
     "optic_Holosight_smg",
+    
 
     //CUP Reflex Sights
     "cup_optic_ac11704_black",
@@ -1695,6 +1711,16 @@ private _itemReflexSight =
     "CUP_optic_MEPRO_openx_orange",
     "CUP_optic_TrijiconRx01_black",
     "CUP_optic_ZeissZPoint",
+    "CUP_optic_MicroT1_low_OD",
+    "CUP_optic_MicroT1_OD",
+    "CUP_optic_TrijiconRx01_od",
+    "CUP_optic_TrijiconRx01_kf_od",
+    "CUP_optic_ZeissZPoint_wood",
+    "CUP_optic_CompM2_OD",
+    "CUP_optic_CompM2_Woodland",
+    "CUP_optic_AC11704_OD",
+    "CUP_optic_AC11704_Jungle",
+    
 
     //RHS Reflex
     "rhsusf_acc_compm4",
@@ -2602,6 +2628,17 @@ private _itemWeaponAmmo =
     //Loose ammo
     "greenmag_ammo_762x54_basic_60Rnd",
     "greenmag_ammo_762x54_basic_30Rnd",
+    //============================================================
+    //SF ammo
+    //============================================================
+    "greenmag_ammo_650x39_basic_30Rnd",
+    "greenmag_ammo_650x39_basic_60Rnd",
+    "greenmag_ammo_680x43_tracer_30Rnd",
+    "greenmag_ammo_680x43_tracer_60Rnd",
+    "greenmag_ammo_93x64_basic_30Rnd",
+    "greenmag_ammo_93x64_basic_60Rnd",
+    "greenmag_ammo_338_basic_30Rnd",
+    "greenmag_ammo_338_basic_60Rnd",
 
     //============================================================
     //Grenades
@@ -2649,7 +2686,7 @@ if (_tracer isEqualTo 'red') then {
         "30Rnd_65x39_caseless_mag_Tracer",
         "30Rnd_65x39_caseless_khaki_mag_Tracer",
         "30Rnd_65x39_caseless_black_mag_Tracer",
-
+       
         //============================================================
 		//5.56x45mm
 		//============================================================
@@ -4149,6 +4186,12 @@ private _itemSFWeaponDMR =
     "MCC_ICM_6ARC_20RD_ATIP",
     "MCC_ICM_6ARC_20RD_ADVAP",
     "MCC_ICM_6ARC_20RD_GPR"
+    //6.5 creedmore ammo
+    "ACE_30Rnd_65_Creedmor_mag",
+    "ACE_30Rnd_65_Creedmor_msbs_mag",
+    "ACE_30Rnd_65_Creedmor_khaki_mag",
+    "ACE_30Rnd_65_Creedmor_black_mag",
+
 ];
 
 private _itemSFScoutGhillies =
@@ -4542,6 +4585,7 @@ if (_hasApex) then {
         "H_HelmetB_TI_tna_F",
         "H_HelmetB_TI_arid_F",
         "U_I_C_Soldier_Camo_F"
+        "optic_Holosight_lush_F",
     ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
