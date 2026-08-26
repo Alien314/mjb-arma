@@ -976,10 +976,10 @@ private _itemUniforms = [
     "CUP_U_O_RUS_Soldier_Masking_Suit_6Sh119_Winter_3",
     "CUP_U_O_RUS_Soldier_Masking_Suit_6Sh119_Winter_4",
     "CUP_U_O_RUS_Soldier_Masking_Suit_6Sh119_Winter_1",
-    "rhs_uniform_FROG01_wd"
+    "rhs_uniform_FROG01_wd",
     
     "mjb_U_CRYE_MCAM_NP_FULL_winter",
-    "mjb_U_CRYE_MCAM_NP_Roll_winter",
+    "mjb_U_CRYE_MCAM_NP_Roll_winter"
 
 ];
 _itemEquipment append _itemUniforms;
@@ -4185,12 +4185,12 @@ private _itemSFWeaponDMR =
     //6ARC Ammo
     "MCC_ICM_6ARC_20RD_ATIP",
     "MCC_ICM_6ARC_20RD_ADVAP",
-    "MCC_ICM_6ARC_20RD_GPR"
+    "MCC_ICM_6ARC_20RD_GPR",
     //6.5 creedmore ammo
     "ACE_30Rnd_65_Creedmor_mag",
     "ACE_30Rnd_65_Creedmor_msbs_mag",
     "ACE_30Rnd_65_Creedmor_khaki_mag",
-    "ACE_30Rnd_65_Creedmor_black_mag",
+    "ACE_30Rnd_65_Creedmor_black_mag"
 
 ];
 
@@ -4584,8 +4584,8 @@ if (_hasApex) then {
 
         "H_HelmetB_TI_tna_F",
         "H_HelmetB_TI_arid_F",
-        "U_I_C_Soldier_Camo_F"
-        "optic_Holosight_lush_F",
+        "U_I_C_Soldier_Camo_F",
+        "optic_Holosight_lush_F"
     ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
