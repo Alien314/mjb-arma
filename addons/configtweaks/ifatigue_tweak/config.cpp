@@ -22,7 +22,7 @@ class Extended_InitPost_EventHandlers
 	{
 		class fatigue_core
 		{
-            init = "if (hasInterface && {local (_this select 0)}) then { 0 spawn { sleep 5; [_this,{ [_this] execVM '\x\fatigue\addons\core\functions\fnc_applyFatigue.sqf'; }] remoteExec ['call', (_this select 0)]; };}";
+            init = "if (hasInterface && {local (_this select 0)}) then { _this spawn { sleep 5; [_this,{ [_this] execVM '\x\fatigue\addons\core\functions\fnc_applyFatigue.sqf'; }] remoteExec ['call', (_this select 0)]; };}";
 		};
 	};
 };
