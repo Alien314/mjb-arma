@@ -425,6 +425,21 @@ class CfgWeapons {
 	magazines[] += {"mjb_CUP_120Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M"};
   };
 
+  class mjb_CUP_lmg_M240_338: CUP_lmg_M240_B {
+	displayName = "M240B .338";
+	descriptionShort = "Medium machine gun <br/>Caliber: .338";
+	magazines[] = {};
+	magazineWell[] = {"CBA_338NM_LINKS"};
+  };
+
+  class CUP_lmg_Pecheneg_top_rail_B50_vfg;
+  class mjb_CUP_lmg_Pecheneg_top_rail_B50_vfg_93 : CUP_lmg_Pecheneg_top_rail_B50_vfg {
+	displayName = "PKP 9.3x64mm (RIS/B-50/Grip)";
+	descriptionShort = "Medium machine gun <br/>Caliber: 9.3x64mm";
+	magazines[] = {};
+	magazineWell[] = {"CBA_93x64_LINKS"};
+  };
+
   // .45 50m Zeroing
   class SMG_01_Base : Rifle_Short_Base_F {
 	discreteDistance[] = {50,100,200};
@@ -548,7 +563,185 @@ class CfgWeapons {
 
 // Fix backpack disposable inconsistent mass
   class Launcher;
-  class Launcher_Base_F : Launcher { class WeaponSlotsInfo; };
+  class Launcher_Base_F : Launcher {
+		class WeaponSlotsInfo;
+		class Single : Mode_SemiAuto
+		{
+			dispersion = 0.05;
+		};
+	};
+
+	#define DGT_PROB_RPG 1.2
+	#define DGT_PROB_MRAW 1.1
+
+	class Launch_RPG7_F: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			aiDispersionCoefX = 1.4; // 1.4
+			aiDispersionCoefY = 1.7; // 1.7
+			aiRateOfFire = 5; // 7
+			//aiRateOfFireDispersion = 1; // 1
+			//aiRateOfFireDistance = 600; //600
+			maxRange = 500; // 600
+			maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 300; // 400
+			midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 15; // 10
+			minRangeProbab = DGT_PROB_RPG; // 0.3
+		};
+	};
+	
+	class launch_MRAWS_base_F: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			dispersion = 0.05; // 0.07;
+			aiDispersionCoefX = 1.4; // 1.4
+			aiDispersionCoefY = 1.7; // 1.7
+			aiRateOfFire = 5; // 7
+			//aiRateOfFireDispersion = 1; // 1
+			//aiRateOfFireDistance = 600; //600
+			maxRange = 700; // 700
+			maxRangeProbab = DGT_PROB_MRAW; // 0.1;
+			midRange = 400; // 400
+			midRangeProbab = DGT_PROB_MRAW; // 0.8
+			minRange = 15; // 50
+			minRangeProbab = DGT_PROB_MRAW; // 0.3
+		};
+	};
+	
+	class launch_Vorona_base_F: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			aiRateOfFireDistance = 1000;
+			maxRange = 1000;
+			maxRangeProbab = DGT_PROB_MRAW; // 0.1;
+			midRange = 800;
+			midRangeProbab = DGT_PROB_MRAW; // 0.8
+			minRange = 10;
+			minRangeProbab = DGT_PROB_MRAW; // 0.3
+		};
+	};
+	
+	
+	class launch_RPG32_F: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002;
+			aiDispersionCoefX = 1.4; // 1.4
+			aiDispersionCoefY = 1.7; // 1.7
+			//aiRateOfFireDistance = 500; //500
+			maxRange = 600; // 600
+			maxRangeProbab = DGT_PROB_MRAW; // 0.85;
+			midRange = 40; // 400
+			midRangeProbab = DGT_PROB_MRAW; // 0.85
+			minRange = 15; // 50
+			minRangeProbab = DGT_PROB_MRAW; // 0.3
+		};
+	};
+	
+	
+	class CUP_launch_RPG7V: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			aiDispersionCoefX = 1.4; // 1.4
+			aiDispersionCoefY = 1.7; // 1.7
+			aiRateOfFire = 5; // 7
+			//aiRateOfFireDispersion = 1; // 1
+			//aiRateOfFireDistance = 600; //600
+			maxRange = 500; // 600
+			maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 300; // 400
+			midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 15; // 10
+			minRangeProbab = DGT_PROB_RPG; // 0.3
+		};
+	};
+	
+	/*class CUP_launch_PzF_Base;
+	
+	class CUP_launch_BF3_Loaded: CUP_launch_PzF_Base
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			maxRange = 500; // 500
+			//maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 350; // 350
+			//midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 10; // 10
+			//minRangeProbab = DGT_PROB_RPG; // 0.3
+		};	
+	};
+	
+	class CUP_launch_HCPF3_Loaded: CUP_launch_PzF_Base
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			maxRange = 500; // 500
+			//maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 350; // 350
+			//midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 10; // 10
+			//minRangeProbab = DGT_PROB_RPG; // 0.3
+		};	
+	};
+	
+	class CUP_launch_PzF3_Loaded: CUP_launch_PzF_Base
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			maxRange = 500; // 500
+			//maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 350; // 350
+			//midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 10; // 10
+			//minRangeProbab = DGT_PROB_RPG; // 0.3
+		};	
+	};*/
+	
+	class CUP_launch_MAAWS: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			maxRange = 700; // 700
+			maxRangeProbab = DGT_PROB_MRAW; // 0.1;
+			midRange = 400; // 400
+			midRangeProbab = DGT_PROB_MRAW; // 0.8
+			minRange = 50; // 50
+			minRangeProbab = DGT_PROB_MRAW; // 0.3
+		};
+	};
+	
+	class CUP_launch_MAAWS_Scope: CUP_launch_MAAWS{};
+	
+	class CUP_launch_Mk153Mod0: Launcher_Base_F
+	{
+		class Single : Mode_SemiAuto
+		{
+			//dispersion = 0.05; // 0.0002
+			maxRange = 600; // 700
+			maxRangeProbab = DGT_PROB_RPG; // 0.1;
+			midRange = 400; // 400
+			midRangeProbab = DGT_PROB_RPG; // 0.8
+			minRange = 50; // 50
+			minRangeProbab = DGT_PROB_RPG; // 0.3
+		};
+	};
+	
+	class CUP_launch_Mk153Mod0_blk: CUP_launch_Mk153Mod0{};
+	class CUP_launch_Mk153Mod0_blk_SMAWOptics: CUP_launch_Mk153Mod0_blk{};
+	class CUP_launch_Mk153Mod0_SMAWOptics: CUP_launch_Mk153Mod0{};
+
   // squeak two at4 into kitbag
   class CUP_launch_M136_Loaded : Launcher_Base_F {
 	class WeaponSlotsInfo : WeaponSlotsInfo {
@@ -658,7 +851,26 @@ class CfgWeapons {
   };
 
   class Throw : GrenadeLauncher {
-	class ThrowMuzzle;
+	class ThrowMuzzle: GrenadeLauncher
+	{
+		// This is the entry to edit
+		// need to adjust dispersion here?
+		//aiDispersionCoefX = DGT_ACC; // 6
+		//aiDispersionCoefY = DGT_ACC; // 6
+		// VALUES FROM PREVIOUS RELEASE
+		aiRateOfFire = 3; // 0.1  Setting this high (20) makes AI look at the sky
+		aiRateOfFireDispersion = 2; // 0
+		aiRateOfFireDistance = 60; // 60
+		//maxRange = 60; // 60
+		maxRangeProbab = 1.015; // 0.03
+		//midRange = 45; // 45
+		midRangeProbab = 1.015; // 0.9
+		//minRange = 10; // 10
+		minRange = 15; // 10
+		minRangeProbab = 1.015; // 0.2
+		//minRangeProbab = 0.2; // 0.2
+	};
+
     muzzles[] += {"mjb_SmokeShellLightBlueMuzzle","mjb_SmokeShellPinkMuzzle","mjb_SmokeShellBurstMuzzle","mjb_SmokeShellBurstBlueMuzzle","mjb_SmokeShellBurstGreenMuzzle","mjb_SmokeShellBurstRedMuzzle","mjb_SmokeShellBurstOrangeMuzzle","mjb_SmokeShellBurstPurpleMuzzle","mjb_SmokeShellBurstYellowMuzzle","mjb_SmokeShellBurstLightBlueMuzzle","mjb_SmokeShellBurstPinkMuzzle"};
 	class mjb_SmokeShellLightBlueMuzzle : ThrowMuzzle {
 		displayName = "Smoke Grenade";
@@ -705,7 +917,7 @@ class CfgWeapons {
 		magazines[] = {"mjb_SmokeShellBurstPink"};
 	};
   };
-
+#define DGT_PROB_UGL 1.05
   class UGL_F : GrenadeLauncher {
 	aiDispersionCoefX = 3;
 	aiDispersionCoefY = 8;
@@ -718,6 +930,12 @@ class CfgWeapons {
 		aiRateOfFire = 30;
 		aiRateOfFireDispersion = 90;
 		aiRateOfFireDistance = 400;
+		maxRange = 400;
+		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		midRange = 200;
+		midRangeProbab = DGT_PROB_UGL; // 0.7
+		minRange = 20;
+		minRangeProbab = DGT_PROB_UGL; // 0.1
 	};
   };
 
@@ -728,6 +946,12 @@ class CfgWeapons {
 			aiRateOfFire = 15;
 			aiRateOfFireDispersion = 5;
 			aiRateOfFireDistance = 400;
+			maxRange = 400;
+			maxRangeProbab = DGT_PROB_UGL; // 0.05
+			midRange = 200;
+			midRangeProbab = DGT_PROB_UGL; // 0.7
+			minRange = 20;
+			minRangeProbab = DGT_PROB_UGL; // 0.1
 		};
 	};
   };
@@ -757,6 +981,12 @@ class CfgWeapons {
 		aiRateOfFire = 15;
 		aiRateOfFireDispersion = 5;
 		aiRateOfFireDistance = 400;
+		maxRange = 400;
+		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		midRange = 200;
+		midRangeProbab = DGT_PROB_UGL; // 0.7
+		minRange = 20;
+		minRangeProbab = DGT_PROB_UGL; // 0.1
 	};
   };
   /*class CUP_glaunch_6G30 : CUP_glaunch_Base {
@@ -785,6 +1015,12 @@ class CfgWeapons {
 		aiRateOfFire = 30;
 		aiRateOfFireDispersion = 90;
 		aiRateOfFireDistance = 400;
+		maxRange = 400;
+		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		midRange = 200;
+		midRangeProbab = DGT_PROB_UGL; // 0.7
+		minRange = 20;
+		minRangeProbab = DGT_PROB_UGL; // 0.1
 	};
   };
   class CUP_glaunch_Mk13 : CUP_glaunch_Base {
@@ -799,6 +1035,12 @@ class CfgWeapons {
 		aiRateOfFire = 30;
 		aiRateOfFireDispersion = 90;
 		aiRateOfFireDistance = 400;
+		maxRange = 400;
+		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		midRange = 200;
+		midRangeProbab = DGT_PROB_UGL; // 0.7
+		minRange = 20;
+		minRangeProbab = DGT_PROB_UGL; // 0.1
 	};
   };
   class CUP_arifle_AK_Base : Rifle_Base_F {
@@ -827,6 +1069,12 @@ class CfgWeapons {
 			aiRateOfFire = 15;
 			aiRateOfFireDispersion = 5;
 			aiRateOfFireDistance = 600;
+			maxRange = 600;
+			maxRangeProbab = DGT_PROB_UGL; // 0.05
+			midRange = 300;
+			midRangeProbab = DGT_PROB_UGL; // 0.7
+			minRange = 20;
+			minRangeProbab = DGT_PROB_UGL; // 0.1
 		};
     };
   };
