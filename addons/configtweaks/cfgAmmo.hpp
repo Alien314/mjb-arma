@@ -91,14 +91,43 @@ class CfgAmmo
 	};
 	IRAMMO(mjb_CUP_B_762x54_Ball_Yellow_Tracer,CUP_B_762x54_Ball_Yellow_Tracer,0.42);
 
-	// fix missing penetrator
-	class G_40mm_HE;
-	class G_40mm_HEDP : G_40mm_HE {
-		//submunitionAmmo = "ammo_Penetrator_grenade_40mm";
+	class GrenadeBase;
+	class G_40mm_HE: GrenadeBase
+	{
+		cost = 1;
+		allowAgainstInfantry = 1;
+		aiAmmoUsageFlags = "64 + 128 + 512";
+		indirectHitRange = 6;
 	};
+	class G_20mm_HE: G_40mm_HE
+	{
+		cost = 1;
+		allowAgainstInfantry = 1;
+		indirectHitRange = 4;
+	};
+	class G_40mm_HEDP : G_40mm_HE {
+		cost = 1;
+		allowAgainstInfantry = 1;
+	};
+	// fix missing penetrator
 	class mjb_G_40mm_HEDP : G_40mm_HEDP {
 		submunitionAmmo = "ammo_Penetrator_grenade_40mm";
 	};
+
+	class Grenade;
+	class GrenadeHand: Grenade
+	{
+		cost = 1;
+		allowAgainstInfantry = 1;
+		indirectHitRange = 6;
+	};
+	class mini_Grenade: GrenadeHand
+	{
+		cost = 1;
+		allowAgainstInfantry = 1;
+		indirectHitRange = 4;
+	};
+
 
 // impact smonk
 	class G_40mm_Smoke;
@@ -265,6 +294,7 @@ class CfgAmmo
 		aiAmmoUsageFlags = "128 + 256 + 512";
 		airLock = 1;
 		cost = 30;
+		indirectHitRange = 3;
 	};
 	class R_TBG32V_F : R_PG32V_F {
 		aiAmmoUsageFlags = "64 + 128 + 256";
@@ -508,7 +538,9 @@ class CfgAmmo
 
 	class ace_metis_HE : M_Vorona_HE {
 		airLock = 1;
+		allowAgainstInfantry = 1;
 		cost = 50;
+		indirectHitRange = 8;
 	};
 	class ace_metis_HEAT : M_Vorona_HEAT {
 		aiAmmoUsageFlags = "128 + 256 + 512";
