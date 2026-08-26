@@ -1375,6 +1375,11 @@ private _itemMod =
     "optic_hamr",
     "optic_Arco",
     "optic_mrco",
+	"optic_Arco_blk_F",
+	"optic_Arco_ghex_F",
+	"optic_Hamr_khk_F",
+	"optic_Arco_arid_F",
+	"optic_Arco_lush_F",
 
     //CUP Magnified Sights
     "cup_optic_aimm_microt1_blk",
@@ -1498,6 +1503,16 @@ private _itemMod =
     "CUP_bipod_VLTOR_Modpod",
     "cup_bipod_sa58",
     "CUP_bipod_FNFAL",
+
+	"bipod_03_F_blk",
+	"bipod_02_F_blk",
+	"bipod_01_F_khk",
+	"bipod_01_F_blk",
+	"bipod_02_F_hex",
+	"bipod_01_F_mtp",
+	"bipod_03_F_oli",
+	"bipod_01_F_snd",
+	"bipod_02_F_tan",
 
     "rhsusf_acc_grip2",
     "rhsusf_acc_kac_grip",
@@ -1698,6 +1713,7 @@ private _itemReflexSight =
     "optic_holosight_blk_f",
     "optic_Holosight",
     "optic_Holosight_smg",
+    "optic_Holosight_lush_F",
     
 
     //CUP Reflex Sights
@@ -3890,6 +3906,9 @@ private _itemWeaponSFMMG =
 	"CUP_lmg_M240_B",
 	"CUP_lmg_M240",
 
+	"mjb_CUP_lmg_Pecheneg_top_rail_B50_vfg_93",
+	"mjb_CUP_lmg_M240_338",
+
     "rhs_weap_m240G",
     "rhs_weap_m240B",
 
@@ -4584,8 +4603,7 @@ if (_hasApex) then {
 
         "H_HelmetB_TI_tna_F",
         "H_HelmetB_TI_arid_F",
-        "U_I_C_Soldier_Camo_F",
-        "optic_Holosight_lush_F"
+        "U_I_C_Soldier_Camo_F"
     ];} forEach [_itemEquipment,_itemTankCrew,_itemHeloCrew];
 
     _itemWeaponRifle append [
@@ -4624,13 +4642,9 @@ if (_hasApex) then {
     ];
 
     _itemMod append [
-        "optic_Arco_blk_F",
-        "optic_Arco_ghex_F",
-        "optic_Hamr_khk_F",
         "optic_ERCO_blk_F",
         "optic_ERCO_khk_F",
-        "optic_ERCO_snd_F",
-        "bipod_01_F_khk"
+        "optic_ERCO_snd_F"
     ];
 } else {
     _itemFacewear = _itemFacewear - [
@@ -4717,11 +4731,6 @@ if (_hasContact) then {
         "arifle_MSBS65_UBS_F",
         "arifle_MSBS65_UBS_camo_F",
         "arifle_MSBS65_UBS_sand_F"
-    ];
-
-    _itemMod append [
-        "optic_Arco_arid_F",
-        "optic_Arco_lush_F"        
     ];
 
     _itemLeaderEquipment append [
@@ -4812,17 +4821,6 @@ if (_hasMarksmen) then {
         "srifle_DMR_03_woodland_F",
         "srifle_DMR_06_olive_F",
 	    "srifle_DMR_06_camo_F"
-    ];
-
-    _itemMod append [
-        "bipod_03_F_blk",
-        "bipod_02_F_blk",
-        "bipod_01_F_blk",
-        "bipod_02_F_hex",
-        "bipod_01_F_mtp",
-        "bipod_03_F_oli",
-        "bipod_01_F_snd",
-        "bipod_02_F_tan"
     ];
 
     _itemSniper append [
