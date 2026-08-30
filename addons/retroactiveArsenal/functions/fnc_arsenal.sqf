@@ -3833,6 +3833,11 @@ private _itemWeaponMAT =
 	//"launch_MRAWS_green_rail_F",
 	//"launch_MRAWS_olive_rail_F",
 
+    //RPG-32
+    "launch_RPG32_F",
+    "launch_RPG32_ghex_F",
+    "launch_RPG32_green_F",
+
     //SMAW
     "CUP_launch_Mk153Mod0_blk",
     //SMAW Optic
@@ -3872,6 +3877,10 @@ private _itemAmmoMAT =
     //"MRAWS_HEAT55_F",
     //"MRAWS_HE_F",
 
+    //RPG-32 Ammo
+    "RPG32_F",
+    "RPG32_HE_F",
+    
     //SMAW Ammo
     "CUP_SMAW_HEDP_M",
     "CUP_SMAW_HEAA_M",
