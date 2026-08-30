@@ -732,7 +732,10 @@ class mat : r
 		#endif
 	};
 	secondaryWeapon[] = {
-		"launch_MRAWS_green_rail_F"
+		"CUP_launch_Mk153Mod0_blk"
+	};
+	secondaryAttachments[] = {
+		"CUP_optic_SMAW_Scope"
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
@@ -747,7 +750,16 @@ class mat : r
 		#else
 			LIST_3("FirstAidKit"),
 		#endif
-		LIST_4("MRAWS_HEAT_F")
+		LIST_4("CUP_SMAW_HEAA_M")
+	};
+	magazines[] = {
+		LIST_2("HandGrenade"),
+		LIST_2("SmokeShell"),
+		LIST_2("tsp_flashbang_m84"),
+		"mjb_SmokeShellLightBlue",
+		"CUP_15Rnd_9x19_M9",
+		LIST_8("CUP_30Rnd_556x45_PMAG_BLACK_PULL"),
+		LIST_3("CUP_SMAW_Spotting")
 	};
 };
 
@@ -772,7 +784,7 @@ class amat : r
 			LIST_3("FirstAidKit"),
 		#endif
 		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
-		LIST_4("MRAWS_HEAT_F")
+		LIST_4("CUP_SMAW_HEAA_M")
 	};
 };
 
@@ -807,6 +819,14 @@ class hat : mat
 	};
 	backpack[] = {
 		"B_Bergen_mcamo_F"
+	};
+	magazines[]  = {
+		LIST_2("HandGrenade"),
+		LIST_2("SmokeShell"),
+		LIST_2("tsp_flashbang_m84"),
+		"mjb_SmokeShellLightBlue",
+		"CUP_15Rnd_9x19_M9",
+		LIST_7("CUP_30Rnd_556x45_PMAG_BLACK_PULL")
 	};
 	backpackItems[] =
 	{

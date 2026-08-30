@@ -3052,7 +3052,7 @@ if (_tracer isEqualTo 'red') then {
 		"ace_10rnd_762x54_tracer_mag"
     ];
 
-    _itemWeaponSFMG
+    _itemWeaponSFMG =
     [
         //============================================================
         //.277 Ammo
