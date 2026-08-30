@@ -103,7 +103,8 @@ class CfgVehicles {
 
 
 	class CUP_CRYE_MCAM_NP2_Full;
-	class mjb_CUP_B_US_SpecOps_W : CUP_CRYE_MCAM_NP2_Full {
+	class CUP_CRYE_MCAM_NP2_Roll;
+	class mjb_CUP_CRYE_MCAM_NP2_Full_W : CUP_CRYE_MCAM_NP2_Full {
 		displayName = "Rifleman Winter";
         hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
 		backpack = "CUP_B_US_IIID_UCP";
@@ -114,6 +115,18 @@ class CfgVehicles {
 		weapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
 		respawnWeapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
 		uniformClass = "mjb_U_CRYE_MCAM_NP_FULL_winter";
+	};
+	class mjb_CUP_CRYE_MCAM_NP2_Roll_W : CUP_CRYE_MCAM_NP2_Roll {
+		displayName = "Rifleman Winter";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
+		backpack = "CUP_B_US_IIID_UCP";
+		linkedItems[] = {"CUP_V_CPC_Fastbelt_mc","mjb_H_OpsCore_Covered_MM14_SF_winter","CUP_G_WatchGPSCombo","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio","CUP_NVG_PVS15_winter"};
+		respawnLinkedItems[] = {"CUP_V_CPC_Fastbelt_mc","mjb_H_OpsCore_Covered_MM14_SF_winter","CUP_G_WatchGPSCombo","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio","CUP_NVG_PVS15_winter"};
+		magazines[] = {"CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed","SmokeShellGreen","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"};
+		respawnMagazines[] = {"CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed","SmokeShellGreen","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"};
+		weapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
+		respawnWeapons[] = {"CUP_arifle_mk18_tan_holo_laserflash","CUP_Vector21Nite","Throw","Put","CUP_hgun_M9"};
+		uniformClass = "mjb_U_CRYE_MCAM_NP_ROLL_winter";
 	};
 
 	// backpacks
@@ -296,6 +309,93 @@ class CfgWeapons
 	  hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\c7a2_co.paa","CUP\Weapons\CUP_Weapons_M16\data\tigg_m203_m4_co.paa","z\mjb\addons\flags\data\colt727_furniture_co.paa","cup\weapons\cup_weapons_m16\data\tigg_m4barrel_co.paa","cup\weapons\cup_weapons_m16\data\m16a1_body_co.paa"};
   };
 
+
+    class H_Shemag_olive;
+    class H_Shemag_olive_hs;
+    class mjb_H_Shemag_AlpCadpat : H_Shemag_olive
+    {
+        displayName = "Shemagh (Alpine CADPAT)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_H_Shemag_AlpCadpat_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Alpine CADPAT/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_H_Shemag_DesMarpat : H_Shemag_olive
+    {
+        displayName = "Shemagh (Desert MARPAT)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_H_Shemag_DesMarpat_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Desert MARPAT/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_H_Shemag_Euchre : H_Shemag_olive
+    {
+        displayName = "Shemagh (Euchre)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_H_Shemag_Euchre_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Euchre/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_H_Shemag_M81_Woodland : H_Shemag_olive
+    {
+        displayName = "Shemagh (M81 Woodland)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_H_Shemag_M81_Woodland_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (M81 Woodland/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_H_Shemag_Sudan : H_Shemag_olive
+    {
+        displayName = "Shemagh (Sudan)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_H_Shemag_Sudan_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Sudan/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_H_Shemag_UrbanShatter : H_Shemag_olive
+    {
+        displayName = "Shemagh (Urban Shatter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_H_Shemag_UrbanShatter_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Urban Shatter/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_H_Shemag_Topo_Alpine : H_Shemag_olive
+    {
+        displayName = "Shemagh (Topo Alpine)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_H_Shemag_Topo_Alpine_hs : H_Shemag_olive_hs
+    {
+        displayName = "Shemagh (Topo Alpine/Headset)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
     class CUP_H_OpsCore_Covered_MM14_NoHS;
     class CUP_H_OpsCore_Covered_MM14;    
     class CUP_H_OpsCore_Covered_MM14_SF;        
@@ -346,16 +446,16 @@ class CfgWeapons
         displayName = "Crye MCAM v2 Patchless Full (Winter)";
         hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
 		class ItemInfo : ItemInfo {
-			uniformClass = "mjb_CUP_B_US_SpecOps_W";
+			uniformClass = "mjb_CUP_CRYE_MCAM_NP2_Full_W";
 		};
     };
 
-      class mjb_U_CRYE_MCAM_NP_Roll_winter : CUP_U_CRYE_MCAM_NP_Roll
+    class mjb_U_CRYE_MCAM_NP_Roll_winter : CUP_U_CRYE_MCAM_NP_Roll
     {//uniformClass = "CUP_CRYE_MCAM_NP_Roll";hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USarmy\data\delta\crye_mcam_patchless_co.paa"};
         displayName = "Crye MCAM v2 Patchless Roll (Winter)";
         hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\crye_mcam_patchless_winter_co.paa"};
 		class ItemInfo : ItemInfo {
-			uniformClass = "mjb_CUP_B_US_SpecOps_W";
+			uniformClass = "mjb_CUP_CRYE_MCAM_NP2_Roll_W";
 		};
     };
 
@@ -418,6 +518,325 @@ class CfgWeapons
 
 #if __has_include("\Armbands\Facewear\Data\Colors\G_Armband_blk_CO.paa")
 class CfgGlasses {
+
+	class G_Bandanna_aviator;
+    class mjb_G_Bandanna_khk_aviator : G_Bandanna_aviator
+    {
+        displayName = "Bandana (Khaki + Aviators)";
+        hiddenSelectionsTextures[] = {"\a3\characters_f_bootcamp\guerrilla\data\headgear_bandmask_khk_co.paa","\a3\characters_f\heads\glasses\data\glass_ca.paa"};
+    };
+
+    class mjb_G_Bandanna_oli_aviator : G_Bandanna_aviator
+    {
+        displayName = "Bandana (Olive + Aviators)";
+        hiddenSelectionsTextures[] = {"\a3\characters_f_bootcamp\guerrilla\data\headgear_bandMask_grn_co.paa","\a3\characters_f\heads\glasses\data\glass_ca.paa"};
+    };
+
+    class mjb_G_Bandanna_tan_aviator : G_Bandanna_aviator
+    {
+        displayName = "Bandana (Tan + Aviators)";
+        hiddenSelectionsTextures[] = {"\a3\characters_f_bootcamp\guerrilla\data\headgear_bandmask_tan_co.paa","\a3\characters_f\heads\glasses\data\glass_ca.paa"};
+    };
+
+    class mjb_G_Bandanna_beast_aviator : G_Bandanna_aviator
+    {
+        displayName = "Bandana (Beast + Aviators)";
+        hiddenSelectionsTextures[] = {"\a3\characters_f_bootcamp\guerrilla\data\headgear_bandmask_beast_co.paa","\a3\characters_f\heads\glasses\data\glass_ca.paa"};
+    };
+    class CUP_FR_Neckscarf2;
+    class CUP_G_Scarf_Face_Grn;
+
+    class mjb_CUP_FR_Neckscarf_AlpCadpat : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Alpine CADPAT)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_DesMarpat : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Desert MARPAT)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    }; 
+
+    class mjb_CUP_FR_Neckscarf_Euchre : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Euchre)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_M81_Woodland : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (M81 Woodland)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_Sudan : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Sudan)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_UrbanShatter : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Urban Shatter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_TopoAlpine : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Topo Alpine)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_FR_Neckscarf_transrights : CUP_FR_Neckscarf2
+    {
+        displayName = "Neckscarf (Trans Rights)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_AlpCadpat : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Alpine CADPAT)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+    
+    class mjb_CUP_G_Scarf_Face_DesMarpat : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Desert MARPAT)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_Euchre : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Euchre)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_Euchre.paa","z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_M81_Woodland : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (M81 Woodland)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_Sudan : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Sudan)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_Sudan.paa","z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_UrbanShatter : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Urban Shatter)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_TopoAlpine : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Topo Alpine)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_G_Scarf_Face_transrights : CUP_G_Scarf_Face_Grn
+    {
+        displayName = "Neckscarf Face (Trans Rights)";
+        hiddenSelectionsTextures[] = {"","","z\mjb\addons\flags\data\shemagh_face_transrights.paa","z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
+    class CUP_G_ESS_BLK_Scarf_grn;
+    class CUP_G_ESS_BLK_Scarf_face_grn; 
+
+    class mjb_CUP_G_ESS_BLK_Scarf_AlpCadpatCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Alpine CADPAT) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_AlpCadpatCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Alpine CADPAT) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_AlpCadpatBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Alpine CADPAT) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_AlpCadpatBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Alpine CADPAT) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_AlpCadpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_DesMarpatCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Desert MARPAT) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_DesMarpatCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Desert MARPAT) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_DesMarpatBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Desert MARPAT) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_DesMarpatBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Desert MARPAT) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_DesMarpat.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_EuchreCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Euchre) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_EuchreCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Euchre) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_EuchreBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Euchre) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_EuchreBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Euchre) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Euchre.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_M81_WoodlandCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (M81 Woodland) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_M81_WoodlandCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (M81 Woodland) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_M81_WoodlandBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (M81 Woodland) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_M81_WoodlandBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (M81 Woodland) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_M81_Woodland.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_SudanCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Sudan) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_SudanCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Sudan) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_SudanBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Sudan) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_SudanBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Sudan) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Sudan.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_UrbanShatterCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Urban Shatter) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_UrbanShatterCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Urban Shatter) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_UrbanShatterBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Urban Shatter) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_UrbanShatterBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Urban Shatter) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_UrbanShatter.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_TopoAlpineCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Topo Alpine) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_TopoAlpineCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Topo Alpine) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_TopoAlpineBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Topo Alpine) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_TopoAlpineBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Topo Alpine) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_Topo_Alpine.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_transrightsCLR : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Trans Rights) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_transrightsCLR : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Trans Rights) (Clear)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\glass_clear_ca.paa","z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_transrightsBLK : CUP_G_ESS_BLK_Scarf_grn
+    {
+        displayName = "ESS NeckScarf (Trans Rights) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
+    class mjb_CUP_G_ESS_BLK_Scarf_face_transrightsBLK : CUP_G_ESS_BLK_Scarf_face_grn
+    {
+        displayName = "ESS NeckScarf Face (Trans Rights) (Black)";
+        hiddenSelectionsTextures[] = {"\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\h_gear_01_blk_co.paa","\CUP\Creatures\People\Military\CUP_Creatures_People_Military_USArmy\data\tactical_ca.paa","z\mjb\addons\flags\data\shemagh_face_transrights.paa"};
+    };
+
 	class G_Armband_blk_F;
 	class G_Armband_blk_alt_F;
 	class G_Armband_rats_F : G_Armband_blk_F {
