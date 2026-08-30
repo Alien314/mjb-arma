@@ -583,6 +583,20 @@ class CfgMagazines
 		displayname = "4.6mm 64Rnd Bizon Magazine";
 	};
 
+	class CUP_SMAW_HEDP_M : CA_LauncherMagazine {
+		mass = 70;
+	};
+
+	class CUP_SMAW_HEAA_M : CUP_SMAW_HEDP_M {
+		displayname = "Mk 6 Mod 0 (AA/Anti-Armor) Rocket";
+		mass = 80;
+	};
+
+	class CUP_SMAW_NE_M : CUP_SMAW_HEDP_M {
+		displayname = "Mk 80 Mod 0 (NE/Thermobaric) Rocket";
+		mass = 100;
+	};
+
 	// backpack disposable inconsistency fix
 	class CUP_M136_M : CA_LauncherMagazine {
 		mass = 0; // squeak two at4 into kitbag
