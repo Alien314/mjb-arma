@@ -21,6 +21,24 @@ private _title = "MJB Arma Medical";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_carryDragFix",
+    "CHECKBOX",
+    ["Carry Drag drop Fix","Fixes stuck attached if ace's fails."],
+    [_title,"Dragging"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_dragAndFireProne",
+    "CHECKBOX",
+    ["Allow Prone Drag Fire","Allows firing while prone and dragging."],
+    [_title,"Dragging"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_perks",
     "CHECKBOX",
     ["Enable perk system", "Perks for players to choose."],
