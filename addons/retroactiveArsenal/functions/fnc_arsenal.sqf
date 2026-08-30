@@ -4165,7 +4165,7 @@ private _itemWeaponSFMG =
     "dzn_mg_tripod_m122a1_m60mount",
     "dzn_mg_tripod_m122a1_m240mount",
     "dzn_mg_tripod_m122a1_m249mount_rhs",
-    "dzn_mg_tripod_m122a1_m240mount_rhs"
+    "dzn_mg_tripod_m122a1_m240mount_rhs",
     
     //6.5 lmgs
     "arifle_MX_SW_Black_F",
