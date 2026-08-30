@@ -939,36 +939,6 @@ class CfgWeapons {
 	};
   };
 
-  class arifle_MX_Base_F;
-  class arifle_MX_GL_F : arifle_MX_Base_F {
-	class GL_3GL_F : UGL_F {
-		class Single : Single {
-			aiRateOfFire = 15;
-			aiRateOfFireDispersion = 5;
-			aiRateOfFireDistance = 400;
-			maxRange = 400;
-			maxRangeProbab = DGT_PROB_UGL; // 0.05
-			midRange = 200;
-			midRangeProbab = DGT_PROB_UGL; // 0.7
-			minRange = 20;
-			minRangeProbab = DGT_PROB_UGL; // 0.1
-		};
-	};
-  };
-
-  class arifle_MSBS65_GL_base_F : arifle_MSBS65_base_F {
-	class UGL : UGL_F {
-		class Single : Single {};
-	};
-  };
-
-  class arifle_AK12_base_F;
-  class arifle_AK12_GL_base_F : arifle_AK12_base_F {
-	class EGLM : UGL_F {
-		class Single : Single {};
-	};
-  };
-
   class CUP_glaunch_Base : Rifle_Base_F {
 	aiDispersionCoefX = 6;
 	aiDispersionCoefY = 6;
