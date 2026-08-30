@@ -584,12 +584,12 @@ class CfgMagazines
 	};
 
 	class CUP_SMAW_HEDP_M : CA_LauncherMagazine {
-		mass = 70;
+		mass = 54;
 	};
 
 	class CUP_SMAW_HEAA_M : CUP_SMAW_HEDP_M {
 		displayname = "Mk 6 Mod 0 (AA/Anti-Armor) Rocket";
-		mass = 80;
+		mass = 60;
 	};
 
 	class CUP_SMAW_NE_M : CUP_SMAW_HEDP_M {
