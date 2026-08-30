@@ -983,6 +983,22 @@ private _itemUniforms = [
 _itemEquipment append _itemUniforms;
 
 private _itemHats = [
+    //Euchre's custom Shemags
+    "mjb_H_Shemag_AlpCadpat",
+    "mjb_H_Shemag_AlpCadpat_hs",
+    "mjb_H_Shemag_DesMarpat",
+    "mjb_H_Shemag_DesMarpat_hs",
+    "mjb_H_Shemag_Euchre",
+    "mjb_H_Shemag_Euchre_hs",
+    "mjb_H_Shemag_M81_Woodland",
+    "mjb_H_Shemag_M81_Woodland_hs",
+    "mjb_H_Shemag_Sudan",
+    "mjb_H_Shemag_Sudan_hs",
+    "mjb_H_Shemag_UrbanShatter",
+    "mjb_H_Shemag_UrbanShatter_hs",
+    "mjb_H_Shemag_Topo_Alpine",
+    "mjb_H_Shemag_Topo_Alpine_hs",
+    
     "H_Bandanna_gry",
     "H_Bandanna_camo",
     "H_Bandanna_sgg",
