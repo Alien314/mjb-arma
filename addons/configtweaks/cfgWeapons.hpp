@@ -939,6 +939,16 @@ class CfgWeapons {
 	};
   };
 
+  class arifle_MX_Base_F : Rifle_Base_F {
+	class GL_3GL_F : UGL_F {
+		class Single : Single {
+			aiRateOfFire = 15;
+			aiRateOfFireDispersion = 5;
+			aiRateOfFireDistance = 400;
+		};
+	};
+  };
+
   class CUP_glaunch_Base : Rifle_Base_F {
 	aiDispersionCoefX = 6;
 	aiDispersionCoefY = 6;
