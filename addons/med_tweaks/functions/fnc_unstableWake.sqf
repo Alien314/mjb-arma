@@ -21,7 +21,7 @@ while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 	private _modifier = ( ( (_timeAsleep / (_modScale * _softCap) ) - (1/2)) max 0 );
 	private _roll = (random 1);
 	private _chance = (mjb_med_tweaks_unstableWakeChance + _modifier);
-	if (_roll < _chance && {(!mjb_med_tweaks_unstableWakeNeedsPulse || {_pulse > 0}) && { 3.6 < _blood && { ace_medical_const_bloodLossKnockOutThreshold > _bleed } } }) exitWith {
+	if (_roll < _chance && {(!mjb_med_tweaks_unstableWakeNeedsPulse || {_pulse > 0}) && { 3.6 < _blood && { ace_medical_const_bloodLossKnockOutThreshold > _bleed && {(_bleed / _blood) < (( 1 / ((mjb_unstableWake_bleedVol max (_blood + 0.1)) - _blood)) / 20 )} } } }) exitWith {
 		if (mjb_med_tweaks_unstableWakeLog) then {
 			[format ["MJB Unstable Wake success: %1, heartrate: %2, blood: %3, bleeding: %4, roll: %5/%6, time uncon: %7", name player, _pulse, _blood, _bleed, _roll, _chance, _timeAsleep]] remoteExec ['diag_log',([0,-2] select isDedicated)];
 		};
@@ -106,7 +106,7 @@ while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 			_unit setVariable ['mjb_unstableWake',nil];
 			[_unit,true] call ace_medical_fnc_setUnconscious;
 			if !(isNil 'mjb_med_tweaks_ppUnstable') then {
-				mjb_med_tweaks_ppUnstable ppEffectEnable false;
+				[{ if (isNil 'mjb_med_tweaks_ppUnstable') exitWith {}; ppEffectDestroy mjb_med_tweaks_ppUnstable; mjb_med_tweaks_ppUnstable = nil; }, nil,1] call CBA_fnc_waitAndExecute;
 			};
 		}] call CBA_fnc_waitUntilAndExecute;
 	};

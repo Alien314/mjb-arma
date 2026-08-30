@@ -21,6 +21,15 @@ private _title = "MJB Arma Medical";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_altTriageText",
+    "CHECKBOX",
+    ["Alternate Triage Text", "Shows 'Routine', 'Priority', 'Urgent', instead of the normal ace triage card text."],
+    [_title,"Player"],
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
     "mjb_med_tweaks_enableSalts",
     "CHECKBOX",
     ["Enable Smelling Salts", "Allow treatment with smelling salts, instantly waking a patient."],
@@ -146,6 +155,15 @@ private _title = "MJB Arma Medical";
     ["Faint Max Wake Time", "Maximum time to be awake after a successful wake roll, while vitals are still unstable."],
     [_title,"Unstable Wake"],
     [1, 600, 45, 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_unstableWake_bleedVol",
+    "SLIDER",
+    ["Bleed Gate Volume", "Limits the bleed rate someone can wake up at based on their blood volume to help prevent cases where waking up just bleeds you to fatal, or repeated wake ups get you shot more. Higher means lesser bleed will prevent wake (default 5.83). (_bleed / _blood) < ( ( 1 / ( ( mjb_unstableWake_bleedVol max (_blood + 0.1) ) - _blood) ) / 20 )"],
+    [_title,"Unstable Wake"],
+    [4.5, 6, 5.83, 2],
     true
 ] call CBA_fnc_addSetting;
 

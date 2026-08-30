@@ -26,5 +26,6 @@ if !(hasInterface) exitWith {};
 	};
 
 	if !(mjb_med_tweaks_unstableWakeChance > 0) exitWith { };
+	if !(isNil "mjb_med_tweaks_ppUnstable") then {[{ if !(isNil "mjb_med_tweaks_ppUnstable") then { ppEffectDestroy mjb_med_tweaks_ppUnstable; mjb_med_tweaks_ppUnstable = nil; }; }, nil,2] call CBA_fnc_waitAndExecute;};
 	[_unit] spawn mjb_med_tweaks_fnc_unstableWake;
 }] call cba_fnc_addEventHandler;

@@ -1,6 +1,3 @@
-#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
-
-#else
 
 #include "script_component.hpp"
 
@@ -15,6 +12,7 @@ class CfgPatches {
     name = "MJB Med tweaks";
     requiredAddons[] = {"ace_medical_statemachine","ace_medical_treatment","ace_medical_gui"};
     skipWhenMissingDependencies = 1;
+	skipWhenAnyAddonPresent[] = {"ace_nomedical"};
   };
 };
 
@@ -109,4 +107,24 @@ class ace_medical_treatment_actions {
   };
 };
 
-#endif
+class RscControlsGroupNoScrollbars;
+class ace_medical_gui_TriageSelect : RscControlsGroupNoScrollbars {
+	class Controls {
+		class None;
+        class Minimal: None {
+            onLoad = QUOTE(params ['_ctrl']; if (mjb_altTriageText) then {_ctrl ctrlSetText 'Routine'};);
+        };
+        class Delayed: None {
+            onLoad = QUOTE(params ['_ctrl']; if (mjb_altTriageText) then {_ctrl ctrlSetText 'Priority'};);
+        };
+        class Immediate: None {
+            onLoad = QUOTE(params ['_ctrl']; if (mjb_altTriageText) then {_ctrl ctrlSetText 'Urgent'};);
+        };
+        class Deceased: None {
+            colorText[] = {TRIAGE_TEXT_COLOR_DECEASED};
+            colorFocused[] = {TRIAGE_COLOR_DECEASED};
+            colorBackground[] = {TRIAGE_COLOR_DECEASED};
+            colorBackgroundActive[] = {TRIAGE_COLOR_DECEASED};
+        };
+	};
+};
