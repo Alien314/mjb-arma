@@ -5287,6 +5287,8 @@ if !(isNil 'missionArsenal') then {
 	[missionArsenal, _limitedItems] call ace_arsenal_fnc_removeVirtualItems;
 };
 
+["ace_arsenal_boxInitialized", [arsenal, []]] call CBA_fnc_localEvent;
+
 private _action =
 [
     "personal_arsenal","Personal Arsenal","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa",
