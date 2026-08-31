@@ -2074,6 +2074,34 @@ private _itemWeaponRifle =
     "rhs_weap_ak74m",
     "rhs_weap_ak74m_zenitco01",
 
+    "CUP_arifle_AK12_black",
+    "CUP_arifle_AK12_AFG_arid",
+    "CUP_arifle_AK12_AFG_lush",
+    "CUP_arifle_AK12_AFG_tan",
+    "CUP_arifle_AK12_AFG_snowtiger",
+    "CUP_arifle_AK12_AFG_tiger",
+    "CUP_arifle_AK12_AFG_bicolor",
+    "CUP_arifle_AK12_AFG_winter",
+    "CUP_arifle_AK12_AFG_wood",
+    "CUP_arifle_AK12_AFG_black",
+    "CUP_arifle_AK12_arid",
+    "CUP_arifle_AK12_VG_arid",
+    "CUP_arifle_AK12_VG_lush",
+    "CUP_arifle_AK12_VG_tan",
+    "CUP_arifle_AK12_VG_snowtiger",
+    "CUP_arifle_AK12_VG_tiger",
+    "CUP_arifle_AK12_VG_bicolor",
+    "CUP_arifle_AK12_VG_winter",
+    "CUP_arifle_AK12_VG_wood",
+    "CUP_arifle_AK12_VG_black",
+    "CUP_arifle_AK12_lush",
+    "CUP_arifle_AK12_tan",
+    "CUP_arifle_AK12_snowtiger",
+    "CUP_arifle_AK12_tiger",
+    "CUP_arifle_AK12_bicolor",
+    "CUP_arifle_AK12_winter",
+    "CUP_arifle_AK12_wood",
+
 	//============================================================
     //7.62x39mm
     //============================================================
@@ -2116,6 +2144,35 @@ private _itemWeaponRifle =
     "rhs_weap_ak103_zenitco01",
     "rhs_weap_pm63",
     "rhs_weap_m70ab2",
+
+    "CUP_arifle_AK15_black",
+    "CUP_arifle_AK15_AFG_arid",
+    "CUP_arifle_AK15_AFG_lush",
+    "CUP_arifle_AK15_AFG_tan",
+    "CUP_arifle_AK15_AFG_snowtiger",
+    "CUP_arifle_AK15_AFG_tiger",
+    "CUP_arifle_AK15_AFG_bicolor",
+    "CUP_arifle_AK15_AFG_winter",
+    "CUP_arifle_AK15_AFG_wood",
+    "CUP_arifle_AK15_AFG_black",
+    "CUP_arifle_AK15_arid",
+    "CUP_arifle_AK15_VG_arid",
+    "CUP_arifle_AK15_VG_lush",
+    "CUP_arifle_AK15_VG_tan",
+    "CUP_arifle_AK15_VG_snowtiger",
+    "CUP_arifle_AK15_VG_tiger",
+    "CUP_arifle_AK15_VG_bicolor",
+    "CUP_arifle_AK15_VG_winter",
+    "CUP_arifle_AK15_VG_wood",
+    "CUP_arifle_AK15_VG_black",
+    "CUP_arifle_AK15_lush",
+    "CUP_arifle_AK15_tan",
+    "CUP_arifle_AK15_snowtiger",
+    "CUP_arifle_AK15_tiger",
+    "CUP_arifle_AK15_bicolor",
+    "CUP_arifle_AK15_winter",
+    "CUP_arifle_AK15_wood",
+    "CUP_arifle_AK47_Early",
 
     //============================================================
     //7.62x51mm
@@ -3663,6 +3720,16 @@ private _itemWeaponGL =
 
     "rhs_weap_ak74m_gp25",
 
+    "CUP_arifle_AK12_GP34_black",
+    "CUP_arifle_AK12_GP34_arid",
+    "CUP_arifle_AK12_GP34_lush",
+    "CUP_arifle_AK12_GP34_tan",
+    "CUP_arifle_AK12_GP34_snowtiger",
+    "CUP_arifle_AK12_GP34_tiger",
+    "CUP_arifle_AK12_GP34_bicolor",
+    "CUP_arifle_AK12_GP34_winter",
+    "CUP_arifle_AK12_GP34_wood",
+
 	//5.8x42mm
     "Flex_CUP_PLA_ARifle_QBZ95_GL_blk",
     "Flex_CUP_PLA_ARifle_QBZ95_RIS_GL_blk",
@@ -3684,6 +3751,16 @@ private _itemWeaponGL =
 	"CUCUP_arifle_AK103_GL_railed",
 
     "rhs_weap_ak103_gp25",
+
+    "CUP_arifle_AK15_GP34_black",
+    "CUP_arifle_AK15_GP34_arid",
+    "CUP_arifle_AK15_GP34_lush",
+    "CUP_arifle_AK15_GP34_tan",
+    "CUP_arifle_AK15_GP34_snowtiger",
+    "CUP_arifle_AK15_GP34_tiger",
+    "CUP_arifle_AK15_GP34_bicolor",
+    "CUP_arifle_AK15_GP34_winter",
+    "CUP_arifle_AK15_GP34_wood",
 
     //7.62x51mm
     "CUP_arifle_DSA_SA58_OSW_M203",
