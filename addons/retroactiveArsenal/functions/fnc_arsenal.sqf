@@ -1360,6 +1360,7 @@ private _itemSpecial =
     "Laserdesignator_01_khk_F",
     "Laserdesignator_03",
     "ACE_Vector",
+    "mjb_ACE_Vector_WP",
 
     //RHS
     "rhsusf_bino_lerca_1200_black",
@@ -4007,6 +4008,7 @@ private _itemAmmoHAT =
 	//"Vorona_HE",
 	//"Vorona_HEAT",
     "Rangefinder",
+    "mjb_ACE_Vector_WP",
     "ACE_Vector"
 ];
 
@@ -4019,6 +4021,7 @@ private _itemAmmoSPAA =
 [
     "Titan_AA",
     "Rangefinder",
+    "mjb_ACE_Vector_WP",
     "ACE_Vector"
 ];
 
@@ -4034,6 +4037,7 @@ private _itemMortarAmmo =
     "NDS_M_6Rnd_60mm_ILLUM",
     "NDS_M_6Rnd_60mm_SMOKE",
     "Rangefinder",
+    "mjb_ACE_Vector_WP",
     "ACE_Vector"
 ];
 
@@ -4507,6 +4511,7 @@ private _itemEngineer =
     "ACE_TacticalLadder_Pack",
     "Rangefinder",
     "ACE_Vector",
+    "mjb_ACE_Vector_WP",
 
     "rhs_charge_sb3kg_mag",
     "rhs_charge_tnt_x2_mag",
@@ -4557,6 +4562,7 @@ private _itemTankCrew =
     "H_Tank_black_F",
     "Rangefinder",
     "ACE_Vector",
+    "mjb_ACE_Vector_WP",
     "ACE_IR_Strobe_Item",
     "ItemMap",
     "ItemGPS",
@@ -4647,6 +4653,7 @@ private _itemHeloCrew =
     "U_B_HeliPilotCoveralls",
     "Rangefinder",
     "ACE_Vector",
+    "mjb_ACE_Vector_WP",
     "ACE_IR_Strobe_Item",
     "ItemMap",
     "ItemGPS",
@@ -4701,6 +4708,7 @@ private _itemAirCrew =
 	"mjb_H_PilotHelmetFighter_O_WP",
     "Rangefinder",
     "ACE_Vector",
+    "mjb_ACE_Vector_WP",
     "ItemMap",
     "ItemGPS",
     "ItemCompass",

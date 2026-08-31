@@ -844,7 +844,6 @@ class CfgWeapons {
     swayCoef = 0.02; // default 0.34
   };
 
-
   // Add 556 to Grot
   class arifle_MSBS65_base_F : Rifle_Base_F {
     magazineWell[] += {"STANAG_556x45","CBA_556x45_STANAG","CBA_556x45_STANAG_L"};
@@ -1236,6 +1235,13 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 
 #define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 #define NVG_WHITE_PRESETOLD colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
+
+  class ACE_Vector;
+  class mjb_ACE_Vector_WP : ACE_Vector {
+	displayName = "Vector 21 Nite (WP)";
+	NVG_WHITE_PRESET;
+	NVG_WHITE_PRESETOLD;
+  };
 
 class Integrated_NVG_F;
 class mjb_Integrated_NVG_WP : Integrated_NVG_F {
