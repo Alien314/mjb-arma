@@ -3633,6 +3633,9 @@ private _itemWeaponGL =
     "hkm320_pistol",
     "hkm320khaki_pistol",
     "hkm320tan_pistol",
+    "mjb_hkm320_pistol_nostock",
+    "mjb_hkm320tan_pistol_nostock",
+    "mjb_hkm320khaki_pistol_nostock",
 
     //============================================================
     //Primary Weapons
@@ -3641,6 +3644,9 @@ private _itemWeaponGL =
     "hkm320",
     "m320haki",
     "m320tan",
+    "mjb_hkm320_nostock",
+    "mjb_hkm320tan_nostock",
+    "mjb_hkm320haki_nostock",
 	"CUP_glaunch_Mk13",
 	"CUP_glaunch_M79",
 	"tsp_sling_1point",
