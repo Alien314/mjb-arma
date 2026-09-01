@@ -1236,7 +1236,9 @@ class diw_armor_plates_main_plate : CBA_MiscItem { ACE_isMedicalItem = 1; };//*/
 #define NVG_WHITE_PRESET ace_nightvision_colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 #define NVG_WHITE_PRESETOLD colorPreset[] = {0.0, {0.0, 0.0, 0.0, 0.0}, {1.1, 0.8, 1.9, 0.9}, {1, 1, 6, 0.0}}
 
-  class ACE_Vector;
+  class ACE_Vector : Binocular {
+	ace_nightvision_generation = 3;
+  };
   class mjb_ACE_Vector_WP : ACE_Vector {
 	displayName = "Vector 21 Nite (WP)";
 	NVG_WHITE_PRESET;
