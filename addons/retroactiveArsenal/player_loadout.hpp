@@ -1120,7 +1120,18 @@ class sfmat : mat
 		"HandGrenade",
 		"CUP_12Rnd_45ACP_mk23"
 	};
-	backpackItems[] += {};
+	backpackItems[] =
+	{
+		#if __has_include("\z\ace\addons\medical_engine\script_component.hpp")
+			#if __has_include("\z\ace\addons\nomedical\script_component.hpp")
+				LIST_3("FirstAidKit"),
+			#else
+			#endif
+		#else
+			LIST_3("FirstAidKit"),
+		#endif
+		LIST_4("MRAWS_HEAT_F")
+	};
 	linkedItems[] += {
 		"Rangefinder"
 	};
