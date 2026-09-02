@@ -32,10 +32,19 @@ class CfgAmmo
 	};
 #else
 #endif
-	class B_12Gauge_Slug;
+
+	class B_12Gauge_Slug: BulletBase
+	{
+		airFriction = -0.006; // airFriction = -0.008;
+		//caliber = 0.54; // less pen, easily destroyed cars before, can still brick engines
+		hit = 29; // less damage than vanilla
+		typicalSpeed = 500;
+	};
+
 	class mjb_g_slog : B_12Gauge_Slug {
 		airfriction = -0.0012;
 		cartridge = "";
+		hit = 34;
 		model = "\A3\weapons_f\ammo\UGL_slug";
 		simulation = "shotShell";
 		typicalSpeed = 76.5;
@@ -44,6 +53,7 @@ class CfgAmmo
 	class mjb_g_blug : B_12Gauge_Slug {
 		airFriction = -0.001;
 		cartridge = "";
+		hit = 34;
 		model = "\A3\weapons_f\ammo\UGL_slug";
 		simulation = "shotShell";
 		typicalSpeed = 185;
@@ -97,13 +107,11 @@ class CfgAmmo
 		cost = 1;
 		allowAgainstInfantry = 1;
 		aiAmmoUsageFlags = "64 + 128 + 512";
-		indirectHitRange = 6;
 	};
 	class G_20mm_HE: G_40mm_HE
 	{
 		cost = 1;
 		allowAgainstInfantry = 1;
-		indirectHitRange = 4;
 	};
 	class G_40mm_HEDP : G_40mm_HE {
 		cost = 1;
@@ -119,13 +127,11 @@ class CfgAmmo
 	{
 		cost = 1;
 		allowAgainstInfantry = 1;
-		indirectHitRange = 6;
 	};
 	class mini_Grenade: GrenadeHand
 	{
 		cost = 1;
 		allowAgainstInfantry = 1;
-		indirectHitRange = 4;
 	};
 
 
@@ -271,7 +277,8 @@ class CfgAmmo
 	class R_MRAAWS_HEAT_F : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
 		airLock = 1;
-		cost = 70;
+		cost = 50;
+		//allowAgainstInfantry = 0;
 	};
 	class R_MRAAWS_HEAT55_F : R_MRAAWS_HEAT_F {
 		aiAmmoUsageFlags = "128 + 256 + 512";
@@ -292,9 +299,13 @@ class CfgAmmo
 	};
 	class R_PG7_F : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 30;
 		indirectHitRange = 3;
+	};
+	class R_PG7VR : R_PG7_F {
+		allowAgainstInfantry = 0;
 	};
 	class R_TBG32V_F : R_PG32V_F {
 		aiAmmoUsageFlags = "64 + 128 + 256";
@@ -305,6 +316,7 @@ class CfgAmmo
 
 	class M_NLAW_AT_F;
 	class ACE_NLAW : M_NLAW_AT_F {
+		allowAgainstInfantry = 1;
 		cost = 50;
 		//submunitionAmmo = "ACE_NLAW_Penetrator";
 	};
@@ -317,14 +329,17 @@ class CfgAmmo
 	// CUP
 	class CUP_R_APILAS_AT : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
+		allowAgainstInfantry = 0;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_M136_AT : RocketBase {
+		allowAgainstInfantry = 0;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_M72A6_AT : RocketBase {
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
 	};
@@ -345,29 +360,38 @@ class CfgAmmo
 		cost = 25;
 	};
 	class CUP_R_PG26_AT : RocketBase {
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_PG7V_AT : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 30;
 	};
 	class CUP_R_PG7VL_AT : RocketBase {
+		allowAgainstInfantry = 0;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_PG7VM_AT : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 50;
 	};
 	class CUP_R_PG7VR_AT : RocketBase {
+		allowAgainstInfantry = 0;
 		cost = 100;
 	};
 	class CUP_R_PZF3IT_AT : RocketBase {
+		allowAgainstInfantry = 0;
 		cost = 100;
 	};
 	class CUP_R_RPG18_AT : RocketBase {
 		aiAmmoUsageFlags = "128 + 256 + 512";
+		allowAgainstInfantry = 1;
 		airLock = 1;
 		cost = 30;
 	};
@@ -385,11 +409,13 @@ class CfgAmmo
 	};
 	class CUP_R_SMAW_HEAA : CUP_R_SMAW_HEDP {
 		aiAmmoUsageFlags = "128 + 256 + 512";
+		allowAgainstInfantry = 0;
 		airLock = 1;
 		cost = 100;
 	};
 	class CUP_R_SMAW_HEAA_N : CUP_R_SMAW_HEDP_N {
 		aiAmmoUsageFlags = "128 + 256 + 512";
+		allowAgainstInfantry = 0;
 		airLock = 1;
 		cost = 100;
 	};
@@ -491,7 +517,7 @@ class CfgAmmo
 	class CUP_R_RSHG2_HE : RocketBase {
 		aiAmmoUsageFlags = "64 + 128 + 256";
 		allowAgainstInfantry = 1;
-		indirecthit = 15;
+		indirecthit = 10;
 		indirecthitrange = 6;
 		airLock = 1;
 		cost = 25;
@@ -530,6 +556,46 @@ class CfgAmmo
 		whistleDist = 32;
 	};
 
+	class CUP_R_SMAW_NE : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		airlock = 1;
+		cost = 50;
+		indirecthit = 12;
+		indirecthitrange = 10;
+		submunitionAmmo = "CUP_R_SMAW_NE_del";
+		submunitionInitialOffset[] = {0,0,0.8};
+		explosive = 0.7;
+		submunitionInitSpeed = 1;
+	};
+	class CUP_R_SMAW_NE_del : RocketBase {
+		aiAmmoUsageFlags = "64 + 128 + 256";
+		airFriction = 0.01;
+		airlock = 0;
+		cratereffects = "ATMissileCrater";
+		effectsmissile = "EmptyEffect";
+		explosioneffects = "ATMissileExplosion";
+		explosive = 1;
+		hit = 50;
+		inittime = 0.02;
+		indirecthit = 18;
+		indirecthitrange = 10;
+		maxSpeed = 220;
+		model = "\CUP\Weapons\CUP_Weapons_Ammunition\SMAW\CUP_smaw_rocket_inflight.p3d";
+		sideAirFriction = 0;
+		simulationstep = 0.02;
+		soundFly[] = {"A3\Sounds_F\weapons\Rockets\rocket_fly_1.wss",6,1,500};
+		SoundSetExplosion[] = {"RocketsLight_Exp_SoundSet","RocketsLight_Tail_SoundSet","Explosion_Debris_SoundSet"};
+		thrust = 0;
+		thrustTime = 0.01;
+		timeToLive = 0.01;
+		visiblefire = 28;
+		warheadName = "HE";
+		whistleDist = 32;
+	};
+	class CUP_R_SMAW_Spotting : RocketBase {
+		cost = 51;
+	};
+
 
 	// Missiles
 	class MissileBase;
@@ -566,12 +632,6 @@ class CfgAmmo
 	// Initial bullet speed is set on magazines with a possible override on weapons, will be much more difficult to change
 	/*
 	// Vanilla
-	class B_12Gauge_Slug: BulletBase
-	{
-		airFriction = -0.002042; // faster bullet drop/damage falloff
-		caliber = 0.54; // less pen, easily destroyed cars before, can still brick engines
-		hit = 34.51; // less damage than vanilla
-	};
 	class B_65x39_Caseless: BulletBase 
 	{
 		hit = 9.5; // Slight reduction to 6.5, still much stronger than other rifle calibers at range	
