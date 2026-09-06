@@ -66,7 +66,7 @@ class CfgMagazines {
 		greenmag_basicammo = "greenmag_ammo_762x51_basic_1Rnd";
 		greenmag_canSpeedload = 1;
 		greenmag_needBelt = 0;
-		mass = 120;
+		mass = 12;
 	};
 	class KAR_20Rnd_Fury_YT: KAR_20Rnd_Fury {
 		tracersevery=1;
