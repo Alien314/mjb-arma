@@ -101,6 +101,12 @@ if (_UAVCrew isNotEqualTo []) then {
 
 // Fixes not being able to move when in combat pace
 [_unit, "forceWalk", QUOTE(ADDON), false] call EFUNC(common,statusEffect_set);
+[_unit, "blockSprint", QUOTE(ADDON), false] call EFUNC(common,statusEffect_set);
+
+[QEGVAR(common,setAnimSpeedCoef), [_unit, (mjb_curAnimSpeed)]] call CBA_fnc_globalEvent;
+[QEGVAR(common,setAnimSpeedCoef), [_target, (mjb_curAnimSpeedTgt)]] call CBA_fnc_globalEvent;
+mjb_curAnimSpeed = nil;
+mjb_curAnimSpeedTgt = nil;
 
 // Reset mass
 private _mass = _target getVariable [QGVAR(originalMass), 0];

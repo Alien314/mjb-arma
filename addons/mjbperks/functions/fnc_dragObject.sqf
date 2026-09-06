@@ -88,6 +88,14 @@ if (_UAVCrew isNotEqualTo []) then {
 
 // Fixes not being able to move when in combat pace
 [_unit, "forceWalk", QUOTE(ADDON), true] call EFUNC(common,statusEffect_set);
+[_unit, "blockSprint", QUOTE(ADDON), true] call EFUNC(common,statusEffect_set);
+
+mjb_curAnimSpeed = getAnimSpeedCoef _unit;
+mjb_curAnimSpeedTgt = getAnimSpeedCoef _target;
+if !(stance _unit isEqualTo "PRONE") then {
+	[QEGVAR(common,setAnimSpeedCoef), [_unit, (ace_dragging_dragSpeedCoef)]] call CBA_fnc_globalEvent;
+	[QEGVAR(common,setAnimSpeedCoef), [_target, (ace_dragging_dragSpeedCoef)]] call CBA_fnc_globalEvent;
+};
 
 // API
 [QGVAR(startedDrag), [_unit, _target]] call CBA_fnc_localEvent;

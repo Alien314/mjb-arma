@@ -47,8 +47,8 @@ if (_unit getVariable [QGVAR(isDragging), false]) then {
             [_unit, "DefaultAction", _unit getVariable [QGVAR(blockFire), -1]] call EFUNC(common,removeActionEventHandler); 
         };
 	};*/
+	
     if (!(_anim in DRAG_ANIMATIONS) && {!(_unit call EFUNC(common,isSwimming))}) then {
-        private _draggedObject = _unit getVariable [QGVAR(draggedObject), objNull];
         if (!isNull _draggedObject) then {
             TRACE_2("stop drag",_unit,_draggedObject);
             [_unit, _draggedObject] call FUNC(dropObject);
@@ -58,7 +58,15 @@ if (_unit getVariable [QGVAR(isDragging), false]) then {
 				},[_unit,_draggedObject],6] call CBA_fnc_waitUntilAndExecute;
 			};
         };
-    };
+    } else {
+		private _draggedObject = _unit getVariable [QGVAR(draggedObject), objNull];
+		if !(stance _unit isEqualTo "PRONE") then {
+			[{
+				[QEGVAR(common,setAnimSpeedCoef), [(_this select 0), (ace_dragging_dragSpeedCoef)]] call CBA_fnc_globalEvent;
+				[QEGVAR(common,setAnimSpeedCoef), [(_this select 1), (ace_dragging_dragSpeedCoef)]] call CBA_fnc_globalEvent;
+			},[_unit,_draggedObject]] call CBA_fnc_execNextFrame;
+		};
+	};
 } else {
     if (_unit getVariable [QGVAR(isCarrying), false]) then {
         // Drop carried object when not standing; also some exceptions when picking up crate

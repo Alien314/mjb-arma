@@ -8,4 +8,10 @@
 ["z\mjb\addons\perks\functions\fnc_startDragPFH.sqf", "ace_dragging_fnc_startDragPFH"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\perks\functions\fnc_handleAnimChanged.sqf", "ace_dragging_fnc_handleAnimChanged"] call CBA_fnc_compileFunction;
 
+["z\mjb\addons\perks\functions\fnc_startCarryLocal.sqf", "ace_dragging_fnc_startCarryLocal"] call CBA_fnc_compileFunction;
+["z\mjb\addons\perks\functions\fnc_startCarryPFH.sqf", "ace_dragging_fnc_startCarryPFH"] call CBA_fnc_compileFunction;
+["z\mjb\addons\perks\functions\fnc_carryObject.sqf", "ace_dragging_fnc_carryObject"] call CBA_fnc_compileFunction;
+["z\mjb\addons\perks\functions\fnc_carryObjectPFH.sqf", "ace_dragging_fnc_carryObjectPFH"] call CBA_fnc_compileFunction;
+["z\mjb\addons\perks\functions\fnc_dropObject_carry.sqf", "ace_dragging_fnc_dropObject_carry"] call CBA_fnc_compileFunction;
+
 call compile preprocessFileLineNumbers "z\ace\addons\dragging\XEH_preInit.sqf";

@@ -78,7 +78,7 @@ _unit setVariable [QGVAR(currentWeapon), currentWeapon _unit];
 // Can't play action that depends on weapon if it was added the same frame
 if !(_unit call EFUNC(common,isSwimming)) then {
     [{
-        if (stance _this isNotEqualTo "PRONE") then {
+        if (ace_dragging_doGesture && {stance _this isNotEqualTo "PRONE"}) then {
             private _unitWeapon = _this getVariable [QGVAR(currentWeapon), ""];
 
             if (_unitWeapon isKindOf ["Pistol", configFile >> "CfgWeapons"]) then {

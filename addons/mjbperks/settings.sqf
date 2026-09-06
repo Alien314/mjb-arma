@@ -39,6 +39,62 @@ private _title = "MJB Arma Medical";
 ] call CBA_fnc_addSetting;
 
 [
+    "ace_dragging_doGesture",
+    "CHECKBOX",
+    ["Drag does Gesture","Drag anim on the dragger."],
+    [_title,"Dragging"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_dragSpeedCoef",
+    "SLIDER",
+    ["Dragging Speed Multiplier", "How fast dragging unit is."],
+    [_title,"Dragging"],
+    [0.5, 5, 1, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_doPickup",
+    "CHECKBOX",
+    ["Pickup animation","Pickup anim on the carrier."],
+    [_title,"Dragging"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_doCarry",
+    "CHECKBOX",
+    ["Carry animation","Carry anim on the carrier."],
+    [_title,"Dragging"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_pickupTime",
+    "SLIDER",
+    ["Carry Pickup Time", "How long carry takes to pick up casualty."],
+    [_title,"Dragging"],
+    [1, 10, 10, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "ace_dragging_carrySpeedCoef",
+    "SLIDER",
+    ["Carry Speed Multiplier", "How fast carrying unit is."],
+    [_title,"Dragging"],
+    [0.5, 5, 1, 2],
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_perks",
     "CHECKBOX",
     ["Enable perk system", "Perks for players to choose."],
