@@ -22,8 +22,9 @@ mjb_dragStrapPFH = ([{ params ['_args','_handle'];
 		[_handle] call CBA_fnc_removePerFrameHandler;
 	};
 	private _aPos = (_unit worldToModelVisual (getPos mjb_dragDummyTg));
-	_aPos set [2,((_aPos # 2) + 0.3)];
-	_target attachTo [_unit, _aPos];
+    _aPos vectorDiff (_unit selectionPosition "pelvis");
+	_aPos set [2,((_aPos # 2) + 0.3)]; // +?
+	_target attachTo [_unit, _aPos,"Pelvis",false];
 	if ((_unit distance _target) > ((ropeLength mjb_rope) - 1)) then {
 		_unit forceWalk true;
 		_target setDir ( (getDir _target + (_target getRelDir (getPos _unit) ) ) mod 360); // LA needs to run on dragged unit
