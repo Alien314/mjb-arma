@@ -94,6 +94,7 @@ class ACE_Medical_StateMachine {
 
 // Smelling salts
 class ace_medical_treatment_actions {
+  class BasicBandage;
   class Painkillers;
   class Salts : Painkillers {
     displayName = "Administer Smelling Salts";
@@ -104,6 +105,9 @@ class ace_medical_treatment_actions {
     callbackSuccess = "mjb_med_tweaks_fnc_salts";
 	condition = "mjb_med_tweaks_fnc_canSalt";
 	consumeItem = 0;
+  };
+  class BloodIV : BasicBandage {
+    allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg","Body"};
   };
 };
 
