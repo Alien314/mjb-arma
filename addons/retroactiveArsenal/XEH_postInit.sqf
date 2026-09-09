@@ -178,8 +178,10 @@ if (isServer) then {
 	};
     if (mjb_scriptDebug) then {
 		addMissionEventHandler ["ScriptSpawned", {
-			(_this select 0) params ['_file','','','_parent','_parentLine'];
-			diag_log (format ["MJB Arma: %1 spawned from %2 on line %3.",(_file),(_parent),_parentLine]);
+			_this params ['_file','','_handle','_parent','_parentLine'];
+            if (_parent isEqualTo "" && {_file isEqualTo "" && {_parentLine isEqualTo 4}}) exitWith {};
+			diag_log (format ["MJB Arma Script Debug: %1(%2) spawned from %3 on line %4.",(_file),_handle,(_parent),_parentLine]);
+			"_handle spawn { waitUntil [{ scriptDone _this},5,1]; diag_log (format ['MJB Arma Script Debug: %1 script terminated.',(_this)]);}"; // can't check hashed handle :/
 		}];
 	};
 };
@@ -726,7 +728,7 @@ if (mjb_airVehicleDamage) then {
 ["ace_captiveStatusChanged", { params ['_unit', '_state', '_status','_captor'];
 	if (local _unit && {_unit isEqualTo player}) then {
 		if (_state) then {
-			if (AVS_IS_RollingAvailable) then {
+			if (!isNil 'AVS_IS_RollingAvailable' && {AVS_IS_RollingAvailable}) then {
 				mjb_wasRoll = AVS_IS_RollingAvailable;
 				AVS_IS_RollingAvailable = false;
 				_unit addEventHandler ["Killed",{if (!isNil 'mjb_wasRoll') then {mjb_wasRoll = nil; AVS_IS_RollingAvailable = true};}];
@@ -743,6 +745,54 @@ if (mjb_airVehicleDamage) then {
 			if !('ACE_CableTie' in ([ACE_Player, 0] call ace_common_fnc_uniqueItems)) then {
 				[ACE_Player, "ACE_CableTie"] call CBA_fnc_addItem;
 			};
+		};
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_dragging_startedCarry", { params ['_unit', '_target'];
+	if (local _unit && {_unit isEqualTo player}) then {
+		if (!isNil 'AVS_IS_RollingAvailable' && {AVS_IS_RollingAvailable}) then {
+			mjb_wasRoll = AVS_IS_RollingAvailable;
+			AVS_IS_RollingAvailable = false;
+			_unit addEventHandler ["Killed",{
+				if (!isNil 'mjb_wasRoll') then {
+					AVS_IS_RollingAvailable = true;
+					mjb_wasRoll = nil;
+				};
+			}];
+		};
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_dragging_stoppedCarry", { params ['_unit', '_target'];
+	if (local _unit && {_unit isEqualTo player}) then {
+		if (!isNil 'mjb_wasRoll') then {
+			AVS_IS_RollingAvailable = true;
+			mjb_wasRoll = nil;
+		};
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_dragging_setupDrag", { params ['_unit', '_target'];
+	if (local _unit && {_unit isEqualTo player}) then {
+		if (!isNil 'AVS_IS_RollingAvailable' && {AVS_IS_RollingAvailable}) then {
+			mjb_wasRoll = AVS_IS_RollingAvailable;
+			AVS_IS_RollingAvailable = false;
+			_unit addEventHandler ["Killed",{
+				if (!isNil 'mjb_wasRoll') then {
+					AVS_IS_RollingAvailable = true;
+					mjb_wasRoll = nil;
+				};
+			}];
+		};
+	};
+}] call CBA_fnc_addEventHandler;
+
+["ace_dragging_stoppedDrag", { params ['_unit', '_target'];
+	if (local _unit && {_unit isEqualTo player}) then {
+		if (!isNil 'mjb_wasRoll') then {
+			AVS_IS_RollingAvailable = true;
+			mjb_wasRoll = nil;
 		};
 	};
 }] call CBA_fnc_addEventHandler;
