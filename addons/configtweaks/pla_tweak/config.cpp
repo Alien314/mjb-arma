@@ -10,9 +10,62 @@ class CfgPatches {
 		requiredAddons[]=
 		{
 			"Flex_CUP_PLA_Weapons_Pistols_QSZ92",
-			"dynamicLoadout_LK" //weapons[] = {"missiles_TY90_AA_LK","missiles_AKD9_AG_LK","missiles_TL2_AG_LK","missiles_AKD10_AG_LK","Rocket_57mm_HE_LK","Rocket_90mm_HE_LK","Rocket_130mm_HE_LK","LK_weapon_PL10Launcher","LK_weapon_PL15Launcher","LK_weapon_YJ91Launcher","LK_weapon_YJ9ELauncher","LK_weapon_LS6_100KG","LK_weapon_LS6_250KG","LK_weapon_LS6_500KG","fakeweapon_fueltank_lk"};
+			"dynamicLoadout_LK", //weapons[] = {"missiles_TY90_AA_LK","missiles_AKD9_AG_LK","missiles_TL2_AG_LK","missiles_AKD10_AG_LK","Rocket_57mm_HE_LK","Rocket_90mm_HE_LK","Rocket_130mm_HE_LK","LK_weapon_PL10Launcher","LK_weapon_PL15Launcher","LK_weapon_YJ91Launcher","LK_weapon_YJ9ELauncher","LK_weapon_LS6_100KG","LK_weapon_LS6_250KG","LK_weapon_LS6_500KG","fakeweapon_fueltank_lk"};
+			"CSK181_c",
+			"CSVP4_c",
+			"HQ6A_c",
+			"LK_Jets_C",
+			"PGZ09_LK",
+			"PLL09_LK",
+			"PLZ05_LK",
+			"Z10_LK",
+			"Z11WA_LK",
+			"Z19_LK",
+			"Z20_LK",
+			"Z20T_LK",
+			"Z8L_LK",
+			"ZBD04_LK",
+			"ZTD05_LK",
+			"ZBL09_LK",
+			"ZTL11_LK",
+			"ZTQ15_LK",
+			"ZTZ96_c_LK",
+			"ZTZ99_LK",
+			"ZTZ99A_LK"
+
 		};
 		skipWhenMissingDependencies = 1;
+	};
+};
+
+class CfgAmmo {
+	class ammo_Penetrator_Base;
+	class ammo_Penetrator_100mm_missile_LK : ammo_Penetrator_Base {
+		caliber = 40;
+	};
+	class ammo_Penetrator_105mm_missile_LK : ammo_Penetrator_Base {
+		caliber = 50;
+	};
+	class ammo_Penetrator_125mm_missile_LK : ammo_Penetrator_Base {
+		caliber = 56.6667;
+	};
+	class ammo_Penetrator_AKD10 : ammo_Penetrator_Base { // scalpel
+		caliber = 56.6667;
+	};
+	class ammo_Penetrator_AKD9 : ammo_Penetrator_Base {
+		caliber = 50;
+	};
+	class ammo_Penetrator_CM102 : ammo_Penetrator_Base {
+		caliber = 66.6667;
+	};
+	class ammo_Penetrator_HJ9_LK : ammo_Penetrator_Base { // vorona
+		caliber = 60;
+	};
+	class ammo_Penetrator_TL2 : ammo_Penetrator_Base { // scalpel
+		caliber = 56.6667;
+	};
+	class ammo_Penetrator_YJ91 : ammo_Penetrator_Base { // AGM
+		caliber = 66.6667;
 	};
 };
 
