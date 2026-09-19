@@ -60,6 +60,22 @@ class CfgAmmo
 		timeToLive = 30;
 	};
 
+	class B_12Gauge_Pellets_Submunition;
+	class B_12Gauge_Pellets_Submunition_Deploy : BulletBase {
+		typicalSpeed = 250;
+	};
+
+	class ACE_12Gauge_Pellets_Submunition_No3_Buck;
+	class ACE_12Gauge_Pellets_Submunition_No3_Buck_Deploy;
+	class mjb_g_M576buck : B_12Gauge_Pellets_Submunition {
+		submunitionAmmo = "mjb_g_M576buck_deploy";
+		submunitionConeAngle = 0.89;
+		submunitionConeType[] = {"poissondisc",12};
+	};
+	class mjb_g_M576buck_deploy : B_12Gauge_Pellets_Submunition_Deploy {
+		//typicalSpeed = 185;
+	};
+
     class ACE_9x19_Ball;
 	class mjb_65x25_CBJ : ACE_9x19_Ball {
 		ACE_ballisticCoefficients[] = {0.1455};
@@ -99,7 +115,8 @@ class CfgAmmo
 	class ACE_B_762x51_Tracer_Dim : B_762x51_Tracer_Yellow {
 		tracerScale = 0.42;
 	};
-	IRAMMO(mjb_CUP_B_762x54_Ball_Yellow_Tracer,CUP_B_762x54_Ball_Yellow_Tracer,0.42);
+	IRAMMO(mjb_CUP_B_762x54_Ball_IR,CUP_B_762x54_Ball_Yellow_Tracer,0.42);
+	IRAMMO(mjb_CUP_B_545x39_Ball_IR,CUP_B_545x39_Ball_Tracer_Yellow,0.32);
 
 	class GrenadeBase;
 	class G_40mm_HE: GrenadeBase
