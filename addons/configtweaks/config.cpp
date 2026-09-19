@@ -142,6 +142,7 @@ class CfgUnitInsignia {
 	};
 };
 
+class SlotInfo;
 #include "muzzleSlots.hpp" // Enable muzzle devices on different weapons
 class CUP_PicatinnyTopShortMount;
 #include "CfgWeapons.hpp" // AIDispersion, Weapon, Greenmag items, Accessory, Helmet, and Vest tweaks

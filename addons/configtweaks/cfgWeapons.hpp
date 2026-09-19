@@ -228,6 +228,16 @@ class CfgWeapons {
 	class Single : Single {};
   };
 
+  class Pistol_Base_F;
+  // remove invisible and complete silencer
+  class hgun_Pistol_heavy_02_F : Pistol_Base_F {
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		class MuzzleSlot : SlotInfo {
+			compatibleItems[] = {};
+		};
+	};
+  };
+
   // 3CB
   /* class UK3CB_PKT : rhs_weap_pkt {
     aiDispersionCoefX = 40.0;
@@ -456,7 +466,6 @@ class CfgWeapons {
 	discreteDistanceInitIndex = 1;
   };
 
-  class Pistol_Base_F;
   class CUP_hgun_M17_Coyote : Pistol_Base_F {
 	magazineWell[] = {"CBA_9x19_P320"};
   };
