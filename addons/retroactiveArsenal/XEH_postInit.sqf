@@ -19,6 +19,7 @@ if (isServer) then {
 			} forEach _objs;
 			[_unit,['']] remoteExec ['switchGesture',_unit];
 			[_unit,['']] remoteExec ['switchMove',_unit];
+			[_unit,'PATH'] remoteExec ['disableAI',_unit];
 			if !( ["respawn"] call BIS_fnc_getCfgData in [0,1,"NONE","BIRD"] ) exitWith {};
 			true
 		}]);
