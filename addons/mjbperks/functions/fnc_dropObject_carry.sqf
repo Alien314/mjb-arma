@@ -143,7 +143,10 @@ if (_loadCargo) then {
             // Repurpose variable for flag used in event below
             _loadCargo = true;
         };
-    };
+    } else {
+		private _vel = velocityModelSpace _target;
+		[_target,[_vel # 0, _vel # 1, (_vel # 2) min mjb_vSpeedDrop]] remoteExec ['setVelocityModelSpace',_target];
+	};
 };
 
 // API

@@ -89,8 +89,15 @@ private _title = "MJB Arma Medical";
     ["Carry Speed Multiplier", "How fast carrying unit is."],
     [_title,"Dragging"],
     [0.5, 5, 1, 2],
-    true,
-    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    "mjb_vSpeedDrop",
+    "SLIDER",
+    ["Max release vert", "Max vertical speed in m per s of released object."],
+    [_title,"Dragging"],
+    [0, 100, 0.5, 2],
     true
 ] call CBA_fnc_addSetting;
 

@@ -114,6 +114,8 @@ private _mass = _target getVariable [QGVAR(originalMass), 0];
 if (_mass != 0) then {
     [QEGVAR(common,setMass), [_target, _mass]] call CBA_fnc_globalEvent; // Force global sync
 };
+private _vel = velocityModelSpace _target;
+[_target,[_vel # 0, _vel # 1, (_vel # 2) min mjb_vSpeedDrop]] remoteExec ['setVelocityModelSpace',_target];
 
 // API
 [QGVAR(stoppedDrag), [_unit, _target]] call CBA_fnc_localEvent;
