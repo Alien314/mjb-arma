@@ -101,6 +101,7 @@ class asdg_MuzzleSlot_45ACP_SMG;
 class asdg_MuzzleSlot_12G : asdg_MuzzleSlot {
 	class compatibleItems {
 		MCC_SUREFIRE_RBC = 1;
+		CUP_muzzle_mfsup_Suppressor_M107_Black = 1;
 	};
 };
 
