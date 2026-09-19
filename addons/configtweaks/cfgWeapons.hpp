@@ -561,6 +561,14 @@ class CfgWeapons {
 #else
 #endif
 
+class CUP_arifle_RPK74M_top_rail;
+class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
+	displayName = "RPK-74M SPU (RIS)";
+	scope = 1;
+	magazines[] = {};
+	magazineWell[] = {"CBA_545x39_Belt"};
+};
+
 // Fix backpack disposable inconsistent mass
   class Launcher;
   class Launcher_Base_F : Launcher {
