@@ -228,7 +228,8 @@ class CfgWeapons {
 	class Single : Single {};
   };
 
-  class Pistol_Base_F;
+  class Pistol;
+  class Pistol_Base_F : Pistol { class WeaponSlotsInfo; };
   // remove invisible and complete silencer
   class hgun_Pistol_heavy_02_F : Pistol_Base_F {
 	class WeaponSlotsInfo : WeaponSlotsInfo {
