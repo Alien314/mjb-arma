@@ -1091,7 +1091,7 @@ WO_T_Soldier_SL_F,O_T_Soldier_SL_F,O_Soldier_SL_F
   class Rubber_duck_base_F : Boat_F {
     rudderForceCoef = 0.25;
   };
-  class C_Scooter_Transport_01_F : Rubber_duck_base_F {
+  class Scooter_Transport_01_base_F : Rubber_duck_base_F {
     rudderForceCoef = 0.3;
   };
 
