@@ -132,3 +132,5 @@ class ace_medical_gui_TriageSelect : RscControlsGroupNoScrollbars {
         };
 	};
 };
+
+#include "ACE_Medical_Injuries.hpp"
