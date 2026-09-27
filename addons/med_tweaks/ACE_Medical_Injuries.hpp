@@ -23,16 +23,16 @@ class ACE_Medical_Injuries {
             thresholds[] = {{8, 3}, {1, 1}, {0.3, 1}, {0.15, 0.5}, {0.05, 0.3}, {0.05, 0}, {0, 0}};
 		};
         class falling {
-            thresholds[] = {{8, 3}, {1, 1}, {0.2, 1}, {0.1, 0.7}, {0.05, 0.7}, {0.05, 0}, {0, 0}};
+            thresholds[] = {{8, 3}, {1, 1}, {0.2, 1}, {0.1, 0.7}, {0.05, 0.5}, {0.05, 0}, {0, 0}};
 		};
         class stab {
         };
         class punch {
         };
         class burn {
-            thresholds[] = {{0, 0.7}};
+            thresholds[] = {{1.0, 0.5},{0, 0.3}};
             class ThermalBurn {
-                sizeMultiplier = 0.7;
+                sizeMultiplier = 0.5;
             };
 		};
         class unknown {
