@@ -68,6 +68,7 @@ class CfgAmmo
 	class ACE_12Gauge_Pellets_Submunition_No3_Buck;
 	class ACE_12Gauge_Pellets_Submunition_No3_Buck_Deploy;
 	class mjb_g_M576buck : B_12Gauge_Pellets_Submunition {
+		simulation = "shotShell";
 		submunitionAmmo = "mjb_g_M576buck_deploy";
 		submunitionConeAngle = 0.89;
 		submunitionConeType[] = {"poissondisc",12};
