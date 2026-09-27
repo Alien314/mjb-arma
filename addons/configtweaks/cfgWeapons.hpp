@@ -872,8 +872,8 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	{
 		// This is the entry to edit
 		// need to adjust dispersion here?
-		//aiDispersionCoefX = DGT_ACC; // 6
-		//aiDispersionCoefY = DGT_ACC; // 6
+		aiDispersionCoefX = 8.5; // 6
+		aiDispersionCoefY = 8.5; // 6
 		// VALUES FROM PREVIOUS RELEASE
 		aiRateOfFire = 3; // 0.1  Setting this high (20) makes AI look at the sky
 		aiRateOfFireDispersion = 2; // 0
