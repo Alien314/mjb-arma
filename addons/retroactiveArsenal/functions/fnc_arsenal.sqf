@@ -2139,6 +2139,12 @@ private _itemWeaponRifle =
     "CUP_arifle_Sa58RIS2",
     "CUP_arifle_Sa58RIS2_camo",
     "CUP_arifle_Sa58RIS2_woodland",
+	"CUP_arifle_Sa58V",
+	"CUP_arifle_Sa58V_wood",
+	"CUP_arifle_Sa58V_rearris",
+	"CUP_arifle_Sa58V_frontris",
+	"CUP_arifle_Sa58RIS1_woodland",
+	"CUP_arifle_Sa58RIS1_des",
 
     "rhs_weap_akmn",
     "rhs_weap_ak103",
@@ -2836,6 +2842,8 @@ if (_tracer isEqualTo 'red') then {
         //============================================================
         "KAR_20Rnd_Fury_RT",
         "KAR_20Rnd_Fury_RT_blk",
+		"mjb_KAR_20Rnd_Fury_IR",
+		"mjb_KAR_20Rnd_Fury_IR_blk",
         
         //============================================================
         //6.8 Ammo
@@ -2891,7 +2899,10 @@ if (_tracer isEqualTo 'red') then {
 
     _itemWeaponSFMGAmmo =
     [
-        "KAR_100Rnd_Fury_RT"
+        "KAR_100Rnd_Fury_RT",
+		"mjb_KAR_100Rnd_Fury_RT_TE4",
+		"mjb_KAR_100Rnd_Fury_IR",
+		"mjb_KAR_100Rnd_Fury_IR_TE4"
     ];
 
     _itemWeaponSFSharpshooterAmmo = 
@@ -2945,6 +2956,8 @@ if (_tracer isEqualTo 'red') then {
 		//Loose ammo
         "greenmag_ammo_580x42_basic_60Rnd",
         "greenmag_ammo_580x42_basic_30Rnd",
+        "greenmag_ammo_545x39_basic_60Rnd",
+        "greenmag_ammo_545x39_basic_30Rnd",
 
 		//============================================================
 		//7.62x51mm
@@ -3055,6 +3068,8 @@ if (_tracer isEqualTo 'red') then {
         "KAR_20Rnd_Fury_YT_blk",
         "KAR_20Rnd_Fury_GT",
         "KAR_20Rnd_Fury_YT",
+		"mjb_KAR_20Rnd_Fury_IR",
+		"mjb_KAR_20Rnd_Fury_IR_blk",
 
         //============================================================
         //6.8 Ammo
@@ -3122,7 +3137,11 @@ if (_tracer isEqualTo 'red') then {
         //.277 Ammo
         //============================================================		
         "KAR_100Rnd_Fury_GT",
-        "KAR_100Rnd_Fury_YT"
+        "KAR_100Rnd_Fury_YT",
+		"mjb_KAR_100Rnd_Fury_GT_TE4",
+		"mjb_KAR_100Rnd_Fury_YT_TE4",
+		"mjb_KAR_100Rnd_Fury_IR",
+		"mjb_KAR_100Rnd_Fury_IR_TE4"
     ];
 
 	_itemWeaponARAmmo =
@@ -3835,6 +3854,7 @@ private _itemWeaponGL =
 	"rhs_mag_M433_HEDP",
 
 	"mjb_blug",
+	"mjb_M576buck",
 
     //Rusfor
     "CUP_1Rnd_HE_GP25_M",
