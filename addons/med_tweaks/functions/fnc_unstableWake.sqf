@@ -9,7 +9,11 @@ private _knockTime = cba_missionTime;
 private _delay = mjb_med_tweaks_unstableWakeDelay;
 private _softCap = mjb_med_tweaks_unstableWakeSoftCap;
 _unit setVariable ['mjb_unstableWake',_knockTime];
-sleep _delay;
+if (mjb_med_tweaks_unstableStartDelay) then {
+	sleep _delay;
+} else {
+	waitUntil { sleep 0.1; !(alive _unit) || {isAwake _unit} };
+};
 if (10e9 < (_unit getVariable ['ace_medical_lastWakeUpCheck',0])) exitWith {};
 while {alive _unit && { (_unit getVariable ['ace_isUnconscious',false]) }} do {
 	if ((_unit getVariable ['mjb_unstableWake',0]) isNotEqualTo _knockTime) exitWith {};

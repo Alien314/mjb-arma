@@ -84,6 +84,15 @@ private _title = "MJB Arma Medical";
 ] call CBA_fnc_addSetting;
 
 [
+    "mjb_med_tweaks_unstableStartDelay",
+    "CHECKBOX",
+    ["Delay First Roll", "Whether first roll will be delayed by the frequency, otherwise rolls immediately on exiting ragdoll."],
+    [_title, "Unstable Wake"],
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
     "mjb_med_tweaks_unstableWakeSoftCap",
     "SLIDER",
     ["Unstable Wake Uncon Soft Cap", "Time after which chance to wake up starts increasing based on time spent unconscious. +50% at double this value, +100% at triple this value."],
