@@ -1988,6 +1988,13 @@ private _itemWeaponRifle =
 	"CUP_arifle_HK416_Wood",
     "rhs_weap_hk416d145",
 
+	"CUP_arifle_L85A2",
+	"CUP_arifle_L85A2_NG",
+	"CUP_arifle_L85A2_G",
+
+	"mjb_cup_eiw97",
+	"mjb_cup_eiw97_ng",
+
     "CUP_arifle_Mk17_STD_FG",
     "CUP_arifle_Mk17_STD_FG_black",
     "CUP_arifle_Mk17_STD_FG_woodland",
