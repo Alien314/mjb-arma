@@ -758,12 +758,38 @@ class CfgMagazines
 	};
 	IRMAG(mjb_CUP_120Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M,CUP_120Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M,ACE_B_762x51_Tracer_Dim,7.62mm 120Rnd MG-3 (IR-DIM TE4) Box);
 
-   
+	IRMAG(mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_FNFAL_M,CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M,mjb_CUP_B_762x51_Ball_IR,7.62mm 20Rnd FAL (IR-DIM TE4) Mag);
+	IRMAG(mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_SCAR,CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR,mjb_CUP_B_762x51_Ball_IR,7.62mm 20Rnd SCAR (IR-DIM TE4) Mag);
+	IRMAG(mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_HK417,CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417,mjb_CUP_B_762x51_Ball_IR,7.62mm 20Rnd HK417 (IR-DIM TE4) Mag);
+	IRMAG(mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_G3,CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3,mjb_CUP_B_762x51_Ball_IR,7.62mm 20Rnd G3 (IR-DIM TE4) Mag);
+	IRMAG(mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_DMR,CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR,mjb_CUP_B_762x51_Ball_IR,7.62mm 20Rnd M14 (IR-DIM TE4) Mag);
+
 	IRMAG(mjb_CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_IR_M,CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M,mjb_CUP_B_762x54_Ball_IR,7.62mm 100Rnd PKM (IR-DIM TE4) Box);
+
+
+	IRMAG(mjb_CUP_30Rnd_TE1_IR_Tracer_762x39_AK47_M,CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_M,mjb_CUP_B_762x39_Ball_IR,7.62mm 30Rnd AKM (IR-DIM Tracer) Mag);
+	IRMAG(mjb_CUP_30Rnd_Sa58_M_TracerIR,CUP_30Rnd_Sa58_M_TracerY,mjb_CUP_B_762x39_Ball_IR,7.62mm 30Rnd Sa vz. 58 (IR-DIM Tracer) Mag);
+
+	class mjb_CUP_75Rnd_TE4_LRT4_IR_Tracer_762x39_RPK_M : CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M {
+		ammo = QUOTE(mjb_CUP_B_762x39_Ball_IR);
+		displayName = "7.62mm 75Rnd RPK (IR-DIM TE4) Mag";
+		displayNameShort = "IR Tracer";
+	}
+	class mjb_CUP_75Rnd_TE4_LRT4_Red_Tracer_762x39_RPK_M : CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M {
+		ammo = "CUP_B_762x39_Ball_Tracer_Red";
+		displayName = "7.62mm 75Rnd RPK (Red TE4) Drum";
+		displayNameShort = "Red Tracer";
+	};
+	class mjb_CUP_75Rnd_TE4_LRT4_Yellow_Tracer_762x39_RPK_M : CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M {
+		ammo = "CUP_B_762x39_Ball_Tracer_Yellow";
+		displayName = "7.62mm 75Rnd RPK (Yellow TE4) Drum";
+		displayNameShort = "Yellow Tracer";
+	};
 
 	class mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M : CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M {
 		ammo = "mjb_CUP_B_545x39_Ball_IR";
 		displayName = "5.45mm 95Rnd RPK (IR-DIM TE4) Drum";
+		displayNameShort = "IR Tracer";
 		descriptionShort = "Caliber: 5.45x39 mm <br/>Rounds: 95  <br/>Used in: RPK-74";
 		greenmag_basicammo = "greenmag_ammo_545x39_basic_1Rnd";
 		initSpeed = 880;
@@ -772,20 +798,28 @@ class CfgMagazines
 	class mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M : mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M {
 		ammo = "CUP_B_545x39_Ball_Tracer_Red";
 		displayName = "5.45mm 95Rnd RPK (Red TE4) Drum";
+		displayNameShort = "Red Tracer";
 	};
 	class mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M : mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M {
 		ammo = "CUP_B_545x39_Ball_Tracer_Yellow";
 		displayName = "5.45mm 95Rnd RPK (Yellow TE4) Drum";
+		displayNameShort = "Yellow Tracer";
 	};
 	class mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M : mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M {
 		ammo = "CUP_B_545x39_Ball_Tracer_Green";
 		displayName = "5.45mm 95Rnd RPK (Green TE4) Drum";
+		displayNameShort = "Green Tracer";
 	};
+
+
+	IRMAG(mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M,CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74M_M,mjb_CUP_B_545x39_Ball_IR,5.45mm 30Rnd AK (IR-DIM Tracer) Mag);
+	IRMAG(mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M,CUP_60Rnd_TE1_Yellow_Tracer_545x39_AK74M_M,mjb_CUP_B_545x39_Ball_IR,5.45mm 60Rnd AK (IR-DIM Tracer) Mag);
 
 
 	class mjb_CUP_100Rnd_TE4_IR_Tracer_545x39 : mjb_CUP_100Rnd_TE4_IR_Tracer_556x45_M249 {
 		ammo = "mjb_CUP_B_545x39_Ball_IR";
 		displayName = "5.45mm 100Rnd RPK SPU (IR-DIM TE4) Pouch";
+		displayNameShort = "IR Tracer";
 		descriptionShort = "Caliber: 5.45x39 mm <br/>Rounds: 100  <br/>Used in: RPK SPU";
 	};
 
@@ -1040,17 +1074,17 @@ class CfgMagazineWells {
 
 	class CBA_545x39_AK {
 		mjb_mags[] = {
-			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"
+			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M","mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M"
 		};
 	};
 	class CBA_545x39_RPK {
 		mjb_mags[] = {
-			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"
+			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M","mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M"
 		};
 	};
 	class AK_545x39 {
 		mjb_mags[] = {
-			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"
+			"mjb_CUP_95Rnd_TE4_LRT4_IR_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Red_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Yellow_Tracer_545x39_RPK_M","mjb_CUP_95Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M","mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M"
 		};
 	};
 
@@ -1108,9 +1142,51 @@ class CfgMagazineWells {
 		};
 	};
 
+	class CBA_762x39_AK {
+		mjb_mags[] = {
+			"mjb_CUP_30Rnd_TE1_IR_Tracer_762x39_AK47_M"
+		};
+	};
+	class CBA_762x39_RPK {
+		mjb_mags[] = {
+			"mjb_CUP_75Rnd_TE4_LRT4_IR_Tracer_762x39_RPK_M","mjb_CUP_75Rnd_TE4_LRT4_Red_Tracer_762x39_RPK_M","mjb_CUP_75Rnd_TE4_LRT4_Yellow_Tracer_762x39_RPK_M"
+		};
+	};
+	class CBA_762x39_VZ58 {
+		mjb_mags[] = {
+			"mjb_CUP_30Rnd_Sa58_M_TracerIR"
+		};
+	};
+
 	class CBA_762x51_LINKS {
 		mjb_mags[] = {
 			"mjb_CUP_100Rnd_TE4_LRT4_IR_Tracer_762x51_Belt_M"
+		};
+	};
+
+	class CBA_762x51_FAL {
+		mjb_mags[] = {
+			"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_FNFAL_M"
+		};
+	};
+	class CBA_762x51_G3 {
+		mjb_mags[] = {
+			"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_G3"
+		};
+	};
+	class CBA_762x51_HK417 {
+		mjb_mags[] = {
+			"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_HK417"
+		};
+	};
+	class CBA_762x51_M14 {
+		mjb_mags[] = {
+			"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_DMR"
+		};
+	};
+	class CBA_762x51_SCAR {
+		mjb_mags[] = {
+			"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_SCAR"
 		};
 	};
 
