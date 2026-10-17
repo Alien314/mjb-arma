@@ -118,21 +118,22 @@ class CfgAmmo
 	};
 	IRAMMO(mjb_CUP_B_762x54_Ball_IR,CUP_B_762x54_Ball_Yellow_Tracer,0.42);
 	IRAMMO(mjb_CUP_B_545x39_Ball_IR,CUP_B_545x39_Ball_Tracer_Yellow,0.32);
+	IRAMMO(mjb_CUP_B_762x39_Ball_IR,CUP_B_762x39_Ball_Tracer_Yellow,0.38);
 
 	class GrenadeBase;
 	class G_40mm_HE: GrenadeBase
 	{
-		cost = 1;
+		cost = 2;
 		allowAgainstInfantry = 1;
 		aiAmmoUsageFlags = "64 + 128 + 512";
 	};
 	class G_20mm_HE: G_40mm_HE
 	{
-		cost = 1;
+		cost = 2;
 		allowAgainstInfantry = 1;
 	};
 	class G_40mm_HEDP : G_40mm_HE {
-		cost = 1;
+		cost = 2;
 		allowAgainstInfantry = 1;
 	};
 	// fix missing penetrator
