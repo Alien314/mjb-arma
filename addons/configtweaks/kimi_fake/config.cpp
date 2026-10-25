@@ -9,9 +9,8 @@ class CfgPatches {
 		name = "Kimi's HMD fake";
 		requiredAddons[]=
 		{
-			"GTO_HMD_Core"
 		};
 		skipWhenMissingDependencies = 1;
-		//skipWhenAnyAddonPresent[] = {"Kimi_HMDs_CUP"};
+		skipWhenAnyAddonPresent[] = {"Kimi_HMDs_Helos"};
 	};
 };
