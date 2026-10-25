@@ -879,12 +879,12 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		aiRateOfFireDispersion = 2; // 0
 		aiRateOfFireDistance = 60; // 60
 		//maxRange = 60; // 60
-		maxRangeProbab = 0.5; // 0.03 // 1.015
+		maxRangeProbab = 1.015; // 0.03 // 1.015
 		//midRange = 45; // 45
-		midRangeProbab = 0.9; // 0.9
+		midRangeProbab = 1.015; // 0.9
 		//minRange = 10; // 10
 		minRange = 15; // 10
-		minRangeProbab = 0.5; // 0.2
+		minRangeProbab =1.015; // 0.2
 		//minRangeProbab = 0.2; // 0.2
 	};
 
@@ -948,11 +948,11 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		aiRateOfFireDispersion = 90;
 		aiRateOfFireDistance = 400;
 		maxRange = 400;
-		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		maxRangeProbab = 0.5; // 0.05
 		midRange = 200;
 		midRangeProbab = DGT_PROB_UGL; // 0.7
 		minRange = 20;
-		minRangeProbab = DGT_PROB_UGL; // 0.1
+		minRangeProbab = 0.3; // 0.1
 	};
   };
 
