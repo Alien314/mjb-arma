@@ -807,6 +807,32 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	};
   };
 
+  // M136 CS
+  class mjb_CUP_launch_M136CS_loaded : CUP_launch_M136_Loaded {
+	displayName = "M136-CS";
+	baseWeapon = "mjb_CUP_launch_136CS";
+    //hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m136cs_co.paa"}; // not supported ;-;
+	ace_overpressure_angle = 30;
+	ace_overpressure_damage = 0.6;
+	ace_overpressure_range = 2;
+  };
+  class mjb_CUP_launch_M136CS : mjb_CUP_launch_M136CS_loaded {
+	baseWeapon = "mjb_CUP_launch_M136CS";
+	displayName = "M136-CS";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	scope = 2;
+	scopeArsenal = 2;
+  };
+  class mjb_CUP_launch_M136CS_Used : mjb_CUP_launch_M136CS_loaded {
+	displayName = "M136-CS (Used)";
+	baseWeapon = "mjb_CUP_launch_M136CS_Used";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 107.4;
+	};
+	model = "\CUP\Weapons\CUP_Weapons_M136\CUP_AT4_used.p3d";
+  };
+
   // M72A8
   class mjb_launch_M72A10_Loaded : CUP_launch_M72A6_Loaded {
 	displayName = "M72A8 (HEDP)";
@@ -828,7 +854,9 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	displayName = "M72A8 (Used)";
 	baseWeapon = "mjb_launch_M72A10_used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
-	mass = 17.3;
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 17.3;
+	};
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
   };
 
@@ -853,7 +881,9 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	displayName = "M72A10 (Used)";
 	baseWeapon = "mjb_launch_M72A10_HE_Used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
-	mass = 17.3;
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 17.3;
+	};
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
   };
 
@@ -879,12 +909,12 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		aiRateOfFireDispersion = 2; // 0
 		aiRateOfFireDistance = 60; // 60
 		//maxRange = 60; // 60
-		maxRangeProbab = 1.015; // 0.03 // 1.015
+		maxRangeProbab = 0.8; // 0.03 // 1.015
 		//midRange = 45; // 45
 		midRangeProbab = 1.015; // 0.9
 		//minRange = 10; // 10
 		minRange = 15; // 10
-		minRangeProbab =1.015; // 0.2
+		minRangeProbab =0.8; // 0.2
 		//minRangeProbab = 0.2; // 0.2
 	};
 
@@ -1343,6 +1373,7 @@ class mjb_Integrated_NVG_TI_1_WP : Integrated_NVG_TI_1_F {
 };
 
 class CBA_DisposableLaunchers {
+	mjb_CUP_launch_M136CS_loaded[] = {"mjb_CUP_launch_M136CS","mjb_CUP_launch_M136CS_Used"};
 	mjb_launch_M72A10_Loaded[] = {"mjb_launch_M72A10","mjb_launch_M72A10_Used"};
 	mjb_launch_M72A10_HE_Loaded[] = {"mjb_launch_M72A10_HE","mjb_launch_M72A10_HE_Used"};
 };
