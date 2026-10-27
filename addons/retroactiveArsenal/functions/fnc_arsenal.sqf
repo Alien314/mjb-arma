@@ -5227,24 +5227,29 @@ switch (true) do
 
 		player setVariable ['dui_unitType', "rifleman", true];
     };
-	//*
     case (_unitRole in ["plt","B_commander_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
 		player setVariable ['dui_unitType', "commander", true];
-    };//*/
-	//*
+    };
     case (_unitRole in ["tl","B_officer_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
 		player setVariable ['dui_unitType', "officer", true];
-    };//*/
-    case (_unitRole in _leaderRole) :
+    };
+    case (_unitRole in ["jtac","B_Recon_JTAC_F","B_T_Recon_JTAC_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "jtac", true];
+    };
+    case (_unitRole in _leaderRole) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		if (player in [JTAC,JTAC_1,JTAC_2,JTAC2,JTAC2_1,JTAC2_2]) exitWith {player setVariable ['dui_unitType', "jtac", true];}; //temp
+		if (player in [PL_1,PL_6,PL_2,PL_10,PL,PL_8]) exitWith {player setVariable ['dui_unitType', "commander", true];}; //temp
 		player setVariable ['dui_unitType', "sql", true];
     };
     case (_unitRole in ["r","B_Soldier_F"]) :
@@ -5303,6 +5308,8 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle + _itemWeaponSFGL)] call ace_arsenal_fnc_initBox;
 
+		if (player in [SFL_1,SFL_2,SFL]) exitWith {player setVariable ['dui_unitType', "commander", true]; player setUnitTrait ["Medic", true];}; //temp
+		if (player isKindOf "B_Recon_JTAC_F") exitWith {player setVariable ['dui_unitType', "jtac", true]; player setUnitTrait ["Medic", true];}; //temp
 		player setVariable ['dui_unitType', "sql", true];
         player setUnitTrait ["Medic", true];
     };
