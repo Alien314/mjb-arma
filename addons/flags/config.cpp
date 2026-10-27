@@ -12,6 +12,14 @@ class CfgPatches {
 	};
 };
 
+class diwako_dui_icon_style
+{
+    class standard
+    {
+		jtac = "z\mjb\addons\flags\data\iconJTAC_ca.paa";
+	};
+};
+
 class CfgUnitInsignia
 {
 	class RATS
