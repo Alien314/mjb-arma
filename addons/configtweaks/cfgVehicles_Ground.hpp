@@ -84,6 +84,7 @@ class Tank: LandVehicle {
 
 class Tank_F : Tank {
 	class Hitpoints;
+	class Turrets;
 };
 class APC_Tracked_02_base_F;
 
@@ -211,3 +212,18 @@ class CUP_ZSU23_Base : Tank_F {
 class CDF_Ext_T72_BASE : Tank_F {
 	driverForceOptics = 0;
 };*/
+
+// fix can't slot commander
+class CUP_T90M_Base : Tank_F {
+	class NewTurret;
+	class MainTurret;
+	class Turrets : Turrets {
+		class MainTurret : MainTurret {
+			class Turrets : Turrets {
+				class CommanderPeriscope : NewTurret {
+					primaryObserver = 0;
+				};
+			};
+		};
+	};
+};
