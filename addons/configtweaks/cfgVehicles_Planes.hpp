@@ -18,9 +18,16 @@ class Plane_Fighter_03_base_F : Plane_Base_F { // L159 ALCA
 //acceleration = 300; // def 220
 maxSpeed = 940; // def 800 kph
 //thrustCoef[] = {1.42,1.38,1.34,1.3,1.25,1.2,1.19,1.18,1.17,1.17,1.16,1.16,0.1,0,0,0,0};
+};*/
+class Plane_Fighter_03_dynamicLoadout_base_F;
+class I_Plane_Fighter_03_dynamicLoadout_F : Plane_Fighter_03_dynamicLoadout_base_F {
+	scopeCurator = 2;
+};
+class I_Plane_Fighter_03_Cluster_F : I_Plane_Fighter_03_dynamicLoadout_F {
+	scope = 2;
 };
 
-// supersonic jets
+/*/ supersonic jets
 class Plane_Fighter_01_Base_F : Plane_Base_F { // black wasp
 //acceleration = 300; // def 200, not relevant to planes?
 maxSpeed = 1900; // def 1200 kph
