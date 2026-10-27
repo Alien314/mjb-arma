@@ -847,6 +847,27 @@ class CfgMagazines
 		displayName = "M789 Combo-Pak White";
 		count = 300;
 	};
+
+	class PylonRack_Bomb_SDB_x4;
+	class ace_missile_sdb_PylonRack_bomb_SDB_x4 : PylonRack_Bomb_SDB_x4 {
+		hardpoints[] += {"CUP_MISSILE_INTERNAL"};
+	};
+
+	class mjb_ace_missile_sdb_PylonRack_bomb_SDB_x3 : ace_missile_sdb_PylonRack_bomb_SDB_x4 {
+		count = 3;
+		displayName = "3x GBU-39 SDB [ACE]";
+	};
+	class mjb_ace_missile_sdb_PylonRack_bomb_SDB_x2 : mjb_ace_missile_sdb_PylonRack_bomb_SDB_x3 {
+		count = 2;
+		displayName = "2x GBU-39 SDB [ACE]";
+		hardpoints[] = {"B_SDB_QUAD_RAIL","B_GBU12_DUAL_RAIL","I_GBU12_DUAL_RAIL","B_BOMB_PYLON","CUP_MISSILE_INTERNAL"};
+	};
+	class mjb_ace_missile_sdb_PylonRack_bomb_SDB_x1 : mjb_ace_missile_sdb_PylonRack_bomb_SDB_x3 {
+		count = 1;
+		displayName = "1x GBU-39 SDB [ACE]";
+		hardpoints[] = {"B_SDB_QUAD_RAIL","B_GBU12","I_GBU12","B_BOMB_PYLON","CUP_MISSILE_INTERNAL"};
+	};
+	
 	
 
 #if __has_include("\rhsafrf\addons\rhs_c_weapons\script_component.hpp")
