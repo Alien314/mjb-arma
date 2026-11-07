@@ -762,6 +762,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 
   // squeak two at4 into kitbag
   class CUP_launch_M136_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 137.4;
 	};
@@ -773,6 +774,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   };
   class CUP_launch_M72A6_Loaded : Launcher_Base_F {
 	displayName = "M72A5";
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		//class CowsSlot : CUP_PicatinnyTopShortMount {}; // puts your eye in the tube
 		mass = 57.3;
@@ -791,17 +793,20 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
     displayName = "M72A5 (Special)(Used)";
   };
   class CUP_launch_RPG18_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 57.3;
 	};
   };
   class CUP_launch_RPG26_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 64;
 	};
   };
   class CUP_launch_RShG2_Loaded : Launcher_Base_F {
 	displayName = "RShG-2 (Thermobaric)";
+	descriptionShort = "Anti-Structure launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 88.2;
 	};
@@ -810,6 +815,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   // M136 CS
   class mjb_CUP_launch_M136CS_loaded : CUP_launch_M136_Loaded {
 	displayName = "M136-CS";
+	descriptionShort = "Anti-tank launcher<br/>Unguided, Confined Spaces";
 	baseWeapon = "mjb_CUP_launch_136CS";
     //hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m136cs_co.paa"}; // not supported ;-;
 	ace_overpressure_angle = 30;
@@ -836,6 +842,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   // M72A8
   class mjb_launch_M72A10_Loaded : CUP_launch_M72A6_Loaded {
 	displayName = "M72A8 (HEDP)";
+	descriptionShort = "Dual-Purpose launcher<br/>Unguided, Fire From Enclosure";
 	magazines[] = {"mjb_M72A10_M"};
 	baseWeapon = "mjb_launch_M72A10";
     hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a8_co.paa"};
@@ -863,6 +870,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   // M72A10
   class mjb_launch_M72A10_HE_Loaded : CUP_launch_M72A6_Loaded {
 	displayName = "M72A10 (HE)";
+	descriptionShort = "Anti-Structure launcher<br/>Unguided, Fire From Enclosure";
 	magazines[] = {"mjb_M72A10_HE_M"};
 	baseWeapon = "mjb_launch_M72A10_HE";
     hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a10_co.paa"};
