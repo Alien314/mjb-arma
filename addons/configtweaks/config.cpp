@@ -40,16 +40,21 @@ class CfgBrains {
 
 // No greenmag spaghetti tweak
 class CfgInventoryGlobalVariable { maxSoldierLoad = 9001; };
-
+//
 class CfgRecoils {
   class recoil_default;
   class recoil_mk200 : recoil_default {
-	muzzleOuter[] = {"0.4*0.2","0.6*1", "0.4*1" ,"0.2*1"};
+	//kickBack[] = {0.042,0.084};
+	muzzleOuter[] = {0.08,0.6,0.3,0.2}; //muzzleOuter[] = {0.08,0.6,0.6,0.2};
+	//temporary = 0.008; //temporary = 0.012; // added to the permanent recoil
   };
   class recoil_zafir : recoil_default {
-	muzzleOuter[] = {"0.5*0.2","1*1", "0.5*1" ,"0.3*1"};
+	//kickBack[] = {0.028,0.112};
+	muzzleOuter[] = {0.1,1,0.4,0.3}; //muzzleOuter[] = {0.1,1,0.7,0.3};
+	//temporary = 0.012;
   };
 };
+//*/
 
 // zero collapse damage
 class CfgDamageAround {
