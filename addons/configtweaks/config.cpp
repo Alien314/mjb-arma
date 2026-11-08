@@ -84,6 +84,7 @@ class CfgDamageAround {
 
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class Mode_Burst;
 
 
 
