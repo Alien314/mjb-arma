@@ -1090,7 +1090,12 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		class Single : Single {};
     };
   };*/
-  class CUP_arifle_xm29_ke_base;
+
+  class CUP_arifle_xm29_ke_base : Rifle_Base_F {
+	class Burst : Mode_Burst {
+		textureType = "dual";
+	};
+  };
   class CUP_arifle_xm29_he_base : CUP_arifle_xm29_ke_base {
 	class XMHEMuzzle : Rifle_Base_F {
 		aiDispersionCoefX = 6;
@@ -1112,12 +1117,6 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 			minRangeProbab = DGT_PROB_UGL; // 0.1
 		};
     };
-  };
-
-  class CUP_arifle_xm29_ke_base : Rifle_Base_F {
-	class Burst : Mode_Burst {
-		textureType = "dual";
-	};
   };
 
 
