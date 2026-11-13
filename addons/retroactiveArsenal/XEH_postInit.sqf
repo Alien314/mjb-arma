@@ -1,5 +1,6 @@
 #include "settings.sqf"
 if (isServer) then {
+	missionNamespace setVariable ["mjb_isIMSLoaded",(isClass (configFile >> "CfgPatches" >> "WBK_IMS_Mechanics")),true];
 	if (isMultiplayer) then {
 		mjb_disconnectHandle = (addMissionEventHandler ["HandleDisconnect", { params ["_unit","_id","_uid"];
 			// allow medical as if player
