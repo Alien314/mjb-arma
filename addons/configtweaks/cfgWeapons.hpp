@@ -1123,8 +1123,19 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   class CUP_arifle_AK74M : CUP_arifle_AK_Base {
 	class Burst;
   };
+  class CUP_arifle_AK74M_top_rail: CUP_arifle_AK74M {};
   class mjb_CUP_arifle_AK94 : CUP_arifle_AK74M {
 	displayName = "AK-94";
+	class Burst : Burst {
+		burst = 2;
+		ffCount = 2;
+		reloadTime = "(60 / (1800))";
+		showToPlayer = 1;
+		textureType = "dual";
+	};
+  };
+  class mjb_CUP_arifle_AK94_top_rail : CUP_arifle_AK74M_top_rail {
+	displayName = "AK-94 (RIS Mount)";
 	class Burst : Burst {
 		burst = 2;
 		ffCount = 2;
