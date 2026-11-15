@@ -2110,6 +2110,9 @@ private _itemWeaponRifle =
     "CUP_arifle_AK12_winter",
     "CUP_arifle_AK12_wood",
 
+	"CUP_arifle_AK107",
+	"CUP_arifle_AK107_top_rail",
+
 	//============================================================
     //7.62x39mm
     //============================================================
@@ -3846,6 +3849,8 @@ private _itemWeaponGL =
     "CUP_arifle_AK74M_GL",
     "CUP_arifle_AK74M_GL_railed",
     "CUP_arifle_AK12_GP34_bicolor",
+	"CUP_arifle_AK107_GL",
+	"CUP_arifle_AK107_GL_top_rail",
 
     "rhs_weap_ak74m_gp25",
 
@@ -4284,12 +4289,6 @@ private _itemSF =
 	"CUP_V_B_Ciras_Khaki",
 
     //Weapons
-    "CUP_arifle_AK107_railed",
-    "CUP_arifle_AK108_railed",
-    "CUP_arifle_AK109_railed",
-    "CUP_arifle_AK12_AFG_bicolor",
-    "CUP_arifle_AK15_VG_bicolor",
-    "CUP_arifle_AK19_bicolor",
     "CUP_smg_MP5SD6",
     "CUP_sgun_AA12",
 
@@ -4410,6 +4409,17 @@ _itemWeaponSFMG append _itemWeaponSFMGAmmo;
 
 private _itemWeaponSFRifle =
 [
+	// normal
+    "CUP_arifle_AK107_railed",
+    "CUP_arifle_AK108_railed",
+    "CUP_arifle_AK109_railed",
+    "CUP_arifle_AK12_AFG_bicolor",
+    "CUP_arifle_AK15_VG_bicolor",
+    "CUP_arifle_AK19_bicolor",
+
+	"mjb_CUP_arifle_AK94",
+	"mjb_CUP_arifle_AK94_top_rail",
+
     //.277 Fury
     "KAR_XM7",
     "KAR_XM7_BLK",
