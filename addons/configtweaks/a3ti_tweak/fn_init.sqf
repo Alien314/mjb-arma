@@ -19,7 +19,7 @@ if !(isNil {_zeusIDD}) then {
 			waitUntil{sleep 0.1; !isNull(findDisplay _zeusIDD)};
 			[] spawn FNC(cameraViewEH);
 			//for when they change from vanilla DTV TO vanilla NV
-			(findDisplay (_zeusIDD)) displayAddEventHandler ["KeyDown", { if !(_keyCode in (actionKeys "curatorNightvision")) exitWith {}; _this spawn FNC(vanillaCycleVisionEH); }];
+			(findDisplay (_zeusIDD)) displayAddEventHandler ["KeyDown", { params ['','_keyCode']; if !(_keyCode in (actionKeys "curatorNightvision")) exitWith {}; _this spawn FNC(vanillaCycleVisionEH); }];
 			waitUntil{sleep 0.1; isNull(findDisplay _zeusIDD)};
 			//exit view, reset vision
 			[] spawn FNC(cameraViewEH);
