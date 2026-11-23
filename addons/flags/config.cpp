@@ -163,6 +163,15 @@ class CfgVehicles {
         hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\CUP_assaultpack_ucp_Winter.paa"};
     };
 
+	class B_Kitbag_mcamo;
+  
+    class mjb_B_Kitbag_wcamo : B_Kitbag_mcamo
+    {
+        displayName = "Kitbag (Winter)";
+        hiddenSelectionsTextures[] = {"z\mjb\addons\flags\data\backpack_fast_wcamo_co.paa"};	
+		picture = "\z\mjb\addons\flags\data\icon_B_C_Kitbag_wcamo.paa";
+    };
+
 	class CUP_BTR80_Common_Base;
 	class CUP_BTR80_Base : CUP_BTR80_Common_Base
 	{
@@ -273,6 +282,7 @@ class CfgWeapons
 	class U_B_CombatUniform_mcamW : U_B_CombatUniform_mcam {
 		displayName = "Combat Fatigues (MTP-Winter)";
 		hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\suitpack_soldier_blufor_w_co.paa"};
+		picture = "\z\mjb\addons\flags\data\icon_U_B_CombatUniform_wcam_ca.paa";
 		class ItemInfo : ItemInfo {
 			uniformClass = "mjb_Soldier_W_F";
 		};
