@@ -2,7 +2,7 @@ class CfgPatches {
   class mjb_arsenal {
 	ammo[] = {};
 	magazines[] = {};
-    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleVcom","mjb_moduleSetUnitRole","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors","mjb_moduleNoMagnified","mjb_moduleAddJTAC"};//mjb_modulePersist
+    units[] = {"mjb_moduleArsenal","mjb_moduleArsenalMission","mjb_moduleEnd","mjb_moduleResync","mjb_moduleAllMedic","mjb_moduleMoveArsenal","mjb_moduleToggleGroupMarker","mjb_moduleUnlock","mjb_moduleNoTab","mjb_moduleLightsOutEMP","mjb_moduleSetUnitRole","mjb_moduleAdminMenu","mjb_moduleToggleTI","mjb_moduleAllowAIUncon","mjb_moduleLockDoors","mjb_moduleNoMagnified","mjb_moduleAddJTAC","mjb_moduleTerrandomMicro"};//mjb_modulePersist,"mjb_moduleVcom","mjb_moduleSebTableMark","mjb_moduleSebTableArea","mjb_moduleSebTableClear"
     weapons[] = {};
     requiredVersion = 0.1;
     author = "Alien314";
@@ -393,6 +393,13 @@ class CfgVehicles
 		function = "mjb_arsenal_fnc_moduleAddJTAC";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Designator_CA.paa";
 	};
+	class mjb_moduleTerrandomMicro : mjb_moduleBase {
+        //curatorCanAttach = 1;
+        displayName = "Generate Micro-terrain";
+		function = "mjb_arsenal_fnc_moduleTerrandomMicro";
+		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
+		portrait = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
+	};
     class mjb_moduleLockDoors : mjb_moduleBase {
 		category = "MJB_Breach";
 		is3DEN = 1;
@@ -440,6 +447,7 @@ class CfgVehicles
 			sync[] = { };
 		};
     };
+	/*
 	class mjb_moduleSebTableMark : mjb_moduleBase {
         category = "MJB_SEB";
         curatorCanAttach = 1;
@@ -467,7 +475,7 @@ class CfgVehicles
         displayName = "Change VCOM/TCL Settings (Unit/Vehicle/Ground for Global)";
 		function = "mjb_arsenal_fnc_moduleVCOM";
 		icon = "\A3\ui_f\data\GUI\Cfg\Hints\Tactical_view_ca.paa";
-	};
+	};*/
 };
 
 /*class RscDisplayAttributes;
