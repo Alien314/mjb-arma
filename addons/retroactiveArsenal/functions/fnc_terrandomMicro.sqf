@@ -1,5 +1,5 @@
 params ["_values", "_logic"];
-_values params ["_area","_struct","_rFac","_undo"];//,"_zOff"
+_values params ["_area","_struct","_incline","_rFac","_maxRaise","_undo","_cell"];//,"_zOff"
 
 private _pos = getPosASL _logic;
 getTerrainInfo params ["","","_terrainGW","_terrainGS","_SL"];
@@ -15,8 +15,7 @@ _logic addEventHandler ["Deleted", {
 
 private _center = _pos;
 private _start = [(_pos # 0) - _area, (_pos # 1) - _area];
-private _maxRaise = _terrainGW;
-private _maxAdjDiff = _terrainGW;
+private _maxAdjDiff = (_terrainGW / _incline);
 private _startX = (_start select 0);
 private _startY = (_start select 1);
 private _posHeights = [];
@@ -47,13 +46,20 @@ for "_posX" from _startX to (_startX + (2 * _area)) step _terrainGW do
 			if (_cheY > _terrainGW) then {
 				private _yMid = ( (_heightGrid select ( (_cheX / _terrainGW) - 1) ) select ( (_cheY / _terrainGW) - 2) );
 				_xMid = (random [_yMid min _xMid, selectRandom [_yMid,_xMid,(_yMid + _xMid) / 2], _yMid max _xMid]) + ((random (_terrainGW / 5)) - (_terrainGW / 10));
+				_newHeight = random [(_xMid - _terrainGW/((random _rFac) + 1)), _xMid, (_xMid + _terrainGW/((random _rFac) + 1))];//( (random (_terrainGW * 2) ) - _terrainGW)
+				_newHeight = (_xMid - _maxAdjDiff) max _newHeight min (_xMid + _maxAdjDiff);
+				_newHeight = (_yMid - _maxAdjDiff) max _newHeight min (_yMid + _maxAdjDiff);
+				//_newHeight = _xMid + ( (random _terrainGW ) ) - _terrainGW / 2);//( (random (_terrainGW * 2) ) - _terrainGW)
+			} else {
+				_newHeight = random [(_xMid - _terrainGW/((random _rFac) + 1)), _xMid, (_xMid + _terrainGW/((random _rFac) + 1))];//( (random (_terrainGW * 2) ) - _terrainGW)
+				_newHeight = (_xMid - _maxAdjDiff) max _newHeight min (_xMid + _maxAdjDiff);
+				//_newHeight = _xMid + ( (random _terrainGW ) ) - _terrainGW / 2);//( (random (_terrainGW * 2) ) - _terrainGW)
 			};
-			_newHeight = random [(_xMid - _terrainGW/((random _rFac) + 1)), _xMid, (_xMid + _terrainGW/((random _rFac) + 1))];//( (random (_terrainGW * 2) ) - _terrainGW)
-			//_newHeight = _xMid + ( (random _terrainGW ) ) - _terrainGW / 2);//( (random (_terrainGW * 2) ) - _terrainGW)
 		} else {
 			if (_cheY > _terrainGW && {_objs}) then {
 				private _yMid = ( (_heightGrid select ( (_cheX / _terrainGW) - 1) ) select ( (_cheY / _terrainGW) - 2) );
 				_newHeight = random [(_yMid - _terrainGW/((random _rFac) + 1)), _yMid, (_yMid + _terrainGW/((random _rFac) + 1))]; //( (random (_terrainGW * 2) ) - _terrainGW)
+				_newHeight = (_yMid - _maxAdjDiff) max _newHeight min (_yMid + _maxAdjDiff);
 			} else {  if (!_objs) exitWith {}; _newHeight = random [(_oldHeight - _terrainGW/((random _rFac) + 1)), _oldHeight, (_oldHeight + _terrainGW / ((random _rFac) + 1))];//_oldHeight + ( (random (_maxRaise * 2) ) - _maxRaise) };
 			};
 		};
