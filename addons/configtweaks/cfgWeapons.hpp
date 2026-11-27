@@ -205,6 +205,11 @@ class CfgWeapons {
 #else
 #endif
 
+	class weapon_SDBLauncher;
+	class ace_missile_sdb_sdb : weapon_SDBLauncher{
+		magazines[] += {"mjb_ace_missile_sdb_PylonRack_bomb_SDB_x3","mjb_ace_missile_sdb_PylonRack_bomb_SDB_x2","mjb_ace_missile_sdb_PylonRack_bomb_SDB_x1"};
+	};
+
 	class CUP_Vacannon_SPG9_veh : CannonCore {
         ace_overpressure_priority = 1;
         ace_overpressure_angle = 60;
@@ -213,6 +218,8 @@ class CfgWeapons {
         ace_overpressure_backblast = 1;
 		ace_overpressure_offset = 1.25;
 	};
+
+
   class Rifle;
   class Rifle_Base_F : Rifle { class WeaponSlotsInfo; };
   class Rifle_Short_Base_F : Rifle_Base_F { class WeaponSlotsInfo; };
