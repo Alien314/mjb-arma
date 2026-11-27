@@ -22,6 +22,7 @@ class CfgWeapons {
 	class U_B_CombatUniform_mcamW_W : U_B_CombatUniform_mcam_W {
 		displayName = "Combat Fatigues Woman (MTP-Winter)";
 		hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\suitpack_soldier_blufor_w_co.paa"};
+		picture = "\z\mjb\addons\flags\data\icon_U_B_CombatUniform_wcam_ca.paa";
 		class ItemInfo : ItemInfo {
 			uniformClass = "mjb_WB_Soldier_W_F";
 		};

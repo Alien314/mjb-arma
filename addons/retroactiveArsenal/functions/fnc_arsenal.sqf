@@ -1150,14 +1150,14 @@ _itemEquipment append _itemNVG;
 private _itemArmNVG = ("'Hartman' in (getText (_x >> 'author'))" configClasses (configFile >> "CfgWeapons") apply {configName _x}); // ['Aegis and Hartman','Anthrax and Hartman']
 _itemEquipment append _itemArmNVG;
 
-private _itemWeaponMelee =
+private _itemWeaponMelee = if (missionNamespace getVariable ["mjb_isIMSLoaded",false]) then {
 [
     "Crowbar",
     "WBK_Katana",
     "Weap_melee_knife",
     "Knife_kukri",
     "WBK_pipeStyledSword"
-];
+]} else {[]};
 _itemEquipment append _itemWeaponMelee;
 
 // Assault Packs are 16 lbs
@@ -2110,6 +2110,9 @@ private _itemWeaponRifle =
     "CUP_arifle_AK12_winter",
     "CUP_arifle_AK12_wood",
 
+	"CUP_arifle_AK107",
+	"CUP_arifle_AK107_top_rail",
+
 	//============================================================
     //7.62x39mm
     //============================================================
@@ -2826,6 +2829,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Red_Tracer_545x39_Fort224_M",
 		"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M",
 
+		"mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M",
+
 		//============================================================
 		//7.62x39mm
 		//============================================================
@@ -2833,8 +2838,10 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_Sa58_M_TracerR",
 		"CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_M",
         "CUP_30Rnd_TE1_Red_Tracer_762x39_AK103_bakelite_M",
-	    
 		"rhs_30Rnd_762x39mm_Savz58_tracer",
+
+		"mjb_CUP_30Rnd_TE1_IR_Tracer_762x39_AK47_M",
+		"mjb_CUP_30Rnd_Sa58_M_TracerIR",
 
 		//============================================================
 		//7.62x51mm
@@ -2846,6 +2853,12 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_HK417",
 		"CUP_20Rnd_TE1_Red_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR",
+
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_FNFAL_M",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_SCAR",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_HK417",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_G3",
+        "mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_DMR",
 	
 		//============================================================
 		//7.62x54mm
@@ -2908,13 +2921,17 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_60Rnd_545x39_AK74M_M",
 		"CUP_60Rnd_TE1_Red_Tracer_545x39_AK74M_M",
 
+		"mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M",
+
 		//============================================================
 		//7.62x39mm
 		//============================================================
 		"CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
 		"CUP_45Rnd_Sa58_M",
 		"CUP_45Rnd_Sa58_M_TracerR",
-		"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", // Only Green
+		//"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", // Only Green
+		"mjb_CUP_75Rnd_TE4_LRT4_Red_Tracer_762x39_RPK_M",
+		"mjb_CUP_75Rnd_TE4_LRT4_IR_Tracer_762x39_RPK_M",
 
 		//============================================================
 		//7.62x51mm
@@ -3053,6 +3070,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_30Rnd_TE1_Yellow_Tracer_545x39_Fort224_M",
 		"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74M_M",
 
+		"mjb_CUP_30Rnd_TE1_IR_Tracer_545x39_AK74M_M",
+
 		//============================================================
 		//7.62x39mm
 		//============================================================
@@ -3062,6 +3081,9 @@ if (_tracer isEqualTo 'red') then {
         "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK103_M",
 		"rhs_30Rnd_762x39mm_Savz58_tracer",
 
+		"mjb_CUP_30Rnd_TE1_IR_Tracer_762x39_AK47_M",
+		"mjb_CUP_30Rnd_Sa58_M_TracerIR",
+
 		//============================================================
 		//7.62x51mm
 		//============================================================
@@ -3070,6 +3092,12 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417",
 		"CUP_20Rnd_TE1_Yellow_Tracer_762x51_G3",
         "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",
+
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_FNFAL_M",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_SCAR",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_HK417",
+		"mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_G3",
+        "mjb_CUP_20Rnd_TE1_IR_Tracer_762x51_DMR",
 
 		//============================================================
 		//7.62x54mm
@@ -3136,6 +3164,8 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_60Rnd_545x39_AK74M_M",
 		"CUP_60Rnd_TE1_Yellow_Tracer_545x39_AK74M_M",
 
+		"mjb_CUP_60Rnd_TE1_IR_Tracer_545x39_AK74M_M",
+
 		//============================================================
 		//7.62x39mm
 		//============================================================
@@ -3143,6 +3173,9 @@ if (_tracer isEqualTo 'red') then {
 		"CUP_45Rnd_Sa58_M",
 		"CUP_45Rnd_Sa58_M_TracerY",
 		"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
+
+		"mjb_CUP_75Rnd_TE4_LRT4_IR_Tracer_762x39_RPK_M",
+		"mjb_CUP_75Rnd_TE4_LRT4_Yellow_Tracer_762x39_RPK_M",
 
 		//============================================================
 		//7.62x51mm
@@ -3816,6 +3849,8 @@ private _itemWeaponGL =
     "CUP_arifle_AK74M_GL",
     "CUP_arifle_AK74M_GL_railed",
     "CUP_arifle_AK12_GP34_bicolor",
+	"CUP_arifle_AK107_GL",
+	"CUP_arifle_AK107_GL_top_rail",
 
     "rhs_weap_ak74m_gp25",
 
@@ -4223,10 +4258,13 @@ private _itemSF =
     "CUP_U_O_RUS_Gorka_Green_gloves_kneepads",
     "CUP_V_B_Ciras_Black",
     "CUP_V_B_Ciras_Black2",
+	"CUP_V_B_Ciras_Black3",
     "CUP_V_B_Ciras_Khaki",
     "CUP_V_B_Ciras_Khaki2",
+    "CUP_V_B_Ciras_Khaki3",
     "CUP_V_B_Ciras_Olive",
     "CUP_V_B_Ciras_Olive2",
+    "CUP_V_B_Ciras_Olive3",
 
     "mjb_carryallplus_cbr",
     "mjb_carryallplus_taiga_F",
@@ -4251,12 +4289,6 @@ private _itemSF =
 	"CUP_V_B_Ciras_Khaki",
 
     //Weapons
-    "CUP_arifle_AK107_railed",
-    "CUP_arifle_AK108_railed",
-    "CUP_arifle_AK109_railed",
-    "CUP_arifle_AK12_AFG_bicolor",
-    "CUP_arifle_AK15_VG_bicolor",
-    "CUP_arifle_AK19_bicolor",
     "CUP_smg_MP5SD6",
     "CUP_sgun_AA12",
 
@@ -4377,6 +4409,17 @@ _itemWeaponSFMG append _itemWeaponSFMGAmmo;
 
 private _itemWeaponSFRifle =
 [
+	// normal
+    "CUP_arifle_AK107_railed",
+    "CUP_arifle_AK108_railed",
+    "CUP_arifle_AK109_railed",
+    "CUP_arifle_AK12_AFG_bicolor",
+    "CUP_arifle_AK15_VG_bicolor",
+    "CUP_arifle_AK19_bicolor",
+
+	"mjb_CUP_arifle_AK94",
+	"mjb_CUP_arifle_AK94_top_rail",
+
     //.277 Fury
     "KAR_XM7",
     "KAR_XM7_BLK",
@@ -5185,63 +5228,110 @@ switch (true) do
     case (_unitRole in ["ar","B_Soldier_AR_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms + _itemPackMedLight)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "auto_rifleman", true];
     };
     case (_unitRole in ["aar","B_Soldier_AAR_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _tarkovuniforms + _itemWeaponAR + _itemPackMedLight + ["Binocular"])] call ace_arsenal_fnc_initBox;// _itemPackMedium + 
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _tarkovuniforms + _itemWeaponAR + _itemPackMedLight + ["Binocular"])] call ace_arsenal_fnc_initBox;// _itemPackMedium +
+
+		player setVariable ['dui_unitType', "rifleman", true];
+    };
+    case (_unitRole in ["plt","B_commander_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "commander", true];
+    };
+    case (_unitRole in ["tl","B_officer_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "officer", true];
+    };
+    case (_unitRole in ["jtac","B_Recon_JTAC_F","B_T_Recon_JTAC_F"]) :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "jtac", true];
     };
     case (_unitRole in _leaderRole) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemBreacher + _itemSpecial + _itemMod + _itemReflexSight + _itemWeaponGL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+        private _jtacs = ["JTAC","JTAC_1","JTAC_2","JTAC2","JTAC2_1","JTAC2_2"] apply { missionNamespace getVariable [_x,objNull] };
+		if (player in _jtacs) exitWith {player setVariable ['dui_unitType', "jtac", true];}; //temp
+        private _plts = ["PL_1","PL_6","PL_2","PL_10","PL_8","PL"] apply { missionNamespace getVariable [_x,objNull] };
+		if (player in _plts) exitWith {player setVariable ['dui_unitType', "commander", true];}; //temp
+		player setVariable ['dui_unitType', "sql", true];
     };
     case (_unitRole in ["r","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "rifleman", true];
         //player setVariable ["ace_medical_medicClass", 1, true];
     };
     case (_unitRole in ["cls","B_medic_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemMedic)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
     };
     case (_unitRole in ["mat","B_Soldier_LAT_F"]) : // for old missions, will be wrong without tmf role
     {
 		if (count units _grp >= 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "at_gunner", true];
     };
         case (_unitRole in ["amat","B_T_Soldier_AAT_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "rifleman", true];
     };
         case (_unitRole in ["wpntl","B_T_Soldier_TL_F"]) :
     {
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemLeaderEquipment + _itemWeaponGL + _itemWeaponMMGAmmo + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemAmmoMAT + _itemLeaderEquipment + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "sql", true];
     };
         case (_unitRole in ["lat","B_Soldier_LAT2_F","B_Soldier_LAT_F"]) :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedLight + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
-    }; // + _itemWeaponRLAT
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedLight + _tarkovuniforms)] call ace_arsenal_fnc_initBox; // + _itemWeaponRLAT
+
+		player setVariable ['dui_unitType', "at_gunner", true];
+    };
         case (_unitRole in ["sniper","B_Sharpshooter_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSFRifle + _itemWeaponSFSharpshooter + _itemWeaponPistol + _itemWeaponCQB + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _itemLeaderEquipment + _tarkovuniforms + _itemSFScoutGhillies)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
         case (_unitRole in ["spotter","B_Spotter_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSFRifle + _itemWeaponSFSharpshooter + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSniper + _itemLeaderEquipment + _itemSniperAmmo + _tarkovuniforms + _itemSFScoutGhillies)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
         case (_unitRole in ["sfsl","B_recon_TL_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemSpecial + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemWeaponARAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle + _itemWeaponSFGL)] call ace_arsenal_fnc_initBox;
 
+        private _sfls = ["SFL_1","SFL_2","SFL"] apply { missionNamespace getVariable [_x,objNull] };
+		if (player in _sfls) exitWith {player setVariable ['dui_unitType', "commander", true]; player setUnitTrait ["Medic", true];}; //temp
+		if (player isKindOf "B_Recon_JTAC_F") exitWith {player setVariable ['dui_unitType', "jtac", true]; player setUnitTrait ["Medic", true];}; //temp
+		player setVariable ['dui_unitType', "sql", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfmed","B_recon_medic_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMedic + ["mjb_carryallplus_oucamo"] + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "medic", true];
         player setUnitTrait ["Medic", true];
         player setVariable ["ace_medical_medicClass", 2, true];
     };
@@ -5249,30 +5339,35 @@ switch (true) do
     {
         [arsenal, ((_itemEquipment + _itemFacewear + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFMAT + _itemAmmoSFMAT + _itemPackMedium + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle) - ["CUP_launch_FIM92Stinger"])] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "at_gunner", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfar","B_Patrol_Soldier_MG_F","B_Recon_exp_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFMG)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "auto_rifleman", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfaar","B_recon_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMGAmmo + _itemPackMedium + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "rifleman", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["sfdmr","B_recon_M_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSFSharpshooter + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox; //+ _itemWeaponSniper
 
+		player setVariable ['dui_unitType', "rifleman", true];
         player setUnitTrait ["Medic", true];
     };
     case (_unitRole in ["ceng","B_engineer_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemBreacher + _itemEngineer + _itemLeaderEquipment + _itemPackHeavy + _itemUAVTermial + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "engineer", true];
         player setUnitTrait ["UAVHacker", true];
 
 		player setVariable ["ACE_isEngineer",2,true];
@@ -5284,85 +5379,114 @@ switch (true) do
     {
         [arsenal, (_ItemTankCrew + ( _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo) + _itemFacewear + _itemWeaponCQB + _itemMod + _itemWeaponPistol + _itemReflexSight + _itemLeaderEquipment + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
+		//player setVariable ['dui_unitType', "rifleman", true];
 		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["helocrew","B_helipilot_F"]) :
     {
         [arsenal, (_ItemHeloCrew + ( _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo) + _itemFacewear + _itemWeaponCQB + _itemMod + _itemWeaponPistol + _itemReflexSight + _itemLeaderEquipment + _tarkovuniforms + _itemMedicalAdv)] call ace_arsenal_fnc_initBox;
 
+		//player setVariable ['dui_unitType', "rifleman", true];
 		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["aircrew","B_Pilot_F","B_Fighter_Pilot_F"]) :
     {
         [arsenal, (_ItemAirCrew + _itemFacewear + _itemWeaponPistol + _itemMod + _itemLeaderEquipment + _itemMedicalAdv)] call ace_arsenal_fnc_initBox;
 
+		//player setVariable ['dui_unitType', "rifleman", true];
 		player setVariable ["ACE_isEngineer",1,true];
     };
     case (_unitRole in ["hat","B_Soldier_AT_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponHAT + _itemLeaderEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "at_gunner", true];
     };
         case (_unitRole in ["ahat","B_Soldier_AAT_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
 		case (_unitRole in ["spaa","B_Soldier_AA_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemWeaponSPAA + _itemLeaderEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoSPAA + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "at_gunner", true];
     };
         case (_unitRole in ["aspaa","B_Soldier_AAA_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoSPAA + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
         case (_unitRole in ["mmg","B_HeavyGunner_F"]) :
     {
 		if (count units _grp >= 3) then {_itemLeaderEquipment = []; _itemSpecial = []; };
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAR + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "auto_rifleman", true];
     };
         case (_unitRole in ["ammg","B_Soldier_A_F"]) :
     {
 		if (count units _grp >= 3 && {leader _grp isNotEqualTo player}) then {_itemLeaderEquipment = []; _itemSpecial = _itemSpecial - ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"]};
         [arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponMMGAmmo + _itemLeaderEquipment  + _itemPackHeavy + _tarkovuniforms + ["Binocular"])] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
 		case (_unitRole in ["isr","B_Soldier_UAV_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemLeaderEquipment + _itemUAVTermial)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
 		case (_unitRole in ["mrt","B_support_Mort_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponMortar + _itemMortarAmmo + _itemLeaderEquipment + _itemPackHeavy + ["NDS_M224_B_Ammo"] + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
 		case (_unitRole in ["amrt","B_support_AMort_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemMortarAmmo + _itemLeaderEquipment + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		//player setVariable ['dui_unitType', "rifleman", true];
     };
           case (_unitRole in ["riflerespawn","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "rifleman", true];
     };
         case (_unitRole in ["sfrespawn","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "rifleman", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["breacher","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemReflexSight + _itemBreacher + _itemBreacherRoleEquipment + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemPackMedLight)] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "explosive_specialist", true];
     };
         case (_unitRole in ["sfbreacher","B_Soldier_F"]) :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemWeaponRifle + _itemWeaponCarbine + _itemBreacher + _itemBreacherRoleEquipment + _itemSpecial + _itemWeaponHighCapAmmo + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms + _itemSFScoutGhillies + _itemWeaponSFRifle)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "explosive_specialist", true];
         player setUnitTrait ["Medic", true];
     };
         case (_unitRole in ["full","zeus","B_RangeMaster_F"]) :
     {
         [arsenal, true] call ace_arsenal_fnc_initBox;
+
+		player setVariable ['dui_unitType', "commander", true];
     };
     
     
@@ -5370,6 +5494,7 @@ switch (true) do
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms + _itemWeaponGL)] call ace_arsenal_fnc_initBox;
 
+		player setVariable ['dui_unitType', "rifleman", true];
         //player setVariable ["ace_medical_medicClass", 1, true];
     };
 };

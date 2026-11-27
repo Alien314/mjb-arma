@@ -10,10 +10,11 @@ if (mjb_tacSimGlobal) then {
 };
 private _closeObj = cursorObject;
 private _closeObjClass = typeOf cursorObject;
-if (mjb_tacDropCollisionFix && {_obj in (nearestTerrainObjects [_unit,['TREE','SMALL TREE','BUSH','WALL'],10]) || {
+if (mjb_tacDropCollisionFix && {_closeObj in (nearestTerrainObjects [_unit,['TREE','SMALL TREE','BUSH','WALL'],10]) || {
 	( (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'armor')) * (getNumber (configFile >> 'CfgVehicles' >> _closeObjClass >> 'mapSize')) ) < 2000 } }) then {
 	_closeObj disableCollisionWith _deathBox;
 	[_closeObj, _deathBox] remoteExecCall ["disableCollisionWith", _closeObj];
+	//[_closeObj,{ _this allowDamage false; _this spawn { sleep 3; _this allowDamage true; };}] remoteExecCall ["call", 0];
 } else {_closeObj = objNull};
 private _pos = _unit selectionPosition "lefthand";
 _pos set [0,((_pos select 0) - 0.2)];

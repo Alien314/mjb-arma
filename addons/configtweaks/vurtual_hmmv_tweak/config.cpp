@@ -41,7 +41,7 @@ class CfgVehicles {
 				radius = 0.25;
 			};
 			class HitEngine : HitEngine {
-				armor = 0.94;
+				armor = 1.2;
 				explosionShielding = 0.2;
 				minimalHit = 0.2;
 				radius = 0.35;

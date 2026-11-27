@@ -41,15 +41,16 @@ if (_chanceOfFire == 0 || {_chanceOfFire < random 1}) exitWith {
     false // return
 };
 private _hasPlayers = (count (crew _vehicle select {isPlayer _x}) > 0);
-if (mjb_cookoffPrevention && { !(_vehicle getVariable ['mjb_cookoffPrevention',false]) && { _hasPlayers } }) exitWith {
+if (mjb_cookoffPrevention && { _hasPlayers && { !(_vehicle getVariable ['mjb_cookoffPrevention',false]) } }) exitWith {
+    if !(local _vehicle) exitWith {};
 	if (_vehicle getVariable ['mjb_cookoffPreventionStart', true]) then {
-		_vehicle setVariable ['mjb_cookoffPreventionStart', false];
+		_vehicle setVariable ['mjb_cookoffPreventionStart', false, true];
 		[{
 			systemChat 'Cookoff prevention triggered, vehicle is now vulnerable';
 			hint 'Cookoff prevention triggered, vehicle is now vulnerable';
 			if (mjb_cookoffPreventionCD > 0) then { systemChat ('for ' + (str mjb_cookoffPreventionCD) + ' seconds.')};
 		}] remoteExec ['call',(crew _vehicle select {isPlayer _x})];
-		_vehicle spawn { params ['_vehicle']; sleep 1;
+		_vehicle spawn { params ['_vehicle']; sleep 3;
 			_vehicle setVariable ['mjb_cookoffPrevention', true, true];
 			_vehicle setVariable ['mjb_cookoffPreventionStart', nil,true];
 			if (mjb_cookoffPreventionCD > 0) then {

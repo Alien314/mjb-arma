@@ -1,3 +1,4 @@
+/*/
 class CfgPatches {
   class mjb_DPS_tweak {
     ammo[] = {};
@@ -15,7 +16,6 @@ class CfgPatches {
   };
 };
 
-
 class CfgFunctions {
     class DPS {
         tag = "DPS";
@@ -28,3 +28,4 @@ class CfgFunctions {
 		};
 	};
 };
+//*/

@@ -762,6 +762,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 
   // squeak two at4 into kitbag
   class CUP_launch_M136_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 137.4;
 	};
@@ -773,6 +774,7 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
   };
   class CUP_launch_M72A6_Loaded : Launcher_Base_F {
 	displayName = "M72A5";
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		//class CowsSlot : CUP_PicatinnyTopShortMount {}; // puts your eye in the tube
 		mass = 57.3;
@@ -791,25 +793,56 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
     displayName = "M72A5 (Special)(Used)";
   };
   class CUP_launch_RPG18_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 57.3;
 	};
   };
   class CUP_launch_RPG26_Loaded : Launcher_Base_F {
+	descriptionShort = "Anti-tank rocket launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 64;
 	};
   };
   class CUP_launch_RShG2_Loaded : Launcher_Base_F {
 	displayName = "RShG-2 (Thermobaric)";
+	descriptionShort = "Anti-Structure launcher<br/>Unguided";
 	class WeaponSlotsInfo : WeaponSlotsInfo {
 		mass = 88.2;
 	};
   };
 
+  // M136 CS
+  class mjb_CUP_launch_M136CS_loaded : CUP_launch_M136_Loaded {
+	displayName = "M136-CS";
+	descriptionShort = "Anti-tank launcher<br/>Unguided, Confined Spaces";
+	baseWeapon = "mjb_CUP_launch_136CS";
+    //hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m136cs_co.paa"}; // not supported ;-;
+	ace_overpressure_angle = 30;
+	ace_overpressure_damage = 0.6;
+	ace_overpressure_range = 2;
+  };
+  class mjb_CUP_launch_M136CS : mjb_CUP_launch_M136CS_loaded {
+	baseWeapon = "mjb_CUP_launch_M136CS";
+	displayName = "M136-CS";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	scope = 2;
+	scopeArsenal = 2;
+  };
+  class mjb_CUP_launch_M136CS_Used : mjb_CUP_launch_M136CS_loaded {
+	displayName = "M136-CS (Used)";
+	baseWeapon = "mjb_CUP_launch_M136CS_Used";
+	magazines[] = {"CBA_FakeLauncherMagazine"};
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 107.4;
+	};
+	model = "\CUP\Weapons\CUP_Weapons_M136\CUP_AT4_used.p3d";
+  };
+
   // M72A8
   class mjb_launch_M72A10_Loaded : CUP_launch_M72A6_Loaded {
 	displayName = "M72A8 (HEDP)";
+	descriptionShort = "Dual-Purpose launcher<br/>Unguided, Fire From Enclosure";
 	magazines[] = {"mjb_M72A10_M"};
 	baseWeapon = "mjb_launch_M72A10";
     hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a8_co.paa"};
@@ -828,13 +861,16 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	displayName = "M72A8 (Used)";
 	baseWeapon = "mjb_launch_M72A10_used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
-	mass = 17.3;
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 17.3;
+	};
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
   };
 
   // M72A10
   class mjb_launch_M72A10_HE_Loaded : CUP_launch_M72A6_Loaded {
 	displayName = "M72A10 (HE)";
+	descriptionShort = "Anti-Structure launcher<br/>Unguided, Fire From Enclosure";
 	magazines[] = {"mjb_M72A10_HE_M"};
 	baseWeapon = "mjb_launch_M72A10_HE";
     hiddenSelectionsTextures[] = {"\z\mjb\addons\flags\data\m72a10_co.paa"};
@@ -853,7 +889,9 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 	displayName = "M72A10 (Used)";
 	baseWeapon = "mjb_launch_M72A10_HE_Used";
 	magazines[] = {"CBA_FakeLauncherMagazine"};
-	mass = 17.3;
+	class WeaponSlotsInfo : WeaponSlotsInfo {
+		mass = 17.3;
+	};
 	model = "\CUP\Weapons\CUP_Weapons_M72A6\CUP_m72a6_used.p3d";
   };
 
@@ -879,12 +917,12 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		aiRateOfFireDispersion = 2; // 0
 		aiRateOfFireDistance = 60; // 60
 		//maxRange = 60; // 60
-		maxRangeProbab = 1.015; // 0.03
+		maxRangeProbab = 0.8; // 0.03 // 1.015
 		//midRange = 45; // 45
 		midRangeProbab = 1.015; // 0.9
 		//minRange = 10; // 10
 		minRange = 15; // 10
-		minRangeProbab = 1.015; // 0.2
+		minRangeProbab =0.8; // 0.2
 		//minRangeProbab = 0.2; // 0.2
 	};
 
@@ -948,11 +986,11 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		aiRateOfFireDispersion = 90;
 		aiRateOfFireDistance = 400;
 		maxRange = 400;
-		maxRangeProbab = DGT_PROB_UGL; // 0.05
+		maxRangeProbab = 0.5; // 0.05
 		midRange = 200;
 		midRangeProbab = DGT_PROB_UGL; // 0.7
 		minRange = 20;
-		minRangeProbab = DGT_PROB_UGL; // 0.1
+		minRangeProbab = 0.3; // 0.1
 	};
   };
 
@@ -1052,7 +1090,12 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
 		class Single : Single {};
     };
   };*/
-  class CUP_arifle_xm29_ke_base;
+
+  class CUP_arifle_xm29_ke_base : Rifle_Base_F {
+	class Burst : Mode_Burst {
+		textureType = "dual";
+	};
+  };
   class CUP_arifle_xm29_he_base : CUP_arifle_xm29_ke_base {
 	class XMHEMuzzle : Rifle_Base_F {
 		aiDispersionCoefX = 6;
@@ -1076,6 +1119,31 @@ class CUP_arifle_RPK74M_top_rail_belt : CUP_arifle_RPK74M_top_rail {
     };
   };
 
+
+  class CUP_arifle_AK74M : CUP_arifle_AK_Base {
+	class Burst;
+  };
+  class CUP_arifle_AK74M_top_rail: CUP_arifle_AK74M {};
+  class mjb_CUP_arifle_AK94 : CUP_arifle_AK74M {
+	displayName = "AK-94";
+	class Burst : Burst {
+		burst = 2;
+		ffCount = 2;
+		reloadTime = "(60 / (1800))";
+		showToPlayer = 1;
+		textureType = "dual";
+	};
+  };
+  class mjb_CUP_arifle_AK94_top_rail : CUP_arifle_AK74M_top_rail {
+	displayName = "AK-94 (RIS Mount)";
+	class Burst : Burst {
+		burst = 2;
+		ffCount = 2;
+		reloadTime = "(60 / (1800))";
+		showToPlayer = 1;
+		textureType = "dual";
+	};
+  };
   
   class ItemCore;
 
@@ -1343,6 +1411,7 @@ class mjb_Integrated_NVG_TI_1_WP : Integrated_NVG_TI_1_F {
 };
 
 class CBA_DisposableLaunchers {
+	mjb_CUP_launch_M136CS_loaded[] = {"mjb_CUP_launch_M136CS","mjb_CUP_launch_M136CS_Used"};
 	mjb_launch_M72A10_Loaded[] = {"mjb_launch_M72A10","mjb_launch_M72A10_Used"};
 	mjb_launch_M72A10_HE_Loaded[] = {"mjb_launch_M72A10_HE","mjb_launch_M72A10_HE_Used"};
 };
