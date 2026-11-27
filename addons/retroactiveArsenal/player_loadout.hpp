@@ -1159,7 +1159,7 @@ class sfar : ar
 		"CUP_lmg_Mk48"
 	};
 	scope[] = {
-		"CUP_optic_Elcan_SpecterDR_RMR_black"
+		"optic_hamr"
 	};
 	attachment[] = {
 		"CUP_acc_ANPEQ_15_Flashlight_Black_L"
