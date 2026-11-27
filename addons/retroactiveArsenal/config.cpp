@@ -90,6 +90,13 @@ class Extended_Init_EventHandlers {
         };
     };
 };
+class Extended_Killed_EventHandlers {
+    class CAManBase {
+        class mjb_arsenal {
+            killed = "(_this select 0) call mjb_arsenal_fnc_killedInTurret";
+        };
+    };
+};
 /*
 class CfgWorlds {
 	class DefaultWorld { class WaterExPars; };

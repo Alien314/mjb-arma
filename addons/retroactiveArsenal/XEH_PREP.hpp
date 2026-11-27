@@ -27,6 +27,7 @@
 ["z\mjb\addons\arsenal\functions\fnc_objectBurn.sqf", "mjb_arsenal_fnc_objectBurn"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_projectileEvents.sqf", "mjb_arsenal_fnc_projectileEvents"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_simpleScale.sqf", "mjb_arsenal_fnc_simpleScale"] call CBA_fnc_compileFunction;
+["z\mjb\addons\arsenal\functions\fnc_killedInTurret.sqf", "mjb_arsenal_fnc_killedInTurret"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_copilotStabilizeToggle.sqf", "mjb_arsenal_fnc_copilotStabilizeToggle"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_tacReload.sqf", "mjb_arsenal_fnc_tacReload"] call CBA_fnc_compileFunction;
 ["z\mjb\addons\arsenal\functions\fnc_tacDropMag.sqf", "mjb_arsenal_fnc_tacDropMag"] call CBA_fnc_compileFunction;
